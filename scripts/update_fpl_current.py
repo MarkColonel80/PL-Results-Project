@@ -309,6 +309,9 @@ def main():
         if n % 10 == 0 or n * 500 >= len(rows):
             print(f"  uploaded {min(n * 500, len(rows))}/{len(rows)} fixture rows")
 
+    print("Refreshing FPL aggregate caches...")
+    sb.rpc("refresh_fpl_aggregate_caches").execute()
+
     mismatches = sum(1 for r in rows if r["points_difference"] != 0)
     missing_teams = sum(1 for r in rows if not r["team_name"])
     max_gw = max((r["gameweek"] for r in rows), default=0)
