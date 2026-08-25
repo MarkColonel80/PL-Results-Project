@@ -18,7 +18,11 @@ python3 scripts/update_season.py 2026-2027
 The updater only imports finished games and can be run repeatedly.
 
 ## Put it online
-Use GitHub + Vercel. Add only these two Vercel environment variables:
+Use GitHub + Vercel. Add these Vercel environment variables:
 - `NEXT_PUBLIC_SUPABASE_URL`
 - `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`
-Never put the service-role key in Vercel client variables.
+- `BASIC_AUTH_USERNAME`
+- `BASIC_AUTH_PASSWORD`
+
+The Basic Auth variables protect the web app. Keep all secret values in Vercel environment variables and never commit them to GitHub.
+Never put the Supabase service-role key in Vercel client variables.
