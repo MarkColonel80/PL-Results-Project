@@ -26,6 +26,7 @@ TEAM_ALIASES={
     "Cardiff":"Cardiff City","Huddersfield":"Huddersfield Town","Sheffield Utd":"Sheffield United",
     "Hull":"Hull City","Stoke":"Stoke City"
 }
+NULLISH={"","none","null","nan","nat","n/a"}
 URL=os.environ.get("SUPABASE_URL"); KEY=os.environ.get("SUPABASE_SERVICE_ROLE_KEY")
 if not URL or not KEY: raise SystemExit("Set SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY first.")
 sb=create_client(URL,KEY)
@@ -43,7 +44,7 @@ def fetch_csv(path, missing_ok=False, retries=3):
     last=None
     for attempt in range(retries):
         try:
-            req=urllib.request.Request(url,headers={"User-Agent":"pl-data-fpl-history/2.2","Accept":"text/csv,*/*"})
+            req=urllib.request.Request(url,headers={"User-Agent":"pl-data-fpl-history/2.3","Accept":"text/csv,*/*"})
             with urllib.request.urlopen(req,timeout=120) as response:
                 return decode_csv(response.read())
         except urllib.error.HTTPError as exc:
@@ -55,6 +56,11 @@ def fetch_csv(path, missing_ok=False, retries=3):
     if missing_ok and isinstance(last, urllib.error.HTTPError) and last.code==404: return []
     raise RuntimeError(f"Could not fetch {path}: {last}")
 
+def nullable(v):
+    if v is None:return None
+    s=str(v).strip()
+    return None if s.lower() in NULLISH else s
+
 def I(v,default=0):
     try:return int(float(v))
     except (TypeError,ValueError):return default
@@ -65,6 +71,9 @@ def F(v,default=None):
 
 def truth(v):return str(v).strip().lower() in {"true","1","yes"}
 def label(s):return s[:4]+"/"+s[-2:]
+def normalize_pos(v):
+    s=str(v or "").strip().upper()
+    return {"GKP":"GK","GOALKEEPER":"GK","GK":"GK","DEFENDER":"DEF","DEF":"DEF","MIDFIELDER":"MID","MID":"MID","FORWARD":"FWD","FWD":"FWD"}.get(s,s)
 def pos_type(v):return {1:"GK",2:"DEF",3:"MID",4:"FWD"}.get(I(v,-1),"")
 def display(r):return r.get("web_name") or " ".join(x for x in [r.get("first_name"),r.get("second_name")] if x)
 def canon_team(v):return TEAM_ALIASES.get(v,v) if v else v
@@ -91,11 +100,12 @@ def dedupe_fixture_rows(rows):
     return list(chosen.values()),duplicate_rows,conflicting
 
 def component_points(r,pos,season_dir):
+    pos=normalize_pos(pos)
     mins=I(r.get("minutes")); goals=I(r.get("goals_scored")); assists=I(r.get("assists")); cs=I(r.get("clean_sheets"))
     saves=I(r.get("saves")); ps=I(r.get("penalties_saved")); pm=I(r.get("penalties_missed")); yc=I(r.get("yellow_cards")); rc=I(r.get("red_cards"))
     og=I(r.get("own_goals")); gc=I(r.get("goals_conceded")); bonus=I(r.get("bonus")); dc=I(r.get("defensive_contribution")); year=int(season_dir[:4])
     appearance=2 if mins>=60 else (1 if mins>0 else 0)
-    goal_rate={"GK":10,"DEF":6,"MID":5,"FWD":4}.get(pos,0)
+    goal_rate=(10 if year>=2024 else 6) if pos=="GK" else {"DEF":6,"MID":5,"FWD":4}.get(pos,0)
     gp=goals*goal_rate; ap=assists*3
     csp=cs*(4 if pos in {"GK","DEF"} else (1 if pos=="MID" else 0))
     svp=saves//3 if pos=="GK" else 0
@@ -139,10 +149,10 @@ def import_season(season_dir):
     for r in players_raw:
         pid=str(I(r.get("id"),-1)); code=str(I(r.get("code"),-1))
         if pid=="-1" or code=="-1": continue
-        pos=pos_type(r.get("element_type")); team_name=team_by_id.get(str(I(r.get("team"),-1))); nm=display(r)
+        pos=normalize_pos(pos_type(r.get("element_type"))); team_name=team_by_id.get(str(I(r.get("team"),-1))); nm=display(r)
         id_meta[pid]={"player_code":code,"name":nm,"position":pos,"team_name":team_name}
-        canonical.append({"player_code":code,"first_name":r.get("first_name"),"second_name":r.get("second_name"),"web_name":nm,"birth_date":r.get("birth_date") or None,"opta_code":r.get("opta_code") or None})
-        season_rows.append({"season":season,"player_code":code,"player_id":pid,"team_code":str(r.get("team_code") or "") or None,"team_name":team_name,"position":{"GK":"Goalkeeper","DEF":"Defender","MID":"Midfielder","FWD":"Forward"}.get(pos,pos)})
+        canonical.append({"player_code":code,"first_name":nullable(r.get("first_name")),"second_name":nullable(r.get("second_name")),"web_name":nm,"birth_date":nullable(r.get("birth_date")),"opta_code":nullable(r.get("opta_code"))})
+        season_rows.append({"season":season,"player_code":code,"player_id":pid,"team_code":nullable(r.get("team_code")),"team_name":team_name,"position":{"GK":"Goalkeeper","DEF":"Defender","MID":"Midfielder","FWD":"Forward"}.get(pos,pos)})
     for b in batches(canonical): sb.table("players").upsert(b,on_conflict="player_code").execute()
     for b in batches(season_rows): sb.table("player_seasons").upsert(b,on_conflict="season,player_code").execute()
     sb.rpc("backfill_player_codes_for_season",{"p_season":season}).execute()
@@ -160,13 +170,12 @@ def import_season(season_dir):
             skipped_no_player+=1; continue
         if fixture<0 or gw<0:
             skipped_bad_fixture+=1; continue
-        pos=r.get("position") or meta["position"]
-        if pos in {"Goalkeeper","Defender","Midfielder","Forward"}: pos={"Goalkeeper":"GK","Defender":"DEF","Midfielder":"MID","Forward":"FWD"}[pos]
+        pos=normalize_pos(r.get("position") or meta["position"])
         opp=team_by_id.get(str(I(r.get("opponent_team"),-1)),r.get("opponent_team") or None)
         out.append({
             "season":season,"gameweek":gw,"fixture_id":fixture,"player_code":meta["player_code"],"player_id":pid,
-            "player_name":r.get("name") or meta["name"],"team_name":canon_team(r.get("team")) or meta["team_name"],"position":pos,
-            "kickoff_time":r.get("kickoff_time") or None,"opponent_team":canon_team(opp),"was_home":truth(r.get("was_home")),
+            "player_name":meta["name"],"team_name":canon_team(r.get("team")) or meta["team_name"],"position":pos,
+            "kickoff_time":nullable(r.get("kickoff_time")),"opponent_team":canon_team(opp),"was_home":truth(r.get("was_home")),
             "minutes":I(r.get("minutes")),"total_points":I(r.get("total_points")),"goals_scored":I(r.get("goals_scored")),"assists":I(r.get("assists")),
             "clean_sheets":I(r.get("clean_sheets")),"goals_conceded":I(r.get("goals_conceded")),"own_goals":I(r.get("own_goals")),
             "penalties_saved":I(r.get("penalties_saved")),"penalties_missed":I(r.get("penalties_missed")),"yellow_cards":I(r.get("yellow_cards")),
