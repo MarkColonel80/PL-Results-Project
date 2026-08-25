@@ -4,6 +4,7 @@
 Usage:
   python3 scripts/import_fpl_history_v2.py 2016-17
   python3 scripts/import_fpl_history_v2.py --all
+  python3 scripts/import_fpl_history_v2.py --from 2019-20
 
 Requires SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY.
 """
@@ -42,7 +43,7 @@ def fetch_csv(path, missing_ok=False, retries=3):
     last=None
     for attempt in range(retries):
         try:
-            req=urllib.request.Request(url,headers={"User-Agent":"pl-data-fpl-history/2.1","Accept":"text/csv,*/*"})
+            req=urllib.request.Request(url,headers={"User-Agent":"pl-data-fpl-history/2.2","Accept":"text/csv,*/*"})
             with urllib.request.urlopen(req,timeout=120) as response:
                 return decode_csv(response.read())
         except urllib.error.HTTPError as exc:
@@ -69,6 +70,25 @@ def display(r):return r.get("web_name") or " ".join(x for x in [r.get("first_nam
 def canon_team(v):return TEAM_ALIASES.get(v,v) if v else v
 def batches(rows,n=500):
     for i in range(0,len(rows),n):yield rows[i:i+n]
+
+def dedupe_fixture_rows(rows):
+    """One row per FPL player+fixture. Prefer the played/later record for postponed/rescheduled games."""
+    chosen={}; duplicate_rows=0; conflicting=0
+    def rank(r):
+        played=1 if (I(r.get("minutes"))>0 or I(r.get("total_points"))!=0 or I(r.get("goals_scored"))>0 or I(r.get("assists"))>0) else 0
+        return (played, I(r.get("gameweek"),-1), I(r.get("minutes")), abs(I(r.get("total_points"))))
+    for r in rows:
+        key=(r["fixture_id"],r["player_code"])
+        old=chosen.get(key)
+        if old is None:
+            chosen[key]=r
+            continue
+        duplicate_rows+=1
+        if old!=r:
+            conflicting+=1
+        if rank(r)>=rank(old):
+            chosen[key]=r
+    return list(chosen.values()),duplicate_rows,conflicting
 
 def component_points(r,pos,season_dir):
     mins=I(r.get("minutes")); goals=I(r.get("goals_scored")); assists=I(r.get("assists")); cs=I(r.get("clean_sheets"))
@@ -157,16 +177,31 @@ def import_season(season_dir):
             "expected_goals_conceded":F(r.get("expected_goals_conceded")),"value":I(r.get("value"),None),"selected":I(r.get("selected"),None),
             "transfers_in":I(r.get("transfers_in"),None),"transfers_out":I(r.get("transfers_out"),None),**component_points(r,pos,season_dir)
         })
+
+    raw_out_count=len(out)
+    out,duplicate_rows,conflicting_duplicates=dedupe_fixture_rows(out)
+    if duplicate_rows:
+        print(f"Deduplicated {duplicate_rows} repeated player-fixture rows ({conflicting_duplicates} had differing snapshots); {raw_out_count} -> {len(out)} rows")
+
     for n,b in enumerate(batches(out),1):
         sb.table("fpl_player_match_stats").upsert(b,on_conflict="season,fixture_id,player_code").execute()
         if n%10==0: print(f"  uploaded {min(n*500,len(out))}/{len(out)} FPL rows")
     mismatches=sum(1 for r in out if r["points_difference"]!=0)
     missing_teams=sum(1 for r in out if not r["team_name"])
-    print(f"FPL fixture rows: {len(out)}; skipped missing player: {skipped_no_player}; skipped bad fixture: {skipped_bad_fixture}; missing team names: {missing_teams}; point-component mismatches: {mismatches}")
+    print(f"FPL fixture rows: {len(out)}; skipped missing player: {skipped_no_player}; skipped bad fixture: {skipped_bad_fixture}; missing team names: {missing_teams}; source duplicate rows: {duplicate_rows}; conflicting duplicate snapshots: {conflicting_duplicates}; point-component mismatches: {mismatches}")
 
 def main():
-    if len(sys.argv)!=2: raise SystemExit("Usage: python3 scripts/import_fpl_history_v2.py 2016-17 | --all")
-    seasons=ALL_SEASONS if sys.argv[1]=="--all" else [sys.argv[1]]
+    args=sys.argv[1:]
+    if args==["--all"]:
+        seasons=ALL_SEASONS
+    elif len(args)==2 and args[0]=="--from":
+        if args[1] not in ALL_SEASONS:
+            raise SystemExit(f"Unknown season {args[1]}")
+        seasons=ALL_SEASONS[ALL_SEASONS.index(args[1]):]
+    elif len(args)==1 and args[0] in ALL_SEASONS:
+        seasons=args
+    else:
+        raise SystemExit("Usage: python3 scripts/import_fpl_history_v2.py 2016-17 | --all | --from 2019-20")
     for s in seasons: import_season(s)
     print("\nFPL history import complete.")
 
