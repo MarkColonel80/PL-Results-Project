@@ -223,6 +223,8 @@ def main():
     else:
         raise SystemExit("Usage: python3 scripts/import_fpl_history_v2.py 2016-17 | --all | --from 2019-20")
     for s in seasons: import_season(s)
+    print("\nRefreshing FPL aggregate caches...")
+    sb.rpc("refresh_fpl_aggregate_caches").execute()
     print("\nFPL history import complete.")
 
 if __name__=="__main__": main()
