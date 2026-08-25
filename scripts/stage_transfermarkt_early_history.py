@@ -111,18 +111,22 @@ def main():
 
     target_apps = []
     app_count = defaultdict(int)
+    # Detect FPL-era overlap by source season, not calendar year.
+    game_season_all = {}
+    for g in cache.cached_iter_gz_csv("games"):
+        if g.get("competition_id") == "GB1" and g.get("game_id") and g.get("season"):
+            game_season_all[str(g["game_id"])] = core.I(g.get("season"))
     future_fpl_era_players = set()
+
     for a in cache.cached_iter_gz_csv("appearances"):
         if a.get("competition_id") != "GB1":
             continue
-        y = core.I(a.get("date", "")[:4]) if a.get("date") else None
-        # Prefer source game season for target rows; for future-career detection the
-        # appearance dataset date is sufficient and avoids retaining all later games.
-        if y is not None and y >= 2016:
+        gid = str(a.get("game_id") or "")
+        source_season_year = game_season_all.get(gid)
+        if source_season_year is not None and source_season_year >= 2016:
             pid0 = str(a.get("player_id") or "")
             if pid0:
                 future_fpl_era_players.add(pid0)
-        gid = str(a.get("game_id") or "")
         gm = source_games.get(gid)
         if not gm:
             continue
@@ -202,9 +206,7 @@ def main():
     new_players = []
     new_maps = []
     for pid in sorted(relevant_pids):
-        if pid in verified:
-            continue
-        if pid in future_fpl_era_players:
+        if pid in verified or pid in future_fpl_era_players:
             continue
         code = core.source_player_code(pid)
         p = source_players.get(pid, {})
@@ -243,25 +245,32 @@ def main():
         sb.table("source_player_match_stats").upsert(b, on_conflict="source,source_match_id,source_player_id").execute()
 
     # Add historical season memberships for already verified identities.
+    existing_memberships = {
+        (str(r["player_code"]), r["season"])
+        for season in usable
+        for r in core.paged(sb, "player_seasons", "player_code,season", {"season": season})
+    }
     by_player_season = defaultdict(list)
     for a in target_apps:
         if a.get("player_code"):
             by_player_season[(a["player_code"], a["season"])].append(a)
     added_memberships = 0
+    membership_rows = []
     for (code, season), rows in by_player_season.items():
-        exists = sb.table("player_seasons").select("player_code").eq("season", season).eq("player_code", code).maybe_single().execute().data
-        if exists:
+        if (str(code), season) in existing_memberships:
             continue
         last = rows[-1]
         pos = source_players.get(last["source_player_id"], {}).get("position") or last.get("source_position")
-        sb.table("player_seasons").insert({
+        membership_rows.append({
             "season": season, "player_code": code,
             "player_id": core.source_player_code(last["source_player_id"]),
             "team_code": last.get("source_team_id"),
             "team_name": last.get("team_name"),
             "position": core.long_position(pos),
-        }).execute()
-        added_memberships += 1
+        })
+    for b in batches(membership_rows):
+        sb.table("player_seasons").insert(b).execute()
+        added_memberships += len(b)
 
     mapped = sum(1 for a in target_apps if a.get("player_code"))
     print(f"\nStaged {len(target_apps)} early source player-match rows; {mapped} already mapped; {len(target_apps)-mapped} unresolved.")
