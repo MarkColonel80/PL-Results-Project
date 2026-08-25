@@ -1,0 +1,1 @@
+"use client"; export default function SeasonSelect({season,onChange}:{season:string,onChange:(s:string)=>void}){return <select value={season} onChange={e=>onChange(e.target.value)}><option value="2025/26">2025/26</option><option value="2026/27">2026/27</option></select>}
