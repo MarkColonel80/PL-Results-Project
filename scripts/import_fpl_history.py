@@ -31,7 +31,7 @@ sb=create_client(URL,KEY)
 def raw_url(path): return BASE+"/"+"/".join(urllib.parse.quote(p,safe="") for p in path.split("/"))
 def fetch_csv(path,optional=False):
     try:
-        req=urllib.request.Request(raw_url(path),headers={"User-Agent":"pl-data-fpl-history/1.1"})
+        req=urllib.request.Request(raw_url(path),headers={"User-Agent":"pl-data-fpl-history/1.2"})
         with urllib.request.urlopen(req,timeout=120) as response: text=response.read().decode("utf-8-sig")
         return list(csv.DictReader(io.StringIO(text)))
     except Exception as exc:
@@ -74,7 +74,8 @@ def import_season(season_dir):
         season_rows.append({"season":label,"player_code":code,"player_id":pid,"team_code":str(r.get("team_code") or "") or None,"team_name":team_name,"position":{"GK":"Goalkeeper","DEF":"Defender","MID":"Midfielder","FWD":"Forward"}.get(pos,pos)})
     for b in batches(canonical):sb.table("players").upsert(b,on_conflict="player_code").execute()
     for b in batches(season_rows):sb.table("player_seasons").upsert(b,on_conflict="season,player_code").execute()
-    print(f"Players: {len(canonical)}")
+    sb.rpc("backfill_player_codes_for_season",{"p_season":label}).execute()
+    print(f"Players: {len(canonical)}; rich-data player codes backfilled where available")
     gw_rows=fetch_csv(f"data/{season_dir}/gws/merged_gw.csv",True)
     if not gw_rows:
         print("No merged_gw.csv found; trying individual gameweeks.");gw_rows=[]
