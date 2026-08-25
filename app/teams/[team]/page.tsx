@@ -4,7 +4,7 @@ import {useParams,useSearchParams} from "next/navigation";
 import {supabase} from "../../../lib/supabase";
 
 export default function Team(){
- const p=useParams(),sp=useSearchParams(),team=decodeURIComponent(String(p.team)),season=sp.get("season")||"2025/26";
+ const p=useParams(),sp=useSearchParams(),team=decodeURIComponent(String(p.team)),season=sp.get("season")||"2026/27";
  const[stats,setStats]=useState<any>(null),[matches,setMatches]=useState<any[]>([]),[players,setPlayers]=useState<any[]>([]);
  useEffect(()=>{(async()=>{const[{data:s},{data:m},{data:pl}]=await Promise.all([
   supabase.from("team_season_stats").select("*").eq("season",season).eq("team",team).maybeSingle(),
