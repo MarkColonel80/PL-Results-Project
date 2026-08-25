@@ -15,7 +15,9 @@ except ImportError:
     subprocess.check_call([sys.executable, "-m", "pip", "install", "supabase"])
     from supabase import create_client
 
-ALL_SEASONS=[f"{y}-{str(y+1)[-2:]}" for y in range(2016,2027)]
+# Historical archive only. The active season is loaded from the official FPL API
+# by scripts/update_fpl_current.py.
+ALL_SEASONS=[f"{y}-{str(y+1)[-2:]}" for y in range(2016,2026)]
 BASE="https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/master"
 TEAM_ALIASES={
     "Bournemouth":"AFC Bournemouth","Brighton":"Brighton & Hove Albion","Leeds":"Leeds United",
@@ -27,6 +29,7 @@ TEAM_ALIASES={
     "Hull":"Hull City","Stoke":"Stoke City"
 }
 NULLISH={"","none","null","nan","nat","n/a"}
+PLAYER_POSITIONS={"GK","DEF","MID","FWD"}
 URL=os.environ.get("SUPABASE_URL"); KEY=os.environ.get("SUPABASE_SERVICE_ROLE_KEY")
 if not URL or not KEY: raise SystemExit("Set SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY first.")
 sb=create_client(URL,KEY)
@@ -44,7 +47,7 @@ def fetch_csv(path, missing_ok=False, retries=3):
     last=None
     for attempt in range(retries):
         try:
-            req=urllib.request.Request(url,headers={"User-Agent":"pl-data-fpl-history/2.3","Accept":"text/csv,*/*"})
+            req=urllib.request.Request(url,headers={"User-Agent":"pl-data-fpl-history/2.4","Accept":"text/csv,*/*"})
             with urllib.request.urlopen(req,timeout=120) as response:
                 return decode_csv(response.read())
         except urllib.error.HTTPError as exc:
@@ -145,32 +148,40 @@ def import_season(season_dir):
         raise RuntimeError(f"No team mapping found for {season}")
     print(f"Team mapping: {len(team_by_id)} clubs")
 
-    id_meta={}; canonical=[]; season_rows=[]
+    id_meta={}; canonical=[]; season_rows=[]; ignored_non_player_ids=set()
     for r in players_raw:
         pid=str(I(r.get("id"),-1)); code=str(I(r.get("code"),-1))
         if pid=="-1" or code=="-1": continue
-        pos=normalize_pos(pos_type(r.get("element_type"))); team_name=team_by_id.get(str(I(r.get("team"),-1))); nm=display(r)
+        pos=normalize_pos(pos_type(r.get("element_type")))
+        if pos not in PLAYER_POSITIONS:
+            ignored_non_player_ids.add(pid)
+            continue
+        team_name=team_by_id.get(str(I(r.get("team"),-1))); nm=display(r)
         id_meta[pid]={"player_code":code,"name":nm,"position":pos,"team_name":team_name}
         canonical.append({"player_code":code,"first_name":nullable(r.get("first_name")),"second_name":nullable(r.get("second_name")),"web_name":nm,"birth_date":nullable(r.get("birth_date")),"opta_code":nullable(r.get("opta_code"))})
-        season_rows.append({"season":season,"player_code":code,"player_id":pid,"team_code":nullable(r.get("team_code")),"team_name":team_name,"position":{"GK":"Goalkeeper","DEF":"Defender","MID":"Midfielder","FWD":"Forward"}.get(pos,pos)})
+        season_rows.append({"season":season,"player_code":code,"player_id":pid,"team_code":nullable(r.get("team_code")),"team_name":team_name,"position":{"GK":"Goalkeeper","DEF":"Defender","MID":"Midfielder","FWD":"Forward"}[pos]})
     for b in batches(canonical): sb.table("players").upsert(b,on_conflict="player_code").execute()
     for b in batches(season_rows): sb.table("player_seasons").upsert(b,on_conflict="season,player_code").execute()
     sb.rpc("backfill_player_codes_for_season",{"p_season":season}).execute()
-    print(f"Players: {len(canonical)}; rich-data player codes backfilled where available")
+    print(f"Players: {len(canonical)}; ignored non-player elements: {len(ignored_non_player_ids)}; rich-data player codes backfilled where available")
 
     gw_rows=season_gw_rows(season_dir)
     if not gw_rows:
         raise RuntimeError(f"No gameweek rows found for {season}. Historical files exist, so refusing to silently continue.")
 
-    out=[]; skipped_no_player=0; skipped_bad_fixture=0
+    out=[]; skipped_no_player=0; skipped_bad_fixture=0; skipped_non_player=0
     for r in gw_rows:
         pid=str(I(r.get("element"),-1)); meta=id_meta.get(pid)
         fixture=I(r.get("fixture"),-1); gw=I(r.get("GW") or r.get("round"),-1)
         if not meta:
-            skipped_no_player+=1; continue
+            if pid in ignored_non_player_ids: skipped_non_player+=1
+            else: skipped_no_player+=1
+            continue
         if fixture<0 or gw<0:
             skipped_bad_fixture+=1; continue
         pos=normalize_pos(r.get("position") or meta["position"])
+        if pos not in PLAYER_POSITIONS:
+            skipped_non_player+=1; continue
         opp=team_by_id.get(str(I(r.get("opponent_team"),-1)),r.get("opponent_team") or None)
         out.append({
             "season":season,"gameweek":gw,"fixture_id":fixture,"player_code":meta["player_code"],"player_id":pid,
@@ -197,7 +208,7 @@ def import_season(season_dir):
         if n%10==0: print(f"  uploaded {min(n*500,len(out))}/{len(out)} FPL rows")
     mismatches=sum(1 for r in out if r["points_difference"]!=0)
     missing_teams=sum(1 for r in out if not r["team_name"])
-    print(f"FPL fixture rows: {len(out)}; skipped missing player: {skipped_no_player}; skipped bad fixture: {skipped_bad_fixture}; missing team names: {missing_teams}; source duplicate rows: {duplicate_rows}; conflicting duplicate snapshots: {conflicting_duplicates}; point-component mismatches: {mismatches}")
+    print(f"FPL fixture rows: {len(out)}; skipped missing player: {skipped_no_player}; skipped non-player rows: {skipped_non_player}; skipped bad fixture: {skipped_bad_fixture}; missing team names: {missing_teams}; source duplicate rows: {duplicate_rows}; conflicting duplicate snapshots: {conflicting_duplicates}; point-component mismatches: {mismatches}")
 
 def main():
     args=sys.argv[1:]
@@ -205,7 +216,7 @@ def main():
         seasons=ALL_SEASONS
     elif len(args)==2 and args[0]=="--from":
         if args[1] not in ALL_SEASONS:
-            raise SystemExit(f"Unknown season {args[1]}")
+            raise SystemExit(f"Unknown archived season {args[1]}")
         seasons=ALL_SEASONS[ALL_SEASONS.index(args[1]):]
     elif len(args)==1 and args[0] in ALL_SEASONS:
         seasons=args
