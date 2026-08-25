@@ -22,7 +22,8 @@ TEAM_ALIASES={
     "Newcastle":"Newcastle United","Nott'm Forest":"Nottingham Forest","Norwich":"Norwich City",
     "Ipswich":"Ipswich Town","Spurs":"Tottenham Hotspur","West Ham":"West Ham United",
     "Wolves":"Wolverhampton Wanderers","West Brom":"West Bromwich Albion","Swansea":"Swansea City",
-    "Cardiff":"Cardiff City","Huddersfield":"Huddersfield Town","Sheffield Utd":"Sheffield United"
+    "Cardiff":"Cardiff City","Huddersfield":"Huddersfield Town","Sheffield Utd":"Sheffield United",
+    "Hull":"Hull City","Stoke":"Stoke City"
 }
 URL=os.environ.get("SUPABASE_URL"); KEY=os.environ.get("SUPABASE_SERVICE_ROLE_KEY")
 if not URL or not KEY: raise SystemExit("Set SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY first.")
@@ -41,7 +42,7 @@ def fetch_csv(path, missing_ok=False, retries=3):
     last=None
     for attempt in range(retries):
         try:
-            req=urllib.request.Request(url,headers={"User-Agent":"pl-data-fpl-history/2.0","Accept":"text/csv,*/*"})
+            req=urllib.request.Request(url,headers={"User-Agent":"pl-data-fpl-history/2.1","Accept":"text/csv,*/*"})
             with urllib.request.urlopen(req,timeout=120) as response:
                 return decode_csv(response.read())
         except urllib.error.HTTPError as exc:
@@ -105,7 +106,15 @@ def import_season(season_dir):
     season=label(season_dir); print(f"\n=== {season} ===")
     players_raw=fetch_csv(f"data/{season_dir}/players_raw.csv")
     teams_raw=fetch_csv(f"data/{season_dir}/teams.csv",missing_ok=True)
-    team_by_id={str(I(r.get("id"),-1)):canon_team(r.get("name")) for r in teams_raw if r.get("id")}
+    master_teams=fetch_csv("data/master_team_list.csv")
+    team_by_id={str(I(r.get("team"),-1)):canon_team(r.get("team_name")) for r in master_teams if r.get("season")==season_dir and r.get("team")}
+    for r in teams_raw:
+        if r.get("id"):
+            team_by_id[str(I(r.get("id"),-1))]=canon_team(r.get("name"))
+    if not team_by_id:
+        raise RuntimeError(f"No team mapping found for {season}")
+    print(f"Team mapping: {len(team_by_id)} clubs")
+
     id_meta={}; canonical=[]; season_rows=[]
     for r in players_raw:
         pid=str(I(r.get("id"),-1)); code=str(I(r.get("code"),-1))
@@ -152,7 +161,8 @@ def import_season(season_dir):
         sb.table("fpl_player_match_stats").upsert(b,on_conflict="season,fixture_id,player_code").execute()
         if n%10==0: print(f"  uploaded {min(n*500,len(out))}/{len(out)} FPL rows")
     mismatches=sum(1 for r in out if r["points_difference"]!=0)
-    print(f"FPL fixture rows: {len(out)}; skipped missing player: {skipped_no_player}; skipped bad fixture: {skipped_bad_fixture}; point-component mismatches: {mismatches}")
+    missing_teams=sum(1 for r in out if not r["team_name"])
+    print(f"FPL fixture rows: {len(out)}; skipped missing player: {skipped_no_player}; skipped bad fixture: {skipped_bad_fixture}; missing team names: {missing_teams}; point-component mismatches: {mismatches}")
 
 def main():
     if len(sys.argv)!=2: raise SystemExit("Usage: python3 scripts/import_fpl_history_v2.py 2016-17 | --all")
