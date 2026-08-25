@@ -1,0 +1,10 @@
+"use client";
+import {useEffect,useMemo,useState} from "react";
+import {supabase} from "../../lib/supabase";
+const sorts:any={points:["fpl_points","FPL points"],goals:["goals","Goals"],assists:["assists","Assists"],minutes:["minutes","Minutes"],appearances:["appearances","Appearances"],seasons:["seasons","Seasons"]};
+export default function History(){
+ const[rows,setRows]=useState<any[]>([]),[query,setQuery]=useState(""),[sort,setSort]=useState("points");
+ useEffect(()=>{(async()=>{const{data}=await supabase.from("player_career_fpl_stats").select("*");setRows(data||[])})()},[]);
+ const visible=useMemo(()=>rows.filter(r=>!query||String(r.player_name||"").toLowerCase().includes(query.toLowerCase())).sort((a,b)=>(Number(b[sorts[sort][0]])||0)-(Number(a[sorts[sort][0]])||0)).slice(0,500),[rows,query,sort]);
+ return <><div className="hero"><div><h1>Premier League player history</h1><div className="muted">Cross-season FPL and appearance records from 2016/17 onward.</div></div></div><div className="filterbar"><input value={query} onChange={e=>setQuery(e.target.value)} placeholder="Search player…"/><select value={sort} onChange={e=>setSort(e.target.value)}>{Object.entries(sorts).map(([k,v]:any)=><option key={k} value={k}>Sort: {v[1]}</option>)}</select></div><div className="tablewrap"><table><thead><tr><th>#</th><th>Player</th><th>Seasons</th><th>Range</th><th>Apps</th><th>Min</th><th>G</th><th>A</th><th>FPL</th><th>Bonus</th></tr></thead><tbody>{visible.map((r,i)=><tr key={r.player_code}><td>{i+1}</td><td><a className="textlink" href={`/players/${encodeURIComponent(r.player_code)}?season=${encodeURIComponent(r.latest_season)}`}>{r.player_name}</a></td><td>{r.seasons}</td><td>{r.first_season}–{r.latest_season}</td><td>{r.appearances}</td><td>{r.minutes}</td><td>{r.goals}</td><td>{r.assists}</td><td><b>{r.fpl_points}</b></td><td>{r.bonus}</td></tr>)}</tbody></table>{!visible.length&&<p className="muted" style={{padding:12}}>Historical FPL data has not been imported yet.</p>}</div></>;
+}
