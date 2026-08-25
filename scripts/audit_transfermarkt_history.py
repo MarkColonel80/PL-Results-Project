@@ -6,34 +6,88 @@ Premier League game/appearance coverage with our canonical match archive.
 """
 import csv
 import gzip
-import io
 import os
 import pathlib
+import re
+import time
 import urllib.request
 from collections import defaultdict
 from supabase import create_client
 
 BASE = "https://pub-e682421888d945d684bcae8890b0ec20.r2.dev/data"
-UA = "PL-Results-Project transfermarkt-coverage-audit/1.1"
+UA = "PL-Results-Project transfermarkt-coverage-audit/1.2"
 CACHE = pathlib.Path(__file__).resolve().parents[1] / ".cache" / "transfermarkt"
+CHUNK = 1024 * 1024
+
+
+def _download_cached(name, retries=8):
+    CACHE.mkdir(parents=True, exist_ok=True)
+    path = CACHE / f"{name}.csv.gz"
+    part = CACHE / f"{name}.csv.gz.part"
+    if path.exists() and path.stat().st_size > 0:
+        print(f"Using cached {name}.csv.gz ({path.stat().st_size/1024/1024:.1f} MB)")
+        return path
+
+    url = f"{BASE}/{name}.csv.gz"
+    for attempt in range(1, retries + 1):
+        offset = part.stat().st_size if part.exists() else 0
+        headers = {"User-Agent": UA}
+        if offset:
+            headers["Range"] = f"bytes={offset}-"
+            print(f"Resuming {name}.csv.gz from {offset/1024/1024:.1f} MB (attempt {attempt}/{retries})...")
+        else:
+            print(f"Downloading {name}.csv.gz (attempt {attempt}/{retries})...")
+        try:
+            req = urllib.request.Request(url, headers=headers)
+            with urllib.request.urlopen(req, timeout=180) as resp:
+                status = getattr(resp, "status", resp.getcode())
+                # If the host ignores Range, restart cleanly rather than append a full file.
+                if offset and status != 206:
+                    offset = 0
+                    if part.exists():
+                        part.unlink()
+                mode = "ab" if offset else "wb"
+                expected_response = int(resp.headers.get("Content-Length") or 0)
+                content_range = resp.headers.get("Content-Range") or ""
+                total = None
+                m = re.search(r"/(\d+)$", content_range)
+                if m:
+                    total = int(m.group(1))
+                written = 0
+                with part.open(mode) as out:
+                    while True:
+                        chunk = resp.read(CHUNK)
+                        if not chunk:
+                            break
+                        out.write(chunk)
+                        written += len(chunk)
+                if expected_response and written != expected_response:
+                    raise IOError(f"short response: received {written} of {expected_response} bytes")
+                size = part.stat().st_size
+                if total is not None and size < total:
+                    raise IOError(f"partial download: have {size} of {total} bytes")
+
+            # Verify the gzip stream before promoting the partial file to cache.
+            with gzip.open(part, "rb") as check:
+                while check.read(CHUNK):
+                    pass
+            part.replace(path)
+            print(f"  downloaded {path.stat().st_size/1024/1024:.1f} MB")
+            return path
+        except Exception as exc:
+            if attempt >= retries:
+                raise
+            kept = part.stat().st_size / 1024 / 1024 if part.exists() else 0
+            print(f"  connection interrupted ({exc}); kept {kept:.1f} MB, retrying...")
+            time.sleep(min(2 * attempt, 10))
+    raise RuntimeError(f"Could not download {name}.csv.gz")
 
 
 def fetch_gz_csv(name):
-    CACHE.mkdir(parents=True, exist_ok=True)
-    path = CACHE / f"{name}.csv.gz"
-    if path.exists() and path.stat().st_size > 0:
-        print(f"Using cached {name}.csv.gz ({path.stat().st_size/1024/1024:.1f} MB)")
-        raw = path.read_bytes()
-    else:
-        url = f"{BASE}/{name}.csv.gz"
-        print(f"Downloading {name}.csv.gz...")
-        req = urllib.request.Request(url, headers={"User-Agent": UA})
-        with urllib.request.urlopen(req, timeout=180) as resp:
-            raw = resp.read()
-        path.write_bytes(raw)
-        print(f"  downloaded {len(raw)/1024/1024:.1f} MB")
-    text = gzip.decompress(raw).decode("utf-8-sig")
-    return csv.DictReader(io.StringIO(text))
+    path = _download_cached(name)
+    # Stream the decompressed CSV from disk rather than holding the whole file in RAM.
+    with gzip.open(path, "rt", encoding="utf-8-sig", newline="") as text:
+        yield from csv.DictReader(text)
 
 
 def season_label(v):
