@@ -20,18 +20,26 @@ python3 scripts/update_season.py 2026-2027
 ```
 The updater only imports finished Premier League games and can be run repeatedly.
 
-## Import historical FPL data
-Fixture-level FPL history is available from 2016/17 onward, including official points, minutes, goals, assists, clean sheets, cards, saves, bonus/BPS and point-component breakdowns.
+## Historical FPL archive
+Fixture-level FPL history is stored from 2016/17 through the most recently archived completed season, including official points, minutes, goals, assists, clean sheets, cards, saves, bonus/BPS and point-component breakdowns.
 
-Import one season:
+Use the robust historical importer:
 ```bash
-python3 scripts/import_fpl_history.py 2025-26
+python3 scripts/import_fpl_history_v2.py 2025-26
 ```
 
-Import every available season from 2016/17 onward:
+Or resume/import a range:
 ```bash
-python3 scripts/import_fpl_history.py --all
+python3 scripts/import_fpl_history_v2.py --from 2024-25
 ```
+
+## Current-season FPL fixture data
+The historical archive can lag during an active season. For the live season use the official FPL API updater, which reads each player's official per-fixture history and can be run repeatedly:
+```bash
+python3 scripts/update_fpl_current.py 2026-27
+```
+
+This keeps official FPL fixture points separate from the richer football match-stat source while linking both by permanent `player_code`.
 
 ## Put it online
 Use GitHub + Vercel. Add these Vercel environment variables:
