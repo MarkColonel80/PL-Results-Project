@@ -27,8 +27,9 @@ This is a standing preference that applies beyond this specific project:
 - Only ask Mark to run a local Mac command when the action genuinely requires his local checkout/runtime or credentials unavailable through the connected systems.
 - Before risky writes, inspect code/data first and prefer dry-run/audit stages.
 - Do not use automated player-name matching as canonical identity evidence unless explicitly agreed. Stable IDs and cross-source evidence are preferred.
+- Explicit, individually reviewed `manual_name_verified` exceptions are allowed when a player name is sufficiently unique and club/season/provider context makes the identity unambiguous.
 
-## Understat historical-data checkpoint
+## Understat historical-data checkpoint — COMPLETE FOR ALL VERIFIED IDENTITIES
 
 ### Staging
 
@@ -38,7 +39,7 @@ This is a standing preference that applies beyond this specific project:
 - 3,800 / 3,800 fixtures mapped
 - 106,519 staged Understat player-match rows
 - 1,899 distinct Understat source players
-- No player-name matching used
+- no automated player-name matching used
 
 ### Cross-source identity resolver
 
@@ -53,89 +54,96 @@ The deterministic resolver `scripts/resolve_understat_cross_source.py` reached a
 
 Resolver commit making the process deterministic: `8bc5470567e1303f0f11b89cf33059e49d6d5e73`.
 
-### Legacy source-native reconciliation
+### Automated legacy source-native reconciliation
 
-An older process had created 213 Understat `source_native_identity` mappings on `plp:*` canonical identities. 77 continued past 2014/15; 74 of those now had unique high-confidence established canonical identities under the same conservative canonical-match/goals/minutes evidence.
-
-Preflight for those 74 found:
-
-- zero target conflicts
-- zero `player_match_stats` collisions
-- zero `player_seasons` collisions
-- no unexpected dependent-table references
+An older process had created 213 Understat `source_native_identity` mappings on `plp:*` canonical identities. 77 continued past 2014/15; 74 of those had unique high-confidence established canonical identities under the conservative canonical-match/goals/minutes evidence.
 
 Versioned reconciliation: `scripts/reconcile_understat_source_native.sql` (commit `bec85af176a71330c6458e9f342316218f7bf4ee`).
 
-The transaction was executed successfully in Supabase:
+Executed successfully in Supabase:
 
 - reconciled players: **74**
 - common matches: min **4**, median **108**, max **306**
 - minimum two-sided match coverage: **97.6%**
 - worst accepted average minute difference: **1.69**
-
-After reconciliation:
-
-- verified Understat mappings remain **1,816** (identities were re-keyed, not added)
-- remaining `source_native_identity` mappings: **139**
-- only **3** remaining source-native players continue beyond 2014/15; the other 136 are 2014/15-only source-native identities
-- unresolved staged Understat players remain **83**
+- zero target conflicts / match collisions / season collisions / unexpected dependencies
 
 ### Advanced Understat enrichment
 
-The live database already had 81,704 rows carrying `advanced_source='understat'`. Audit proved those rows matched staging exactly for xG, xA, shots, key passes, xGChain and xGBuildup: **0 field mismatches**.
+`player_match_stats` preserves the original/base football source for minutes, goals, assists, cards, etc., while Understat supplies advanced fields through the separate `advanced_source` provenance fields.
 
-After the legacy identity reconciliation, a further **23,313** exact `(season, match_id, player_code)` live rows became safely enrichable.
+Versioned repeat-safe enrichment: `scripts/enrich_understat_advanced_metrics.sql` (commit `4c336f5c8f2681d0d27d900d60874f578532aea8`).
 
-Versioned enrichment: `scripts/enrich_understat_advanced_metrics.sql` (commit `4c336f5c8f2681d0d27d900d60874f578532aea8`).
+Initial enrichment after automated identity reconciliation added **23,313** advanced-metric rows on top of the already-enriched historical base. Exact staged/live audits showed zero xG/xA/shots/key-pass/xGChain/xGBuildup mismatches.
 
-It was executed successfully and only updates advanced fields/provenance; it does **not** alter base minutes/goals/assists/cards/source provenance.
+### Missing cross-verified appearances
 
-Postconditions:
+A guarded promotion script was added as `scripts/promote_understat_missing_verified_rows.sql` (commit `6dc67a5f2791c2c54e42b403ce97a5c6d1ebbde1`). It promotes only missing Understat appearances whose identities are already verified and excludes `source_native_identity` mappings.
 
-- additional enriched rows: **23,313**
-- exact live matches still waiting for enrichment: **0**
+It promoted **3** genuine source-gap rows safely.
+
+### Final three manual identity exceptions
+
+After the strict automated work, only three post-2014 legacy source-native identities remained. Mark explicitly agreed that these could be manually set if the names were unique enough, and each was individually reviewed against names, club/season history and provider evidence.
+
+Versioned transaction: `scripts/reconcile_understat_manual_three.sql` (commit `05561830b8f71bc18b9852ceac3f6de2e1bc083c`).
+
+Manual decisions:
+
+1. **Steven Pienaar** — Understat source player `924`
+   - old duplicate canonical: `plp:3eb1306793c8468ab41eb988b5e13afb`
+   - merged to established canonical: **`7525`**
+   - exact unique full name
+   - Everton -> Sunderland club/season continuity
+   - 2016/17 FPL comparison has the exact same 15-match set and zero goal mismatches
+
+2. **Juan Cuadrado** — Understat `1089` and Transfermarkt `91970`
+   - old duplicate canonicals: `plp:8f20bdb0d19c41868c3d9c27693ff2f0` and `plp:062a2582c48b472f9bd76a37e557bcb9`
+   - both merged to established canonical: **`66733`**
+   - exact unique full name
+   - continuous Chelsea identity: 2014/15 Understat -> 2015/16 Transfermarkt -> 2016/17 established canonical
+
+3. **Rushian Hepburn-Murphy** — Understat `1015`
+   - kept existing unique canonical: **`plp:60c49e5ec1254a21a99dc224483b85c7`**
+   - exact unique full name in `players`
+   - Aston Villa in 2014/15 and 2015/16
+   - Transfermarkt omitted the source-reported one-minute 2015/16 substitute appearance, so there was no competing identity to merge
+   - mapping marked `manual_name_verified`
+   - missing 2015/16 appearance promoted directly from Understat
+
+Preflight for the Pienaar/Cuadrado merges found zero `player_match_stats` collisions, zero `player_seasons` collisions and no unexpected dependent-table references.
+
+After these manual identities were unified, `scripts/enrich_understat_advanced_metrics.sql` was rerun and enriched the final **20** exact live matches.
+
+## Final Understat end-to-end audit
+
+Live Supabase audit after all reconciliation/promotion/enrichment:
+
+- staged Understat rows: **106,519**
+- staged Understat source players: **1,899**
+- verified Understat mappings: **1,816**
+- unresolved source players: **83**
+- mapped staged rows: **105,041**
+- mapped staged rows missing from live `player_match_stats`: **0**
+- mapped live rows not carrying `advanced_source='understat'`: **0**
 - advanced-metric mismatches against staging: **0**
+- remaining `source_native_identity` mappings: **136**
+- remaining source-native identities continuing after 2014/15: **0**
+- explicitly manual verified crosswalks: **4**
 
-### Missing live Understat appearances
+Therefore **every Understat row whose player identity is verified is now represented in live player-match data and has exact Understat advanced metrics/provenance**.
 
-After reconciliation/enrichment there were 24 mapped staged Understat appearances with no corresponding live `player_match_stats` row.
-
-These split into:
-
-- **3** rows for an already cross-verified established canonical player whose Transfermarkt source simply has no 2019/20 staged rows for those matches
-- **21** rows belonging to the three remaining post-2014 legacy `source_native_identity` players
-
-A guarded promotion was added as `scripts/promote_understat_missing_verified_rows.sql` (commit `6dc67a5f2791c2c54e42b403ce97a5c6d1ebbde1`). It promotes only missing Understat rows whose player mapping is verified and **not** `source_native_identity`.
-
-It was executed successfully:
-
-- promoted missing cross-verified rows: **3**
-- legacy source-native rows promoted: **0**
-
-Current live endpoint:
-
-- total `player_match_stats` rows carrying `advanced_source='understat'`: **105,020**
-- exact matching live rows still waiting for Understat enrichment: **0**
-- mapped staged Understat rows still not live: **21**
-- those 21 rows belong to exactly **3** remaining legacy source-native players
-
-## Remaining three legacy post-2014 source-native players
-
-These are deliberately held out of further live promotion until identity evidence improves. Player names may be displayed for audit but must not be used as automated identity evidence.
-
-- Understat source player `924`: 28 staged rows across 2014/15–2016/17, with 15 missing live rows in 2016/17 plus 4 missing in 2015/16. FPL-era audit found canonical code `7525` has the exact same 15-match set in 2016/17 and zero goal mismatches, but average minute difference is ~2.87 minutes and only 40% are within 2 minutes. This is strong evidence but **outside the current automatic minute threshold**, so no identity change has been applied.
-- Understat source player `1089`: 13 staged rows through 2015/16; only one later missing live row. Current cross-source evidence is insufficient for an automatic merge.
-- Understat source player `1015`: 2 staged rows through 2015/16; only one later missing live row. Current cross-source evidence is insufficient for an automatic merge.
-
-Do not loosen global identity thresholds merely to force these three mappings. Prefer additional stable-ID/team/DOB/provider evidence or leave them source-native.
+The remaining 83 Understat source players are deliberately unresolved. Their staged rows stay staged and are not forced into canonical/live data.
 
 ## Immediate next step
 
-1. Keep the current 21 rows out of live `player_match_stats` while their three legacy identities remain unresolved under strict rules.
-2. Investigate additional non-name evidence for source player `924` first (exact FPL match set is promising): team membership, provider IDs, DOB/position where available, or another stable cross-source dataset.
-3. Investigate `1089` and `1015` only if similarly strong stable evidence becomes available; otherwise leave them source-native.
-4. Once any identity is safely reconciled, rerun `scripts/promote_understat_missing_verified_rows.sql` and `scripts/enrich_understat_advanced_metrics.sql` (both repeat-safe) to pick up newly eligible rows.
-5. Verify resulting player pages/site data through Supabase/Vercel after any further promotion.
+The Understat 2014/15–2023/24 historical pipeline is now complete for all verified identities. Do not spend time forcing the remaining 83 unresolved players unless a future feature specifically requires them.
+
+Next project work should move to the next data/product objective. Before doing so:
+
+1. verify relevant player pages/site behaviour against the live Supabase data through Vercel when needed;
+2. keep `scripts/enrich_understat_advanced_metrics.sql`, `scripts/promote_understat_missing_verified_rows.sql`, and the identity reconciliation scripts as the repeat-safe historical-data repair toolkit;
+3. preserve the rule that automated player-name matching is prohibited, with individually reviewed `manual_name_verified` exceptions only when explicitly agreed.
 
 ## Other historical-source work
 
