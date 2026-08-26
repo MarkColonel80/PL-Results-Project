@@ -41,7 +41,7 @@ This is a standing preference that applies beyond this specific project:
 - No live `player_match_stats` rows changed by staging
 - No player-name matching used
 
-### Identity resolution already applied
+### Identity resolution
 
 `resolve_understat_cross_source.py` initially found:
 
@@ -52,36 +52,42 @@ This is a standing preference that applies beyond this specific project:
 - Worst accepted average minute difference: 1.94
 - Ambiguous after composite uniqueness: 0
 
-Those **119 mappings were applied** successfully.
+Those **119 mappings were applied** successfully, bringing verified mappings to 1,799.
 
-Live Supabase state verified afterwards:
+A second dry run then surfaced 17 more candidates, which exposed a determinism issue in the resolver: paginated Supabase reads had no explicit ordering and provisional mappings greedily claimed canonical targets during iteration.
 
-- Verified Understat mappings: **1,799**
+ChatGPT updated `scripts/resolve_understat_cross_source.py` directly in GitHub on `main` (commit `8bc5470567e1303f0f11b89cf33059e49d6d5e73`) to make resolution deterministic while preserving all evidence thresholds. The updated design uses deterministic query ordering, sorted source-player processing, a fixed snapshot of existing verified claims, provisional resolution first, and duplicate-target conflict handling.
+
+Two consecutive dry runs of the fixed resolver were identical:
+
+- Existing verified mappings: 1,799
+- Provisional high-confidence candidates: 17
+- Duplicate-target conflicts: 0 targets / 0 source players
+- Final new high-confidence candidates: 17
+- Unresolved with fewer than 3 overlap appearances: 50
+- Ambiguous after composite uniqueness: 0
+- Candidate common games: min 8, median 66, max 264
+- Minimum two-sided match coverage: 100%
+- Worst accepted average minute difference: 2.00
+
+Those **17 mappings were then applied successfully**.
+
+Live Supabase state verified after the apply:
+
+- Verified Understat mappings: **1,816**
 - Staged rows: **106,519**
 - Staged source players: **1,899**
-- Staged players with canonical `player_code`: **1,799**
-- Staged players without canonical `player_code`: **100**
+- Staged players without canonical `player_code`: **83**
 
-The apply changed only Understat crosswalks/staged identity fields; it did **not** change live `player_match_stats`. Identity invariants passed.
-
-### Resolver determinism issue discovered
-
-A second dry run after applying the 119 unexpectedly produced 17 additional candidates. Review showed the resolver could be order-dependent because:
-
-1. paginated Supabase reads used `range()` without explicit ordering; and
-2. provisional mappings greedily claimed canonical targets during iteration.
-
-ChatGPT updated `scripts/resolve_understat_cross_source.py` directly in GitHub on `main` (commit `8bc5470567e1303f0f11b89cf33059e49d6d5e73`) to make resolution deterministic while preserving the scoring thresholds. The updated design uses deterministic query ordering, sorted source-player processing, a fixed snapshot of existing verified claims, provisional resolution first, and duplicate-target conflict handling.
-
-**Important:** the 17 second-wave candidates have NOT been applied.
+No live `player_match_stats` rows were changed by identity resolution. Identity invariants passed (provider-neutral canonical IDs; no automated name matching).
 
 ## Immediate next step
 
-1. Ensure the local checkout has the updated resolver (`git pull`) if running locally.
-2. Run `python3 scripts/resolve_understat_cross_source.py` twice in dry-run mode against the unchanged database.
-3. Confirm the two outputs are identical.
-4. Review any remaining high-confidence candidates/duplicate-target conflicts before another `--apply`.
-5. Only after identity resolution is stable should work proceed to a separately validated Understat enrichment/promotion step for `player_match_stats`.
+1. Run `python3 scripts/resolve_understat_cross_source.py` once more in dry-run mode.
+2. Review whether any additional high-confidence candidates appear now that the 17 have become fixed verified claims. Because existing claims can remove competing candidates, a later deterministic pass can legitimately surface further mappings.
+3. If additional candidates appear, review/apply only if the same strict evidence and zero-conflict conditions hold.
+4. When the resolver reaches a stable dry run with no further acceptable mappings, treat the remaining unresolved players as unresolved rather than forcing name-based matches.
+5. Only then proceed to a separately validated Understat enrichment/promotion step for `player_match_stats`.
 
 ## Other historical-source work
 
