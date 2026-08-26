@@ -45,7 +45,7 @@ function levenshtein(a:string,b:string){
  if(!b.length)return a.length;
  let prev=Array.from({length:b.length+1},(_,i)=>i);
  for(let i=1;i<=a.length;i++){
-  const cur=[i];
+  const cur:number[]=[i];
   for(let j=1;j<=b.length;j++)cur[j]=Math.min(cur[j-1]+1,prev[j]+1,prev[j-1]+(a[i-1]===b[j-1]?0:1));
   prev=cur;
  }
@@ -71,11 +71,11 @@ function nameSimilarity(rawA:string|null|undefined,rawB:string|null|undefined){
  const tokenScore=union?intersection/union:0;
  const shorter=compactA.length<=compactB.length?compactA:compactB;
  const longer=compactA.length>compactB.length?compactA:compactB;
- const contains=shorter.length>=4&&longer.includes(shorter)?.93:0;
+ const contains=shorter.length>=4&&longer.includes(shorter)?0.93:0;
  const lastA=ta.at(-1)||"",lastB=tb.at(-1)||"";
  const firstA=ta[0]||"",firstB=tb[0]||"";
- const surnameInitial=lastA.length>=3&&lastA===lastB&&firstA[0]&&firstA[0]===firstB[0]?.94:0;
- const surnameOnly=lastA.length>=4&&lastA===lastB?.83:0;
+ const surnameInitial=lastA.length>=3&&lastA===lastB&&Boolean(firstA[0])&&firstA[0]===firstB[0]?0.94:0;
+ const surnameOnly=lastA.length>=4&&lastA===lastB?0.83:0;
  return Math.max(charScore,sortedScore*.98,tokenScore*.92,contains,surnameInitial,surnameOnly);
 }
 
