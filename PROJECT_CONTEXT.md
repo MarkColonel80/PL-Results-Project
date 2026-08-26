@@ -135,15 +135,49 @@ Therefore **every Understat row whose player identity is verified is now represe
 
 The remaining 83 Understat source players are deliberately unresolved. Their staged rows stay staged and are not forced into canonical/live data.
 
+## Player identity name QA audit
+
+After completing the ID-based Transfermarkt/Understat matching, Mark requested a second-stage sanity check using names: names must remain **post-match QA only**, not automated identity evidence. Any source/FPL name that is materially different should be manually investigated.
+
+Supabase migration `add_player_identity_name_audit_view` created read-only view:
+
+- `public.player_identity_name_audit_v1`
+- compares verified `transfermarkt` and `understat` source names with the matched FPL name (latest FPL season) and canonical player name
+- includes source/canonical club and season context, source-name variants, mapping method, manual/source-native flags
+- exposes only audit-safe fields and grants read access to the app's `anon` / `authenticated` roles
+
+Current audit universe:
+
+- Transfermarkt verified mappings: **2,275**; mappings with an FPL name: **1,750**
+- Understat verified mappings: **1,816**; mappings with an FPL name: **1,538**
+- Total source mappings with an actual FPL name to compare: **3,288**
+
+Web review page:
+
+- route: **`/audit/player-names`**
+- file: `app/audit/player-names/page.tsx`
+- latest page commit: `e9911e6d6bc6783f7ac413b7abc02ec373262abd`
+- Vercel production deployment `dpl_4wxUxy3c2SkhuFRxhz1mAVjX1P35` built successfully with no build errors
+- production domain is protected by the project's existing Basic Auth; page is not linked from the main navigation and is intended as a QA tool
+
+Page behaviour:
+
+- Unicode/spacing/punctuation-normalised fuzzy comparison using edit distance + token-set/order + surname/initial/contained-name heuristics
+- `>=88%` = looks similar
+- `70–87%` = review
+- `<70%` = very different
+- default view is FPL-name mappings needing review, sorted worst similarity first
+- filters for provider, flag level, FPL-only vs canonical-only, plus text search
+- shows provider/FPL/canonical names, team/season context, mapping method and direct player-page link
+- low similarity is only a review flag; no identity mapping is automatically changed by this page
+
 ## Immediate next step
 
-The Understat 2014/15–2023/24 historical pipeline is now complete for all verified identities. Do not spend time forcing the remaining 83 unresolved players unless a future feature specifically requires them.
+Use `/audit/player-names` to review the lowest-similarity verified mappings. For any suspicious row, investigate the underlying stable-ID/match/team evidence before changing a mapping. If a name difference is simply a nickname, abbreviation, transliteration or formatting difference, leave the verified mapping unchanged.
 
-Next project work should move to the next data/product objective. Before doing so:
+Do not spend time forcing the remaining 83 unresolved Understat players unless a future feature specifically requires them.
 
-1. verify relevant player pages/site behaviour against the live Supabase data through Vercel when needed;
-2. keep `scripts/enrich_understat_advanced_metrics.sql`, `scripts/promote_understat_missing_verified_rows.sql`, and the identity reconciliation scripts as the repeat-safe historical-data repair toolkit;
-3. preserve the rule that automated player-name matching is prohibited, with individually reviewed `manual_name_verified` exceptions only when explicitly agreed.
+Keep `scripts/enrich_understat_advanced_metrics.sql`, `scripts/promote_understat_missing_verified_rows.sql`, and the identity reconciliation scripts as the repeat-safe historical-data repair toolkit.
 
 ## Other historical-source work
 
