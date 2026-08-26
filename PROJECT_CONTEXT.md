@@ -6,207 +6,280 @@ This file is the durable handoff/source of truth for continuing the project acro
 
 ## Global workflow preference
 
-This is a standing preference that applies beyond this specific project:
-
-- For software/data projects, prefer a three-system workflow of **GitHub for source code/version history, Supabase for database/backend data, and Vercel for deployment/production-site verification** when those services are suitable and connected.
-- At the **start of every new project**, create and maintain a `PROJECT_CONTEXT.md` file in the project GitHub repository.
-- `PROJECT_CONTEXT.md` is the durable cross-chat handoff/source of truth: architecture, connected services, important decisions, data checkpoints, safety rules, completed work, unresolved issues, and the exact next step.
-- Update this file after material code/data/schema/deployment/debugging milestones.
-- In a new project conversation, read this file first, then verify current GitHub/Supabase/Vercel state before making changes.
+- For software/data projects use **GitHub for source/version history, Supabase for database/backend, and Vercel for deployment/production verification** when appropriate.
+- ChatGPT should inspect and modify these connected systems directly rather than asking Mark to shuttle files/data around or use Codex.
+- Only ask Mark to run a local command when the connected execution environment genuinely cannot perform the action.
+- Keep this file updated after material code/data/schema/deployment milestones.
 
 ## Connected systems
 
-- **GitHub:** `MarkColonel80/PL-Results-Project`, default branch `main`. ChatGPT has direct read/write access and should normally make code changes itself rather than asking Mark to use Codex or manually edit files.
-- **Supabase:** project `PL Results Project`, ref `priibitbnmfetyblzltk`. ChatGPT has direct database access and should query live state itself whenever database facts matter.
-- **Vercel:** project `pl-results-project`, project id `prj_8OeSf0K7GBywgASSo5ojRUpYDg84`, team `Colly` / `team_AVL2QNde5NnMKvlgXcjw0hhf`. It is linked to the GitHub repository. ChatGPT can inspect deployments, logs and deployed-site state directly.
+- **GitHub:** `MarkColonel80/PL-Results-Project`, branch `main`.
+- **Supabase:** `PL Results Project`, ref `priibitbnmfetyblzltk`.
+- **Vercel:** project `pl-results-project`, id `prj_8OeSf0K7GBywgASSo5ojRUpYDg84`, team `Colly` / `team_AVL2QNde5NnMKvlgXcjw0hhf`.
+- Production domain: `https://pl-results-project.vercel.app` (protected by the project's existing Basic Auth).
 
-## Working style / responsibility
+## Player identity / historical data state
 
-- Treat **GitHub code + Supabase data + Vercel deployment** as one connected project.
-- Prefer direct inspection and changes through connected tools instead of asking Mark to copy files, use Codex, inspect dashboards, or relay database/site state.
-- Only ask Mark to run a local Mac command when the action genuinely requires his local checkout/runtime or credentials unavailable through the connected systems.
-- Before risky writes, inspect code/data first and prefer dry-run/audit stages.
-- Do not use automated player-name matching as canonical identity evidence unless explicitly agreed. Stable IDs and cross-source evidence are preferred.
-- Explicit, individually reviewed `manual_name_verified` exceptions are allowed when a player name is sufficiently unique and club/season/provider context makes the identity unambiguous.
+### Understat
 
-## Understat historical-data checkpoint — COMPLETE FOR ALL VERIFIED IDENTITIES
+Understat Premier League history 2014/15–2023/24 has been staged, identity-resolved and enriched.
 
-### Staging
-
-`stage_understat_history.py` successfully staged complete Premier League Understat history for 2014/15 through 2023/24.
-
-- 10 complete seasons
-- 3,800 / 3,800 fixtures mapped
-- 106,519 staged Understat player-match rows
-- 1,899 distinct Understat source players
-- no automated player-name matching used
-
-### Cross-source identity resolver
-
-The deterministic resolver `scripts/resolve_understat_cross_source.py` reached a stable endpoint after two apply waves (119 + 17):
-
-- Verified Understat mappings: **1,816**
-- Staged source players: **1,899**
-- Staged players without canonical `player_code`: **83**
-- Final dry run: **0** new high-confidence candidates
-- Duplicate-target conflicts: **0**
-- Ambiguous accepted candidates: **0**
-
-Resolver commit making the process deterministic: `8bc5470567e1303f0f11b89cf33059e49d6d5e73`.
-
-### Automated legacy source-native reconciliation
-
-An older process had created 213 Understat `source_native_identity` mappings on `plp:*` canonical identities. 77 continued past 2014/15; 74 of those had unique high-confidence established canonical identities under the conservative canonical-match/goals/minutes evidence.
-
-Versioned reconciliation: `scripts/reconcile_understat_source_native.sql` (commit `bec85af176a71330c6458e9f342316218f7bf4ee`).
-
-Executed successfully in Supabase:
-
-- reconciled players: **74**
-- common matches: min **4**, median **108**, max **306**
-- minimum two-sided match coverage: **97.6%**
-- worst accepted average minute difference: **1.69**
-- zero target conflicts / match collisions / season collisions / unexpected dependencies
-
-### Advanced Understat enrichment
-
-`player_match_stats` preserves the original/base football source for minutes, goals, assists, cards, etc., while Understat supplies advanced fields through the separate `advanced_source` provenance fields.
-
-Versioned repeat-safe enrichment: `scripts/enrich_understat_advanced_metrics.sql` (commit `4c336f5c8f2681d0d27d900d60874f578532aea8`).
-
-Initial enrichment after automated identity reconciliation added **23,313** advanced-metric rows on top of the already-enriched historical base. Exact staged/live audits showed zero xG/xA/shots/key-pass/xGChain/xGBuildup mismatches.
-
-### Missing cross-verified appearances
-
-A guarded promotion script was added as `scripts/promote_understat_missing_verified_rows.sql` (commit `6dc67a5f2791c2c54e42b403ce97a5c6d1ebbde1`). It promotes only missing Understat appearances whose identities are already verified and excludes `source_native_identity` mappings.
-
-It promoted **3** genuine source-gap rows safely.
-
-### Final three manual identity exceptions
-
-After the strict automated work, only three post-2014 legacy source-native identities remained. Mark explicitly agreed that these could be manually set if the names were unique enough, and each was individually reviewed against names, club/season history and provider evidence.
-
-Versioned transaction: `scripts/reconcile_understat_manual_three.sql` (commit `05561830b8f71bc18b9852ceac3f6de2e1bc083c`).
-
-Manual decisions:
-
-1. **Steven Pienaar** — Understat source player `924`
-   - old duplicate canonical: `plp:3eb1306793c8468ab41eb988b5e13afb`
-   - merged to established canonical: **`7525`**
-   - exact unique full name
-   - Everton -> Sunderland club/season continuity
-   - 2016/17 FPL comparison has the exact same 15-match set and zero goal mismatches
-
-2. **Juan Cuadrado** — Understat `1089` and Transfermarkt `91970`
-   - old duplicate canonicals: `plp:8f20bdb0d19c41868c3d9c27693ff2f0` and `plp:062a2582c48b472f9bd76a37e557bcb9`
-   - both merged to established canonical: **`66733`**
-   - exact unique full name
-   - continuous Chelsea identity: 2014/15 Understat -> 2015/16 Transfermarkt -> 2016/17 established canonical
-
-3. **Rushian Hepburn-Murphy** — Understat `1015`
-   - kept existing unique canonical: **`plp:60c49e5ec1254a21a99dc224483b85c7`**
-   - exact unique full name in `players`
-   - Aston Villa in 2014/15 and 2015/16
-   - Transfermarkt omitted the source-reported one-minute 2015/16 substitute appearance, so there was no competing identity to merge
-   - mapping marked `manual_name_verified`
-   - missing 2015/16 appearance promoted directly from Understat
-
-Preflight for the Pienaar/Cuadrado merges found zero `player_match_stats` collisions, zero `player_seasons` collisions and no unexpected dependent-table references.
-
-After these manual identities were unified, `scripts/enrich_understat_advanced_metrics.sql` was rerun and enriched the final **20** exact live matches.
-
-## Final Understat end-to-end audit
-
-Live Supabase audit after all reconciliation/promotion/enrichment:
-
-- staged Understat rows: **106,519**
-- staged Understat source players: **1,899**
-- verified Understat mappings: **1,816**
-- unresolved source players: **83**
+Final stable state:
+- staged rows: **106,519**
+- source players: **1,899**
+- verified mappings: **1,816**
+- unresolved source players: **83** (deliberately left unresolved)
 - mapped staged rows: **105,041**
-- mapped staged rows missing from live `player_match_stats`: **0**
-- mapped live rows not carrying `advanced_source='understat'`: **0**
-- advanced-metric mismatches against staging: **0**
-- remaining `source_native_identity` mappings: **136**
-- remaining source-native identities continuing after 2014/15: **0**
-- explicitly manual verified crosswalks: **4**
+- mapped rows missing live: **0**
+- mapped live rows missing Understat advanced metrics: **0**
+- advanced-metric mismatches: **0**
+- remaining `source_native_identity` mappings: **136**, all 2014/15-only
+- manual verified crosswalks: **4**
 
-Therefore **every Understat row whose player identity is verified is now represented in live player-match data and has exact Understat advanced metrics/provenance**.
+Important scripts/commits:
+- deterministic resolver: `scripts/resolve_understat_cross_source.py`, commit `8bc5470567e1303f0f11b89cf33059e49d6d5e73`
+- legacy reconciliation: `scripts/reconcile_understat_source_native.sql`, commit `bec85af176a71330c6458e9f342316218f7bf4ee`
+- advanced enrichment: `scripts/enrich_understat_advanced_metrics.sql`, commit `4c336f5c8f2681d0d27d900d60874f578532aea8`
+- missing verified rows: `scripts/promote_understat_missing_verified_rows.sql`, commit `6dc67a5f2791c2c54e42b403ce97a5c6d1ebbde1`
+- final manual reconciliation: `scripts/reconcile_understat_manual_three.sql`, commit `05561830b8f71bc18b9852ceac3f6de2e1bc083c`
 
-The remaining 83 Understat source players are deliberately unresolved. Their staged rows stay staged and are not forced into canonical/live data.
+Manual exceptions reviewed by Mark:
+- Steven Pienaar Understat `924` -> canonical `7525`
+- Juan Cuadrado Understat `1089` and Transfermarkt `91970` -> canonical `66733`
+- Rushian Hepburn-Murphy Understat `1015` kept unique canonical `plp:60c49e5ec1254a21a99dc224483b85c7`
 
-## Player identity name QA audit
+Identity rules remain:
+- automated player-name matching is prohibited as identity evidence;
+- stable IDs / match-history evidence are preferred;
+- individually reviewed `manual_name_verified` exceptions are allowed when explicitly agreed.
 
-After completing the ID-based Transfermarkt/Understat matching, Mark requested a second-stage sanity check using names: names must remain **post-match QA only**, not automated identity evidence. Any source/FPL name that is materially different should be manually investigated.
+## Player-name QA page
 
-Supabase migration `add_player_identity_name_audit_view` created read-only view:
+Route: **`/audit/player-names`**.
 
-- `public.player_identity_name_audit_v1`
-- compares verified `transfermarkt` and `understat` source names with the matched FPL name (latest FPL season) and canonical player name
-- includes source/canonical club and season context, source-name variants, mapping method, manual/source-native flags
-- exposes only audit-safe fields and grants read access to the app's `anon` / `authenticated` roles
+Purpose: names are used only as a post-match sanity audit of already-resolved identities.
 
 Current audit universe:
+- Transfermarkt verified mappings: **2,275**, with FPL name: **1,750**
+- Understat verified mappings: **1,816**, with FPL name: **1,538**
+- total mappings with an FPL name to compare: **3,288**
 
-- Transfermarkt verified mappings: **2,275**; mappings with an FPL name: **1,750**
-- Understat verified mappings: **1,816**; mappings with an FPL name: **1,538**
-- Total source mappings with an actual FPL name to compare: **3,288**
+Persistent approval table: `public.player_identity_name_audit_reviews`.
+- Mark can tick **Correct**.
+- approval persists in Supabase.
+- `approved_at` records exact approval date/time.
+- default page view hides approved rows, leaving the remaining investigation queue.
 
-Web review page:
+## Product/UI direction
 
-- route: **`/audit/player-names`**
-- file: `app/audit/player-names/page.tsx`
-- latest page commit: `a4a605ccd2a7afb144cc0036f40c895c25a73aa7`
-- Vercel production deployment `dpl_jncoU5VVsyT7TTPwenSDGqFg1hJ1` is READY; build completed successfully
-- production domain is protected by the project's existing Basic Auth; page is not linked from the main navigation and is intended as a QA tool
+Mark decided to prioritise making the existing data useful before paying for another provider such as Sportmonks.
 
-Page behaviour:
+### Player Insights
 
-- Unicode/spacing/punctuation-normalised fuzzy comparison using edit distance + token-set/order + surname/initial/contained-name heuristics
-- `>=88%` = looks similar
-- `70–87%` = review
-- `<70%` = very different
-- default similarity filter is FPL-name mappings needing review, sorted worst similarity first
-- filters for provider, flag level, FPL-only vs canonical-only, text search, and approval state
-- shows provider/FPL/canonical names, team/season context, mapping method and direct player-page link
-- low similarity is only a review flag; no identity mapping is automatically changed by this page
+Route: **`/insights`**.
 
-### Persistent manual QA approvals
+Purpose: decision-oriented player analysis rather than generic stat tables.
 
-Supabase migration `add_player_identity_name_audit_reviews` created `public.player_identity_name_audit_reviews` for persistent review state.
+Current modes:
+- underlying threat (xGI/90)
+- buy-low / underperformance signals
+- overperformance signals
+- FPL value (points per £m)
+- FPL points
 
-Each provider mapping can be ticked **Correct** on `/audit/player-names`. Stored fields include:
+Supports season/team/position/minimum-minutes filters and player drill-down.
 
-- provider/source
-- source player ID
-- canonical player code
-- approved yes/no
-- **`approved_at` timestamp recording the date/time Mark approved the mapping**
-- last-updated timestamp
+Supabase view: `public.player_decision_stats_v1`.
 
-Review-page behaviour:
+## Betting Lab — CURRENT PRODUCT MILESTONE
 
-- default approval filter is **Not yet approved**
-- ticking **Correct** saves immediately and records the current approval timestamp
-- once saved, the row disappears from the default pending list
-- **Approved** filter shows previously confirmed rows and their approval date/time
-- unchecking a row marks it not approved again; re-approving records a new current approval timestamp
-- Supabase review table had **0 approvals** immediately after deployment, before Mark began reviewing
+Mark wants the project to explore whether our data can find bookmaker mispricing for:
+- home/draw/away
+- goals markets
+- goalscorers
+- player-specific opponent effects
+- situations where two players historically perform differently when facing each other / appearing in opposing sides
 
-## Immediate next step
+Route: **`/betting`**.
+Main navigation now includes **Betting Lab**.
 
-Use `/audit/player-names` to work through the lowest-similarity verified mappings. Tick **Correct** where the source/FPL/canonical identity is clearly the same person. The remaining unticked rows become the investigation queue.
+Latest production navigation deployment:
+- Vercel deployment `dpl_9atpLiMwHjzpnQrf3DswtCxHnAMa`
+- state **READY**
+- commit `b64003f18b7667a62c45dd46ea03bd872a08427f`
 
-For any suspicious unticked row, investigate the underlying stable-ID/match/team evidence before changing a mapping. If a name difference is simply a nickname, abbreviation, transliteration or formatting difference, leave the verified mapping unchanged and mark it Correct.
+Betting page implementation commit:
+- `fd96be2670b7dc01caf7ddd3d73bb31c10c8ba4a`
 
-Do not spend time forcing the remaining 83 unresolved Understat players unless a future feature specifically requires them.
+### Betting Lab data views
 
-Keep `scripts/enrich_understat_advanced_metrics.sql`, `scripts/promote_understat_missing_verified_rows.sql`, and the identity reconciliation scripts as the repeat-safe historical-data repair toolkit.
+Versioned in `scripts/add_betting_lab_views.sql`.
+Latest commit after early-season roster fix:
+- `362325b29ff6ee5876fdd4b571c9dd064817cc0d`
+
+Supabase views:
+
+1. `public.betting_team_match_v1`
+   - team-level match xG aggregated from FPL player match xG
+   - continuous FPL-era coverage from 2016/17 onward
+   - home/away, opponent, xG for/against, actual goals/result
+   - 2025/26 audit: 760 team-match rows, 20 teams, no missing xG
+   - 2026/27 after GW1: 20 team-match rows, 20 teams, no missing xG
+
+2. `public.betting_player_goal_profile_v1`
+   - registered season roster from FPL rows, including current players with zero appearances
+   - actual appearance minutes/goals/xG
+   - xG/90
+   - recent-five average minutes and xG
+   - latest FPL price/ownership
+   - early-season fix deliberately separates registration from played-match form so unplayed current players are not omitted from scorer consideration
+
+### Match model
+
+Current model is deliberately transparent/research-oriented:
+- FPL match xG is the core team input
+- blends selected season with previous season
+- previous-season observations have lower recency weight
+- home/away attack and defence strengths are calculated separately
+- small samples shrink toward league home/away xG averages
+- independent Poisson score model produces:
+  - home/draw/away probabilities + fair odds
+  - expected goals
+  - most likely score
+  - Over 2.5 probability/fair odds
+  - BTTS probability/fair odds
+
+2026/27 future fixtures are not yet present in `matches`; the page therefore lets the user select any home/away pairing. Once future fixtures are loaded, this modelling layer can be reused without redesign.
+
+### Manual bookmaker comparison
+
+The Match Model accepts user-entered decimal H/D/A prices from any bookmaker.
+- calculates implied probabilities
+- removes 1X2 overround
+- compares no-vig market probabilities with our model
+- displays probability-point edge and our fair price
+
+This makes the page useful before an automated live odds API is purchased.
+
+### Goalscorer model
+
+Anytime goalscorer section currently uses:
+- blended current/previous-season xG/90
+- a modest recent-five xG component
+- expected minutes blended from recent appearances / prior history
+- matchup multiplier derived from team projected goals vs team baseline xG
+- Poisson `P(score >= 1)` to produce player goal probability and fair odds
+
+User can enter a bookmaker scorer price beside a player; page shows raw model EV. This is not margin-adjusted because a single scorer price does not reveal the full scorer-market overround.
+
+Current limitations explicitly shown in UI:
+- no explicit penalty-taker adjustment yet
+- no confirmed-lineup/injury adjustment yet
+
+### Opponent effects
+
+Player-v-team explorer uses canonical FPL player histories.
+For each opponent it displays:
+- matches
+- minutes
+- goals
+- xG
+- raw xG/90
+- sample-size-adjusted xG/90
+- opponent uplift/downturn versus the player's career baseline
+
+Small samples are shrunk toward career baseline so a couple of lucky games do not become a false “bogey team” signal.
+
+### Player-v-player comparison
+
+Current dataset does not contain true individual duel events.
+The Betting Lab therefore includes a deliberately labelled **shared-match comparison**, not a duel statistic:
+- finds fixtures where both selected players appeared for opposing sides
+- compares each player's goals and xG/90 in those shared matches
+
+Do not describe this as “player A beat player B”. True duel analysis would require event/duel data from another source later.
+
+### Leakage-safe back-test
+
+The Back-test tab rebuilds each historical prediction using only:
+- matches before that kickoff in the selected season
+- plus the previous season
+
+It reports:
+- sample size
+- top-pick 1X2 accuracy
+- multiclass Brier score
+- log loss
+- average probability assigned to the actual result
+- recent individual predictions
+
+This is deliberately pre-market. It validates calibration before claiming betting edge.
+
+## Historical bookmaker odds — schema ready, importer versioned, DATA NOT YET IMPORTED
+
+Football-Data.co.uk currently publishes free Premier League CSVs specifically for quantitative betting-system testing. Since 2019/20 the files include opening and closing sets of odds; older seasons have pre-closing odds, with some Pinnacle closing 1X2 history further back.
+
+Supabase table created:
+- `public.historical_market_odds`
+
+Schema file:
+- `scripts/add_historical_market_odds.sql`
+- commit `e2c0429f231bf7bcdb6a4172521dc81c622d7759`
+
+Fields include:
+- season/source/date/source teams
+- optional canonical `match_id`
+- opening average/max H/D/A
+- closing average/max H/D/A
+- opening/closing average Over/Under 2.5
+- raw source row JSON
+- source URL/import timestamp
+
+Importer:
+- `scripts/import_football_data_odds.py`
+- commit `3a89100cc928aee6ba6b650a612c8570efc0cd5e`
+
+Importer behaviour:
+- DRY RUN by default; `--apply` writes
+- downloads EPL `E0.csv` by season
+- supports 2016/17 onward by default
+- harmless team-name normalisation only
+- maps fixture identity by season + canonical home/away teams + exact date, with unique +/-1 day fallback
+- does not use player names
+- stores raw row as well as normalised odds fields
+- upserts repeat-safely into `historical_market_odds`
+
+Important execution note:
+- the current ChatGPT container session had no outbound DNS access to fetch the CSV, so the importer was **not executed** and `historical_market_odds` should currently be treated as empty until verified otherwise.
+- Do not claim historical market back-testing is complete yet.
+
+## Exact next steps
+
+1. **Run and audit `scripts/import_football_data_odds.py`** in an execution environment with outbound web access and Supabase credentials.
+2. Require near-complete canonical fixture mapping for each Premier League season before using odds in model evaluation.
+3. Build `model vs market` back-test using closing market probabilities first:
+   - strip 1X2 overround
+   - compare our probability vs no-vig market probability
+   - bucket by model edge (e.g. 0–2%, 2–5%, 5–10%, 10%+)
+   - report sample size, calibration, closing-line value and hypothetical flat-stake ROI
+   - never tune thresholds on the same sample without out-of-sample validation.
+4. Add opening-v-closing movement analysis after closing-price baseline is working.
+5. Add future fixture ingestion to `matches` so `/betting` can automatically show the upcoming slate rather than manual team selectors.
+6. Only after model/market back-testing shows useful signal should we consider paying for live bookmaker odds or richer event data (e.g. Sportmonks).
+
+## Betting-model safety / research rules
+
+- Treat outputs as statistical research signals, not guaranteed winners.
+- Avoid look-ahead leakage: every historical prediction must only use data available before kickoff.
+- Compare against no-vig market probabilities where possible rather than raw `1/odds` alone.
+- Keep model input provenance explicit.
+- Do not silently overwrite historical source data when improving models; version modelling changes.
+- When later evaluating ROI, include all qualifying bets from the declared rules rather than cherry-picking examples.
 
 ## Other historical-source work
 
-A Joseph CC0 historical dataset was audited separately. Its match data did not establish it as a stable player-identity source. No Supabase writes were made from that audit.
+A Joseph CC0 dataset was audited separately and did not establish itself as a useful stable player-identity source. No Supabase writes were made from that audit.
 
-## Continuation instruction for future ChatGPT chats
+## Continuation instruction
 
-When Mark says this is the **PL Results Project** or asks to continue the Premier League data app work, first read `PROJECT_CONTEXT.md`, then inspect the current GitHub commit and live Supabase/Vercel state as needed. Do not ask Mark to re-explain prior project history that can be recovered from these systems.
+When Mark asks to continue the **PL Results Project**, first read this file, then inspect current GitHub/Supabase/Vercel state. Do not ask Mark to re-explain project history that can be recovered from these systems.
