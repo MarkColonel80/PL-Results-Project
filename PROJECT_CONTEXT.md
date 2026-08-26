@@ -156,8 +156,8 @@ Web review page:
 
 - route: **`/audit/player-names`**
 - file: `app/audit/player-names/page.tsx`
-- latest page commit: `e9911e6d6bc6783f7ac413b7abc02ec373262abd`
-- Vercel production deployment `dpl_4wxUxy3c2SkhuFRxhz1mAVjX1P35` built successfully with no build errors
+- latest page commit: `a4a605ccd2a7afb144cc0036f40c895c25a73aa7`
+- Vercel production deployment `dpl_jncoU5VVsyT7TTPwenSDGqFg1hJ1` is READY; build completed successfully
 - production domain is protected by the project's existing Basic Auth; page is not linked from the main navigation and is intended as a QA tool
 
 Page behaviour:
@@ -166,14 +166,38 @@ Page behaviour:
 - `>=88%` = looks similar
 - `70–87%` = review
 - `<70%` = very different
-- default view is FPL-name mappings needing review, sorted worst similarity first
-- filters for provider, flag level, FPL-only vs canonical-only, plus text search
+- default similarity filter is FPL-name mappings needing review, sorted worst similarity first
+- filters for provider, flag level, FPL-only vs canonical-only, text search, and approval state
 - shows provider/FPL/canonical names, team/season context, mapping method and direct player-page link
 - low similarity is only a review flag; no identity mapping is automatically changed by this page
 
+### Persistent manual QA approvals
+
+Supabase migration `add_player_identity_name_audit_reviews` created `public.player_identity_name_audit_reviews` for persistent review state.
+
+Each provider mapping can be ticked **Correct** on `/audit/player-names`. Stored fields include:
+
+- provider/source
+- source player ID
+- canonical player code
+- approved yes/no
+- **`approved_at` timestamp recording the date/time Mark approved the mapping**
+- last-updated timestamp
+
+Review-page behaviour:
+
+- default approval filter is **Not yet approved**
+- ticking **Correct** saves immediately and records the current approval timestamp
+- once saved, the row disappears from the default pending list
+- **Approved** filter shows previously confirmed rows and their approval date/time
+- unchecking a row marks it not approved again; re-approving records a new current approval timestamp
+- Supabase review table had **0 approvals** immediately after deployment, before Mark began reviewing
+
 ## Immediate next step
 
-Use `/audit/player-names` to review the lowest-similarity verified mappings. For any suspicious row, investigate the underlying stable-ID/match/team evidence before changing a mapping. If a name difference is simply a nickname, abbreviation, transliteration or formatting difference, leave the verified mapping unchanged.
+Use `/audit/player-names` to work through the lowest-similarity verified mappings. Tick **Correct** where the source/FPL/canonical identity is clearly the same person. The remaining unticked rows become the investigation queue.
+
+For any suspicious unticked row, investigate the underlying stable-ID/match/team evidence before changing a mapping. If a name difference is simply a nickname, abbreviation, transliteration or formatting difference, leave the verified mapping unchanged and mark it Correct.
 
 Do not spend time forcing the remaining 83 unresolved Understat players unless a future feature specifically requires them.
 
