@@ -56,29 +56,35 @@ left join public.matches m
 grant select on public.betting_team_match_v1 to anon, authenticated;
 
 create or replace view public.betting_player_goal_profile_v1 as
-with played as (
+with latest as (
   select
     season,
     player_code,
-    player_name,
-    team_name,
-    position,
+    (array_agg(player_name order by kickoff_time desc,gameweek desc,fixture_id desc))[1] as player_name,
+    (array_agg(team_name order by kickoff_time desc,gameweek desc,fixture_id desc))[1] as team_name,
+    (array_agg(position order by kickoff_time desc,gameweek desc,fixture_id desc))[1] as position,
+    (array_agg(value order by kickoff_time desc,gameweek desc,fixture_id desc))[1]::integer as latest_value,
+    (array_agg(selected order by kickoff_time desc,gameweek desc,fixture_id desc))[1]::bigint as latest_selected
+  from public.fpl_player_match_stats
+  where player_code is not null
+  group by season,player_code
+), played as (
+  select
+    season,
+    player_code,
     kickoff_time,
+    gameweek,
+    fixture_id,
     minutes,
     goals_scored,
     expected_goals,
-    value,
-    selected,
     row_number() over(partition by season,player_code order by kickoff_time desc,gameweek desc,fixture_id desc) as recent_rank
   from public.fpl_player_match_stats
   where player_code is not null and minutes > 0
-), agg as (
+), stats as (
   select
     season,
     player_code,
-    (array_agg(player_name order by kickoff_time desc))[1] as player_name,
-    (array_agg(team_name order by kickoff_time desc))[1] as team_name,
-    (array_agg(position order by kickoff_time desc))[1] as position,
     count(*)::integer as appearances,
     sum(minutes)::integer as minutes,
     sum(coalesce(goals_scored,0))::integer as goals,
@@ -87,12 +93,28 @@ with played as (
     avg(minutes) filter(where recent_rank<=5)::numeric as recent5_avg_minutes,
     sum(minutes) filter(where recent_rank<=5)::integer as recent5_minutes,
     sum(coalesce(expected_goals,0)) filter(where recent_rank<=5)::numeric as recent5_xg,
-    count(*) filter(where recent_rank<=5)::integer as recent5_apps,
-    (array_agg(value order by kickoff_time desc))[1]::integer as latest_value,
-    (array_agg(selected order by kickoff_time desc))[1]::bigint as latest_selected
+    count(*) filter(where recent_rank<=5)::integer as recent5_apps
   from played
   group by season,player_code
 )
-select * from agg;
+select
+  l.season,
+  l.player_code,
+  l.player_name,
+  l.team_name,
+  l.position,
+  coalesce(s.appearances,0)::integer as appearances,
+  coalesce(s.minutes,0)::integer as minutes,
+  coalesce(s.goals,0)::integer as goals,
+  coalesce(s.xg,0)::numeric as xg,
+  s.xg_per90,
+  s.recent5_avg_minutes,
+  coalesce(s.recent5_minutes,0)::integer as recent5_minutes,
+  coalesce(s.recent5_xg,0)::numeric as recent5_xg,
+  coalesce(s.recent5_apps,0)::integer as recent5_apps,
+  l.latest_value,
+  l.latest_selected
+from latest l
+left join stats s using(season,player_code);
 
 grant select on public.betting_player_goal_profile_v1 to anon, authenticated;
