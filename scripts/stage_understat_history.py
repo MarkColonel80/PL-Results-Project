@@ -5,19 +5,21 @@ Source dataset:
   https://www.kaggle.com/datasets/codytipton/player-stats-per-game-understat
 
 The public Kaggle dataset contains Understat provider IDs and match-level player
-statistics from 2014/15 through 2024/25. This importer deliberately DOES NOT use
-names to establish player identity.
+statistics from 2014/15 onward. The 2024/25 snapshot in this dataset is partial,
+so the default audited range ends at 2023/24. This importer deliberately DOES
+NOT use names to establish player identity.
 
 What this script does:
 - downloads/caches the public Kaggle ZIP (or reuses a manually downloaded ZIP)
 - maps Understat fixtures to canonical Premier League fixtures by exact
-  season/date/teams/score
-- learns Understat team IDs only from those exact fixture matches
-- requires every requested season to have all expected fixtures mapped and every
-  fixture to have at least 20 player rows
+  teams/score and exact date, with a conservative unique +/-1 day fallback for
+  known source date-normalisation drift
+- learns Understat team IDs only from verified fixture matches
+- requires a season to have all expected fixtures mapped and every fixture to
+  have at least 20 player rows before that season is staged
 - stages player rows in source_player_match_stats with provider-native IDs and
   advanced fields (xG/xA/shots/key passes/xGChain/xGBuildup)
-- writes verified match/team source-ID crosswalks
+- writes verified match/team source-ID crosswalks for passing seasons
 - DOES NOT create player crosswalks and DOES NOT write player_match_stats
 
 Player identity is resolved later from provider IDs + match-history fingerprints.
@@ -25,6 +27,7 @@ Names are display metadata only.
 
 Usage:
   python3 scripts/stage_understat_history.py
+  python3 scripts/stage_understat_history.py --from 2014-15 --to 2023-24
   python3 scripts/stage_understat_history.py --from 2014-15 --to 2024-25
 
 Requires SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY.
@@ -40,6 +43,7 @@ import urllib.error
 import urllib.request
 import zipfile
 from collections import defaultdict
+from datetime import date as Date
 
 from supabase import create_client
 
@@ -51,17 +55,19 @@ KAGGLE_DOWNLOAD = "https://www.kaggle.com/api/v1/datasets/download/codytipton/pl
 CACHE = pathlib.Path(__file__).resolve().parents[1] / ".cache" / "understat_kaggle"
 ZIP_PATH = CACHE / "player-stats-per-game-understat.zip"
 PART_PATH = CACHE / "player-stats-per-game-understat.zip.part"
-UA = "PL-Results-Project understat-history/1.0"
+UA = "PL-Results-Project understat-history/1.1"
 CHUNK = 1024 * 1024
 RETRIES = 8
 
-# Understat uses shortened club labels in some seasons. Team-name normalisation is
-# permitted for fixture identity; player names are never used for identity.
+# Team-name normalisation is permitted for fixture identity; player names are
+# never used for identity.
 core.TEAM_ALIASES.update({
     "Bournemouth": "AFC Bournemouth",
     "Brighton": "Brighton & Hove Albion",
     "Huddersfield": "Huddersfield Town",
     "Hull": "Hull City",
+    "Ipswich": "Ipswich Town",
+    "Leeds": "Leeds United",
     "Leicester": "Leicester City",
     "Manchester United": "Manchester United",
     "Manchester City": "Manchester City",
@@ -97,7 +103,9 @@ def season_year(v):
 
 
 def parse_args():
-    start, end = 2014, 2024
+    # 2024/25 in this particular public snapshot is partial; audit it only when
+    # explicitly requested.
+    start, end = 2014, 2023
     args = os.sys.argv[1:]
     i = 0
     while i < len(args):
@@ -195,6 +203,13 @@ def batches(rows, n=500):
         yield rows[i:i+n]
 
 
+def date_distance_days(a, b):
+    try:
+        return abs((Date.fromisoformat(a) - Date.fromisoformat(b)).days)
+    except (TypeError, ValueError):
+        return 9999
+
+
 def main():
     start_year, end_year = parse_args()
     target_years = set(range(start_year, end_year + 1))
@@ -206,8 +221,10 @@ def main():
         raise SystemExit("Set SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY first.")
     sb = create_client(url, key)
 
-    # Canonical fixture universe.
+    # Canonical fixture universe. Keep both the exact key and a teams+score
+    # candidate index for the conservative unique +/-1 day date fallback.
     canonical_key = {}
+    canonical_candidates = defaultdict(list)
     expected_games = {}
     for season in sorted(target_seasons):
         rows = core.paged(
@@ -217,13 +234,16 @@ def main():
         )
         expected_games[season] = len(rows)
         for c in rows:
-            k = (
-                season, str(c.get("match_date")), c.get("home_team"), c.get("away_team"),
-                core.I(c.get("home_score")), core.I(c.get("away_score")),
-            )
+            cdate = str(c.get("match_date"))
+            home = c.get("home_team")
+            away = c.get("away_team")
+            hs = core.I(c.get("home_score"))
+            aas = core.I(c.get("away_score"))
+            k = (season, cdate, home, away, hs, aas)
             if k in canonical_key:
                 raise RuntimeError(f"Duplicate canonical fixture key: {k}")
             canonical_key[k] = c["canonical_match_id"]
+            canonical_candidates[(season, home, away, hs, aas)].append((cdate, c["canonical_match_id"]))
 
     zpath = ensure_zip()
     with zipfile.ZipFile(zpath) as zf:
@@ -232,12 +252,12 @@ def main():
         print(f"Using {games_member}")
         print(f"Using {lineup_member}")
 
-        # Exact source-match mapping. Team IDs are learned only after an exact fixture match.
         source_games = {}
         match_maps = []
         team_maps = {}
         source_counts = defaultdict(int)
         mapped_counts = defaultdict(int)
+        tolerant_counts = defaultdict(int)
         unresolved = defaultdict(list)
 
         for g in iter_member_rows(zf, games_member):
@@ -250,14 +270,27 @@ def main():
                 continue
             home = core.canon_team(g.get("team_h") or g.get("h_team"))
             away = core.canon_team(g.get("team_a") or g.get("a_team"))
-            date = str(g.get("date") or "")[:10]
+            src_date = str(g.get("date") or "")[:10]
             hs = core.I(g.get("h_goals"))
             aas = core.I(g.get("a_goals"))
             hid = sid(g.get("h_id"))
             aid = sid(g.get("a_id"))
             source_counts[season] += 1
-            ck = (season, date, home, away, hs, aas)
+
+            ck = (season, src_date, home, away, hs, aas)
             mid = canonical_key.get(ck)
+            method = "date_teams_score_verified"
+
+            if not mid:
+                candidates = [
+                    (cdate, cmid) for cdate, cmid in canonical_candidates.get((season, home, away, hs, aas), [])
+                    if date_distance_days(src_date, cdate) <= 1
+                ]
+                if len(candidates) == 1:
+                    _, mid = candidates[0]
+                    method = "teams_score_unique_date_within_1d_verified"
+                    tolerant_counts[season] += 1
+
             source_games[gid] = {
                 "season": season, "match_id": mid,
                 "home_team": home, "away_team": away,
@@ -266,10 +299,11 @@ def main():
             if not mid:
                 unresolved[season].append(ck)
                 continue
+
             mapped_counts[season] += 1
             match_maps.append({
                 "source": SOURCE, "source_match_id": gid, "canonical_match_id": mid,
-                "season": season, "mapping_method": "date_teams_score_verified", "verified": True,
+                "season": season, "mapping_method": method, "verified": True,
             })
             for stid, name in ((hid, home), (aid, away)):
                 if not stid or not name:
@@ -279,10 +313,8 @@ def main():
                     raise RuntimeError(f"Understat team ID {stid} maps inconsistently: {old} vs {name}")
                 team_maps[stid] = name
 
-        # Scan lineups once; retain only requested EPL matches.
         staged = []
         per_game_rows = defaultdict(int)
-        players = set()
         duplicate_keys = set()
         seen = set()
         for r in iter_member_rows(zf, lineup_member):
@@ -311,7 +343,6 @@ def main():
             mins = core.I(r.get("time"), 0) or 0
             is_start = bool(mins > 0 and str(pos or "").strip().lower() not in {"sub", "substitute", "subs"})
             per_game_rows[gid] += 1
-            players.add(pid)
             staged.append({
                 "source": SOURCE,
                 "source_match_id": gid,
@@ -342,11 +373,11 @@ def main():
                 "source_url": KAGGLE_PAGE,
             })
 
-        # Completeness gate: no writes unless all requested seasons pass.
-        bad = []
         print("\nUnderstat Premier League completeness gate")
-        print("Season   expected  source  mapped  games>=20  min rows  player rows  players  status")
-        print("-------  --------  ------  ------  ---------  --------  -----------  -------  ------")
+        print("Season   expected  source  mapped  games>=20  min rows  player rows  players  date+/-1  status")
+        print("-------  --------  ------  ------  ---------  --------  -----------  -------  --------  ------")
+        good = []
+        bad = []
         for season in sorted(target_seasons):
             gids = [gid for gid, gm in source_games.items() if gm["season"] == season]
             expected = expected_games.get(season, 0)
@@ -357,29 +388,49 @@ def main():
             season_rows = [r for r in staged if r["season"] == season]
             season_players = len({r["source_player_id"] for r in season_rows})
             ok = expected > 0 and source_counts[season] == expected and mapped == expected and ge20 == expected
-            if not ok:
-                bad.append(season)
-            print(f"{season:<7}  {expected:>8}  {source_counts[season]:>6}  {mapped:>6}  {ge20:>9}  {min_rows:>8}  {len(season_rows):>11}  {season_players:>7}  {'OK' if ok else 'STOP'}")
+            (good if ok else bad).append(season)
+            print(
+                f"{season:<7}  {expected:>8}  {source_counts[season]:>6}  {mapped:>6}  "
+                f"{ge20:>9}  {min_rows:>8}  {len(season_rows):>11}  {season_players:>7}  "
+                f"{tolerant_counts[season]:>8}  {'OK' if ok else 'SKIP'}"
+            )
             if unresolved.get(season):
                 print(f"  unresolved fixtures: {unresolved[season][:3]}" + (" ..." if len(unresolved[season]) > 3 else ""))
 
         if duplicate_keys:
             raise RuntimeError(f"Duplicate Understat player-match keys found: {len(duplicate_keys)}")
+        if not good:
+            raise SystemExit("No complete seasons passed the Understat staging gate.")
         if bad:
-            raise SystemExit("Refusing to stage because completeness failed: " + ", ".join(bad))
+            print("\nSkipping incomplete/unmapped seasons: " + ", ".join(bad))
 
-        # Writes begin only after the complete audit passes.
-        for b in batches(list(team_maps.items())):
+        # Only complete seasons are persisted. A bad season can therefore never
+        # leak partial player rows into staging.
+        good_set = set(good)
+        match_maps = [m for m in match_maps if m["season"] in good_set]
+        staged = [r for r in staged if r["season"] in good_set]
+        good_match_ids = {m["source_match_id"] for m in match_maps}
+
+        # Team IDs are global provider identities. Restrict persisted team maps to
+        # IDs actually used by passing-season source matches.
+        used_team_ids = set()
+        for gid in good_match_ids:
+            gm = source_games.get(gid) or {}
+            if gm.get("home_team_id"):
+                used_team_ids.add(gm["home_team_id"])
+            if gm.get("away_team_id"):
+                used_team_ids.add(gm["away_team_id"])
+
+        for b in batches([(stid, team_maps[stid]) for stid in sorted(used_team_ids) if stid in team_maps]):
             rows = [{
                 "source": SOURCE, "source_team_id": stid, "team_name": name,
-                "mapping_method": "exact_fixture_verified", "verified": True,
-                "source_note": "Learned from exact season/date/teams/score Premier League fixture mapping",
+                "mapping_method": "verified_fixture_identity", "verified": True,
+                "source_note": "Learned from exact teams/score fixture mapping; date exact or unique within one day",
             } for stid, name in b]
             sb.table("team_source_ids").upsert(rows, on_conflict="source,source_team_id").execute()
         for b in batches(match_maps):
             sb.table("match_source_ids").upsert(b, on_conflict="source,source_match_id").execute()
 
-        # Preserve any verified player mapping from an earlier run.
         existing = {}
         for r in core.paged(sb, "player_source_ids", "source_player_id,player_code,verified", {"source": SOURCE}):
             if r.get("verified"):
@@ -393,8 +444,10 @@ def main():
             if n % 20 == 0 or n * 500 >= len(staged):
                 print(f"  staged {min(n*500, len(staged))}/{len(staged)} player-match rows")
 
+    players = {r["source_player_id"] for r in staged}
     mapped_players = len({r["source_player_id"] for r in staged if r.get("player_code")})
-    print(f"\nStaged {len(staged)} Understat player-match rows across {len(target_seasons)} seasons.")
+    print(f"\nStaged {len(staged)} Understat player-match rows across {len(good)} complete seasons.")
+    print("Complete seasons staged: " + ", ".join(good))
     print(f"Source players: {len(players)}; already verified to canonical identity: {mapped_players}.")
     print("No live player_match_stats rows were changed. No player name matching was used.")
 
