@@ -43,51 +43,71 @@ This is a standing preference that applies beyond this specific project:
 
 ### Identity resolution
 
-`resolve_understat_cross_source.py` initially found:
+`resolve_understat_cross_source.py` initially found 1,680 existing verified mappings plus 119 new high-confidence candidates. The 119 were applied successfully.
 
-- Existing verified Understat mappings: 1,680
-- New high-confidence candidates: 119
-- Minimum two-sided match coverage: 100%
-- Candidate common games: min 4, median 101, max 274
-- Worst accepted average minute difference: 1.94
-- Ambiguous after composite uniqueness: 0
+A second dry run surfaced 17 more candidates and exposed an order-dependence problem in the resolver. ChatGPT fixed the resolver directly in GitHub (commit `8bc5470567e1303f0f11b89cf33059e49d6d5e73`) by making pagination/iteration deterministic, holding existing claims fixed during scoring, and resolving duplicate-target conflicts after provisional scoring. Evidence thresholds were not weakened.
 
-Those **119 mappings were applied** successfully, bringing verified mappings to 1,799.
+Two consecutive dry runs of the fixed resolver were identical and returned 17 final high-confidence candidates with zero duplicate-target conflicts and zero ambiguity. Those 17 were applied successfully.
 
-A second dry run then surfaced 17 more candidates, which exposed a determinism issue in the resolver: paginated Supabase reads had no explicit ordering and provisional mappings greedily claimed canonical targets during iteration.
+The next dry run then reached the stable endpoint:
 
-ChatGPT updated `scripts/resolve_understat_cross_source.py` directly in GitHub on `main` (commit `8bc5470567e1303f0f11b89cf33059e49d6d5e73`) to make resolution deterministic while preserving all evidence thresholds. The updated design uses deterministic query ordering, sorted source-player processing, a fixed snapshot of existing verified claims, provisional resolution first, and duplicate-target conflict handling.
+- Existing verified Understat mappings: **1,816**
+- Provisional high-confidence candidates: **0**
+- Duplicate-target conflicts: **0 targets / 0 source players**
+- New high-confidence candidates: **0**
+- Unresolved with fewer than 3 overlap appearances: **50**
+- Ambiguous after composite uniqueness: **0**
 
-Two consecutive dry runs of the fixed resolver were identical:
-
-- Existing verified mappings: 1,799
-- Provisional high-confidence candidates: 17
-- Duplicate-target conflicts: 0 targets / 0 source players
-- Final new high-confidence candidates: 17
-- Unresolved with fewer than 3 overlap appearances: 50
-- Ambiguous after composite uniqueness: 0
-- Candidate common games: min 8, median 66, max 264
-- Minimum two-sided match coverage: 100%
-- Worst accepted average minute difference: 2.00
-
-Those **17 mappings were then applied successfully**.
-
-Live Supabase state verified after the apply:
+Live Supabase state at this point:
 
 - Verified Understat mappings: **1,816**
 - Staged rows: **106,519**
 - Staged source players: **1,899**
 - Staged players without canonical `player_code`: **83**
 
-No live `player_match_stats` rows were changed by identity resolution. Identity invariants passed (provider-neutral canonical IDs; no automated name matching).
+No live `player_match_stats` rows were changed by the resolver. Identity invariants passed.
+
+### Legacy source-native identity issue discovered before promotion
+
+Before promoting/enriching more Understat rows, ChatGPT audited the live canonical overlap and found an older identity convention that must be reconciled first.
+
+There are **213** verified Understat mappings with `mapping_method = source_native_identity`. These are `plp:*` canonical identities created before the later cross-source identity base was available.
+
+- 136 of those players only appear in 2014/15 and can legitimately remain source-native.
+- 77 continue into 2015/16 or later.
+- **74 of those 77 now have exactly one high-confidence established canonical identity** under the same strict match-history/goals/minutes evidence rules.
+- The 74 have **zero target conflicts** with another Understat source player.
+- The 74 have **zero `player_match_stats` row collisions** when re-keying the existing 2014/15 Understat rows.
+- The 74 have **zero `player_seasons` collisions**.
+- Dependency audit found old-code references only in the expected tables: 74 `players`, 74 `player_seasons`, 74 `player_source_ids`, 1,990 `player_match_stats`, and 11,720 `source_player_match_stats`. No old-code references were found in FPL match stats, goals, lineups, ratings, provider IDs, source events, or source-player mappings.
+
+This legacy identity split explains much of the apparent mismatch between staged Understat rows and the Transfermarkt-backed live rows in later seasons. Do **not** promote missing Understat rows until these 74 legacy duplicate identities are reconciled.
+
+ChatGPT added a versioned transactional reconciliation script to GitHub:
+
+- `scripts/reconcile_understat_source_native.sql`
+- GitHub commit: `bec85af176a71330c6458e9f342316218f7bf4ee`
+
+The SQL recomputes the evidence, enforces conflict/collision/dependency safety gates, re-keys staging/live 2014/15 rows and season membership to the established canonical identity, updates the Understat crosswalk method/note, removes the now-unreferenced duplicate `plp:*` canonical player rows, and runs inside a single transaction.
+
+**Important: this reconciliation SQL has NOT yet been executed against Supabase.**
 
 ## Immediate next step
 
-1. Run `python3 scripts/resolve_understat_cross_source.py` once more in dry-run mode.
-2. Review whether any additional high-confidence candidates appear now that the 17 have become fixed verified claims. Because existing claims can remove competing candidates, a later deterministic pass can legitimately surface further mappings.
-3. If additional candidates appear, review/apply only if the same strict evidence and zero-conflict conditions hold.
-4. When the resolver reaches a stable dry run with no further acceptable mappings, treat the remaining unresolved players as unresolved rather than forcing name-based matches.
-5. Only then proceed to a separately validated Understat enrichment/promotion step for `player_match_stats`.
+1. Execute/review `scripts/reconcile_understat_source_native.sql` against Supabase as a single transaction.
+2. Verify that it reconciles the expected **74** legacy identities and that the transaction safety checks all pass.
+3. Re-run the Understat resolver afterwards; it should still return zero new high-confidence candidates.
+4. Re-audit `(match_id, player_code)` overlap between mapped Understat staging rows and `player_match_stats`.
+5. Only after the canonical identity split is fixed should Understat advanced metrics be enriched/promoted further. Preserve existing base football-source provenance (e.g. Transfermarkt/rich-core); Understat should supply advanced xG/xA/shots/key-pass/xGChain/xGBuildup provenance where identities align, not blindly replace richer base rows.
+
+## Current live Understat advanced-metric state
+
+The live database already has Understat advanced metrics on many canonical rows:
+
+- 2014/15 is currently populated directly from Understat and has `advanced_source = understat` on all 10,428 live rows.
+- 2015/16 through 2023/24 are primarily Transfermarkt-backed base rows; many already have `advanced_source = understat`, while some do not.
+
+Therefore the next enrichment step must be an **incremental reconciliation/enrichment**, not a wholesale Understat replacement import.
 
 ## Other historical-source work
 
