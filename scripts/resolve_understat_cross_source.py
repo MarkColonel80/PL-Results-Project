@@ -14,6 +14,10 @@ Evidence rules learned from the Transfermarkt reconciliation:
 - provider IDs live in player_source_ids, never in players.player_code
 - do not invent a new canonical player merely because a provider player is unresolved
 
+Resolution is deterministic: paged database reads have explicit ordering, unresolved
+source players are evaluated against a fixed snapshot of already-verified claims, and
+new provisional winners are de-conflicted only after every source player is scored.
+
 The resolver is DRY-RUN by default. Use --apply only after reviewing the staged
 Understat completeness report and this resolver's candidate summary.
 
@@ -54,13 +58,16 @@ def I(v, default=0):
         return default
 
 
-def paged(sb, table, columns, eq=None):
+def paged(sb, table, columns, eq=None, order_by=None):
+    """Read a table deterministically when using range/offset pagination."""
     out = []
     start = 0
     while True:
         q = sb.table(table).select(columns)
         for k, v in (eq or {}).items():
             q = q.eq(k, v)
+        for column in order_by or ():
+            q = q.order(column)
         rows = q.range(start, start + PAGE - 1).execute().data or []
         out.extend(rows)
         if len(rows) < PAGE:
@@ -146,23 +153,32 @@ def main():
     assert_identity_invariants(sb)
 
     staged = paged(
-        sb, "source_player_match_stats",
+        sb,
+        "source_player_match_stats",
         "source,source_match_id,source_player_id,season,match_id,player_code,minutes_played,goals,data_quality",
         {"source": SOURCE},
+        order_by=("source_player_id", "match_id", "source_match_id"),
     )
     staged = [r for r in staged if r.get("source_player_id") and r.get("match_id")]
     if not staged:
         raise SystemExit("No staged Understat player-match rows found. Run stage_understat_history.py first.")
 
     existing = paged(
-        sb, "player_source_ids",
+        sb,
+        "player_source_ids",
         "source,source_player_id,player_code,mapping_method,verified",
         {"source": SOURCE},
+        order_by=("source_player_id",),
     )
     existing_map = {
         str(r["source_player_id"]): str(r["player_code"])
-        for r in existing if r.get("verified") and r.get("source_player_id") and r.get("player_code")
+        for r in existing
+        if r.get("verified") and r.get("source_player_id") and r.get("player_code")
     }
+
+    # Existing verified mappings form the fixed set of canonical targets that are
+    # unavailable to other Understat source players. Newly proposed mappings do not
+    # mutate this snapshot while candidates are being scored.
     claimed_targets = {code: pid for pid, code in existing_map.items()}
 
     by_source = defaultdict(list)
@@ -175,11 +191,17 @@ def main():
     base = []
     for season in staged_seasons:
         rows = paged(
-            sb, "player_match_stats",
+            sb,
+            "player_match_stats",
             "season,match_id,player_code,minutes_played,goals,source",
             {"season": season},
+            order_by=("player_code", "match_id"),
         )
-        base.extend(r for r in rows if r.get("player_code") and r.get("match_id") and r.get("source") != SOURCE)
+        base.extend(
+            r
+            for r in rows
+            if r.get("player_code") and r.get("match_id") and r.get("source") != SOURCE
+        )
 
     base_by_match = defaultdict(list)
     base_by_player_season = defaultdict(list)
@@ -188,29 +210,33 @@ def main():
         base_by_match[r["match_id"]].append(code)
         base_by_player_season[(code, r["season"])].append(r)
 
-    resolved = {}
-    audit = []
+    provisional = {}
     ambiguous = 0
     too_little_overlap = 0
 
-    for pid, all_rows in by_source.items():
+    # Evaluate every unresolved source player independently against the same fixed
+    # snapshot of existing verified claims. Sorting makes the calculation reproducible.
+    for pid in sorted(by_source):
         if pid in existing_map:
             continue
+
+        all_rows = by_source[pid]
         source_rows = [r for r in all_rows if season_start(r.get("season")) >= 2015]
         if len(source_rows) < MIN_COMMON:
             too_little_overlap += 1
             continue
 
-        seasons = {r["season"] for r in source_rows}
+        seasons = sorted({r["season"] for r in source_rows})
         candidate_codes = set()
         for r in source_rows:
             candidate_codes.update(base_by_match.get(r["match_id"], ()))
 
         ranked = []
-        for code in candidate_codes:
+        for code in sorted(candidate_codes):
             owner = claimed_targets.get(code)
             if owner and owner != pid:
                 continue
+
             candidate_rows = []
             for season in seasons:
                 candidate_rows.extend(base_by_player_season.get((code, season), ()))
@@ -224,6 +250,7 @@ def main():
                 item[1]["goal_mismatches"],
                 item[1]["avg_min_diff"],
                 -min(item[1]["source_coverage"], item[1]["candidate_coverage"]),
+                item[0],
             )
         )
         if not ranked:
@@ -233,17 +260,36 @@ def main():
             continue
 
         code, score = ranked[0]
-        if code in claimed_targets and claimed_targets[code] != pid:
-            ambiguous += 1
+        provisional[pid] = (code, score)
+
+    # Enforce one-to-one uniqueness globally, after all source players have been scored.
+    # If multiple unresolved Understat IDs independently choose the same canonical target,
+    # none of them is safe to automate in this pass.
+    by_target = defaultdict(list)
+    for pid, (code, score) in provisional.items():
+        by_target[code].append((pid, score))
+
+    conflict_targets = {code: rows for code, rows in by_target.items() if len(rows) > 1}
+    conflict_source_players = sum(len(rows) for rows in conflict_targets.values())
+
+    resolved = {}
+    audit = []
+    for code in sorted(by_target):
+        proposals = by_target[code]
+        if len(proposals) != 1:
             continue
+        pid, score = proposals[0]
         resolved[pid] = code
-        claimed_targets[code] = pid
         audit.append((pid, code, score))
+
+    audit.sort(key=lambda item: (item[0], item[1]))
 
     print("Understat cross-source resolver")
     print(f"Staged rows: {len(staged):,}")
     print(f"Staged source players: {len(by_source):,}")
     print(f"Existing verified Understat mappings: {len(existing_map):,}")
+    print(f"Provisional high-confidence candidates: {len(provisional):,}")
+    print(f"Duplicate-target conflicts: {len(conflict_targets):,} targets / {conflict_source_players:,} source players")
     print(f"New high-confidence candidates: {len(resolved):,}")
     print(f"Unresolved with <{MIN_COMMON} overlap appearances: {too_little_overlap:,}")
     print(f"Ambiguous after composite uniqueness: {ambiguous:,}")
@@ -251,16 +297,23 @@ def main():
         common = [x[2]["common"] for x in audit]
         overlaps = [min(x[2]["source_coverage"], x[2]["candidate_coverage"]) for x in audit]
         avgdiff = [x[2]["avg_min_diff"] for x in audit]
-        print(f"Candidate common games: min {min(common)}, median {sorted(common)[len(common)//2]}, max {max(common)}")
+        print(
+            f"Candidate common games: min {min(common)}, "
+            f"median {sorted(common)[len(common)//2]}, max {max(common)}"
+        )
         print(f"Minimum two-sided match coverage: {min(overlaps)*100:.1f}%")
         print(f"Worst accepted average minute difference: {max(avgdiff):.2f}")
 
     if not apply:
-        print("DRY RUN ONLY: no player crosswalks or staged rows changed. Review this output, then rerun with --apply.")
+        print(
+            "DRY RUN ONLY: no player crosswalks or staged rows changed. "
+            "Review this output, then rerun with --apply."
+        )
         return
 
     mapping_rows = []
-    for pid, code in resolved.items():
+    for pid in sorted(resolved):
+        code = resolved[pid]
         mapping_rows.append({
             "source": SOURCE,
             "source_player_id": pid,
@@ -272,15 +325,20 @@ def main():
                 "goals near-exact; provider-tolerant minute pattern; cards excluded; one-to-one unique."
             ),
         })
+
     for i in range(0, len(mapping_rows), 500):
         sb.table("player_source_ids").upsert(
-            mapping_rows[i:i+500], on_conflict="source,source_player_id"
+            mapping_rows[i:i + 500], on_conflict="source,source_player_id"
         ).execute()
 
-    for pid, code in resolved.items():
+    for pid in sorted(resolved):
+        code = resolved[pid]
         (
             sb.table("source_player_match_stats")
-            .update({"player_code": code, "data_quality": "source_reported_verified_cross_source_identity"})
+            .update({
+                "player_code": code,
+                "data_quality": "source_reported_verified_cross_source_identity",
+            })
             .eq("source", SOURCE)
             .eq("source_player_id", pid)
             .execute()
