@@ -1,7 +1,9 @@
 -- Betting Model v2 — FROZEN 2025/26 holdout evaluation
 -- Frozen before inspecting 2025/26 bookmaker performance.
 -- Development/tuning sample: 2019/20 through 2023/24 only.
--- 2024/25 is allowed as pre-holdout football history but has no xG and is never coerced to zero.
+-- 2024/25 is allowed as pre-holdout football history and now uses complete FPL expected-goals data
+-- as a fallback because canonical player_match_stats for that season are Transfermarkt-only and contain no xG.
+-- Missing xG is never coerced to zero.
 --
 -- Frozen specification:
 --   * 30-match team attack/defence history
@@ -12,18 +14,20 @@
 --   * damped multiplicative attack x opponent-defence strength, exponent 0.75
 --   * independent Poisson score grid, no Dixon-Coles correction
 --
--- Holdout result (380 matches, 2025/26):
---   Model v2 Brier 0.61905, log loss 1.03208, top-pick accuracy 49.5%
+-- Corrected holdout result after restoring 2024/25 FPL xG (380 matches, 2025/26):
+--   Model v2 Brier 0.61964, log loss 1.03309, top-pick accuracy 49.5%
 --   No-vig closing market Brier 0.60774, log loss 1.01177, top-pick accuracy 49.5%
 --   Model v1 reference: Brier 0.6245, log loss 1.0400
 --
 -- Strongest model-v-market edge per match, flat £1 stake at Football-Data closing prices:
---   0–2%:   18 bets,  -6.7% avg-close ROI,  -2.6% best-close ROI
---   2–5%:  125 bets, +19.9% avg-close ROI, +25.5% best-close ROI
---   5–10%: 161 bets, -27.8% avg-close ROI, -23.8% best-close ROI
---   10%+:   76 bets, -14.7% avg-close ROI,  -8.3% best-close ROI
+--   0–2%:   24 bets,  -9.3% avg-close ROI,  -4.0% best-close ROI
+--   2–5%:   99 bets, +23.4% avg-close ROI, +29.0% best-close ROI
+--   5–10%: 167 bets, -23.2% avg-close ROI, -19.0% best-close ROI
+--   10%+:   90 bets, -18.4% avg-close ROI, -12.0% best-close ROI
 --
--- The 2–5% bucket is an observed holdout result, NOT a parameter to tune against this season.
+-- The earlier 0.61905 holdout result is superseded because the v2 feature view omitted available
+-- 2024/25 FPL xG. The model specification itself was not retuned after seeing the holdout.
+-- The 2–5% bucket remains an observed holdout result, NOT a parameter to tune against this season.
 -- It must be validated on additional untouched seasons before being treated as a betting signal.
 
 with paired as (
