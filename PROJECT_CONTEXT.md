@@ -4,6 +4,16 @@ _Last updated: 2026-08-26_
 
 This file is the durable handoff/source of truth for continuing the project across ChatGPT conversations. At the start of a new project chat, read this file first, then verify live state in GitHub/Supabase/Vercel before making changes.
 
+## Global workflow preference
+
+This is a standing preference that applies beyond this specific project:
+
+- For software/data projects, prefer a three-system workflow of **GitHub for source code/version history, Supabase for database/backend data, and Vercel for deployment/production-site verification** when those services are suitable and connected.
+- At the **start of every new project**, create and maintain a `PROJECT_CONTEXT.md` file in the project GitHub repository.
+- `PROJECT_CONTEXT.md` should be the durable cross-chat handoff/source of truth: record architecture, connected services, important decisions, data state/checkpoints, safety rules, completed work, unresolved issues, and the exact next step.
+- Update `PROJECT_CONTEXT.md` whenever a material project milestone, decision, schema/data change, deployment change, or debugging discovery occurs, so a fresh ChatGPT conversation can continue without Mark re-explaining the project.
+- In a new project conversation, read `PROJECT_CONTEXT.md` first, then verify the current live state in GitHub/Supabase/Vercel before making changes.
+
 ## Connected systems
 
 - **GitHub:** `MarkColonel80/PL-Results-Project`, default branch `main`. ChatGPT has direct read/write access and should normally make code changes itself rather than asking Mark to use Codex or manually edit files.
