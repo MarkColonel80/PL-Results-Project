@@ -55,7 +55,7 @@ At k=0.35 over 1,143 development matches:
 
 ### xG model
 
-Adjusted xGF/xGA create independent attack/defence ratios against the rolling league xG baseline. The home and away lambdas use a multiplicative attack × opposition-defence structure with damping `d`.
+Adjusted xGF/xGA create independent attack/defence ratios against the rolling league scoring baseline. The home and away lambdas use a multiplicative attack × opposition-defence structure with damping `d`.
 
 Tested d values: 0.50, 0.60, 0.70, 0.80, 0.90, 1.00.
 
@@ -67,51 +67,59 @@ At d=0.80 over 1,143 development matches:
 
 Both models use independent Poisson score grids to derive Home/Draw/Away probabilities.
 
-## Agreement-only test
+## Corrected cached evaluation
 
-Across 2019/20–2025/26 after the per-season 15-match cutoff, simply betting every fixture where the PPG and xG models selected the same 1X2 result produced:
+The v5 inputs and independent PPG/xG probabilities are now persisted in Supabase so repeated threshold analysis does not rebuild rolling features and Poisson grids.
 
-| Season | Bets | Hit rate | ROI @ avg close |
+An initial cache attempt incorrectly divided `league_home_goals` and `league_away_goals` by `league_matches` even though those fields were already per-match averages. That output was discarded. The cache was corrected and all probabilities regenerated before the results below.
+
+The corrected historical input layer also calculates the 5/10/15 PPG and xG windows **within each season**, rather than carrying prior-season matches into the 15-game test. Odds are mapped by exact season + canonical home/away team pairing.
+
+## Minimum edge from BOTH independent models
+
+For an agreed selection, `minimum edge` means the smaller of:
+
+- PPG model probability minus closing no-vig market probability; and
+- xG model probability minus closing no-vig market probability.
+
+So a 2pp threshold means **both** independent models must rate the same selection at least 2 percentage points above the bookmaker market.
+
+Across 2019/20–2025/26:
+
+| Minimum edge required from both | Bets | Hit rate | ROI @ avg close |
 |---|---:|---:|---:|
-| 2019/20 | 188 | 53.2% | -7.9% |
-| 2020/21 | 174 | 53.4% | -6.6% |
-| 2021/22 | 184 | 62.0% | +5.6% |
-| 2022/23 | 173 | 56.6% | -1.9% |
-| 2023/24 | 180 | 59.4% | -3.0% |
-| 2024/25 | 205 | 57.1% | +2.4% |
-| 2025/26 | 180 | 50.6% | -9.1% |
-| **TOTAL** | **1,284** | **56.1%** | **-2.8%** |
+| >= 0pp | 342 | 44.2% | **+5.7%** |
+| >= 1pp | 304 | 43.4% | **+6.4%** |
+| >= 2pp | 275 | 42.5% | **+6.4%** |
+| >= 3pp | 250 | 41.2% | **+5.3%** |
+| >= 4pp | 223 | 40.4% | **+4.9%** |
+| >= 5pp | 196 | 38.8% | **+3.1%** |
+| >= 7.5pp | 132 | 32.6% | **-7.2%** |
+| >= 10pp | 91 | 27.5% | **-13.9%** |
 
-No draw was the top-probability result for both models in this implementation; agreement selections were 856 home and 428 away.
+The 1–2pp range gives the best aggregate ROI, but the relationship is not monotonic: large dual-model edges become materially worse, consistent with earlier v3 findings that very large disagreement with the market is often a warning rather than stronger confidence.
 
-Interpretation: agreement alone improves directional confidence but is not sufficient to create value.
+## Season stability
 
-## Agreement + both models independently beat market probability
+Season-level ROI at selected thresholds:
 
-A stricter betting rule was then tested:
+| Season | >=0pp | >=1pp | >=2pp | >=3pp | >=5pp |
+|---|---:|---:|---:|---:|---:|
+| 2019/20 | -2.2% | -2.3% | -7.3% | -5.1% | -18.4% |
+| 2020/21 | +14.4% | +14.6% | +19.6% | +12.5% | +9.3% |
+| 2021/22 | +35.9% | +33.4% | +32.9% | +34.6% | +36.8% |
+| 2022/23 | +16.0% | +13.8% | +12.1% | +17.0% | +32.7% |
+| 2023/24 | **-46.1%** | **-61.2%** | **-65.4%** | **-72.4%** | **-73.8%** |
+| 2024/25 | +21.1% | +24.6% | +25.1% | +24.2% | +23.3% |
+| 2025/26 | -10.6% | -4.8% | +0.4% | -0.4% | -17.2% |
 
-1. PPG and xG models must choose the same 1X2 result.
-2. The PPG probability for that result must exceed the Football-Data closing no-vig market probability.
-3. The xG probability for that result must independently exceed the same market probability.
-
-Results at average Football-Data closing prices:
-
-| Season | Bets | Hit rate | ROI @ avg close | Avg minimum model edge |
-|---|---:|---:|---:|---:|
-| 2019/20 | 61 | 37.7% | -15.0% | 8.2pp |
-| 2020/21 | 47 | 40.4% | +1.7% | 7.9pp |
-| 2021/22 | 43 | 55.8% | +29.3% | 5.8pp |
-| 2022/23 | 55 | 45.5% | -0.4% | 7.5pp |
-| 2023/24 | 59 | 42.4% | -11.0% | 6.9pp |
-| 2024/25 | 71 | 50.7% | +16.7% | 5.8pp |
-| 2025/26 | 49 | 38.8% | -8.5% | 5.6pp |
-| **TOTAL** | **385** | **44.4%** | **+1.4%** | **6.8pp** |
+The main instability is 2023/24, which is catastrophically negative at every threshold and gets worse as the required dual-model edge rises. This needs diagnosis before any threshold is promoted as a betting rule.
 
 ## Current interpretation
 
-- Separating PPG and xG is useful diagnostically: xG is the stronger probability model, while PPG provides independent confirmation.
-- Simple model agreement is not enough; it lost 2.8% at average closing prices.
-- Requiring both models independently to see value against the no-vig closing market improves the seven-season aggregate to +1.4%, but results remain unstable by season.
-- This is therefore an experiment/filter, not a validated betting system.
-- Large apparent edges should still be treated cautiously; the average minimum edge in this filtered set is 6.8pp, yet several seasons remain negative.
-- Future work should study disagreement/confirmation strength, price range, favourite/underdog status, and whether requiring a modest minimum edge in both models improves stability without tuning to a single season.
+- Separating PPG and xG remains useful: xG is the stronger probability model while PPG provides independent confirmation.
+- Requiring both models to choose the same side and independently beat the market produces a positive seven-season aggregate in the corrected cache.
+- The best aggregate range is around a modest **1–2 percentage-point minimum edge from both models**, not large edges.
+- Do **not** choose 1% or 2% as a production betting threshold yet. Results are too season-dependent, especially because 2023/24 is extremely poor.
+- Very large dual-model disagreement is again harmful: 7.5%+ and 10%+ minimum edges lose materially.
+- The next priority is to explain 2023/24 by outcome type, odds range, teams and whether PPG/xG agreement systematically backed long-priced underdogs or missed a league/regime change.
