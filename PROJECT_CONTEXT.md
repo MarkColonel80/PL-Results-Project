@@ -163,6 +163,8 @@ Current rule under test:
 - Only when the PPG gap is close does adjusted venue xG8 act as the tie-break/result signal.
 - Promoted/returning sides without eight matches in the current PL spell are labelled limited history rather than using stale prior-spell venue data.
 
+A separate **overall PPG30 diagnostic** is now displayed for each team. It is calculated from up to the last 30 completed Premier League matches in the team’s current PL spell, with the sample count shown explicitly. It is display-only: it does not currently alter the venue PPG decision, adjusted xG, expected goals, probabilities, fair odds or manual pick. This was added after Liverpool v Nottingham Forest showed an ~18-point model/market home-win disagreement. For that fixture the diagnostic is Liverpool 1.533 PPG30 versus Forest 1.300 PPG30. GitHub SQL: `scripts/add_weekend_ppg30_diagnostic.sql`.
+
 Reason for the cap: a freak flattering scoreline should not dominate an eight-match sample. Nottingham Forest's last eight PL away matches were the immediate example: raw actual GF8 was 2.375 and raw xGF8 1.282; after capping only match-level overperformance beyond xG + 1.0, capped actual GF8 is 1.899 and adjusted xGF8 becomes about 1.590 instead of about 1.829 under the old uncapped 50/50 rule. Bournemouth exposed why the earlier symmetric ±1.0 implementation was wrong for this purpose: it increased actual GF when the team underperformed xG. Under the corrected one-sided rule Bournemouth's actual GF8 and capped actual GF8 are both 1.625.
 
 Historical top-pick test quoted before the new cap was introduced, on 2,342 matches with complete venue8 histories:
@@ -180,9 +182,9 @@ Supabase tables/views:
 - `public.betting_manual_weekend_capped_actuals` — current one-sided +1.0 rule
 - `public.betting_manual_weekend_snapshot`
 
-The current snapshot stores `goal_xg_residual_cap`, `home_vgf8_capped`, `home_vga8_capped`, `away_vgf8_capped`, and `away_vga8_capped`. GitHub migrations: `scripts/update_weekend_adjusted_xg_cap.sql` (superseded symmetric rule) and `scripts/make_weekend_goal_xg_cap_one_sided.sql` (current rule).
+The current snapshot stores `goal_xg_residual_cap`, `home_vgf8_capped`, `home_vga8_capped`, `away_vgf8_capped`, `away_vga8_capped`, plus diagnostic `home_n30`, `away_n30`, `home_ppg30`, and `away_ppg30`. GitHub migrations: `scripts/update_weekend_adjusted_xg_cap.sql` (superseded symmetric rule), `scripts/make_weekend_goal_xg_cap_one_sided.sql` (current cap rule), and `scripts/add_weekend_ppg30_diagnostic.sql` (display-only PPG30 diagnostic).
 
-The 2026/27 Matchweek-2 weekend snapshot includes all ten fixtures from 28–31 Aug 2026. 1X2 prices were captured from the Oddschecker UK coupon on 28 Aug 2026 and are displayed with no-vig implied probabilities. The page shows venue PPG, raw actual GF/GA, capped actual GF/GA, raw xGF/xGA, adjusted xGF/xGA, adjusted match expected goals and probabilities, market odds/probabilities, and the manual rule decision.
+The 2026/27 Matchweek-2 weekend snapshot includes all ten fixtures from 28–31 Aug 2026. 1X2 prices were captured from the Oddschecker UK coupon on 28 Aug 2026 and are displayed with no-vig implied probabilities. The page shows venue PPG, overall PPG30 diagnostic/sample, raw actual GF/GA, capped actual GF/GA, raw xGF/xGA, adjusted xGF/xGA, adjusted match expected goals and probabilities, market odds/probabilities, and the manual rule decision.
 
 ## 2025/26 diagnosis
 
@@ -205,10 +207,11 @@ Reusable research function exists in Supabase: `public.betting_elo_eval(...)`.
 2. Keep v6 as the transparent all-metrics probability research model.
 3. Use residual-aware xG30 rather than raw xG30 in the 10% long-xG family for current v6 research.
 4. In the manual weekend diagnostic, cap only actual-goal overperformance beyond xG + 1.0 before the 50/50 actual/xG blend; never increase actual goals because of xG underperformance. Keep venue PPG and adjusted venue xG separate.
-5. Back-test the one-sided +1.0 capped rule against the old uncapped adjusted-xG rule before treating it as historically validated.
-6. Do not choose weights from ROI; fit probabilities using Brier/log loss, then evaluate betting edge separately.
-7. Investigate match-level disagreements with the bookmaker to identify genuinely missing football context rather than fitting shock results.
-8. Do not hard-code bookmaker agreement into the predictive model merely to make historical ROI look better.
+5. Show overall current-spell PPG30 as a diagnostic only; do not feed it into the weekend probabilities or picks until separately tested.
+6. Back-test the one-sided +1.0 capped rule against the old uncapped adjusted-xG rule before treating it as historically validated.
+7. Do not choose weights from ROI; fit probabilities using Brier/log loss, then evaluate betting edge separately.
+8. Investigate match-level disagreements with the bookmaker to identify genuinely missing football context rather than fitting shock results.
+9. Do not hard-code bookmaker agreement into the predictive model merely to make historical ROI look better.
 
 ## Betting research rules
 
