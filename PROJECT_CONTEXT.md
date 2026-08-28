@@ -41,18 +41,9 @@ Identity policy:
 
 ### Historical bookmaker odds
 
-`public.historical_market_odds` now contains full Football-Data Premier League odds for:
-- 2019/20
-- 2020/21
-- 2021/22
-- 2022/23
-- 2023/24
-- 2024/25
-- 2025/26
+`public.historical_market_odds` contains full Football-Data Premier League odds for 2019/20 through 2025/26, plus completed 2026/27 matches already imported.
 
-plus completed 2026/27 matches already imported.
-
-Closing no-vig 1X2 market Brier/log-loss benchmarks by full season:
+Closing no-vig 1X2 market Brier/log-loss benchmarks:
 - 2019/20: 0.60561 / 1.00871
 - 2020/21: 0.61851 / 1.02967
 - 2021/22: 0.53384 / 0.90077
@@ -63,22 +54,12 @@ Closing no-vig 1X2 market Brier/log-loss benchmarks by full season:
 
 ### xG coverage correction
 
-2024/25 does have complete xG via `fpl_player_match_stats`. `betting_team_match_v2` was corrected to fall back to FPL team-level xG when canonical player-match xG is absent. Any earlier statement that 2024/25 lacked xG is superseded.
+2024/25 has complete xG via `fpl_player_match_stats`. `betting_team_match_v2` falls back to FPL team-level xG where canonical player-match xG is absent. Any earlier statement that 2024/25 lacked xG is superseded.
 
 ## Model v3 — validated baseline
 
 Detailed spec: `BETTING_MODEL_V3.md`.
 Historical results: `BETTING_MODEL_V3_7_SEASON_RESULTS.md`.
-
-Key ideas:
-- precomputed 30-match attack/defence strength
-- 65% xG / 35% goals where xG coverage is complete, xG weight scales with coverage
-- shrinkage to rolling league average
-- league home/away scoring baselines
-- damped multiplicative attack x opposition-defence structure
-- recent PPG10 adjustment
-- independent Poisson 1X2 probabilities
-- promoted/returning team betting gate
 
 Predictions are cached in `public.betting_model_match_predictions` with `model_version='v3'` for 2,660 matches across 2019/20–2025/26.
 
@@ -86,26 +67,13 @@ v3 top-pick accuracy over all seven seasons: 53.4% versus bookmaker favourite 55
 
 v3 remains the validated baseline and has not been replaced.
 
-## Model v5 — PPG/xG independent agreement experiment
+## Model v5 — PPG/xG agreement experiment
 
 Detailed checkpoint: `BETTING_MODEL_V5_PPG_XG_AGREEMENT_EXPERIMENT.md`.
 
-Concept:
-- PPG and xG are separate probability models
-- both use adaptive 15/10/5 and venue adjustments
-- only consider a side when both models agree
-- historical inputs/probabilities are cached in Supabase
-
-The apparent aggregate betting edge was unstable by season, especially 2023/24. Investigation showed many failures were aggressive outsider/away picks against strong home priors.
-
-Important diagnostic finding:
-- short venue5 was too volatile
-- longer venue windows helped explain failures
-- Mark prefers a shorter venue window than 15 if possible
+Main lesson: short venue5 was too volatile; stronger venue context helped, but outsider/away reversals remained unstable. Mark prefers a shorter venue window than 15 if possible.
 
 ## Venue8 metrics — permanent database layer
-
-Added 2026-08-28.
 
 Supabase:
 - `public.team_form_window8_cache`
@@ -117,11 +85,9 @@ Stored metrics:
 - `vxgf8`
 - `vxga8`
 
-Existing venue5/10/15 metrics remain available for comparison.
-
 GitHub SQL: `scripts/add_team_form_window8_cache.sql`.
 
-Venue8 testing showed it is a useful compromise: substantially more stable than venue5 without requiring a 15-match venue history. Venue xG8 has been particularly useful in subsequent model fitting.
+Venue xG8 has been one of the strongest useful additions in subsequent model fitting.
 
 ## Model v6 — composite probability experiment
 
@@ -130,47 +96,59 @@ Detailed checkpoint: `BETTING_MODEL_V6_COMPOSITE_EXPERIMENT.md`.
 Supabase component cache:
 - `public.betting_model_v6_components`
 
-It stores independent Home/Draw/Away probability triples from:
-- PPG5/10/15/30
-- xG5/10/15/30 attack/defence
-- venue PPG8
-- venue xG8 attack/defence
+It stores independent H/D/A probabilities from PPG5/10/15/30, xG5/10/15/30, venue PPG8 and venue xG8. Existing v3 probabilities are used as a separate structural/opponent-adjusted component.
 
-The existing v3 probability is used as a separate structural/opponent-adjusted component.
-
-### Main fitting result
-
-Unrestricted fixed-weight searches strongly prefer longer histories:
-- PPG30 dominates shorter PPG windows
-- xG30 dominates, with a small xG10 contribution
-- venue xG8 is one of the strongest additional components
-- venue PPG8 is useful context but noisy as a large unconditional fixed weight
-
-### Current every-family v6 candidate
-
-To honour the aim of using all metric families, the current experimental constrained blend is:
-- 10% long PPG = PPG30
-- 10% recent PPG = 50% PPG15 + 30% PPG10 + 20% PPG5
-- 10% long xG = xG30
-- 10% recent xG = 50% xG15 + 30% xG10 + 20% xG5
+Current every-family research blend before residual adjustment:
+- 10% PPG30
+- 10% recent PPG = 50/30/20 of PPG15/10/5
+- 10% xG30
+- 10% recent xG = 50/30/20 of xG15/10/5
 - 10% venue PPG8
 - 30% venue xG8
 - 20% v3 structural/opponent-adjusted probability
 
-Development 2019/20–2024/25:
-- average Brier 0.58268
-- average log loss 0.98094
-- season Brier SD 0.00788
-- worst development-season Brier 0.59512
-
-Untouched 2025/26 holdout:
+Original untouched 2025/26 result:
 - Brier 0.63180
 - log loss 1.04965
 - top-pick accuracy 48.5%
 
-Therefore v6 is **experimental only** and must not replace v3 yet.
+v6 remains experimental only and must not replace v3 yet.
 
-### 2025/26 diagnosis
+### Finishing / defensive xG residual layer — permanent research component
+
+Added after match-level diagnosis showed that some teams, notably Crystal Palace in 2025/26 examples, persistently converted below xG.
+
+Supabase:
+- `public.betting_team_residual_features_v6`
+- `public.betting_model_v6_residual_xg_component`
+
+GitHub SQL:
+- `scripts/add_betting_residual_features_v6.sql`
+
+Stored leakage-safe metrics:
+- Goals minus xG over 10/20/30 prior matches
+- Goals Against minus xGA over 10/20/30 prior matches
+
+Testing showed the 30-match residual is more stable than 10/20-match residuals. The chosen research rule trusts at most 25% of the 30-match residual, shrunk for shorter histories as `0.25 * min(1, n30/30)`.
+
+Development xG30 test on 1,771 full-history matches:
+- no residual: Brier 0.61555 / log loss 1.02616
+- 25% residual: 0.61502 / 1.02542
+
+2025/26 full-30-history subset (295 matches):
+- no residual: 0.63152 / 1.04815
+- 25% residual: 0.62999 / 1.04594
+
+On the full 334-match 2025/26 v6 sample, residual-aware xG30 improves raw xG30 Brier from 0.63834 to 0.63648.
+
+Replacing the 10% long-xG family in the every-family composite with residual-aware xG gives:
+- Brier 0.63174
+- log loss 1.04954
+- top-pick accuracy 48.8%
+
+This is a small but clean improvement and is retained. It does not solve the wider 2025/26 instability alone.
+
+## 2025/26 diagnosis
 
 All internal metric families deteriorate in 2025/26, not just one weight. The composite also underpredicts draws:
 - actual H/D/A on eligible sample: 41.0 / 28.1 / 30.8%
@@ -178,21 +156,22 @@ All internal metric families deteriorate in 2025/26, not just one weight. The co
 
 Do not tune directly to 2025/26 just to remove this miss.
 
-Additional structural tests:
-- Elo-style team rating: did not solve holdout instability
-- rolling league H/D/A regime correction: development preferred no correction
-- global draw multiplier: marginal development change but worsened holdout
+Additional rejected structural tests:
+- Elo-style team rating
+- rolling league H/D/A regime correction
+- global draw multiplier
 
-Reusable research function currently exists in Supabase: `public.betting_elo_eval(...)`.
+Reusable research function exists in Supabase: `public.betting_elo_eval(...)`.
 
 ## Current modelling direction
 
 1. Keep v3 as baseline.
 2. Keep v6 as the transparent all-metrics probability research model.
-3. Do not choose weights from ROI; fit probabilities using Brier/log loss, then evaluate betting edge separately.
-4. Treat 2025/26 as an untouched diagnostic/holdout when testing new structures.
-5. Investigate structural features that may generalise across changing league regimes rather than adding more fixed short-form weight.
-6. Do not hard-code bookmaker agreement into the predictive model merely to make historical ROI look better.
+3. Use residual-aware xG30 rather than raw xG30 in the 10% long-xG family for current v6 research.
+4. Do not choose weights from ROI; fit probabilities using Brier/log loss, then evaluate betting edge separately.
+5. Treat 2025/26 as an untouched diagnostic/holdout when testing new structures.
+6. Investigate match-level disagreements with the bookmaker to identify genuinely missing football context rather than fitting shock results.
+7. Do not hard-code bookmaker agreement into the predictive model merely to make historical ROI look better.
 
 ## Betting research rules
 
