@@ -1,0 +1,43 @@
+"use client";
+
+import {useEffect,useMemo,useState} from "react";
+import Link from "next/link";
+import {supabase} from "../../../lib/supabase";
+
+type Snapshot={home_n8:number|null;away_n8:number|null;home_vppg8:number|null;away_vppg8:number|null;home_vgf8:number|null;home_vga8:number|null;home_vxgf8:number|null;home_vxga8:number|null;away_vgf8:number|null;away_vga8:number|null;away_vxgf8:number|null;away_vxga8:number|null;league_home_goals:number;league_away_goals:number;league_home_xg:number;league_away_xg:number;calculated_at:string};
+type Fixture={fixture_id:number;kickoff_time:string;home_team:string;away_team:string;market_home_odds:number|null;market_draw_odds:number|null;market_away_odds:number|null;market_source:string|null;market_snapshot_at:string|null;notes:string|null;betting_manual_weekend_snapshot:Snapshot|null};
+
+const N=(v:number|null|undefined)=>v==null?null:Number(v);
+const fmt=(v:number|null|undefined,d=2)=>v==null||!Number.isFinite(Number(v))?"—":Number(v).toFixed(d);
+const pct=(v:number|null|undefined)=>v==null?"—":`${(v*100).toFixed(1)}%`;
+const clamp=(v:number,min:number,max:number)=>Math.max(min,Math.min(max,v));
+function poisson(lambda:number,max=8){const a=[Math.exp(-lambda)];for(let i=1;i<=max;i++)a[i]=a[i-1]*lambda/i;return a}
+function probs(hl:number,al:number){const hp=poisson(hl),ap=poisson(al);let h=0,d=0,a=0;for(let i=0;i<hp.length;i++)for(let j=0;j<ap.length;j++){const p=hp[i]*ap[j];if(i>j)h+=p;else if(i===j)d+=p;else a+=p}const t=h+d+a;return{h:h/t,d:d/t,a:a/t}}
+function market(h:number|null,d:number|null,a:number|null){if(!h||!d||!a)return null;const x=1/h,y=1/d,z=1/a,t=x+y+z;return{h:x/t,d:y/t,a:z/t}}
+function outcome(p:{h:number;d:number;a:number}){return p.h>=p.d&&p.h>=p.a?"Home":p.d>=p.a?"Draw":"Away"}
+function dayTime(v:string){return new Intl.DateTimeFormat("en-GB",{weekday:"short",day:"numeric",month:"short",hour:"2-digit",minute:"2-digit",timeZone:"Europe/London"}).format(new Date(v))}
+
+export default function WeekendVenueReview(){
+ const[rows,setRows]=useState<Fixture[]>([]),[loading,setLoading]=useState(true),[error,setError]=useState("");
+ useEffect(()=>{(async()=>{const{data,error}=await supabase.from("betting_manual_fixtures").select("fixture_id,kickoff_time,home_team,away_team,market_home_odds,market_draw_odds,market_away_odds,market_source,market_snapshot_at,notes,betting_manual_weekend_snapshot(*)").order("kickoff_time");if(error)setError(error.message);else setRows((data||[]) as unknown as Fixture[]);setLoading(false)})()},[]);
+ const cards=useMemo(()=>rows.map(f=>{const s=f.betting_manual_weekend_snapshot;const m=market(N(f.market_home_odds),N(f.market_draw_odds),N(f.market_away_odds));if(!s)return{f,s:null,m,calc:null};const full=s.home_n8===8&&s.away_n8===8;const ahf=s.home_vxgf8!=null&&s.home_vgf8!=null?(Number(s.home_vxgf8)+Number(s.home_vgf8))/2:null;const aha=s.home_vxga8!=null&&s.home_vga8!=null?(Number(s.home_vxga8)+Number(s.home_vga8))/2:null;const aaf=s.away_vxgf8!=null&&s.away_vgf8!=null?(Number(s.away_vxgf8)+Number(s.away_vgf8))/2:null;const aaa=s.away_vxga8!=null&&s.away_vga8!=null?(Number(s.away_vxga8)+Number(s.away_vga8))/2:null;let p=null,hl=null,al=null;if(ahf!=null&&aha!=null&&aaf!=null&&aaa!=null){hl=clamp(Number(s.league_home_goals)*Math.pow((ahf/Number(s.league_home_xg))*(aaa/Number(s.league_home_xg)),.8),.15,4.5);al=clamp(Number(s.league_away_goals)*Math.pow((aaf/Number(s.league_away_xg))*(aha/Number(s.league_away_xg)),.8),.15,4.5);p=probs(hl,al)}const gap=s.home_vppg8!=null&&s.away_vppg8!=null?Math.abs(Number(s.home_vppg8)-Number(s.away_vppg8)):null;const close=full&&gap!=null&&gap<=.30;const decision=!full?"Limited PL venue history":close&&p?`${outcome(p)} — adjusted venue xG tie-break`:(Number(s.home_vppg8)>Number(s.away_vppg8)?"Home — venue PPG":"Away — venue PPG");return{f,s,m,calc:{ahf,aha,aaf,aaa,hl,al,p,gap,close,decision}}}),[rows]);
+ if(loading)return <p>Loading weekend review…</p>;
+ if(error)return <section className="card"><b>Could not load weekend review</b><div className="negative">{error}</div></section>;
+ return <>
+  <div className="hero"><div><h1>Weekend venue review</h1><div className="muted">Manual early-season check: venue PPG8 decides unless the venue PPG gap is ≤ 0.30. Only then does adjusted venue xG8 break the tie.</div></div><Link href="/betting">← Betting Lab</Link></div>
+  <section className="card"><b>Adjusted venue xG rule</b><div className="muted" style={{marginTop:6}}>Adjusted xGF8 = (venue xGF8 + actual venue GF8) ÷ 2. Adjusted xGA8 uses the same 50/50 correction. The two adjusted attack/defence figures are then converted to match expected goals and 1X2 probabilities. Bookmaker probabilities are no-vig estimates from the displayed Oddschecker 1X2 prices.</div></section>
+  <div style={{display:"grid",gap:14}}>{cards.map(({f,s,m,calc})=><section className="card" key={f.fixture_id}>
+   <div style={{display:"flex",justifyContent:"space-between",gap:12,alignItems:"flex-start",flexWrap:"wrap"}}><div><div className="muted">{dayTime(f.kickoff_time)}</div><h2 style={{margin:"4px 0"}}>{f.home_team} <span className="muted">v</span> {f.away_team}</h2></div><div><b>{calc?.decision||"—"}</b>{calc?.gap!=null&&<div className="muted">Venue PPG gap {fmt(calc.gap,3)}{calc.close?" · xG tie-break active":""}</div>}</div></div>
+   {!s?<p>No snapshot.</p>:<>
+    <div style={{overflowX:"auto",marginTop:10}}><table><thead><tr><th>Venue 8</th><th>{f.home_team}</th><th>{f.away_team}</th></tr></thead><tbody>
+     <tr><td>Matches available</td><td>{s.home_n8}</td><td>{s.away_n8}</td></tr><tr><td>PPG</td><td><b>{fmt(s.home_vppg8,3)}</b></td><td><b>{fmt(s.away_vppg8,3)}</b></td></tr>
+     <tr><td>Actual GF</td><td>{fmt(s.home_vgf8)}</td><td>{fmt(s.away_vgf8)}</td></tr><tr><td>Raw xGF</td><td>{fmt(s.home_vxgf8)}</td><td>{fmt(s.away_vxgf8)}</td></tr><tr><td><b>Adjusted xGF</b></td><td><b>{fmt(calc?.ahf)}</b></td><td><b>{fmt(calc?.aaf)}</b></td></tr>
+     <tr><td>Actual GA</td><td>{fmt(s.home_vga8)}</td><td>{fmt(s.away_vga8)}</td></tr><tr><td>Raw xGA</td><td>{fmt(s.home_vxga8)}</td><td>{fmt(s.away_vxga8)}</td></tr><tr><td><b>Adjusted xGA</b></td><td><b>{fmt(calc?.aha)}</b></td><td><b>{fmt(calc?.aaa)}</b></td></tr>
+    </tbody></table></div>
+    {calc?.p&&<div style={{overflowX:"auto",marginTop:12}}><table><thead><tr><th>Adjusted xG match view</th><th>Home</th><th>Draw</th><th>Away</th></tr></thead><tbody><tr><td>Expected goals</td><td>{fmt(calc.hl)}</td><td>—</td><td>{fmt(calc.al)}</td></tr><tr><td>1X2 probability</td><td>{pct(calc.p.h)}</td><td>{pct(calc.p.d)}</td><td>{pct(calc.p.a)}</td></tr></tbody></table></div>}
+   </>}
+   <div style={{overflowX:"auto",marginTop:12}}><table><thead><tr><th>Market</th><th>Home</th><th>Draw</th><th>Away</th></tr></thead><tbody><tr><td>Displayed decimal odds</td><td>{fmt(f.market_home_odds)}</td><td>{fmt(f.market_draw_odds)}</td><td>{fmt(f.market_away_odds)}</td></tr><tr><td>No-vig probability</td><td>{pct(m?.h)}</td><td>{pct(m?.d)}</td><td>{pct(m?.a)}</td></tr></tbody></table></div>
+   <div className="muted" style={{marginTop:8}}>Market: {f.market_source||"—"}{f.market_snapshot_at?` · snapshot ${dayTime(f.market_snapshot_at)}`:""}. {f.notes||""}</div>
+  </section>)}</div>
+ </>
+}
