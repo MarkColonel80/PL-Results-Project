@@ -107,6 +107,41 @@ Untouched 2025/26 holdout:
 
 This is slightly better than the unrestricted robust blend on the holdout but still materially worse than required for production.
 
+## Finishing / defensive xG residual layer
+
+A new persistent residual layer was added after match-level diagnosis showed Crystal Palace repeatedly converting well below its xG.
+
+Supabase:
+- `public.betting_team_residual_features_v6`
+- `public.betting_model_v6_residual_xg_component`
+
+GitHub migration:
+- `scripts/add_betting_residual_features_v6.sql`
+
+Stored leakage-safe residuals:
+- finishing residual = goals minus xG over 10/20/30 prior matches
+- defensive residual = goals conceded minus xGA over 10/20/30 prior matches
+
+The residual is not treated as fully persistent skill. Development testing preferred the 30-match residual and only a modest correction. The chosen research rule trusts at most **25%** of the observed 30-match residual; that 25% is further shrunk according to prior-match count (`0.25 * min(1, n30/30)`).
+
+Development test of xG30 alone on 1,771 full-history matches:
+- no residual adjustment: Brier **0.61555**, log loss **1.02616**
+- 20% residual trust: **0.61503 / 1.02542**
+- 25% residual trust: **0.61502 / 1.02542**
+
+Untouched 2025/26 full-30-history subset (295 matches):
+- no adjustment: **0.63152 / 1.04815**
+- 25% residual trust: **0.62999 / 1.04594**
+
+On the full 334-match v6 2025/26 sample, with short histories automatically shrunk, residual-aware xG30 improves versus raw xG30 from Brier **0.63834** to **0.63648**.
+
+Replacing the 10% long-xG family in the every-family composite with residual-aware xG produces 2025/26:
+- Brier **0.63174** (previous 0.63180)
+- log loss **1.04954** (previous 1.04965)
+- top-pick accuracy **48.8%** (previous 48.5%)
+
+This is a small but clean improvement across both development and holdout and is retained as a useful component. It does not solve the broader 2025/26 instability by itself.
+
 ## 2025/26 diagnosis
 
 The failure is not caused by one obviously bad component. Individual metrics also deteriorated materially in 2025/26. On the eligible sample:
@@ -150,6 +185,7 @@ A global multiplier on draw probability was tuned on 2019/20–2024/25. Developm
 - Longer-term PPG and xG are much more reliable than 5-match windows when used as unconditional fixed weights.
 - venue xG8 is consistently one of the strongest useful additions.
 - venue PPG8 contains useful football context but is noisier as a fixed probability component.
+- persistent finishing/defensive over- or underperformance contains some forecasting information, but it should be heavily shrunk rather than treated as fully repeatable skill.
 - opponent-adjusted structural strength helps modestly but does not remove the 2025/26 problem.
 - forcing every metric family to contribute is feasible with only a small development penalty, but it does not yet create a robust production model.
 - 2025/26 should remain a diagnostic holdout rather than something to tune directly against.
@@ -162,7 +198,7 @@ For research/display purposes only, the current every-family v6 candidate is:
 |---|---:|
 | PPG30 | 10% |
 | Recent PPG (15/10/5 = 50/30/20) | 10% |
-| xG30 | 10% |
+| Residual-aware xG30 | 10% |
 | Recent xG (15/10/5 = 50/30/20) | 10% |
 | Venue PPG8 | 10% |
 | Venue xG8 | 30% |
