@@ -10,6 +10,7 @@ type Fixture={fixture_id:number;kickoff_time:string;home_team:string;away_team:s
 const N=(v:number|null|undefined)=>v==null?null:Number(v);
 const fmt=(v:number|null|undefined,d=2)=>v==null||!Number.isFinite(Number(v))?"—":Number(v).toFixed(d);
 const pct=(v:number|null|undefined)=>v==null?"—":`${(v*100).toFixed(1)}%`;
+const fair=(p:number|null|undefined)=>p==null||p<=0?"—":(1/p).toFixed(2);
 const clamp=(v:number,min:number,max:number)=>Math.max(min,Math.min(max,v));
 function poisson(lambda:number,max=8){const a=[Math.exp(-lambda)];for(let i=1;i<=max;i++)a[i]=a[i-1]*lambda/i;return a}
 function probs(hl:number,al:number){const hp=poisson(hl),ap=poisson(al);let h=0,d=0,a=0;for(let i=0;i<hp.length;i++)for(let j=0;j<ap.length;j++){const p=hp[i]*ap[j];if(i>j)h+=p;else if(i===j)d+=p;else a+=p}const t=h+d+a;return{h:h/t,d:d/t,a:a/t}}
@@ -25,7 +26,7 @@ export default function WeekendVenueReview(){
  if(error)return <section className="card"><b>Could not load weekend review</b><div className="negative">{error}</div></section>;
  return <>
   <div className="hero"><div><h1>Weekend venue review</h1><div className="muted">Manual early-season check: venue PPG8 decides unless the venue PPG gap is ≤ 0.30. Only then does adjusted venue xG8 break the tie.</div></div><Link href="/betting">← Betting Lab</Link></div>
-  <section className="card"><b>Adjusted venue xG rule</b><div className="muted" style={{marginTop:6}}>Adjusted xGF8 = (venue xGF8 + actual venue GF8) ÷ 2. Adjusted xGA8 uses the same 50/50 correction. The two adjusted attack/defence figures are then converted to match expected goals and 1X2 probabilities. Bookmaker probabilities are no-vig estimates from the displayed Oddschecker 1X2 prices.</div></section>
+  <section className="card"><b>Adjusted venue xG rule</b><div className="muted" style={{marginTop:6}}>Adjusted xGF8 = (venue xGF8 + actual venue GF8) ÷ 2. Adjusted xGA8 uses the same 50/50 correction. The two adjusted attack/defence figures are then converted to match expected goals and 1X2 probabilities. All prices below are shown as decimal odds. Bookmaker probabilities are no-vig estimates from the Oddschecker 1X2 prices.</div></section>
   <div style={{display:"grid",gap:14}}>{cards.map(({f,s,m,calc})=><section className="card" key={f.fixture_id}>
    <div style={{display:"flex",justifyContent:"space-between",gap:12,alignItems:"flex-start",flexWrap:"wrap"}}><div><div className="muted">{dayTime(f.kickoff_time)}</div><h2 style={{margin:"4px 0"}}>{f.home_team} <span className="muted">v</span> {f.away_team}</h2></div><div><b>{calc?.decision||"—"}</b>{calc?.gap!=null&&<div className="muted">Venue PPG gap {fmt(calc.gap,3)}{calc.close?" · xG tie-break active":""}</div>}</div></div>
    {!s?<p>No snapshot.</p>:<>
@@ -36,8 +37,13 @@ export default function WeekendVenueReview(){
     </tbody></table></div>
     {calc?.p&&<div style={{overflowX:"auto",marginTop:12}}><table><thead><tr><th>Adjusted xG match view</th><th>Home</th><th>Draw</th><th>Away</th></tr></thead><tbody><tr><td>Expected goals</td><td>{fmt(calc.hl)}</td><td>—</td><td>{fmt(calc.al)}</td></tr><tr><td>1X2 probability</td><td>{pct(calc.p.h)}</td><td>{pct(calc.p.d)}</td><td>{pct(calc.p.a)}</td></tr></tbody></table></div>}
    </>}
-   <div style={{overflowX:"auto",marginTop:12}}><table><thead><tr><th>Market</th><th>Home</th><th>Draw</th><th>Away</th></tr></thead><tbody><tr><td>Displayed decimal odds</td><td>{fmt(f.market_home_odds)}</td><td>{fmt(f.market_draw_odds)}</td><td>{fmt(f.market_away_odds)}</td></tr><tr><td>No-vig probability</td><td>{pct(m?.h)}</td><td>{pct(m?.d)}</td><td>{pct(m?.a)}</td></tr></tbody></table></div>
-   <div className="muted" style={{marginTop:8}}>Market: {f.market_source||"—"}{f.market_snapshot_at?` · snapshot ${dayTime(f.market_snapshot_at)}`:""}. {f.notes||""}</div>
+   <div style={{overflowX:"auto",marginTop:12}}><table><thead><tr><th>Odds comparison (decimal)</th><th>Home</th><th>Draw</th><th>Away</th></tr></thead><tbody>
+    <tr><td>Our fair odds</td><td>{fair(calc?.p?.h)}</td><td>{fair(calc?.p?.d)}</td><td>{fair(calc?.p?.a)}</td></tr>
+    <tr><td>Oddschecker odds</td><td>{fmt(f.market_home_odds)}</td><td>{fmt(f.market_draw_odds)}</td><td>{fmt(f.market_away_odds)}</td></tr>
+    <tr><td>Our probability</td><td>{pct(calc?.p?.h)}</td><td>{pct(calc?.p?.d)}</td><td>{pct(calc?.p?.a)}</td></tr>
+    <tr><td>Bookmaker no-vig probability</td><td>{pct(m?.h)}</td><td>{pct(m?.d)}</td><td>{pct(m?.a)}</td></tr>
+   </tbody></table></div>
+   <div className="muted" style={{marginTop:8}}>Market: {f.market_source||"—"}{f.market_snapshot_at?` · snapshot ${dayTime(f.market_snapshot_at)}`:""}.</div>
   </section>)}</div>
  </>
 }
