@@ -154,15 +154,16 @@ A separate manual early-season review workflow exists at `/betting/weekend`. It 
 
 Current rule under test:
 - Keep venue PPG8 and venue xG8 separate.
-- Before actual goals are allowed to influence xG, normalise them at individual-match level: `normalised actual goals = xG + clamp(actual goals - xG, -1.0, +1.0)` for both goals scored and goals conceded.
-- Average those normalised actual GF/GA values across the same eight venue matches.
-- Blend the normalised actual average 50/50 with raw venue xG: `adj xGF8 = (xGF8 + capped actual GF8)/2`, and similarly for xGA.
-- The ±1.0 cap is the current chosen threshold. A tighter ±0.8 threshold was discussed but has not been adopted.
+- Before actual goals are allowed to influence xG, cap only extreme positive goal-vs-xG residuals at individual-match level: `capped actual goals = min(actual goals, xG + 1.0)` for both goals scored and goals conceded.
+- Underperformance versus xG is left unchanged. The capped actual value can therefore never be higher than the real actual value.
+- Average those capped actual GF/GA values across the same eight venue matches.
+- Blend the capped actual average 50/50 with raw venue xG: `adj xGF8 = (xGF8 + capped actual GF8)/2`, and similarly for xGA.
+- The +1.0 overperformance cap is the current chosen threshold. A tighter +0.8 threshold was discussed but has not been adopted.
 - Venue PPG8 decides the result unless the absolute home-v-away venue PPG gap is <= 0.30.
 - Only when the PPG gap is close does adjusted venue xG8 act as the tie-break/result signal.
 - Promoted/returning sides without eight matches in the current PL spell are labelled limited history rather than using stale prior-spell venue data.
 
-Reason for the cap: a freak finishing/goalkeeping scoreline should not dominate an eight-match sample. Nottingham Forest's last eight PL away matches were the immediate example: raw actual GF8 was 2.375 and raw xGF8 1.282; after capping each individual match at ±1.0 from xG, capped actual GF8 is 1.899 and adjusted xGF8 becomes about 1.590 instead of about 1.829 under the old uncapped 50/50 rule.
+Reason for the cap: a freak flattering scoreline should not dominate an eight-match sample. Nottingham Forest's last eight PL away matches were the immediate example: raw actual GF8 was 2.375 and raw xGF8 1.282; after capping only match-level overperformance beyond xG + 1.0, capped actual GF8 is 1.899 and adjusted xGF8 becomes about 1.590 instead of about 1.829 under the old uncapped 50/50 rule. Bournemouth exposed why the earlier symmetric ±1.0 implementation was wrong for this purpose: it increased actual GF when the team underperformed xG. Under the corrected one-sided rule Bournemouth's actual GF8 and capped actual GF8 are both 1.625.
 
 Historical top-pick test quoted before the new cap was introduced, on 2,342 matches with complete venue8 histories:
 - venue PPG8 only: 49.7% overall; 46.4% in 2025/26
@@ -170,16 +171,16 @@ Historical top-pick test quoted before the new cap was introduced, on 2,342 matc
 - old uncapped adjusted venue xG8 only: 52.4%; 47.0%
 - venue PPG8 with old uncapped adjusted-xG tie-break at gap <= 0.30: 51.3%; 49.1%
 
-Those adjusted-xG historical figures must now be treated as legacy until the ±1.0 capped version is back-tested on the same sample.
+Those adjusted-xG historical figures must now be treated as legacy until the one-sided +1.0 capped version is back-tested on the same sample.
 
 Supabase tables/views:
 - `public.betting_manual_fixtures`
-- `public.betting_manual_weekend_analysis` — now uses the ±1.0 capped residual rule
+- `public.betting_manual_weekend_analysis` — uses the capped-actual snapshot inputs for current review
 - `public.betting_manual_weekend_analysis_uncapped` — preserved legacy view for QA/comparison
-- `public.betting_manual_weekend_capped_actuals`
+- `public.betting_manual_weekend_capped_actuals` — current one-sided +1.0 rule
 - `public.betting_manual_weekend_snapshot`
 
-The current snapshot stores `goal_xg_residual_cap`, `home_vgf8_capped`, `home_vga8_capped`, `away_vgf8_capped`, and `away_vga8_capped`. GitHub migration: `scripts/update_weekend_adjusted_xg_cap.sql`.
+The current snapshot stores `goal_xg_residual_cap`, `home_vgf8_capped`, `home_vga8_capped`, `away_vgf8_capped`, and `away_vga8_capped`. GitHub migrations: `scripts/update_weekend_adjusted_xg_cap.sql` (superseded symmetric rule) and `scripts/make_weekend_goal_xg_cap_one_sided.sql` (current rule).
 
 The 2026/27 Matchweek-2 weekend snapshot includes all ten fixtures from 28–31 Aug 2026. 1X2 prices were captured from the Oddschecker UK coupon on 28 Aug 2026 and are displayed with no-vig implied probabilities. The page shows venue PPG, raw actual GF/GA, capped actual GF/GA, raw xGF/xGA, adjusted xGF/xGA, adjusted match expected goals and probabilities, market odds/probabilities, and the manual rule decision.
 
@@ -203,8 +204,8 @@ Reusable research function exists in Supabase: `public.betting_elo_eval(...)`.
 1. Keep v3 as baseline.
 2. Keep v6 as the transparent all-metrics probability research model.
 3. Use residual-aware xG30 rather than raw xG30 in the 10% long-xG family for current v6 research.
-4. In the manual weekend diagnostic, cap each match's actual goal residual versus xG at ±1.0 before the 50/50 actual/xG blend; keep venue PPG and adjusted venue xG separate.
-5. Back-test the new ±1.0 capped rule against the old uncapped adjusted-xG rule before treating it as historically validated.
+4. In the manual weekend diagnostic, cap only actual-goal overperformance beyond xG + 1.0 before the 50/50 actual/xG blend; never increase actual goals because of xG underperformance. Keep venue PPG and adjusted venue xG separate.
+5. Back-test the one-sided +1.0 capped rule against the old uncapped adjusted-xG rule before treating it as historically validated.
 6. Do not choose weights from ROI; fit probabilities using Brier/log loss, then evaluate betting edge separately.
 7. Investigate match-level disagreements with the bookmaker to identify genuinely missing football context rather than fitting shock results.
 8. Do not hard-code bookmaker agreement into the predictive model merely to make historical ROI look better.
