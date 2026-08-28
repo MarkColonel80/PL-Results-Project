@@ -163,7 +163,18 @@ Current rule under test:
 - Only when the PPG gap is close does adjusted venue xG8 act as the tie-break/result signal.
 - Promoted/returning sides without eight matches in the current PL spell are labelled limited history rather than using stale prior-spell venue data.
 
-A separate **overall PPG30 diagnostic** is now displayed for each team. It is calculated from up to the last 30 completed Premier League matches in the team’s current PL spell, with the sample count shown explicitly. It is display-only: it does not currently alter the venue PPG decision, adjusted xG, expected goals, probabilities, fair odds or manual pick. This was added after Liverpool v Nottingham Forest showed an ~18-point model/market home-win disagreement. For that fixture the diagnostic is Liverpool 1.533 PPG30 versus Forest 1.300 PPG30. GitHub SQL: `scripts/add_weekend_ppg30_diagnostic.sql`.
+A separate **overall PPG30 diagnostic** is displayed for each team. It is calculated from up to the last 30 completed Premier League matches in the team’s current PL spell, with the sample count shown explicitly. It is display-only: it does not alter the venue PPG decision, adjusted xG, expected goals, probabilities, fair odds or manual pick. This was added after Liverpool v Nottingham Forest showed an ~18-point model/market home-win disagreement. For that fixture the diagnostic is Liverpool 1.533 PPG30 versus Forest 1.300 PPG30. GitHub SQL: `scripts/add_weekend_ppg30_diagnostic.sql`.
+
+A separate **venue18 diagnostic** is also displayed for PPG, xGF and xGA. It uses up to the last 18 completed Premier League matches at the relevant venue status (home for the home team, away for the away team), restricted to the team’s current PL spell. It is comparison-only and does not alter any calculation or pick. When a full 18-match venue sample exists, the page shows an arrow beside the venue8 PPG/xGF/xGA value: `↑` if the last eight are better than the last 18, `↓` if worse, and `→` when within 0.02. For xGA lower is treated as better. GitHub SQL: `scripts/add_weekend_venue18_diagnostic.sql`.
+
+Liverpool v Nottingham Forest is the immediate diagnostic example:
+- Liverpool home PPG8 1.875 vs PPG18 1.833 — broadly similar/slightly hotter recently.
+- Liverpool home xGF8 1.666 vs xGF18 1.709 — slightly weaker attacking xG recently.
+- Liverpool home xGA8 1.445 vs xGA18 1.152 — materially worse defensive xG recently.
+- Forest away PPG8 1.625 vs PPG18 1.278 — materially hotter recent away results.
+- Forest away xGF8 1.282 vs xGF18 0.997 — materially hotter recent away chance creation.
+- Forest away xGA8 2.035 vs xGA18 1.711 — materially worse recent away defensive xG.
+This supports the working diagnosis that Forest’s venue8 attack/results are unusually strong relative to their broader away baseline, while their recent away defensive xG is not strong.
 
 Reason for the cap: a freak flattering scoreline should not dominate an eight-match sample. Nottingham Forest's last eight PL away matches were the immediate example: raw actual GF8 was 2.375 and raw xGF8 1.282; after capping only match-level overperformance beyond xG + 1.0, capped actual GF8 is 1.899 and adjusted xGF8 becomes about 1.590 instead of about 1.829 under the old uncapped 50/50 rule. Bournemouth exposed why the earlier symmetric ±1.0 implementation was wrong for this purpose: it increased actual GF when the team underperformed xG. Under the corrected one-sided rule Bournemouth's actual GF8 and capped actual GF8 are both 1.625.
 
@@ -182,9 +193,9 @@ Supabase tables/views:
 - `public.betting_manual_weekend_capped_actuals` — current one-sided +1.0 rule
 - `public.betting_manual_weekend_snapshot`
 
-The current snapshot stores `goal_xg_residual_cap`, `home_vgf8_capped`, `home_vga8_capped`, `away_vgf8_capped`, `away_vga8_capped`, plus diagnostic `home_n30`, `away_n30`, `home_ppg30`, and `away_ppg30`. GitHub migrations: `scripts/update_weekend_adjusted_xg_cap.sql` (superseded symmetric rule), `scripts/make_weekend_goal_xg_cap_one_sided.sql` (current cap rule), and `scripts/add_weekend_ppg30_diagnostic.sql` (display-only PPG30 diagnostic).
+The current snapshot stores `goal_xg_residual_cap`, `home_vgf8_capped`, `home_vga8_capped`, `away_vgf8_capped`, `away_vga8_capped`, diagnostic `home_n30`, `away_n30`, `home_ppg30`, `away_ppg30`, and venue18 diagnostic `home_vn18`, `away_vn18`, `home_vppg18`, `away_vppg18`, `home_vxgf18`, `home_vxga18`, `away_vxgf18`, `away_vxga18`. GitHub migrations: `scripts/update_weekend_adjusted_xg_cap.sql` (superseded symmetric rule), `scripts/make_weekend_goal_xg_cap_one_sided.sql` (current cap rule), `scripts/add_weekend_ppg30_diagnostic.sql` (display-only PPG30 diagnostic), and `scripts/add_weekend_venue18_diagnostic.sql` (display-only venue18 comparison).
 
-The 2026/27 Matchweek-2 weekend snapshot includes all ten fixtures from 28–31 Aug 2026. 1X2 prices were captured from the Oddschecker UK coupon on 28 Aug 2026 and are displayed with no-vig implied probabilities. The page shows venue PPG, overall PPG30 diagnostic/sample, raw actual GF/GA, capped actual GF/GA, raw xGF/xGA, adjusted xGF/xGA, adjusted match expected goals and probabilities, market odds/probabilities, and the manual rule decision.
+The 2026/27 Matchweek-2 weekend snapshot includes all ten fixtures from 28–31 Aug 2026. 1X2 prices were captured from the Oddschecker UK coupon on 28 Aug 2026 and are displayed with no-vig implied probabilities. The page shows venue PPG8, venue18 comparison/sample and trend arrows, overall PPG30 diagnostic/sample, raw actual GF/GA, capped actual GF/GA, raw xGF/xGA, adjusted xGF/xGA, adjusted match expected goals and probabilities, market odds/probabilities, and the manual rule decision.
 
 ## 2025/26 diagnosis
 
@@ -207,11 +218,12 @@ Reusable research function exists in Supabase: `public.betting_elo_eval(...)`.
 2. Keep v6 as the transparent all-metrics probability research model.
 3. Use residual-aware xG30 rather than raw xG30 in the 10% long-xG family for current v6 research.
 4. In the manual weekend diagnostic, cap only actual-goal overperformance beyond xG + 1.0 before the 50/50 actual/xG blend; never increase actual goals because of xG underperformance. Keep venue PPG and adjusted venue xG separate.
-5. Show overall current-spell PPG30 as a diagnostic only; do not feed it into the weekend probabilities or picks until separately tested.
-6. Back-test the one-sided +1.0 capped rule against the old uncapped adjusted-xG rule before treating it as historically validated.
-7. Do not choose weights from ROI; fit probabilities using Brier/log loss, then evaluate betting edge separately.
-8. Investigate match-level disagreements with the bookmaker to identify genuinely missing football context rather than fitting shock results.
-9. Do not hard-code bookmaker agreement into the predictive model merely to make historical ROI look better.
+5. Show overall current-spell PPG30 and current-spell venue18 PPG/xGF/xGA as diagnostics only; do not feed them into the weekend probabilities or picks until separately tested.
+6. Use the venue18 comparison to identify when venue8 is a hot/cold spell rather than silently anchoring the model to the longer window.
+7. Back-test the one-sided +1.0 capped rule against the old uncapped adjusted-xG rule before treating it as historically validated.
+8. Do not choose weights from ROI; fit probabilities using Brier/log loss, then evaluate betting edge separately.
+9. Investigate match-level disagreements with the bookmaker to identify genuinely missing football context rather than fitting shock results.
+10. Do not hard-code bookmaker agreement into the predictive model merely to make historical ROI look better.
 
 ## Betting research rules
 
