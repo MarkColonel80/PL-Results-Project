@@ -1,285 +1,209 @@
 # PL Results Project — Persistent Project Context
 
-_Last updated: 2026-08-26_
+_Last updated: 2026-08-28_
 
 This file is the durable handoff/source of truth for continuing the project across ChatGPT conversations. At the start of a new project chat, read this file first, then verify live state in GitHub/Supabase/Vercel before making changes.
 
-## Global workflow preference
+## Workflow
 
-- For software/data projects use **GitHub for source/version history, Supabase for database/backend, and Vercel for deployment/production verification** when appropriate.
-- ChatGPT should inspect and modify these connected systems directly rather than asking Mark to shuttle files/data around or use Codex.
-- Only ask Mark to run a local command when the connected execution environment genuinely cannot perform the action.
-- Keep this file updated after material code/data/schema/deployment milestones.
+- GitHub is source/version history.
+- Supabase is database/backend and is directly accessible for SQL/migrations.
+- Vercel is deployment/production.
+- ChatGPT should inspect and modify connected systems directly rather than asking Mark to shuttle files/data around or use Codex.
+- Update this file after material schema/model/product milestones.
 
-## Connected systems
+Connected systems:
+- GitHub: `MarkColonel80/PL-Results-Project`, branch `main`
+- Supabase project: `PL Results Project`, ref `priibitbnmfetyblzltk`
+- Vercel project: `pl-results-project`, production `https://pl-results-project.vercel.app`
 
-- **GitHub:** `MarkColonel80/PL-Results-Project`, branch `main`.
-- **Supabase:** `PL Results Project`, ref `priibitbnmfetyblzltk`.
-- **Vercel:** project `pl-results-project`, id `prj_8OeSf0K7GBywgASSo5ojRUpYDg84`, team `Colly` / `team_AVL2QNde5NnMKvlgXcjw0hhf`.
-- Production domain: `https://pl-results-project.vercel.app` (protected by the project's existing Basic Auth).
+## Historical/player identity state
 
-## Player identity / historical data state
+Understat Premier League history has been staged and identity-resolved.
 
-### Understat
+Stable final identity state:
+- staged Understat rows: 106,519
+- staged source players: 1,899
+- verified Understat mappings: 1,816
+- deliberately unresolved source players: 83
+- mapped staged rows: 105,041
+- mapped staged rows missing live: 0
+- advanced metric mismatches: 0
+- remaining verified `source_native_identity`: 136, all 2014/15-only
+- explicit `manual_name_verified`: 4
 
-Understat Premier League history 2014/15–2023/24 has been staged, identity-resolved and enriched.
+Identity policy:
+- provider-prefixed canonical player codes are prohibited
+- automated player-name matching is prohibited as identity evidence
+- names may be used only as QA after ID-based matching, except explicitly reviewed manual exceptions
 
-Final stable state:
-- staged rows: **106,519**
-- source players: **1,899**
-- verified mappings: **1,816**
-- unresolved source players: **83** (deliberately left unresolved)
-- mapped staged rows: **105,041**
-- mapped rows missing live: **0**
-- mapped live rows missing Understat advanced metrics: **0**
-- advanced-metric mismatches: **0**
-- remaining `source_native_identity` mappings: **136**, all 2014/15-only
-- manual verified crosswalks: **4**
+## Betting data
 
-Important scripts/commits:
-- deterministic resolver: `scripts/resolve_understat_cross_source.py`, commit `8bc5470567e1303f0f11b89cf33059e49d6d5e73`
-- legacy reconciliation: `scripts/reconcile_understat_source_native.sql`, commit `bec85af176a71330c6458e9f342316218f7bf4ee`
-- advanced enrichment: `scripts/enrich_understat_advanced_metrics.sql`, commit `4c336f5c8f2681d0d27d900d60874f578532aea8`
-- missing verified rows: `scripts/promote_understat_missing_verified_rows.sql`, commit `6dc67a5f2791c2c54e42b403ce97a5c6d1ebbde1`
-- final manual reconciliation: `scripts/reconcile_understat_manual_three.sql`, commit `05561830b8f71bc18b9852ceac3f6de2e1bc083c`
+### Historical bookmaker odds
 
-Manual exceptions reviewed by Mark:
-- Steven Pienaar Understat `924` -> canonical `7525`
-- Juan Cuadrado Understat `1089` and Transfermarkt `91970` -> canonical `66733`
-- Rushian Hepburn-Murphy Understat `1015` kept unique canonical `plp:60c49e5ec1254a21a99dc224483b85c7`
-
-Identity rules remain:
-- automated player-name matching is prohibited as identity evidence;
-- stable IDs / match-history evidence are preferred;
-- individually reviewed `manual_name_verified` exceptions are allowed when explicitly agreed.
+`public.historical_market_odds` now contains full Football-Data Premier League odds for:
+- 2019/20
+- 2020/21
+- 2021/22
+- 2022/23
+- 2023/24
+- 2024/25
+- 2025/26
 
-## Player-name QA page
+plus completed 2026/27 matches already imported.
 
-Route: **`/audit/player-names`**.
+Closing no-vig 1X2 market Brier/log-loss benchmarks by full season:
+- 2019/20: 0.60561 / 1.00871
+- 2020/21: 0.61851 / 1.02967
+- 2021/22: 0.53384 / 0.90077
+- 2022/23: 0.57395 / 0.95959
+- 2023/24: 0.52969 / 0.89735
+- 2024/25: 0.57519 / 0.96725
+- 2025/26: 0.60774 / 1.01177
 
-Purpose: names are used only as a post-match sanity audit of already-resolved identities.
-
-Current audit universe:
-- Transfermarkt verified mappings: **2,275**, with FPL name: **1,750**
-- Understat verified mappings: **1,816**, with FPL name: **1,538**
-- total mappings with an FPL name to compare: **3,288**
+### xG coverage correction
 
-Persistent approval table: `public.player_identity_name_audit_reviews`.
-- Mark can tick **Correct**.
-- approval persists in Supabase.
-- `approved_at` records exact approval date/time.
-- default page view hides approved rows, leaving the remaining investigation queue.
-
-## Product/UI direction
+2024/25 does have complete xG via `fpl_player_match_stats`. `betting_team_match_v2` was corrected to fall back to FPL team-level xG when canonical player-match xG is absent. Any earlier statement that 2024/25 lacked xG is superseded.
 
-Mark decided to prioritise making the existing data useful before paying for another provider such as Sportmonks.
+## Model v3 — validated baseline
 
-### Player Insights
+Detailed spec: `BETTING_MODEL_V3.md`.
+Historical results: `BETTING_MODEL_V3_7_SEASON_RESULTS.md`.
 
-Route: **`/insights`**.
+Key ideas:
+- precomputed 30-match attack/defence strength
+- 65% xG / 35% goals where xG coverage is complete, xG weight scales with coverage
+- shrinkage to rolling league average
+- league home/away scoring baselines
+- damped multiplicative attack x opposition-defence structure
+- recent PPG10 adjustment
+- independent Poisson 1X2 probabilities
+- promoted/returning team betting gate
 
-Purpose: decision-oriented player analysis rather than generic stat tables.
+Predictions are cached in `public.betting_model_match_predictions` with `model_version='v3'` for 2,660 matches across 2019/20–2025/26.
 
-Current modes:
-- underlying threat (xGI/90)
-- buy-low / underperformance signals
-- overperformance signals
-- FPL value (points per £m)
-- FPL points
-
-Supports season/team/position/minimum-minutes filters and player drill-down.
+v3 top-pick accuracy over all seven seasons: 53.4% versus bookmaker favourite 55.0%.
 
-Supabase view: `public.player_decision_stats_v1`.
+v3 remains the validated baseline and has not been replaced.
 
-## Betting Lab — CURRENT PRODUCT MILESTONE
+## Model v5 — PPG/xG independent agreement experiment
 
-Mark wants the project to explore whether our data can find bookmaker mispricing for:
-- home/draw/away
-- goals markets
-- goalscorers
-- player-specific opponent effects
-- situations where two players historically perform differently when facing each other / appearing in opposing sides
+Detailed checkpoint: `BETTING_MODEL_V5_PPG_XG_AGREEMENT_EXPERIMENT.md`.
 
-Route: **`/betting`**.
-Main navigation now includes **Betting Lab**.
+Concept:
+- PPG and xG are separate probability models
+- both use adaptive 15/10/5 and venue adjustments
+- only consider a side when both models agree
+- historical inputs/probabilities are cached in Supabase
 
-Latest production navigation deployment:
-- Vercel deployment `dpl_9atpLiMwHjzpnQrf3DswtCxHnAMa`
-- state **READY**
-- commit `b64003f18b7667a62c45dd46ea03bd872a08427f`
-
-Betting page implementation commit:
-- `fd96be2670b7dc01caf7ddd3d73bb31c10c8ba4a`
-
-### Betting Lab data views
-
-Versioned in `scripts/add_betting_lab_views.sql`.
-Latest commit after early-season roster fix:
-- `362325b29ff6ee5876fdd4b571c9dd064817cc0d`
-
-Supabase views:
-
-1. `public.betting_team_match_v1`
-   - team-level match xG aggregated from FPL player match xG
-   - continuous FPL-era coverage from 2016/17 onward
-   - home/away, opponent, xG for/against, actual goals/result
-   - 2025/26 audit: 760 team-match rows, 20 teams, no missing xG
-   - 2026/27 after GW1: 20 team-match rows, 20 teams, no missing xG
-
-2. `public.betting_player_goal_profile_v1`
-   - registered season roster from FPL rows, including current players with zero appearances
-   - actual appearance minutes/goals/xG
-   - xG/90
-   - recent-five average minutes and xG
-   - latest FPL price/ownership
-   - early-season fix deliberately separates registration from played-match form so unplayed current players are not omitted from scorer consideration
-
-### Match model
-
-Current model is deliberately transparent/research-oriented:
-- FPL match xG is the core team input
-- blends selected season with previous season
-- previous-season observations have lower recency weight
-- home/away attack and defence strengths are calculated separately
-- small samples shrink toward league home/away xG averages
-- independent Poisson score model produces:
-  - home/draw/away probabilities + fair odds
-  - expected goals
-  - most likely score
-  - Over 2.5 probability/fair odds
-  - BTTS probability/fair odds
-
-2026/27 future fixtures are not yet present in `matches`; the page therefore lets the user select any home/away pairing. Once future fixtures are loaded, this modelling layer can be reused without redesign.
-
-### Manual bookmaker comparison
-
-The Match Model accepts user-entered decimal H/D/A prices from any bookmaker.
-- calculates implied probabilities
-- removes 1X2 overround
-- compares no-vig market probabilities with our model
-- displays probability-point edge and our fair price
-
-This makes the page useful before an automated live odds API is purchased.
-
-### Goalscorer model
-
-Anytime goalscorer section currently uses:
-- blended current/previous-season xG/90
-- a modest recent-five xG component
-- expected minutes blended from recent appearances / prior history
-- matchup multiplier derived from team projected goals vs team baseline xG
-- Poisson `P(score >= 1)` to produce player goal probability and fair odds
-
-User can enter a bookmaker scorer price beside a player; page shows raw model EV. This is not margin-adjusted because a single scorer price does not reveal the full scorer-market overround.
-
-Current limitations explicitly shown in UI:
-- no explicit penalty-taker adjustment yet
-- no confirmed-lineup/injury adjustment yet
-
-### Opponent effects
-
-Player-v-team explorer uses canonical FPL player histories.
-For each opponent it displays:
-- matches
-- minutes
-- goals
-- xG
-- raw xG/90
-- sample-size-adjusted xG/90
-- opponent uplift/downturn versus the player's career baseline
-
-Small samples are shrunk toward career baseline so a couple of lucky games do not become a false “bogey team” signal.
-
-### Player-v-player comparison
-
-Current dataset does not contain true individual duel events.
-The Betting Lab therefore includes a deliberately labelled **shared-match comparison**, not a duel statistic:
-- finds fixtures where both selected players appeared for opposing sides
-- compares each player's goals and xG/90 in those shared matches
-
-Do not describe this as “player A beat player B”. True duel analysis would require event/duel data from another source later.
-
-### Leakage-safe back-test
-
-The Back-test tab rebuilds each historical prediction using only:
-- matches before that kickoff in the selected season
-- plus the previous season
-
-It reports:
-- sample size
-- top-pick 1X2 accuracy
-- multiclass Brier score
-- log loss
-- average probability assigned to the actual result
-- recent individual predictions
-
-This is deliberately pre-market. It validates calibration before claiming betting edge.
-
-## Historical bookmaker odds — schema ready, importer versioned, DATA NOT YET IMPORTED
-
-Football-Data.co.uk currently publishes free Premier League CSVs specifically for quantitative betting-system testing. Since 2019/20 the files include opening and closing sets of odds; older seasons have pre-closing odds, with some Pinnacle closing 1X2 history further back.
-
-Supabase table created:
-- `public.historical_market_odds`
-
-Schema file:
-- `scripts/add_historical_market_odds.sql`
-- commit `e2c0429f231bf7bcdb6a4172521dc81c622d7759`
-
-Fields include:
-- season/source/date/source teams
-- optional canonical `match_id`
-- opening average/max H/D/A
-- closing average/max H/D/A
-- opening/closing average Over/Under 2.5
-- raw source row JSON
-- source URL/import timestamp
-
-Importer:
-- `scripts/import_football_data_odds.py`
-- commit `3a89100cc928aee6ba6b650a612c8570efc0cd5e`
-
-Importer behaviour:
-- DRY RUN by default; `--apply` writes
-- downloads EPL `E0.csv` by season
-- supports 2016/17 onward by default
-- harmless team-name normalisation only
-- maps fixture identity by season + canonical home/away teams + exact date, with unique +/-1 day fallback
-- does not use player names
-- stores raw row as well as normalised odds fields
-- upserts repeat-safely into `historical_market_odds`
-
-Important execution note:
-- the current ChatGPT container session had no outbound DNS access to fetch the CSV, so the importer was **not executed** and `historical_market_odds` should currently be treated as empty until verified otherwise.
-- Do not claim historical market back-testing is complete yet.
-
-## Exact next steps
-
-1. **Run and audit `scripts/import_football_data_odds.py`** in an execution environment with outbound web access and Supabase credentials.
-2. Require near-complete canonical fixture mapping for each Premier League season before using odds in model evaluation.
-3. Build `model vs market` back-test using closing market probabilities first:
-   - strip 1X2 overround
-   - compare our probability vs no-vig market probability
-   - bucket by model edge (e.g. 0–2%, 2–5%, 5–10%, 10%+)
-   - report sample size, calibration, closing-line value and hypothetical flat-stake ROI
-   - never tune thresholds on the same sample without out-of-sample validation.
-4. Add opening-v-closing movement analysis after closing-price baseline is working.
-5. Add future fixture ingestion to `matches` so `/betting` can automatically show the upcoming slate rather than manual team selectors.
-6. Only after model/market back-testing shows useful signal should we consider paying for live bookmaker odds or richer event data (e.g. Sportmonks).
-
-## Betting-model safety / research rules
-
-- Treat outputs as statistical research signals, not guaranteed winners.
-- Avoid look-ahead leakage: every historical prediction must only use data available before kickoff.
-- Compare against no-vig market probabilities where possible rather than raw `1/odds` alone.
-- Keep model input provenance explicit.
-- Do not silently overwrite historical source data when improving models; version modelling changes.
-- When later evaluating ROI, include all qualifying bets from the declared rules rather than cherry-picking examples.
-
-## Other historical-source work
-
-A Joseph CC0 dataset was audited separately and did not establish itself as a useful stable player-identity source. No Supabase writes were made from that audit.
+The apparent aggregate betting edge was unstable by season, especially 2023/24. Investigation showed many failures were aggressive outsider/away picks against strong home priors.
+
+Important diagnostic finding:
+- short venue5 was too volatile
+- longer venue windows helped explain failures
+- Mark prefers a shorter venue window than 15 if possible
+
+## Venue8 metrics — permanent database layer
+
+Added 2026-08-28.
+
+Supabase:
+- `public.team_form_window8_cache`
+- `public.team_form_window_cache_with_v8`
+
+Stored metrics:
+- `vn8`
+- `vppg8`
+- `vxgf8`
+- `vxga8`
+
+Existing venue5/10/15 metrics remain available for comparison.
+
+GitHub SQL: `scripts/add_team_form_window8_cache.sql`.
+
+Venue8 testing showed it is a useful compromise: substantially more stable than venue5 without requiring a 15-match venue history. Venue xG8 has been particularly useful in subsequent model fitting.
+
+## Model v6 — composite probability experiment
+
+Detailed checkpoint: `BETTING_MODEL_V6_COMPOSITE_EXPERIMENT.md`.
+
+Supabase component cache:
+- `public.betting_model_v6_components`
+
+It stores independent Home/Draw/Away probability triples from:
+- PPG5/10/15/30
+- xG5/10/15/30 attack/defence
+- venue PPG8
+- venue xG8 attack/defence
+
+The existing v3 probability is used as a separate structural/opponent-adjusted component.
+
+### Main fitting result
+
+Unrestricted fixed-weight searches strongly prefer longer histories:
+- PPG30 dominates shorter PPG windows
+- xG30 dominates, with a small xG10 contribution
+- venue xG8 is one of the strongest additional components
+- venue PPG8 is useful context but noisy as a large unconditional fixed weight
+
+### Current every-family v6 candidate
+
+To honour the aim of using all metric families, the current experimental constrained blend is:
+- 10% long PPG = PPG30
+- 10% recent PPG = 50% PPG15 + 30% PPG10 + 20% PPG5
+- 10% long xG = xG30
+- 10% recent xG = 50% xG15 + 30% xG10 + 20% xG5
+- 10% venue PPG8
+- 30% venue xG8
+- 20% v3 structural/opponent-adjusted probability
+
+Development 2019/20–2024/25:
+- average Brier 0.58268
+- average log loss 0.98094
+- season Brier SD 0.00788
+- worst development-season Brier 0.59512
+
+Untouched 2025/26 holdout:
+- Brier 0.63180
+- log loss 1.04965
+- top-pick accuracy 48.5%
+
+Therefore v6 is **experimental only** and must not replace v3 yet.
+
+### 2025/26 diagnosis
+
+All internal metric families deteriorate in 2025/26, not just one weight. The composite also underpredicts draws:
+- actual H/D/A on eligible sample: 41.0 / 28.1 / 30.8%
+- composite average: 42.3 / 24.2 / 33.5%
+
+Do not tune directly to 2025/26 just to remove this miss.
+
+Additional structural tests:
+- Elo-style team rating: did not solve holdout instability
+- rolling league H/D/A regime correction: development preferred no correction
+- global draw multiplier: marginal development change but worsened holdout
+
+Reusable research function currently exists in Supabase: `public.betting_elo_eval(...)`.
+
+## Current modelling direction
+
+1. Keep v3 as baseline.
+2. Keep v6 as the transparent all-metrics probability research model.
+3. Do not choose weights from ROI; fit probabilities using Brier/log loss, then evaluate betting edge separately.
+4. Treat 2025/26 as an untouched diagnostic/holdout when testing new structures.
+5. Investigate structural features that may generalise across changing league regimes rather than adding more fixed short-form weight.
+6. Do not hard-code bookmaker agreement into the predictive model merely to make historical ROI look better.
+
+## Betting research rules
+
+- No look-ahead leakage.
+- Every historical prediction uses only information available before kickoff.
+- Keep source/model versions explicit.
+- Compare model probabilities against no-vig closing market probabilities when evaluating betting edge.
+- Do not tune a threshold and validate it on the same sample.
+- Include all qualifying bets from declared rules; no cherry-picking.
+- Model outputs are research probabilities, not guaranteed winners.
 
 ## Continuation instruction
 
-When Mark asks to continue the **PL Results Project**, first read this file, then inspect current GitHub/Supabase/Vercel state. Do not ask Mark to re-explain project history that can be recovered from these systems.
+When Mark asks to continue this project, read this file, then inspect current GitHub/Supabase/Vercel state before acting. Do not ask Mark to repeat project history that can be recovered from connected systems.
