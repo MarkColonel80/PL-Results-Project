@@ -148,6 +148,30 @@ Replacing the 10% long-xG family in the every-family composite with residual-awa
 
 This is a small but clean improvement and is retained. It does not solve the wider 2025/26 instability alone.
 
+## Manual weekend venue review — 2026-08-28
+
+A separate manual early-season review workflow now exists at `/betting/weekend`. It intentionally bypasses the normal 15-match-season betting gate because it is for human real-time checking, not automatic production recommendations.
+
+Rule under test:
+- Keep venue PPG8 and venue xG8 separate.
+- Adjust venue xG halfway toward actual venue goals over the same eight matches: `adj xGF8 = (xGF8 + GF8)/2`, and similarly for xGA/GA.
+- Venue PPG8 decides the result unless the absolute home-v-away venue PPG gap is <= 0.30.
+- Only when the PPG gap is close does adjusted venue xG8 act as the tie-break/result signal.
+- Promoted/returning sides without eight matches in the current PL spell are labelled limited history rather than using stale prior-spell venue data.
+
+Historical top-pick test on 2,342 matches with complete venue8 histories:
+- venue PPG8 only: 49.7% overall; 46.4% in 2025/26
+- raw venue xG8 only: 51.5%; 46.4%
+- adjusted venue xG8 only: 52.4%; 47.0%
+- venue PPG8 with adjusted-xG tie-break at gap <= 0.30: 51.3%; 49.1%
+
+Supabase tables/views:
+- `public.betting_manual_fixtures`
+- `public.betting_manual_weekend_analysis`
+- `public.betting_manual_weekend_snapshot`
+
+The 2026/27 Matchweek-2 weekend snapshot includes all ten fixtures from 28–31 Aug 2026. 1X2 prices were captured from the Oddschecker UK coupon on 28 Aug 2026 and are displayed with no-vig implied probabilities. The page shows venue PPG, actual GF/GA, raw xGF/xGA, 50/50 adjusted xGF/xGA, adjusted match expected goals and probabilities, market odds/probabilities, and the manual rule decision.
+
 ## 2025/26 diagnosis
 
 All internal metric families deteriorate in 2025/26, not just one weight. The composite also underpredicts draws:
@@ -168,8 +192,8 @@ Reusable research function exists in Supabase: `public.betting_elo_eval(...)`.
 1. Keep v3 as baseline.
 2. Keep v6 as the transparent all-metrics probability research model.
 3. Use residual-aware xG30 rather than raw xG30 in the 10% long-xG family for current v6 research.
-4. Do not choose weights from ROI; fit probabilities using Brier/log loss, then evaluate betting edge separately.
-5. Treat 2025/26 as an untouched diagnostic/holdout when testing new structures.
+4. Keep venue PPG and adjusted venue xG separate in the manual weekend diagnostic; do not amplify one with the other.
+5. Do not choose weights from ROI; fit probabilities using Brier/log loss, then evaluate betting edge separately.
 6. Investigate match-level disagreements with the bookmaker to identify genuinely missing football context rather than fitting shock results.
 7. Do not hard-code bookmaker agreement into the predictive model merely to make historical ROI look better.
 
