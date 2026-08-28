@@ -150,27 +150,38 @@ This is a small but clean improvement and is retained. It does not solve the wid
 
 ## Manual weekend venue review — 2026-08-28
 
-A separate manual early-season review workflow now exists at `/betting/weekend`. It intentionally bypasses the normal 15-match-season betting gate because it is for human real-time checking, not automatic production recommendations.
+A separate manual early-season review workflow exists at `/betting/weekend`. It intentionally bypasses the normal 15-match-season betting gate because it is for human real-time checking, not automatic production recommendations.
 
-Rule under test:
+Current rule under test:
 - Keep venue PPG8 and venue xG8 separate.
-- Adjust venue xG halfway toward actual venue goals over the same eight matches: `adj xGF8 = (xGF8 + GF8)/2`, and similarly for xGA/GA.
+- Before actual goals are allowed to influence xG, normalise them at individual-match level: `normalised actual goals = xG + clamp(actual goals - xG, -1.0, +1.0)` for both goals scored and goals conceded.
+- Average those normalised actual GF/GA values across the same eight venue matches.
+- Blend the normalised actual average 50/50 with raw venue xG: `adj xGF8 = (xGF8 + capped actual GF8)/2`, and similarly for xGA.
+- The ±1.0 cap is the current chosen threshold. A tighter ±0.8 threshold was discussed but has not been adopted.
 - Venue PPG8 decides the result unless the absolute home-v-away venue PPG gap is <= 0.30.
 - Only when the PPG gap is close does adjusted venue xG8 act as the tie-break/result signal.
 - Promoted/returning sides without eight matches in the current PL spell are labelled limited history rather than using stale prior-spell venue data.
 
-Historical top-pick test on 2,342 matches with complete venue8 histories:
+Reason for the cap: a freak finishing/goalkeeping scoreline should not dominate an eight-match sample. Nottingham Forest's last eight PL away matches were the immediate example: raw actual GF8 was 2.375 and raw xGF8 1.282; after capping each individual match at ±1.0 from xG, capped actual GF8 is 1.899 and adjusted xGF8 becomes about 1.590 instead of about 1.829 under the old uncapped 50/50 rule.
+
+Historical top-pick test quoted before the new cap was introduced, on 2,342 matches with complete venue8 histories:
 - venue PPG8 only: 49.7% overall; 46.4% in 2025/26
 - raw venue xG8 only: 51.5%; 46.4%
-- adjusted venue xG8 only: 52.4%; 47.0%
-- venue PPG8 with adjusted-xG tie-break at gap <= 0.30: 51.3%; 49.1%
+- old uncapped adjusted venue xG8 only: 52.4%; 47.0%
+- venue PPG8 with old uncapped adjusted-xG tie-break at gap <= 0.30: 51.3%; 49.1%
+
+Those adjusted-xG historical figures must now be treated as legacy until the ±1.0 capped version is back-tested on the same sample.
 
 Supabase tables/views:
 - `public.betting_manual_fixtures`
-- `public.betting_manual_weekend_analysis`
+- `public.betting_manual_weekend_analysis` — now uses the ±1.0 capped residual rule
+- `public.betting_manual_weekend_analysis_uncapped` — preserved legacy view for QA/comparison
+- `public.betting_manual_weekend_capped_actuals`
 - `public.betting_manual_weekend_snapshot`
 
-The 2026/27 Matchweek-2 weekend snapshot includes all ten fixtures from 28–31 Aug 2026. 1X2 prices were captured from the Oddschecker UK coupon on 28 Aug 2026 and are displayed with no-vig implied probabilities. The page shows venue PPG, actual GF/GA, raw xGF/xGA, 50/50 adjusted xGF/xGA, adjusted match expected goals and probabilities, market odds/probabilities, and the manual rule decision.
+The current snapshot stores `goal_xg_residual_cap`, `home_vgf8_capped`, `home_vga8_capped`, `away_vgf8_capped`, and `away_vga8_capped`. GitHub migration: `scripts/update_weekend_adjusted_xg_cap.sql`.
+
+The 2026/27 Matchweek-2 weekend snapshot includes all ten fixtures from 28–31 Aug 2026. 1X2 prices were captured from the Oddschecker UK coupon on 28 Aug 2026 and are displayed with no-vig implied probabilities. The page shows venue PPG, raw actual GF/GA, capped actual GF/GA, raw xGF/xGA, adjusted xGF/xGA, adjusted match expected goals and probabilities, market odds/probabilities, and the manual rule decision.
 
 ## 2025/26 diagnosis
 
@@ -192,10 +203,11 @@ Reusable research function exists in Supabase: `public.betting_elo_eval(...)`.
 1. Keep v3 as baseline.
 2. Keep v6 as the transparent all-metrics probability research model.
 3. Use residual-aware xG30 rather than raw xG30 in the 10% long-xG family for current v6 research.
-4. Keep venue PPG and adjusted venue xG separate in the manual weekend diagnostic; do not amplify one with the other.
-5. Do not choose weights from ROI; fit probabilities using Brier/log loss, then evaluate betting edge separately.
-6. Investigate match-level disagreements with the bookmaker to identify genuinely missing football context rather than fitting shock results.
-7. Do not hard-code bookmaker agreement into the predictive model merely to make historical ROI look better.
+4. In the manual weekend diagnostic, cap each match's actual goal residual versus xG at ±1.0 before the 50/50 actual/xG blend; keep venue PPG and adjusted venue xG separate.
+5. Back-test the new ±1.0 capped rule against the old uncapped adjusted-xG rule before treating it as historically validated.
+6. Do not choose weights from ROI; fit probabilities using Brier/log loss, then evaluate betting edge separately.
+7. Investigate match-level disagreements with the bookmaker to identify genuinely missing football context rather than fitting shock results.
+8. Do not hard-code bookmaker agreement into the predictive model merely to make historical ROI look better.
 
 ## Betting research rules
 
