@@ -1,6 +1,6 @@
 # Data refresh — 2026-09-01
 
-This records the current-season refresh performed after Premier League Matchweek 2 (28–31 Aug 2026).
+This records the current-season refresh performed after Premier League Matchweek 2 (28–31 Aug 2026), plus the newly available 2025/26 Transfermarkt archive refresh.
 
 ## Official FPL
 
@@ -58,17 +58,49 @@ The Grimes/Akpom cases use older source-native canonical identities and do not y
 
 ## Transfermarkt
 
-The project's Transfermarkt CC0 source (`dcaribou/transfermarkt-datasets`) was checked directly.
-
-Published Premier League seasons currently present in its `games` table run through season `2025` (2025/26), with 380 games for that season. There are currently **0 games for season 2026 / 2026/27** in that published source.
+The project's Transfermarkt CC0 source (`dcaribou/transfermarkt-datasets`) was checked directly. Its published Premier League `games` data currently runs through season `2025` (2025/26). The source snapshot was last modified on 5 Aug 2026 and currently has **0 games for season 2026 / 2026/27**.
 
 Therefore no 2026/27 Transfermarkt player-match data was imported. This is a source-availability limitation, not a database failure. Do not silently switch to a different Transfermarkt scraper/provenance just to manufacture a current-season refresh.
 
-Existing live Transfermarkt source coverage in Supabase remains through 2024/25. A future task may separately audit/import the newly published 2025/26 Transfermarkt season using the strict exact-fixture + >=20-appearance completeness gate before promotion.
+### Newly imported 2025/26 Transfermarkt archive
+
+The source now contains complete 2025/26 data, so that season was audited and staged to close the project's previous Transfermarkt gap.
+
+Strict completeness gate:
+- 380/380 Premier League matches present
+- 11,492 player appearance rows
+- every match has at least 20 source appearance rows
+- minimum appearances per match: 24
+- maximum appearances per match: 34
+
+Exact source match mapping:
+- 380/380 Transfermarkt matches mapped to canonical matches by exact date + teams + score
+- no fuzzy fixture mapping was needed
+
+Player identity/staging:
+- 11,492 rows staged in `public.source_player_match_stats`
+- 9,063 rows initially linked through pre-existing verified Transfermarkt provider-ID mappings
+- 2,429 rows initially unresolved
+- a 2025/26 canonical match-history fingerprint pass then resolved 114 additional source players without using names
+- accepted new mappings required at least 3 common games, >=95% two-sided overlap, goals/minutes agreement, and one-to-one composite uniqueness
+- all 114 accepted mappings actually had 100% overlap
+- common-game count: min 3, average 20.7, max 38
+- worst accepted average minute difference: 0.67 minutes
+
+Final 2025/26 Transfermarkt staging state:
+- 11,418 / 11,492 rows linked to canonical player codes
+- 74 rows remain unresolved
+- those 74 rows represent 30 source players and remain staged only rather than being guessed by name
+- the rich `player_match_stats` rows for 2025/26 were not overwritten; Transfermarkt remains a source/crosswalk layer for that season
+
+Identity safety checks after the refresh:
+- no Transfermarkt/Understat provider-prefixed canonical IDs were introduced into `players`
+- every mapped 2025/26 staged Transfermarkt code exists in canonical `players`
+- only the project's previously explicit manual-name-verified exceptions remain; this refresh introduced no automated name-based player mapping
 
 ## Security / temporary helpers
 
-Temporary read/audit Edge Functions used during the investigation were locked after use. The reusable production data remains in normal Supabase tables; no public unauthenticated staging helper was intentionally left open.
+Temporary read/audit/staging Edge Functions used during the investigation were locked after use with JWT verification and inert handlers. The reusable production data remains in normal Supabase tables; no public unauthenticated Transfermarkt or Understat staging helper was intentionally left open.
 
 ## Current verified headline state
 
@@ -78,3 +110,4 @@ Temporary read/audit Edge Functions used during the investigation were locked af
 - Understat current-season canonical enrichment: 313 rows / 0 advanced-metric mismatches
 - `betting_team_match_v2`: 40 rows / 20 matches / all with xG
 - Transfermarkt 2026/27: unavailable from the project's published source as of 2026-09-01
+- Transfermarkt 2025/26: 11,492 staged rows / 380 matches; 11,418 linked rows; 74 unresolved rows across 30 source players
