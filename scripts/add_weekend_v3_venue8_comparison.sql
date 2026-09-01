@@ -1,5 +1,9 @@
--- Adds and refreshes the research-only v3_24_venue8_50 comparison on the manual weekend snapshot.
+-- Adds and refreshes the research-only v3_24_venue8_50_noppg comparison on the manual weekend snapshot.
 -- This does not alter the existing weekend PPG8/xG tie-break pick.
+-- PPG10 is retained in the snapshot as a diagnostic only and does not affect the candidate probability.
+-- Refresh the feature cache first so newly loaded league matches cannot be omitted from the comparison.
+
+refresh materialized view public.betting_team_features_v2_cache;
 
 alter table public.betting_manual_weekend_snapshot
   add column if not exists candidate_model_version text,
@@ -73,17 +77,15 @@ with fx as (
     ((0.65*home_xga24+0.35*home_cga24)*home_n24+((lhome+laway)/2)*4)/(home_n24+4) hdef,
     ((0.65*away_xgf24+0.35*away_cgf24)*away_n24+((lhome+laway)/2)*4)/(away_n24+4) aatt,
     ((0.65*away_xga24+0.35*away_cga24)*away_n24+((lhome+laway)/2)*4)/(away_n24+4) adef,
-    (coalesce(home_ppg10,1.35)*least(home_n10,10)+1.35*4)/(least(home_n10,10)+4) hps,
-    (coalesce(away_ppg10,1.35)*least(away_n10,10)+1.35*4)/(least(away_n10,10)+4) aps,
     (home_vxgf8+home_vcgf8)/2 hvatt,(home_vxga8+home_vcga8)/2 hvdef,
     (away_vxgf8+away_vcgf8)/2 avatt,(away_vxga8+away_vcga8)/2 avdef
   from inp
 ), lam as (
   select *,
     case when home_n8>=4 and away_n8>=4 and home_n24>0 and away_n24>0 then greatest(0.15,least(4.5,
-      sqrt(lhome*sqrt(hvatt*avdef))*power(greatest(0.05,(hatt/lmid)*(adef/lmid)),0.75)*exp(0.14*(hps-aps)))) end home_lambda,
+      sqrt(lhome*sqrt(hvatt*avdef))*power(greatest(0.05,(hatt/lmid)*(adef/lmid)),0.75))) end home_lambda,
     case when home_n8>=4 and away_n8>=4 and home_n24>0 and away_n24>0 then greatest(0.15,least(4.5,
-      sqrt(laway*sqrt(avatt*hvdef))*power(greatest(0.05,(aatt/lmid)*(hdef/lmid)),0.75)*exp(-0.14*(hps-aps)))) end away_lambda
+      sqrt(laway*sqrt(avatt*hvdef))*power(greatest(0.05,(aatt/lmid)*(hdef/lmid)),0.75))) end away_lambda
   from calc
 ), scored as (
   select l.fixture_id,l.home_n24,l.away_n24,l.home_n10,l.away_n10,l.home_ppg10,l.away_ppg10,l.home_lambda,l.away_lambda,
@@ -93,7 +95,7 @@ with fx as (
     on l.home_lambda is not null and l.away_lambda is not null
 )
 update public.betting_manual_weekend_snapshot s
-set candidate_model_version='v3_24_venue8_50',
+set candidate_model_version='v3_24_venue8_50_noppg',
     candidate_home_n24=x.home_n24,
     candidate_away_n24=x.away_n24,
     candidate_home_n10=x.home_n10,
