@@ -35,6 +35,15 @@ This section supersedes the older current-season counts and weekend state below.
 - Refresh order: load and verify sources → refresh aggregate/current feature caches → `scripts/refresh_upcoming_weekend_snapshot.sql` → `scripts/add_weekend_v3_venue8_comparison.sql`. Both snapshot scripts now restrict updates to fixtures before kick-off. Older diagnostic scripts may update all snapshots; do not run them unfiltered on played games.
 - Frozen v3, model architecture, identity rules and existing RLS/grants are unchanged. The 7 September Dixon–Coles and close-game-confidence experiments remain research only.
 
+## Thought to revisit — draw interpretation, 2026-09-08
+
+Mark's hypothesis: some model/market disagreements may point to a greater chance of a draw. Evidence that a favourite may struggle to win does not necessarily establish that the other team is more likely to win; similarly, an underlying xG advantage may produce a competitive draw rather than a decisive result.
+
+- Examples discussed for 12 September: Aston Villa–Nottingham Forest, Tottenham–Everton, and Bournemouth–Brentford.
+- Bournemouth's seven draws in its last eight home matches made the distinction particularly relevant, despite the model's favourable xG assessment.
+- This is an unproven interpretation to keep alongside the forecasts, not a validated draw signal. Mark explicitly requested no model changes: retain the existing probabilities, weights and frozen snapshots.
+- Existing context: `BETTING_DIXON_COLES_EXPERIMENT_2026-09-07.md` found that a fixed draw adjustment was not consistently beneficial across seasons. This note does not overturn that decision or request a new experiment.
+
 ## Player identity policy and state
 
 Identity policy is strict and permanent:
