@@ -1,6 +1,6 @@
 # PL Results Project — Persistent Project Context
 
-_Last updated: 2026-09-02_
+_Last updated: 2026-09-08_
 
 This file is the durable handoff/source of truth for continuing the project across ChatGPT conversations. At the start of a new project chat, read this file first, then verify live state in GitHub/Supabase/Vercel before making changes.
 
@@ -15,7 +15,25 @@ This file is the durable handoff/source of truth for continuing the project acro
 Connected systems:
 - GitHub: `MarkColonel80/PL-Results-Project`, branch `main`
 - Supabase project: `PL Results Project`, ref `priibitbnmfetyblzltk`
-- Vercel project: `pl-results-project`, production `https://pl-results-project.vercel.app`
+- Vercel project: `pl-results-project`, production `https://pl-data.colly.me.uk` (existing alias `https://pl-results-project.vercel.app`)
+
+## Latest operational checkpoint — 2026-09-08
+
+This section supersedes the older current-season counts and weekend state below. Full checkpoint: `DATA_REFRESH_2026-09-08.md`.
+
+- Production: **https://pl-data.colly.me.uk**; existing Vercel address still works. Use the `pl-data` subdomain only. Mark explicitly does not want this app on the main `colly.me.uk` domain.
+- Results/canonical fixtures: 30 completed matches through GW3 / 6 September.
+- Official FPL: 1,890 rows / 30 fixtures, zero point-component mismatches.
+- Rich canonical: 1,199 rows / 30 matches; no missing permanent player codes.
+- Understat: 929 staged rows / 30 matches, 507 mapped, 502 enriched, zero advanced-metric mismatches. Five mapped staged appearances still lack a canonical row and remain unforced.
+- Team model/cache: 60 team rows / 30 matches, complete xG coverage. FPL and current team-form caches refreshed.
+- Football-Data odds: all 30 completed current-season fixtures imported. Corrected missing team aliases.
+- Transfermarkt published PL games still stop at 24 May 2026; zero 2026/27 games despite the newer 5 September repository commit.
+- `/betting/weekend`: **upcoming games only**, currently 12–14 September (10 fixtures including Monday Leeds–Newcastle). Mark asked to remove passed games from this page; do not add an archive selector there.
+- Seven eligible candidate predictions; Chelsea–Hull, Palace–Ipswich and Coventry–Brighton remain LIMITED_HISTORY.
+- Keep played fixture inputs/predictions frozen in Supabase. The 4–6 September state is also in `data/weekend-2026-09-04-frozen.json`.
+- Refresh order: load and verify sources → refresh aggregate/current feature caches → `scripts/refresh_upcoming_weekend_snapshot.sql` → `scripts/add_weekend_v3_venue8_comparison.sql`. Both snapshot scripts now restrict updates to fixtures before kick-off. Older diagnostic scripts may update all snapshots; do not run them unfiltered on played games.
+- Frozen v3, model architecture, identity rules and existing RLS/grants are unchanged. The 7 September Dixon–Coles and close-game-confidence experiments remain research only.
 
 ## Player identity policy and state
 

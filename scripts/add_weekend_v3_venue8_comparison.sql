@@ -25,6 +25,7 @@ with fx as (
     (select b.segment_id from public.betting_team_features_v2_cache b where b.team_name=f.home_team and b.kickoff_time<f.kickoff_time order by b.kickoff_time desc,b.match_id desc limit 1) home_segment,
     (select b.segment_id from public.betting_team_features_v2_cache b where b.team_name=f.away_team and b.kickoff_time<f.kickoff_time order by b.kickoff_time desc,b.match_id desc limit 1) away_segment
   from public.betting_manual_fixtures f
+  where f.kickoff_time > now() -- Preserve played fixtures' frozen pre-match predictions.
 ), inp as (
   select f.fixture_id,
     hs.n24 home_n24,hs.xgf24 home_xgf24,hs.xga24 home_xga24,hs.cgf24 home_cgf24,hs.cga24 home_cga24,

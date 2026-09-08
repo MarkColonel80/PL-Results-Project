@@ -36,6 +36,10 @@ CACHE = pathlib.Path(__file__).resolve().parents[1] / ".cache" / "football_data_
 core.TEAM_ALIASES.update({
     "Bournemouth": "AFC Bournemouth",
     "Brighton": "Brighton & Hove Albion",
+    "Coventry": "Coventry City",
+    "Hull": "Hull City",
+    "Ipswich": "Ipswich Town",
+    "Leeds": "Leeds United",
     "Man City": "Manchester City",
     "Man United": "Manchester United",
     "Newcastle": "Newcastle United",
