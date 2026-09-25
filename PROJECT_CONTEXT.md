@@ -1,6 +1,6 @@
 # PL Results Project — Persistent Project Context
 
-_Last updated: 2026-09-08_
+_Last updated: 2026-09-25_
 
 This file is the durable handoff/source of truth for continuing the project across ChatGPT conversations. At the start of a new project chat, read this file first, then verify live state in GitHub/Supabase/Vercel before making changes.
 
@@ -17,7 +17,36 @@ Connected systems:
 - Supabase project: `PL Results Project`, ref `priibitbnmfetyblzltk`
 - Vercel project: `pl-results-project`, production `https://pl-data.colly.me.uk` (existing alias `https://pl-results-project.vercel.app`)
 
-## Latest operational checkpoint — 2026-09-08
+## Latest operational checkpoint — 2026-09-25
+
+This section supersedes the older current-season counts and weekend state below. Full checkpoint: `DATA_REFRESH_2026-09-25.md`.
+
+- Results/canonical fixtures: 50 completed matches through GW5 / 20 September.
+- Official FPL: 3,216 rows / 50 fixtures, zero point-component mismatches and 667 current-season players.
+- Rich canonical: 1,995 player-match rows / 50 matches; no missing permanent player codes. There are 1,635 derived lineup rows and 110 goal events.
+- Two Brentford–Chelsea shot-derived goals have no source scorer identity and remain null rather than guessed.
+- Understat: 1,538 staged rows / 50 matches, 836 mapped through verified provider IDs, 828 canonical rows enriched, and zero advanced-metric mismatches. Eight mapped staged appearances lack a canonical appearance and remain unforced.
+- Team model/cache: 100 team rows / 50 matches, complete xG coverage. FPL and team-form caches are refreshed.
+- Football-Data odds: all 50 completed current-season fixtures imported and mapped.
+- Transfermarkt's approved published data still has zero 2026/27 Premier League matches; provenance remains unchanged.
+- All saved pre-refresh hashes for GW1–3 FPL, rich player-match, lineup, goal, Understat and odds rows matched after the refresh. All 20 played manual prediction snapshots also remained byte-for-byte stable by hash.
+- There are no future manual fixtures. The official feed's next league fixture is Arsenal–Leeds on 10 October; load the next fixture-and-odds snapshot before expecting `/betting/weekend` to show a round.
+- Frozen v3, the Venue8 candidate architecture, identity rules, RLS and grants are unchanged. The Supabase Security Advisor still has zero error/critical findings.
+
+## Shot-composition research checkpoint — 2026-09-10
+
+Mark proposed examining whether the same total xG made from many small chances versus fewer large chances has different predictive value, and whether opponent defence/goalkeeper quality changes that interpretation. The first local historical study is saved in `XG_SHOT_COMPOSITION_RESEARCH_2026-09-10.md`.
+
+- Existing Understat archive contains individual shot events: ten complete seasons (2014/15–2023/24), plus 59 games from 2024/25. One incomplete historical match was excluded.
+- Understat match xG is rebound-adjusted: grouping consecutive shots explicitly labelled `lastAction=Rebound` and applying `1-product(1-p)` reproduces 7,715/7,716 non-empty team-match totals within 0.005. Raw shot sums are not interchangeable with these published totals.
+- Average non-penalty shot quality is moderately persistent across separate eight-match blocks (correlation 0.402); total non-penalty xG (0.672) and shot volume (0.632) are more persistent.
+- A chronological, expanding-season test used 1,360 fixtures from 2020/21–2023/24, with exact frozen v3 predictions as the baseline. Added prior attacking/conceded chance quality slightly improved H/D/A Brier: 0.58509 to 0.58392 against an equally calibrated control; raw frozen v3 scored 0.58450. Blank prediction worsened slightly. An extra attack/defence interaction did not improve on the simple quality addition. Rebound-sequence sensitivity was similar.
+- This is a small exploratory signal, not a validated model upgrade. No frozen v3, Venue8 candidate, live prediction, database or deployment changes were made. It does not establish that 0.10 xG chances should be discounted specifically against Arsenal or another named opponent.
+- The recent FPL-Core-Insights shot feed failed enough shot/xG/xGOT consistency checks that no forecast rows met the complete-history rule for a goalkeeper pilot. In 2025/26, xGOT reconciled on both sides in 148/380 matches; in 2026/27 through GW3, only 1/30. Reconcile native shot records and establish goalkeeper identities before testing an individual keeper adjustment.
+- Do not treat 2025/26 as an untouched holdout. The 43 eligible fixtures from the incomplete 2024/25 archive were reported separately. The current Venue8 candidate was not the comparator in this first study.
+- Reproducibility bundle on this Mac: `/Users/mark2/Documents/Codex/2026-09-10/i-a/outputs/PL-Data-Hub-xG-research.zip`. Working scripts/cache: `/Users/mark2/Documents/Codex/2026-09-10/i-a/work/xg-study`. Numerical and temporal leakage checks passed.
+
+## Previous operational checkpoint — 2026-09-08
 
 This section supersedes the older current-season counts and weekend state below. Full checkpoint: `DATA_REFRESH_2026-09-08.md`.
 
@@ -301,19 +330,21 @@ Browser-role smoke tests passed after the migration for the player/history/team/
 7. Always refresh dependent materialized feature caches after current match data is loaded and before weekend comparison calculations.
 8. Preserve the 2026-09-02 Supabase privilege/RLS architecture when adding new tables, views, materialized views or RPCs. New browser-facing objects should be least-privilege by default.
 
-## Current verified headline state — 2026-09-02
+## Current verified headline state — 2026-09-25
 
-- FPL 2026/27: 1,236 rows / 20 fixtures / GW2 complete
-- canonical core player-match stats: 759 rows / 19 matches; Villa–Arsenal rich-player source pending
-- Understat 2026/27 staged: 622 rows / 20 matches
-- Understat current-season canonical enrichment: 313 rows / 0 advanced-metric mismatches
-- `betting_team_match_v2`: 40 rows / 20 matches / all with xG
-- Transfermarkt 2026/27: unavailable from the project's published source as of 2026-09-01
+- FPL 2026/27: 3,216 rows / 50 fixtures / GW5 complete / zero point-component mismatches
+- canonical core player-match stats: 1,995 rows / 50 matches / no missing permanent player codes
+- Understat 2026/27 staged: 1,538 rows / 50 matches / 836 mapped through verified IDs
+- Understat current-season canonical enrichment: 828 rows / 0 advanced-metric mismatches
+- `betting_team_match_v2`: 100 rows / 50 matches / all with xG
+- Football-Data 2026/27 odds: 50/50 completed fixtures mapped
+- Transfermarkt 2026/27: unavailable from the project's approved published source as of 2026-09-25
 - Transfermarkt 2025/26: 11,492 staged rows / 380 matches; 11,418 linked; 74 unresolved across 30 source players
 - v3 remains validated production baseline
 - v6 remains experimental
 - leading comparison candidate is 24-match capped structure + 50%-shrunk Venue8, no PPG10
 - weekend comparison refresh includes a mandatory team-feature materialized-view refresh
+- no future manual weekend fixtures are currently loaded; the next official league fixture is 10 October
 - Supabase Security Advisor has 0 ERROR/critical findings after the 2026-09-02 hardening
 
 ## Continuation instruction
