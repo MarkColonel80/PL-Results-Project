@@ -30,7 +30,8 @@ This section supersedes the older current-season counts and weekend state below.
 - Football-Data odds: all 50 completed current-season fixtures imported and mapped.
 - Transfermarkt's approved published data still has zero 2026/27 Premier League matches; provenance remains unchanged.
 - All saved pre-refresh hashes for GW1–3 FPL, rich player-match, lineup, goal, Understat and odds rows matched after the refresh. All 20 played manual prediction snapshots also remained byte-for-byte stable by hash.
-- There are no future manual fixtures. The official feed's next league fixture is Arsenal–Leeds on 10 October; load the next fixture-and-odds snapshot before expecting `/betting/weekend` to show a round.
+- `/betting/weekend` now contains all ten official Matchweek 6 fixtures for 10–12 October. Seven have 24-match + Venue8 probabilities; Ipswich–Fulham, Hull–Everton and Coventry–Newcastle remain `LIMITED_HISTORY`. Full checkpoint: `WEEKEND_2026-10-10.md`.
+- Market prices for the 10–12 October round are intentionally null and labelled pending. Refresh the three 1X2 odds, source and observation time nearer kick-off without altering the model snapshot.
 - Frozen v3, the Venue8 candidate architecture, identity rules, RLS and grants are unchanged. The Supabase Security Advisor still has zero error/critical findings.
 
 ## Shot-composition research checkpoint — 2026-09-10
@@ -344,7 +345,7 @@ Browser-role smoke tests passed after the migration for the player/history/team/
 - v6 remains experimental
 - leading comparison candidate is 24-match capped structure + 50%-shrunk Venue8, no PPG10
 - weekend comparison refresh includes a mandatory team-feature materialized-view refresh
-- no future manual weekend fixtures are currently loaded; the next official league fixture is 10 October
+- ten future Matchweek 6 fixtures are loaded for 10–12 October; seven are model-eligible and market odds are pending
 - Supabase Security Advisor has 0 ERROR/critical findings after the 2026-09-02 hardening
 
 ## Continuation instruction
