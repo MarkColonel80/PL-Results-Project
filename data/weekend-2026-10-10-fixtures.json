@@ -5,12 +5,12 @@
     "kickoff_time": "2026-10-10T11:30:00Z",
     "home_team": "Arsenal",
     "away_team": "Leeds United",
-    "market_home_odds": null,
-    "market_draw_odds": null,
-    "market_away_odds": null,
-    "market_source": null,
-    "market_snapshot_at": null,
-    "notes": "Official FPL fixture 51; market odds pending nearer kick-off"
+    "market_home_odds": 1.4166666666666667,
+    "market_draw_odds": 5.25,
+    "market_away_odds": 9.4,
+    "market_source": "Oddschecker UK Premier League coupon",
+    "market_snapshot_at": "2026-10-09T13:56:57Z",
+    "notes": "Official FPL fixture 51; Oddschecker fractional H/D/A 5/12, 17/4, 42/5; observed 9 October 2026; source https://www.oddschecker.com/football/leagues-cups/english/premier-league"
   },
   {
     "fixture_id": 52,
@@ -18,12 +18,12 @@
     "kickoff_time": "2026-10-10T14:00:00Z",
     "home_team": "Aston Villa",
     "away_team": "Brentford",
-    "market_home_odds": null,
-    "market_draw_odds": null,
-    "market_away_odds": null,
-    "market_source": null,
-    "market_snapshot_at": null,
-    "notes": "Official FPL fixture 52; market odds pending nearer kick-off"
+    "market_home_odds": 2.75,
+    "market_draw_odds": 3.6,
+    "market_away_odds": 2.625,
+    "market_source": "Oddschecker UK Premier League coupon",
+    "market_snapshot_at": "2026-10-09T13:56:57Z",
+    "notes": "Official FPL fixture 52; Oddschecker fractional H/D/A 7/4, 13/5, 13/8; observed 9 October 2026; source https://www.oddschecker.com/football/leagues-cups/english/premier-league"
   },
   {
     "fixture_id": 53,
@@ -31,12 +31,12 @@
     "kickoff_time": "2026-10-10T14:00:00Z",
     "home_team": "Chelsea",
     "away_team": "AFC Bournemouth",
-    "market_home_odds": null,
-    "market_draw_odds": null,
-    "market_away_odds": null,
-    "market_source": null,
-    "market_snapshot_at": null,
-    "notes": "Official FPL fixture 53; market odds pending nearer kick-off"
+    "market_home_odds": 1.7222222222222223,
+    "market_draw_odds": 4.333333333333334,
+    "market_away_odds": 4.75,
+    "market_source": "Oddschecker UK Premier League coupon",
+    "market_snapshot_at": "2026-10-09T13:56:57Z",
+    "notes": "Official FPL fixture 53; Oddschecker fractional H/D/A 13/18, 10/3, 15/4; observed 9 October 2026; source https://www.oddschecker.com/football/leagues-cups/english/premier-league"
   },
   {
     "fixture_id": 57,
@@ -44,12 +44,12 @@
     "kickoff_time": "2026-10-10T14:00:00Z",
     "home_team": "Ipswich Town",
     "away_team": "Fulham",
-    "market_home_odds": null,
-    "market_draw_odds": null,
-    "market_away_odds": null,
-    "market_source": null,
-    "market_snapshot_at": null,
-    "notes": "Official FPL fixture 57; market odds pending nearer kick-off"
+    "market_home_odds": 2.8,
+    "market_draw_odds": 3.6,
+    "market_away_odds": 2.6,
+    "market_source": "Oddschecker UK Premier League coupon",
+    "market_snapshot_at": "2026-10-09T13:56:57Z",
+    "notes": "Official FPL fixture 57; Oddschecker fractional H/D/A 9/5, 13/5, 8/5; observed 9 October 2026; source https://www.oddschecker.com/football/leagues-cups/english/premier-league"
   },
   {
     "fixture_id": 60,
@@ -57,12 +57,12 @@
     "kickoff_time": "2026-10-10T14:00:00Z",
     "home_team": "Sunderland",
     "away_team": "Brighton & Hove Albion",
-    "market_home_odds": null,
-    "market_draw_odds": null,
-    "market_away_odds": null,
-    "market_source": null,
-    "market_snapshot_at": null,
-    "notes": "Official FPL fixture 60; market odds pending nearer kick-off"
+    "market_home_odds": 3.2,
+    "market_draw_odds": 3.6,
+    "market_away_odds": 2.4,
+    "market_source": "Oddschecker UK Premier League coupon",
+    "market_snapshot_at": "2026-10-09T13:56:57Z",
+    "notes": "Official FPL fixture 60; Oddschecker fractional H/D/A 11/5, 13/5, 7/5; observed 9 October 2026; source https://www.oddschecker.com/football/leagues-cups/english/premier-league"
   },
   {
     "fixture_id": 59,
@@ -70,12 +70,12 @@
     "kickoff_time": "2026-10-10T16:30:00Z",
     "home_team": "Manchester United",
     "away_team": "Tottenham Hotspur",
-    "market_home_odds": null,
-    "market_draw_odds": null,
-    "market_away_odds": null,
-    "market_source": null,
-    "market_snapshot_at": null,
-    "notes": "Official FPL fixture 59; market odds pending nearer kick-off"
+    "market_home_odds": 1.75,
+    "market_draw_odds": 4.333333333333334,
+    "market_away_odds": 4.647058823529411,
+    "market_source": "Oddschecker UK Premier League coupon",
+    "market_snapshot_at": "2026-10-09T13:56:57Z",
+    "notes": "Official FPL fixture 59; Oddschecker fractional H/D/A 3/4, 10/3, 62/17; observed 9 October 2026; source https://www.oddschecker.com/football/leagues-cups/english/premier-league"
   },
   {
     "fixture_id": 55,
@@ -83,12 +83,12 @@
     "kickoff_time": "2026-10-11T13:00:00Z",
     "home_team": "Crystal Palace",
     "away_team": "Nottingham Forest",
-    "market_home_odds": null,
-    "market_draw_odds": null,
-    "market_away_odds": null,
-    "market_source": null,
-    "market_snapshot_at": null,
-    "notes": "Official FPL fixture 55; market odds pending nearer kick-off"
+    "market_home_odds": 2.75,
+    "market_draw_odds": 3.5,
+    "market_away_odds": 2.75,
+    "market_source": "Oddschecker UK Premier League coupon",
+    "market_snapshot_at": "2026-10-09T13:56:57Z",
+    "notes": "Official FPL fixture 55; Oddschecker fractional H/D/A 7/4, 5/2, 7/4; observed 9 October 2026; source https://www.oddschecker.com/football/leagues-cups/english/premier-league"
   },
   {
     "fixture_id": 56,
@@ -96,12 +96,12 @@
     "kickoff_time": "2026-10-11T13:00:00Z",
     "home_team": "Hull City",
     "away_team": "Everton",
-    "market_home_odds": null,
-    "market_draw_odds": null,
-    "market_away_odds": null,
-    "market_source": null,
-    "market_snapshot_at": null,
-    "notes": "Official FPL fixture 56; market odds pending nearer kick-off"
+    "market_home_odds": 3.9,
+    "market_draw_odds": 3.5,
+    "market_away_odds": 2.1,
+    "market_source": "Oddschecker UK Premier League coupon",
+    "market_snapshot_at": "2026-10-09T13:56:57Z",
+    "notes": "Official FPL fixture 56; Oddschecker fractional H/D/A 29/10, 5/2, 11/10; observed 9 October 2026; source https://www.oddschecker.com/football/leagues-cups/english/premier-league"
   },
   {
     "fixture_id": 58,
@@ -109,12 +109,12 @@
     "kickoff_time": "2026-10-11T15:30:00Z",
     "home_team": "Liverpool",
     "away_team": "Manchester City",
-    "market_home_odds": null,
-    "market_draw_odds": null,
-    "market_away_odds": null,
-    "market_source": null,
-    "market_snapshot_at": null,
-    "notes": "Official FPL fixture 58; market odds pending nearer kick-off"
+    "market_home_odds": 2.9,
+    "market_draw_odds": 3.8,
+    "market_away_odds": 2.4,
+    "market_source": "Oddschecker UK Premier League coupon",
+    "market_snapshot_at": "2026-10-09T13:56:57Z",
+    "notes": "Official FPL fixture 58; Oddschecker fractional H/D/A 19/10, 14/5, 7/5; observed 9 October 2026; source https://www.oddschecker.com/football/leagues-cups/english/premier-league"
   },
   {
     "fixture_id": 54,
@@ -122,11 +122,11 @@
     "kickoff_time": "2026-10-12T19:00:00Z",
     "home_team": "Coventry City",
     "away_team": "Newcastle United",
-    "market_home_odds": null,
-    "market_draw_odds": null,
-    "market_away_odds": null,
-    "market_source": null,
-    "market_snapshot_at": null,
-    "notes": "Official FPL fixture 54; market odds pending nearer kick-off"
+    "market_home_odds": 3.5,
+    "market_draw_odds": 3.75,
+    "market_away_odds": 2.1538461538461537,
+    "market_source": "Oddschecker UK Premier League coupon",
+    "market_snapshot_at": "2026-10-09T13:56:57Z",
+    "notes": "Official FPL fixture 54; Oddschecker fractional H/D/A 5/2, 11/4, 15/13; observed 9 October 2026; source https://www.oddschecker.com/football/leagues-cups/english/premier-league"
   }
 ]

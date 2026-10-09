@@ -1,6 +1,6 @@
 # PL Results Project — Persistent Project Context
 
-_Last updated: 2026-09-25_
+_Last updated: 2026-10-09_
 
 This file is the durable handoff/source of truth for continuing the project across ChatGPT conversations. At the start of a new project chat, read this file first, then verify live state in GitHub/Supabase/Vercel before making changes.
 
@@ -17,7 +17,15 @@ Connected systems:
 - Supabase project: `PL Results Project`, ref `priibitbnmfetyblzltk`
 - Vercel project: `pl-results-project`, production `https://pl-data.colly.me.uk` (existing alias `https://pl-results-project.vercel.app`)
 
-## Latest operational checkpoint — 2026-09-25
+## Latest odds checkpoint — 2026-10-09
+
+- All ten 10–12 October Matchweek 6 fixtures now have home, draw and away market odds from the Oddschecker UK Premier League coupon, observed 9 October at 14:56 UK time (`2026-10-09T13:56:57Z`).
+- Source fractional prices, full decimal conversions, URL and observation time are saved in `data/weekend-2026-10-10-fixtures.json`; the live Supabase fixture rows match this payload.
+- The page's public data query reads ten fixtures with complete market prices and snapshots. Normalised bookmaker probabilities pass the sum-to-one checks.
+- All 30 saved model snapshots and the 20 played fixture records retain their exact pre-update hashes. The model still uses results through GW5; the three limited-history fixtures remain suppressed.
+- Full round and odds checkpoint: `WEEKEND_2026-10-10.md`.
+
+## Latest results checkpoint — 2026-09-25
 
 This section supersedes the older current-season counts and weekend state below. Full checkpoint: `DATA_REFRESH_2026-09-25.md`.
 
@@ -31,7 +39,7 @@ This section supersedes the older current-season counts and weekend state below.
 - Transfermarkt's approved published data still has zero 2026/27 Premier League matches; provenance remains unchanged.
 - All saved pre-refresh hashes for GW1–3 FPL, rich player-match, lineup, goal, Understat and odds rows matched after the refresh. All 20 played manual prediction snapshots also remained byte-for-byte stable by hash.
 - `/betting/weekend` now contains all ten official Matchweek 6 fixtures for 10–12 October. Seven have 24-match + Venue8 probabilities; Ipswich–Fulham, Hull–Everton and Coventry–Newcastle remain `LIMITED_HISTORY`. Full checkpoint: `WEEKEND_2026-10-10.md`.
-- Market prices for the 10–12 October round are intentionally null and labelled pending. Refresh the three 1X2 odds, source and observation time nearer kick-off without altering the model snapshot.
+- Market prices for the 10–12 October round were added on 9 October; use the latest odds checkpoint above.
 - Frozen v3, the Venue8 candidate architecture, identity rules, RLS and grants are unchanged. The Supabase Security Advisor still has zero error/critical findings.
 
 ## Shot-composition research checkpoint — 2026-09-10
@@ -345,7 +353,7 @@ Browser-role smoke tests passed after the migration for the player/history/team/
 - v6 remains experimental
 - leading comparison candidate is 24-match capped structure + 50%-shrunk Venue8, no PPG10
 - weekend comparison refresh includes a mandatory team-feature materialized-view refresh
-- ten future Matchweek 6 fixtures are loaded for 10–12 October; seven are model-eligible and market odds are pending
+- ten future Matchweek 6 fixtures are loaded for 10–12 October; seven are model-eligible and all ten have market odds observed on 9 October
 - Supabase Security Advisor has 0 ERROR/critical findings after the 2026-09-02 hardening
 
 ## Continuation instruction
