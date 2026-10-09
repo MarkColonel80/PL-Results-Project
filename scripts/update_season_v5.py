@@ -6,6 +6,7 @@ try:
 except ImportError:
  subprocess.check_call([sys.executable,"-m","pip","install","supabase"])
  from supabase import create_client
+from normalize_current_team_names import canon
 
 BASE="https://raw.githubusercontent.com/olbauday/FPL-Core-Insights/main"
 
@@ -38,7 +39,7 @@ def main():
    raise
 
  teams=fetch(f"data/{season_dir}/teams.csv")
- team_by_code={str(r["code"]):r.get("fotmob_name") or r.get("name") for r in teams}
+ team_by_code={str(r["code"]):canon(r.get("fotmob_name") or r.get("name")) for r in teams}
  season_players=fetch(f"data/{season_dir}/players.csv")
  player_by_id={str(r.get("player_id")):r for r in season_players if r.get("player_id")}
  canonical=[];season_rows=[]

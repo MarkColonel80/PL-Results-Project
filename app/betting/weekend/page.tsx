@@ -4,6 +4,7 @@ import {useEffect,useMemo,useState} from "react";
 import Link from "next/link";
 import {supabase} from "../../../lib/supabase";
 import {defaultWeekend,groupWeekendFixtures,weekendLabel} from "../../../lib/weekend-rounds";
+import {bettingValue} from "../../../lib/betting-value";
 
 type Snapshot={home_n8:number|null;away_n8:number|null;home_n30:number|null;away_n30:number|null;home_ppg30:number|null;away_ppg30:number|null;home_vn18:number|null;away_vn18:number|null;home_vppg18:number|null;away_vppg18:number|null;home_vxgf18:number|null;home_vxga18:number|null;away_vxgf18:number|null;away_vxga18:number|null;home_vppg8:number|null;away_vppg8:number|null;home_vgf8:number|null;home_vga8:number|null;home_vxgf8:number|null;home_vxga8:number|null;away_vgf8:number|null;away_vga8:number|null;away_vxgf8:number|null;away_vxga8:number|null;goal_xg_residual_cap:number|null;home_vgf8_capped:number|null;home_vga8_capped:number|null;away_vgf8_capped:number|null;away_vga8_capped:number|null;league_home_goals:number;league_away_goals:number;league_home_xg:number;league_away_xg:number;calculated_at:string;candidate_model_version:string|null;candidate_home_n24:number|null;candidate_away_n24:number|null;candidate_home_n10:number|null;candidate_away_n10:number|null;candidate_home_ppg10:number|null;candidate_away_ppg10:number|null;candidate_home_lambda:number|null;candidate_away_lambda:number|null;candidate_home_prob:number|null;candidate_draw_prob:number|null;candidate_away_prob:number|null;candidate_calculated_at:string|null};
 type Fixture={fixture_id:number;kickoff_time:string;home_team:string;away_team:string;market_home_odds:number|null;market_draw_odds:number|null;market_away_odds:number|null;market_source:string|null;market_snapshot_at:string|null;notes:string|null;betting_manual_weekend_snapshot:Snapshot|null};
@@ -21,6 +22,22 @@ function probs(hl:number,al:number){const hp=poisson(hl),ap=poisson(al);let h=0,
 function market(h:number|null,d:number|null,a:number|null){if(!h||!d||!a)return null;const x=1/h,y=1/d,z=1/a,t=x+y+z;return{h:x/t,d:y/t,a:z/t}}
 function outcome(p:{h:number;d:number;a:number}){return p.h>=p.d&&p.h>=p.a?"Home":p.d>=p.a?"Draw":"Away"}
 function dayTime(v:string){return new Intl.DateTimeFormat("en-GB",{weekday:"short",day:"numeric",month:"short",hour:"2-digit",minute:"2-digit",timeZone:"Europe/London"}).format(new Date(v))}
+
+function ValueIndicator({probability,odds}:{probability:number|null|undefined;odds:number|null|undefined}){
+ const value=bettingValue(probability,N(odds));
+ if(!value)return <span className="muted">—</span>;
+ const status=value.direction==="positive"?"Value according to this estimate":value.direction==="negative"?"No value according to this estimate":"Break-even";
+ const explanation=`${status}: our probability ${pct(probability)}, chance needed at these odds ${pct(value.breakEvenProbability)}. Difference in percentage points.`;
+ return <span className={value.direction==="neutral"?"muted":value.direction} style={{fontWeight:700}} title={explanation} aria-label={explanation}><span aria-hidden="true">{value.direction==="positive"?"↑":value.direction==="negative"?"↓":"→"}</span> {value.label}</span>;
+}
+
+function ValueOutcomes({probabilities,fixture}:{probabilities:{h:number;d:number;a:number}|null|undefined;fixture:Fixture}){
+ return <div style={{display:"flex",gap:12}}>
+  <span><span className="muted">H </span><ValueIndicator probability={probabilities?.h} odds={fixture.market_home_odds}/></span>
+  <span><span className="muted">D </span><ValueIndicator probability={probabilities?.d} odds={fixture.market_draw_odds}/></span>
+  <span><span className="muted">A </span><ValueIndicator probability={probabilities?.a} odds={fixture.market_away_odds}/></span>
+ </div>;
+}
 
 export default function WeekendVenueReview(){
  const[allRows,setAllRows]=useState<Fixture[]>([]),[selectedRound,setSelectedRound]=useState("");
@@ -52,7 +69,8 @@ export default function WeekendVenueReview(){
    {dataStatus&&<p className="muted">Results loaded through Matchweek {dataStatus.gameweek}: {dataStatus.count} completed matches, latest {dayTime(dataStatus.date)}.</p>}
    {marketPending&&rows.length>0&&<p className="muted">Market odds are pending and will be refreshed nearer kick-off. Model probabilities and fair odds already use the latest completed-match data.</p>}
    {!rows.length&&<p>No upcoming fixtures have been published for review yet.</p>}
-   {cards.length>0&&<div style={{overflowX:"auto",marginTop:12}}><table><thead><tr><th>Kick-off (UK)</th><th>Fixture</th><th>24-match + Venue8: H / D / A</th></tr></thead><tbody>{cards.map(({f,calc})=><tr key={f.fixture_id}><td>{dayTime(f.kickoff_time)}</td><td><a href={`#fixture-${f.fixture_id}`}>{f.home_team} v {f.away_team}</a></td><td>{calc?.candidateP?`${pct(calc.candidateP.h)} / ${pct(calc.candidateP.d)} / ${pct(calc.candidateP.a)}`:"Limited history"}</td></tr>)}</tbody></table></div>}
+   {cards.length>0&&<div style={{overflowX:"auto",marginTop:12}}><table><thead><tr><th>Kick-off (UK)</th><th>Fixture</th><th>24-match + Venue8: H / D / A</th><th>Value vs odds: H / D / A</th></tr></thead><tbody>{cards.map(({f,calc})=><tr key={f.fixture_id}><td>{dayTime(f.kickoff_time)}</td><td><a href={`#fixture-${f.fixture_id}`}>{f.home_team} v {f.away_team}</a></td><td>{calc?.candidateP?`${pct(calc.candidateP.h)} / ${pct(calc.candidateP.d)} / ${pct(calc.candidateP.a)}`:"Limited history"}</td><td><ValueOutcomes probabilities={calc?.candidateP} fixture={f}/></td></tr>)}</tbody></table></div>}
+   {cards.length>0&&<p className="muted" style={{fontSize:13}}>Value vs odds uses the 24-match + Venue8 probability above minus the chance needed to break even at the saved market price (1 ÷ odds). ↑ Green means positive value according to that estimate; ↓ red means negative value; → means break-even. Differences are percentage points (pp), not expected profit. — means no forecast or price is available.</p>}
   </section>
   <section className="card"><b>Adjusted venue xG rule</b><div className="muted" style={{marginTop:6}}>A hard minimum of <b>4 relevant venue matches per team</b> applies before the current weekend model produces expected goals, H/D/A probabilities, fair odds or a pick. Samples of 4–7 matches are eligible partial Venue8 samples; 8 is the full window. Actual goals are capped only when they exceed match xG by more than 1.0 goal: capped actual = min(actual, xG + 1.0), then blended 50/50 with raw venue xG. The separate <b>24-match + Venue8 comparison</b> uses the research candidate: equal-weight 24-match structural strength, 65% xG + 35% capped actual goals, four pseudo-match shrinkage, the same capped Venue8 inputs, and a 50/50 geometric shrink of the team-specific Venue8 baseline back toward the generic league home/away baseline. <b>PPG10 is diagnostic only and is not used in this comparison probability.</b> It does not replace the current weekend-rule pick. All prices below are decimal odds; bookmaker probabilities use the latest saved 1X2 market prices when available.</div></section>
   <div style={{display:"grid",gap:14}}>{cards.map(({f,s,m,calc})=><section className="card" key={f.fixture_id} id={`fixture-${f.fixture_id}`}>
@@ -93,6 +111,9 @@ export default function WeekendVenueReview(){
     <tr><td>Current weekend probability</td><td>{pct(calc?.p?.h)}</td><td>{pct(calc?.p?.d)}</td><td>{pct(calc?.p?.a)}</td></tr>
     <tr><td>24-match + Venue8 probability</td><td>{pct(calc?.candidateP?.h)}</td><td>{pct(calc?.candidateP?.d)}</td><td>{pct(calc?.candidateP?.a)}</td></tr>
     <tr><td>Bookmaker no-vig probability</td><td>{pct(m?.h)}</td><td>{pct(m?.d)}</td><td>{pct(m?.a)}</td></tr>
+    <tr><td>Chance needed at market odds</td><td>{pct(bettingValue(0,N(f.market_home_odds))?.breakEvenProbability)}</td><td>{pct(bettingValue(0,N(f.market_draw_odds))?.breakEvenProbability)}</td><td>{pct(bettingValue(0,N(f.market_away_odds))?.breakEvenProbability)}</td></tr>
+    <tr><td><b>Current value vs odds</b></td><td><ValueIndicator probability={calc?.p?.h} odds={f.market_home_odds}/></td><td><ValueIndicator probability={calc?.p?.d} odds={f.market_draw_odds}/></td><td><ValueIndicator probability={calc?.p?.a} odds={f.market_away_odds}/></td></tr>
+    <tr><td><b>24-match + Venue8 value vs odds</b></td><td><ValueIndicator probability={calc?.candidateP?.h} odds={f.market_home_odds}/></td><td><ValueIndicator probability={calc?.candidateP?.d} odds={f.market_draw_odds}/></td><td><ValueIndicator probability={calc?.candidateP?.a} odds={f.market_away_odds}/></td></tr>
    </tbody></table></div>
    <div className="muted" style={{marginTop:8}}>Market: {f.market_source||"pending nearer kick-off"}{f.market_snapshot_at?` · snapshot ${dayTime(f.market_snapshot_at)}`:""}. Goal/xG overperformance cap: +{fmt(s?.goal_xg_residual_cap,1)}.{s?.candidate_calculated_at?` Research comparison calculated ${dayTime(s.candidate_calculated_at)}.`:""}</div>
   </section>)}</div>

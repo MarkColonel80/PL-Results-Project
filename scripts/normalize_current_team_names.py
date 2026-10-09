@@ -26,6 +26,7 @@ def normalize_current_team_names(season):
     # rich-source aliases consistent with the canonical FPL/history names.
     for table,cols in {
         "matches":["match_id","home_team","away_team"],
+        "canonical_matches":["canonical_match_id","home_team","away_team"],
         "lineups":["id","team_name"],
         "player_match_stats":["id","team_name"],
         "goals":["id","home_team","away_team"],
@@ -41,6 +42,7 @@ def normalize_current_team_names(season):
             if not patch: continue
             q=sb.table(table).update(patch)
             if table=="matches": q=q.eq("match_id",r["match_id"])
+            elif table=="canonical_matches": q=q.eq("canonical_match_id",r["canonical_match_id"])
             elif table=="player_seasons": q=q.eq("season",season).eq("player_code",r["player_code"])
             else: q=q.eq("id",r["id"])
             q.execute()

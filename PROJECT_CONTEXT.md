@@ -17,6 +17,21 @@ Connected systems:
 - Supabase project: `PL Results Project`, ref `priibitbnmfetyblzltk`
 - Vercel project: `pl-results-project`, production `https://pl-data.colly.me.uk` (existing alias `https://pl-results-project.vercel.app`)
 
+## Weekend value review and applied input repair — 2026-10-09
+
+This supersedes any assumption below that complete row/xG coverage also established complete club history in the saved GW6 forecasts.
+
+- Read-only audit found eight clubs split between full and shortened names in GW4/5. All 50 match results and 100 team-xG rows existed, but full-name feature lookups omitted two recent games for those clubs. The approved repair on 9 October at 15:37 UK time restored 20 club labels with five matches each.
+- Known club aliases: Bournemouth, Brighton, Leeds, Man City, Man Utd, Newcastle, Nott'm Forest and Spurs. No player-name matching or identity changes are involved.
+- A read-only replay reunites these labels before calculating the existing current-spell history windows. It establishes five games for each of 20 clubs and preserves the same seven eligible fixtures. Corrected figures and sensitivity checks: `BETTING_WEEKEND_VALUE_REVIEW_2026-10-09.html`.
+- Corrected City away-win probabilities are primary 49.9% / research 44.5%; Bournemouth 42.4% / 39.3%; Forest 51.1% / 41.4%; Brighton 47.9% / 47.4%; United home 56.2% / 58.2%. These now match the live weekend inputs and saved research snapshots exactly. Applied checkpoint and integrity hashes: `data/weekend-2026-10-10-corrected.json`.
+- City at 2.40 is the more credible modest value candidate. Bournemouth at 4.75 has the largest apparent gap, but the mixed model rewards 7 away goals conceded versus 14.4 xGA over eight games; six are from last season. Longer history and xG-only diagnostics weaken the signal. Arsenal–Leeds draw at 5.25 is a secondary watch. Forest/Brighton remain conditional; Brentford has conflicting views and United's margin is too small at 1.75. Current club squad checks are incomplete; forecasts do not explicitly account for individual absences.
+- Prevention fixes: `scripts/update_season_v5.py` canonicalises known club aliases at import; `scripts/normalize_current_team_names.py` now includes `canonical_matches`. Compilation and whitespace checks pass.
+- Mark explicitly approved applying the prepared repair. `scripts/repair_2026_10_09_team_names.sql` ran successfully as one guarded transaction: 14 source match rows, 14 canonical match rows, 318 player-match rows, 318 lineup rows and 41 goal-event rows had known club labels corrected. The feature cache was refreshed; saved forecast refreshes were restricted to IDs 51–60 before kick-off. Post-checks show zero cache/source discrepancies, 20 clubs × five complete-xG matches, seven eligible predictions and the same three LIMITED_HISTORY fixtures. All protected statistics/player IDs, saved odds, 20 played weekend fixture/snapshot records, unrelated future snapshots and frozen v3 forecasts were preserved.
+- The weekend summary now includes a `Value vs odds: H / D / A` column using the adjacent 24-match + Venue8 probability. Each match's odds table also shows separate current/research value rows. Green ↑ means a positive gap above the actual price's break-even probability (`p − 1 / odds`), red ↓ negative, grey → break-even; the gap is percentage points, not profit. Missing odds or suppressed forecasts show —. Bookmaker no-vig probabilities remain separately labelled. `scripts/test_betting_value.mjs` covers the margin trap, signs, break-even, rounding and unavailable values; the production build passes.
+- Model formulas, weights, eligibility rules and frozen v3 are unchanged. Diagnostic xG-only and Venue18 calculations have not been promoted. Earlier frozen-v3 large-gap betting losses are context, not validation of this comparison candidate.
+- Local evidence bundle: `/Users/mark2/Documents/Codex/2026-09-10/i-a/outputs/weekend-value-review-2026-10-09/` (original snapshots, corrected inputs, read-only queries and report). No bets were placed.
+
 ## Latest odds checkpoint — 2026-10-09
 
 - All ten 10–12 October Matchweek 6 fixtures now have home, draw and away market odds from the Oddschecker UK Premier League coupon, observed 9 October at 14:56 UK time (`2026-10-09T13:56:57Z`).
