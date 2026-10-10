@@ -45,7 +45,7 @@ function ReviewChecks({fixture,snapshot,primary,comparison}:{fixture:Fixture;sna
  const home=venueDefenceComparison(snapshot?.home_n8,N(snapshot?.home_vga8),N(snapshot?.home_vxga8));
  const away=venueDefenceComparison(snapshot?.away_n8,N(snapshot?.away_vga8),N(snapshot?.away_vxga8));
  const defence=(value:ReturnType<typeof venueDefenceComparison>)=>value?`${fmt(value.conceded,1)} conceded vs ${fmt(value.xga,1)} xGA (${value.matches} matches)`:"Unavailable";
- return <div id={`review-${fixture.fixture_id}`} style={{marginTop:14,padding:12,border:"1px solid var(--border)",borderRadius:8}}>
+ return <div id={`review-${fixture.fixture_id}`} style={{marginTop:14,padding:12,border:"1px solid #e5e7eb",borderRadius:8,scrollMarginTop:72}}>
   <b>Before betting — review required</b>
   <p className="muted" style={{margin:"6px 0"}}>A green arrow is a gap under our estimate. Injuries, returning players, confirmed teams and European travel or rotation are not included in these forecasts. The two views share data and are not independent confirmation.</p>
   {warnings.length>0&&<ul style={{margin:"8px 0",paddingLeft:20}}>{warnings.map(w=><li key={w}>{w}</li>)}</ul>}
