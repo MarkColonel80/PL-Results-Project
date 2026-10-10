@@ -1,6 +1,6 @@
 # PL Results Project — Persistent Project Context
 
-_Last updated: 2026-10-09_
+_Last updated: 2026-10-10_
 
 This file is the durable handoff/source of truth for continuing the project across ChatGPT conversations. At the start of a new project chat, read this file first, then verify live state in GitHub/Supabase/Vercel before making changes.
 
@@ -16,6 +16,22 @@ Connected systems:
 - GitHub: `MarkColonel80/PL-Results-Project`, branch `main`
 - Supabase project: `PL Results Project`, ref `priibitbnmfetyblzltk`
 - Vercel project: `pl-results-project`, production `https://pl-data.colly.me.uk` (existing alias `https://pl-results-project.vercel.app`)
+
+## Weekend review checks and learning policy — 2026-10-10
+
+Mark asked what we can learn and put in place for next week following Chelsea–Bournemouth and Arsenal–Leeds. Strengthen assessment and record keeping; do not change probabilities in response to two results.
+
+- `/betting/weekend` now separates mathematical value from a completed assessment: every fixture has a **Before betting — review required** panel and summary link. A green arrow is only the saved probability minus the break-even probability at the saved price.
+- Panels show the observation time of saved prices, prompts for squad news/returning players/confirmed teams, Europe/recovery/travel/rotation, manager/squad changes, and recording a decision before the result. News and team selection are not model inputs; these prompts do not claim those checks have been completed.
+- Automatic prompts identify partial venue samples and outcomes where one forecast has positive value at the quoted price and the other does not. This concerns the price threshold, not merely which team each view favours. The two views use shared data and are not independent validation.
+- A defensive comparison converts each saved Venue8 per-game GA/xGA back to totals over its actual sample. Bournemouth's pre-match away sample was 7 conceded versus 14.4 xGA over 8 games. The panel does not infer goalkeeper skill, significance, regression size or an injury adjustment from this gap.
+- For the next round: first complete the results refresh after the final game and verify canonical club names, source/cache agreement, xG completeness and history counts. Preserve all played pre-kickoff snapshots. Publish/refresh only upcoming fixtures using the existing guarded scripts. Then review **all** eligible outcomes, including draws, against actual available prices; suppressed forecasts remain suppressed.
+- Shortlisted outcomes require a written check of official/latest club news and the Europe schedule before and after the weekend fixture. Recheck confirmed teams and the price near kick-off. Inspect existing xG-only/longer-history diagnostics when an edge depends on unusually low goals conceded, older seasons or a changed manager. These are sensitivity checks, not validated probability replacements. If a diagnostic crosses the price threshold, flag the fragility rather than choosing the most favourable estimate.
+- Record before kick-off: fixture/outcome; both probabilities/model versions; bookmaker and available decimal price with observation time; break-even probability; source links/times for squad/Europe checks; relevant history/finishing/sensitivity concerns; decision (`watch`, `paper selection`, or `pass`) and reason. These records do not assert that Mark placed a bet. Freeze the original record; append later news/price observations with their own timestamps rather than silently replacing it.
+- After full time, append result and the settled outcome, plus xG **with provider/provenance** and shot/game-state context where reliable. Score every eligible published H/D/A forecast against the outcome and a same-time no-vig market benchmark; track pre-recorded selections separately with hypothetical equal stakes and observed prices. Report Brier/log-loss, sample size, calibration and price movement over accumulating rounds. Do not count a near miss as a successful prediction or backfill selections after results.
+- Shot composition remains research: the September pilot's small improvement and inconsistent recent shot/xGOT feed do not justify promoting a new chance-quality/goalkeeper adjustment. Next useful diagnostics are non-penalty chance size/volume, rebounds, and score state at the time of shots, subject to source reconciliation. Keep provider-specific xG separate; match xG is not a pre-match win probability.
+- The 10 October review below is partial: both Bournemouth away-win and Arsenal–Leeds draw outcomes lost. Other weekend games are not evaluated here. See `WEEKEND_2026-10-10.md` for source-linked observations. No bets were placed by the assistant, no results were imported in this change, and formulas/weights/minimum history/saved snapshots are unchanged.
+- Implementation: `lib/weekend-review.ts`, `scripts/test_weekend_review.mjs`, `app/betting/weekend/page.tsx`. The prompts apply automatically to each newly published round; club-news checks and future updates still need to be carried out at that time.
 
 ## Weekend value review and applied input repair — 2026-10-09
 
