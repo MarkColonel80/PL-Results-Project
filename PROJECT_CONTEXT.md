@@ -1,6 +1,6 @@
 # PL Results Project — Persistent Project Context
 
-_Last updated: 2026-10-10_
+_Last updated: 2026-10-16_
 
 This file is the durable handoff/source of truth for continuing the project across ChatGPT conversations. At the start of a new project chat, read this file first, then verify live state in GitHub/Supabase/Vercel before making changes.
 
@@ -16,6 +16,19 @@ Connected systems:
 - GitHub: `MarkColonel80/PL-Results-Project`, branch `main`
 - Supabase project: `PL Results Project`, ref `priibitbnmfetyblzltk`
 - Vercel project: `pl-results-project`, production `https://pl-data.colly.me.uk` (existing alias `https://pl-results-project.vercel.app`)
+
+## Weekend and model-input checkpoint — 2026-10-16
+
+This supersedes the older latest-result/odds/fixture counts below. Full checkpoint: `WEEKEND_2026-10-17.md`.
+
+- `/betting/weekend` now contains all ten verified GW7 fixtures for 17–19 October with complete H/D/A Oddschecker coupon prices observed 16 October at 21:56 UK. Price source fractions, decimal conversions, source match IDs and timestamps: `data/weekend-2026-10-17-fixtures.json`.
+- Results/canonical matches: 60 completed games through GW6 / 12 October. Each of the 20 clubs has six current-season matches; betting inputs/cache contain 120 complete-xG rows with no discrepancies.
+- Added 667 provider-labelled FPL gameweek rows from the established `olbauday/FPL-Core-Insights` mirror at `4ae5ceb679daa4421e9b5e9677ac412e412edff3`, retaining verified permanent player IDs and GW6 club membership. FPL total 3,883 rows; zero point-component mismatches. Direct API fetching was unavailable, so these are labelled with mirror provenance.
+- Added 320 rich player-match rows for eight complete games, total 2,315 current-season rows. Sunderland–Brighton and Coventry–Newcastle rich feeds are incomplete and remain staged; the existing FPL xG fallback covers them. Understat, lineup/goal-event tables and Football-Data historical odds were not refreshed as part of this fixture task.
+- Seven eligible research forecasts. Fulham–Hull, City–Ipswich and Tottenham–Coventry remain LIMITED_HISTORY: each promoted away side has only three relevant away matches. The minimum stays four. All eligible triples sum to one and the existing anon role reads all ten fixture/snapshot records.
+- All 30 older manual fixture/snapshot records, existing GW1–5 match/FPL/rich-player data and frozen v3 forecasts retain exact pre-update hashes. FPL, betting-feature and team-form caches were refreshed; existing pre-match form calculations populated only the new GW6 match rows. Model formulas, weights, eligibility, RLS/grants and app code are unchanged. Guarded pre-kickoff refresh order was preserved.
+- Manual fixture IDs 61–70 are not claimed as native provider IDs; match identities use the recorded rich source IDs and exact teams/date. Saved forecast/check evidence: `data/weekend-2026-10-17-checkpoint.json`.
+- Review prompts apply to the round, but current squad/Europe/confirmed-team checks and a betting shortlist have not been carried out by this fixture update. Browser automation was unavailable; the existing public data read was verified directly.
 
 ## Weekend review checks and learning policy — 2026-10-10
 
