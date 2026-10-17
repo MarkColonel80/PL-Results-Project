@@ -5,12 +5,30 @@ import Link from "next/link";
 import {supabase} from "../../../lib/supabase";
 import {defaultWeekend,groupWeekendFixtures,weekendLabel} from "../../../lib/weekend-rounds";
 import {bettingValue} from "../../../lib/betting-value";
-import {weekendReviewWarnings,venueDefenceComparison} from "../../../lib/weekend-review";
+import {weekendReviewWarnings,venueDefenceComparison,parseWeekendNews} from "../../../lib/weekend-review";
 
 type Snapshot={home_n8:number|null;away_n8:number|null;home_n30:number|null;away_n30:number|null;home_ppg30:number|null;away_ppg30:number|null;home_vn18:number|null;away_vn18:number|null;home_vppg18:number|null;away_vppg18:number|null;home_vxgf18:number|null;home_vxga18:number|null;away_vxgf18:number|null;away_vxga18:number|null;home_vppg8:number|null;away_vppg8:number|null;home_vgf8:number|null;home_vga8:number|null;home_vxgf8:number|null;home_vxga8:number|null;away_vgf8:number|null;away_vga8:number|null;away_vxgf8:number|null;away_vxga8:number|null;goal_xg_residual_cap:number|null;home_vgf8_capped:number|null;home_vga8_capped:number|null;away_vgf8_capped:number|null;away_vga8_capped:number|null;league_home_goals:number;league_away_goals:number;league_home_xg:number;league_away_xg:number;calculated_at:string;candidate_model_version:string|null;candidate_home_n24:number|null;candidate_away_n24:number|null;candidate_home_n10:number|null;candidate_away_n10:number|null;candidate_home_ppg10:number|null;candidate_away_ppg10:number|null;candidate_home_lambda:number|null;candidate_away_lambda:number|null;candidate_home_prob:number|null;candidate_draw_prob:number|null;candidate_away_prob:number|null;candidate_calculated_at:string|null};
 type Fixture={fixture_id:number;kickoff_time:string;home_team:string;away_team:string;market_home_odds:number|null;market_draw_odds:number|null;market_away_odds:number|null;market_source:string|null;market_snapshot_at:string|null;notes:string|null;betting_manual_weekend_snapshot:Snapshot|null};
 
 const MIN_VENUE_MATCHES=4;
+
+function TeamNews({fixture}:{fixture:Fixture}){
+ const news=parseWeekendNews(fixture.notes);
+ if(!news)return null;
+ return <div style={{marginTop:16,padding:16,border:"1px solid var(--border, #d6dde5)",borderRadius:8}}>
+  <h3 style={{margin:"0 0 6px"}}>Team news and schedule</h3>
+  <div className="muted" style={{fontSize:13}}>Checked {dayTime(news.checkedAt)} · {news.teams}</div>
+  <p><b>{fixture.home_team}:</b> {news.home}</p>
+  <p><b>{fixture.away_team}:</b> {news.away}</p>
+  <p><b>Recovery and Europe:</b> {news.schedule}</p>
+  {news.availability.length>0&&<details><summary>Official FPL availability flags</summary>
+   {news.availability.map((line,i)=><p key={i} className="muted">{line}</p>)}
+   <p className="muted" style={{fontSize:13}}>Flags can lag club announcements. A possible return or an expected return date does not confirm availability.</p>
+  </details>}
+  <div style={{fontSize:13,display:"flex",gap:12,flexWrap:"wrap"}}>{news.sources.map(s=><a key={s.url} href={s.url} target="_blank" rel="noreferrer">{s.label}</a>)}</div>
+  <p className="muted" style={{fontSize:13,marginBottom:0}}>Recheck confirmed teams and an available price near kick-off. These reports do not adjust the model probabilities.</p>
+ </div>;
+}
 const N=(v:number|null|undefined)=>v==null?null:Number(v);
 const fmt=(v:number|null|undefined,d=2)=>v==null||!Number.isFinite(Number(v))?"—":Number(v).toFixed(d);
 const pct=(v:number|null|undefined)=>v==null?"—":`${(v*100).toFixed(1)}%`;
@@ -101,6 +119,7 @@ export default function WeekendVenueReview(){
   <div style={{display:"grid",gap:14}}>{cards.map(({f,s,m,calc})=><section className="card" key={f.fixture_id} id={`fixture-${f.fixture_id}`}>
    <div style={{display:"flex",justifyContent:"space-between",gap:12,alignItems:"flex-start",flexWrap:"wrap"}}><div><div className="muted">{dayTime(f.kickoff_time)}</div><h2 style={{margin:"4px 0"}}>{f.home_team} <span className="muted">v</span> {f.away_team}</h2></div><div><b>{calc?.decision||"—"}</b>{calc?.eligible&&calc?.gap!=null&&<div className="muted">Venue PPG gap {fmt(calc.gap,3)}{calc.close?" · xG tie-break active":""}</div>}</div></div>
    <ReviewChecks fixture={f} snapshot={s} primary={calc?.p} comparison={calc?.candidateP}/>
+    <TeamNews fixture={f}/>
    {!s?<p>No snapshot.</p>:<>
     <div style={{marginTop:12}}><b>Calculation inputs</b><div className="muted" style={{marginTop:4}}>These figures feed the current weekend calculation only when both teams meet the 4-match minimum.</div></div>
     <div style={{overflowX:"auto",marginTop:8}}><table><thead><tr><th>Venue8 calculation</th><th>{f.home_team}</th><th>{f.away_team}</th></tr></thead><tbody>

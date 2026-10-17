@@ -1,0 +1,159 @@
+{
+  "checked_at": "2026-10-17T07:41:00Z",
+  "status": "Pre-match investigation; confirmed starting line-ups unavailable at review time.",
+  "scope": "Everton–Chelsea, Brentford–Liverpool, Nottingham Forest–Arsenal only. Read-only database investigation. No live forecasts, saved odds, code, schema, permissions, or bets changed.",
+  "method": "Saved live feature averages and both forecast calculations reproduced. xG-only and longer-history outputs are sensitivity diagnostics, not validated replacements or confidence intervals. All six clubs have 3 current-season venue games among the last 8, and 6 current-season games among the last 24 overall. Shared data means the two forecast views are not independent confirmation. No calibrated injury/Europe/manager adjustment is available.",
+  "price_source": "Oddschecker Premier League coupon, observed during 07:37–07:40 UTC on 17 October. Advertised comparison prices are subject to bookmaker availability. Individual-match pages sometimes show different prices; use a fresh executable quote before a decision.",
+  "price_source_url": "https://www.oddschecker.com/football/leagues-cups/english/premier-league",
+  "decisions": [
+    {
+      "fixture_id": 64,
+      "fixture": "Everton vs Chelsea",
+      "outcomes": [
+        {
+          "outcome": "Everton win",
+          "decision": "pass",
+          "reason": "Headline 52.6% is unstable. Research 41.3%; research xG-only 35.5%; research using 18 venue games 35.6%; current formula using 18 venue games and xG only 30.3%, below 31.25% break-even at 3.20. Do not select whichever diagnostic gives the largest edge."
+        },
+        {
+          "outcome": "Draw / Chelsea win",
+          "decision": "pass",
+          "reason": "No positive research price gap at current coupon prices."
+        }
+      ],
+      "data_findings": [
+        "Everton current-season home: 5 goals scored, 2 conceded; saved-feed xG 4.29 for, 4.79 against over 3 matches. Last8 home: 15 goals for, 10 against; xG11.31 for,10.29 against.",
+        "Chelsea last8 away: 10 scored,17 conceded; xG10.11 for,13.31 against. Last18 away xGF rises from1.26 to1.66 per game; xGA falls from1.66 to1.48.",
+        "The samples span Chelsea's summer manager/squad changes. No explicit opponent-strength adjustment or manager reset is present in this weekend calculation."
+      ],
+      "news": [
+        "Chelsea confirm James is out following knee surgery; Gittens and Emegha also unavailable, with no other fresh fitness concerns reported.",
+        "Premier League predicted-team report identifies Branthwaite as doubtful and Mykolenko as a possible return for Everton. Moyes' reported Friday comments say Norgaard is not ready to start.",
+        "Chelsea had a free midweek. Everton also have no intervening competitive match listed between Hull on11Oct and Chelsea on17Oct, or before Arsenal on24Oct. There is no European-fatigue argument against Chelsea here."
+      ],
+      "sources": [
+        {
+          "published": "2026-10-16",
+          "url": "https://www.chelseafc.com/en/news/article/xabi-alonso-confirms-chelsea-team-news-for-everton"
+        },
+        {
+          "published": "2026-10-16",
+          "url": "https://www.premierleague.com/en/news/4737644/predicted-line-ups-for-matchweek-7"
+        },
+        {
+          "published": "2026-10-16",
+          "url": "https://www.sportsmole.co.uk/football/everton/injury-news/news/triple-everton-injury-update-debut-decision-for-moyes-before-chelsea-clash_607073.html"
+        },
+        {
+          "published": "2026-10-15",
+          "url": "https://www.premierleague.com/en/news/4737266/ten-key-questions-for-matchweek-7s-fixtures"
+        },
+        {
+          "url": "https://www.skysports.com/everton-scores-fixtures"
+        }
+      ],
+      "next_check": "Confirm Branthwaite/Mykolenko and Chelsea midfield/attack; reconsider only if there is material new evidence. Pass remains the recorded decision."
+    },
+    {
+      "fixture_id": 62,
+      "fixture": "Brentford vs Liverpool",
+      "outcomes": [
+        {
+          "outcome": "Brentford win",
+          "decision": "watch",
+          "reason": "Most persuasive football case of the three home-win angles, but narrow research edge. Research42.2%, research xG-only41.3%, researchVenue18 40.9%; advertised2.50 requires40.0%. At2.40, break-even41.7% exceeds two of those checks. No paper selection recorded."
+        },
+        {
+          "outcome": "Draw / Liverpool win",
+          "decision": "pass",
+          "reason": "No positive saved research price gap at the coupon prices."
+        }
+      ],
+      "data_findings": [
+        "Brentford current-season home: 7 scored,1 conceded; saved-feed xG8.26 for,3.21 against in3 games. Last8 home xGF2.39 per game; last18 xGF2.26.",
+        "Liverpool have won2 and drawn1 of their3 current-season away matches. Five of the8 away games predate Iraola's arrival and summer squad changes, so the old away record can misrepresent the current side."
+      ],
+      "news": [
+        "Liverpool's official preview confirms Gravenberch's one-match suspension; Isak, Gakpo and Szoboszlai remain possible returnees, not confirmed absences. Ekitike, Bradley and Leoni are longer-term absentees.",
+        "Liverpool travelled to LASK onWednesday14Oct, won6–3, then face Brentford under72hours later and Villarreal at home onTuesday20Oct. Iraola explicitly expects further rotation.",
+        "Brentford have a full preparation week. Their club reports Schade and Schuster back on the grass but their available minutes uncertain; Collins, Damsgaard and Van den Berg are moving closer to involvement. These concerns can offset Liverpool's problems.",
+        "These are public facts that bookmakers can also price. They do not establish a separate informational advantage."
+      ],
+      "sources": [
+        {
+          "published": "2026-10-16",
+          "url": "https://www.liverpoolfc.com/news/brentford-v-liverpool-team-news-premier-league"
+        },
+        {
+          "published": "2026-10-14; updated team-news section available at review",
+          "url": "https://www.brentfordfc.com/en/news/match-previews-brentford-v-liverpool-premier-league-17-10-2026"
+        },
+        {
+          "published": "2026-10-14",
+          "url": "https://www.uefa.com/uefachampionsleague/news/02a8-2176fa83582b-d99f0b27f405-1000--champions-league-league-phase-fixtures-by-team/"
+        }
+      ],
+      "next_check": "Confirm Schade and Brentford defence, plus Liverpool's possible returnees and rotation. Recheck the actual price. Keep as watch until teams; a price near2.40 weakens the case substantially."
+    },
+    {
+      "fixture_id": 69,
+      "fixture": "Nottingham Forest vs Arsenal",
+      "outcomes": [
+        {
+          "outcome": "Draw",
+          "decision": "watch",
+          "reason": "Research30.9%; research xG-only28.5%; researchVenue18 29.6%. At4.00 break-even25.0%. The numerical signal survives these checks but has not been validated for profitability and does not include current absences."
+        },
+        {
+          "outcome": "Forest win",
+          "decision": "pass",
+          "reason": "Research20.0% vs16.7% break-even at6.00 is a modest mathematical gap, with adverse Forest availability uncertainty."
+        },
+        {
+          "outcome": "Arsenal win",
+          "decision": "pass",
+          "reason": "Research49.1%, research xG-only50.7%, researchVenue18 51.0%, below60.0% required at1.6667. Arsenal remain the most likely single result; that alone does not make the quote value."
+        }
+      ],
+      "data_findings": [
+        "Forest last8 home:7 scored,6 conceded, saved-feed xG8.69 for,7.22 against. Their3 home games this season have produced no goals scored and2 conceded, with xG2.56 for,2.33 against.",
+        "The research goal expectations are0.64 Forest and1.18 Arsenal, total1.82. This low-scoring setup is the main mechanical reason for the31% draw.",
+        "Five of8 Forest home games predate Glasner's arrival. The sample and unadjusted opposition mix may not represent the current team."
+      ],
+      "news": [
+        "Forest's official preview and manager update list Gibbs-White and Milenkovic as doubts, with Savona and Igor Jesus unavailable. Gibbs-White's potential absence weakens confidence in Forest's attacking forecast.",
+        "Forest's official preview lists Saliba, Hincapie and Tzolis out for Arsenal, with Zubimendi a possible return. Arsenal's absences are relevant but do not establish the size of any probability adjustment.",
+        "Arsenal beat Lille at home onTuesday13Oct, leaving five days to Sunday; UEFA confirms Bayern away onWednesday21Oct. The league's predicted-team report notes Arsenal rotated against Lille. This is a different recovery situation from Liverpool's under72hours after Austria.",
+        "Forest's published October schedule contains no European game either side of this weekend; their next match is Ipswich away onFriday23Oct."
+      ],
+      "sources": [
+        {
+          "published": "2026-10-16",
+          "url": "https://www.nottinghamforest.co.uk/news/2026/october/16/forest-preview---reds-host-gunners-on-trentside/"
+        },
+        {
+          "published": "2026-10-16",
+          "url": "https://www.nottinghamforest.co.uk/news/2026/october/16/milenkovi----mgw--doubts--for-visit-of-arsenal/"
+        },
+        {
+          "published": "2026-10-16",
+          "url": "https://www.premierleague.com/en/news/4737644/predicted-line-ups-for-matchweek-7"
+        },
+        {
+          "published": "2026-10-14",
+          "url": "https://www.uefa.com/uefachampionsleague/news/02a8-2176fa83582b-d99f0b27f405-1000--champions-league-league-phase-fixtures-by-team/"
+        },
+        {
+          "url": "https://www.skysports.com/nottingham-forest-scores-fixtures"
+        }
+      ],
+      "next_check": "Gibbs-White and Milenkovic status, Arsenal's actual strength/rotation, Zubimendi availability and fresh price. If Forest lose key players against a strong Arsenal XI, pass rather than inventing an injury-adjusted draw probability."
+    }
+  ],
+  "evidence_files": [
+    "review-inputs-2026-10-17.json",
+    "investigation-diagnostics-2026-10-17.json",
+    "investigate.py"
+  ],
+  "verification": "All 3 live research probability triples and goal expectations reproduced within1e-10. All 12 Venue8 source averages per fixture match the saved snapshot within1e-10. No missing xG in selected samples. Historical forecasts unchanged because every database query was read-only."
+}

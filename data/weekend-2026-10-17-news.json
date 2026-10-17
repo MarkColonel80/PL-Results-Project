@@ -1,0 +1,295 @@
+{
+  "checked_at": "2026-10-17T14:15:55.825812+00:00",
+  "price_observed_at": "2026-10-17T14:14:39Z",
+  "source_url": "https://www.oddschecker.com/football/leagues-cups/english/premier-league",
+  "fixtures": [
+    {
+      "fixture_id": 68,
+      "home_team": "Newcastle United",
+      "away_team": "Aston Villa",
+      "news": {
+        "checkedAt": "2026-10-17T14:15:55.825812+00:00",
+        "home": "Tour\u00e9 remains a fitness check. Elanga, Livramento and Ramsey are unavailable. Jaissle says Joelinton is closer to starting than Dan Burn.",
+        "away": "Barkley and Hemmings face assessments. Maatsen, Ruggeri and Onana remain sidelined.",
+        "schedule": "Newcastle last played at Coventry on Monday. Villa hosted Fenerbah\u00e7e on Wednesday, giving them a shorter turnaround, and host Viking next Wednesday (21 October).",
+        "teams": "Confirmed starting teams are pending.",
+        "availability": [
+          "Newcastle United \u2014 Jaouen: Hamstring injury - Unknown return date; Livramento: Unspecified injury - Expected back 2 Nov; Elanga: Unspecified injury - Expected back 25 Oct; J.Ramsey: Thigh injury - Unknown return date; Tour\u00e9: Unspecified injury - 75% chance of playing",
+          "Aston Villa \u2014 Maatsen: Ankle injury - Unknown return date; Barkley: Unspecified injury - 75% chance of playing; Onana: Knee injury - Unknown return date; George Hemmings: Knee injury - 75% chance of playing; Madjo: Unspecified injury - 50% chance of playing; Ruggeri: Hamstring injury - Unknown return date"
+        ],
+        "sources": [
+          {
+            "label": "Newcastle club update",
+            "url": "https://www.newcastleunited.com/en/news/matthias-jaissles-team-news-update-toure-and-elanga-latest-ahead-of-villans-clash"
+          },
+          {
+            "label": "Villa club preview",
+            "url": "https://next.gc.avfcservices.co.uk/news/2026/october/17/prematch-villa-aim-to-extend-unbeaten-run/"
+          },
+          {
+            "label": "UEFA schedule",
+            "url": "https://www.uefa.com/uefachampionsleague/news/02a8-2176fa83582b-d99f0b27f405-1000--champions-league-league-phase-fixtures-by-team/"
+          },
+          {
+            "label": "Official FPL availability feed",
+            "url": "https://fantasy.premierleague.com/api/bootstrap-static/"
+          }
+        ]
+      },
+      "notes": "GW7 checked against rich_core 26-27-prem-newcastle-united-vs-aston-villa at source commit 4ae5ceb679daa4421e9b5e9677ac412e412edff3 and Sky Sports; Oddschecker fractional H/D/A 13/10 / 14/5 / 21/10; https://www.oddschecker.com/football/leagues-cups/english/premier-league. Manual review ID, not asserted to be a native provider ID.\nWEEKEND_NEWS_JSON:{\"checkedAt\":\"2026-10-17T14:15:55.825812+00:00\",\"home\":\"Tour\u00e9 remains a fitness check. Elanga, Livramento and Ramsey are unavailable. Jaissle says Joelinton is closer to starting than Dan Burn.\",\"away\":\"Barkley and Hemmings face assessments. Maatsen, Ruggeri and Onana remain sidelined.\",\"schedule\":\"Newcastle last played at Coventry on Monday. Villa hosted Fenerbah\u00e7e on Wednesday, giving them a shorter turnaround, and host Viking next Wednesday (21 October).\",\"teams\":\"Confirmed starting teams are pending.\",\"availability\":[\"Newcastle United \u2014 Jaouen: Hamstring injury - Unknown return date; Livramento: Unspecified injury - Expected back 2 Nov; Elanga: Unspecified injury - Expected back 25 Oct; J.Ramsey: Thigh injury - Unknown return date; Tour\u00e9: Unspecified injury - 75% chance of playing\",\"Aston Villa \u2014 Maatsen: Ankle injury - Unknown return date; Barkley: Unspecified injury - 75% chance of playing; Onana: Knee injury - Unknown return date; George Hemmings: Knee injury - 75% chance of playing; Madjo: Unspecified injury - 50% chance of playing; Ruggeri: Hamstring injury - Unknown return date\"],\"sources\":[{\"label\":\"Newcastle club update\",\"url\":\"https://www.newcastleunited.com/en/news/matthias-jaissles-team-news-update-toure-and-elanga-latest-ahead-of-villans-clash\"},{\"label\":\"Villa club preview\",\"url\":\"https://next.gc.avfcservices.co.uk/news/2026/october/17/prematch-villa-aim-to-extend-unbeaten-run/\"},{\"label\":\"UEFA schedule\",\"url\":\"https://www.uefa.com/uefachampionsleague/news/02a8-2176fa83582b-d99f0b27f405-1000--champions-league-league-phase-fixtures-by-team/\"},{\"label\":\"Official FPL availability feed\",\"url\":\"https://fantasy.premierleague.com/api/bootstrap-static/\"}]}",
+      "market_home_odds": 2.4,
+      "market_draw_odds": 3.8,
+      "market_away_odds": 2.947368421052632,
+      "market_source": "Oddschecker UK Premier League coupon",
+      "market_snapshot_at": "2026-10-17T14:14:39Z",
+      "fractional_prices": [
+        "7/5",
+        "14/5",
+        "37/19"
+      ]
+    },
+    {
+      "fixture_id": 61,
+      "home_team": "AFC Bournemouth",
+      "away_team": "Sunderland",
+      "news": {
+        "checkedAt": "2026-10-17T14:15:55.825812+00:00",
+        "home": "Scott remains out. Kluivert and Adli returned in Europe on Thursday.",
+        "away": "Meunier is ruled out despite the softer FPL flag. Isidor is a late check; Brobbey and Diarra are available for consideration.",
+        "schedule": "Both played in the Europa League on Thursday: Bournemouth at home to Sturm Graz, Sunderland away to Torreense in Portugal. Next Thursday (22 October), Bournemouth host Milan and Sunderland visit Lech Pozna\u0144.",
+        "teams": "Confirmed starting teams are pending.",
+        "availability": [
+          "AFC Bournemouth \u2014 Milosavljevi\u0107: Thigh injury - Unknown return date; J.Araujo: Thigh injury - Unknown return date; Scott: Thigh injury - Unknown return date; Kroupi.Jr: Foot injury - Expected back 7 Nov",
+          "Sunderland \u2014 Ballard: Hamstring injury - Unknown return date; Meunier: Groin injury - 75% chance of playing; Mundle: Knee injury - Unknown return date; Isidor: Knock - 50% chance of playing"
+        ],
+        "sources": [
+          {
+            "label": "Premier League team update",
+            "url": "https://www.premierleague.com/en/news/4737644/predicted-line-ups-for-matchweek-7"
+          },
+          {
+            "label": "Latest Sunderland report",
+            "url": "https://uk.sports.yahoo.com/news/regis-le-bris-reveals-fit-050000533.html"
+          },
+          {
+            "label": "UEFA schedule",
+            "url": "https://www.uefa.com/uefaeuropaleague/news/02a8-2177782493b9-69ba3288701d-1000--europa-league-league-phase-fixtures-and-results-by-team/"
+          },
+          {
+            "label": "Official FPL availability feed",
+            "url": "https://fantasy.premierleague.com/api/bootstrap-static/"
+          }
+        ]
+      },
+      "notes": "GW7 checked against rich_core 26-27-prem-afc-bournemouth-vs-sunderland at source commit 4ae5ceb679daa4421e9b5e9677ac412e412edff3 and Sky Sports; Oddschecker fractional H/D/A 15/13 / 13/5 / 13/5; https://www.oddschecker.com/football/leagues-cups/english/premier-league. Manual review ID, not asserted to be a native provider ID.\nWEEKEND_NEWS_JSON:{\"checkedAt\":\"2026-10-17T14:15:55.825812+00:00\",\"home\":\"Scott remains out. Kluivert and Adli returned in Europe on Thursday.\",\"away\":\"Meunier is ruled out despite the softer FPL flag. Isidor is a late check; Brobbey and Diarra are available for consideration.\",\"schedule\":\"Both played in the Europa League on Thursday: Bournemouth at home to Sturm Graz, Sunderland away to Torreense in Portugal. Next Thursday (22 October), Bournemouth host Milan and Sunderland visit Lech Pozna\u0144.\",\"teams\":\"Confirmed starting teams are pending.\",\"availability\":[\"AFC Bournemouth \u2014 Milosavljevi\u0107: Thigh injury - Unknown return date; J.Araujo: Thigh injury - Unknown return date; Scott: Thigh injury - Unknown return date; Kroupi.Jr: Foot injury - Expected back 7 Nov\",\"Sunderland \u2014 Ballard: Hamstring injury - Unknown return date; Meunier: Groin injury - 75% chance of playing; Mundle: Knee injury - Unknown return date; Isidor: Knock - 50% chance of playing\"],\"sources\":[{\"label\":\"Premier League team update\",\"url\":\"https://www.premierleague.com/en/news/4737644/predicted-line-ups-for-matchweek-7\"},{\"label\":\"Latest Sunderland report\",\"url\":\"https://uk.sports.yahoo.com/news/regis-le-bris-reveals-fit-050000533.html\"},{\"label\":\"UEFA schedule\",\"url\":\"https://www.uefa.com/uefaeuropaleague/news/02a8-2177782493b9-69ba3288701d-1000--europa-league-league-phase-fixtures-and-results-by-team/\"},{\"label\":\"Official FPL availability feed\",\"url\":\"https://fantasy.premierleague.com/api/bootstrap-static/\"}]}",
+      "market_home_odds": 2.1578947368421053,
+      "market_draw_odds": 3.6,
+      "market_away_odds": 3.6,
+      "market_source": "Oddschecker UK Premier League coupon",
+      "market_snapshot_at": "2026-10-17T14:14:39Z",
+      "fractional_prices": [
+        "22/19",
+        "13/5",
+        "13/5"
+      ]
+    },
+    {
+      "fixture_id": 63,
+      "home_team": "Brighton & Hove Albion",
+      "away_team": "Crystal Palace",
+      "news": {
+        "checkedAt": "2026-10-17T14:15:55.825812+00:00",
+        "home": "Struijk is eligible after his red card was rescinded, but his hamstring remains a concern. Minteh and Wieffer are not yet ready.",
+        "away": "Disasi is suspended. Henderson, Mateta, Chilwell and Tomiyasu still require checks.",
+        "schedule": "Both played on Thursday. Brighton were at home to Kauno \u017dalgiris in the Conference League; Palace travelled to Lyon in the Europa League. Palace visit Be\u015fikta\u015f next Thursday (22 October).",
+        "teams": "Confirmed starting teams are pending.",
+        "availability": [
+          "Brighton & Hove Albion \u2014 Mitoma: Hamstring injury - Expected back 18 Oct; Minteh: Leg injury - Expected back 28 Nov; Wieffer: Knee injury - Unknown return date; Yohanna: Unspecified injury - Expected back 18 Oct; Tzimas: Knee injury - Unknown return date; Ferguson: Ankle injury - Expected back 18 Oct; Struijk: Hamstring injury - 75% chance of playing; Azeez: Hamstring injury - Expected back 18 Oct",
+          "Crystal Palace \u2014 Disasi: Suspended until 25 Oct; Henderson: Foot injury - 50% chance of playing; Chadi Riad: Knee injury - Unknown return date; Mateta: Hamstring injury - Expected back 18 Oct; Tomiyasu: Calf injury - Expected back 18 Oct; Chilwell: Unspecified injury - Unknown return date"
+        ],
+        "sources": [
+          {
+            "label": "Brighton appeal confirmed",
+            "url": "https://www.brightonandhovealbion.com/media-article/mft-news-pascal-struijk-red-card-suspension-overturned-sunderland-bha-pl-october-2026"
+          },
+          {
+            "label": "Premier League team update",
+            "url": "https://www.premierleague.com/en/news/4737644/predicted-line-ups-for-matchweek-7"
+          },
+          {
+            "label": "Palace press conference",
+            "url": "https://www.aol.com/articles/sage-henderson-fitness-lyon-defeat-150617000.html"
+          },
+          {
+            "label": "UEFA schedule",
+            "url": "https://www.uefa.com/uefaeuropaleague/news/02a8-2177782493b9-69ba3288701d-1000--europa-league-league-phase-fixtures-and-results-by-team/"
+          },
+          {
+            "label": "Official FPL availability feed",
+            "url": "https://fantasy.premierleague.com/api/bootstrap-static/"
+          }
+        ]
+      },
+      "notes": "GW7 checked against rich_core 26-27-prem-brighton-hove-albion-vs-crystal-palace at source commit 4ae5ceb679daa4421e9b5e9677ac412e412edff3 and Sky Sports; Oddschecker fractional H/D/A 6/11 / 18/5 / 5/1; https://www.oddschecker.com/football/leagues-cups/english/premier-league. Manual review ID, not asserted to be a native provider ID.\nWEEKEND_NEWS_JSON:{\"checkedAt\":\"2026-10-17T14:15:55.825812+00:00\",\"home\":\"Struijk is eligible after his red card was rescinded, but his hamstring remains a concern. Minteh and Wieffer are not yet ready.\",\"away\":\"Disasi is suspended. Henderson, Mateta, Chilwell and Tomiyasu still require checks.\",\"schedule\":\"Both played on Thursday. Brighton were at home to Kauno \u017dalgiris in the Conference League; Palace travelled to Lyon in the Europa League. Palace visit Be\u015fikta\u015f next Thursday (22 October).\",\"teams\":\"Confirmed starting teams are pending.\",\"availability\":[\"Brighton & Hove Albion \u2014 Mitoma: Hamstring injury - Expected back 18 Oct; Minteh: Leg injury - Expected back 28 Nov; Wieffer: Knee injury - Unknown return date; Yohanna: Unspecified injury - Expected back 18 Oct; Tzimas: Knee injury - Unknown return date; Ferguson: Ankle injury - Expected back 18 Oct; Struijk: Hamstring injury - 75% chance of playing; Azeez: Hamstring injury - Expected back 18 Oct\",\"Crystal Palace \u2014 Disasi: Suspended until 25 Oct; Henderson: Foot injury - 50% chance of playing; Chadi Riad: Knee injury - Unknown return date; Mateta: Hamstring injury - Expected back 18 Oct; Tomiyasu: Calf injury - Expected back 18 Oct; Chilwell: Unspecified injury - Unknown return date\"],\"sources\":[{\"label\":\"Brighton appeal confirmed\",\"url\":\"https://www.brightonandhovealbion.com/media-article/mft-news-pascal-struijk-red-card-suspension-overturned-sunderland-bha-pl-october-2026\"},{\"label\":\"Premier League team update\",\"url\":\"https://www.premierleague.com/en/news/4737644/predicted-line-ups-for-matchweek-7\"},{\"label\":\"Palace press conference\",\"url\":\"https://www.aol.com/articles/sage-henderson-fitness-lyon-defeat-150617000.html\"},{\"label\":\"UEFA schedule\",\"url\":\"https://www.uefa.com/uefaeuropaleague/news/02a8-2177782493b9-69ba3288701d-1000--europa-league-league-phase-fixtures-and-results-by-team/\"},{\"label\":\"Official FPL availability feed\",\"url\":\"https://fantasy.premierleague.com/api/bootstrap-static/\"}]}",
+      "market_home_odds": 1.5454545454545454,
+      "market_draw_odds": 4.75,
+      "market_away_odds": 6.0,
+      "market_source": "Oddschecker UK Premier League coupon",
+      "market_snapshot_at": "2026-10-17T14:14:39Z",
+      "fractional_prices": [
+        "6/11",
+        "15/4",
+        "5/1"
+      ]
+    },
+    {
+      "fixture_id": 66,
+      "home_team": "Leeds United",
+      "away_team": "Manchester United",
+      "news": {
+        "checkedAt": "2026-10-17T14:15:55.825812+00:00",
+        "home": "Farke confirms Rodon is unavailable. James has returned to training but needs to come through the final sessions; the manager reports the rest of his squad fit.",
+        "away": "Shaw and Mainoo need checks; Mazraoui could return. Mart\u00ednez is available. \u0160e\u0161ko and Dorgu remain unavailable.",
+        "schedule": "Leeds have had a full preparation week. United played away to Atl\u00e9tico Madrid on Tuesday and visit Como next Wednesday (21 October); they have five days between the Atl\u00e9tico game and this fixture.",
+        "teams": "Confirmed starting teams are pending.",
+        "availability": [
+          "Leeds United \u2014 Rodon: Hamstring injury - Expected back 21 Nov; James: Back injury - 50% chance of playing; Mateo Joseph: Knee injury - Unknown return date",
+          "Manchester United \u2014 Heaton: Hamstring injury - Unknown return date; Dorgu: Hamstring injury - Expected back 25 Oct; Mazraoui: Back injury - 25% chance of playing; Shaw: Unspecified injury - 75% chance of playing; Mainoo: Unspecified injury - 75% chance of playing; Ugarte: Knee injury - Unknown return date; \u0160e\u0161ko: Shin injury - Expected back 18 Oct"
+        ],
+        "sources": [
+          {
+            "label": "Leeds club update",
+            "url": "https://www.leedsunited.com/en/news/team-news-daniel-farke-gives-positive-update-on-wales-duo"
+          },
+          {
+            "label": "United team update",
+            "url": "https://www.manutd.com/en/news/team-news-for-leeds-v-united-18-october-2026"
+          },
+          {
+            "label": "Premier League team update",
+            "url": "https://www.premierleague.com/en/news/4737644/predicted-line-ups-for-matchweek-7"
+          },
+          {
+            "label": "UEFA schedule",
+            "url": "https://www.uefa.com/uefachampionsleague/news/02a8-2176fa83582b-d99f0b27f405-1000--champions-league-league-phase-fixtures-by-team/"
+          },
+          {
+            "label": "Official FPL availability feed",
+            "url": "https://fantasy.premierleague.com/api/bootstrap-static/"
+          }
+        ]
+      },
+      "notes": "GW7 checked against rich_core 26-27-prem-leeds-united-vs-manchester-united at source commit 4ae5ceb679daa4421e9b5e9677ac412e412edff3 and Sky Sports; Oddschecker fractional H/D/A 11/8 / 27/10 / 2/1; https://www.oddschecker.com/football/leagues-cups/english/premier-league. Manual review ID, not asserted to be a native provider ID.\nWEEKEND_NEWS_JSON:{\"checkedAt\":\"2026-10-17T14:15:55.825812+00:00\",\"home\":\"Farke confirms Rodon is unavailable. James has returned to training but needs to come through the final sessions; the manager reports the rest of his squad fit.\",\"away\":\"Shaw and Mainoo need checks; Mazraoui could return. Mart\u00ednez is available. \u0160e\u0161ko and Dorgu remain unavailable.\",\"schedule\":\"Leeds have had a full preparation week. United played away to Atl\u00e9tico Madrid on Tuesday and visit Como next Wednesday (21 October); they have five days between the Atl\u00e9tico game and this fixture.\",\"teams\":\"Confirmed starting teams are pending.\",\"availability\":[\"Leeds United \u2014 Rodon: Hamstring injury - Expected back 21 Nov; James: Back injury - 50% chance of playing; Mateo Joseph: Knee injury - Unknown return date\",\"Manchester United \u2014 Heaton: Hamstring injury - Unknown return date; Dorgu: Hamstring injury - Expected back 25 Oct; Mazraoui: Back injury - 25% chance of playing; Shaw: Unspecified injury - 75% chance of playing; Mainoo: Unspecified injury - 75% chance of playing; Ugarte: Knee injury - Unknown return date; \u0160e\u0161ko: Shin injury - Expected back 18 Oct\"],\"sources\":[{\"label\":\"Leeds club update\",\"url\":\"https://www.leedsunited.com/en/news/team-news-daniel-farke-gives-positive-update-on-wales-duo\"},{\"label\":\"United team update\",\"url\":\"https://www.manutd.com/en/news/team-news-for-leeds-v-united-18-october-2026\"},{\"label\":\"Premier League team update\",\"url\":\"https://www.premierleague.com/en/news/4737644/predicted-line-ups-for-matchweek-7\"},{\"label\":\"UEFA schedule\",\"url\":\"https://www.uefa.com/uefachampionsleague/news/02a8-2176fa83582b-d99f0b27f405-1000--champions-league-league-phase-fixtures-by-team/\"},{\"label\":\"Official FPL availability feed\",\"url\":\"https://fantasy.premierleague.com/api/bootstrap-static/\"}]}",
+      "market_home_odds": 2.4,
+      "market_draw_odds": 3.7,
+      "market_away_odds": 3.0,
+      "market_source": "Oddschecker UK Premier League coupon",
+      "market_snapshot_at": "2026-10-17T14:14:39Z",
+      "fractional_prices": [
+        "7/5",
+        "27/10",
+        "2/1"
+      ]
+    },
+    {
+      "fixture_id": 69,
+      "home_team": "Nottingham Forest",
+      "away_team": "Arsenal",
+      "news": {
+        "checkedAt": "2026-10-17T14:15:55.825812+00:00",
+        "home": "Gibbs-White and Milenkovi\u0107 are doubts. Savona and Igor Jesus remain out.",
+        "away": "Saliba, Hincapi\u00e9 and Tzolis remain out; Zubimendi may return following assessment.",
+        "schedule": "Arsenal hosted Lille on Tuesday, five days before this game, and travel to Bayern on Wednesday (21 October). Forest have no intervening European fixture and next visit Ipswich on Friday (23 October).",
+        "teams": "Confirmed starting teams are pending.",
+        "availability": [
+          "Nottingham Forest \u2014 Milenkovi\u0107: Knee injury - 75% chance of playing; Savona: Knee injury - Unknown return date; Gibbs-White: Muscular injury - 75% chance of playing; Igor Jesus: Calf injury - Unknown return date",
+          "Arsenal \u2014 Saliba: Back injury - Unknown return date; Hincapie: Ankle injury - Expected back 24 Oct; Zubimendi: Unspecified injury - 75% chance of playing; Tzolis: Hamstring injury - Expected back 1 Nov"
+        ],
+        "sources": [
+          {
+            "label": "Forest club preview",
+            "url": "https://www.nottinghamforest.co.uk/news/2026/october/16/forest-preview---reds-host-gunners-on-trentside/"
+          },
+          {
+            "label": "Forest fitness update",
+            "url": "https://www.nottinghamforest.co.uk/news/2026/october/16/milenkovi----mgw--doubts--for-visit-of-arsenal/"
+          },
+          {
+            "label": "UEFA schedule",
+            "url": "https://www.uefa.com/uefachampionsleague/news/02a8-2176fa83582b-d99f0b27f405-1000--champions-league-league-phase-fixtures-by-team/"
+          },
+          {
+            "label": "Official FPL availability feed",
+            "url": "https://fantasy.premierleague.com/api/bootstrap-static/"
+          }
+        ]
+      },
+      "notes": "GW7 checked against rich_core 26-27-prem-nottingham-forest-vs-arsenal at source commit 4ae5ceb679daa4421e9b5e9677ac412e412edff3 and Sky Sports; Oddschecker fractional H/D/A 5/1 / 3/1 / 11/17; https://www.oddschecker.com/football/leagues-cups/english/premier-league. Manual review ID, not asserted to be a native provider ID.\nWEEKEND_NEWS_JSON:{\"checkedAt\":\"2026-10-17T14:15:55.825812+00:00\",\"home\":\"Gibbs-White and Milenkovi\u0107 are doubts. Savona and Igor Jesus remain out.\",\"away\":\"Saliba, Hincapi\u00e9 and Tzolis remain out; Zubimendi may return following assessment.\",\"schedule\":\"Arsenal hosted Lille on Tuesday, five days before this game, and travel to Bayern on Wednesday (21 October). Forest have no intervening European fixture and next visit Ipswich on Friday (23 October).\",\"teams\":\"Confirmed starting teams are pending.\",\"availability\":[\"Nottingham Forest \u2014 Milenkovi\u0107: Knee injury - 75% chance of playing; Savona: Knee injury - Unknown return date; Gibbs-White: Muscular injury - 75% chance of playing; Igor Jesus: Calf injury - Unknown return date\",\"Arsenal \u2014 Saliba: Back injury - Unknown return date; Hincapie: Ankle injury - Expected back 24 Oct; Zubimendi: Unspecified injury - 75% chance of playing; Tzolis: Hamstring injury - Expected back 1 Nov\"],\"sources\":[{\"label\":\"Forest club preview\",\"url\":\"https://www.nottinghamforest.co.uk/news/2026/october/16/forest-preview---reds-host-gunners-on-trentside/\"},{\"label\":\"Forest fitness update\",\"url\":\"https://www.nottinghamforest.co.uk/news/2026/october/16/milenkovi----mgw--doubts--for-visit-of-arsenal/\"},{\"label\":\"UEFA schedule\",\"url\":\"https://www.uefa.com/uefachampionsleague/news/02a8-2176fa83582b-d99f0b27f405-1000--champions-league-league-phase-fixtures-by-team/\"},{\"label\":\"Official FPL availability feed\",\"url\":\"https://fantasy.premierleague.com/api/bootstrap-static/\"}]}",
+      "market_home_odds": 6.0,
+      "market_draw_odds": 4.0,
+      "market_away_odds": 1.6666666666666665,
+      "market_source": "Oddschecker UK Premier League coupon",
+      "market_snapshot_at": "2026-10-17T14:14:39Z",
+      "fractional_prices": [
+        "5/1",
+        "3/1",
+        "4/6"
+      ]
+    },
+    {
+      "fixture_id": 70,
+      "home_team": "Tottenham Hotspur",
+      "away_team": "Coventry City",
+      "news": {
+        "checkedAt": "2026-10-17T14:15:55.825812+00:00",
+        "home": "Bentancur is suspended. Porro and Kulusevski need fresh availability confirmation. Simons, Odobert and Mudryk remain injury concerns; the next manager update is still pending.",
+        "away": "Awoniyi returns from suspension. FPL still flags Wright, Eccles, Woolfenden and Amenda as injured, with Kesler-Hayden a doubt.",
+        "schedule": "Neither side has a European match around this fixture. Spurs last played at United on 10 October and have used a training camp in Spain; Coventry last played Newcastle on 12 October. Both next play in the league on 24 October.",
+        "teams": "Confirmed starting teams are pending.",
+        "availability": [
+          "Tottenham Hotspur \u2014 Pedro Porro: Hamstring injury - Unknown return date; Xavi: Knee injury - Unknown return date; Bentancur: Suspended until 7 Nov; Odobert: Knee injury - Unknown return date; Kulusevski: Knee injury - Unknown return date; Mudryk: Ankle injury - Unknown return date",
+          "Coventry City \u2014 Kesler-Hayden: Hamstring injury - 75% chance of playing; Woolfenden: Knee injury - Unknown return date; Amenda: Calf injury - Unknown return date; Eccles: Ankle injury - Unknown return date; Wright: Thigh injury - Unknown return date"
+        ],
+        "sources": [
+          {
+            "label": "Premier League team update",
+            "url": "https://www.premierleague.com/en/news/4737644/predicted-line-ups-for-matchweek-7"
+          },
+          {
+            "label": "Latest Spurs\u2013Coventry preview",
+            "url": "https://www.sportsmole.co.uk/football/spurs/preview/spurs-vs-coventry-prediction-team-news-lineups_607110.html"
+          },
+          {
+            "label": "Spurs schedule",
+            "url": "https://www.skysports.com/tottenham-hotspur-scores-fixtures"
+          },
+          {
+            "label": "Coventry schedule",
+            "url": "https://www.skysports.com/coventry-city-scores-fixtures"
+          },
+          {
+            "label": "Official FPL availability feed",
+            "url": "https://fantasy.premierleague.com/api/bootstrap-static/"
+          }
+        ]
+      },
+      "notes": "GW7 checked against rich_core 26-27-prem-tottenham-hotspur-vs-coventry-city at source commit 4ae5ceb679daa4421e9b5e9677ac412e412edff3 and Sky Sports; Oddschecker fractional H/D/A 1/2 / 15/4 / 61/10; https://www.oddschecker.com/football/leagues-cups/english/premier-league. Manual review ID, not asserted to be a native provider ID.\nWEEKEND_NEWS_JSON:{\"checkedAt\":\"2026-10-17T14:15:55.825812+00:00\",\"home\":\"Bentancur is suspended. Porro and Kulusevski need fresh availability confirmation. Simons, Odobert and Mudryk remain injury concerns; the next manager update is still pending.\",\"away\":\"Awoniyi returns from suspension. FPL still flags Wright, Eccles, Woolfenden and Amenda as injured, with Kesler-Hayden a doubt.\",\"schedule\":\"Neither side has a European match around this fixture. Spurs last played at United on 10 October and have used a training camp in Spain; Coventry last played Newcastle on 12 October. Both next play in the league on 24 October.\",\"teams\":\"Confirmed starting teams are pending.\",\"availability\":[\"Tottenham Hotspur \u2014 Pedro Porro: Hamstring injury - Unknown return date; Xavi: Knee injury - Unknown return date; Bentancur: Suspended until 7 Nov; Odobert: Knee injury - Unknown return date; Kulusevski: Knee injury - Unknown return date; Mudryk: Ankle injury - Unknown return date\",\"Coventry City \u2014 Kesler-Hayden: Hamstring injury - 75% chance of playing; Woolfenden: Knee injury - Unknown return date; Amenda: Calf injury - Unknown return date; Eccles: Ankle injury - Unknown return date; Wright: Thigh injury - Unknown return date\"],\"sources\":[{\"label\":\"Premier League team update\",\"url\":\"https://www.premierleague.com/en/news/4737644/predicted-line-ups-for-matchweek-7\"},{\"label\":\"Latest Spurs\u2013Coventry preview\",\"url\":\"https://www.sportsmole.co.uk/football/spurs/preview/spurs-vs-coventry-prediction-team-news-lineups_607110.html\"},{\"label\":\"Spurs schedule\",\"url\":\"https://www.skysports.com/tottenham-hotspur-scores-fixtures\"},{\"label\":\"Coventry schedule\",\"url\":\"https://www.skysports.com/coventry-city-scores-fixtures\"},{\"label\":\"Official FPL availability feed\",\"url\":\"https://fantasy.premierleague.com/api/bootstrap-static/\"}]}",
+      "market_home_odds": 1.5,
+      "market_draw_odds": 4.75,
+      "market_away_odds": 7.2,
+      "market_source": "Oddschecker UK Premier League coupon",
+      "market_snapshot_at": "2026-10-17T14:14:39Z",
+      "fractional_prices": [
+        "1/2",
+        "15/4",
+        "31/5"
+      ]
+    }
+  ],
+  "preserved_started_fixtures": [
+    62,
+    64,
+    65,
+    67
+  ]
+}

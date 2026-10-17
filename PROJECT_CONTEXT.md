@@ -1,6 +1,6 @@
 # PL Results Project — Persistent Project Context
 
-_Last updated: 2026-10-16_
+_Last updated: 2026-10-17_
 
 This file is the durable handoff/source of truth for continuing the project across ChatGPT conversations. At the start of a new project chat, read this file first, then verify live state in GitHub/Supabase/Vercel before making changes.
 
@@ -16,6 +16,18 @@ Connected systems:
 - GitHub: `MarkColonel80/PL-Results-Project`, branch `main`
 - Supabase project: `PL Results Project`, ref `priibitbnmfetyblzltk`
 - Vercel project: `pl-results-project`, production `https://pl-data.colly.me.uk` (existing alias `https://pl-results-project.vercel.app`)
+
+## Full stats and weekend news checkpoint — 2026-10-17
+
+This supersedes the older current-season coverage counts below. Full checkpoint: `DATA_REFRESH_2026-10-17.md`; verification and future snapshots: `data/full-refresh-2026-10-17-checkpoint.json`.
+
+- Added Everton 0–2 Chelsea, the only completed match at the refresh cutoff. Results/canonical matches now cover 61 games. Official FPL has 3,942 rows; today’s 59 rows are explicitly final-provisional. Rich player stats and lineups each have 2,440 rows across all 61 matches, with 22 starters per match. All 179 scored goals have goal events. Previously incomplete Sunderland–Brighton and Coventry–Newcastle are filled from direct Fotmob records.
+- Native Fotmob player IDs join only through the explicit Opta ID shared with official FPL and existing permanent player codes. No player-name identity matching. Audited all 61 native match reports, preserving provider provenance. Repaired the official Calvert-Lewin goal appeal, two null Brentford scorer identities and verified own-goal fields; historical FPL points stay as awarded after gameweek closure.
+- Understat and historical Football-Data odds now cover all 60 games through GW6: 1,853 staged Understat rows, 1,001 mapped through existing verified IDs and 991 enriched canonical appearances, with zero advanced-metric mismatches. Ten mapped source appearances without a matching canonical appearance remain unforced. Today’s Understat match detail and historical closing odds are not published yet. Transfermarkt’s approved published source still has zero 2026/27 PL matches, latest 24 May 2026; do not manufacture coverage.
+- FPL aggregates, team feature and form caches are refreshed. The model has 122 current-season team rows with complete xG and zero cache/source differences. Only six future GW7 snapshots were recalculated using the existing formulas and history rules; Tottenham–Coventry remains LIMITED_HISTORY.
+- Six remaining fixtures have fresh H/D/A Oddschecker prices observed 17 October at 15:14 UK and source-linked team news checked at 15:15 UK, including absences, suspension appeals, recovery and European schedules. `/betting/weekend` displays the dated reports and expandable official FPL availability flags; flags may lag club news. Confirmed starting teams are pending. The reports do not adjust probabilities. Payload: `data/weekend-2026-10-17-news.json`.
+- The 34 fixtures already kicked off retain their complete saved fixture/odds/snapshot records, including the three 15:00 UK games. All 60 previous match rows remain unchanged. Historical rows outside the explicitly documented source corrections retain matching integrity hashes. No formula, weight, eligibility, schema, RLS or grant changes.
+- Morning investigation decisions are frozen separately in `data/weekend-2026-10-17-prerefresh-investigation.json`; this refresh does not retrospectively change them or create selections. No bets were placed. Weekend review/news/value tests and production build pass; a local browser verified six news panels, current odds and the 61-match status with no console errors.
 
 ## Weekend and model-input checkpoint — 2026-10-16
 
@@ -403,3 +415,4 @@ Browser-role smoke tests passed after the migration for the player/history/team/
 ## Continuation instruction
 
 When Mark asks to continue this project, read this file, then inspect current GitHub/Supabase/Vercel state before acting. Do not ask Mark to repeat project history that can be recovered from connected systems. Preserve both the identity-safety rules and the 2026-09-02 least-privilege Supabase security rules.
+
