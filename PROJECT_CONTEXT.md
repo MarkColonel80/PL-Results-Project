@@ -1,6 +1,6 @@
 # PL Results Project — Persistent Project Context
 
-_Last updated: 2026-10-17_
+_Last updated: 2026-10-20_
 
 This file is the durable handoff/source of truth for continuing the project across ChatGPT conversations. At the start of a new project chat, read this file first, then verify live state in GitHub/Supabase/Vercel before making changes.
 
@@ -16,6 +16,19 @@ Connected systems:
 - GitHub: `MarkColonel80/PL-Results-Project`, branch `main`
 - Supabase project: `PL Results Project`, ref `priibitbnmfetyblzltk`
 - Vercel project: `pl-results-project`, production `https://pl-data.colly.me.uk` (existing alias `https://pl-results-project.vercel.app`)
+
+## Stats and value review checkpoint — 2026-10-20
+
+This supersedes the older current-season counts below. Refresh details: `DATA_REFRESH_2026-10-20.md`; results review: `WEEKEND_REVIEW_2026-10-17.md`.
+
+- All 70 completed GW1–7 results/canonical matches are loaded, with every club on seven games. Rich player stats and lineups each have 2,800 rows; every match has 40 player records and 22 starters. All 203 goals reconcile to final scores. Official FPL has 4,551 rows across 70 fixtures and 668 player-season identities.
+- All ten GW7 Understat reports and historical Football-Data odds are now published and imported, closing the 17 October gaps. Understat has 2,158 staged rows/70 matches, 1,168 verified mapped rows and 1,156 enriched appearances; 12 mapped source appearances lack matching canonical appearances and remain unforced. Zero advanced-metric mismatches. Unresolved player IDs are not guessed.
+- FPL marks all ten fixtures finished but GW7 itself still `finished=false`, `data_checked=false`; its current rows are explicitly post-match unchecked. Twenty-six previously provisional Everton rows received revised xG/BPS/defensive fields, with total points unchanged. Transfermarkt still has no 2026/27 published PL games.
+- FPL aggregates, team feature and form caches are current: 140 team rows, complete xG, no source/cache differences. Only nine new result rows had preceding-match form fields populated. All 61 previous result rows, historical GW1–6 player/FPL/source rows, prior lineups/goals/odds and Everton rich core rows retain their protection hashes. All 40 manual fixture/odds/snapshot records are unchanged; no played forecast was recalculated.
+- The two main value watchlist ideas both lost: Forest–Arsenal draw at4.00 (0–1), Palace away at6.00 (Brighton5–0). The Palace draw alternative at4.75 and lower-priority United win at3.00 (Leeds1–1United) also lost. Earlier Brentford-win watch at2.50 lost1–2. The unselected Leeds draw is not backfilled as a winner. Two hypothetical one-unit headline stakes would be -2units; no actual bets or paper selections are assumed.
+- Across all seven eligible frozen triples, the saved no-vig market outperformed both views: mean unscaled Brier current0.6475/research0.5700/market0.5056; log loss1.0601/0.9583/0.8731. This round is too small for calibration or profitability conclusions. Retain the existing confirmed-team and executable-price checks; no final-lineup follow-up or retrospective pass is invented.
+- Frozen 17 October after-refresh watchlist: `data/weekend-2026-10-17-watchlist.json`. Appended settlement: `data/weekend-2026-10-17-settlement.json`. Coverage/hashes: `data/full-refresh-2026-10-20-checkpoint.json`. Raw before/after/native sources remain in the active workspace under `outputs/weekend-review-2026-10-20/`.
+- Anonymous reads and local browser verification of the live database pass. No model, app code, schema, RLS or grants changed. Continue preserving played snapshots; do not adjust weights to fit these outcomes.
 
 ## Full stats and weekend news checkpoint — 2026-10-17
 
@@ -415,4 +428,5 @@ Browser-role smoke tests passed after the migration for the player/history/team/
 ## Continuation instruction
 
 When Mark asks to continue this project, read this file, then inspect current GitHub/Supabase/Vercel state before acting. Do not ask Mark to repeat project history that can be recovered from connected systems. Preserve both the identity-safety rules and the 2026-09-02 least-privilege Supabase security rules.
+
 

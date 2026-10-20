@@ -1,0 +1,727 @@
+{
+  "reviewed_at": "2026-10-20T15:11:17.882763+00:00",
+  "scope": "All10 GW7 results, all7 eligible frozen forecast triples, pre-recorded watchlist outcomes. No actual bets assumed.",
+  "original_watchlist_sha256": "b3f37b0eb6a12934d762efc03635a63195176a802b5e0948b1db7b7271282853",
+  "original_watchlist_checked_at": "2026-10-17T14:24:51.708951+00:00",
+  "original_watchlist_status": "Before kick-off watchlist only; no paper selection or bet recorded. Original morning decisions remain frozen.",
+  "headline_watchlist_summary": {
+    "n": 2,
+    "wins": 0,
+    "hypothetical_total_profit_units": -2
+  },
+  "settled_watchlist": [
+    {
+      "fixture_id": 63,
+      "fixture": "Brighton & Hove Albion vs Crystal Palace",
+      "outcome": "D",
+      "pre_match_status": "watch alternative",
+      "rank": 2,
+      "price": 4.75,
+      "result": [
+        5,
+        0
+      ],
+      "won": false,
+      "hypothetical_profit_per_unit": -1,
+      "actual_bet_known": false,
+      "confirmed_lineup_followup_recorded": false
+    },
+    {
+      "fixture_id": 63,
+      "fixture": "Brighton & Hove Albion vs Crystal Palace",
+      "outcome": "A",
+      "pre_match_status": "watch conditional",
+      "rank": 2,
+      "price": 6,
+      "result": [
+        5,
+        0
+      ],
+      "won": false,
+      "hypothetical_profit_per_unit": -1,
+      "actual_bet_known": false,
+      "confirmed_lineup_followup_recorded": false
+    },
+    {
+      "fixture_id": 66,
+      "fixture": "Leeds United vs Manchester United",
+      "outcome": "A",
+      "pre_match_status": "watch lower priority",
+      "rank": null,
+      "price": 3,
+      "result": [
+        1,
+        1
+      ],
+      "won": false,
+      "hypothetical_profit_per_unit": -1,
+      "actual_bet_known": false,
+      "confirmed_lineup_followup_recorded": false
+    },
+    {
+      "fixture_id": 69,
+      "fixture": "Nottingham Forest vs Arsenal",
+      "outcome": "D",
+      "pre_match_status": "watch first",
+      "rank": 1,
+      "price": 4,
+      "result": [
+        0,
+        1
+      ],
+      "won": false,
+      "hypothetical_profit_per_unit": -1,
+      "actual_bet_known": false,
+      "confirmed_lineup_followup_recorded": false
+    }
+  ],
+  "all_fixtures": [
+    {
+      "fixture_id": 61,
+      "fixture": "AFC Bournemouth v Sunderland",
+      "result": [
+        2,
+        0
+      ],
+      "outcome": "H",
+      "saved_odds": [
+        2.1578947368421053,
+        3.6,
+        3.6
+      ],
+      "odds_observed_at": "2026-10-17T14:14:39+00:00",
+      "research_calculated_at": "2026-10-17T14:12:32.509881+00:00",
+      "eligible": true,
+      "primary_probabilities": [
+        0.4621915390023185,
+        0.2360558626182524,
+        0.3017525983794291
+      ],
+      "research_probabilities": [
+        0.460909410335188,
+        0.258440198724035,
+        0.280650390940776
+      ],
+      "saved_no_vig_market": [
+        0.45478723404255317,
+        0.2726063829787234,
+        0.2726063829787234
+      ],
+      "scores": {
+        "primary": {
+          "brier": 0.43601494162587895,
+          "log_loss": 0.7717758872325655
+        },
+        "research": {
+          "brier": 0.4361746421168837,
+          "log_loss": 0.7745537621605942
+        },
+        "market": {
+          "brier": 0.44588544024445453,
+          "log_loss": 0.7879255868872347
+        }
+      },
+      "top_outcome": {
+        "primary": "H",
+        "research": "H",
+        "market": "H"
+      }
+    },
+    {
+      "fixture_id": 62,
+      "fixture": "Brentford v Liverpool",
+      "result": [
+        1,
+        2
+      ],
+      "outcome": "A",
+      "saved_odds": [
+        2.4545454545454546,
+        3.75,
+        2.875
+      ],
+      "odds_observed_at": "2026-10-16T20:56:30+00:00",
+      "research_calculated_at": "2026-10-16T20:57:18.819754+00:00",
+      "eligible": true,
+      "primary_probabilities": [
+        0.5378676963614777,
+        0.22082273695787782,
+        0.2413095666806444
+      ],
+      "research_probabilities": [
+        0.421577891188681,
+        0.257391383571149,
+        0.32103072524017
+      ],
+      "saved_no_vig_market": [
+        0.39867633154743143,
+        0.26095178064922786,
+        0.3403718878033407
+      ],
+      "scores": {
+        "primary": {
+          "brier": 0.9136755135570824,
+          "log_loss": 1.4216746607191282
+        },
+        "research": {
+          "brier": 0.7049775187436551,
+          "log_loss": 1.136218443173629
+        },
+        "market": {
+          "brier": 0.6621478955602488,
+          "log_loss": 1.07771647146493
+        }
+      },
+      "top_outcome": {
+        "primary": "H",
+        "research": "H",
+        "market": "H"
+      }
+    },
+    {
+      "fixture_id": 63,
+      "fixture": "Brighton & Hove Albion v Crystal Palace",
+      "result": [
+        5,
+        0
+      ],
+      "outcome": "H",
+      "saved_odds": [
+        1.5454545454545454,
+        4.75,
+        6
+      ],
+      "odds_observed_at": "2026-10-17T14:14:39+00:00",
+      "research_calculated_at": "2026-10-17T14:12:32.509881+00:00",
+      "eligible": true,
+      "primary_probabilities": [
+        0.598495026794603,
+        0.2172649278452993,
+        0.18424004536009775
+      ],
+      "research_probabilities": [
+        0.517642105400015,
+        0.248176572902281,
+        0.234181321697704
+      ],
+      "saved_no_vig_market": [
+        0.6317380352644837,
+        0.20554156171284635,
+        0.16272040302267002
+      ],
+      "scores": {
+        "primary": {
+          "brier": 0.24235468669458057,
+          "log_loss": 0.5133370634679177
+        },
+        "research": {
+          "brier": 0.34910164125253496,
+          "log_loss": 0.658471191731447
+        },
+        "market": {
+          "brier": 0.20434213782207866,
+          "log_loss": 0.4592804719284247
+        }
+      },
+      "top_outcome": {
+        "primary": "H",
+        "research": "H",
+        "market": "H"
+      }
+    },
+    {
+      "fixture_id": 64,
+      "fixture": "Everton v Chelsea",
+      "result": [
+        0,
+        2
+      ],
+      "outcome": "A",
+      "saved_odds": [
+        3.2,
+        3.8,
+        2.25
+      ],
+      "odds_observed_at": "2026-10-16T20:56:30+00:00",
+      "research_calculated_at": "2026-10-16T20:57:18.819754+00:00",
+      "eligible": true,
+      "primary_probabilities": [
+        0.5262271651176093,
+        0.23485124585654538,
+        0.2389215890258454
+      ],
+      "research_probabilities": [
+        0.412555220339388,
+        0.257455040419958,
+        0.329989739240654
+      ],
+      "saved_no_vig_market": [
+        0.3063418129702616,
+        0.2579720530275887,
+        0.4356861340021498
+      ],
+      "scores": {
+        "primary": {
+          "brier": 0.9113104846390314,
+          "log_loss": 1.4316198602702115
+        },
+        "research": {
+          "brier": 0.68539865718973,
+          "log_loss": 1.1086937182151544
+        },
+        "market": {
+          "brier": 0.47884502587461536,
+          "log_loss": 0.8308331710102098
+        }
+      },
+      "top_outcome": {
+        "primary": "H",
+        "research": "H",
+        "market": "A"
+      }
+    },
+    {
+      "fixture_id": 65,
+      "fixture": "Fulham v Hull City",
+      "result": [
+        1,
+        0
+      ],
+      "outcome": "H",
+      "saved_odds": [
+        1.75,
+        4,
+        4.75
+      ],
+      "odds_observed_at": "2026-10-16T20:56:30+00:00",
+      "research_calculated_at": "2026-10-16T20:57:18.819754+00:00",
+      "eligible": false,
+      "primary_probabilities": null,
+      "research_probabilities": [
+        null,
+        null,
+        null
+      ],
+      "saved_no_vig_market": [
+        0.5537340619307832,
+        0.24225865209471767,
+        0.20400728597449908
+      ]
+    },
+    {
+      "fixture_id": 66,
+      "fixture": "Leeds United v Manchester United",
+      "result": [
+        1,
+        1
+      ],
+      "outcome": "D",
+      "saved_odds": [
+        2.4,
+        3.7,
+        3
+      ],
+      "odds_observed_at": "2026-10-17T14:14:39+00:00",
+      "research_calculated_at": "2026-10-17T14:12:32.509881+00:00",
+      "eligible": true,
+      "primary_probabilities": [
+        0.4431700157346326,
+        0.2969210430922848,
+        0.25990894117308255
+      ],
+      "research_probabilities": [
+        0.338465145467791,
+        0.28350012570747,
+        0.378034728824739
+      ],
+      "saved_no_vig_market": [
+        0.40838852097130246,
+        0.2649006622516556,
+        0.32671081677704195
+      ],
+      "scores": {
+        "primary": {
+          "brier": 0.7582723401943882,
+          "log_loss": 1.2142890236974528
+        },
+        "research": {
+          "brier": 0.770840980755338,
+          "log_loss": 1.260542712401836
+        },
+        "market": {
+          "brier": 0.8138921782183042,
+          "log_loss": 1.3284003827009883
+        }
+      },
+      "top_outcome": {
+        "primary": "H",
+        "research": "A",
+        "market": "H"
+      }
+    },
+    {
+      "fixture_id": 67,
+      "fixture": "Manchester City v Ipswich Town",
+      "result": [
+        3,
+        2
+      ],
+      "outcome": "H",
+      "saved_odds": [
+        1.2727272727272727,
+        7,
+        12.5
+      ],
+      "odds_observed_at": "2026-10-16T20:56:30+00:00",
+      "research_calculated_at": "2026-10-16T20:57:18.819754+00:00",
+      "eligible": false,
+      "primary_probabilities": null,
+      "research_probabilities": [
+        null,
+        null,
+        null
+      ],
+      "saved_no_vig_market": [
+        0.7790368271954675,
+        0.141643059490085,
+        0.0793201133144476
+      ]
+    },
+    {
+      "fixture_id": 68,
+      "fixture": "Newcastle United v Aston Villa",
+      "result": [
+        0,
+        1
+      ],
+      "outcome": "A",
+      "saved_odds": [
+        2.4,
+        3.8,
+        2.947368421052632
+      ],
+      "odds_observed_at": "2026-10-17T14:14:39+00:00",
+      "research_calculated_at": "2026-10-17T14:12:32.509881+00:00",
+      "eligible": true,
+      "primary_probabilities": [
+        0.4688573104057664,
+        0.23250963543803232,
+        0.29863305415620134
+      ],
+      "research_probabilities": [
+        0.403513340635762,
+        0.256598353238202,
+        0.339888306126036
+      ],
+      "saved_no_vig_market": [
+        0.4088533661235783,
+        0.2582231786043652,
+        0.3329234552720566
+      ],
+      "scores": {
+        "primary": {
+          "brier": 0.7658035008147138,
+          "log_loss": 1.2085397028963485
+        },
+        "research": {
+          "brier": 0.6644131793447435,
+          "log_loss": 1.0791382267376304
+        },
+        "market": {
+          "brier": 0.6788314014852945,
+          "log_loss": 1.0998426794723608
+        }
+      },
+      "top_outcome": {
+        "primary": "H",
+        "research": "H",
+        "market": "H"
+      }
+    },
+    {
+      "fixture_id": 69,
+      "fixture": "Nottingham Forest v Arsenal",
+      "result": [
+        0,
+        1
+      ],
+      "outcome": "A",
+      "saved_odds": [
+        6,
+        4,
+        1.6666666666666665
+      ],
+      "odds_observed_at": "2026-10-17T14:14:39+00:00",
+      "research_calculated_at": "2026-10-17T14:12:32.509881+00:00",
+      "eligible": true,
+      "primary_probabilities": [
+        0.2332369808468666,
+        0.34344252912490714,
+        0.4233204900282262
+      ],
+      "research_probabilities": [
+        0.195711228777731,
+        0.303120186140758,
+        0.501168585081511
+      ],
+      "saved_no_vig_market": [
+        0.16393442622950816,
+        0.24590163934426226,
+        0.5901639344262295
+      ],
+      "scores": {
+        "primary": {
+          "brier": 0.5049115172675595,
+          "log_loss": 0.859625727173833
+        },
+        "research": {
+          "brier": 0.3790175128252789,
+          "log_loss": 0.6908127373310626
+        },
+        "market": {
+          "brier": 0.2553077129803816,
+          "log_loss": 0.5273549257172012
+        }
+      },
+      "top_outcome": {
+        "primary": "A",
+        "research": "A",
+        "market": "A"
+      }
+    },
+    {
+      "fixture_id": 70,
+      "fixture": "Tottenham Hotspur v Coventry City",
+      "result": [
+        3,
+        1
+      ],
+      "outcome": "H",
+      "saved_odds": [
+        1.5,
+        4.75,
+        7.2
+      ],
+      "odds_observed_at": "2026-10-17T14:14:39+00:00",
+      "research_calculated_at": "2026-10-17T14:12:32.509881+00:00",
+      "eligible": false,
+      "primary_probabilities": null,
+      "research_probabilities": [
+        null,
+        null,
+        null
+      ],
+      "saved_no_vig_market": [
+        0.656115107913669,
+        0.20719424460431654,
+        0.1366906474820144
+      ]
+    }
+  ],
+  "metrics": {
+    "primary": {
+      "n": 7,
+      "mean_brier": 0.6474775692561764,
+      "mean_log_loss": 1.060123132208208,
+      "top_outcome_correct": 3
+    },
+    "research": {
+      "n": 7,
+      "mean_brier": 0.5699891617468806,
+      "mean_log_loss": 0.9583472559644791,
+      "top_outcome_correct": 3
+    },
+    "market": {
+      "n": 7,
+      "mean_brier": 0.5056073988836254,
+      "mean_log_loss": 0.8730505270259071,
+      "top_outcome_correct": 4
+    }
+  },
+  "metric_definitions": {
+    "brier": "Unscaled three-outcome sum of squared errors,0 best/2 worst; means over the same7 eligible matches.",
+    "log_loss": "Natural logarithm; lower is better.",
+    "market": "No-vig normalisation of each frozen latest saved pre-match H/D/A quote; these are not asserted to be closing prices.",
+    "limitations": "Seven matches are insufficient for calibration or profitability conclusions. The forecasts share data. Conditional watchlist items were never upgraded to paper selections; no unrecorded lineup checks are invented."
+  },
+  "understat_match_totals": [
+    {
+      "match_id": "26-27-prem-everton-vs-chelsea",
+      "source_match_id": "31240",
+      "published_home_xg": 0.570749,
+      "published_away_xg": 1.602
+    },
+    {
+      "match_id": "26-27-prem-fulham-vs-hull-city",
+      "source_match_id": "31241",
+      "published_home_xg": 2.27426,
+      "published_away_xg": 0.130919
+    },
+    {
+      "match_id": "26-27-prem-brentford-vs-liverpool",
+      "source_match_id": "31242",
+      "published_home_xg": 0.858733,
+      "published_away_xg": 1.54933
+    },
+    {
+      "match_id": "26-27-prem-manchester-city-vs-ipswich-town",
+      "source_match_id": "31243",
+      "published_home_xg": 4.00772,
+      "published_away_xg": 1.37153
+    },
+    {
+      "match_id": "26-27-prem-newcastle-united-vs-aston-villa",
+      "source_match_id": "31244",
+      "published_home_xg": 0.920183,
+      "published_away_xg": 2.0822
+    },
+    {
+      "match_id": "26-27-prem-brighton-hove-albion-vs-crystal-palace",
+      "source_match_id": "31245",
+      "published_home_xg": 2.2522,
+      "published_away_xg": 0.627519
+    },
+    {
+      "match_id": "26-27-prem-afc-bournemouth-vs-sunderland",
+      "source_match_id": "31246",
+      "published_home_xg": 4.386,
+      "published_away_xg": 0.0943414
+    },
+    {
+      "match_id": "26-27-prem-leeds-united-vs-manchester-united",
+      "source_match_id": "31247",
+      "published_home_xg": 1.41034,
+      "published_away_xg": 1.08135
+    },
+    {
+      "match_id": "26-27-prem-nottingham-forest-vs-arsenal",
+      "source_match_id": "31248",
+      "published_home_xg": 0.74721,
+      "published_away_xg": 0.9151
+    },
+    {
+      "match_id": "26-27-prem-tottenham-hotspur-vs-coventry-city",
+      "source_match_id": "31249",
+      "published_home_xg": 0.971825,
+      "published_away_xg": 1.1439
+    }
+  ],
+  "earlier_watchlist": [
+    {
+      "fixture_id": 62,
+      "fixture": "Brentford v Liverpool",
+      "outcome": "H",
+      "price": 2.5,
+      "status": "morning watch only",
+      "result": [
+        1,
+        2
+      ],
+      "won": false,
+      "hypothetical_profit_per_unit": -1,
+      "note": "Earlier investigation; separate from the later two-item headline shortlist."
+    }
+  ],
+  "closing_market_averages": [
+    {
+      "match_id": "26-27-prem-everton-vs-chelsea",
+      "close_home_avg": 2.84,
+      "close_draw_avg": 3.54,
+      "close_away_avg": 2.32
+    },
+    {
+      "match_id": "26-27-prem-brentford-vs-liverpool",
+      "close_home_avg": 2.67,
+      "close_draw_avg": 3.58,
+      "close_away_avg": 2.43
+    },
+    {
+      "match_id": "26-27-prem-fulham-vs-hull-city",
+      "close_home_avg": 1.62,
+      "close_draw_avg": 4.0,
+      "close_away_avg": 5.01
+    },
+    {
+      "match_id": "26-27-prem-manchester-city-vs-ipswich-town",
+      "close_home_avg": 1.23,
+      "close_draw_avg": 6.72,
+      "close_away_avg": 10.15
+    },
+    {
+      "match_id": "26-27-prem-newcastle-united-vs-aston-villa",
+      "close_home_avg": 2.14,
+      "close_draw_avg": 3.74,
+      "close_away_avg": 3.05
+    },
+    {
+      "match_id": "26-27-prem-afc-bournemouth-vs-sunderland",
+      "close_home_avg": 2.05,
+      "close_draw_avg": 3.21,
+      "close_away_avg": 3.82
+    },
+    {
+      "match_id": "26-27-prem-brighton-hove-albion-vs-crystal-palace",
+      "close_home_avg": 1.42,
+      "close_draw_avg": 4.83,
+      "close_away_avg": 6.62
+    },
+    {
+      "match_id": "26-27-prem-leeds-united-vs-manchester-united",
+      "close_home_avg": 2.49,
+      "close_draw_avg": 3.35,
+      "close_away_avg": 2.76
+    },
+    {
+      "match_id": "26-27-prem-nottingham-forest-vs-arsenal",
+      "close_home_avg": 6.55,
+      "close_draw_avg": 4.16,
+      "close_away_avg": 1.49
+    },
+    {
+      "match_id": "26-27-prem-tottenham-hotspur-vs-coventry-city",
+      "close_home_avg": 1.53,
+      "close_draw_avg": 4.47,
+      "close_away_avg": 5.43
+    }
+  ],
+  "closing_market_caveat": "Football-Data closing averages and Oddschecker best coupon quotes use different aggregation. No matched-bookmaker closing-line value is claimed.",
+  "match_context": {
+    "Forest-Arsenal": {
+      "understat_xg": [
+        0.74721,
+        0.9151
+      ],
+      "winner_minute": 80,
+      "gibbs_white": "absent",
+      "milenkovic": "bench",
+      "interpretation": "Low scoring match, but the draw lost. A late goal is not a successful draw prediction.",
+      "report": "https://theanalyst.com/articles/nottingham-forest-vs-arsenal-stats-premier-league-10-2026"
+    },
+    "Brighton-Palace": {
+      "understat_xg": [
+        2.2522,
+        0.627519
+      ],
+      "shots": [
+        17,
+        5
+      ],
+      "shots_on_target": [
+        9,
+        1
+      ],
+      "goals_minutes": [
+        4,
+        7,
+        10,
+        49,
+        84
+      ],
+      "palace_starting_keeper": "Walter Benitez",
+      "henderson": "absent",
+      "mateta": "bench, introduced61min",
+      "interpretation": "Palace were comprehensively beaten. The keeper/striker availability concerns remained relevant; no recorded final lineup check or retrospective pass is invented.",
+      "report": "https://www.skysports.com/football/brighton-and-hove-albion-vs-crystal-palace/report/559506"
+    }
+  }
+}

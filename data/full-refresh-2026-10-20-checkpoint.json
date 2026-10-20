@@ -1,0 +1,814 @@
+{
+  "captured_at": "2026-10-20T15:11:17.882763+00:00",
+  "source_commit": "bc3335bca96caae08ef2057526498c7c7e0ea1f6",
+  "source_summary": {
+    "player_match_stats": 360,
+    "lineups": 360,
+    "goals": 24,
+    "goal_identity_repairs": 0,
+    "player_source_ids": 11,
+    "match_source_ids": 28,
+    "fpl_player_match_stats": 668,
+    "source_player_match_stats": 305,
+    "historical_market_odds": 10,
+    "matches": 9,
+    "canonical_matches": 9,
+    "player_seasons": 1
+  },
+  "results": [
+    {
+      "match_id": "26-27-prem-brighton-hove-albion-vs-crystal-palace",
+      "season": "2026/27",
+      "gameweek": 7,
+      "kickoff_time": "2026-10-18T13:00:00Z",
+      "home_team": "Brighton & Hove Albion",
+      "away_team": "Crystal Palace",
+      "home_score": 5,
+      "away_score": 0,
+      "match_url": "/matches/crystal-palace-vs-brighton-hove-albion/3bfzlv#5795477",
+      "home_formation": "4-2-3-1",
+      "away_formation": "3-4-2-1"
+    },
+    {
+      "match_id": "26-27-prem-fulham-vs-hull-city",
+      "season": "2026/27",
+      "gameweek": 7,
+      "kickoff_time": "2026-10-17T14:00:00Z",
+      "home_team": "Fulham",
+      "away_team": "Hull City",
+      "home_score": 1,
+      "away_score": 0,
+      "match_url": "/matches/hull-city-vs-fulham/2ueh4i#5795479",
+      "home_formation": "4-2-3-1",
+      "away_formation": "5-4-1"
+    },
+    {
+      "match_id": "26-27-prem-brentford-vs-liverpool",
+      "season": "2026/27",
+      "gameweek": 7,
+      "kickoff_time": "2026-10-17T14:00:00Z",
+      "home_team": "Brentford",
+      "away_team": "Liverpool",
+      "home_score": 1,
+      "away_score": 2,
+      "match_url": "/matches/liverpool-vs-brentford/2uusjv#5795476",
+      "home_formation": "4-2-3-1",
+      "away_formation": "4-2-3-1"
+    },
+    {
+      "match_id": "26-27-prem-tottenham-hotspur-vs-coventry-city",
+      "season": "2026/27",
+      "gameweek": 7,
+      "kickoff_time": "2026-10-19T19:00:00Z",
+      "home_team": "Tottenham Hotspur",
+      "away_team": "Coventry City",
+      "home_score": 3,
+      "away_score": 1,
+      "match_url": "/matches/tottenham-hotspur-vs-coventry-city/2gn495#5795484",
+      "home_formation": "4-1-2-3",
+      "away_formation": "4-2-3-1"
+    },
+    {
+      "match_id": "26-27-prem-afc-bournemouth-vs-sunderland",
+      "season": "2026/27",
+      "gameweek": 7,
+      "kickoff_time": "2026-10-18T13:00:00Z",
+      "home_team": "AFC Bournemouth",
+      "away_team": "Sunderland",
+      "home_score": 2,
+      "away_score": 0,
+      "match_url": "/matches/sunderland-vs-afc-bournemouth/2fkehz#5795475",
+      "home_formation": "4-2-3-1",
+      "away_formation": "4-2-3-1"
+    },
+    {
+      "match_id": "26-27-prem-manchester-city-vs-ipswich-town",
+      "season": "2026/27",
+      "gameweek": 7,
+      "kickoff_time": "2026-10-17T14:00:00Z",
+      "home_team": "Manchester City",
+      "away_team": "Ipswich Town",
+      "home_score": 3,
+      "away_score": 2,
+      "match_url": "/matches/manchester-city-vs-ipswich-town/2sc4e3#5795481",
+      "home_formation": "4-2-3-1",
+      "away_formation": "3-4-2-1"
+    },
+    {
+      "match_id": "26-27-prem-newcastle-united-vs-aston-villa",
+      "season": "2026/27",
+      "gameweek": 7,
+      "kickoff_time": "2026-10-17T16:30:00Z",
+      "home_team": "Newcastle United",
+      "away_team": "Aston Villa",
+      "home_score": 0,
+      "away_score": 1,
+      "match_url": "/matches/aston-villa-vs-newcastle-united/3h9v0m#5795482",
+      "home_formation": "4-2-3-1",
+      "away_formation": "4-2-3-1"
+    },
+    {
+      "match_id": "26-27-prem-nottingham-forest-vs-arsenal",
+      "season": "2026/27",
+      "gameweek": 7,
+      "kickoff_time": "2026-10-18T15:30:00Z",
+      "home_team": "Nottingham Forest",
+      "away_team": "Arsenal",
+      "home_score": 0,
+      "away_score": 1,
+      "match_url": "/matches/arsenal-vs-nottingham-forest/3bf4p3#5795483",
+      "home_formation": "3-4-2-1",
+      "away_formation": "4-2-3-1"
+    },
+    {
+      "match_id": "26-27-prem-leeds-united-vs-manchester-united",
+      "season": "2026/27",
+      "gameweek": 7,
+      "kickoff_time": "2026-10-18T13:00:00Z",
+      "home_team": "Leeds United",
+      "away_team": "Manchester United",
+      "home_score": 1,
+      "away_score": 1,
+      "match_url": "/matches/leeds-united-vs-manchester-united/2wd539#5795480",
+      "home_formation": "3-4-2-1",
+      "away_formation": "4-2-3-1"
+    }
+  ],
+  "fpl_gw7_state": {
+    "id": 7,
+    "name": "Gameweek 7",
+    "deadline_time": "2026-10-17T10:00:00Z",
+    "release_time": null,
+    "average_entry_score": 59,
+    "finished": false,
+    "data_checked": false,
+    "highest_scoring_entry": 504619,
+    "deadline_time_epoch": 1792231200,
+    "deadline_time_game_offset": 0,
+    "highest_score": 122,
+    "is_previous": false,
+    "is_current": true,
+    "is_next": false,
+    "cup_leagues_created": true,
+    "h2h_ko_matches_created": true,
+    "can_enter": false,
+    "can_manage": false,
+    "released": true,
+    "ranked_count": 11063261,
+    "overrides": {
+      "rules": {},
+      "scoring": {},
+      "element_types": [],
+      "pick_multiplier": null
+    },
+    "chip_plays": [
+      {
+        "chip_name": "bboost",
+        "num_played": 179094
+      },
+      {
+        "chip_name": "freehit",
+        "num_played": 93126
+      },
+      {
+        "chip_name": "wildcard",
+        "num_played": 335228
+      },
+      {
+        "chip_name": "3xc",
+        "num_played": 724286
+      }
+    ],
+    "most_selected": 411,
+    "most_transferred_in": 399,
+    "top_element": 156,
+    "top_element_info": {
+      "id": 156,
+      "points": 15
+    },
+    "transfers_made": 12547022,
+    "most_captained": 411,
+    "most_vice_captained": 165
+  },
+  "verification": {
+    "clubs": [
+      {
+        "n": 7,
+        "team_name": "AFC Bournemouth"
+      },
+      {
+        "n": 7,
+        "team_name": "Arsenal"
+      },
+      {
+        "n": 7,
+        "team_name": "Aston Villa"
+      },
+      {
+        "n": 7,
+        "team_name": "Brentford"
+      },
+      {
+        "n": 7,
+        "team_name": "Brighton & Hove Albion"
+      },
+      {
+        "n": 7,
+        "team_name": "Chelsea"
+      },
+      {
+        "n": 7,
+        "team_name": "Coventry City"
+      },
+      {
+        "n": 7,
+        "team_name": "Crystal Palace"
+      },
+      {
+        "n": 7,
+        "team_name": "Everton"
+      },
+      {
+        "n": 7,
+        "team_name": "Fulham"
+      },
+      {
+        "n": 7,
+        "team_name": "Hull City"
+      },
+      {
+        "n": 7,
+        "team_name": "Ipswich Town"
+      },
+      {
+        "n": 7,
+        "team_name": "Leeds United"
+      },
+      {
+        "n": 7,
+        "team_name": "Liverpool"
+      },
+      {
+        "n": 7,
+        "team_name": "Manchester City"
+      },
+      {
+        "n": 7,
+        "team_name": "Manchester United"
+      },
+      {
+        "n": 7,
+        "team_name": "Newcastle United"
+      },
+      {
+        "n": 7,
+        "team_name": "Nottingham Forest"
+      },
+      {
+        "n": 7,
+        "team_name": "Sunderland"
+      },
+      {
+        "n": 7,
+        "team_name": "Tottenham Hotspur"
+      }
+    ],
+    "counts": {
+      "fpl": 4551,
+      "pms": 2800,
+      "goals": 203,
+      "lineups": 2800,
+      "matches": 70,
+      "cache_rows": 140,
+      "fpl_fixtures": 70,
+      "player_seasons": 668,
+      "historical_odds": 70,
+      "understat_mapped": 1168,
+      "understat_staged": 2158,
+      "canonical_matches": 70,
+      "understat_enriched": 1156,
+      "understat_fixtures": 70
+    },
+    "hashes": {
+      "goals": "38dde605fe7b88fc6c2d2a1773e5c846",
+      "lineups": "713393f7147f7793ed6361cae906fb74",
+      "matches": "45af654d6c75bc52e67a61d2a23e7ecc",
+      "fixtures": "22b962166e4619a6379c4510511f6963",
+      "fpl_gw1_6": "4e91227905b905b6cb7d5e76e2adcc17",
+      "pms_gw1_6": "b84979cfdbad838300935c1915ed4887",
+      "snapshots": "db068f55978649993e07781ea1c79976",
+      "historical_odds": "72fbb391dd1a55e29585b1ee4f228f3c",
+      "understat_gw1_6": "36120c580e856d2f5454ed861c5634e3",
+      "pms_everton_core": "0382067a2b1818fddefbbc957b311826"
+    },
+    "pms_bad": null,
+    "goals_bad": null,
+    "missing_xg": 0,
+    "lineups_bad": null,
+    "cache_differences": 0,
+    "advanced_mismatches": 0,
+    "fpl_point_mismatches": 0,
+    "protected_hashes_match": true
+  },
+  "provider_caveats": [
+    "Official FPL marks GW7 finished=false and data_checked=false despite all10 fixtures finished; fantasy points remain provider-unchecked."
+  ],
+  "transfermarkt": {
+    "status": 304,
+    "unchanged_since": "2026-09-05",
+    "current_season_matches": 0,
+    "latest_date": "2026-05-24",
+    "source_url": "https://pub-e682421888d945d684bcae8890b0ec20.r2.dev/data/games.csv.gz"
+  },
+  "existing_gw7_fpl_changes": [
+    {
+      "fixture_id": 64,
+      "player_code": "128295",
+      "changes": {
+        "expected_goals_conceded": {
+          "before": 0.36,
+          "after": 0.35
+        }
+      }
+    },
+    {
+      "fixture_id": 64,
+      "player_code": "98980",
+      "changes": {
+        "expected_goals_conceded": {
+          "before": 0.32,
+          "after": 0.31
+        }
+      }
+    },
+    {
+      "fixture_id": 64,
+      "player_code": "244850",
+      "changes": {
+        "bps": {
+          "before": 14,
+          "after": 11
+        },
+        "expected_goals_conceded": {
+          "before": 0.45,
+          "after": 0.43
+        }
+      }
+    },
+    {
+      "fixture_id": 64,
+      "player_code": "56979",
+      "changes": {
+        "bps": {
+          "before": 14,
+          "after": 12
+        },
+        "expected_goals": {
+          "before": 0.24,
+          "after": 0.23
+        },
+        "expected_assists": {
+          "before": 0.34,
+          "after": 0.33
+        },
+        "expected_goal_involvements": {
+          "before": 0.58,
+          "after": 0.56
+        },
+        "expected_goals_conceded": {
+          "before": 0.45,
+          "after": 0.43
+        }
+      }
+    },
+    {
+      "fixture_id": 64,
+      "player_code": "551210",
+      "changes": {
+        "expected_goals_conceded": {
+          "before": 0.45,
+          "after": 0.43
+        }
+      }
+    },
+    {
+      "fixture_id": 64,
+      "player_code": "460028",
+      "changes": {
+        "expected_goals_conceded": {
+          "before": 0.45,
+          "after": 0.43
+        }
+      }
+    },
+    {
+      "fixture_id": 64,
+      "player_code": "577016",
+      "changes": {
+        "bps": {
+          "before": 21,
+          "after": 22
+        },
+        "expected_goals_conceded": {
+          "before": 0.45,
+          "after": 0.43
+        }
+      }
+    },
+    {
+      "fixture_id": 64,
+      "player_code": "244851",
+      "changes": {
+        "bps": {
+          "before": 14,
+          "after": 16
+        },
+        "expected_goals": {
+          "before": 0.14,
+          "after": 0.13
+        },
+        "expected_goal_involvements": {
+          "before": 0.2,
+          "after": 0.19
+        },
+        "expected_goals_conceded": {
+          "before": 0.45,
+          "after": 0.43
+        }
+      }
+    },
+    {
+      "fixture_id": 64,
+      "player_code": "247632",
+      "changes": {
+        "bps": {
+          "before": 61,
+          "after": 64
+        },
+        "defensive_contribution": {
+          "before": 8,
+          "after": 9
+        },
+        "tackles": {
+          "before": 2,
+          "after": 3
+        },
+        "expected_goals": {
+          "before": 0.38,
+          "after": 0.37
+        },
+        "expected_assists": {
+          "before": 0.23,
+          "after": 0.24
+        },
+        "expected_goals_conceded": {
+          "before": 0.45,
+          "after": 0.43
+        }
+      }
+    },
+    {
+      "fixture_id": 64,
+      "player_code": "486672",
+      "changes": {
+        "expected_goals": {
+          "before": 0.05,
+          "after": 0.04
+        },
+        "expected_goal_involvements": {
+          "before": 0.07,
+          "after": 0.06
+        },
+        "expected_goals_conceded": {
+          "before": 0.45,
+          "after": 0.43
+        }
+      }
+    },
+    {
+      "fixture_id": 64,
+      "player_code": "475168",
+      "changes": {
+        "expected_goals": {
+          "before": 0.29,
+          "after": 0.28
+        },
+        "expected_assists": {
+          "before": 0.01,
+          "after": 0.02
+        },
+        "expected_goals_conceded": {
+          "before": 0.45,
+          "after": 0.43
+        }
+      }
+    },
+    {
+      "fixture_id": 64,
+      "player_code": "437499",
+      "changes": {
+        "expected_goals": {
+          "before": 0.27,
+          "after": 0.25
+        },
+        "expected_goal_involvements": {
+          "before": 0.27,
+          "after": 0.25
+        },
+        "expected_goals_conceded": {
+          "before": 0.45,
+          "after": 0.43
+        }
+      }
+    },
+    {
+      "fixture_id": 64,
+      "player_code": "242898",
+      "changes": {
+        "expected_goals_conceded": {
+          "before": 0.36,
+          "after": 0.35
+        }
+      }
+    },
+    {
+      "fixture_id": 64,
+      "player_code": "111234",
+      "changes": {
+        "bps": {
+          "before": 10,
+          "after": 11
+        },
+        "expected_goals_conceded": {
+          "before": 1.54,
+          "after": 1.47
+        }
+      }
+    },
+    {
+      "fixture_id": 64,
+      "player_code": "17761",
+      "changes": {
+        "bps": {
+          "before": 2,
+          "after": 3
+        },
+        "defensive_contribution": {
+          "before": 6,
+          "after": 7
+        },
+        "clearances_blocks_interceptions": {
+          "before": 5,
+          "after": 6
+        },
+        "expected_goals_conceded": {
+          "before": 1.54,
+          "after": 1.47
+        }
+      }
+    },
+    {
+      "fixture_id": 64,
+      "player_code": "480455",
+      "changes": {
+        "expected_goals": {
+          "before": 0.07,
+          "after": 0.06
+        },
+        "expected_goal_involvements": {
+          "before": 0.08,
+          "after": 0.07
+        },
+        "expected_goals_conceded": {
+          "before": 1.54,
+          "after": 1.47
+        }
+      }
+    },
+    {
+      "fixture_id": 64,
+      "player_code": "224967",
+      "changes": {
+        "bps": {
+          "before": 14,
+          "after": 17
+        },
+        "defensive_contribution": {
+          "before": 3,
+          "after": 4
+        },
+        "clearances_blocks_interceptions": {
+          "before": 2,
+          "after": 3
+        },
+        "recoveries": {
+          "before": 3,
+          "after": 4
+        },
+        "expected_goals_conceded": {
+          "before": 1.54,
+          "after": 1.47
+        }
+      }
+    },
+    {
+      "fixture_id": 64,
+      "player_code": "215413",
+      "changes": {
+        "expected_assists": {
+          "before": 0.1,
+          "after": 0.09
+        },
+        "expected_goal_involvements": {
+          "before": 0.1,
+          "after": 0.09
+        },
+        "expected_goals_conceded": {
+          "before": 1.54,
+          "after": 1.47
+        }
+      }
+    },
+    {
+      "fixture_id": 64,
+      "player_code": "114283",
+      "changes": {
+        "defensive_contribution": {
+          "before": 7,
+          "after": 6
+        },
+        "recoveries": {
+          "before": 5,
+          "after": 4
+        },
+        "expected_goals_conceded": {
+          "before": 1.18,
+          "after": 1.12
+        }
+      }
+    },
+    {
+      "fixture_id": 64,
+      "player_code": "232928",
+      "changes": {
+        "expected_goals_conceded": {
+          "before": 1.54,
+          "after": 1.47
+        }
+      }
+    },
+    {
+      "fixture_id": 64,
+      "player_code": "550615",
+      "changes": {
+        "bps": {
+          "before": 5,
+          "after": 4
+        },
+        "expected_goals_conceded": {
+          "before": 0.68,
+          "after": 0.66
+        }
+      }
+    },
+    {
+      "fixture_id": 64,
+      "player_code": "609873",
+      "changes": {
+        "expected_goals_conceded": {
+          "before": 1.18,
+          "after": 1.12
+        }
+      }
+    },
+    {
+      "fixture_id": 64,
+      "player_code": "513466",
+      "changes": {
+        "expected_goals_conceded": {
+          "before": 1.54,
+          "after": 1.47
+        }
+      }
+    },
+    {
+      "fixture_id": 64,
+      "player_code": "586309",
+      "changes": {
+        "expected_goals": {
+          "before": 0.31,
+          "after": 0.3
+        },
+        "expected_goal_involvements": {
+          "before": 0.31,
+          "after": 0.3
+        },
+        "expected_goals_conceded": {
+          "before": 1.54,
+          "after": 1.47
+        }
+      }
+    },
+    {
+      "fixture_id": 64,
+      "player_code": "549939",
+      "changes": {
+        "expected_goals_conceded": {
+          "before": 0.14,
+          "after": 0.12
+        }
+      }
+    },
+    {
+      "fixture_id": 64,
+      "player_code": "154043",
+      "changes": {
+        "expected_goals_conceded": {
+          "before": 0.85,
+          "after": 0.81
+        }
+      }
+    }
+  ],
+  "understat_match_totals": [
+    {
+      "match_id": "26-27-prem-everton-vs-chelsea",
+      "source_match_id": "31240",
+      "published_home_xg": 0.570749,
+      "published_away_xg": 1.602
+    },
+    {
+      "match_id": "26-27-prem-fulham-vs-hull-city",
+      "source_match_id": "31241",
+      "published_home_xg": 2.27426,
+      "published_away_xg": 0.130919
+    },
+    {
+      "match_id": "26-27-prem-brentford-vs-liverpool",
+      "source_match_id": "31242",
+      "published_home_xg": 0.858733,
+      "published_away_xg": 1.54933
+    },
+    {
+      "match_id": "26-27-prem-manchester-city-vs-ipswich-town",
+      "source_match_id": "31243",
+      "published_home_xg": 4.00772,
+      "published_away_xg": 1.37153
+    },
+    {
+      "match_id": "26-27-prem-newcastle-united-vs-aston-villa",
+      "source_match_id": "31244",
+      "published_home_xg": 0.920183,
+      "published_away_xg": 2.0822
+    },
+    {
+      "match_id": "26-27-prem-brighton-hove-albion-vs-crystal-palace",
+      "source_match_id": "31245",
+      "published_home_xg": 2.2522,
+      "published_away_xg": 0.627519
+    },
+    {
+      "match_id": "26-27-prem-afc-bournemouth-vs-sunderland",
+      "source_match_id": "31246",
+      "published_home_xg": 4.386,
+      "published_away_xg": 0.0943414
+    },
+    {
+      "match_id": "26-27-prem-leeds-united-vs-manchester-united",
+      "source_match_id": "31247",
+      "published_home_xg": 1.41034,
+      "published_away_xg": 1.08135
+    },
+    {
+      "match_id": "26-27-prem-nottingham-forest-vs-arsenal",
+      "source_match_id": "31248",
+      "published_home_xg": 0.74721,
+      "published_away_xg": 0.9151
+    },
+    {
+      "match_id": "26-27-prem-tottenham-hotspur-vs-coventry-city",
+      "source_match_id": "31249",
+      "published_home_xg": 0.971825,
+      "published_away_xg": 1.1439
+    }
+  ],
+  "new_season_players": [
+    {
+      "season": "2026/27",
+      "player_code": "604211",
+      "player_id": "668",
+      "team_code": "56",
+      "team_name": "Sunderland",
+      "position": "Midfielder"
+    }
+  ],
+  "browser_check": {
+    "dashboard": "20clubs each7games and all10GW7 scores visible",
+    "match": "Forest0-1Arsenal, Madueke80,Riceassist,both22starters andbench visible",
+    "console_errors": 0
+  },
+  "app_code_changed": false,
+  "models_changed": false,
+  "schema_or_permissions_changed": false,
+  "bets_placed": false
+}

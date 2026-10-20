@@ -1,0 +1,1237 @@
+{
+  "checked_at": "2026-10-17T14:24:51.708951+00:00",
+  "status": "Before kick-off watchlist only; no paper selection or bet recorded. Original morning decisions remain frozen.",
+  "price_url": "https://www.oddschecker.com/football/leagues-cups/english/premier-league",
+  "price_verification": "Rechecked current coupon at14:23UTC; six prices match15:14UK saved snapshot.",
+  "team_news_url": "https://www.premierleague.com/en/news/4737644/predicted-line-ups-for-matchweek-7",
+  "method": "All5 eligible saved research triples and12Venue8 inputs per fixture reproduced within1e-10. xG-only andVenue18 replays are sensitivity checks, not validated alternative forecasts or uncertainty intervals. No quantified injury, manager or Europe adjustment. All SQL read-only; no model, saved snapshot, odds or website changes.",
+  "review": [
+    {
+      "fixture_id": 68,
+      "fixture": "Newcastle United vs Aston Villa",
+      "kickoff_time": "2026-10-17T16:30:00+00:00",
+      "model_version": "v3_24_venue8_50_noppg",
+      "market_source": "Oddschecker UK Premier League coupon",
+      "saved_price_at": "2026-10-17T14:14:39+00:00",
+      "odds": [
+        2.4,
+        3.8,
+        2.947368421052632
+      ],
+      "news": {
+        "checkedAt": "2026-10-17T14:15:55.825812+00:00",
+        "home": "Touré remains a fitness check. Elanga, Livramento and Ramsey are unavailable. Jaissle says Joelinton is closer to starting than Dan Burn.",
+        "away": "Barkley and Hemmings face assessments. Maatsen, Ruggeri and Onana remain sidelined.",
+        "schedule": "Newcastle last played at Coventry on Monday. Villa hosted Fenerbahçe on Wednesday, giving them a shorter turnaround, and host Viking next Wednesday (21 October).",
+        "teams": "Confirmed starting teams are pending.",
+        "availability": [
+          "Newcastle United — Jaouen: Hamstring injury - Unknown return date; Livramento: Unspecified injury - Expected back 2 Nov; Elanga: Unspecified injury - Expected back 25 Oct; J.Ramsey: Thigh injury - Unknown return date; Touré: Unspecified injury - 75% chance of playing",
+          "Aston Villa — Maatsen: Ankle injury - Unknown return date; Barkley: Unspecified injury - 75% chance of playing; Onana: Knee injury - Unknown return date; George Hemmings: Knee injury - 75% chance of playing; Madjo: Unspecified injury - 50% chance of playing; Ruggeri: Hamstring injury - Unknown return date"
+        ],
+        "sources": [
+          {
+            "label": "Newcastle club update",
+            "url": "https://www.newcastleunited.com/en/news/matthias-jaissles-team-news-update-toure-and-elanga-latest-ahead-of-villans-clash"
+          },
+          {
+            "label": "Villa club preview",
+            "url": "https://next.gc.avfcservices.co.uk/news/2026/october/17/prematch-villa-aim-to-extend-unbeaten-run/"
+          },
+          {
+            "label": "UEFA schedule",
+            "url": "https://www.uefa.com/uefachampionsleague/news/02a8-2176fa83582b-d99f0b27f405-1000--champions-league-league-phase-fixtures-by-team/"
+          },
+          {
+            "label": "Official FPL availability feed",
+            "url": "https://fantasy.premierleague.com/api/bootstrap-static/"
+          }
+        ]
+      },
+      "diagnostics": {
+        "fixture_id": 68,
+        "fixture": "Newcastle United vs Aston Villa",
+        "kickoff_time": "2026-10-17T16:30:00+00:00",
+        "saved_research_probabilities": [
+          0.403513340635762,
+          0.256598353238202,
+          0.339888306126036
+        ],
+        "coupon_odds_observed_2026_10_17": [
+          2.4,
+          3.8,
+          2.947368421052632
+        ],
+        "price_break_even": [
+          0.4166666666666667,
+          0.2631578947368421,
+          0.33928571428571425
+        ],
+        "no_vig_bookmaker": [
+          0.4088533661235783,
+          0.2582231786043652,
+          0.3329234552720566
+        ],
+        "research_price_gap_pp": [
+          -1.3153326030904688,
+          -0.6559541498640076,
+          0.06025918403217423
+        ],
+        "versions": {
+          "current_replay": {
+            "lambdas": [
+              1.7619137813487786,
+              1.3651110727414675
+            ],
+            "probabilities": [
+              0.4688573104057664,
+              0.23250963543803232,
+              0.29863305415620134
+            ]
+          },
+          "research_replay": {
+            "lambdas": [
+              1.4271163657606094,
+              1.2886013038212423
+            ],
+            "probabilities": [
+              0.4035133406357617,
+              0.25659835323820207,
+              0.33988830612603627
+            ]
+          },
+          "current_xg_only_8": {
+            "lambdas": [
+              1.6606875463086803,
+              1.553500468918185
+            ],
+            "probabilities": [
+              0.40615072377391553,
+              0.2333634911214989,
+              0.3604857851045855
+            ]
+          },
+          "current_xg_only_18": {
+            "lambdas": [
+              1.9491276331944256,
+              1.5506290303519819
+            ],
+            "probabilities": [
+              0.47189851238105107,
+              0.21863986762356977,
+              0.3094616199953792
+            ]
+          },
+          "research_xg_only": {
+            "lambdas": [
+              1.423058479649616,
+              1.3710768009151324
+            ],
+            "probabilities": [
+              0.3852903139828797,
+              0.25301449457857367,
+              0.36169519143854656
+            ]
+          },
+          "research_venue18": {
+            "lambdas": [
+              1.4609567097363323,
+              1.3218329935609303
+            ],
+            "probabilities": [
+              0.40510633221541853,
+              0.25300800424105446,
+              0.34188566354352706
+            ]
+          }
+        },
+        "samples": {
+          "home": {
+            "venue8": {
+              "n": 8,
+              "gf": 2,
+              "ga": 1.5,
+              "xf": 1.742059476941824,
+              "xa": 1.9024963266827166,
+              "cf": 1.9230059077225625,
+              "ca": 1.5,
+              "current_season": 3
+            },
+            "venue18": {
+              "n": 18,
+              "gf": 2,
+              "ga": 1.6666666666666667,
+              "xf": 1.9509153230852552,
+              "xa": 1.6994428118589853,
+              "cf": 1.93578040343225,
+              "ca": 1.6366666666666667,
+              "current_season": 3
+            },
+            "overall24": {
+              "n": 24,
+              "gf": 1.4583333333333333,
+              "ga": 1.8333333333333333,
+              "xf": 1.478065256940139,
+              "xa": 1.6767225784962376,
+              "cf": 1.409326439900572,
+              "ca": 1.6967448395335425,
+              "current_season": 6
+            },
+            "current_season_venue": {
+              "n": 3,
+              "gf": 2,
+              "ga": 1.6666666666666667,
+              "xf": 1.2209919385115304,
+              "xa": 1.9415902044872444,
+              "cf": 1.8834824205935001,
+              "ca": 1.6666666666666667,
+              "current_season": 3
+            }
+          },
+          "away": {
+            "venue8": {
+              "n": 8,
+              "gf": 1.125,
+              "ga": 1.75,
+              "xf": 1.1558032017115503,
+              "xa": 1.5624868144700303,
+              "cf": 1.0435288186743854,
+              "ca": 1.63625,
+              "current_season": 3
+            },
+            "venue18": {
+              "n": 18,
+              "gf": 1.3333333333333333,
+              "ga": 1.6666666666666667,
+              "xf": 1.2909125340940224,
+              "xa": 1.7044385842089025,
+              "cf": 1.1926794749663936,
+              "ca": 1.6083333333333334,
+              "current_season": 3
+            },
+            "overall24": {
+              "n": 24,
+              "gf": 1.2083333333333333,
+              "ga": 1.5,
+              "xf": 1.2861621443985651,
+              "xa": 1.4785851179491107,
+              "cf": 1.1439054395581285,
+              "ca": 1.443525,
+              "current_season": 6
+            },
+            "current_season_venue": {
+              "n": 3,
+              "gf": 1,
+              "ga": 2,
+              "xf": 1.0267752045641343,
+              "xa": 1.963298171920081,
+              "cf": 0.782743516465028,
+              "ca": 2,
+              "current_season": 3
+            }
+          }
+        }
+      },
+      "decision": {
+        "H": "pass",
+        "D": "pass",
+        "A": "pass",
+        "reason": "Primary/research conflict on Newcastle; Villa research price gap only0.06pp. No robust price edge."
+      }
+    },
+    {
+      "fixture_id": 61,
+      "fixture": "AFC Bournemouth vs Sunderland",
+      "kickoff_time": "2026-10-18T13:00:00+00:00",
+      "model_version": "v3_24_venue8_50_noppg",
+      "market_source": "Oddschecker UK Premier League coupon",
+      "saved_price_at": "2026-10-17T14:14:39+00:00",
+      "odds": [
+        2.1578947368421053,
+        3.6,
+        3.6
+      ],
+      "news": {
+        "checkedAt": "2026-10-17T14:15:55.825812+00:00",
+        "home": "Scott remains out. Kluivert and Adli returned in Europe on Thursday.",
+        "away": "Meunier is ruled out despite the softer FPL flag. Isidor is a late check; Brobbey and Diarra are available for consideration.",
+        "schedule": "Both played in the Europa League on Thursday: Bournemouth at home to Sturm Graz, Sunderland away to Torreense in Portugal. Next Thursday (22 October), Bournemouth host Milan and Sunderland visit Lech Poznań.",
+        "teams": "Confirmed starting teams are pending.",
+        "availability": [
+          "AFC Bournemouth — Milosavljević: Thigh injury - Unknown return date; J.Araujo: Thigh injury - Unknown return date; Scott: Thigh injury - Unknown return date; Kroupi.Jr: Foot injury - Expected back 7 Nov",
+          "Sunderland — Ballard: Hamstring injury - Unknown return date; Meunier: Groin injury - 75% chance of playing; Mundle: Knee injury - Unknown return date; Isidor: Knock - 50% chance of playing"
+        ],
+        "sources": [
+          {
+            "label": "Premier League team update",
+            "url": "https://www.premierleague.com/en/news/4737644/predicted-line-ups-for-matchweek-7"
+          },
+          {
+            "label": "Latest Sunderland report",
+            "url": "https://uk.sports.yahoo.com/news/regis-le-bris-reveals-fit-050000533.html"
+          },
+          {
+            "label": "UEFA schedule",
+            "url": "https://www.uefa.com/uefaeuropaleague/news/02a8-2177782493b9-69ba3288701d-1000--europa-league-league-phase-fixtures-and-results-by-team/"
+          },
+          {
+            "label": "Official FPL availability feed",
+            "url": "https://fantasy.premierleague.com/api/bootstrap-static/"
+          }
+        ]
+      },
+      "diagnostics": {
+        "fixture_id": 61,
+        "fixture": "AFC Bournemouth vs Sunderland",
+        "kickoff_time": "2026-10-18T13:00:00+00:00",
+        "saved_research_probabilities": [
+          0.460909410335188,
+          0.258440198724035,
+          0.280650390940776
+        ],
+        "coupon_odds_observed_2026_10_17": [
+          2.1578947368421053,
+          3.6,
+          3.6
+        ],
+        "price_break_even": [
+          0.46341463414634143,
+          0.2777777777777778,
+          0.2777777777777778
+        ],
+        "no_vig_bookmaker": [
+          0.45478723404255317,
+          0.2726063829787234,
+          0.2726063829787234
+        ],
+        "research_price_gap_pp": [
+          -0.2505223811153423,
+          -1.9337579053742782,
+          0.28726131629981944
+        ],
+        "versions": {
+          "current_replay": {
+            "lambdas": [
+              1.7137423705103978,
+              1.3437884854137463
+            ],
+            "probabilities": [
+              0.4621915390023185,
+              0.2360558626182524,
+              0.3017525983794291
+            ]
+          },
+          "research_replay": {
+            "lambdas": [
+              1.4901129240183937,
+              1.103374064917191
+            ],
+            "probabilities": [
+              0.4609094103351883,
+              0.2584401987240354,
+              0.2806503909407763
+            ]
+          },
+          "current_xg_only_8": {
+            "lambdas": [
+              1.9470060431771967,
+              1.3650574362314374
+            ],
+            "probabilities": [
+              0.5107215929278328,
+              0.22021346771538122,
+              0.269064939356786
+            ]
+          },
+          "current_xg_only_18": {
+            "lambdas": [
+              1.8448917066991526,
+              0.9479348004410715
+            ],
+            "probabilities": [
+              0.5843633498492579,
+              0.22538840218799727,
+              0.1902482479627449
+            ]
+          },
+          "research_xg_only": {
+            "lambdas": [
+              1.6099616893698152,
+              1.246143678174766
+            ],
+            "probabilities": [
+              0.4586778590571738,
+              0.24533813357309045,
+              0.29598400736973574
+            ]
+          },
+          "research_venue18": {
+            "lambdas": [
+              1.4707162146088943,
+              0.9921140913827897
+            ],
+            "probabilities": [
+              0.4821979841534359,
+              0.2629084422142247,
+              0.2548935736323394
+            ]
+          }
+        },
+        "samples": {
+          "home": {
+            "venue8": {
+              "n": 8,
+              "gf": 1.375,
+              "ga": 1.125,
+              "xf": 1.8583981204610318,
+              "xa": 1.2051729844510555,
+              "cf": 1.375,
+              "ca": 1.0713719925936311,
+              "current_season": 3
+            },
+            "venue18": {
+              "n": 18,
+              "gf": 1.4444444444444444,
+              "ga": 1.2222222222222223,
+              "xf": 1.7781769424271252,
+              "xa": 1.0239657708671357,
+              "cf": 1.3811111111111112,
+              "ca": 1.1256097744860583,
+              "current_season": 3
+            },
+            "overall24": {
+              "n": 24,
+              "gf": 1.4166666666666667,
+              "ga": 1.2083333333333333,
+              "xf": 1.6172278760268042,
+              "xa": 1.4518687066465616,
+              "cf": 1.3866666666666667,
+              "ca": 1.0632219520801058,
+              "current_season": 6
+            },
+            "current_season_venue": {
+              "n": 3,
+              "gf": 1,
+              "ga": 1.3333333333333333,
+              "xf": 1.7035616545627514,
+              "xa": 1.427127958536148,
+              "cf": 1,
+              "ca": 1.2536586469163498,
+              "current_season": 3
+            }
+          },
+          "away": {
+            "venue8": {
+              "n": 8,
+              "gf": 1.875,
+              "ga": 1.875,
+              "xf": 1.565423278026283,
+              "xa": 1.7805436751626433,
+              "cf": 1.685,
+              "ca": 1.709372469609976,
+              "current_season": 3
+            },
+            "venue18": {
+              "n": 18,
+              "gf": 1.1666666666666667,
+              "ga": 1.7777777777777777,
+              "xf": 1.1679659013450145,
+              "xa": 1.7396860778500636,
+              "cf": 1.0822222222222222,
+              "ca": 1.6497210976044336,
+              "current_season": 3
+            },
+            "overall24": {
+              "n": 24,
+              "gf": 1.125,
+              "ga": 1.7083333333333333,
+              "xf": 1.3598557560771705,
+              "xa": 1.5193448097634439,
+              "cf": 1.02875,
+              "ca": 1.4868741565366586,
+              "current_season": 6
+            },
+            "current_season_venue": {
+              "n": 3,
+              "gf": 1.6666666666666667,
+              "ga": 2.6666666666666665,
+              "xf": 2.001128741403421,
+              "xa": 2.069416467100382,
+              "cf": 1.6666666666666667,
+              "ca": 2.275893252293269,
+              "current_season": 3
+            }
+          }
+        }
+      },
+      "decision": {
+        "H": "pass",
+        "D": "pass",
+        "A": "pass",
+        "reason": "Bournemouth below break-even in both saved views; Sunderland research gap0.29pp and longer-history check crosses break-even."
+      }
+    },
+    {
+      "fixture_id": 63,
+      "fixture": "Brighton & Hove Albion vs Crystal Palace",
+      "kickoff_time": "2026-10-18T13:00:00+00:00",
+      "model_version": "v3_24_venue8_50_noppg",
+      "market_source": "Oddschecker UK Premier League coupon",
+      "saved_price_at": "2026-10-17T14:14:39+00:00",
+      "odds": [
+        1.5454545454545454,
+        4.75,
+        6
+      ],
+      "news": {
+        "checkedAt": "2026-10-17T14:15:55.825812+00:00",
+        "home": "Struijk is eligible after his red card was rescinded, but his hamstring remains a concern. Minteh and Wieffer are not yet ready.",
+        "away": "Disasi is suspended. Henderson, Mateta, Chilwell and Tomiyasu still require checks.",
+        "schedule": "Both played on Thursday. Brighton were at home to Kauno Žalgiris in the Conference League; Palace travelled to Lyon in the Europa League. Palace visit Beşiktaş next Thursday (22 October).",
+        "teams": "Confirmed starting teams are pending.",
+        "availability": [
+          "Brighton & Hove Albion — Mitoma: Hamstring injury - Expected back 18 Oct; Minteh: Leg injury - Expected back 28 Nov; Wieffer: Knee injury - Unknown return date; Yohanna: Unspecified injury - Expected back 18 Oct; Tzimas: Knee injury - Unknown return date; Ferguson: Ankle injury - Expected back 18 Oct; Struijk: Hamstring injury - 75% chance of playing; Azeez: Hamstring injury - Expected back 18 Oct",
+          "Crystal Palace — Disasi: Suspended until 25 Oct; Henderson: Foot injury - 50% chance of playing; Chadi Riad: Knee injury - Unknown return date; Mateta: Hamstring injury - Expected back 18 Oct; Tomiyasu: Calf injury - Expected back 18 Oct; Chilwell: Unspecified injury - Unknown return date"
+        ],
+        "sources": [
+          {
+            "label": "Brighton appeal confirmed",
+            "url": "https://www.brightonandhovealbion.com/media-article/mft-news-pascal-struijk-red-card-suspension-overturned-sunderland-bha-pl-october-2026"
+          },
+          {
+            "label": "Premier League team update",
+            "url": "https://www.premierleague.com/en/news/4737644/predicted-line-ups-for-matchweek-7"
+          },
+          {
+            "label": "Palace press conference",
+            "url": "https://www.aol.com/articles/sage-henderson-fitness-lyon-defeat-150617000.html"
+          },
+          {
+            "label": "UEFA schedule",
+            "url": "https://www.uefa.com/uefaeuropaleague/news/02a8-2177782493b9-69ba3288701d-1000--europa-league-league-phase-fixtures-and-results-by-team/"
+          },
+          {
+            "label": "Official FPL availability feed",
+            "url": "https://fantasy.premierleague.com/api/bootstrap-static/"
+          }
+        ]
+      },
+      "diagnostics": {
+        "fixture_id": 63,
+        "fixture": "Brighton & Hove Albion vs Crystal Palace",
+        "kickoff_time": "2026-10-18T13:00:00+00:00",
+        "saved_research_probabilities": [
+          0.517642105400015,
+          0.248176572902281,
+          0.234181321697704
+        ],
+        "coupon_odds_observed_2026_10_17": [
+          1.5454545454545454,
+          4.75,
+          6
+        ],
+        "price_break_even": [
+          0.6470588235294118,
+          0.21052631578947367,
+          0.16666666666666666
+        ],
+        "no_vig_bookmaker": [
+          0.6317380352644837,
+          0.20554156171284635,
+          0.16272040302267002
+        ],
+        "research_price_gap_pp": [
+          -12.941671812939681,
+          3.765025711280734,
+          6.751465503103734
+        ],
+        "versions": {
+          "current_replay": {
+            "lambdas": [
+              1.9333006494915528,
+              0.970147750077472
+            ],
+            "probabilities": [
+              0.598495026794603,
+              0.2172649278452993,
+              0.18424004536009775
+            ]
+          },
+          "research_replay": {
+            "lambdas": [
+              1.6184902402959442,
+              1.0016488927453233
+            ],
+            "probabilities": [
+              0.5176421054000149,
+              0.24817657290228107,
+              0.23418132169770406
+            ]
+          },
+          "current_xg_only_8": {
+            "lambdas": [
+              1.8315058443099348,
+              1.3086599759732567
+            ],
+            "probabilities": [
+              0.4972135405366828,
+              0.22846757880970317,
+              0.27431888065361404
+            ]
+          },
+          "current_xg_only_18": {
+            "lambdas": [
+              1.6132219522350773,
+              1.1529940515513297
+            ],
+            "probabilities": [
+              0.48052245118718956,
+              0.246964944749726,
+              0.2725126040630845
+            ]
+          },
+          "research_xg_only": {
+            "lambdas": [
+              1.624561215628805,
+              1.2310836574111825
+            ],
+            "probabilities": [
+              0.46561250523731457,
+              0.24458604853670554,
+              0.2898014462259799
+            ]
+          },
+          "research_venue18": {
+            "lambdas": [
+              1.5253221234171985,
+              0.9914215295143846
+            ],
+            "probabilities": [
+              0.4965737920210345,
+              0.25747668563044945,
+              0.245949522348516
+            ]
+          }
+        },
+        "samples": {
+          "home": {
+            "venue8": {
+              "n": 8,
+              "gf": 2,
+              "ga": 0.75,
+              "xf": 1.8713722433164715,
+              "xa": 1.0507884536398575,
+              "cf": 1.8912183768004178,
+              "ca": 0.7075,
+              "current_season": 3
+            },
+            "venue18": {
+              "n": 18,
+              "gf": 1.7222222222222223,
+              "ga": 0.8888888888888888,
+              "xf": 1.6933876636962095,
+              "xa": 1.149794868284381,
+              "cf": 1.673874834133519,
+              "ca": 0.8427777777777777,
+              "current_season": 3
+            },
+            "overall24": {
+              "n": 24,
+              "gf": 1.6666666666666667,
+              "ga": 1,
+              "xf": 1.597105129545182,
+              "xa": 1.3103140144050742,
+              "cf": 1.5461288691554218,
+              "ca": 0.9858333333333333,
+              "current_season": 6
+            },
+            "current_season_venue": {
+              "n": 3,
+              "gf": 2.6666666666666665,
+              "ga": 0.3333333333333333,
+              "xf": 2.467092648843924,
+              "xa": 1.4763358763729533,
+              "cf": 2.4987490048011143,
+              "ca": 0.3333333333333333,
+              "current_season": 3
+            }
+          },
+          "away": {
+            "venue8": {
+              "n": 8,
+              "gf": 1.125,
+              "ga": 2,
+              "xf": 1.7031807979807259,
+              "xa": 1.6380700376532973,
+              "cf": 1.097475,
+              "ca": 1.84875,
+              "current_season": 3
+            },
+            "venue18": {
+              "n": 18,
+              "gf": 1.0555555555555556,
+              "ga": 1.6111111111111112,
+              "xf": 1.328635910213656,
+              "xa": 1.5446977945125766,
+              "cf": 1.0433222222222223,
+              "ca": 1.528888888888889,
+              "current_season": 3
+            },
+            "overall24": {
+              "n": 24,
+              "gf": 1.1666666666666667,
+              "ga": 1.6666666666666667,
+              "xf": 1.5082746426748732,
+              "xa": 1.6079152822051819,
+              "cf": 1.1362202434565871,
+              "ca": 1.5122956210918104,
+              "current_season": 6
+            },
+            "current_season_venue": {
+              "n": 3,
+              "gf": 1,
+              "ga": 1.3333333333333333,
+              "xf": 2.062582127948602,
+              "xa": 1.8154534337421258,
+              "cf": 1,
+              "ca": 1.3333333333333333,
+              "current_season": 3
+            }
+          }
+        }
+      },
+      "decision": {
+        "H": "pass",
+        "D": "watch alternative",
+        "A": "watch conditional",
+        "rank": 2,
+        "reason": "Palace win has largest numerical price gap, but Henderson/Mateta/Chilwell/Tomiyasu uncertain and Disasi suspended. Wait for teams; draw4.75 is an alternative, not a separate independent selection."
+      }
+    },
+    {
+      "fixture_id": 66,
+      "fixture": "Leeds United vs Manchester United",
+      "kickoff_time": "2026-10-18T13:00:00+00:00",
+      "model_version": "v3_24_venue8_50_noppg",
+      "market_source": "Oddschecker UK Premier League coupon",
+      "saved_price_at": "2026-10-17T14:14:39+00:00",
+      "odds": [
+        2.4,
+        3.7,
+        3
+      ],
+      "news": {
+        "checkedAt": "2026-10-17T14:15:55.825812+00:00",
+        "home": "Farke confirms Rodon is unavailable. James has returned to training but needs to come through the final sessions; the manager reports the rest of his squad fit.",
+        "away": "Shaw and Mainoo need checks; Mazraoui could return. Martínez is available. Šeško and Dorgu remain unavailable.",
+        "schedule": "Leeds have had a full preparation week. United played away to Atlético Madrid on Tuesday and visit Como next Wednesday (21 October); they have five days between the Atlético game and this fixture.",
+        "teams": "Confirmed starting teams are pending.",
+        "availability": [
+          "Leeds United — Rodon: Hamstring injury - Expected back 21 Nov; James: Back injury - 50% chance of playing; Mateo Joseph: Knee injury - Unknown return date",
+          "Manchester United — Heaton: Hamstring injury - Unknown return date; Dorgu: Hamstring injury - Expected back 25 Oct; Mazraoui: Back injury - 25% chance of playing; Shaw: Unspecified injury - 75% chance of playing; Mainoo: Unspecified injury - 75% chance of playing; Ugarte: Knee injury - Unknown return date; Šeško: Shin injury - Expected back 18 Oct"
+        ],
+        "sources": [
+          {
+            "label": "Leeds club update",
+            "url": "https://www.leedsunited.com/en/news/team-news-daniel-farke-gives-positive-update-on-wales-duo"
+          },
+          {
+            "label": "United team update",
+            "url": "https://www.manutd.com/en/news/team-news-for-leeds-v-united-18-october-2026"
+          },
+          {
+            "label": "Premier League team update",
+            "url": "https://www.premierleague.com/en/news/4737644/predicted-line-ups-for-matchweek-7"
+          },
+          {
+            "label": "UEFA schedule",
+            "url": "https://www.uefa.com/uefachampionsleague/news/02a8-2176fa83582b-d99f0b27f405-1000--champions-league-league-phase-fixtures-by-team/"
+          },
+          {
+            "label": "Official FPL availability feed",
+            "url": "https://fantasy.premierleague.com/api/bootstrap-static/"
+          }
+        ]
+      },
+      "diagnostics": {
+        "fixture_id": 66,
+        "fixture": "Leeds United vs Manchester United",
+        "kickoff_time": "2026-10-18T13:00:00+00:00",
+        "saved_research_probabilities": [
+          0.338465145467791,
+          0.28350012570747,
+          0.378034728824739
+        ],
+        "coupon_odds_observed_2026_10_17": [
+          2.4,
+          3.7,
+          3
+        ],
+        "price_break_even": [
+          0.4166666666666667,
+          0.27027027027027023,
+          0.3333333333333333
+        ],
+        "no_vig_bookmaker": [
+          0.40838852097130246,
+          0.2649006622516556,
+          0.32671081677704195
+        ],
+        "research_price_gap_pp": [
+          -7.8201521198875685,
+          1.322985543719979,
+          4.470139549140567
+        ],
+        "versions": {
+          "current_replay": {
+            "lambdas": [
+              1.2055587284859226,
+              0.8495462525907613
+            ],
+            "probabilities": [
+              0.4431700157346326,
+              0.2969210430922848,
+              0.2599089411730826
+            ]
+          },
+          "research_replay": {
+            "lambdas": [
+              1.1092643746042559,
+              1.1893653433568838
+            ],
+            "probabilities": [
+              0.33846514546779094,
+              0.28350012570747035,
+              0.37803472882473865
+            ]
+          },
+          "current_xg_only_8": {
+            "lambdas": [
+              1.3633600975409896,
+              1.1651264791320577
+            ],
+            "probabilities": [
+              0.4135951737716276,
+              0.26666308824551743,
+              0.319741737982855
+            ]
+          },
+          "current_xg_only_18": {
+            "lambdas": [
+              1.2735631552763884,
+              1.358897758621576
+            ],
+            "probabilities": [
+              0.34925680726831504,
+              0.2617343798657264,
+              0.3890088128659585
+            ]
+          },
+          "research_xg_only": {
+            "lambdas": [
+              1.2194250698169078,
+              1.391821964034417
+            ],
+            "probabilities": [
+              0.3286931387373422,
+              0.2620883906170352,
+              0.40921847064562256
+            ]
+          },
+          "research_venue18": {
+            "lambdas": [
+              1.1265149378176014,
+              1.3408248244272714
+            ],
+            "probabilities": [
+              0.31362902081451166,
+              0.27021902561684885,
+              0.41615195356863943
+            ]
+          }
+        },
+        "samples": {
+          "home": {
+            "venue8": {
+              "n": 8,
+              "gf": 1.5,
+              "ga": 0.5,
+              "xf": 1.3954036577511577,
+              "xa": 1.173193634841405,
+              "cf": 1.3633131145033985,
+              "ca": 0.5,
+              "current_season": 3
+            },
+            "venue18": {
+              "n": 18,
+              "gf": 1.6666666666666667,
+              "ga": 1.0555555555555556,
+              "xf": 1.5668460701116258,
+              "xa": 1.3106305043739577,
+              "cf": 1.563694717557066,
+              "ca": 1.0005555555555556,
+              "current_season": 3
+            },
+            "overall24": {
+              "n": 24,
+              "gf": 1.2916666666666667,
+              "ga": 1.1666666666666667,
+              "xf": 1.4376464253136267,
+              "xa": 1.481815690284595,
+              "cf": 1.233604371501133,
+              "ca": 1.1108333333333333,
+              "current_season": 6
+            },
+            "current_season_venue": {
+              "n": 3,
+              "gf": 1.6666666666666667,
+              "ga": 0.6666666666666666,
+              "xf": 1.5410764206697543,
+              "xa": 1.287149692910413,
+              "cf": 1.4221683053423961,
+              "ca": 0.6666666666666666,
+              "current_season": 3
+            }
+          },
+          "away": {
+            "venue8": {
+              "n": 8,
+              "gf": 1.25,
+              "ga": 1.125,
+              "xf": 1.3192866301862523,
+              "xa": 1.518957529120706,
+              "cf": 1.17381562825758,
+              "ca": 1.1162850859342144,
+              "current_season": 3
+            },
+            "venue18": {
+              "n": 18,
+              "gf": 1.6111111111111112,
+              "ga": 1.2777777777777777,
+              "xf": 1.431349613416112,
+              "xa": 1.2423144573869804,
+              "cf": 1.483918057003369,
+              "ca": 1.2277933715263174,
+              "current_season": 3
+            },
+            "overall24": {
+              "n": 24,
+              "gf": 1.8333333333333333,
+              "ga": 1.2083333333333333,
+              "xf": 1.7139396126459663,
+              "xa": 1.3131350678787257,
+              "cf": 1.70752187608586,
+              "ca": 1.1687616953114048,
+              "current_season": 6
+            },
+            "current_season_venue": {
+              "n": 3,
+              "gf": 1,
+              "ga": 1.6666666666666667,
+              "xf": 1.5747643471633395,
+              "xa": 1.412320077655216,
+              "cf": 0.9101750086868803,
+              "ca": 1.6434268958245715,
+              "current_season": 3
+            }
+          }
+        }
+      },
+      "decision": {
+        "H": "pass",
+        "D": "pass",
+        "A": "watch lower priority",
+        "reason": "United at3.00 supported by research37.8% but primary26.0%; large model conflict, injuries and recent European travel. Draw edge fails some xG/longer checks."
+      }
+    },
+    {
+      "fixture_id": 69,
+      "fixture": "Nottingham Forest vs Arsenal",
+      "kickoff_time": "2026-10-18T15:30:00+00:00",
+      "model_version": "v3_24_venue8_50_noppg",
+      "market_source": "Oddschecker UK Premier League coupon",
+      "saved_price_at": "2026-10-17T14:14:39+00:00",
+      "odds": [
+        6,
+        4,
+        1.6666666666666665
+      ],
+      "news": {
+        "checkedAt": "2026-10-17T14:15:55.825812+00:00",
+        "home": "Gibbs-White and Milenković are doubts. Savona and Igor Jesus remain out.",
+        "away": "Saliba, Hincapié and Tzolis remain out; Zubimendi may return following assessment.",
+        "schedule": "Arsenal hosted Lille on Tuesday, five days before this game, and travel to Bayern on Wednesday (21 October). Forest have no intervening European fixture and next visit Ipswich on Friday (23 October).",
+        "teams": "Confirmed starting teams are pending.",
+        "availability": [
+          "Nottingham Forest — Milenković: Knee injury - 75% chance of playing; Savona: Knee injury - Unknown return date; Gibbs-White: Muscular injury - 75% chance of playing; Igor Jesus: Calf injury - Unknown return date",
+          "Arsenal — Saliba: Back injury - Unknown return date; Hincapie: Ankle injury - Expected back 24 Oct; Zubimendi: Unspecified injury - 75% chance of playing; Tzolis: Hamstring injury - Expected back 1 Nov"
+        ],
+        "sources": [
+          {
+            "label": "Forest club preview",
+            "url": "https://www.nottinghamforest.co.uk/news/2026/october/16/forest-preview---reds-host-gunners-on-trentside/"
+          },
+          {
+            "label": "Forest fitness update",
+            "url": "https://www.nottinghamforest.co.uk/news/2026/october/16/milenkovi----mgw--doubts--for-visit-of-arsenal/"
+          },
+          {
+            "label": "UEFA schedule",
+            "url": "https://www.uefa.com/uefachampionsleague/news/02a8-2176fa83582b-d99f0b27f405-1000--champions-league-league-phase-fixtures-by-team/"
+          },
+          {
+            "label": "Official FPL availability feed",
+            "url": "https://fantasy.premierleague.com/api/bootstrap-static/"
+          }
+        ]
+      },
+      "diagnostics": {
+        "fixture_id": 69,
+        "fixture": "Nottingham Forest vs Arsenal",
+        "kickoff_time": "2026-10-18T15:30:00+00:00",
+        "saved_research_probabilities": [
+          0.195711228777731,
+          0.303120186140758,
+          0.501168585081511
+        ],
+        "coupon_odds_observed_2026_10_17": [
+          6,
+          4,
+          1.6666666666666665
+        ],
+        "price_break_even": [
+          0.16666666666666666,
+          0.25,
+          0.6000000000000001
+        ],
+        "no_vig_bookmaker": [
+          0.16393442622950816,
+          0.24590163934426226,
+          0.5901639344262295
+        ],
+        "research_price_gap_pp": [
+          2.9044562111064347,
+          5.3120186140757975,
+          -9.883141491848912
+        ],
+        "versions": {
+          "current_replay": {
+            "lambdas": [
+              0.6408723856187146,
+              0.9763995404767638
+            ],
+            "probabilities": [
+              0.2332369808468666,
+              0.34344252912490714,
+              0.4233204900282262
+            ]
+          },
+          "research_replay": {
+            "lambdas": [
+              0.643203430482403,
+              1.2193539619117169
+            ],
+            "probabilities": [
+              0.19571122877773092,
+              0.3031201861407579,
+              0.5011685850815112
+            ]
+          },
+          "current_xg_only_8": {
+            "lambdas": [
+              0.8556085220305257,
+              1.1140180982347605
+            ],
+            "probabilities": [
+              0.2782573210105325,
+              0.30773493545046327,
+              0.4140077435390042
+            ]
+          },
+          "current_xg_only_18": {
+            "lambdas": [
+              0.860490569954905,
+              1.3607979401116925
+            ],
+            "probabilities": [
+              0.23709816077155224,
+              0.2778755945549289,
+              0.48502624467351885
+            ]
+          },
+          "research_xg_only": {
+            "lambdas": [
+              0.7505340958168856,
+              1.3706033541954925
+            ],
+            "probabilities": [
+              0.20498197686385414,
+              0.2788158499624968,
+              0.516202173173649
+            ]
+          },
+          "research_venue18": {
+            "lambdas": [
+              0.6652743486995985,
+              1.303916579970329
+            ],
+            "probabilities": [
+              0.19024806100793598,
+              0.28957026351473764,
+              0.5201816754773264
+            ]
+          }
+        },
+        "samples": {
+          "home": {
+            "venue8": {
+              "n": 8,
+              "gf": 0.875,
+              "ga": 0.75,
+              "xf": 1.0865768518364056,
+              "xa": 0.9021662075616419,
+              "cf": 0.6487499999999999,
+              "ca": 0.75,
+              "current_season": 3
+            },
+            "venue18": {
+              "n": 18,
+              "gf": 0.9444444444444444,
+              "ga": 0.9444444444444444,
+              "xf": 1.2879174897050691,
+              "xa": 1.1273016478051743,
+              "cf": 0.8438888888888889,
+              "ca": 0.9444444444444444,
+              "current_season": 3
+            },
+            "overall24": {
+              "n": 24,
+              "gf": 1.4166666666666667,
+              "ga": 1.0833333333333333,
+              "xf": 1.3586652643471335,
+              "xa": 1.489044275896872,
+              "cf": 1.1825,
+              "ca": 1.0833333333333333,
+              "current_season": 6
+            },
+            "current_season_venue": {
+              "n": 3,
+              "gf": 0,
+              "ga": 0.6666666666666666,
+              "xf": 0.8537049382304152,
+              "xa": 0.7781765534977119,
+              "cf": 0,
+              "ca": 0.6666666666666666,
+              "current_season": 3
+            }
+          },
+          "away": {
+            "venue8": {
+              "n": 8,
+              "gf": 1.5,
+              "ga": 0.875,
+              "xf": 1.6220762712940573,
+              "xa": 1.0895964822739364,
+              "cf": 1.3825,
+              "ca": 0.8120308768004179,
+              "current_season": 3
+            },
+            "venue18": {
+              "n": 18,
+              "gf": 1.6111111111111112,
+              "ga": 0.9444444444444444,
+              "xf": 1.6670338983529143,
+              "xa": 0.9258206587884161,
+              "cf": 1.4661111111111111,
+              "ca": 0.8457915008001857,
+              "current_season": 3
+            },
+            "overall24": {
+              "n": 24,
+              "gf": 1.7083333333333333,
+              "ga": 0.75,
+              "xf": 1.7022420662210633,
+              "xa": 0.783892845986411,
+              "cf": 1.6071999726661792,
+              "ca": 0.6455936256001393,
+              "current_season": 6
+            },
+            "current_season_venue": {
+              "n": 3,
+              "gf": 1,
+              "ga": 1,
+              "xf": 1.6484367234508197,
+              "xa": 1.1927239527304967,
+              "cf": 1,
+              "ca": 0.8320823381344478,
+              "current_season": 3
+            }
+          }
+        }
+      },
+      "decision": {
+        "H": "pass",
+        "D": "watch first",
+        "A": "pass",
+        "rank": 1,
+        "reason": "Draw4.00: both saved views and all tested sensitivities above25% break-even. Low expected total underlies signal. Gibbs-White/Milenkovic fitness and Arsenal team strength are material pending checks."
+      }
+    },
+    {
+      "fixture_id": 70,
+      "fixture": "Tottenham Hotspur vs Coventry City",
+      "kickoff_time": "2026-10-19T19:00:00+00:00",
+      "model_version": "v3_24_venue8_50_noppg",
+      "market_source": "Oddschecker UK Premier League coupon",
+      "saved_price_at": "2026-10-17T14:14:39+00:00",
+      "odds": [
+        1.5,
+        4.75,
+        7.2
+      ],
+      "news": {
+        "checkedAt": "2026-10-17T14:15:55.825812+00:00",
+        "home": "Bentancur is suspended. Porro and Kulusevski need fresh availability confirmation. Simons, Odobert and Mudryk remain injury concerns; the next manager update is still pending.",
+        "away": "Awoniyi returns from suspension. FPL still flags Wright, Eccles, Woolfenden and Amenda as injured, with Kesler-Hayden a doubt.",
+        "schedule": "Neither side has a European match around this fixture. Spurs last played at United on 10 October and have used a training camp in Spain; Coventry last played Newcastle on 12 October. Both next play in the league on 24 October.",
+        "teams": "Confirmed starting teams are pending.",
+        "availability": [
+          "Tottenham Hotspur — Pedro Porro: Hamstring injury - Unknown return date; Xavi: Knee injury - Unknown return date; Bentancur: Suspended until 7 Nov; Odobert: Knee injury - Unknown return date; Kulusevski: Knee injury - Unknown return date; Mudryk: Ankle injury - Unknown return date",
+          "Coventry City — Kesler-Hayden: Hamstring injury - 75% chance of playing; Woolfenden: Knee injury - Unknown return date; Amenda: Calf injury - Unknown return date; Eccles: Ankle injury - Unknown return date; Wright: Thigh injury - Unknown return date"
+        ],
+        "sources": [
+          {
+            "label": "Premier League team update",
+            "url": "https://www.premierleague.com/en/news/4737644/predicted-line-ups-for-matchweek-7"
+          },
+          {
+            "label": "Latest Spurs–Coventry preview",
+            "url": "https://www.sportsmole.co.uk/football/spurs/preview/spurs-vs-coventry-prediction-team-news-lineups_607110.html"
+          },
+          {
+            "label": "Spurs schedule",
+            "url": "https://www.skysports.com/tottenham-hotspur-scores-fixtures"
+          },
+          {
+            "label": "Coventry schedule",
+            "url": "https://www.skysports.com/coventry-city-scores-fixtures"
+          },
+          {
+            "label": "Official FPL availability feed",
+            "url": "https://fantasy.premierleague.com/api/bootstrap-static/"
+          }
+        ]
+      },
+      "diagnostics": {
+        "fixture_id": 70,
+        "fixture": "Tottenham Hotspur vs Coventry City",
+        "status": "LIMITED_HISTORY"
+      },
+      "decision": {
+        "H": "no assessment",
+        "D": "no assessment",
+        "A": "no assessment",
+        "reason": "LIMITED_HISTORY: Coventry only3 relevant away matches; no probabilities invented."
+      }
+    }
+  ]
+}
