@@ -17,6 +17,19 @@ Connected systems:
 - Supabase project: `PL Results Project`, ref `priibitbnmfetyblzltk`
 - Vercel project: `pl-results-project`, production `https://pl-data.colly.me.uk` (existing alias `https://pl-results-project.vercel.app`)
 
+## GW8 checks moved to cloud — 2026-10-20
+
+Mark requested that the checks run even while this Mac is switched off. Three single-run ChatGPT cloud tasks now replace the local heartbeats below. Their saved web URLs explicitly identify `automationSource=cloud`; they use GitHub, Supabase, Vercel and public web sources rather than local files or the Mac executor.
+
+- Friday 23 October, 09:00 BST (08:00 UTC): [PL GW8: Friday post-Europe review](https://chatgpt.com/scheduled?automationId=6ad7998cb8008190b99dad248f0d0bc9&automationSource=cloud), cloud task `6ad7998cb8008190b99dad248f0d0bc9`.
+- Saturday 24 October, 16:30 BST (15:30 UTC): [PL GW8: Spurs paper decision](https://chatgpt.com/scheduled?automationId=6ad799f3597c81909c6085e01a48c80f&automationSource=cloud), cloud task `6ad799f3597c81909c6085e01a48c80f`, before Chelsea–Spurs at 17:30 BST.
+- Sunday 25 October, 13:00 GMT (13:00 UTC): [PL GW8: Palace and Brighton paper decisions](https://chatgpt.com/scheduled?automationId=6ad79ed8c30481909047090968a15686&automationSource=cloud), cloud task `6ad79ed8c30481909047090968a15686`, before both 14:00 GMT kickoffs. The UK clock change is reflected in the saved schedule.
+- The web time picker uses quarter-hour slots, so the match-day checks replace the earlier 16:20/12:50 local times. All three are one-off tasks; results appear in ChatGPT Scheduled and their task conversations. Required evidence delayed near kickoff may trigger a bounded cloud retry only while a valid pre-match decision can still be recorded.
+- A manual cloud run on 20 October followed the prompt's read-only preflight branch and reported successful reads of the five requested repository files, the three relevant Supabase fixture/snapshot records and the Vercel project/latest READY deployment. This verifies cloud read access; it did not exercise write/publish permissions or change forecasts, data or paper decisions.
+- All three original Mac-dependent heartbeats are PAUSED: `palace-brighton-and-spurs-paper-checks`, `spurs-line-ups-and-paper-decision`, `palace-and-brighton-line-ups-and-paper-decisions`. Do not re-enable them or create duplicate checks.
+- The cloud prompts retain the existing one-hypothetical-unit paper rules, official confirmed XIs, fresh available named-bookmaker quote/time/source, news/schedule/sensitivity checks, append-only ledger and frozen historical forecasts. A pass is valid; no retrospective selection or model-weight change. Each due run reads current remote state, validates and publishes any permitted updates, and reports any source/connection failure honestly.
+- Scheduling/migration itself added no paper selections or stakes. The project no longer requires this Mac to remain on for these three checks.
+
 ## GW8 follow-up checks scheduled — 2026-10-20
 
 Mark requested a post-Thursday European review and final paper decisions for Palace, Brighton and Spurs once official starting teams and fresh odds are available. Three ACTIVE, single-run Codex heartbeats are attached to the existing project chat `01a08b7e-8874-7b63-9f26-19684362c5a7`. This supersedes the earlier statements that no future checks were scheduled.
