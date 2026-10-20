@@ -17,6 +17,18 @@ Connected systems:
 - Supabase project: `PL Results Project`, ref `priibitbnmfetyblzltk`
 - Vercel project: `pl-results-project`, production `https://pl-data.colly.me.uk` (existing alias `https://pl-results-project.vercel.app`)
 
+## Post-weekend review and next fixtures refresh scheduled — 2026-10-20
+
+Mark requested the next fixtures refresh in the established cloud workflow, then explicitly asked to review the weekend first and check anything we should change.
+
+- One-off cloud run: **Monday 26 October 2026, 09:00 GMT (09:00 UTC)**. [PL post-weekend review and fixtures refresh](https://chatgpt.com/scheduled?automationId=6ad7a14d306c8190b719bd87b6f73e7d&automationSource=cloud), task `6ad7a14d306c8190b719bd87b6f73e7d`. The saved web task identifies `automationSource=cloud`; this Mac can be switched off.
+- Review first: verify the 23–25 October final scores, settle only valid recorded paper selections, preserve all original decisions/quotes/forecasts, and compare all eligible forecasts with results and the saved market separately from paper-bet ROI. Assess data freshness, pricing, confirmed teams, Europe/rest and sensitivity warnings using actual pre-match evidence. Do not infer a bet, convert a near miss into a win, or invent a retrospective decision.
+- Produce a dated review with evidence, limitations and concrete proposed improvements. **Changes to the model, betting/selection rules, staking or eligibility require Mark's review before applying them.** Do not tune the system to one weekend. The authorised routine refresh proceeds using the unchanged existing rules.
+- Then load and reconcile newly completed results and available approved stats, refresh dependent aggregates/feature caches, fetch the next official PL round (including relevant Friday/Monday matches), and save new future-only forecasts. Keep any still-upcoming current-round games visible. Preserve played fixtures and snapshots, old odds/news, frozen v3, permanent ID mappings and append-only ledger history.
+- Add available dated early odds/news to the next-round page; keep new ideas provisional with no paper stakes until confirmed XIs and fresh named-bookmaker quotes are checked later. Report source delays honestly and withhold affected forecasts if essential inputs are stale or missing.
+- The task must validate coverage, source/cache reconciliation, historical protection and append-only paper records, run relevant existing checks/build where needed, publish through the guarded GitHub/main, Supabase and Vercel workflow, verify readback/deployment, and update this context plus dated review/refresh reports.
+- Report review findings first, then next fixtures, refresh coverage/timestamps and proposed changes awaiting review. Results appear in ChatGPT Scheduled; task push notifications were confirmed enabled on 20 October. No weekly recurrence or duplicate local task was created. The existing Friday/Saturday/Sunday cloud checks remain unchanged.
+
 ## GW8 checks moved to cloud — 2026-10-20
 
 Mark requested that the checks run even while this Mac is switched off. Three single-run ChatGPT cloud tasks now replace the local heartbeats below. Their saved web URLs explicitly identify `automationSource=cloud`; they use GitHub, Supabase, Vercel and public web sources rather than local files or the Mac executor.
