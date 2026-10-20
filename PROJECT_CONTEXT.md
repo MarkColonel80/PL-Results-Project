@@ -17,6 +17,18 @@ Connected systems:
 - Supabase project: `PL Results Project`, ref `priibitbnmfetyblzltk`
 - Vercel project: `pl-results-project`, production `https://pl-data.colly.me.uk` (existing alias `https://pl-results-project.vercel.app`)
 
+## GW8 odds and early paper watches — 2026-10-20
+
+Mark requested the latest odds/news and games worth watching for paper bets. Full assessment: `WEEKEND_WATCHLIST_2026-10-23_REVIEW_2026-10-20.md`. This supersedes the initial pending-price/news state immediately below.
+
+- All ten 23–25 October fixtures now have complete H/D/A Oddschecker coupon prices, rechecked20October17:02UK, and early-week news checked17:04UK. Official FPL flags were fetched16:56UK; available dated club reports and UEFA/club European schedules are linked. Weekend starting teams and named-bookmaker executable quotes remain pending. Return dates/availability percentages are FPL flags, not confirmed returns or win-probability inputs.
+- Three watches, seven passes, zero paper selections/stakes. Main watches: Palace home2.90 (research43.5% vs34.5% break-even), Brighton away3.25 (38.2% vs30.8%). Both survive displayed diagnostics but have small cushions in at least one and Thursday European away trips. Palace need Henderson/Mateta checks; Brighton need injury/workload checks after Jablonec, while Liverpool have Frimpong/Szoboszlai concerns and two more recovery days.
+- Secondary watch: Spurs away4.50 (24.8% vs22.2%), with Chelsea–Spurs draw4.33 an alternative, not an independent extra pick. Chelsea goalkeeper Martínez left injured last Saturday; Spurs have multiple doubts and Porro may return. No intervening European game listed for either, but Spurs played Monday and Chelsea Saturday.
+- Pass at current prices: Villa–City, Arsenal–Everton, United–Bournemouth, Sunderland–Leeds. Bournemouth3.90 has a+5.6pp research gap but fails xG-only Venue18 (24.2% vs25.6% required). City1.75 needs57.1% vs research54.0%. Three promoted-home fixtures remain LIMITED_HISTORY and pass under the unchanged minimum.
+- Ten new watch/pass events with news/schedule/sensitivity evidence are appended to `data/weekend-paper-ledger.json`; all original entries remain intact. Confirmed teams remain false and no comparison coupon is treated as a verified bookmaker quote. Preserve these early assessments and append later reviews rather than changing them.
+- Frozen dated payloads: `data/weekend-2026-10-23-odds-2026-10-20.json`, `data/weekend-2026-10-23-news-2026-10-20.json`, `data/weekend-2026-10-23-review-2026-10-20.json`. All50 snapshots and frozen models, and40 earlier fixture/odds/news records, retain identical hashes. Only71–80 odds/notes changed; no results/stat import or probability recalculation.
+- Append-only ledger validation, paper/news/value tests and production build pass. Generic paper tests now permit valid later status changes, retaining the substantive evidence/settlement tests. No automatic future check was scheduled.
+
 ## Weekend paper mode applied — 2026-10-20
 
 Mark explicitly approved applying the investigation's process improvements and treating next weekend's picks as paper bets. Details: `WEEKEND_PAPER_MODE_2026-10-20.md`. This applies the page/recording improvements; it does not promote a new probability model.

@@ -51,8 +51,8 @@ const matches=[{home_team:"Arsenal",away_team:"Everton",kickoff_time:"2026-10-10
 assert.deepEqual(venueHistoryBreakdown(matches,"Arsenal",true,8,fixture.kickoff_time,"2026-10-20T12:00:00Z"),{total:8,current:1,previous:7});
 assert.equal(venueHistoryBreakdown(null,"Arsenal",true,8,fixture.kickoff_time,"2026-10-20T12:00:00Z"),null);
 const live=JSON.parse(readFileSync(new URL("../data/weekend-paper-ledger.json",import.meta.url)));
-assert.equal(live.mode,"paper");assert.equal(live.unit_stake,1);assert.equal(live.fixtures.length,10);
+assert.equal(live.mode,"paper");assert.equal(live.unit_stake,1);assert.ok(live.fixtures.length>=10);
 assert.equal(new Set(live.events.map(e=>e.id)).size,live.events.length);
-for(const f of live.fixtures)assert.equal(paperDecision(live.events,f).status,"watch");
-assert.equal(paperScorecard(live).selections,0,"No synthetic or retrospectively created paper stakes");
+for(const f of live.fixtures)assert.ok(["watch","pass","paper"].includes(paperDecision(live.events,f).status));
+for(const e of live.events){const f=live.fixtures.find(f=>f.fixture_id===e.fixture_id);assert.ok(f);assert.deepEqual(paperEventIssues(e,f),[],e.id);}
 console.log("Paper review: pre-match gates, frozen selections, honest settlement, history cutoffs and diagnostic limits passed.");

@@ -1,0 +1,147 @@
+{
+  "observed_at": "2026-10-20T16:02:46+00:00",
+  "source": "https://www.oddschecker.com/football/leagues-cups/english/premier-league",
+  "type": "Public coupon comparison; no named-bookmaker executable quote verified",
+  "fixtures": [
+    {
+      "fixture_id": 71,
+      "kickoff_time": "2026-10-23T19:00:00+00:00",
+      "home_team": "Ipswich Town",
+      "away_team": "Nottingham Forest",
+      "source_fractional_odds": [
+        "21/10",
+        "13/5",
+        "13/10"
+      ],
+      "market_home_odds": 3.1,
+      "market_draw_odds": 3.6,
+      "market_away_odds": 2.3
+    },
+    {
+      "fixture_id": 72,
+      "kickoff_time": "2026-10-24T11:30:00+00:00",
+      "home_team": "Aston Villa",
+      "away_team": "Manchester City",
+      "source_fractional_odds": [
+        "7/2",
+        "16/5",
+        "3/4"
+      ],
+      "market_home_odds": 4.5,
+      "market_draw_odds": 4.2,
+      "market_away_odds": 1.75
+    },
+    {
+      "fixture_id": 73,
+      "kickoff_time": "2026-10-24T14:00:00+00:00",
+      "home_team": "Arsenal",
+      "away_team": "Everton",
+      "source_fractional_odds": [
+        "2/5",
+        "19/5",
+        "15/2"
+      ],
+      "market_home_odds": 1.4,
+      "market_draw_odds": 4.8,
+      "market_away_odds": 8.5
+    },
+    {
+      "fixture_id": 74,
+      "kickoff_time": "2026-10-24T14:00:00+00:00",
+      "home_team": "Coventry City",
+      "away_team": "Fulham",
+      "source_fractional_odds": [
+        "19/10",
+        "13/5",
+        "7/5"
+      ],
+      "market_home_odds": 2.9,
+      "market_draw_odds": 3.6,
+      "market_away_odds": 2.4
+    },
+    {
+      "fixture_id": 75,
+      "kickoff_time": "2026-10-24T16:30:00+00:00",
+      "home_team": "Chelsea",
+      "away_team": "Tottenham Hotspur",
+      "source_fractional_odds": [
+        "7/10",
+        "10/3",
+        "7/2"
+      ],
+      "market_home_odds": 1.7,
+      "market_draw_odds": 4.333333333333334,
+      "market_away_odds": 4.5
+    },
+    {
+      "fixture_id": 76,
+      "kickoff_time": "2026-10-25T14:00:00+00:00",
+      "home_team": "Crystal Palace",
+      "away_team": "Newcastle United",
+      "source_fractional_odds": [
+        "19/10",
+        "11/4",
+        "7/5"
+      ],
+      "market_home_odds": 2.9,
+      "market_draw_odds": 3.75,
+      "market_away_odds": 2.4
+    },
+    {
+      "fixture_id": 77,
+      "kickoff_time": "2026-10-25T14:00:00+00:00",
+      "home_team": "Hull City",
+      "away_team": "Brentford",
+      "source_fractional_odds": [
+        "18/5",
+        "3/1",
+        "3/4"
+      ],
+      "market_home_odds": 4.6,
+      "market_draw_odds": 4.0,
+      "market_away_odds": 1.75
+    },
+    {
+      "fixture_id": 78,
+      "kickoff_time": "2026-10-25T14:00:00+00:00",
+      "home_team": "Liverpool",
+      "away_team": "Brighton & Hove Albion",
+      "source_fractional_odds": [
+        "15/13",
+        "3/1",
+        "9/4"
+      ],
+      "market_home_odds": 2.1538461538461537,
+      "market_draw_odds": 4.0,
+      "market_away_odds": 3.25
+    },
+    {
+      "fixture_id": 79,
+      "kickoff_time": "2026-10-25T14:00:00+00:00",
+      "home_team": "Manchester United",
+      "away_team": "AFC Bournemouth",
+      "source_fractional_odds": [
+        "13/15",
+        "3/1",
+        "29/10"
+      ],
+      "market_home_odds": 1.8666666666666667,
+      "market_draw_odds": 4.0,
+      "market_away_odds": 3.9
+    },
+    {
+      "fixture_id": 80,
+      "kickoff_time": "2026-10-25T16:30:00+00:00",
+      "home_team": "Sunderland",
+      "away_team": "Leeds United",
+      "source_fractional_odds": [
+        "19/10",
+        "23/10",
+        "6/4"
+      ],
+      "market_home_odds": 2.9,
+      "market_draw_odds": 3.3,
+      "market_away_odds": 2.5
+    }
+  ]
+}

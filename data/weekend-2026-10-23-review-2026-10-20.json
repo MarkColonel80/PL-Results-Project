@@ -1,0 +1,465 @@
+{
+  "checked_at": "2026-10-20T16:04:27.901986+00:00",
+  "model_status": "Saved 20 October forecasts unchanged; no news or schedule probability adjustment",
+  "paper_scorecard": {
+    "selections": 0,
+    "settled": 0,
+    "pending": 0,
+    "wins": 0,
+    "staked": 0,
+    "settledStake": 0,
+    "profit": 0,
+    "roi": null
+  },
+  "review": [
+    {
+      "fixture_id": 71,
+      "fixture": "Ipswich Town vs Nottingham Forest",
+      "kickoff_time": "2026-10-23T19:00:00+00:00",
+      "odds": {
+        "h": 3.1,
+        "d": 3.6,
+        "a": 2.3
+      },
+      "price_observed_at": "2026-10-20T16:02:46+00:00",
+      "price_source": "https://www.oddschecker.com/football/leagues-cups/english/premier-league",
+      "research": null,
+      "primary": null,
+      "xg_only_venue8": null,
+      "xg_only_venue18": null,
+      "break_even": {
+        "h": 0.3225806451612903,
+        "d": 0.2777777777777778,
+        "a": 0.4347826086956522
+      },
+      "no_vig": {
+        "h": 0.3116296575084681,
+        "d": 0.26834776063229204,
+        "a": 0.4200225818592397
+      },
+      "research_gap_pp": null,
+      "fragility": [],
+      "decision": "pass",
+      "reason": "Pass for now: Ipswich have only three relevant home appearances, so the fixture has no eligible forecast. Prices and news are shown for context; no model-based paper selection."
+    },
+    {
+      "fixture_id": 72,
+      "fixture": "Aston Villa vs Manchester City",
+      "kickoff_time": "2026-10-24T11:30:00+00:00",
+      "odds": {
+        "h": 4.5,
+        "d": 4.2,
+        "a": 1.75
+      },
+      "price_observed_at": "2026-10-20T16:02:46+00:00",
+      "price_source": "https://www.oddschecker.com/football/leagues-cups/english/premier-league",
+      "research": {
+        "h": 0.231830681012624,
+        "d": 0.227758427158393,
+        "a": 0.540410891828983
+      },
+      "primary": {
+        "h": 0.16847145034626448,
+        "d": 0.1922636066178955,
+        "a": 0.63926494303584
+      },
+      "xg_only_venue8": {
+        "h": 0.19794928083843932,
+        "d": 0.20382753799382447,
+        "a": 0.5982231811677362
+      },
+      "xg_only_venue18": {
+        "h": 0.27846889215610293,
+        "d": 0.2390840761050075,
+        "a": 0.48244703173888964
+      },
+      "break_even": {
+        "h": 0.2222222222222222,
+        "d": 0.23809523809523808,
+        "a": 0.5714285714285714
+      },
+      "no_vig": {
+        "h": 0.2153846153846154,
+        "d": 0.23076923076923078,
+        "a": 0.5538461538461539
+      },
+      "research_gap_pp": {
+        "h": 0.9608458790401786,
+        "d": -1.0336810936845076,
+        "a": -3.1017679599588344
+      },
+      "fragility": [
+        "Home gap disappears in xG-only Venue8"
+      ],
+      "decision": "pass",
+      "reason": "Pass at these prices. City at 1.75 needs 57.1% versus research 54.0%. Villa home at 4.50 has only a 1.0pp gap and fails the current/xG-only Venue8 check. Europe and Haaland news do not justify overriding that."
+    },
+    {
+      "fixture_id": 73,
+      "fixture": "Arsenal vs Everton",
+      "kickoff_time": "2026-10-24T14:00:00+00:00",
+      "odds": {
+        "h": 1.4,
+        "d": 4.8,
+        "a": 8.5
+      },
+      "price_observed_at": "2026-10-20T16:02:46+00:00",
+      "price_source": "https://www.oddschecker.com/football/leagues-cups/english/premier-league",
+      "research": {
+        "h": 0.661247525198199,
+        "d": 0.213461615122033,
+        "a": 0.125290859679768
+      },
+      "primary": {
+        "h": 0.6842443271335403,
+        "d": 0.20174464854335558,
+        "a": 0.11401102432310413
+      },
+      "xg_only_venue8": {
+        "h": 0.6919966950807094,
+        "d": 0.18225206082538603,
+        "a": 0.12575124409390462
+      },
+      "xg_only_venue18": {
+        "h": 0.6147028201970285,
+        "d": 0.2256908344257027,
+        "a": 0.15960634537726884
+      },
+      "break_even": {
+        "h": 0.7142857142857143,
+        "d": 0.20833333333333334,
+        "a": 0.11764705882352941
+      },
+      "no_vig": {
+        "h": 0.6866374957926623,
+        "d": 0.2002692696061932,
+        "a": 0.11309323460114439
+      },
+      "research_gap_pp": {
+        "h": -5.303818908751534,
+        "d": 0.5128281788699646,
+        "a": 0.7643800856238586
+      },
+      "fragility": [
+        "Draw gap disappears in xG-only Venue8"
+      ],
+      "decision": "pass",
+      "reason": "Pass at these prices. Arsenal at 1.40 is below the research fair price; Everton at 8.50 and the draw at 4.80 have gaps below 1pp, with current-view disagreement. Await Bayern aftermath and team news rather than force a longshot."
+    },
+    {
+      "fixture_id": 74,
+      "fixture": "Coventry City vs Fulham",
+      "kickoff_time": "2026-10-24T14:00:00+00:00",
+      "odds": {
+        "h": 2.9,
+        "d": 3.6,
+        "a": 2.4
+      },
+      "price_observed_at": "2026-10-20T16:02:46+00:00",
+      "price_source": "https://www.oddschecker.com/football/leagues-cups/english/premier-league",
+      "research": null,
+      "primary": null,
+      "xg_only_venue8": null,
+      "xg_only_venue18": null,
+      "break_even": {
+        "h": 0.3448275862068966,
+        "d": 0.2777777777777778,
+        "a": 0.4166666666666667
+      },
+      "no_vig": {
+        "h": 0.3317972350230415,
+        "d": 0.2672811059907834,
+        "a": 0.40092165898617516
+      },
+      "research_gap_pp": null,
+      "fragility": [],
+      "decision": "pass",
+      "reason": "Pass for now: Coventry have only three relevant home appearances and no eligible forecast. Current prices and early team news are context only."
+    },
+    {
+      "fixture_id": 75,
+      "fixture": "Chelsea vs Tottenham Hotspur",
+      "kickoff_time": "2026-10-24T16:30:00+00:00",
+      "odds": {
+        "h": 1.7,
+        "d": 4.333333333333334,
+        "a": 4.5
+      },
+      "price_observed_at": "2026-10-20T16:02:46+00:00",
+      "price_source": "https://www.oddschecker.com/football/leagues-cups/english/premier-league",
+      "research": {
+        "h": 0.506072768336978,
+        "d": 0.246041092496612,
+        "a": 0.24788613916641
+      },
+      "primary": {
+        "h": 0.3628442041677669,
+        "d": 0.27939126279092147,
+        "a": 0.3577645330413116
+      },
+      "xg_only_venue8": {
+        "h": 0.3932869761472344,
+        "d": 0.2627296616181504,
+        "a": 0.3439833622346152
+      },
+      "xg_only_venue18": {
+        "h": 0.533845425254075,
+        "d": 0.23406124135224113,
+        "a": 0.23209333339368388
+      },
+      "break_even": {
+        "h": 0.5882352941176471,
+        "d": 0.23076923076923073,
+        "a": 0.2222222222222222
+      },
+      "no_vig": {
+        "h": 0.564944471269918,
+        "d": 0.22163206180589087,
+        "a": 0.21342346692419123
+      },
+      "research_gap_pp": {
+        "h": -8.216252578066907,
+        "d": 1.5271861727381264,
+        "a": 2.5663916944187792
+      },
+      "fragility": [],
+      "decision": "watch",
+      "reason": "Secondary paper watch: Spurs away at 4.50, research 24.8% versus 22.2% break-even (+2.6pp). The draw at 4.33 is an alternative (+1.5pp), not a second independent pick. Both survive the displayed diagnostics with thin longer-history margins. Confirm Chelsea goalkeeper and Spurs post-Monday injuries/returns first."
+    },
+    {
+      "fixture_id": 76,
+      "fixture": "Crystal Palace vs Newcastle United",
+      "kickoff_time": "2026-10-25T14:00:00+00:00",
+      "odds": {
+        "h": 2.9,
+        "d": 3.75,
+        "a": 2.4
+      },
+      "price_observed_at": "2026-10-20T16:02:46+00:00",
+      "price_source": "https://www.oddschecker.com/football/leagues-cups/english/premier-league",
+      "research": {
+        "h": 0.434554233278474,
+        "d": 0.246660828521944,
+        "a": 0.318784938199582
+      },
+      "primary": {
+        "h": 0.3867158616721692,
+        "d": 0.26723170764204124,
+        "a": 0.3460524306857895
+      },
+      "xg_only_venue8": {
+        "h": 0.35847158480116337,
+        "d": 0.2509059644206397,
+        "a": 0.390622450778197
+      },
+      "xg_only_venue18": {
+        "h": 0.40319858002630965,
+        "d": 0.2628215796790575,
+        "a": 0.33397984029463273
+      },
+      "break_even": {
+        "h": 0.3448275862068966,
+        "d": 0.26666666666666666,
+        "a": 0.4166666666666667
+      },
+      "no_vig": {
+        "h": 0.3353828954723309,
+        "d": 0.25936277249860257,
+        "a": 0.4052543320290665
+      },
+      "research_gap_pp": {
+        "h": 8.97266470715774,
+        "d": -2.0005838144722676,
+        "a": -9.78817284670847
+      },
+      "fragility": [],
+      "decision": "watch",
+      "reason": "Main paper watch: Palace home at 2.90, research 43.5% versus 34.5% break-even (+9.0pp). Current and xG-only diagnostics remain positive, but xG-only Venue8 falls to 35.8%. Henderson is a 50% FPL doubt, Palace visit Besiktas on Thursday, and five of eight home-history games are from last season. Reassess after Europe; no stake yet."
+    },
+    {
+      "fixture_id": 77,
+      "fixture": "Hull City vs Brentford",
+      "kickoff_time": "2026-10-25T14:00:00+00:00",
+      "odds": {
+        "h": 4.6,
+        "d": 4,
+        "a": 1.75
+      },
+      "price_observed_at": "2026-10-20T16:02:46+00:00",
+      "price_source": "https://www.oddschecker.com/football/leagues-cups/english/premier-league",
+      "research": null,
+      "primary": null,
+      "xg_only_venue8": null,
+      "xg_only_venue18": null,
+      "break_even": {
+        "h": 0.2173913043478261,
+        "d": 0.25,
+        "a": 0.5714285714285714
+      },
+      "no_vig": {
+        "h": 0.20926756352765322,
+        "d": 0.24065769805680118,
+        "a": 0.5500747384155455
+      },
+      "research_gap_pp": null,
+      "fragility": [],
+      "decision": "pass",
+      "reason": "Pass for now: Hull have only three relevant home appearances and no eligible forecast. Goalkeeper/other injury flags and Brentford suspensions do not remove the history restriction."
+    },
+    {
+      "fixture_id": 78,
+      "fixture": "Liverpool vs Brighton & Hove Albion",
+      "kickoff_time": "2026-10-25T14:00:00+00:00",
+      "odds": {
+        "h": 2.1538461538461537,
+        "d": 4,
+        "a": 3.25
+      },
+      "price_observed_at": "2026-10-20T16:02:46+00:00",
+      "price_source": "https://www.oddschecker.com/football/leagues-cups/english/premier-league",
+      "research": {
+        "h": 0.36010360408812,
+        "d": 0.257721294076565,
+        "a": 0.382175101835315
+      },
+      "primary": {
+        "h": 0.30524203396149163,
+        "d": 0.25571606846805284,
+        "a": 0.43904189757045553
+      },
+      "xg_only_venue8": {
+        "h": 0.33082853912118976,
+        "d": 0.23681351885693286,
+        "a": 0.4323579420218774
+      },
+      "xg_only_venue18": {
+        "h": 0.43177833942839045,
+        "d": 0.2404513347641219,
+        "a": 0.32777032580748766
+      },
+      "break_even": {
+        "h": 0.4642857142857143,
+        "d": 0.25,
+        "a": 0.3076923076923077
+      },
+      "no_vig": {
+        "h": 0.45430107526881724,
+        "d": 0.24462365591397853,
+        "a": 0.30107526881720437
+      },
+      "research_gap_pp": {
+        "h": -10.418211019759433,
+        "d": 0.7721294076565022,
+        "a": 7.448279414300729
+      },
+      "fragility": [
+        "Draw gap disappears in xG-only Venue8",
+        "Draw gap disappears in xG-only Venue18"
+      ],
+      "decision": "watch",
+      "reason": "Main paper watch: Brighton away at 3.25, research 38.2% versus 30.8% break-even (+7.4pp). All displayed estimates remain above break-even, but xG-only Venue18 is only 32.8%. Thursday travel to Jablonec, the continuing injury list and Liverpool returners could remove that modest diagnostic cushion. Recheck after Europe; no stake yet."
+    },
+    {
+      "fixture_id": 79,
+      "fixture": "Manchester United vs AFC Bournemouth",
+      "kickoff_time": "2026-10-25T14:00:00+00:00",
+      "odds": {
+        "h": 1.8666666666666667,
+        "d": 4,
+        "a": 3.9
+      },
+      "price_observed_at": "2026-10-20T16:02:46+00:00",
+      "price_source": "https://www.oddschecker.com/football/leagues-cups/english/premier-league",
+      "research": {
+        "h": 0.446289271060504,
+        "d": 0.241372857296436,
+        "a": 0.31233787164306
+      },
+      "primary": {
+        "h": 0.43837853586501924,
+        "d": 0.23043445503803353,
+        "a": 0.3311870090969472
+      },
+      "xg_only_venue8": {
+        "h": 0.4633277108018356,
+        "d": 0.21427813730041975,
+        "a": 0.3223941518977447
+      },
+      "xg_only_venue18": {
+        "h": 0.555403673772501,
+        "d": 0.20283005681182883,
+        "a": 0.24176626941567017
+      },
+      "break_even": {
+        "h": 0.5357142857142857,
+        "d": 0.25,
+        "a": 0.25641025641025644
+      },
+      "no_vig": {
+        "h": 0.5140597539543057,
+        "d": 0.2398945518453427,
+        "a": 0.2460456942003515
+      },
+      "research_gap_pp": {
+        "h": -8.942501465378172,
+        "d": -0.8627142703563989,
+        "a": 5.592761523280354
+      },
+      "fragility": [
+        "Away gap disappears in xG-only Venue18"
+      ],
+      "decision": "pass",
+      "reason": "Pass at 3.90 for now despite a +5.6pp research gap for Bournemouth. The xG-only Venue18 estimate is 24.2%, below the 25.6% required, so the apparent advantage fails a longer-history check. Both clubs still have European games and unresolved fitness issues."
+    },
+    {
+      "fixture_id": 80,
+      "fixture": "Sunderland vs Leeds United",
+      "kickoff_time": "2026-10-25T16:30:00+00:00",
+      "odds": {
+        "h": 2.9,
+        "d": 3.3,
+        "a": 2.5
+      },
+      "price_observed_at": "2026-10-20T16:02:46+00:00",
+      "price_source": "https://www.oddschecker.com/football/leagues-cups/english/premier-league",
+      "research": {
+        "h": 0.34045992171619,
+        "d": 0.286820533231558,
+        "a": 0.372719545052251
+      },
+      "primary": {
+        "h": 0.30943894963607277,
+        "d": 0.31409162866048324,
+        "a": 0.376469421703444
+      },
+      "xg_only_venue8": {
+        "h": 0.3848165732441457,
+        "d": 0.26477282124086476,
+        "a": 0.35041060551498965
+      },
+      "xg_only_venue18": {
+        "h": 0.37254589162818563,
+        "d": 0.26075398200006683,
+        "a": 0.36670012637174765
+      },
+      "break_even": {
+        "h": 0.3448275862068966,
+        "d": 0.30303030303030304,
+        "a": 0.4
+      },
+      "no_vig": {
+        "h": 0.32907857997606704,
+        "d": 0.2891902672516953,
+        "a": 0.3817311527722378
+      },
+      "research_gap_pp": {
+        "h": -0.436766449070658,
+        "d": -1.6209769798745055,
+        "a": -2.7280454947749
+      },
+      "fragility": [],
+      "decision": "pass",
+      "reason": "Pass at these prices: no H/D/A outcome has a positive research price gap. Sunderland also travel to Poland on Thursday and have defensive/striker availability concerns; do not infer a new numerical adjustment from those concerns."
+    }
+  ]
+}
