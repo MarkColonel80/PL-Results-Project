@@ -17,6 +17,17 @@ Connected systems:
 - Supabase project: `PL Results Project`, ref `priibitbnmfetyblzltk`
 - Vercel project: `pl-results-project`, production `https://pl-data.colly.me.uk` (existing alias `https://pl-results-project.vercel.app`)
 
+## GW8 follow-up checks scheduled — 2026-10-20
+
+Mark requested a post-Thursday European review and final paper decisions for Palace, Brighton and Spurs once official starting teams and fresh odds are available. Three ACTIVE, single-run Codex heartbeats are attached to the existing project chat `01a08b7e-8874-7b63-9f26-19684362c5a7`. This supersedes the earlier statements that no future checks were scheduled.
+
+- Friday 23 October, 09:00 BST (08:00 UTC): post-Europe review of results, minutes, injuries, rotation and travel, with updated sourced news for all six relevant teams. Automation `palace-brighton-and-spurs-paper-checks`.
+- Saturday 24 October, 16:20 BST (15:20 UTC): Chelsea–Spurs official XIs and fresh named-bookmaker quote, then a recorded paper selection or pass before the 17:30 BST kickoff. Automation `spurs-line-ups-and-paper-decision`.
+- Sunday 25 October, 12:50 GMT (12:50 UTC): Palace–Newcastle and Liverpool–Brighton official XIs and fresh named-bookmaker quotes, then recorded paper selections or passes before their 14:00 GMT kickoffs. UK clocks change that morning. Automation `palace-and-brighton-line-ups-and-paper-decisions`.
+- Each heartbeat handles only its assigned stage and stops afterward. A bounded pre-kickoff retry may be scheduled if lineups/quotes are delayed; no retrospective paper selections. If a run is late, record the missed check honestly. These local follow-ups need this Mac powered on with the desktop app running.
+- Paper decisions require the existing confirmed-team, current quote, news, schedule and sensitivity evidence. Exactly one hypothetical unit per selected outcome; a pass is valid. Preserve the append-only ledger, first valid selection, saved forecast snapshots, played rows and frozen model. No selection or stake has been added by scheduling.
+- At each stage read current GitHub context first, append the decision and evidence, validate against the previous committed ledger, publish through the existing GitHub/Supabase/Vercel workflow, and report meaningful changes/final decisions in this chat.
+
 ## GW8 odds and early paper watches — 2026-10-20
 
 Mark requested the latest odds/news and games worth watching for paper bets. Full assessment: `WEEKEND_WATCHLIST_2026-10-23_REVIEW_2026-10-20.md`. This supersedes the initial pending-price/news state immediately below.
