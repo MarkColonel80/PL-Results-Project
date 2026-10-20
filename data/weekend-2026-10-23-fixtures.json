@@ -1,0 +1,96 @@
+{
+  "checked_at": "2026-10-20T15:41:53.374794+00:00",
+  "source": "https://fantasy.premierleague.com/api/fixtures/",
+  "fixtures": [
+    {
+      "fixture_id": 71,
+      "season": "2026/27",
+      "kickoff_time": "2026-10-23T19:00:00Z",
+      "home_team": "Ipswich Town",
+      "away_team": "Nottingham Forest",
+      "provider_fixture_id": 77,
+      "notes": "GW8 official FPL fixture 77, checked 2026-10-20T15:41:53.374794+00:00; https://fantasy.premierleague.com/api/fixtures/. Manual review ID, not a provider ID. Paper-bet mode: watch pending confirmed teams, available bookmaker price and sensitivity review."
+    },
+    {
+      "fixture_id": 72,
+      "season": "2026/27",
+      "kickoff_time": "2026-10-24T11:30:00Z",
+      "home_team": "Aston Villa",
+      "away_team": "Manchester City",
+      "provider_fixture_id": 72,
+      "notes": "GW8 official FPL fixture 72, checked 2026-10-20T15:41:53.374794+00:00; https://fantasy.premierleague.com/api/fixtures/. Manual review ID, not a provider ID. Paper-bet mode: watch pending confirmed teams, available bookmaker price and sensitivity review."
+    },
+    {
+      "fixture_id": 73,
+      "season": "2026/27",
+      "kickoff_time": "2026-10-24T14:00:00Z",
+      "home_team": "Arsenal",
+      "away_team": "Everton",
+      "provider_fixture_id": 71,
+      "notes": "GW8 official FPL fixture 71, checked 2026-10-20T15:41:53.374794+00:00; https://fantasy.premierleague.com/api/fixtures/. Manual review ID, not a provider ID. Paper-bet mode: watch pending confirmed teams, available bookmaker price and sensitivity review."
+    },
+    {
+      "fixture_id": 74,
+      "season": "2026/27",
+      "kickoff_time": "2026-10-24T14:00:00Z",
+      "home_team": "Coventry City",
+      "away_team": "Fulham",
+      "provider_fixture_id": 74,
+      "notes": "GW8 official FPL fixture 74, checked 2026-10-20T15:41:53.374794+00:00; https://fantasy.premierleague.com/api/fixtures/. Manual review ID, not a provider ID. Paper-bet mode: watch pending confirmed teams, available bookmaker price and sensitivity review."
+    },
+    {
+      "fixture_id": 75,
+      "season": "2026/27",
+      "kickoff_time": "2026-10-24T16:30:00Z",
+      "home_team": "Chelsea",
+      "away_team": "Tottenham Hotspur",
+      "provider_fixture_id": 73,
+      "notes": "GW8 official FPL fixture 73, checked 2026-10-20T15:41:53.374794+00:00; https://fantasy.premierleague.com/api/fixtures/. Manual review ID, not a provider ID. Paper-bet mode: watch pending confirmed teams, available bookmaker price and sensitivity review."
+    },
+    {
+      "fixture_id": 76,
+      "season": "2026/27",
+      "kickoff_time": "2026-10-25T14:00:00Z",
+      "home_team": "Crystal Palace",
+      "away_team": "Newcastle United",
+      "provider_fixture_id": 75,
+      "notes": "GW8 official FPL fixture 75, checked 2026-10-20T15:41:53.374794+00:00; https://fantasy.premierleague.com/api/fixtures/. Manual review ID, not a provider ID. Paper-bet mode: watch pending confirmed teams, available bookmaker price and sensitivity review."
+    },
+    {
+      "fixture_id": 77,
+      "season": "2026/27",
+      "kickoff_time": "2026-10-25T14:00:00Z",
+      "home_team": "Hull City",
+      "away_team": "Brentford",
+      "provider_fixture_id": 76,
+      "notes": "GW8 official FPL fixture 76, checked 2026-10-20T15:41:53.374794+00:00; https://fantasy.premierleague.com/api/fixtures/. Manual review ID, not a provider ID. Paper-bet mode: watch pending confirmed teams, available bookmaker price and sensitivity review."
+    },
+    {
+      "fixture_id": 78,
+      "season": "2026/27",
+      "kickoff_time": "2026-10-25T14:00:00Z",
+      "home_team": "Liverpool",
+      "away_team": "Brighton & Hove Albion",
+      "provider_fixture_id": 78,
+      "notes": "GW8 official FPL fixture 78, checked 2026-10-20T15:41:53.374794+00:00; https://fantasy.premierleague.com/api/fixtures/. Manual review ID, not a provider ID. Paper-bet mode: watch pending confirmed teams, available bookmaker price and sensitivity review."
+    },
+    {
+      "fixture_id": 79,
+      "season": "2026/27",
+      "kickoff_time": "2026-10-25T14:00:00Z",
+      "home_team": "Manchester United",
+      "away_team": "AFC Bournemouth",
+      "provider_fixture_id": 79,
+      "notes": "GW8 official FPL fixture 79, checked 2026-10-20T15:41:53.374794+00:00; https://fantasy.premierleague.com/api/fixtures/. Manual review ID, not a provider ID. Paper-bet mode: watch pending confirmed teams, available bookmaker price and sensitivity review."
+    },
+    {
+      "fixture_id": 80,
+      "season": "2026/27",
+      "kickoff_time": "2026-10-25T16:30:00Z",
+      "home_team": "Sunderland",
+      "away_team": "Leeds United",
+      "provider_fixture_id": 80,
+      "notes": "GW8 official FPL fixture 80, checked 2026-10-20T15:41:53.374794+00:00; https://fantasy.premierleague.com/api/fixtures/. Manual review ID, not a provider ID. Paper-bet mode: watch pending confirmed teams, available bookmaker price and sensitivity review."
+    }
+  ]
+}

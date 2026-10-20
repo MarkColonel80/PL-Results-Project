@@ -1,0 +1,32 @@
+{
+  "as_of": "2026-10-20",
+  "season": "2026/27",
+  "rounds": [
+    3,
+    4,
+    6,
+    7
+  ],
+  "eligible": 28,
+  "published": 40,
+  "definitions": "Mean unscaled three-outcome Brier and natural-log loss; lower is better. All eligible saved forecasts, separately from paper selections.",
+  "research": {
+    "n": 28,
+    "brier": 0.6418756790847645,
+    "log_loss": 1.0603976698164366,
+    "accuracy": 0.32142857142857145
+  },
+  "current": {
+    "n": 28,
+    "brier": 0.6654003880911424,
+    "log_loss": 1.0906515549907685,
+    "accuracy": 0.39285714285714285
+  },
+  "market": {
+    "n": 28,
+    "brier": 0.619274998284204,
+    "log_loss": 1.0278890225326505,
+    "accuracy": 0.4642857142857143
+  },
+  "source": "https://github.com/MarkColonel80/PL-Results-Project/blob/main/VALUE_INVESTIGATION_2026-10-20.md"
+}

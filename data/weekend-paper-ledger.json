@@ -1,0 +1,151 @@
+{
+  "version": 1,
+  "mode": "paper",
+  "unit_stake": 1,
+  "started_at": "2026-10-20T15:41:53.374794+00:00",
+  "fixtures": [
+    {
+      "fixture_id": 71,
+      "kickoff_time": "2026-10-23T19:00:00Z",
+      "home_team": "Ipswich Town",
+      "away_team": "Nottingham Forest"
+    },
+    {
+      "fixture_id": 72,
+      "kickoff_time": "2026-10-24T11:30:00Z",
+      "home_team": "Aston Villa",
+      "away_team": "Manchester City"
+    },
+    {
+      "fixture_id": 73,
+      "kickoff_time": "2026-10-24T14:00:00Z",
+      "home_team": "Arsenal",
+      "away_team": "Everton"
+    },
+    {
+      "fixture_id": 74,
+      "kickoff_time": "2026-10-24T14:00:00Z",
+      "home_team": "Coventry City",
+      "away_team": "Fulham"
+    },
+    {
+      "fixture_id": 75,
+      "kickoff_time": "2026-10-24T16:30:00Z",
+      "home_team": "Chelsea",
+      "away_team": "Tottenham Hotspur"
+    },
+    {
+      "fixture_id": 76,
+      "kickoff_time": "2026-10-25T14:00:00Z",
+      "home_team": "Crystal Palace",
+      "away_team": "Newcastle United"
+    },
+    {
+      "fixture_id": 77,
+      "kickoff_time": "2026-10-25T14:00:00Z",
+      "home_team": "Hull City",
+      "away_team": "Brentford"
+    },
+    {
+      "fixture_id": 78,
+      "kickoff_time": "2026-10-25T14:00:00Z",
+      "home_team": "Liverpool",
+      "away_team": "Brighton & Hove Albion"
+    },
+    {
+      "fixture_id": 79,
+      "kickoff_time": "2026-10-25T14:00:00Z",
+      "home_team": "Manchester United",
+      "away_team": "AFC Bournemouth"
+    },
+    {
+      "fixture_id": 80,
+      "kickoff_time": "2026-10-25T16:30:00Z",
+      "home_team": "Sunderland",
+      "away_team": "Leeds United"
+    }
+  ],
+  "events": [
+    {
+      "id": "gw8-71-watch",
+      "fixture_id": 71,
+      "kickoff_time": "2026-10-23T19:00:00Z",
+      "recorded_at": "2026-10-20T15:41:53.374794+00:00",
+      "status": "watch",
+      "reason": "Paper watch. Confirmed teams, a named bookmaker quote, team news, schedule and sensitivity checks are still pending."
+    },
+    {
+      "id": "gw8-72-watch",
+      "fixture_id": 72,
+      "kickoff_time": "2026-10-24T11:30:00Z",
+      "recorded_at": "2026-10-20T15:41:53.374794+00:00",
+      "status": "watch",
+      "reason": "Paper watch. Confirmed teams, a named bookmaker quote, team news, schedule and sensitivity checks are still pending."
+    },
+    {
+      "id": "gw8-73-watch",
+      "fixture_id": 73,
+      "kickoff_time": "2026-10-24T14:00:00Z",
+      "recorded_at": "2026-10-20T15:41:53.374794+00:00",
+      "status": "watch",
+      "reason": "Paper watch. Confirmed teams, a named bookmaker quote, team news, schedule and sensitivity checks are still pending."
+    },
+    {
+      "id": "gw8-74-watch",
+      "fixture_id": 74,
+      "kickoff_time": "2026-10-24T14:00:00Z",
+      "recorded_at": "2026-10-20T15:41:53.374794+00:00",
+      "status": "watch",
+      "reason": "Paper watch. Confirmed teams, a named bookmaker quote, team news, schedule and sensitivity checks are still pending."
+    },
+    {
+      "id": "gw8-75-watch",
+      "fixture_id": 75,
+      "kickoff_time": "2026-10-24T16:30:00Z",
+      "recorded_at": "2026-10-20T15:41:53.374794+00:00",
+      "status": "watch",
+      "reason": "Paper watch. Confirmed teams, a named bookmaker quote, team news, schedule and sensitivity checks are still pending."
+    },
+    {
+      "id": "gw8-76-watch",
+      "fixture_id": 76,
+      "kickoff_time": "2026-10-25T14:00:00Z",
+      "recorded_at": "2026-10-20T15:41:53.374794+00:00",
+      "status": "watch",
+      "reason": "Paper watch. Confirmed teams, a named bookmaker quote, team news, schedule and sensitivity checks are still pending."
+    },
+    {
+      "id": "gw8-77-watch",
+      "fixture_id": 77,
+      "kickoff_time": "2026-10-25T14:00:00Z",
+      "recorded_at": "2026-10-20T15:41:53.374794+00:00",
+      "status": "watch",
+      "reason": "Paper watch. Confirmed teams, a named bookmaker quote, team news, schedule and sensitivity checks are still pending."
+    },
+    {
+      "id": "gw8-78-watch",
+      "fixture_id": 78,
+      "kickoff_time": "2026-10-25T14:00:00Z",
+      "recorded_at": "2026-10-20T15:41:53.374794+00:00",
+      "status": "watch",
+      "reason": "Paper watch. Confirmed teams, a named bookmaker quote, team news, schedule and sensitivity checks are still pending."
+    },
+    {
+      "id": "gw8-79-watch",
+      "fixture_id": 79,
+      "kickoff_time": "2026-10-25T14:00:00Z",
+      "recorded_at": "2026-10-20T15:41:53.374794+00:00",
+      "status": "watch",
+      "reason": "Paper watch. Confirmed teams, a named bookmaker quote, team news, schedule and sensitivity checks are still pending."
+    },
+    {
+      "id": "gw8-80-watch",
+      "fixture_id": 80,
+      "kickoff_time": "2026-10-25T16:30:00Z",
+      "recorded_at": "2026-10-20T15:41:53.374794+00:00",
+      "status": "watch",
+      "reason": "Paper watch. Confirmed teams, a named bookmaker quote, team news, schedule and sensitivity checks are still pending."
+    }
+  ],
+  "settlements": []
+}

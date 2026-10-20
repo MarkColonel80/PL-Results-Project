@@ -17,6 +17,18 @@ Connected systems:
 - Supabase project: `PL Results Project`, ref `priibitbnmfetyblzltk`
 - Vercel project: `pl-results-project`, production `https://pl-data.colly.me.uk` (existing alias `https://pl-results-project.vercel.app`)
 
+## Weekend paper mode applied — 2026-10-20
+
+Mark explicitly approved applying the investigation's process improvements and treating next weekend's picks as paper bets. Details: `WEEKEND_PAPER_MODE_2026-10-20.md`. This applies the page/recording improvements; it does not promote a new probability model.
+
+- `/betting/weekend` now publishes all ten official GW8 fixtures for 23–25 October, including Friday and the Sunday BST/GMT change. Seven eligible forecasts use existing formulas and GW1–7 data. Ipswich–Forest, Coventry–Fulham and Hull–Brentford remain LIMITED_HISTORY (three relevant home games).
+- Paper mode is prominent. Every fixture starts as a timestamped watch with no stake; there are zero paper selections. Odds and current-round team/news/Europe checks are pending. Do not imply a green arrow or model top outcome is a paper selection. No automatic future work was scheduled.
+- `data/weekend-paper-ledger.json` is the append-only decision/settlement source. A valid paper selection needs one hypothetical unit, an available named-bookmaker quote, both frozen forecast triples and identifiers, the existing four-match minimum, and timestamped confirmed-team/news/schedule/sensitivity evidence before kick-off. First valid selection stays frozen: a later pass cannot erase it. Record watch/pass/paper decisions explicitly; append final-score settlements after full time.
+- Page shows season composition of Venue8, goals conceded vs xGA, xG-only Venue8/Venue18 sensitivity probabilities and flags when a positive research price gap disappears. These diagnostics do not alter forecasts. Longer diagnostic requires full 18-match histories. Season counts stop at the saved forecast time.
+- Paper scorecard is separate from the dated all-forecast baseline (28 eligible / 40 published, four rounds). Update the latter after future result reviews; do not conflate historical hypothetical mechanical selections or old conditional watches with the new paper ledger.
+- Implementation: `lib/weekend-paper.ts`, `app/betting/weekend/paper-review.tsx`, weekend page and four new data files (ledger, forecast scorecard, fixture and snapshot checkpoints). `scripts/test_weekend_paper.mjs` and `scripts/validate_weekend_paper.mjs` validate gates, settlement and append-only history. Before a later ledger publish, pass the previous committed JSON to the validator and preserve all original entries.
+- Existing weekend/value/news/round tests and the production build pass; browser confirms the paper flow and sensitivity panel. The original 40 fixtures/snapshots and all frozen model records retain identical fingerprints. No schema, permissions, historical forecasts or live model formula/weight/eligibility change.
+
 ## Value reliability investigation — 2026-10-20
 
 Full findings and next-round process: `VALUE_INVESTIGATION_2026-10-20.md`; numerical results, protocol and exact replay script in `research/value-investigation-2026-10-20/`. This supersedes any interpretation of earlier cached Venue8 experiments as clean validation or of a green price gap as an established betting advantage.

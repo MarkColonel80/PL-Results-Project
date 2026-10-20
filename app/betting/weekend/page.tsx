@@ -5,7 +5,8 @@ import Link from "next/link";
 import {supabase} from "../../../lib/supabase";
 import {defaultWeekend,groupWeekendFixtures,weekendLabel} from "../../../lib/weekend-rounds";
 import {bettingValue} from "../../../lib/betting-value";
-import {weekendReviewWarnings,venueDefenceComparison,parseWeekendNews} from "../../../lib/weekend-review";
+import {parseWeekendNews} from "../../../lib/weekend-review";
+import {PaperReview,PaperScorecard,paperStatus} from "./paper-review";
 
 type Snapshot={home_n8:number|null;away_n8:number|null;home_n30:number|null;away_n30:number|null;home_ppg30:number|null;away_ppg30:number|null;home_vn18:number|null;away_vn18:number|null;home_vppg18:number|null;away_vppg18:number|null;home_vxgf18:number|null;home_vxga18:number|null;away_vxgf18:number|null;away_vxga18:number|null;home_vppg8:number|null;away_vppg8:number|null;home_vgf8:number|null;home_vga8:number|null;home_vxgf8:number|null;home_vxga8:number|null;away_vgf8:number|null;away_vga8:number|null;away_vxgf8:number|null;away_vxga8:number|null;goal_xg_residual_cap:number|null;home_vgf8_capped:number|null;home_vga8_capped:number|null;away_vgf8_capped:number|null;away_vga8_capped:number|null;league_home_goals:number;league_away_goals:number;league_home_xg:number;league_away_xg:number;calculated_at:string;candidate_model_version:string|null;candidate_home_n24:number|null;candidate_away_n24:number|null;candidate_home_n10:number|null;candidate_away_n10:number|null;candidate_home_ppg10:number|null;candidate_away_ppg10:number|null;candidate_home_lambda:number|null;candidate_away_lambda:number|null;candidate_home_prob:number|null;candidate_draw_prob:number|null;candidate_away_prob:number|null;candidate_calculated_at:string|null};
 type Fixture={fixture_id:number;kickoff_time:string;home_team:string;away_team:string;market_home_odds:number|null;market_draw_odds:number|null;market_away_odds:number|null;market_source:string|null;market_snapshot_at:string|null;notes:string|null;betting_manual_weekend_snapshot:Snapshot|null};
@@ -45,7 +46,7 @@ function dayTime(v:string){return new Intl.DateTimeFormat("en-GB",{weekday:"shor
 function ValueIndicator({probability,odds}:{probability:number|null|undefined;odds:number|null|undefined}){
  const value=bettingValue(probability,N(odds));
  if(!value)return <span className="muted">—</span>;
- const status=value.direction==="positive"?"Value according to this estimate":value.direction==="negative"?"No value according to this estimate":"Break-even";
+ const status=value.direction==="positive"?"Positive model price gap — paper review required":value.direction==="negative"?"Negative model price gap":"Break-even";
  const explanation=`${status}: our probability ${pct(probability)}, chance needed at these odds ${pct(value.breakEvenProbability)}. Difference in percentage points.`;
  return <span className={value.direction==="neutral"?"muted":value.direction} style={{fontWeight:700}} title={explanation} aria-label={explanation}><span aria-hidden="true">{value.direction==="positive"?"↑":value.direction==="negative"?"↓":"→"}</span> {value.label}</span>;
 }
@@ -58,44 +59,21 @@ function ValueOutcomes({probabilities,fixture}:{probabilities:{h:number;d:number
  </div>;
 }
 
-function ReviewChecks({fixture,snapshot,primary,comparison}:{fixture:Fixture;snapshot:Snapshot|null;primary:{h:number;d:number;a:number}|null|undefined;comparison:{h:number;d:number;a:number}|null|undefined}){
- const warnings=weekendReviewWarnings(primary,comparison,{h:N(fixture.market_home_odds),d:N(fixture.market_draw_odds),a:N(fixture.market_away_odds)},snapshot?.home_n8,snapshot?.away_n8);
- const home=venueDefenceComparison(snapshot?.home_n8,N(snapshot?.home_vga8),N(snapshot?.home_vxga8));
- const away=venueDefenceComparison(snapshot?.away_n8,N(snapshot?.away_vga8),N(snapshot?.away_vxga8));
- const defence=(value:ReturnType<typeof venueDefenceComparison>)=>value?`${fmt(value.conceded,1)} conceded vs ${fmt(value.xga,1)} xGA (${value.matches} matches)`:"Unavailable";
- return <div id={`review-${fixture.fixture_id}`} style={{marginTop:14,padding:12,border:"1px solid #e5e7eb",borderRadius:8,scrollMarginTop:72}}>
-  <b>Before betting — review required</b>
-  <p className="muted" style={{margin:"6px 0"}}>A green arrow is a gap under our estimate. Injuries, returning players, confirmed teams and European travel or rotation are not included in these forecasts. The two views share data and are not independent confirmation.</p>
-  {warnings.length>0&&<ul style={{margin:"8px 0",paddingLeft:20}}>{warnings.map(w=><li key={w}>{w}</li>)}</ul>}
-  <details>
-   <summary style={{cursor:"pointer"}}>News, history and price checks</summary>
-   <ol style={{paddingLeft:20}}>
-    <li>Check the latest club news, absences, returning players and confirmed starting teams.</li>
-    <li>Check European fixtures, recovery time, travel and possible rotation. Review manager or squad changes since the history sample.</li>
-    <li>Compare goals conceded with xGA below, then review the longer venue history and sensitivity of the apparent edge.</li>
-    <li>Refresh the actual available price before kick-off and record the decision and reasons before the result.</li>
-   </ol>
-   <p className="muted">{fixture.market_snapshot_at?`Price last saved ${dayTime(fixture.market_snapshot_at)}. Recheck availability before betting.`:"Price observation time unavailable — obtain a fresh quote before betting."}</p>
-   <div style={{overflowX:"auto"}}><table><thead><tr><th>Venue defensive results</th><th>{fixture.home_team} at home</th><th>{fixture.away_team} away</th></tr></thead><tbody><tr><td>Actual goals conceded vs expected goals conceded</td><td>{defence(home)}</td><td>{defence(away)}</td></tr></tbody></table></div>
-   <p className="muted" style={{fontSize:13}}>Conceding fewer goals than xGA can reflect saving, finishing or variation; it does not establish repeatable defensive strength. Venue history may include last season. These are review prompts and do not adjust the probabilities.</p>
-  </details>
- </div>;
-}
-
 export default function WeekendVenueReview(){
  const[allRows,setAllRows]=useState<Fixture[]>([]),[selectedRound,setSelectedRound]=useState("");
  const[loading,setLoading]=useState(true),[error,setError]=useState("");
+ const[completedMatches,setCompletedMatches]=useState<{home_team:string;away_team:string;kickoff_time:string}[]|null>(null);
  const[dataStatus,setDataStatus]=useState<{count:number;gameweek:number;date:string}|null>(null);
  useEffect(()=>{let active=true;(async()=>{try{
   const [fixtures,latest]=await Promise.all([
    supabase.from("betting_manual_fixtures").select("fixture_id,kickoff_time,home_team,away_team,market_home_odds,market_draw_odds,market_away_odds,market_source,market_snapshot_at,notes,betting_manual_weekend_snapshot(*)").gte("kickoff_time",new Date().toISOString()).order("kickoff_time"),
-   supabase.from("matches").select("gameweek,kickoff_time",{count:"exact"}).eq("season","2026/27").not("home_score","is",null).not("away_score","is",null).order("kickoff_time",{ascending:false}).limit(1)
+   supabase.from("matches").select("gameweek,kickoff_time,home_team,away_team",{count:"exact"}).eq("season","2026/27").not("home_score","is",null).not("away_score","is",null).order("kickoff_time",{ascending:false})
   ]);
   if(!active)return;
   if(fixtures.error)throw fixtures.error;
   const data=(fixtures.data||[]) as unknown as Fixture[];
   setAllRows(data);setSelectedRound(defaultWeekend(data));
-  if(!latest.error&&latest.data?.[0])setDataStatus({count:latest.count||0,gameweek:latest.data[0].gameweek,date:latest.data[0].kickoff_time});
+  if(!latest.error&&latest.data?.[0]){setDataStatus({count:latest.count||0,gameweek:latest.data[0].gameweek,date:latest.data[0].kickoff_time});setCompletedMatches(latest.data);}
  }catch(err){if(active)setError(err instanceof Error?err.message:String((err as {message?:string}).message||err));}finally{if(active)setLoading(false);}})();return()=>{active=false};},[]);
  const rounds=useMemo(()=>groupWeekendFixtures(allRows),[allRows]);
  const rows=useMemo(()=>rounds.find(r=>r.key===selectedRound)?.rows||[],[rounds,selectedRound]);
@@ -104,21 +82,23 @@ export default function WeekendVenueReview(){
  if(loading)return <p>Loading weekend review…</p>;
  if(error)return <section className="card"><b>Could not load weekend review</b><div className="negative">{error}</div></section>;
  return <>
-  <div className="hero"><div><h1>Weekend venue review</h1><div className="muted">No prediction is made until both teams have at least 4 relevant venue matches. Once eligible, venue PPG8 decides unless the venue PPG gap is ≤ 0.30; only then does adjusted venue xG8 break the tie. A separate 24-match + Venue8 research score is shown below for comparison only.</div></div><Link href="/betting">← Betting Lab</Link></div>
+  <div className="hero"><div><h1>Weekend fixtures · paper bets</h1><div className="muted">Compare forecasts with saved prices, review uncertain signals and follow the recorded paper decisions for each fixture.</div></div><Link href="/betting">← Betting Lab</Link></div>
+  <section className="card" style={{borderLeft:"4px solid #b7791f"}}><h2 style={{marginTop:0}}>Paper-bet mode</h2><p>No real-money bets are recorded here. Green arrows show mathematical price gaps; they do not establish a reliable betting edge. A watch becomes a one-unit paper selection only after confirmed teams, an available named-bookmaker price, news, schedule and sensitivity checks have been recorded before kick-off.</p><p className="muted" style={{marginBottom:0}}>There is no automatic best bet. A pass or a weekend with no selections is valid.</p></section>
+  <PaperScorecard/>
   <section className="card">
    <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",gap:16,flexWrap:"wrap"}}>
     <div><h2 style={{margin:"0 0 6px"}}>{weekendLabel(rows)}</h2><div className="muted">{rows.length} fixtures · All kick-off times are UK time</div></div>
    </div>
    {dataStatus&&<p className="muted">Results loaded through Matchweek {dataStatus.gameweek}: {dataStatus.count} completed matches, latest {dayTime(dataStatus.date)}.</p>}
-   {marketPending&&rows.length>0&&<p className="muted">Market odds are pending and will be refreshed nearer kick-off. Model probabilities and fair odds already use the latest completed-match data.</p>}
+   {marketPending&&rows.length>0&&<p className="muted">Market odds are pending. An available bookmaker quote must be recorded before a paper selection. Forecast timestamps and history are shown in each fixture.</p>}
    {!rows.length&&<p>No upcoming fixtures have been published for review yet.</p>}
-   {cards.length>0&&<div style={{overflowX:"auto",marginTop:12}}><table><thead><tr><th>Kick-off (UK)</th><th>Fixture</th><th>24-match + Venue8: H / D / A</th><th>Value vs odds: H / D / A</th><th>Before betting</th></tr></thead><tbody>{cards.map(({f,calc})=><tr key={f.fixture_id}><td>{dayTime(f.kickoff_time)}</td><td><a href={`#fixture-${f.fixture_id}`}>{f.home_team} v {f.away_team}</a></td><td>{calc?.candidateP?`${pct(calc.candidateP.h)} / ${pct(calc.candidateP.d)} / ${pct(calc.candidateP.a)}`:"Limited history"}</td><td><ValueOutcomes probabilities={calc?.candidateP} fixture={f}/></td><td><a href={`#review-${f.fixture_id}`}>Review required</a></td></tr>)}</tbody></table></div>}
-   {cards.length>0&&<p className="muted" style={{fontSize:13}}>Value vs odds uses the 24-match + Venue8 probability above minus the chance needed to break even at the saved market price (1 ÷ odds). ↑ Green means positive value according to that estimate; ↓ red means negative value; → means break-even. Differences are percentage points (pp), not expected profit. A green arrow does not mean squad news, teams or price availability have been checked. — means no forecast or price is available.</p>}
+   {cards.length>0&&<div style={{overflowX:"auto",marginTop:12}}><table><thead><tr><th>Kick-off (UK)</th><th>Fixture</th><th>24-match + Venue8: H / D / A</th><th>Model price gap: H / D / A</th><th>Paper decision</th></tr></thead><tbody>{cards.map(({f,calc})=><tr key={f.fixture_id}><td>{dayTime(f.kickoff_time)}</td><td><a href={`#fixture-${f.fixture_id}`}>{f.home_team} v {f.away_team}</a></td><td>{calc?.candidateP?`${pct(calc.candidateP.h)} / ${pct(calc.candidateP.d)} / ${pct(calc.candidateP.a)}`:"Limited history"}</td><td><ValueOutcomes probabilities={calc?.candidateP} fixture={f}/></td><td><a href={`#review-${f.fixture_id}`}>{paperStatus(f)}</a></td></tr>)}</tbody></table></div>}
+   {cards.length>0&&<p className="muted" style={{fontSize:13}}>Model price gap uses the 24-match + Venue8 probability minus the break-even chance at the saved price (1 ÷ odds). ↑ Green means a positive mathematical gap, ↓ red negative, → break-even. Differences are percentage points (pp), not expected profit or a recommendation. Paper selections require the recorded checks below. — means no forecast or price is available.</p>}
   </section>
   <section className="card"><b>Adjusted venue xG rule</b><div className="muted" style={{marginTop:6}}>A hard minimum of <b>4 relevant venue matches per team</b> applies before the current weekend model produces expected goals, H/D/A probabilities, fair odds or a pick. Samples of 4–7 matches are eligible partial Venue8 samples; 8 is the full window. Actual goals are capped only when they exceed match xG by more than 1.0 goal: capped actual = min(actual, xG + 1.0), then blended 50/50 with raw venue xG. The separate <b>24-match + Venue8 comparison</b> uses the research candidate: equal-weight 24-match structural strength, 65% xG + 35% capped actual goals, four pseudo-match shrinkage, the same capped Venue8 inputs, and a 50/50 geometric shrink of the team-specific Venue8 baseline back toward the generic league home/away baseline. <b>PPG10 is diagnostic only and is not used in this comparison probability.</b> It does not replace the current weekend-rule pick. All prices below are decimal odds; bookmaker probabilities use the latest saved 1X2 market prices when available.</div></section>
   <div style={{display:"grid",gap:14}}>{cards.map(({f,s,m,calc})=><section className="card" key={f.fixture_id} id={`fixture-${f.fixture_id}`}>
-   <div style={{display:"flex",justifyContent:"space-between",gap:12,alignItems:"flex-start",flexWrap:"wrap"}}><div><div className="muted">{dayTime(f.kickoff_time)}</div><h2 style={{margin:"4px 0"}}>{f.home_team} <span className="muted">v</span> {f.away_team}</h2></div><div><b>{calc?.decision||"—"}</b>{calc?.eligible&&calc?.gap!=null&&<div className="muted">Venue PPG gap {fmt(calc.gap,3)}{calc.close?" · xG tie-break active":""}</div>}</div></div>
-   <ReviewChecks fixture={f} snapshot={s} primary={calc?.p} comparison={calc?.candidateP}/>
+   <div style={{display:"flex",justifyContent:"space-between",gap:12,alignItems:"flex-start",flexWrap:"wrap"}}><div><div className="muted">{dayTime(f.kickoff_time)}</div><h2 style={{margin:"4px 0"}}>{f.home_team} <span className="muted">v</span> {f.away_team}</h2></div><div><div className="muted">Model view · not a paper selection</div><b>{calc?.decision||"—"}</b>{calc?.eligible&&calc?.gap!=null&&<div className="muted">Venue PPG gap {fmt(calc.gap,3)}{calc.close?" · xG tie-break active":""}</div>}</div></div>
+   <PaperReview fixture={f} snapshot={s} primary={calc?.p} research={calc?.candidateP} matches={completedMatches}/>
     <TeamNews fixture={f}/>
    {!s?<p>No snapshot.</p>:<>
     <div style={{marginTop:12}}><b>Calculation inputs</b><div className="muted" style={{marginTop:4}}>These figures feed the current weekend calculation only when both teams meet the 4-match minimum.</div></div>
@@ -157,8 +137,8 @@ export default function WeekendVenueReview(){
     <tr><td>24-match + Venue8 probability</td><td>{pct(calc?.candidateP?.h)}</td><td>{pct(calc?.candidateP?.d)}</td><td>{pct(calc?.candidateP?.a)}</td></tr>
     <tr><td>Bookmaker no-vig probability</td><td>{pct(m?.h)}</td><td>{pct(m?.d)}</td><td>{pct(m?.a)}</td></tr>
     <tr><td>Chance needed at market odds</td><td>{pct(bettingValue(0,N(f.market_home_odds))?.breakEvenProbability)}</td><td>{pct(bettingValue(0,N(f.market_draw_odds))?.breakEvenProbability)}</td><td>{pct(bettingValue(0,N(f.market_away_odds))?.breakEvenProbability)}</td></tr>
-    <tr><td><b>Current value vs odds</b></td><td><ValueIndicator probability={calc?.p?.h} odds={f.market_home_odds}/></td><td><ValueIndicator probability={calc?.p?.d} odds={f.market_draw_odds}/></td><td><ValueIndicator probability={calc?.p?.a} odds={f.market_away_odds}/></td></tr>
-    <tr><td><b>24-match + Venue8 value vs odds</b></td><td><ValueIndicator probability={calc?.candidateP?.h} odds={f.market_home_odds}/></td><td><ValueIndicator probability={calc?.candidateP?.d} odds={f.market_draw_odds}/></td><td><ValueIndicator probability={calc?.candidateP?.a} odds={f.market_away_odds}/></td></tr>
+    <tr><td><b>Current model price gap</b></td><td><ValueIndicator probability={calc?.p?.h} odds={f.market_home_odds}/></td><td><ValueIndicator probability={calc?.p?.d} odds={f.market_draw_odds}/></td><td><ValueIndicator probability={calc?.p?.a} odds={f.market_away_odds}/></td></tr>
+    <tr><td><b>24-match + Venue8 price gap</b></td><td><ValueIndicator probability={calc?.candidateP?.h} odds={f.market_home_odds}/></td><td><ValueIndicator probability={calc?.candidateP?.d} odds={f.market_draw_odds}/></td><td><ValueIndicator probability={calc?.candidateP?.a} odds={f.market_away_odds}/></td></tr>
    </tbody></table></div>
    <div className="muted" style={{marginTop:8}}>Market: {f.market_source||"pending nearer kick-off"}{f.market_snapshot_at?` · snapshot ${dayTime(f.market_snapshot_at)}`:""}. Goal/xG overperformance cap: +{fmt(s?.goal_xg_residual_cap,1)}.{s?.candidate_calculated_at?` Research comparison calculated ${dayTime(s.candidate_calculated_at)}.`:""}</div>
   </section>)}</div>
