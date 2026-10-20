@@ -1,0 +1,171 @@
+{
+  "date": "2026-10-20",
+  "repository_base_commit": "3d4ab8de22ba8707fccc4f63a0b070f9dca5dadd",
+  "supabase_project": "priibitbnmfetyblzltk",
+  "database_queries": "SELECT only; research cache not rebuilt",
+  "files": [
+    {
+      "path": "AUDIT_AMENDMENT.md",
+      "bytes": 1801,
+      "sha256": "73bedb4e2bf7fa2245cf6d3eaecf0502ecf89fc2429f8cd94a95903cfbd54329"
+    },
+    {
+      "path": "PROTOCOL.md",
+      "bytes": 3807,
+      "sha256": "63bb83c088c39aaec19947ffa34db57ef43935df8c5df39428e921d2d892ccf8"
+    },
+    {
+      "path": "analyse.py",
+      "bytes": 14949,
+      "sha256": "7aac1b9cf228fc6c4a656ab4faa038d2e5aee53d03c8f78fab902d9968ad34db"
+    },
+    {
+      "path": "football-data/1920.csv",
+      "bytes": 175475,
+      "sha256": "100037618b94f94057400bb02bf6bac4ef74ddaa58cde4b38370839c39caee61"
+    },
+    {
+      "path": "football-data/2021.csv",
+      "bytes": 175815,
+      "sha256": "5afe63f69401457b8354eaacee24f9a3e520b3c3af6329564a9783e20d789c62"
+    },
+    {
+      "path": "football-data/2122.csv",
+      "bytes": 175363,
+      "sha256": "335afcbabeb2939fa10ab39ba3e8215072d0b577cb8d0705c1e44c56e934e703"
+    },
+    {
+      "path": "football-data/2223.csv",
+      "bytes": 176180,
+      "sha256": "8442792d3b614c94ea3cf381bd2736805889cc1713169035368fff19c3d02380"
+    },
+    {
+      "path": "football-data/2324.csv",
+      "bytes": 172196,
+      "sha256": "b2e057b0ed959f198b0f63d2391c01239f3608e6de5db68edab3f88e04d07ff3"
+    },
+    {
+      "path": "football-data/2425.csv",
+      "bytes": 197110,
+      "sha256": "d0c8ce4a96d886cf60cf101f570f4a3893844226f91c7bd769eb568c49edbfa4"
+    },
+    {
+      "path": "football-data/2526.csv",
+      "bytes": 203438,
+      "sha256": "3e3a8352f9ada6789c508d6ca184424421fed56a30400904a4a327c583407e62"
+    },
+    {
+      "path": "frozen-inputs.json",
+      "bytes": 133555,
+      "sha256": "cad5d86d310a2cdb5beca31354232e3513dc78cbbeb2a9ea92ef0aa99a413758"
+    },
+    {
+      "path": "historical-2019-20.json",
+      "bytes": 284751,
+      "sha256": "83aefcb3e924e790f3e09e716d87bd2acd0d57bd3b63e651370a0491a0becbd1"
+    },
+    {
+      "path": "historical-2020-21.json",
+      "bytes": 283460,
+      "sha256": "a8d0f4081877036e7343ac51ec86c0906d7bfa9ba37b3a9c5214ce2ca701d23e"
+    },
+    {
+      "path": "historical-2021-22.json",
+      "bytes": 283230,
+      "sha256": "1da00693b62b299eb17a51f39e30e7994112a46ee9084e6eea16808fe2759a6d"
+    },
+    {
+      "path": "historical-2022-23.json",
+      "bytes": 282348,
+      "sha256": "1b9aa8a936329d48bff5f459d7bf76e597b114b02d2a1cc4c77938673ab17236"
+    },
+    {
+      "path": "historical-2023-24.json",
+      "bytes": 284474,
+      "sha256": "72a4a1e9f744651c9aab95bcc38b2792db064fd973a9a613f916c9d82db46deb"
+    },
+    {
+      "path": "historical-2024-25.json",
+      "bytes": 283857,
+      "sha256": "b773811802e776c84ad57965e910a95c6d4267bb48554124cef5acfefc932b03"
+    },
+    {
+      "path": "historical-2025-26.json",
+      "bytes": 302918,
+      "sha256": "9268e9cbf29a9240907d8dd67407649bf4a3a3816630e90da985ca575267e5f9"
+    },
+    {
+      "path": "historical-metadata.json",
+      "bytes": 11905,
+      "sha256": "617d359edb727d577ced80929ef40fe03c521c4434269b21cfe7dfb07fe3f0d7"
+    },
+    {
+      "path": "league-prior-regression.sql",
+      "bytes": 1847,
+      "sha256": "fa2a8f3e2a1e224014fac0c8f902fac4740c06c0d3d2002aae5b3f70fdf58e9f"
+    },
+    {
+      "path": "mapping-metadata.json",
+      "bytes": 19075,
+      "sha256": "5657063cd7e19eaeee5076b4385d4409576ea61cf4c5cce8ef89a67071e97b1d"
+    },
+    {
+      "path": "matched-historical-replays.json",
+      "bytes": 3140868,
+      "sha256": "97a9a632f9e46778a85a5299f16461c5bcd10bce359bc2288322c8ee8728d178"
+    },
+    {
+      "path": "results.json",
+      "bytes": 127050,
+      "sha256": "73c5e1fbd5fb6b69229523edbe8ab40dfa701ffc976a8344c05ed2543b680c0f"
+    },
+    {
+      "path": "run-summary.json",
+      "bytes": 18949,
+      "sha256": "7022683f9ca33b2f6e2ebc724493881c21dca1f9642480ac701b5e1243aced13"
+    },
+    {
+      "path": "strict-inputs-2019-20.json",
+      "bytes": 224790,
+      "sha256": "f82a155f34f2aefd838c1476d2639820f5dc22575f3ae27357e23b175e8a9b5f"
+    },
+    {
+      "path": "strict-inputs-2020-21.json",
+      "bytes": 223366,
+      "sha256": "2af1628c0d6e0bccee6035077f34dc88afd6ed50ac2f0c24b677cc7cdef13979"
+    },
+    {
+      "path": "strict-inputs-2021-22.json",
+      "bytes": 223464,
+      "sha256": "a46331f98d92a62bcbed06de9991ae9cc71a894da85c3bad830709f7a7d7b6a8"
+    },
+    {
+      "path": "strict-inputs-2022-23.json",
+      "bytes": 220988,
+      "sha256": "d8a0d971a73a0b73e8e3343cf2fe0fd3c2f5e6b407eaa244b5cf85923d789f62"
+    },
+    {
+      "path": "strict-inputs-2023-24.json",
+      "bytes": 223537,
+      "sha256": "35a42aecf1055979efb40a2f41821f08b06fad0c055158b3a6152b2424d2cf56"
+    },
+    {
+      "path": "strict-inputs-2024-25.json",
+      "bytes": 218512,
+      "sha256": "d83ebcf09b6de8250a1027dde8d2b5e59aa2f9fd1320104844b0a1f2718a18bb"
+    },
+    {
+      "path": "strict-inputs-2025-26.json",
+      "bytes": 222111,
+      "sha256": "fa2ef88781c8af86c80fcba5f06ec8a211ca742c794863dee53e198a32864362"
+    }
+  ],
+  "regression_checks": 4,
+  "regression_checks_passed": 4,
+  "saved_fixtures": 40,
+  "saved_fixtures_unchanged": true,
+  "original_database_fingerprint": "db068f55978649993e07781ea1c79976",
+  "python": "3.13 with numpy 2.3.5; no scipy required",
+  "same_team_same_kickoff_duplicate_groups": 0,
+  "strict_replay_targets_with_prior_matches_within_two_hours": 0
+}

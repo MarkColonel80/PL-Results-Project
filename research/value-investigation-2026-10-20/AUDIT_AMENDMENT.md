@@ -1,0 +1,9 @@
+# Audit amendment before historical scores
+
+The cached research parent `betting_v3_venue8_15_residual_inputs` computes its generic league prior with a15-row window ordered by kickoff_time and match_id. Earlier lexical IDs with the same recorded kickoff can therefore contribute match outcomes unavailable before that kickoff. Many historical kickoffs retain dates only. The live weekend refresh instead uses an explicit `b.kickoff_time < f.kickoff_time` cutoff and excludes these rows.
+
+Do not treat cached historical results as clean prospective validation. Preserve cached scores for audit only. Rebuild the research lambdas in a read-only local replay using the existing cached structural and venue inputs, but recompute both league priors and their midpoint from the latest15 home matches strictly before each target kickoff. Recompute structural shrinkage using that corrected midpoint. Keep all weights, windows, eligibility and Poisson conversion unchanged. Verify model-only cached replay first, measure the number of affected baseline windows, and compare cached and corrected scores. No database caches or live forecasts will be changed.
+
+Older historical odds have null canonical match_id even though complete raw season/date/club/score data exist. Join them locally by exact season, UTC date, known canonical club aliases and both final scores; require one unique record per forecast. This is fixture matching only and does not use player-name identity. Preserve unmatched or ambiguous cases rather than guessing. No historical odds mapping table is updated by the research.
+
+The predeclared calibration/blend/selection checks will use the corrected replay as the main historical model. 2025/26 remains a previously inspected stress season; no claim of a new untouched holdout is allowed.

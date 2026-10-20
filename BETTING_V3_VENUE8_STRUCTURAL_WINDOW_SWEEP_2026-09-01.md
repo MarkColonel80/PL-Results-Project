@@ -1,5 +1,7 @@
 # v3 + Venue8 — capped structural-window sweep
 
+> 20 October audit: these archived scores use a league prior that can include other same-kickoff outcomes. They are not clean prospective validation. See `VALUE_INVESTIGATION_2026-10-20.md` for the strict replay and the required research-cache rebuild.
+
 _Date: 2026-09-01_
 
 ## Goal

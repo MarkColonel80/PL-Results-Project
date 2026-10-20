@@ -1,5 +1,8 @@
 -- Research-only cache for the 2026-09-01 v3 + Venue8 15-match residual experiment.
 -- Production v3 and /betting/weekend are unchanged.
+-- Audit repair 2026-10-20: league priors now exclude same-kickoff outcomes.
+-- Source correction only: do not rerun on an existing view or refresh dependent
+-- research caches without a separately planned rebuild. See VALUE_INVESTIGATION_2026-10-20.md.
 
 create materialized view public.betting_v3_venue8_15_residual_inputs as
 with f as (
@@ -19,13 +22,22 @@ with f as (
            over(partition by team_name, segment_id, was_home order by kickoff_time, match_id rows between 8 preceding and 1 preceding) as cga8
   from public.betting_team_features_v2_cache
 ), lg as (
-  select match_id,
-         .35 * avg(goals_for::numeric) over(order by kickoff_time, match_id rows between 15 preceding and 1 preceding)
-           + .65 * avg(xg_for) over(order by kickoff_time, match_id rows between 15 preceding and 1 preceding) as lhome,
-         .35 * avg(goals_against::numeric) over(order by kickoff_time, match_id rows between 15 preceding and 1 preceding)
-           + .65 * avg(xg_against) over(order by kickoff_time, match_id rows between 15 preceding and 1 preceding) as laway
-  from public.betting_team_features_v2_cache
-  where was_home
+  -- Match IDs cannot establish availability between simultaneous fixtures.
+  -- Date-only timestamps conservatively exclude the entire same-date block.
+  select target.match_id, prior.lhome, prior.laway
+  from public.betting_team_features_v2_cache target
+  left join lateral (
+    select .35 * avg(goals_for::numeric) + .65 * avg(xg_for) as lhome,
+           .35 * avg(goals_against::numeric) + .65 * avg(xg_against) as laway
+    from (
+      select b.goals_for, b.goals_against, b.xg_for, b.xg_against
+      from public.betting_team_features_v2_cache b
+      where b.was_home and b.kickoff_time < target.kickoff_time
+      order by b.kickoff_time desc, b.match_id desc
+      limit 15
+    ) q
+  ) prior on true
+  where target.was_home
 )
 select h.season,
        h.match_id,

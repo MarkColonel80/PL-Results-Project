@@ -1,0 +1,4809 @@
+{
+  "historical_mapping": {
+    "forecasts": 1673,
+    "matched_unique": 1673,
+    "unmatched": [],
+    "cached_replay_max_error": 1.7486012637846216e-15,
+    "same_kickoff_contamination": 1119
+  },
+  "development": {
+    "n": 1433,
+    "raw_strict": {
+      "n": 1433,
+      "brier": 0.5754675492612373,
+      "log_loss": 0.9704165035761191,
+      "accuracy": 0.5457083042568039
+    },
+    "cached": {
+      "n": 1433,
+      "brier": 0.5747417215512604,
+      "log_loss": 0.9690790895831012,
+      "accuracy": 0.5436147941381717
+    },
+    "market": {
+      "n": 1433,
+      "brier": 0.5641506410567118,
+      "log_loss": 0.9526980876505501,
+      "accuracy": 0.5638520586182834
+    },
+    "blends": {
+      "0.25": {
+        "n": 1433,
+        "brier": 0.5634692822165829,
+        "log_loss": 0.9517137790714444,
+        "accuracy": 0.5603628750872296
+      },
+      "0.5": {
+        "n": 1433,
+        "brier": 0.5651283139706275,
+        "log_loss": 0.9543989778496448,
+        "accuracy": 0.5575715282623867
+      },
+      "0.75": {
+        "n": 1433,
+        "brier": 0.5691277363188456,
+        "log_loss": 0.9605763577217855,
+        "accuracy": 0.5471039776692254
+      }
+    },
+    "selection": {
+      "open": {
+        "all_positive": {
+          "n": 1797,
+          "matches": 1338,
+          "wins": 520,
+          "roi": 0.0209070673344463,
+          "profit": 37.57,
+          "expected_roi": 0.2597953739015125,
+          "expected_wins": 604.9122999784485,
+          "observed_win_rate": 0.28937117417918756,
+          "mean_probability": 0.3366234279234549,
+          "mean_market_probability": 0.2706571018064294,
+          "outcomes": {
+            "H": 558,
+            "D": 501,
+            "A": 738
+          }
+        },
+        "gap_5pp": {
+          "n": 771,
+          "matches": 692,
+          "wins": 241,
+          "roi": 0.09,
+          "profit": 69.39,
+          "expected_roi": 0.45662089834144887,
+          "expected_wins": 289.38402416686597,
+          "observed_win_rate": 0.3125810635538262,
+          "mean_probability": 0.3753359587118884,
+          "mean_market_probability": 0.2671876182884079,
+          "outcomes": {
+            "H": 292,
+            "A": 386,
+            "D": 93
+          }
+        },
+        "odds_at_most4": {
+          "n": 888,
+          "matches": 824,
+          "wins": 356,
+          "roi": -0.010754504504504513,
+          "profit": -9.550000000000008,
+          "expected_roi": 0.1566981533820062,
+          "expected_wins": 406.08164026462606,
+          "observed_win_rate": 0.4009009009009009,
+          "mean_probability": 0.4572991444421465,
+          "mean_market_probability": 0.38358524654081966,
+          "outcomes": {
+            "A": 370,
+            "H": 376,
+            "D": 142
+          }
+        },
+        "odds_above4": {
+          "n": 909,
+          "matches": 572,
+          "wins": 164,
+          "roi": 0.05183718371837184,
+          "profit": 47.120000000000005,
+          "expected_roi": 0.36051081044862104,
+          "expected_wins": 198.83065971382248,
+          "observed_win_rate": 0.18041804180418042,
+          "mean_probability": 0.21873559924512925,
+          "mean_market_probability": 0.1603378581055069,
+          "outcomes": {
+            "H": 182,
+            "D": 359,
+            "A": 368
+          }
+        }
+      },
+      "close": {
+        "all_positive": {
+          "n": 1798,
+          "matches": 1334,
+          "wins": 509,
+          "roi": 0.0037986651835372662,
+          "profit": 6.8300000000000045,
+          "expected_roi": 0.28100044481571623,
+          "expected_wins": 602.5851035548632,
+          "observed_win_rate": 0.28309232480533925,
+          "mean_probability": 0.33514188184363913,
+          "mean_market_probability": 0.2667594447399313,
+          "outcomes": {
+            "H": 556,
+            "D": 497,
+            "A": 745
+          }
+        },
+        "gap_5pp": {
+          "n": 813,
+          "matches": 726,
+          "wins": 230,
+          "roi": 0.024403444034440336,
+          "profit": 19.839999999999993,
+          "expected_roi": 0.4825075578744239,
+          "expected_wins": 302.3544221836322,
+          "observed_win_rate": 0.2829028290282903,
+          "mean_probability": 0.3718996582824504,
+          "mean_market_probability": 0.2614440808792918,
+          "outcomes": {
+            "H": 303,
+            "D": 107,
+            "A": 403
+          }
+        },
+        "odds_at_most4": {
+          "n": 855,
+          "matches": 802,
+          "wins": 342,
+          "roi": -0.013181286549707606,
+          "profit": -11.270000000000003,
+          "expected_roi": 0.16704128612041105,
+          "expected_wins": 393.20996613066,
+          "observed_win_rate": 0.4,
+          "mean_probability": 0.45989469722884213,
+          "mean_market_probability": 0.38389895925959877,
+          "outcomes": {
+            "A": 360,
+            "H": 365,
+            "D": 130
+          }
+        },
+        "odds_above4": {
+          "n": 943,
+          "matches": 603,
+          "wins": 167,
+          "roi": 0.019194061505832447,
+          "profit": 18.099999999999998,
+          "expected_roi": 0.38432502666564833,
+          "expected_wins": 209.3751374242032,
+          "observed_win_rate": 0.17709437963944857,
+          "mean_probability": 0.22203089864708717,
+          "mean_market_probability": 0.16055129530799525,
+          "outcomes": {
+            "H": 191,
+            "D": 367,
+            "A": 385
+          }
+        }
+      }
+    },
+    "calibration": {
+      "raw": [
+        {
+          "low": 0,
+          "high": 0.2,
+          "n": 742,
+          "predicted": 0.14676299885731864,
+          "observed": 0.14824797843665768
+        },
+        {
+          "low": 0.2,
+          "high": 0.4,
+          "n": 2315,
+          "predicted": 0.27572133923563286,
+          "observed": 0.2691144708423326
+        },
+        {
+          "low": 0.4,
+          "high": 0.6,
+          "n": 868,
+          "predicted": 0.490841148313583,
+          "observed": 0.4976958525345622
+        },
+        {
+          "low": 0.6,
+          "high": 0.8,
+          "n": 328,
+          "predicted": 0.6738239423148977,
+          "observed": 0.6920731707317073
+        },
+        {
+          "low": 0.8,
+          "high": 1,
+          "n": 46,
+          "predicted": 0.8422301022152806,
+          "observed": 0.8913043478260869
+        }
+      ],
+      "market": [
+        {
+          "low": 0,
+          "high": 0.2,
+          "n": 933,
+          "predicted": 0.13979626432822015,
+          "observed": 0.14469453376205788
+        },
+        {
+          "low": 0.2,
+          "high": 0.4,
+          "n": 2136,
+          "predicted": 0.2787699537096783,
+          "observed": 0.2720037453183521
+        },
+        {
+          "low": 0.4,
+          "high": 0.6,
+          "n": 771,
+          "predicted": 0.4941035587436722,
+          "observed": 0.496757457846952
+        },
+        {
+          "low": 0.6,
+          "high": 0.8,
+          "n": 391,
+          "predicted": 0.688520156885819,
+          "observed": 0.6982097186700768
+        },
+        {
+          "low": 0.8,
+          "high": 1,
+          "n": 68,
+          "predicted": 0.8375329282966383,
+          "observed": 0.8970588235294118
+        }
+      ]
+    }
+  },
+  "stress_2025_26": {
+    "n": 240,
+    "raw_strict": {
+      "n": 240,
+      "brier": 0.640181046338412,
+      "log_loss": 1.058487208667973,
+      "accuracy": 0.44583333333333336
+    },
+    "cached": {
+      "n": 240,
+      "brier": 0.6381406078516866,
+      "log_loss": 1.0558657831463136,
+      "accuracy": 0.45
+    },
+    "market": {
+      "n": 240,
+      "brier": 0.6252543752509803,
+      "log_loss": 1.0349920637949663,
+      "accuracy": 0.4666666666666667
+    },
+    "blends": {
+      "0.25": {
+        "n": 240,
+        "brier": 0.6266680439139087,
+        "log_loss": 1.0379600969297127,
+        "accuracy": 0.475
+      },
+      "0.5": {
+        "n": 240,
+        "brier": 0.6296270453161235,
+        "log_loss": 1.042880517154779,
+        "accuracy": 0.4666666666666667
+      },
+      "0.75": {
+        "n": 240,
+        "brier": 0.6341313794576245,
+        "log_loss": 1.049710011532624,
+        "accuracy": 0.4625
+      }
+    },
+    "selection": {
+      "open": {
+        "all_positive": {
+          "n": 275,
+          "matches": 209,
+          "wins": 73,
+          "roi": -0.01490909090909092,
+          "profit": -4.100000000000003,
+          "expected_roi": 0.19057125004415568,
+          "expected_wins": 84.26979311945159,
+          "observed_win_rate": 0.26545454545454544,
+          "mean_probability": 0.3064356113434603,
+          "mean_market_probability": 0.24956247916717766,
+          "outcomes": {
+            "H": 87,
+            "D": 75,
+            "A": 113
+          }
+        },
+        "gap_5pp": {
+          "n": 94,
+          "matches": 88,
+          "wins": 20,
+          "roi": -0.3225531914893617,
+          "profit": -30.32,
+          "expected_roi": 0.35348812356599824,
+          "expected_wins": 33.21922938756495,
+          "observed_win_rate": 0.2127659574468085,
+          "mean_probability": 0.3533960573145208,
+          "mean_market_probability": 0.2576897726168719,
+          "outcomes": {
+            "H": 37,
+            "D": 12,
+            "A": 45
+          }
+        },
+        "odds_at_most4": {
+          "n": 139,
+          "matches": 131,
+          "wins": 49,
+          "roi": 0.06776978417266187,
+          "profit": 9.42,
+          "expected_roi": 0.1305563994885547,
+          "expected_wins": 54.31186769429121,
+          "observed_win_rate": 0.35251798561151076,
+          "mean_probability": 0.3907328611100087,
+          "mean_market_probability": 0.32741539747633935,
+          "outcomes": {
+            "H": 60,
+            "D": 31,
+            "A": 48
+          }
+        },
+        "odds_above4": {
+          "n": 136,
+          "matches": 97,
+          "wins": 24,
+          "roi": -0.09941176470588235,
+          "profit": -13.52,
+          "expected_roi": 0.2519099575973067,
+          "expected_wins": 29.957925425160386,
+          "observed_win_rate": 0.17647058823529413,
+          "mean_probability": 0.22027886342029696,
+          "mean_market_probability": 0.16999221707178455,
+          "outcomes": {
+            "D": 44,
+            "A": 65,
+            "H": 27
+          }
+        }
+      },
+      "close": {
+        "all_positive": {
+          "n": 283,
+          "matches": 214,
+          "wins": 69,
+          "roi": -0.0919434628975265,
+          "profit": -26.02,
+          "expected_roi": 0.19682973739265053,
+          "expected_wins": 87.84161135243005,
+          "observed_win_rate": 0.24381625441696114,
+          "mean_probability": 0.31039438640434647,
+          "mean_market_probability": 0.2516295936101842,
+          "outcomes": {
+            "H": 90,
+            "D": 78,
+            "A": 115
+          }
+        },
+        "gap_5pp": {
+          "n": 93,
+          "matches": 88,
+          "wins": 22,
+          "roi": -0.1491397849462366,
+          "profit": -13.870000000000003,
+          "expected_roi": 0.36681212597444346,
+          "expected_wins": 34.43494251282908,
+          "observed_win_rate": 0.23655913978494625,
+          "mean_probability": 0.37026819906267827,
+          "mean_market_probability": 0.26670100247988093,
+          "outcomes": {
+            "H": 43,
+            "D": 12,
+            "A": 38
+          }
+        },
+        "odds_at_most4": {
+          "n": 126,
+          "matches": 119,
+          "wins": 43,
+          "roi": -0.032619047619047645,
+          "profit": -4.110000000000003,
+          "expected_roi": 0.1263430235406008,
+          "expected_wins": 51.775809306373915,
+          "observed_win_rate": 0.3412698412698413,
+          "mean_probability": 0.41091912147915804,
+          "mean_market_probability": 0.3459841421454608,
+          "outcomes": {
+            "H": 60,
+            "D": 22,
+            "A": 44
+          }
+        },
+        "odds_above4": {
+          "n": 157,
+          "matches": 106,
+          "wins": 26,
+          "roi": -0.1395541401273885,
+          "profit": -21.909999999999997,
+          "expected_roi": 0.2533986924586267,
+          "expected_wins": 36.06580204605613,
+          "observed_win_rate": 0.16560509554140126,
+          "mean_probability": 0.22971848436978426,
+          "mean_market_probability": 0.17590556102773305,
+          "outcomes": {
+            "H": 30,
+            "D": 56,
+            "A": 71
+          }
+        }
+      }
+    },
+    "calibration": {
+      "raw": [
+        {
+          "low": 0,
+          "high": 0.2,
+          "n": 71,
+          "predicted": 0.16174389491176974,
+          "observed": 0.2112676056338028
+        },
+        {
+          "low": 0.2,
+          "high": 0.4,
+          "n": 444,
+          "predicted": 0.2758656902794407,
+          "observed": 0.27927927927927926
+        },
+        {
+          "low": 0.4,
+          "high": 0.6,
+          "n": 170,
+          "predicted": 0.4877649743058567,
+          "observed": 0.4764705882352941
+        },
+        {
+          "low": 0.6,
+          "high": 0.8,
+          "n": 35,
+          "predicted": 0.6603363241484868,
+          "observed": 0.5714285714285714
+        }
+      ],
+      "market": [
+        {
+          "low": 0,
+          "high": 0.2,
+          "n": 110,
+          "predicted": 0.15050522878010025,
+          "observed": 0.14545454545454545
+        },
+        {
+          "low": 0.2,
+          "high": 0.4,
+          "n": 409,
+          "predicted": 0.2765198114938027,
+          "observed": 0.3105134474327628
+        },
+        {
+          "low": 0.4,
+          "high": 0.6,
+          "n": 140,
+          "predicted": 0.4939691498338297,
+          "observed": 0.42857142857142855
+        },
+        {
+          "low": 0.6,
+          "high": 0.8,
+          "n": 58,
+          "predicted": 0.6664400963896211,
+          "observed": 0.5862068965517241
+        },
+        {
+          "low": 0.8,
+          "high": 1,
+          "n": 3,
+          "predicted": 0.8462051219631513,
+          "observed": 1.0
+        }
+      ]
+    }
+  },
+  "by_season": {
+    "2019/20": {
+      "n": 240,
+      "raw_strict": {
+        "n": 240,
+        "brier": 0.5791308972117434,
+        "log_loss": 0.9752890431633733,
+        "accuracy": 0.55
+      },
+      "cached": {
+        "n": 240,
+        "brier": 0.5799484452680532,
+        "log_loss": 0.9761665183414633,
+        "accuracy": 0.525
+      },
+      "market": {
+        "n": 240,
+        "brier": 0.5729232837938523,
+        "log_loss": 0.9677802329681694,
+        "accuracy": 0.5333333333333333
+      },
+      "blends": {
+        "0.25": {
+          "n": 240,
+          "brier": 0.5712240967008555,
+          "log_loss": 0.964084062477724,
+          "accuracy": 0.5375
+        },
+        "0.5": {
+          "n": 240,
+          "brier": 0.571692303239505,
+          "log_loss": 0.9643640269365806,
+          "accuracy": 0.5541666666666667
+        },
+        "0.75": {
+          "n": 240,
+          "brier": 0.574327903409801,
+          "log_loss": 0.9681422614760763,
+          "accuracy": 0.55
+        }
+      },
+      "selection": {
+        "open": {
+          "all_positive": {
+            "n": 282,
+            "matches": 225,
+            "wins": 80,
+            "roi": 0.04776595744680851,
+            "profit": 13.47,
+            "expected_roi": 0.27680190401144356,
+            "expected_wins": 95.08938903241068,
+            "observed_win_rate": 0.28368794326241137,
+            "mean_probability": 0.3371964150085485,
+            "mean_market_probability": 0.268401652807176,
+            "outcomes": {
+              "H": 95,
+              "D": 61,
+              "A": 126
+            }
+          },
+          "gap_5pp": {
+            "n": 126,
+            "matches": 115,
+            "wins": 36,
+            "roi": 0.15523809523809523,
+            "profit": 19.56,
+            "expected_roi": 0.4868158660842508,
+            "expected_wins": 46.119816712480485,
+            "observed_win_rate": 0.2857142857142857,
+            "mean_probability": 0.36603029136889276,
+            "mean_market_probability": 0.2544898152168277,
+            "outcomes": {
+              "H": 50,
+              "A": 65,
+              "D": 11
+            }
+          },
+          "odds_at_most4": {
+            "n": 139,
+            "matches": 135,
+            "wins": 56,
+            "roi": 0.002877697841726618,
+            "profit": 0.3999999999999999,
+            "expected_roi": 0.16909552810941084,
+            "expected_wins": 64.52026579739496,
+            "observed_win_rate": 0.4028776978417266,
+            "mean_probability": 0.4641745740819781,
+            "mean_market_probability": 0.38562034788754934,
+            "outcomes": {
+              "A": 61,
+              "H": 63,
+              "D": 15
+            }
+          },
+          "odds_above4": {
+            "n": 143,
+            "matches": 98,
+            "wins": 24,
+            "roi": 0.0913986013986014,
+            "profit": 13.07,
+            "expected_roi": 0.3814955141539789,
+            "expected_wins": 30.569123235015724,
+            "observed_win_rate": 0.16783216783216784,
+            "mean_probability": 0.2137700925525575,
+            "mean_market_probability": 0.15446180234443546,
+            "outcomes": {
+              "H": 32,
+              "D": 46,
+              "A": 65
+            }
+          }
+        },
+        "close": {
+          "all_positive": {
+            "n": 286,
+            "matches": 220,
+            "wins": 81,
+            "roi": 0.05248251748251749,
+            "profit": 15.010000000000002,
+            "expected_roi": 0.2851759365513063,
+            "expected_wins": 96.29671238734393,
+            "observed_win_rate": 0.28321678321678323,
+            "mean_probability": 0.3367017915641396,
+            "mean_market_probability": 0.2673570547303629,
+            "outcomes": {
+              "H": 93,
+              "D": 66,
+              "A": 127
+            }
+          },
+          "gap_5pp": {
+            "n": 135,
+            "matches": 124,
+            "wins": 37,
+            "roi": 0.12385185185185187,
+            "profit": 16.720000000000002,
+            "expected_roi": 0.4815493940159078,
+            "expected_wins": 49.60730307145685,
+            "observed_win_rate": 0.2740740740740741,
+            "mean_probability": 0.36746150423301366,
+            "mean_market_probability": 0.256370452944214,
+            "outcomes": {
+              "H": 53,
+              "D": 12,
+              "A": 70
+            }
+          },
+          "odds_at_most4": {
+            "n": 129,
+            "matches": 126,
+            "wins": 51,
+            "roi": -0.06434108527131782,
+            "profit": -8.299999999999999,
+            "expected_roi": 0.1839182733581094,
+            "expected_wins": 61.69266065432715,
+            "observed_win_rate": 0.3953488372093023,
+            "mean_probability": 0.4782376794909081,
+            "mean_market_probability": 0.3953805773332487,
+            "outcomes": {
+              "A": 61,
+              "H": 58,
+              "D": 10
+            }
+          },
+          "odds_above4": {
+            "n": 157,
+            "matches": 105,
+            "wins": 30,
+            "roi": 0.14847133757961786,
+            "profit": 23.310000000000002,
+            "expected_roi": 0.3683749082196018,
+            "expected_wins": 34.60405173301678,
+            "observed_win_rate": 0.1910828025477707,
+            "mean_probability": 0.22040797282176294,
+            "mean_market_probability": 0.16216575271907463,
+            "outcomes": {
+              "H": 35,
+              "D": 56,
+              "A": 66
+            }
+          }
+        }
+      },
+      "calibration": {
+        "raw": [
+          {
+            "low": 0,
+            "high": 0.2,
+            "n": 120,
+            "predicted": 0.14617106162251164,
+            "observed": 0.175
+          },
+          {
+            "low": 0.2,
+            "high": 0.4,
+            "n": 394,
+            "predicted": 0.27453799743637036,
+            "observed": 0.26903553299492383
+          },
+          {
+            "low": 0.4,
+            "high": 0.6,
+            "n": 146,
+            "predicted": 0.4962430650422638,
+            "observed": 0.4863013698630137
+          },
+          {
+            "low": 0.6,
+            "high": 0.8,
+            "n": 52,
+            "predicted": 0.6760206896767733,
+            "observed": 0.6538461538461539
+          },
+          {
+            "low": 0.8,
+            "high": 1,
+            "n": 8,
+            "predicted": 0.8358672820007425,
+            "observed": 1.0
+          }
+        ],
+        "market": [
+          {
+            "low": 0,
+            "high": 0.2,
+            "n": 149,
+            "predicted": 0.13636462973992286,
+            "observed": 0.1476510067114094
+          },
+          {
+            "low": 0.2,
+            "high": 0.4,
+            "n": 370,
+            "predicted": 0.28134845128736713,
+            "observed": 0.27837837837837837
+          },
+          {
+            "low": 0.4,
+            "high": 0.6,
+            "n": 127,
+            "predicted": 0.4926232989889083,
+            "observed": 0.4645669291338583
+          },
+          {
+            "low": 0.6,
+            "high": 0.8,
+            "n": 62,
+            "predicted": 0.6912319594319742,
+            "observed": 0.7258064516129032
+          },
+          {
+            "low": 0.8,
+            "high": 1,
+            "n": 12,
+            "predicted": 0.8469335613376594,
+            "observed": 0.9166666666666666
+          }
+        ]
+      }
+    },
+    "2020/21": {
+      "n": 238,
+      "raw_strict": {
+        "n": 238,
+        "brier": 0.6007050871882023,
+        "log_loss": 1.011262160430799,
+        "accuracy": 0.5084033613445378
+      },
+      "cached": {
+        "n": 238,
+        "brier": 0.6034539907768992,
+        "log_loss": 1.0143949370789638,
+        "accuracy": 0.5084033613445378
+      },
+      "market": {
+        "n": 238,
+        "brier": 0.5874902508401084,
+        "log_loss": 0.9917630535554994,
+        "accuracy": 0.5210084033613446
+      },
+      "blends": {
+        "0.25": {
+          "n": 238,
+          "brier": 0.58739803531758,
+          "log_loss": 0.9914959080489113,
+          "accuracy": 0.5210084033613446
+        },
+        "0.5": {
+          "n": 238,
+          "brier": 0.5895697695347528,
+          "log_loss": 0.994636889350326,
+          "accuracy": 0.5252100840336135
+        },
+        "0.75": {
+          "n": 238,
+          "brier": 0.5940054534916268,
+          "log_loss": 1.0011484847920995,
+          "accuracy": 0.5210084033613446
+        }
+      },
+      "selection": {
+        "open": {
+          "all_positive": {
+            "n": 315,
+            "matches": 223,
+            "wins": 91,
+            "roi": 0.09676190476190476,
+            "profit": 30.48,
+            "expected_roi": 0.23015283574669,
+            "expected_wins": 104.02144452555859,
+            "observed_win_rate": 0.28888888888888886,
+            "mean_probability": 0.3302268080176463,
+            "mean_market_probability": 0.26915483633745196,
+            "outcomes": {
+              "A": 129,
+              "H": 83,
+              "D": 103
+            }
+          },
+          "gap_5pp": {
+            "n": 120,
+            "matches": 107,
+            "wins": 41,
+            "roi": 0.24091666666666667,
+            "profit": 28.91,
+            "expected_roi": 0.4353629316395745,
+            "expected_wins": 45.46132732400964,
+            "observed_win_rate": 0.3416666666666667,
+            "mean_probability": 0.378844394366747,
+            "mean_market_probability": 0.27349001036906506,
+            "outcomes": {
+              "A": 65,
+              "H": 38,
+              "D": 17
+            }
+          },
+          "odds_at_most4": {
+            "n": 163,
+            "matches": 146,
+            "wins": 62,
+            "roi": -0.023865030674846625,
+            "profit": -3.8899999999999997,
+            "expected_roi": 0.13982278131485473,
+            "expected_wins": 70.72704061427866,
+            "observed_win_rate": 0.3803680981595092,
+            "mean_probability": 0.43390822462747647,
+            "mean_market_probability": 0.3677744161056595,
+            "outcomes": {
+              "A": 68,
+              "H": 54,
+              "D": 41
+            }
+          },
+          "odds_above4": {
+            "n": 152,
+            "matches": 94,
+            "wins": 29,
+            "roi": 0.22611842105263155,
+            "profit": 34.37,
+            "expected_roi": 0.32701993359135545,
+            "expected_wins": 33.29440391127992,
+            "observed_win_rate": 0.19078947368421054,
+            "mean_probability": 0.21904213099526265,
+            "mean_market_probability": 0.16339831329654517,
+            "outcomes": {
+              "D": 62,
+              "A": 61,
+              "H": 29
+            }
+          }
+        },
+        "close": {
+          "all_positive": {
+            "n": 310,
+            "matches": 223,
+            "wins": 89,
+            "roi": 0.011709677419354839,
+            "profit": 3.6300000000000003,
+            "expected_roi": 0.24492240840260202,
+            "expected_wins": 103.5565973550126,
+            "observed_win_rate": 0.2870967741935484,
+            "mean_probability": 0.33405353985487934,
+            "mean_market_probability": 0.2691195132181822,
+            "outcomes": {
+              "A": 129,
+              "H": 80,
+              "D": 101
+            }
+          },
+          "gap_5pp": {
+            "n": 117,
+            "matches": 106,
+            "wins": 35,
+            "roi": 0.054615384615384614,
+            "profit": 6.39,
+            "expected_roi": 0.46853526131764806,
+            "expected_wins": 45.25330970945175,
+            "observed_win_rate": 0.29914529914529914,
+            "mean_probability": 0.38678042486710895,
+            "mean_market_probability": 0.27208388974590014,
+            "outcomes": {
+              "A": 58,
+              "H": 41,
+              "D": 18
+            }
+          },
+          "odds_at_most4": {
+            "n": 168,
+            "matches": 150,
+            "wins": 66,
+            "roi": 0.0419047619047619,
+            "profit": 7.039999999999999,
+            "expected_roi": 0.14991298484781646,
+            "expected_wins": 71.30022462528143,
+            "observed_win_rate": 0.39285714285714285,
+            "mean_probability": 0.4244060989600085,
+            "mean_market_probability": 0.3569599509137068,
+            "outcomes": {
+              "A": 70,
+              "H": 52,
+              "D": 46
+            }
+          },
+          "odds_above4": {
+            "n": 142,
+            "matches": 93,
+            "wins": 23,
+            "roi": -0.024014084507042267,
+            "profit": -3.410000000000002,
+            "expected_roi": 0.3573279235941793,
+            "expected_wins": 32.25637272973116,
+            "observed_win_rate": 0.1619718309859155,
+            "mean_probability": 0.2271575544347265,
+            "mean_market_probability": 0.16519561509953354,
+            "outcomes": {
+              "D": 55,
+              "A": 59,
+              "H": 28
+            }
+          }
+        }
+      },
+      "calibration": {
+        "raw": [
+          {
+            "low": 0,
+            "high": 0.2,
+            "n": 104,
+            "predicted": 0.14407753531707243,
+            "observed": 0.18269230769230768
+          },
+          {
+            "low": 0.2,
+            "high": 0.4,
+            "n": 408,
+            "predicted": 0.2780512156092764,
+            "observed": 0.27941176470588236
+          },
+          {
+            "low": 0.4,
+            "high": 0.6,
+            "n": 153,
+            "predicted": 0.49416186668655926,
+            "observed": 0.45751633986928103
+          },
+          {
+            "low": 0.6,
+            "high": 0.8,
+            "n": 44,
+            "predicted": 0.6774320230944522,
+            "observed": 0.7045454545454546
+          },
+          {
+            "low": 0.8,
+            "high": 1,
+            "n": 5,
+            "predicted": 0.8314531478480465,
+            "observed": 0.8
+          }
+        ],
+        "market": [
+          {
+            "low": 0,
+            "high": 0.2,
+            "n": 139,
+            "predicted": 0.1415145830787796,
+            "observed": 0.16546762589928057
+          },
+          {
+            "low": 0.2,
+            "high": 0.4,
+            "n": 363,
+            "predicted": 0.2768419309104714,
+            "observed": 0.27823691460055094
+          },
+          {
+            "low": 0.4,
+            "high": 0.6,
+            "n": 142,
+            "predicted": 0.4852117712356129,
+            "observed": 0.4507042253521127
+          },
+          {
+            "low": 0.6,
+            "high": 0.8,
+            "n": 63,
+            "predicted": 0.6852569271655768,
+            "observed": 0.6984126984126984
+          },
+          {
+            "low": 0.8,
+            "high": 1,
+            "n": 7,
+            "predicted": 0.8235134435228788,
+            "observed": 0.8571428571428571
+          }
+        ]
+      }
+    },
+    "2021/22": {
+      "n": 239,
+      "raw_strict": {
+        "n": 239,
+        "brier": 0.5607716391919255,
+        "log_loss": 0.9471150769314846,
+        "accuracy": 0.5523012552301255
+      },
+      "cached": {
+        "n": 239,
+        "brier": 0.5580625670250974,
+        "log_loss": 0.9430042331909544,
+        "accuracy": 0.5648535564853556
+      },
+      "market": {
+        "n": 239,
+        "brier": 0.5434125080054677,
+        "log_loss": 0.9193723609062848,
+        "accuracy": 0.602510460251046
+      },
+      "blends": {
+        "0.25": {
+          "n": 239,
+          "brier": 0.544983502413852,
+          "log_loss": 0.9226324278750361,
+          "accuracy": 0.5941422594142259
+        },
+        "0.5": {
+          "n": 239,
+          "brier": 0.548400355747723,
+          "log_loss": 0.9282233549182247,
+          "accuracy": 0.5899581589958159
+        },
+        "0.75": {
+          "n": 239,
+          "brier": 0.5536630680070811,
+          "log_loss": 0.9362609562699065,
+          "accuracy": 0.5606694560669456
+        }
+      },
+      "selection": {
+        "open": {
+          "all_positive": {
+            "n": 286,
+            "matches": 220,
+            "wins": 82,
+            "roi": -0.07776223776223777,
+            "profit": -22.240000000000002,
+            "expected_roi": 0.22004247433390442,
+            "expected_wins": 98.21247898447191,
+            "observed_win_rate": 0.2867132867132867,
+            "mean_probability": 0.3434002761694822,
+            "mean_market_probability": 0.2845227423821249,
+            "outcomes": {
+              "H": 89,
+              "D": 77,
+              "A": 120
+            }
+          },
+          "gap_5pp": {
+            "n": 93,
+            "matches": 86,
+            "wins": 24,
+            "roi": -0.17956989247311828,
+            "profit": -16.7,
+            "expected_roi": 0.436972937700172,
+            "expected_wins": 35.19175888359311,
+            "observed_win_rate": 0.25806451612903225,
+            "mean_probability": 0.3784060095010012,
+            "mean_market_probability": 0.27071655400418304,
+            "outcomes": {
+              "A": 52,
+              "H": 31,
+              "D": 10
+            }
+          },
+          "odds_at_most4": {
+            "n": 153,
+            "matches": 141,
+            "wins": 57,
+            "roi": -0.15869281045751638,
+            "profit": -24.280000000000005,
+            "expected_roi": 0.133895691079117,
+            "expected_wins": 70.53035863955809,
+            "observed_win_rate": 0.37254901960784315,
+            "mean_probability": 0.460982736206262,
+            "mean_market_probability": 0.3967870128537162,
+            "outcomes": {
+              "A": 65,
+              "H": 58,
+              "D": 30
+            }
+          },
+          "odds_above4": {
+            "n": 133,
+            "matches": 91,
+            "wins": 25,
+            "roi": 0.015338345864661648,
+            "profit": 2.039999999999999,
+            "expected_roi": 0.31914366108565234,
+            "expected_wins": 27.682120344913827,
+            "observed_win_rate": 0.18796992481203006,
+            "mean_probability": 0.2081362431948408,
+            "mean_market_probability": 0.1553766267268356,
+            "outcomes": {
+              "H": 31,
+              "D": 47,
+              "A": 55
+            }
+          }
+        },
+        "close": {
+          "all_positive": {
+            "n": 292,
+            "matches": 221,
+            "wins": 84,
+            "roi": -0.04969178082191781,
+            "profit": -14.51,
+            "expected_roi": 0.2362174977945885,
+            "expected_wins": 97.98501568578754,
+            "observed_win_rate": 0.2876712328767123,
+            "mean_probability": 0.3355651222116012,
+            "mean_market_probability": 0.27621361654860505,
+            "outcomes": {
+              "H": 89,
+              "D": 79,
+              "A": 124
+            }
+          },
+          "gap_5pp": {
+            "n": 104,
+            "matches": 96,
+            "wins": 23,
+            "roi": -0.2959615384615385,
+            "profit": -30.78,
+            "expected_roi": 0.46032123558193627,
+            "expected_wins": 38.61753942879862,
+            "observed_win_rate": 0.22115384615384615,
+            "mean_probability": 0.37132249450767907,
+            "mean_market_probability": 0.26294813300764414,
+            "outcomes": {
+              "A": 58,
+              "H": 35,
+              "D": 11
+            }
+          },
+          "odds_at_most4": {
+            "n": 144,
+            "matches": 137,
+            "wins": 57,
+            "roi": -0.10958333333333332,
+            "profit": -15.78,
+            "expected_roi": 0.1302790540505125,
+            "expected_wins": 66.76463031683879,
+            "observed_win_rate": 0.3958333333333333,
+            "mean_probability": 0.4636432660891583,
+            "mean_market_probability": 0.40096469097214915,
+            "outcomes": {
+              "A": 60,
+              "H": 56,
+              "D": 28
+            }
+          },
+          "odds_above4": {
+            "n": 148,
+            "matches": 102,
+            "wins": 27,
+            "roi": 0.00858108108108106,
+            "profit": 1.269999999999997,
+            "expected_roi": 0.3392927403563922,
+            "expected_wins": 31.220385368948754,
+            "observed_win_rate": 0.18243243243243243,
+            "mean_probability": 0.21094854979019428,
+            "mean_market_probability": 0.15483419278515673,
+            "outcomes": {
+              "H": 33,
+              "D": 51,
+              "A": 64
+            }
+          }
+        }
+      },
+      "calibration": {
+        "raw": [
+          {
+            "low": 0,
+            "high": 0.2,
+            "n": 140,
+            "predicted": 0.1352926440755504,
+            "observed": 0.12142857142857143
+          },
+          {
+            "low": 0.2,
+            "high": 0.4,
+            "n": 373,
+            "predicted": 0.2792112096538982,
+            "observed": 0.27882037533512066
+          },
+          {
+            "low": 0.4,
+            "high": 0.6,
+            "n": 133,
+            "predicted": 0.4876599338773533,
+            "observed": 0.48872180451127817
+          },
+          {
+            "low": 0.6,
+            "high": 0.8,
+            "n": 56,
+            "predicted": 0.6830978890668595,
+            "observed": 0.6785714285714286
+          },
+          {
+            "low": 0.8,
+            "high": 1,
+            "n": 15,
+            "predicted": 0.8533997090057883,
+            "observed": 1.0
+          }
+        ],
+        "market": [
+          {
+            "low": 0,
+            "high": 0.2,
+            "n": 170,
+            "predicted": 0.1346735361918392,
+            "observed": 0.1411764705882353
+          },
+          {
+            "low": 0.2,
+            "high": 0.4,
+            "n": 353,
+            "predicted": 0.2857532846775634,
+            "observed": 0.26628895184135976
+          },
+          {
+            "low": 0.4,
+            "high": 0.6,
+            "n": 112,
+            "predicted": 0.499661469275639,
+            "observed": 0.5357142857142857
+          },
+          {
+            "low": 0.6,
+            "high": 0.8,
+            "n": 63,
+            "predicted": 0.6895337352585762,
+            "observed": 0.6825396825396826
+          },
+          {
+            "low": 0.8,
+            "high": 1,
+            "n": 19,
+            "predicted": 0.833256814528715,
+            "observed": 0.9473684210526315
+          }
+        ]
+      }
+    },
+    "2022/23": {
+      "n": 236,
+      "raw_strict": {
+        "n": 236,
+        "brier": 0.5738727500678251,
+        "log_loss": 0.9669163721294002,
+        "accuracy": 0.5508474576271186
+      },
+      "cached": {
+        "n": 236,
+        "brier": 0.5704940974276382,
+        "log_loss": 0.9609476646031689,
+        "accuracy": 0.538135593220339
+      },
+      "market": {
+        "n": 236,
+        "brier": 0.5703546041418812,
+        "log_loss": 0.9591672766206288,
+        "accuracy": 0.5635593220338984
+      },
+      "blends": {
+        "0.25": {
+          "n": 236,
+          "brier": 0.5675914859015816,
+          "log_loss": 0.9552187109703172,
+          "accuracy": 0.5508474576271186
+        },
+        "0.5": {
+          "n": 236,
+          "brier": 0.5672568041424727,
+          "log_loss": 0.9552290824789538,
+          "accuracy": 0.5423728813559322
+        },
+        "0.75": {
+          "n": 236,
+          "brier": 0.5693505588645538,
+          "log_loss": 0.9590251139025319,
+          "accuracy": 0.5423728813559322
+        }
+      },
+      "selection": {
+        "open": {
+          "all_positive": {
+            "n": 299,
+            "matches": 219,
+            "wins": 93,
+            "roi": 0.046722408026755854,
+            "profit": 13.97,
+            "expected_roi": 0.24953356793319845,
+            "expected_wins": 103.66097525466456,
+            "observed_win_rate": 0.3110367892976589,
+            "mean_probability": 0.34669222493198854,
+            "mean_market_probability": 0.28127966067644034,
+            "outcomes": {
+              "A": 102,
+              "D": 90,
+              "H": 107
+            }
+          },
+          "gap_5pp": {
+            "n": 134,
+            "matches": 116,
+            "wins": 46,
+            "roi": 0.18671641791044777,
+            "profit": 25.02,
+            "expected_roi": 0.4421958725606542,
+            "expected_wins": 50.662474447687316,
+            "observed_win_rate": 0.34328358208955223,
+            "mean_probability": 0.3780781675200546,
+            "mean_market_probability": 0.27180491332713447,
+            "outcomes": {
+              "H": 63,
+              "A": 51,
+              "D": 20
+            }
+          },
+          "odds_at_most4": {
+            "n": 164,
+            "matches": 146,
+            "wins": 65,
+            "roi": -0.0074390243902439064,
+            "profit": -1.2200000000000006,
+            "expected_roi": 0.1483828751681258,
+            "expected_wins": 72.86730478429251,
+            "observed_win_rate": 0.39634146341463417,
+            "mean_probability": 0.4443128340505641,
+            "mean_market_probability": 0.3750966207183569,
+            "outcomes": {
+              "A": 51,
+              "D": 35,
+              "H": 78
+            }
+          },
+          "odds_above4": {
+            "n": 135,
+            "matches": 85,
+            "wins": 28,
+            "roi": 0.11251851851851853,
+            "profit": 15.190000000000001,
+            "expected_roi": 0.37241292803299036,
+            "expected_wins": 30.793670470372053,
+            "observed_win_rate": 0.2074074074074074,
+            "mean_probability": 0.22810126274349668,
+            "mean_market_probability": 0.16730942773663054,
+            "outcomes": {
+              "D": 55,
+              "A": 51,
+              "H": 29
+            }
+          }
+        },
+        "close": {
+          "all_positive": {
+            "n": 302,
+            "matches": 219,
+            "wins": 95,
+            "roi": 0.07784768211920529,
+            "profit": 23.509999999999998,
+            "expected_roi": 0.2704383600292201,
+            "expected_wins": 103.82303743256291,
+            "observed_win_rate": 0.31456953642384106,
+            "mean_probability": 0.3437848921608043,
+            "mean_market_probability": 0.2747741883487667,
+            "outcomes": {
+              "A": 105,
+              "D": 90,
+              "H": 107
+            }
+          },
+          "gap_5pp": {
+            "n": 140,
+            "matches": 122,
+            "wins": 44,
+            "roi": -0.005285714285714305,
+            "profit": -0.7400000000000027,
+            "expected_roi": 0.46061649474452215,
+            "expected_wins": 53.875084633329344,
+            "observed_win_rate": 0.3142857142857143,
+            "mean_probability": 0.3848220330952096,
+            "mean_market_probability": 0.275162093372891,
+            "outcomes": {
+              "H": 69,
+              "A": 51,
+              "D": 20
+            }
+          },
+          "odds_at_most4": {
+            "n": 152,
+            "matches": 137,
+            "wins": 67,
+            "roi": 0.1357236842105263,
+            "profit": 20.63,
+            "expected_roi": 0.16917228567743728,
+            "expected_wins": 69.18120587176972,
+            "observed_win_rate": 0.4407894736842105,
+            "mean_probability": 0.45513951231427446,
+            "mean_market_probability": 0.37862610107136574,
+            "outcomes": {
+              "A": 47,
+              "H": 76,
+              "D": 29
+            }
+          },
+          "odds_above4": {
+            "n": 150,
+            "matches": 95,
+            "wins": 28,
+            "roi": 0.019199999999999988,
+            "profit": 2.879999999999998,
+            "expected_roi": 0.37305464870569344,
+            "expected_wins": 34.6418315607932,
+            "observed_win_rate": 0.18666666666666668,
+            "mean_probability": 0.23094554373862133,
+            "mean_market_probability": 0.16953758345653305,
+            "outcomes": {
+              "D": 61,
+              "A": 58,
+              "H": 31
+            }
+          }
+        }
+      },
+      "calibration": {
+        "raw": [
+          {
+            "low": 0,
+            "high": 0.2,
+            "n": 115,
+            "predicted": 0.14958454429118256,
+            "observed": 0.1391304347826087
+          },
+          {
+            "low": 0.2,
+            "high": 0.4,
+            "n": 391,
+            "predicted": 0.2775282905975854,
+            "observed": 0.2659846547314578
+          },
+          {
+            "low": 0.4,
+            "high": 0.6,
+            "n": 146,
+            "predicted": 0.49150530875936344,
+            "observed": 0.5136986301369864
+          },
+          {
+            "low": 0.6,
+            "high": 0.8,
+            "n": 51,
+            "predicted": 0.6732136050142483,
+            "observed": 0.7254901960784313
+          },
+          {
+            "low": 0.8,
+            "high": 1,
+            "n": 5,
+            "predicted": 0.8381093696528747,
+            "observed": 0.8
+          }
+        ],
+        "market": [
+          {
+            "low": 0,
+            "high": 0.2,
+            "n": 143,
+            "predicted": 0.1468476997490336,
+            "observed": 0.13986013986013987
+          },
+          {
+            "low": 0.2,
+            "high": 0.4,
+            "n": 365,
+            "predicted": 0.27945476647200046,
+            "observed": 0.27945205479452057
+          },
+          {
+            "low": 0.4,
+            "high": 0.6,
+            "n": 130,
+            "predicted": 0.49653051872744197,
+            "observed": 0.5
+          },
+          {
+            "low": 0.6,
+            "high": 0.8,
+            "n": 65,
+            "predicted": 0.6815190083441802,
+            "observed": 0.6923076923076923
+          },
+          {
+            "low": 0.8,
+            "high": 1,
+            "n": 5,
+            "predicted": 0.8304172393337703,
+            "observed": 0.8
+          }
+        ]
+      }
+    },
+    "2023/24": {
+      "n": 240,
+      "raw_strict": {
+        "n": 240,
+        "brier": 0.5665174848242029,
+        "log_loss": 0.9602916572777418,
+        "accuracy": 0.5666666666666667
+      },
+      "cached": {
+        "n": 240,
+        "brier": 0.5677942091583844,
+        "log_loss": 0.9627571919101078,
+        "accuracy": 0.5708333333333333
+      },
+      "market": {
+        "n": 240,
+        "brier": 0.529575936628289,
+        "log_loss": 0.9048858856082683,
+        "accuracy": 0.6
+      },
+      "blends": {
+        "0.25": {
+          "n": 240,
+          "brier": 0.534732686453786,
+          "log_loss": 0.9130161529952857,
+          "accuracy": 0.6041666666666666
+        },
+        "0.5": {
+          "n": 240,
+          "brier": 0.5426085277616042,
+          "log_loss": 0.9249155633594626,
+          "accuracy": 0.5958333333333333
+        },
+        "0.75": {
+          "n": 240,
+          "brier": 0.553203460551743,
+          "log_loss": 0.9405770795197429,
+          "accuracy": 0.575
+        }
+      },
+      "selection": {
+        "open": {
+          "all_positive": {
+            "n": 315,
+            "matches": 230,
+            "wins": 75,
+            "roi": -0.15349206349206349,
+            "profit": -48.349999999999994,
+            "expected_roi": 0.310238730787992,
+            "expected_wins": 102.60989861742176,
+            "observed_win_rate": 0.23809523809523808,
+            "mean_probability": 0.32574570989657703,
+            "mean_market_probability": 0.25575912816119845,
+            "outcomes": {
+              "H": 134,
+              "D": 87,
+              "A": 94
+            }
+          },
+          "gap_5pp": {
+            "n": 153,
+            "matches": 135,
+            "wins": 33,
+            "roi": -0.2984967320261438,
+            "profit": -45.67,
+            "expected_roi": 0.4944711589085002,
+            "expected_wins": 56.49125831087686,
+            "observed_win_rate": 0.21568627450980393,
+            "mean_probability": 0.3692239105286069,
+            "mean_market_probability": 0.2608808645089134,
+            "outcomes": {
+              "H": 89,
+              "D": 22,
+              "A": 42
+            }
+          },
+          "odds_at_most4": {
+            "n": 131,
+            "matches": 127,
+            "wins": 52,
+            "roi": -0.021526717557251912,
+            "profit": -2.8200000000000003,
+            "expected_roi": 0.1767550136061173,
+            "expected_wins": 62.896990610329354,
+            "observed_win_rate": 0.3969465648854962,
+            "mean_probability": 0.48012969931549127,
+            "mean_market_probability": 0.3964420627696048,
+            "outcomes": {
+              "A": 33,
+              "H": 93,
+              "D": 5
+            }
+          },
+          "odds_above4": {
+            "n": 184,
+            "matches": 106,
+            "wins": 23,
+            "roi": -0.24744565217391304,
+            "profit": -45.53,
+            "expected_roi": 0.40527333378160935,
+            "expected_wins": 39.7129080070924,
+            "observed_win_rate": 0.125,
+            "mean_probability": 0.2158310217776761,
+            "mean_market_probability": 0.1555989953693439,
+            "outcomes": {
+              "H": 41,
+              "D": 82,
+              "A": 61
+            }
+          }
+        },
+        "close": {
+          "all_positive": {
+            "n": 309,
+            "matches": 223,
+            "wins": 63,
+            "roi": -0.21812297734627834,
+            "profit": -67.4,
+            "expected_roi": 0.34549211245171935,
+            "expected_wins": 99.42169488100784,
+            "observed_win_rate": 0.20388349514563106,
+            "mean_probability": 0.32175305786733926,
+            "mean_market_probability": 0.24803841388519188,
+            "outcomes": {
+              "H": 126,
+              "D": 88,
+              "A": 95
+            }
+          },
+          "gap_5pp": {
+            "n": 164,
+            "matches": 142,
+            "wins": 32,
+            "roi": -0.22243902439024388,
+            "profit": -36.48,
+            "expected_roi": 0.5220790556089213,
+            "expected_wins": 57.597888698893705,
+            "observed_win_rate": 0.1951219512195122,
+            "mean_probability": 0.35120663840788846,
+            "mean_market_probability": 0.24322111145089795,
+            "outcomes": {
+              "H": 81,
+              "D": 27,
+              "A": 56
+            }
+          },
+          "odds_at_most4": {
+            "n": 128,
+            "matches": 123,
+            "wins": 41,
+            "roi": -0.19679687499999998,
+            "profit": -25.189999999999998,
+            "expected_roi": 0.19153762053027387,
+            "expected_wins": 60.20649359577262,
+            "observed_win_rate": 0.3203125,
+            "mean_probability": 0.4703632312169736,
+            "mean_market_probability": 0.38488774670448417,
+            "outcomes": {
+              "H": 85,
+              "A": 37,
+              "D": 6
+            }
+          },
+          "odds_above4": {
+            "n": 181,
+            "matches": 103,
+            "wins": 22,
+            "roi": -0.2332044198895028,
+            "profit": -42.21000000000001,
+            "expected_roi": 0.45436600729119453,
+            "expected_wins": 39.21520128523521,
+            "observed_win_rate": 0.12154696132596685,
+            "mean_probability": 0.2166585706366586,
+            "mean_market_probability": 0.15126098515110672,
+            "outcomes": {
+              "H": 41,
+              "D": 82,
+              "A": 58
+            }
+          }
+        }
+      },
+      "calibration": {
+        "raw": [
+          {
+            "low": 0,
+            "high": 0.2,
+            "n": 129,
+            "predicted": 0.15215026440682328,
+            "observed": 0.17054263565891473
+          },
+          {
+            "low": 0.2,
+            "high": 0.4,
+            "n": 370,
+            "predicted": 0.2674711939581912,
+            "observed": 0.23513513513513515
+          },
+          {
+            "low": 0.4,
+            "high": 0.6,
+            "n": 152,
+            "predicted": 0.4881707124187102,
+            "observed": 0.5592105263157895
+          },
+          {
+            "low": 0.6,
+            "high": 0.8,
+            "n": 62,
+            "predicted": 0.6663969991453886,
+            "observed": 0.6612903225806451
+          },
+          {
+            "low": 0.8,
+            "high": 1,
+            "n": 7,
+            "predicted": 0.8413874131901442,
+            "observed": 0.7142857142857143
+          }
+        ],
+        "market": [
+          {
+            "low": 0,
+            "high": 0.2,
+            "n": 175,
+            "predicted": 0.13782095377166695,
+            "observed": 0.12571428571428572
+          },
+          {
+            "low": 0.2,
+            "high": 0.4,
+            "n": 337,
+            "predicted": 0.2765968539970317,
+            "observed": 0.258160237388724
+          },
+          {
+            "low": 0.4,
+            "high": 0.6,
+            "n": 124,
+            "predicted": 0.4988783459412992,
+            "observed": 0.5483870967741935
+          },
+          {
+            "low": 0.6,
+            "high": 0.8,
+            "n": 67,
+            "predicted": 0.6938046852146063,
+            "observed": 0.7164179104477612
+          },
+          {
+            "low": 0.8,
+            "high": 1,
+            "n": 17,
+            "predicted": 0.8424920286387573,
+            "observed": 0.8823529411764706
+          }
+        ]
+      }
+    },
+    "2024/25": {
+      "n": 240,
+      "raw_strict": {
+        "n": 240,
+        "brier": 0.571929936954403,
+        "log_loss": 0.9618096671959068,
+        "accuracy": 0.5458333333333333
+      },
+      "cached": {
+        "n": 240,
+        "brier": 0.5687959983491169,
+        "log_loss": 0.9573374554517818,
+        "accuracy": 0.5541666666666667
+      },
+      "market": {
+        "n": 240,
+        "brier": 0.5813587501759064,
+        "log_loss": 0.9735142202483916,
+        "accuracy": 0.5625
+      },
+      "blends": {
+        "0.25": {
+          "n": 240,
+          "brier": 0.5750769720999219,
+          "log_loss": 0.964104173037866,
+          "accuracy": 0.5541666666666667
+        },
+        "0.5": {
+          "n": 240,
+          "brier": 0.5714115772043431,
+          "log_loss": 0.9592650359651015,
+          "accuracy": 0.5375
+        },
+        "0.75": {
+          "n": 240,
+          "brier": 0.5703625654891702,
+          "log_loss": 0.9585151831929054,
+          "accuracy": 0.5333333333333333
+        }
+      },
+      "selection": {
+        "open": {
+          "all_positive": {
+            "n": 300,
+            "matches": 221,
+            "wins": 99,
+            "roi": 0.16746666666666668,
+            "profit": 50.24,
+            "expected_roi": 0.2700937401328104,
+            "expected_wins": 101.318113563921,
+            "observed_win_rate": 0.33,
+            "mean_probability": 0.33772704521307,
+            "mean_market_probability": 0.2661917472463724,
+            "outcomes": {
+              "D": 83,
+              "A": 167,
+              "H": 50
+            }
+          },
+          "gap_5pp": {
+            "n": 145,
+            "matches": 133,
+            "wins": 61,
+            "roi": 0.40186206896551724,
+            "profit": 58.27,
+            "expected_roi": 0.43396927072860914,
+            "expected_wins": 55.45738848821856,
+            "observed_win_rate": 0.4206896551724138,
+            "mean_probability": 0.3824647481946108,
+            "mean_market_probability": 0.2731301073149353,
+            "outcomes": {
+              "H": 21,
+              "A": 111,
+              "D": 13
+            }
+          },
+          "odds_at_most4": {
+            "n": 138,
+            "matches": 129,
+            "wins": 64,
+            "roi": 0.16130434782608696,
+            "profit": 22.26,
+            "expected_roi": 0.18026687968560284,
+            "expected_wins": 64.53967981877246,
+            "observed_win_rate": 0.463768115942029,
+            "mean_probability": 0.4676788392664671,
+            "mean_market_probability": 0.3834570417348451,
+            "outcomes": {
+              "H": 30,
+              "A": 92,
+              "D": 16
+            }
+          },
+          "odds_above4": {
+            "n": 162,
+            "matches": 98,
+            "wins": 35,
+            "roi": 0.17271604938271606,
+            "profit": 27.98,
+            "expected_roi": 0.34661291755080204,
+            "expected_wins": 36.77843374514855,
+            "observed_win_rate": 0.21604938271604937,
+            "mean_probability": 0.22702736879721325,
+            "mean_market_probability": 0.16629908897841422,
+            "outcomes": {
+              "D": 67,
+              "A": 75,
+              "H": 20
+            }
+          }
+        },
+        "close": {
+          "all_positive": {
+            "n": 299,
+            "matches": 228,
+            "wins": 97,
+            "roi": 0.15581939799331104,
+            "profit": 46.59,
+            "expected_roi": 0.30216581434030787,
+            "expected_wins": 101.50204581314837,
+            "observed_win_rate": 0.32441471571906355,
+            "mean_probability": 0.3394717251275865,
+            "mean_market_probability": 0.2657600805613099,
+            "outcomes": {
+              "D": 73,
+              "A": 165,
+              "H": 61
+            }
+          },
+          "gap_5pp": {
+            "n": 153,
+            "matches": 136,
+            "wins": 59,
+            "roi": 0.42307189542483664,
+            "profit": 64.73,
+            "expected_roi": 0.4867331235357953,
+            "expected_wins": 57.403296641701935,
+            "observed_win_rate": 0.38562091503267976,
+            "mean_probability": 0.3751849453706009,
+            "mean_market_probability": 0.26374281257632687,
+            "outcomes": {
+              "H": 24,
+              "A": 110,
+              "D": 19
+            }
+          },
+          "odds_at_most4": {
+            "n": 134,
+            "matches": 129,
+            "wins": 60,
+            "roi": 0.07708955223880597,
+            "profit": 10.33,
+            "expected_roi": 0.18595727075524507,
+            "expected_wins": 64.0647510666703,
+            "observed_win_rate": 0.44776119402985076,
+            "mean_probability": 0.47809515721395746,
+            "mean_market_probability": 0.3933173843018962,
+            "outcomes": {
+              "H": 38,
+              "D": 11,
+              "A": 85
+            }
+          },
+          "odds_above4": {
+            "n": 165,
+            "matches": 105,
+            "wins": 37,
+            "roi": 0.21975757575757573,
+            "profit": 36.26,
+            "expected_roi": 0.39654123761544974,
+            "expected_wins": 37.437294746478074,
+            "observed_win_rate": 0.22424242424242424,
+            "mean_probability": 0.22689269543320045,
+            "mean_market_probability": 0.16216808843259126,
+            "outcomes": {
+              "D": 62,
+              "A": 80,
+              "H": 23
+            }
+          }
+        }
+      },
+      "calibration": {
+        "raw": [
+          {
+            "low": 0,
+            "high": 0.2,
+            "n": 134,
+            "predicted": 0.15375356128291234,
+            "observed": 0.11194029850746269
+          },
+          {
+            "low": 0.2,
+            "high": 0.4,
+            "n": 379,
+            "predicted": 0.27719880945352204,
+            "observed": 0.2849604221635884
+          },
+          {
+            "low": 0.4,
+            "high": 0.6,
+            "n": 138,
+            "predicted": 0.4867490511940356,
+            "observed": 0.4782608695652174
+          },
+          {
+            "low": 0.6,
+            "high": 0.8,
+            "n": 63,
+            "predicted": 0.6690504541183085,
+            "observed": 0.7301587301587301
+          },
+          {
+            "low": 0.8,
+            "high": 1,
+            "n": 6,
+            "predicted": 0.836187721829088,
+            "observed": 0.8333333333333334
+          }
+        ],
+        "market": [
+          {
+            "low": 0,
+            "high": 0.2,
+            "n": 157,
+            "predicted": 0.14285776186155635,
+            "observed": 0.15286624203821655
+          },
+          {
+            "low": 0.2,
+            "high": 0.4,
+            "n": 348,
+            "predicted": 0.27234205223156904,
+            "observed": 0.27011494252873564
+          },
+          {
+            "low": 0.4,
+            "high": 0.6,
+            "n": 136,
+            "predicted": 0.4935194589276671,
+            "observed": 0.49264705882352944
+          },
+          {
+            "low": 0.6,
+            "high": 0.8,
+            "n": 71,
+            "predicted": 0.6895709672267731,
+            "observed": 0.676056338028169
+          },
+          {
+            "low": 0.8,
+            "high": 1,
+            "n": 8,
+            "predicted": 0.8397640154857542,
+            "observed": 0.875
+          }
+        ]
+      }
+    },
+    "2025/26": {
+      "n": 240,
+      "raw_strict": {
+        "n": 240,
+        "brier": 0.640181046338412,
+        "log_loss": 1.058487208667973,
+        "accuracy": 0.44583333333333336
+      },
+      "cached": {
+        "n": 240,
+        "brier": 0.6381406078516866,
+        "log_loss": 1.0558657831463136,
+        "accuracy": 0.45
+      },
+      "market": {
+        "n": 240,
+        "brier": 0.6252543752509803,
+        "log_loss": 1.0349920637949663,
+        "accuracy": 0.4666666666666667
+      },
+      "blends": {
+        "0.25": {
+          "n": 240,
+          "brier": 0.6266680439139087,
+          "log_loss": 1.0379600969297127,
+          "accuracy": 0.475
+        },
+        "0.5": {
+          "n": 240,
+          "brier": 0.6296270453161235,
+          "log_loss": 1.042880517154779,
+          "accuracy": 0.4666666666666667
+        },
+        "0.75": {
+          "n": 240,
+          "brier": 0.6341313794576245,
+          "log_loss": 1.049710011532624,
+          "accuracy": 0.4625
+        }
+      },
+      "selection": {
+        "open": {
+          "all_positive": {
+            "n": 275,
+            "matches": 209,
+            "wins": 73,
+            "roi": -0.01490909090909092,
+            "profit": -4.100000000000003,
+            "expected_roi": 0.19057125004415568,
+            "expected_wins": 84.26979311945159,
+            "observed_win_rate": 0.26545454545454544,
+            "mean_probability": 0.3064356113434603,
+            "mean_market_probability": 0.24956247916717766,
+            "outcomes": {
+              "H": 87,
+              "D": 75,
+              "A": 113
+            }
+          },
+          "gap_5pp": {
+            "n": 94,
+            "matches": 88,
+            "wins": 20,
+            "roi": -0.3225531914893617,
+            "profit": -30.32,
+            "expected_roi": 0.35348812356599824,
+            "expected_wins": 33.21922938756495,
+            "observed_win_rate": 0.2127659574468085,
+            "mean_probability": 0.3533960573145208,
+            "mean_market_probability": 0.2576897726168719,
+            "outcomes": {
+              "H": 37,
+              "D": 12,
+              "A": 45
+            }
+          },
+          "odds_at_most4": {
+            "n": 139,
+            "matches": 131,
+            "wins": 49,
+            "roi": 0.06776978417266187,
+            "profit": 9.42,
+            "expected_roi": 0.1305563994885547,
+            "expected_wins": 54.31186769429121,
+            "observed_win_rate": 0.35251798561151076,
+            "mean_probability": 0.3907328611100087,
+            "mean_market_probability": 0.32741539747633935,
+            "outcomes": {
+              "H": 60,
+              "D": 31,
+              "A": 48
+            }
+          },
+          "odds_above4": {
+            "n": 136,
+            "matches": 97,
+            "wins": 24,
+            "roi": -0.09941176470588235,
+            "profit": -13.52,
+            "expected_roi": 0.2519099575973067,
+            "expected_wins": 29.957925425160386,
+            "observed_win_rate": 0.17647058823529413,
+            "mean_probability": 0.22027886342029696,
+            "mean_market_probability": 0.16999221707178455,
+            "outcomes": {
+              "D": 44,
+              "A": 65,
+              "H": 27
+            }
+          }
+        },
+        "close": {
+          "all_positive": {
+            "n": 283,
+            "matches": 214,
+            "wins": 69,
+            "roi": -0.0919434628975265,
+            "profit": -26.02,
+            "expected_roi": 0.19682973739265053,
+            "expected_wins": 87.84161135243005,
+            "observed_win_rate": 0.24381625441696114,
+            "mean_probability": 0.31039438640434647,
+            "mean_market_probability": 0.2516295936101842,
+            "outcomes": {
+              "H": 90,
+              "D": 78,
+              "A": 115
+            }
+          },
+          "gap_5pp": {
+            "n": 93,
+            "matches": 88,
+            "wins": 22,
+            "roi": -0.1491397849462366,
+            "profit": -13.870000000000003,
+            "expected_roi": 0.36681212597444346,
+            "expected_wins": 34.43494251282908,
+            "observed_win_rate": 0.23655913978494625,
+            "mean_probability": 0.37026819906267827,
+            "mean_market_probability": 0.26670100247988093,
+            "outcomes": {
+              "H": 43,
+              "D": 12,
+              "A": 38
+            }
+          },
+          "odds_at_most4": {
+            "n": 126,
+            "matches": 119,
+            "wins": 43,
+            "roi": -0.032619047619047645,
+            "profit": -4.110000000000003,
+            "expected_roi": 0.1263430235406008,
+            "expected_wins": 51.775809306373915,
+            "observed_win_rate": 0.3412698412698413,
+            "mean_probability": 0.41091912147915804,
+            "mean_market_probability": 0.3459841421454608,
+            "outcomes": {
+              "H": 60,
+              "D": 22,
+              "A": 44
+            }
+          },
+          "odds_above4": {
+            "n": 157,
+            "matches": 106,
+            "wins": 26,
+            "roi": -0.1395541401273885,
+            "profit": -21.909999999999997,
+            "expected_roi": 0.2533986924586267,
+            "expected_wins": 36.06580204605613,
+            "observed_win_rate": 0.16560509554140126,
+            "mean_probability": 0.22971848436978426,
+            "mean_market_probability": 0.17590556102773305,
+            "outcomes": {
+              "H": 30,
+              "D": 56,
+              "A": 71
+            }
+          }
+        }
+      },
+      "calibration": {
+        "raw": [
+          {
+            "low": 0,
+            "high": 0.2,
+            "n": 71,
+            "predicted": 0.16174389491176974,
+            "observed": 0.2112676056338028
+          },
+          {
+            "low": 0.2,
+            "high": 0.4,
+            "n": 444,
+            "predicted": 0.2758656902794407,
+            "observed": 0.27927927927927926
+          },
+          {
+            "low": 0.4,
+            "high": 0.6,
+            "n": 170,
+            "predicted": 0.4877649743058567,
+            "observed": 0.4764705882352941
+          },
+          {
+            "low": 0.6,
+            "high": 0.8,
+            "n": 35,
+            "predicted": 0.6603363241484868,
+            "observed": 0.5714285714285714
+          }
+        ],
+        "market": [
+          {
+            "low": 0,
+            "high": 0.2,
+            "n": 110,
+            "predicted": 0.15050522878010025,
+            "observed": 0.14545454545454545
+          },
+          {
+            "low": 0.2,
+            "high": 0.4,
+            "n": 409,
+            "predicted": 0.2765198114938027,
+            "observed": 0.3105134474327628
+          },
+          {
+            "low": 0.4,
+            "high": 0.6,
+            "n": 140,
+            "predicted": 0.4939691498338297,
+            "observed": 0.42857142857142855
+          },
+          {
+            "low": 0.6,
+            "high": 0.8,
+            "n": 58,
+            "predicted": 0.6664400963896211,
+            "observed": 0.5862068965517241
+          },
+          {
+            "low": 0.8,
+            "high": 1,
+            "n": 3,
+            "predicted": 0.8462051219631513,
+            "observed": 1.0
+          }
+        ]
+      }
+    }
+  },
+  "expanding_season_folds": [
+    {
+      "test_season": "2020/21",
+      "training_matches": 240,
+      "fit": {
+        "iterations": 4,
+        "converged": true,
+        "parameters": [
+          0.9803860931241634,
+          0.2170624670084688,
+          0.05201642405998691
+        ]
+      },
+      "raw": {
+        "n": 238,
+        "brier": 0.6007050871882023,
+        "log_loss": 1.011262160430799,
+        "accuracy": 0.5084033613445378
+      },
+      "calibrated": {
+        "n": 238,
+        "brier": 0.6062916107263505,
+        "log_loss": 1.0200971997128525,
+        "accuracy": 0.49159663865546216
+      },
+      "market": {
+        "n": 238,
+        "brier": 0.5874902508401084,
+        "log_loss": 0.9917630535554994,
+        "accuracy": 0.5210084033613446
+      },
+      "calibrated_value": {
+        "n": 289,
+        "matches": 222,
+        "wins": 82,
+        "roi": 0.0035294117647058794,
+        "profit": 1.0199999999999991,
+        "expected_roi": 0.25669909099947136,
+        "expected_wins": 99.87655572127842,
+        "observed_win_rate": 0.2837370242214533,
+        "mean_probability": 0.3455936184127281,
+        "mean_market_probability": 0.27572960196683693,
+        "outcomes": {
+          "A": 88,
+          "H": 129,
+          "D": 72
+        }
+      }
+    },
+    {
+      "test_season": "2021/22",
+      "training_matches": 478,
+      "fit": {
+        "iterations": 4,
+        "converged": true,
+        "parameters": [
+          0.8949312442627284,
+          0.018057792832854507,
+          -0.17577249881489726
+        ]
+      },
+      "raw": {
+        "n": 239,
+        "brier": 0.5607716391919255,
+        "log_loss": 0.9471150769314846,
+        "accuracy": 0.5523012552301255
+      },
+      "calibrated": {
+        "n": 239,
+        "brier": 0.5594972662715395,
+        "log_loss": 0.9453060122843212,
+        "accuracy": 0.5481171548117155
+      },
+      "market": {
+        "n": 239,
+        "brier": 0.5434125080054677,
+        "log_loss": 0.9193723609062848,
+        "accuracy": 0.602510460251046
+      },
+      "calibrated_value": {
+        "n": 292,
+        "matches": 234,
+        "wins": 80,
+        "roi": -0.06445205479452056,
+        "profit": -18.82,
+        "expected_roi": 0.28689335943577177,
+        "expected_wins": 97.0734709224394,
+        "observed_win_rate": 0.273972602739726,
+        "mean_probability": 0.3324433935699979,
+        "mean_market_probability": 0.2673748544761058,
+        "outcomes": {
+          "H": 110,
+          "D": 41,
+          "A": 141
+        }
+      }
+    },
+    {
+      "test_season": "2022/23",
+      "training_matches": 717,
+      "fit": {
+        "iterations": 4,
+        "converged": true,
+        "parameters": [
+          0.9304817917874678,
+          0.013701575098972888,
+          -0.17865714886838052
+        ]
+      },
+      "raw": {
+        "n": 236,
+        "brier": 0.5738727500678251,
+        "log_loss": 0.9669163721294002,
+        "accuracy": 0.5508474576271186
+      },
+      "calibrated": {
+        "n": 236,
+        "brier": 0.5733034798823291,
+        "log_loss": 0.9668890702300668,
+        "accuracy": 0.5508474576271186
+      },
+      "market": {
+        "n": 236,
+        "brier": 0.5703546041418812,
+        "log_loss": 0.9591672766206288,
+        "accuracy": 0.5635593220338984
+      },
+      "calibrated_value": {
+        "n": 278,
+        "matches": 229,
+        "wins": 91,
+        "roi": 0.04550359712230216,
+        "profit": 12.65,
+        "expected_roi": 0.32048474768736734,
+        "expected_wins": 102.17262215326312,
+        "observed_win_rate": 0.3273381294964029,
+        "mean_probability": 0.36752741781749326,
+        "mean_market_probability": 0.2880065585999215,
+        "outcomes": {
+          "A": 119,
+          "H": 122,
+          "D": 37
+        }
+      }
+    },
+    {
+      "test_season": "2023/24",
+      "training_matches": 953,
+      "fit": {
+        "iterations": 4,
+        "converged": true,
+        "parameters": [
+          0.9631968886323017,
+          0.046726364169035646,
+          -0.13482243169826455
+        ]
+      },
+      "raw": {
+        "n": 240,
+        "brier": 0.5665174848242029,
+        "log_loss": 0.9602916572777418,
+        "accuracy": 0.5666666666666667
+      },
+      "calibrated": {
+        "n": 240,
+        "brier": 0.567594703790377,
+        "log_loss": 0.9626162778653641,
+        "accuracy": 0.5708333333333333
+      },
+      "market": {
+        "n": 240,
+        "brier": 0.529575936628289,
+        "log_loss": 0.9048858856082683,
+        "accuracy": 0.6
+      },
+      "calibrated_value": {
+        "n": 312,
+        "matches": 236,
+        "wins": 75,
+        "roi": -0.17461538461538462,
+        "profit": -54.48,
+        "expected_roi": 0.3540656323050011,
+        "expected_wins": 107.3672071646052,
+        "observed_win_rate": 0.2403846153846154,
+        "mean_probability": 0.34412566398911926,
+        "mean_market_probability": 0.26577107937629113,
+        "outcomes": {
+          "H": 149,
+          "D": 63,
+          "A": 100
+        }
+      }
+    },
+    {
+      "test_season": "2024/25",
+      "training_matches": 1193,
+      "fit": {
+        "iterations": 4,
+        "converged": true,
+        "parameters": [
+          0.9939295774133682,
+          0.024170717818325662,
+          -0.10726982822231901
+        ]
+      },
+      "raw": {
+        "n": 240,
+        "brier": 0.571929936954403,
+        "log_loss": 0.9618096671959068,
+        "accuracy": 0.5458333333333333
+      },
+      "calibrated": {
+        "n": 240,
+        "brier": 0.5727149022412686,
+        "log_loss": 0.9639845721165841,
+        "accuracy": 0.5333333333333333
+      },
+      "market": {
+        "n": 240,
+        "brier": 0.5813587501759064,
+        "log_loss": 0.9735142202483916,
+        "accuracy": 0.5625
+      },
+      "calibrated_value": {
+        "n": 284,
+        "matches": 235,
+        "wins": 91,
+        "roi": 0.10204225352112677,
+        "profit": 28.98,
+        "expected_roi": 0.3173810641005935,
+        "expected_wins": 102.8791386585627,
+        "observed_win_rate": 0.3204225352112676,
+        "mean_probability": 0.36225048823437567,
+        "mean_market_probability": 0.2824786505849557,
+        "outcomes": {
+          "A": 172,
+          "H": 69,
+          "D": 43
+        }
+      }
+    },
+    {
+      "test_season": "2025/26",
+      "training_matches": 1433,
+      "fit": {
+        "iterations": 4,
+        "converged": true,
+        "parameters": [
+          1.0268961874325944,
+          0.005597832327681596,
+          -0.07481165221733643
+        ]
+      },
+      "raw": {
+        "n": 240,
+        "brier": 0.640181046338412,
+        "log_loss": 1.058487208667973,
+        "accuracy": 0.44583333333333336
+      },
+      "calibrated": {
+        "n": 240,
+        "brier": 0.6441209751651826,
+        "log_loss": 1.0653452704083912,
+        "accuracy": 0.44583333333333336
+      },
+      "market": {
+        "n": 240,
+        "brier": 0.6252543752509803,
+        "log_loss": 1.0349920637949663,
+        "accuracy": 0.4666666666666667
+      },
+      "calibrated_value": {
+        "n": 262,
+        "matches": 215,
+        "wins": 67,
+        "roi": -0.09576335877862598,
+        "profit": -25.090000000000007,
+        "expected_roi": 0.20689207950815167,
+        "expected_wins": 84.6484919708505,
+        "observed_win_rate": 0.25572519083969464,
+        "mean_probability": 0.32308584721698663,
+        "mean_market_probability": 0.2590740570586806,
+        "outcomes": {
+          "H": 97,
+          "A": 119,
+          "D": 46
+        }
+      }
+    }
+  ],
+  "roi_uncertainty": {
+    "development": {
+      "roi_95pct_week_bootstrap": [
+        -0.0714305391056451,
+        0.08154247518678653
+      ],
+      "weeks": 133,
+      "draws": 2000,
+      "seed": 20261020
+    },
+    "stress_2025_26": {
+      "roi_95pct_week_bootstrap": [
+        -0.26695551470588236,
+        0.08339684699103687
+      ],
+      "weeks": 23,
+      "draws": 2000,
+      "seed": 20261020
+    }
+  },
+  "walk_forward_2020_25": {
+    "raw": {
+      "n": 1193,
+      "brier": 0.5747305806877908,
+      "log_loss": 0.9694362776742406,
+      "accuracy": 0.5448449287510477
+    },
+    "market": {
+      "n": 1193,
+      "brier": 0.5623858177064068,
+      "log_loss": 0.9496639595061842,
+      "accuracy": 0.5699916177703269
+    },
+    "calibrated": {
+      "n": 1193,
+      "brier": 0.5758517826417385,
+      "log_loss": 0.9717362070725692,
+      "accuracy": 0.5389773679798826
+    },
+    "calibration_vs_raw": {
+      "delta_brier": 0.0011212019539476056,
+      "brier_95pct_week_bootstrap": [
+        -0.0010342306549934574,
+        0.003306833015606722
+      ],
+      "delta_log_loss": 0.0022999293983284866,
+      "log_loss_95pct_week_bootstrap": [
+        -0.0013836066729503078,
+        0.006304687858160345
+      ],
+      "weeks": 112
+    },
+    "raw_vs_market": {
+      "delta_brier": 0.012344762981384014,
+      "brier_95pct_week_bootstrap": [
+        0.003029731597042568,
+        0.021486513805166654
+      ],
+      "delta_log_loss": 0.01977231816805651,
+      "log_loss_95pct_week_bootstrap": [
+        0.00647093860314683,
+        0.03273577972165589
+      ],
+      "weeks": 112
+    },
+    "blend25model_vs_market": {
+      "delta_brier": -0.0004765987557297107,
+      "brier_95pct_week_bootstrap": [
+        -0.0027447258479953683,
+        0.001807661601092335
+      ],
+      "delta_log_loss": -0.00043875379392451587,
+      "log_loss_95pct_week_bootstrap": [
+        -0.0038298876276214567,
+        0.002912670797643494
+      ],
+      "weeks": 112
+    },
+    "calibrated_value": {
+      "n": 1455,
+      "matches": 1156,
+      "wins": 419,
+      "roi": -0.021065292096219934,
+      "profit": -30.650000000000002,
+      "expected_roi": 0.3076689742920341,
+      "expected_wins": 509.36899462014884,
+      "observed_win_rate": 0.28797250859106527,
+      "mean_probability": 0.35008178324408856,
+      "mean_market_probability": 0.27558051498126956,
+      "outcomes": {
+        "A": 620,
+        "H": 579,
+        "D": 256
+      }
+    }
+  },
+  "frozen_2026": {
+    "audit": [
+      {
+        "fixture_id": 1,
+        "eligible": false,
+        "issues": [],
+        "round": 3
+      },
+      {
+        "fixture_id": 2,
+        "eligible": true,
+        "issues": [],
+        "round": 3
+      },
+      {
+        "fixture_id": 3,
+        "eligible": true,
+        "issues": [],
+        "round": 3
+      },
+      {
+        "fixture_id": 4,
+        "eligible": true,
+        "issues": [],
+        "round": 3
+      },
+      {
+        "fixture_id": 5,
+        "eligible": true,
+        "issues": [],
+        "round": 3
+      },
+      {
+        "fixture_id": 6,
+        "eligible": true,
+        "issues": [],
+        "round": 3
+      },
+      {
+        "fixture_id": 7,
+        "eligible": false,
+        "issues": [],
+        "round": 3
+      },
+      {
+        "fixture_id": 8,
+        "eligible": false,
+        "issues": [],
+        "round": 3
+      },
+      {
+        "fixture_id": 9,
+        "eligible": true,
+        "issues": [],
+        "round": 3
+      },
+      {
+        "fixture_id": 10,
+        "eligible": true,
+        "issues": [],
+        "round": 3
+      },
+      {
+        "fixture_id": 31,
+        "eligible": true,
+        "issues": [],
+        "round": 4
+      },
+      {
+        "fixture_id": 32,
+        "eligible": true,
+        "issues": [],
+        "round": 4
+      },
+      {
+        "fixture_id": 33,
+        "eligible": false,
+        "issues": [],
+        "round": 4
+      },
+      {
+        "fixture_id": 34,
+        "eligible": false,
+        "issues": [],
+        "round": 4
+      },
+      {
+        "fixture_id": 35,
+        "eligible": true,
+        "issues": [],
+        "round": 4
+      },
+      {
+        "fixture_id": 36,
+        "eligible": true,
+        "issues": [],
+        "round": 4
+      },
+      {
+        "fixture_id": 37,
+        "eligible": true,
+        "issues": [],
+        "round": 4
+      },
+      {
+        "fixture_id": 38,
+        "eligible": false,
+        "issues": [],
+        "round": 4
+      },
+      {
+        "fixture_id": 39,
+        "eligible": true,
+        "issues": [],
+        "round": 4
+      },
+      {
+        "fixture_id": 40,
+        "eligible": true,
+        "issues": [],
+        "round": 4
+      },
+      {
+        "fixture_id": 51,
+        "eligible": true,
+        "issues": [],
+        "round": 6
+      },
+      {
+        "fixture_id": 52,
+        "eligible": true,
+        "issues": [],
+        "round": 6
+      },
+      {
+        "fixture_id": 53,
+        "eligible": true,
+        "issues": [],
+        "round": 6
+      },
+      {
+        "fixture_id": 54,
+        "eligible": false,
+        "issues": [],
+        "round": 6
+      },
+      {
+        "fixture_id": 55,
+        "eligible": true,
+        "issues": [],
+        "round": 6
+      },
+      {
+        "fixture_id": 56,
+        "eligible": false,
+        "issues": [],
+        "round": 6
+      },
+      {
+        "fixture_id": 57,
+        "eligible": false,
+        "issues": [],
+        "round": 6
+      },
+      {
+        "fixture_id": 58,
+        "eligible": true,
+        "issues": [],
+        "round": 6
+      },
+      {
+        "fixture_id": 59,
+        "eligible": true,
+        "issues": [],
+        "round": 6
+      },
+      {
+        "fixture_id": 60,
+        "eligible": true,
+        "issues": [],
+        "round": 6
+      },
+      {
+        "fixture_id": 61,
+        "eligible": true,
+        "issues": [],
+        "round": 7
+      },
+      {
+        "fixture_id": 62,
+        "eligible": true,
+        "issues": [],
+        "round": 7
+      },
+      {
+        "fixture_id": 63,
+        "eligible": true,
+        "issues": [],
+        "round": 7
+      },
+      {
+        "fixture_id": 64,
+        "eligible": true,
+        "issues": [],
+        "round": 7
+      },
+      {
+        "fixture_id": 65,
+        "eligible": false,
+        "issues": [],
+        "round": 7
+      },
+      {
+        "fixture_id": 66,
+        "eligible": true,
+        "issues": [],
+        "round": 7
+      },
+      {
+        "fixture_id": 67,
+        "eligible": false,
+        "issues": [],
+        "round": 7
+      },
+      {
+        "fixture_id": 68,
+        "eligible": true,
+        "issues": [],
+        "round": 7
+      },
+      {
+        "fixture_id": 69,
+        "eligible": true,
+        "issues": [],
+        "round": 7
+      },
+      {
+        "fixture_id": 70,
+        "eligible": false,
+        "issues": [],
+        "round": 7
+      }
+    ],
+    "valid": {
+      "n": 28,
+      "research": {
+        "n": 28,
+        "brier": 0.6418756790847645,
+        "log_loss": 1.0603976698164366,
+        "accuracy": 0.32142857142857145
+      },
+      "primary": {
+        "n": 28,
+        "brier": 0.6654003880911424,
+        "log_loss": 1.0906515549907685,
+        "accuracy": 0.39285714285714285
+      },
+      "market": {
+        "n": 28,
+        "brier": 0.619274998284204,
+        "log_loss": 1.0278890225326505,
+        "accuracy": 0.4642857142857143
+      },
+      "research_selection": {
+        "all_positive": {
+          "n": 38,
+          "matches": 28,
+          "wins": 12,
+          "roi": 0.017825484764542942,
+          "profit": 0.6773684210526318,
+          "expected_roi": 0.18152693047759333,
+          "expected_wins": 12.936714831076522,
+          "observed_win_rate": 0.3157894736842105,
+          "mean_probability": 0.3404398639756979,
+          "mean_market_probability": 0.29084059789129774,
+          "outcomes": {
+            "A": 15,
+            "H": 12,
+            "D": 11
+          }
+        },
+        "gap_5pp": {
+          "n": 13,
+          "matches": 12,
+          "wins": 1,
+          "roi": -0.8153846153846154,
+          "profit": -10.6,
+          "expected_roi": 0.35581805388266624,
+          "expected_wins": 4.490401488746127,
+          "observed_win_rate": 0.07692307692307693,
+          "mean_probability": 0.3454154991343175,
+          "mean_market_probability": 0.2598046899961638,
+          "outcomes": {
+            "A": 8,
+            "H": 3,
+            "D": 2
+          }
+        },
+        "odds_at_most4": {
+          "n": 26,
+          "matches": 23,
+          "wins": 11,
+          "roi": 0.2952834008097166,
+          "profit": 7.677368421052632,
+          "expected_roi": 0.10776191959578285,
+          "expected_wins": 10.033037724439263,
+          "observed_win_rate": 0.4230769230769231,
+          "mean_probability": 0.385886066324587,
+          "mean_market_probability": 0.3430828706403251,
+          "outcomes": {
+            "A": 10,
+            "H": 10,
+            "D": 6
+          }
+        },
+        "odds_above4": {
+          "n": 12,
+          "matches": 7,
+          "wins": 1,
+          "roi": -0.5833333333333334,
+          "profit": -7,
+          "expected_roi": 0.341351120721516,
+          "expected_wins": 2.903677106637259,
+          "observed_win_rate": 0.08333333333333333,
+          "mean_probability": 0.2419730922197716,
+          "mean_market_probability": 0.17764900693507166,
+          "outcomes": {
+            "A": 5,
+            "D": 5,
+            "H": 2
+          }
+        }
+      },
+      "primary_selection": {
+        "n": 37,
+        "matches": 27,
+        "wins": 9,
+        "roi": -0.23972972972972975,
+        "profit": -8.870000000000001,
+        "expected_roi": 0.2604870510844752,
+        "expected_wins": 13.682501974800704,
+        "observed_win_rate": 0.24324324324324326,
+        "mean_probability": 0.3697973506702893,
+        "mean_market_probability": 0.29348131763087404,
+        "outcomes": {
+          "A": 12,
+          "H": 15,
+          "D": 10
+        }
+      }
+    },
+    "by_round": {
+      "3": {
+        "n": 7,
+        "research": {
+          "n": 7,
+          "brier": 0.727136811534657,
+          "log_loss": 1.1818455239008911,
+          "accuracy": 0.14285714285714285
+        },
+        "primary": {
+          "n": 7,
+          "brier": 0.7489460064770064,
+          "log_loss": 1.2109780917707156,
+          "accuracy": 0.14285714285714285
+        },
+        "market": {
+          "n": 7,
+          "brier": 0.7484141522829505,
+          "log_loss": 1.2067654353037391,
+          "accuracy": 0.14285714285714285
+        },
+        "research_selection": {
+          "all_positive": {
+            "n": 10,
+            "matches": 7,
+            "wins": 5,
+            "roi": 0.653,
+            "profit": 6.53,
+            "expected_roi": 0.08656400709501841,
+            "expected_wins": 3.495640502409274,
+            "observed_win_rate": 0.5,
+            "mean_probability": 0.3495640502409274,
+            "mean_market_probability": 0.31850891181075697,
+            "outcomes": {
+              "A": 2,
+              "H": 4,
+              "D": 4
+            }
+          },
+          "gap_5pp": {
+            "n": 1,
+            "matches": 1,
+            "wins": 0,
+            "roi": -1.0,
+            "profit": -1,
+            "expected_roi": 0.2510161950397516,
+            "expected_wins": 0.367945939717574,
+            "observed_win_rate": 0.0,
+            "mean_probability": 0.367945939717574,
+            "mean_market_probability": 0.2876760563380282,
+            "outcomes": {
+              "A": 1
+            }
+          },
+          "odds_at_most4": {
+            "n": 9,
+            "matches": 7,
+            "wins": 5,
+            "roi": 0.8366666666666667,
+            "profit": 7.53,
+            "expected_roi": 0.07156015987092995,
+            "expected_wins": 3.283188566389828,
+            "observed_win_rate": 0.5555555555555556,
+            "mean_probability": 0.3647987295988698,
+            "mean_market_probability": 0.33502641312877324,
+            "outcomes": {
+              "A": 1,
+              "H": 4,
+              "D": 4
+            }
+          },
+          "odds_above4": {
+            "n": 1,
+            "matches": 1,
+            "wins": 0,
+            "roi": -1.0,
+            "profit": -1,
+            "expected_roi": 0.22159863211181463,
+            "expected_wins": 0.212451936019446,
+            "observed_win_rate": 0.0,
+            "mean_probability": 0.212451936019446,
+            "mean_market_probability": 0.16985139994861018,
+            "outcomes": {
+              "A": 1
+            }
+          }
+        },
+        "primary_selection": {
+          "n": 9,
+          "matches": 7,
+          "wins": 3,
+          "roi": -0.00777777777777776,
+          "profit": -0.06999999999999984,
+          "expected_roi": 0.16513140917142388,
+          "expected_wins": 3.6745621725341193,
+          "observed_win_rate": 0.3333333333333333,
+          "mean_probability": 0.40828468583712435,
+          "mean_market_probability": 0.3496039027631202,
+          "outcomes": {
+            "A": 2,
+            "H": 5,
+            "D": 2
+          }
+        }
+      },
+      "4": {
+        "n": 7,
+        "research": {
+          "n": 7,
+          "brier": 0.6574073758727585,
+          "log_loss": 1.0855593588478587,
+          "accuracy": 0.2857142857142857
+        },
+        "primary": {
+          "n": 7,
+          "brier": 0.6350558372765882,
+          "log_loss": 1.0477574227830566,
+          "accuracy": 0.5714285714285714
+        },
+        "market": {
+          "n": 7,
+          "brier": 0.6751747020670614,
+          "log_loss": 1.1017818390907863,
+          "accuracy": 0.42857142857142855
+        },
+        "research_selection": {
+          "all_positive": {
+            "n": 9,
+            "matches": 7,
+            "wins": 3,
+            "roi": 0.18888888888888886,
+            "profit": 1.6999999999999997,
+            "expected_roi": 0.23548131501897224,
+            "expected_wins": 2.9361960542438412,
+            "observed_win_rate": 0.3333333333333333,
+            "mean_probability": 0.32624400602709347,
+            "mean_market_probability": 0.26055968598158197,
+            "outcomes": {
+              "A": 3,
+              "H": 4,
+              "D": 2
+            }
+          },
+          "gap_5pp": {
+            "n": 4,
+            "matches": 4,
+            "wins": 0,
+            "roi": -1.0,
+            "profit": -4,
+            "expected_roi": 0.3240689138574552,
+            "expected_wins": 1.456837008976554,
+            "observed_win_rate": 0.0,
+            "mean_probability": 0.3642092522441385,
+            "mean_market_probability": 0.27499991444617045,
+            "outcomes": {
+              "H": 2,
+              "A": 2
+            }
+          },
+          "odds_at_most4": {
+            "n": 5,
+            "matches": 5,
+            "wins": 2,
+            "roi": 0.13999999999999996,
+            "profit": 0.6999999999999997,
+            "expected_roi": 0.1867398951703847,
+            "expected_wins": 1.99672911523875,
+            "observed_win_rate": 0.4,
+            "mean_probability": 0.39934582304775,
+            "mean_market_probability": 0.3286331032160454,
+            "outcomes": {
+              "A": 2,
+              "H": 3
+            }
+          },
+          "odds_above4": {
+            "n": 4,
+            "matches": 2,
+            "wins": 1,
+            "roi": 0.25,
+            "profit": 1,
+            "expected_roi": 0.2964080898297066,
+            "expected_wins": 0.939466939005091,
+            "observed_win_rate": 0.25,
+            "mean_probability": 0.23486673475127276,
+            "mean_market_probability": 0.17546791443850268,
+            "outcomes": {
+              "D": 2,
+              "A": 1,
+              "H": 1
+            }
+          }
+        },
+        "primary_selection": {
+          "n": 10,
+          "matches": 7,
+          "wins": 3,
+          "roi": 0.06999999999999998,
+          "profit": 0.6999999999999997,
+          "expected_roi": 0.30519262443826783,
+          "expected_wins": 3.4765082890383487,
+          "observed_win_rate": 0.3,
+          "mean_probability": 0.34765082890383486,
+          "mean_market_probability": 0.26115493406940293,
+          "outcomes": {
+            "A": 3,
+            "H": 4,
+            "D": 3
+          }
+        }
+      },
+      "6": {
+        "n": 7,
+        "research": {
+          "n": 7,
+          "brier": 0.6129693671847621,
+          "log_loss": 1.0158385405525172,
+          "accuracy": 0.42857142857142855
+        },
+        "primary": {
+          "n": 7,
+          "brier": 0.6301221393547991,
+          "log_loss": 1.043747573201094,
+          "accuracy": 0.42857142857142855
+        },
+        "market": {
+          "n": 7,
+          "brier": 0.5479037399031785,
+          "log_loss": 0.9299582887101695,
+          "accuracy": 0.7142857142857143
+        },
+        "research_selection": {
+          "all_positive": {
+            "n": 9,
+            "matches": 7,
+            "wins": 2,
+            "roi": -0.46666666666666656,
+            "profit": -4.199999999999999,
+            "expected_roi": 0.2658050847273845,
+            "expected_wins": 3.407482301777842,
+            "observed_win_rate": 0.2222222222222222,
+            "mean_probability": 0.3786091446419825,
+            "mean_market_probability": 0.31572877064678323,
+            "outcomes": {
+              "D": 2,
+              "A": 6,
+              "H": 1
+            }
+          },
+          "gap_5pp": {
+            "n": 5,
+            "matches": 4,
+            "wins": 1,
+            "roi": -0.52,
+            "profit": -2.6,
+            "expected_roi": 0.4281194940339583,
+            "expected_wins": 1.715761811874149,
+            "observed_win_rate": 0.2,
+            "mean_probability": 0.34315236237482977,
+            "mean_market_probability": 0.25496428009804517,
+            "outcomes": {
+              "D": 1,
+              "A": 4
+            }
+          },
+          "odds_at_most4": {
+            "n": 5,
+            "matches": 5,
+            "wins": 2,
+            "roi": -0.040000000000000036,
+            "profit": -0.20000000000000018,
+            "expected_roi": 0.09229146589147086,
+            "expected_wins": 2.333793193542836,
+            "observed_win_rate": 0.4,
+            "mean_probability": 0.4667586387085672,
+            "mean_market_probability": 0.42273806025356697,
+            "outcomes": {
+              "A": 4,
+              "H": 1
+            }
+          },
+          "odds_above4": {
+            "n": 4,
+            "matches": 2,
+            "wins": 0,
+            "roi": -1.0,
+            "profit": -4,
+            "expected_roi": 0.4826971082722766,
+            "expected_wins": 1.073689108235006,
+            "observed_win_rate": 0.0,
+            "mean_probability": 0.2684222770587515,
+            "mean_market_probability": 0.18196715863830354,
+            "outcomes": {
+              "D": 2,
+              "A": 2
+            }
+          }
+        },
+        "primary_selection": {
+          "n": 8,
+          "matches": 6,
+          "wins": 2,
+          "roi": -0.39999999999999997,
+          "profit": -3.1999999999999997,
+          "expected_roi": 0.3514176060277371,
+          "expected_wins": 2.9784512009598667,
+          "observed_win_rate": 0.25,
+          "mean_probability": 0.37230640011998334,
+          "mean_market_probability": 0.2828698974534985,
+          "outcomes": {
+            "D": 2,
+            "A": 5,
+            "H": 1
+          }
+        }
+      },
+      "7": {
+        "n": 7,
+        "research": {
+          "n": 7,
+          "brier": 0.5699891617468806,
+          "log_loss": 0.9583472559644791,
+          "accuracy": 0.42857142857142855
+        },
+        "primary": {
+          "n": 7,
+          "brier": 0.6474775692561765,
+          "log_loss": 1.060123132208208,
+          "accuracy": 0.42857142857142855
+        },
+        "market": {
+          "n": 7,
+          "brier": 0.5056073988836254,
+          "log_loss": 0.8730505270259071,
+          "accuracy": 0.5714285714285714
+        },
+        "research_selection": {
+          "all_positive": {
+            "n": 10,
+            "matches": 7,
+            "wins": 2,
+            "roi": -0.3352631578947368,
+            "profit": -3.352631578947368,
+            "expected_roi": 0.1520805689481152,
+            "expected_wins": 3.0973959726455638,
+            "observed_win_rate": 0.2,
+            "mean_probability": 0.30973959726455635,
+            "mean_market_probability": 0.26802574921064576,
+            "outcomes": {
+              "A": 4,
+              "H": 3,
+              "D": 3
+            }
+          },
+          "gap_5pp": {
+            "n": 3,
+            "matches": 3,
+            "wins": 0,
+            "roi": -1.0,
+            "profit": -3,
+            "expected_roi": 0.31258179327843255,
+            "expected_wins": 0.94985672817785,
+            "observed_win_rate": 0.0,
+            "mean_probability": 0.31661890939261667,
+            "mean_market_probability": 0.23832128511239795,
+            "outcomes": {
+              "A": 1,
+              "H": 1,
+              "D": 1
+            }
+          },
+          "odds_at_most4": {
+            "n": 7,
+            "matches": 6,
+            "wins": 2,
+            "roi": -0.050375939849624,
+            "profit": -0.35263157894736796,
+            "expected_roi": 0.10894452362038669,
+            "expected_wins": 2.419326849267848,
+            "observed_win_rate": 0.2857142857142857,
+            "mean_probability": 0.3456181213239783,
+            "mean_market_probability": 0.30686587159163325,
+            "outcomes": {
+              "A": 3,
+              "H": 2,
+              "D": 2
+            }
+          },
+          "odds_above4": {
+            "n": 3,
+            "matches": 2,
+            "wins": 0,
+            "roi": -1.0,
+            "profit": -3,
+            "expected_roi": 0.25273134137948167,
+            "expected_wins": 0.6780691233777161,
+            "observed_win_rate": 0.0,
+            "mean_probability": 0.22602304112590535,
+            "mean_market_probability": 0.1773987969883415,
+            "outcomes": {
+              "D": 1,
+              "A": 1,
+              "H": 1
+            }
+          }
+        },
+        "primary_selection": {
+          "n": 10,
+          "matches": 7,
+          "wins": 1,
+          "roi": -0.63,
+          "profit": -6.3,
+          "expected_roi": 0.22885711149781915,
+          "expected_wins": 3.5529803122683705,
+          "observed_win_rate": 0.1,
+          "mean_probability": 0.35529803122683706,
+          "mean_market_probability": 0.2837865107152239,
+          "outcomes": {
+            "A": 2,
+            "H": 5,
+            "D": 3
+          }
+        }
+      }
+    },
+    "probability_calibration": {
+      "research": [
+        {
+          "low": 0,
+          "high": 0.2,
+          "n": 5,
+          "predicted": 0.18140416858279879,
+          "observed": 0.0
+        },
+        {
+          "low": 0.2,
+          "high": 0.4,
+          "n": 56,
+          "predicted": 0.2900622080701378,
+          "observed": 0.3392857142857143
+        },
+        {
+          "low": 0.4,
+          "high": 0.6,
+          "n": 23,
+          "predicted": 0.4717171958764474,
+          "observed": 0.391304347826087
+        }
+      ],
+      "market": [
+        {
+          "low": 0,
+          "high": 0.2,
+          "n": 9,
+          "predicted": 0.161699272090254,
+          "observed": 0.1111111111111111
+        },
+        {
+          "low": 0.2,
+          "high": 0.4,
+          "n": 53,
+          "predicted": 0.2896107074060544,
+          "observed": 0.3018867924528302
+        },
+        {
+          "low": 0.4,
+          "high": 0.6,
+          "n": 18,
+          "predicted": 0.4756400127470884,
+          "observed": 0.4444444444444444
+        },
+        {
+          "low": 0.6,
+          "high": 0.8,
+          "n": 4,
+          "predicted": 0.6584547073048099,
+          "observed": 0.75
+        }
+      ]
+    },
+    "all_eligible": [
+      {
+        "match_id": "26-27-prem-newcastle-united-vs-afc-bournemouth",
+        "fixture_id": 2,
+        "season": "2026/27",
+        "round": 3,
+        "kickoff_time": "2026-09-05T11:30:00+00:00",
+        "home_team": "Newcastle United",
+        "away_team": "AFC Bournemouth",
+        "p": [
+          0.38550070125734,
+          0.246553359025086,
+          0.367945939717574
+        ],
+        "primary": [
+          0.3746595473809896,
+          0.22599098107657167,
+          0.39934947154243877
+        ],
+        "close_odds": [
+          2.15,
+          3.8,
+          3.4
+        ],
+        "open_odds": [
+          2.15,
+          3.8,
+          3.4
+        ],
+        "close_market": [
+          0.45492957746478874,
+          0.2573943661971831,
+          0.2876760563380282
+        ],
+        "open_market": [
+          0.45492957746478874,
+          0.2573943661971831,
+          0.2876760563380282
+        ],
+        "y": 1,
+        "result": [
+          2,
+          2
+        ],
+        "issues": []
+      },
+      {
+        "match_id": "26-27-prem-nottingham-forest-vs-tottenham-hotspur",
+        "fixture_id": 3,
+        "season": "2026/27",
+        "round": 3,
+        "kickoff_time": "2026-09-05T14:00:00+00:00",
+        "home_team": "Nottingham Forest",
+        "away_team": "Tottenham Hotspur",
+        "p": [
+          0.433121691319754,
+          0.317117833103017,
+          0.249760475577229
+        ],
+        "primary": [
+          0.4419403971993513,
+          0.33469587992743755,
+          0.22336372287321116
+        ],
+        "close_odds": [
+          2.5,
+          3.5,
+          3
+        ],
+        "open_odds": [
+          2.5,
+          3.5,
+          3
+        ],
+        "close_market": [
+          0.39252336448598135,
+          0.2803738317757009,
+          0.32710280373831774
+        ],
+        "open_market": [
+          0.39252336448598135,
+          0.2803738317757009,
+          0.32710280373831774
+        ],
+        "y": 1,
+        "result": [
+          0,
+          0
+        ],
+        "issues": []
+      },
+      {
+        "match_id": "26-27-prem-brentford-vs-sunderland",
+        "fixture_id": 4,
+        "season": "2026/27",
+        "round": 3,
+        "kickoff_time": "2026-09-05T14:00:00+00:00",
+        "home_team": "Brentford",
+        "away_team": "Sunderland",
+        "p": [
+          0.532445174644409,
+          0.255102889336145,
+          0.212451936019446
+        ],
+        "primary": [
+          0.5516462875704754,
+          0.2290959922773462,
+          0.21925772015217837
+        ],
+        "close_odds": [
+          1.666667,
+          4,
+          5.75
+        ],
+        "open_odds": [
+          1.666667,
+          4,
+          5.75
+        ],
+        "close_market": [
+          0.5859872126252627,
+          0.24416138742612714,
+          0.16985139994861018
+        ],
+        "open_market": [
+          0.5859872126252627,
+          0.24416138742612714,
+          0.16985139994861018
+        ],
+        "y": 1,
+        "result": [
+          1,
+          1
+        ],
+        "issues": []
+      },
+      {
+        "match_id": "26-27-prem-brighton-hove-albion-vs-leeds-united",
+        "fixture_id": 5,
+        "season": "2026/27",
+        "round": 3,
+        "kickoff_time": "2026-09-05T14:00:00+00:00",
+        "home_team": "Brighton & Hove Albion",
+        "away_team": "Leeds United",
+        "p": [
+          0.462994284853387,
+          0.283216330999215,
+          0.253789384147398
+        ],
+        "primary": [
+          0.5297563382277481,
+          0.2621058061897626,
+          0.20813785558248935
+        ],
+        "close_odds": [
+          2.05,
+          3.6,
+          3.9
+        ],
+        "open_odds": [
+          2.05,
+          3.6,
+          3.9
+        ],
+        "close_market": [
+          0.47730749617542073,
+          0.27180010198878124,
+          0.2508924018357981
+        ],
+        "open_market": [
+          0.47730749617542073,
+          0.27180010198878124,
+          0.2508924018357981
+        ],
+        "y": 1,
+        "result": [
+          1,
+          1
+        ],
+        "issues": []
+      },
+      {
+        "match_id": "26-27-prem-fulham-vs-crystal-palace",
+        "fixture_id": 6,
+        "season": "2026/27",
+        "round": 3,
+        "kickoff_time": "2026-09-05T14:00:00+00:00",
+        "home_team": "Fulham",
+        "away_team": "Crystal Palace",
+        "p": [
+          0.452221538718136,
+          0.274025688364856,
+          0.273752772917008
+        ],
+        "primary": [
+          0.4893892360748284,
+          0.2476253069560974,
+          0.26298545696907416
+        ],
+        "close_odds": [
+          2.35,
+          3.5,
+          3.3
+        ],
+        "open_odds": [
+          2.35,
+          3.5,
+          3.3
+        ],
+        "close_market": [
+          0.4195423174718489,
+          0.28169269887395565,
+          0.29876498365419546
+        ],
+        "open_market": [
+          0.4195423174718489,
+          0.28169269887395565,
+          0.29876498365419546
+        ],
+        "y": 2,
+        "result": [
+          2,
+          3
+        ],
+        "issues": []
+      },
+      {
+        "match_id": "26-27-prem-everton-vs-manchester-united",
+        "fixture_id": 9,
+        "season": "2026/27",
+        "round": 3,
+        "kickoff_time": "2026-09-06T13:00:00+00:00",
+        "home_team": "Everton",
+        "away_team": "Manchester United",
+        "p": [
+          0.306266058594062,
+          0.281377392450842,
+          0.412356548955095
+        ],
+        "primary": [
+          0.3654556510999187,
+          0.2867514549847493,
+          0.3477928939153321
+        ],
+        "close_odds": [
+          3.4,
+          3.7,
+          2.15
+        ],
+        "open_odds": [
+          3.4,
+          3.7,
+          2.15
+        ],
+        "close_market": [
+          0.2856886335069133,
+          0.26252469024959596,
+          0.4517866762434908
+        ],
+        "open_market": [
+          0.2856886335069133,
+          0.26252469024959596,
+          0.4517866762434908
+        ],
+        "y": 1,
+        "result": [
+          2,
+          2
+        ],
+        "issues": []
+      },
+      {
+        "match_id": "26-27-prem-arsenal-vs-chelsea",
+        "fixture_id": 10,
+        "season": "2026/27",
+        "round": 3,
+        "kickoff_time": "2026-09-06T15:30:00+00:00",
+        "home_team": "Arsenal",
+        "away_team": "Chelsea",
+        "p": [
+          0.586818892151083,
+          0.242356846155218,
+          0.170824261693699
+        ],
+        "primary": [
+          0.607966023325469,
+          0.23429745978014208,
+          0.1577365168943889
+        ],
+        "close_odds": [
+          1.73,
+          4.1,
+          5.25
+        ],
+        "open_odds": [
+          1.73,
+          4.1,
+          5.25
+        ],
+        "close_market": [
+          0.5709473349159825,
+          0.24091192424503652,
+          0.18814074083898089
+        ],
+        "open_market": [
+          0.5709473349159825,
+          0.24091192424503652,
+          0.18814074083898089
+        ],
+        "y": 0,
+        "result": [
+          2,
+          1
+        ],
+        "issues": []
+      },
+      {
+        "match_id": "26-27-prem-aston-villa-vs-nottingham-forest",
+        "fixture_id": 31,
+        "season": "2026/27",
+        "round": 4,
+        "kickoff_time": "2026-09-12T14:00:00+00:00",
+        "home_team": "Aston Villa",
+        "away_team": "Nottingham Forest",
+        "p": [
+          0.400557240250075,
+          0.262574727731487,
+          0.336868032018438
+        ],
+        "primary": [
+          0.3501013960682091,
+          0.22413324349460248,
+          0.4257653604371883
+        ],
+        "close_odds": [
+          2.2,
+          3.5,
+          3.3
+        ],
+        "open_odds": [
+          2.2,
+          3.5,
+          3.3
+        ],
+        "close_market": [
+          0.4356846473029045,
+          0.2738589211618257,
+          0.2904564315352697
+        ],
+        "open_market": [
+          0.4356846473029045,
+          0.2738589211618257,
+          0.2904564315352697
+        ],
+        "y": 2,
+        "result": [
+          1,
+          2
+        ],
+        "issues": []
+      },
+      {
+        "match_id": "26-27-prem-afc-bournemouth-vs-brentford",
+        "fixture_id": 32,
+        "season": "2026/27",
+        "round": 4,
+        "kickoff_time": "2026-09-12T14:00:00+00:00",
+        "home_team": "AFC Bournemouth",
+        "away_team": "Brentford",
+        "p": [
+          0.454116021041101,
+          0.245878874949792,
+          0.300005104009107
+        ],
+        "primary": [
+          0.5186352017369165,
+          0.24814361598238308,
+          0.23322118228070046
+        ],
+        "close_odds": [
+          2.5,
+          3.75,
+          2.7
+        ],
+        "open_odds": [
+          2.5,
+          3.75,
+          2.7
+        ],
+        "close_market": [
+          0.38571428571428573,
+          0.2571428571428572,
+          0.35714285714285715
+        ],
+        "open_market": [
+          0.38571428571428573,
+          0.2571428571428572,
+          0.35714285714285715
+        ],
+        "y": 1,
+        "result": [
+          2,
+          2
+        ],
+        "issues": []
+      },
+      {
+        "match_id": "26-27-prem-liverpool-vs-fulham",
+        "fixture_id": 35,
+        "season": "2026/27",
+        "round": 4,
+        "kickoff_time": "2026-09-12T14:00:00+00:00",
+        "home_team": "Liverpool",
+        "away_team": "Fulham",
+        "p": [
+          0.517159859940399,
+          0.248328319712342,
+          0.234511820347259
+        ],
+        "primary": [
+          0.4990672590420224,
+          0.2601871058835239,
+          0.2407456350744537
+        ],
+        "close_odds": [
+          1.4444444444444444,
+          5,
+          6.5
+        ],
+        "open_odds": [
+          1.4444444444444444,
+          5,
+          6.5
+        ],
+        "close_market": [
+          0.6617647058823529,
+          0.19117647058823528,
+          0.14705882352941177
+        ],
+        "open_market": [
+          0.6617647058823529,
+          0.19117647058823528,
+          0.14705882352941177
+        ],
+        "y": 1,
+        "result": [
+          0,
+          0
+        ],
+        "issues": []
+      },
+      {
+        "match_id": "26-27-prem-sunderland-vs-arsenal",
+        "fixture_id": 36,
+        "season": "2026/27",
+        "round": 4,
+        "kickoff_time": "2026-09-12T19:00:00+00:00",
+        "home_team": "Sunderland",
+        "away_team": "Arsenal",
+        "p": [
+          0.179225490331741,
+          0.277401308613749,
+          0.543373201054509
+        ],
+        "primary": [
+          0.18278803489845488,
+          0.29182907181137363,
+          0.5253828932901714
+        ],
+        "close_odds": [
+          7,
+          4.2,
+          1.5
+        ],
+        "open_odds": [
+          7,
+          4.2,
+          1.5
+        ],
+        "close_market": [
+          0.13636363636363638,
+          0.2272727272727273,
+          0.6363636363636365
+        ],
+        "open_market": [
+          0.13636363636363638,
+          0.2272727272727273,
+          0.6363636363636365
+        ],
+        "y": 2,
+        "result": [
+          0,
+          2
+        ],
+        "issues": []
+      },
+      {
+        "match_id": "26-27-prem-tottenham-hotspur-vs-everton",
+        "fixture_id": 37,
+        "season": "2026/27",
+        "round": 4,
+        "kickoff_time": "2026-09-12T16:30:00+00:00",
+        "home_team": "Tottenham Hotspur",
+        "away_team": "Everton",
+        "p": [
+          0.334069596996275,
+          0.273299093701443,
+          0.392631309302282
+        ],
+        "primary": [
+          0.28242573615829913,
+          0.24125216699563945,
+          0.4763220968460614
+        ],
+        "close_odds": [
+          2.05,
+          3.5,
+          3.75
+        ],
+        "open_odds": [
+          2.05,
+          3.5,
+          3.75
+        ],
+        "close_market": [
+          0.4689593568557392,
+          0.27467619472979005,
+          0.25636444841447076
+        ],
+        "open_market": [
+          0.4689593568557392,
+          0.27467619472979005,
+          0.25636444841447076
+        ],
+        "y": 1,
+        "result": [
+          0,
+          0
+        ],
+        "issues": []
+      },
+      {
+        "match_id": "26-27-prem-manchester-united-vs-manchester-city",
+        "fixture_id": 39,
+        "season": "2026/27",
+        "round": 4,
+        "kickoff_time": "2026-09-13T15:30:00+00:00",
+        "home_team": "Manchester United",
+        "away_team": "Manchester City",
+        "p": [
+          0.375577858285912,
+          0.24955656328358,
+          0.374865578430508
+        ],
+        "primary": [
+          0.34848874085284454,
+          0.2203992223927306,
+          0.4311120367544249
+        ],
+        "close_odds": [
+          3.1,
+          4,
+          2.15
+        ],
+        "open_odds": [
+          3.1,
+          4,
+          2.15
+        ],
+        "close_market": [
+          0.3108621001265136,
+          0.24091812759804807,
+          0.44821977227543824
+        ],
+        "open_market": [
+          0.3108621001265136,
+          0.24091812759804807,
+          0.44821977227543824
+        ],
+        "y": 2,
+        "result": [
+          0,
+          1
+        ],
+        "issues": []
+      },
+      {
+        "match_id": "26-27-prem-leeds-united-vs-newcastle-united",
+        "fixture_id": 40,
+        "season": "2026/27",
+        "round": 4,
+        "kickoff_time": "2026-09-14T19:00:00+00:00",
+        "home_team": "Leeds United",
+        "away_team": "Newcastle United",
+        "p": [
+          0.437535894591017,
+          0.270837092105911,
+          0.291627013303072
+        ],
+        "primary": [
+          0.43456688492376555,
+          0.2971801565737662,
+          0.2682529585024682
+        ],
+        "close_odds": [
+          2.4,
+          3.6,
+          2.875
+        ],
+        "open_odds": [
+          2.4,
+          3.6,
+          2.875
+        ],
+        "close_market": [
+          0.39976825028968715,
+          0.26651216685979146,
+          0.33371958285052145
+        ],
+        "open_market": [
+          0.39976825028968715,
+          0.26651216685979146,
+          0.33371958285052145
+        ],
+        "y": 0,
+        "result": [
+          4,
+          1
+        ],
+        "issues": []
+      },
+      {
+        "match_id": "26-27-prem-arsenal-vs-leeds-united",
+        "fixture_id": 51,
+        "season": "2026/27",
+        "round": 6,
+        "kickoff_time": "2026-10-10T11:30:00+00:00",
+        "home_team": "Arsenal",
+        "away_team": "Leeds United",
+        "p": [
+          0.565635411115944,
+          0.261794394363359,
+          0.172570194520697
+        ],
+        "primary": [
+          0.5811999877527319,
+          0.2587157615591967,
+          0.1600842506880715
+        ],
+        "close_odds": [
+          1.4166666666666667,
+          5.25,
+          9.4
+        ],
+        "open_odds": [
+          1.4166666666666667,
+          5.25,
+          9.4
+        ],
+        "close_market": [
+          0.7039524517087666,
+          0.18995542347696878,
+          0.10609212481426449
+        ],
+        "open_market": [
+          0.7039524517087666,
+          0.18995542347696878,
+          0.10609212481426449
+        ],
+        "y": 0,
+        "result": [
+          2,
+          1
+        ],
+        "issues": []
+      },
+      {
+        "match_id": "26-27-prem-aston-villa-vs-brentford",
+        "fixture_id": 52,
+        "season": "2026/27",
+        "round": 6,
+        "kickoff_time": "2026-10-10T14:00:00+00:00",
+        "home_team": "Aston Villa",
+        "away_team": "Brentford",
+        "p": [
+          0.325894506245418,
+          0.256000261098515,
+          0.418105232656067
+        ],
+        "primary": [
+          0.3909193826513673,
+          0.2529566589553146,
+          0.3561239583933181
+        ],
+        "close_odds": [
+          2.75,
+          3.6,
+          2.625
+        ],
+        "open_odds": [
+          2.75,
+          3.6,
+          2.625
+        ],
+        "close_market": [
+          0.35568101623147497,
+          0.27170077628793227,
+          0.37261820748059277
+        ],
+        "open_market": [
+          0.35568101623147497,
+          0.27170077628793227,
+          0.37261820748059277
+        ],
+        "y": 1,
+        "result": [
+          2,
+          2
+        ],
+        "issues": []
+      },
+      {
+        "match_id": "26-27-prem-chelsea-vs-afc-bournemouth",
+        "fixture_id": 53,
+        "season": "2026/27",
+        "round": 6,
+        "kickoff_time": "2026-10-10T14:00:00+00:00",
+        "home_team": "Chelsea",
+        "away_team": "AFC Bournemouth",
+        "p": [
+          0.36067548064905,
+          0.246200238552223,
+          0.393124280798727
+        ],
+        "primary": [
+          0.3209459088300293,
+          0.2554521286694697,
+          0.42360196250050103
+        ],
+        "close_odds": [
+          1.7222222222222223,
+          4.333333333333334,
+          4.75
+        ],
+        "open_odds": [
+          1.7222222222222223,
+          4.333333333333334,
+          4.75
+        ],
+        "close_market": [
+          0.5681789137380192,
+          0.22581469648562302,
+          0.20600638977635785
+        ],
+        "open_market": [
+          0.5681789137380192,
+          0.22581469648562302,
+          0.20600638977635785
+        ],
+        "y": 0,
+        "result": [
+          5,
+          1
+        ],
+        "issues": []
+      },
+      {
+        "match_id": "26-27-prem-crystal-palace-vs-nottingham-forest",
+        "fixture_id": 55,
+        "season": "2026/27",
+        "round": 6,
+        "kickoff_time": "2026-10-11T13:00:00+00:00",
+        "home_team": "Crystal Palace",
+        "away_team": "Nottingham Forest",
+        "p": [
+          0.323251578798907,
+          0.26297220344574,
+          0.413776217755353
+        ],
+        "primary": [
+          0.2589222448079374,
+          0.22974124254575382,
+          0.5113365126463087
+        ],
+        "close_odds": [
+          2.75,
+          3.5,
+          2.75
+        ],
+        "open_odds": [
+          2.75,
+          3.5,
+          2.75
+        ],
+        "close_market": [
+          0.3589743589743589,
+          0.282051282051282,
+          0.3589743589743589
+        ],
+        "open_market": [
+          0.3589743589743589,
+          0.282051282051282,
+          0.3589743589743589
+        ],
+        "y": 0,
+        "result": [
+          3,
+          1
+        ],
+        "issues": []
+      },
+      {
+        "match_id": "26-27-prem-liverpool-vs-manchester-city",
+        "fixture_id": 58,
+        "season": "2026/27",
+        "round": 6,
+        "kickoff_time": "2026-10-11T15:30:00+00:00",
+        "home_team": "Liverpool",
+        "away_team": "Manchester City",
+        "p": [
+          0.304622128170275,
+          0.250334681761154,
+          0.445043190068571
+        ],
+        "primary": [
+          0.25218858011756495,
+          0.24874817300567553,
+          0.49906324687675946
+        ],
+        "close_odds": [
+          2.9,
+          3.8,
+          2.4
+        ],
+        "open_odds": [
+          2.9,
+          3.8,
+          2.4
+        ],
+        "close_market": [
+          0.33653136531365313,
+          0.2568265682656826,
+          0.4066420664206642
+        ],
+        "open_market": [
+          0.33653136531365313,
+          0.2568265682656826,
+          0.4066420664206642
+        ],
+        "y": 2,
+        "result": [
+          0,
+          3
+        ],
+        "issues": []
+      },
+      {
+        "match_id": "26-27-prem-manchester-united-vs-tottenham-hotspur",
+        "fixture_id": 59,
+        "season": "2026/27",
+        "round": 6,
+        "kickoff_time": "2026-10-10T16:30:00+00:00",
+        "home_team": "Manchester United",
+        "away_team": "Tottenham Hotspur",
+        "p": [
+          0.582371828626832,
+          0.228938503783043,
+          0.188689667590126
+        ],
+        "primary": [
+          0.5623729527080932,
+          0.22973510170182662,
+          0.20789194559008028
+        ],
+        "close_odds": [
+          1.75,
+          4.333333333333334,
+          4.647058823529411
+        ],
+        "open_odds": [
+          1.75,
+          4.333333333333334,
+          4.647058823529411
+        ],
+        "close_market": [
+          0.5616625649439431,
+          0.22682526661197697,
+          0.21151216844407986
+        ],
+        "open_market": [
+          0.5616625649439431,
+          0.22682526661197697,
+          0.21151216844407986
+        ],
+        "y": 1,
+        "result": [
+          1,
+          1
+        ],
+        "issues": []
+      },
+      {
+        "match_id": "26-27-prem-sunderland-vs-brighton-hove-albion",
+        "fixture_id": 60,
+        "season": "2026/27",
+        "round": 6,
+        "kickoff_time": "2026-10-10T14:00:00+00:00",
+        "home_team": "Sunderland",
+        "away_team": "Brighton & Hove Albion",
+        "p": [
+          0.266247814172701,
+          0.259255461391286,
+          0.474496724436013
+        ],
+        "primary": [
+          0.2617017476536602,
+          0.25902029697814766,
+          0.4792779553681922
+        ],
+        "close_odds": [
+          3.2,
+          3.6,
+          2.4
+        ],
+        "open_odds": [
+          3.2,
+          3.6,
+          2.4
+        ],
+        "close_market": [
+          0.3103448275862069,
+          0.27586206896551724,
+          0.4137931034482759
+        ],
+        "open_market": [
+          0.3103448275862069,
+          0.27586206896551724,
+          0.4137931034482759
+        ],
+        "y": 2,
+        "result": [
+          0,
+          2
+        ],
+        "issues": []
+      },
+      {
+        "match_id": "26-27-prem-afc-bournemouth-vs-sunderland",
+        "fixture_id": 61,
+        "season": "2026/27",
+        "round": 7,
+        "kickoff_time": "2026-10-18T13:00:00+00:00",
+        "home_team": "AFC Bournemouth",
+        "away_team": "Sunderland",
+        "p": [
+          0.460909410335188,
+          0.258440198724035,
+          0.280650390940776
+        ],
+        "primary": [
+          0.4621915390023185,
+          0.2360558626182524,
+          0.3017525983794291
+        ],
+        "close_odds": [
+          2.1578947368421053,
+          3.6,
+          3.6
+        ],
+        "open_odds": [
+          2.1578947368421053,
+          3.6,
+          3.6
+        ],
+        "close_market": [
+          0.45478723404255317,
+          0.2726063829787234,
+          0.2726063829787234
+        ],
+        "open_market": [
+          0.45478723404255317,
+          0.2726063829787234,
+          0.2726063829787234
+        ],
+        "y": 0,
+        "result": [
+          2,
+          0
+        ],
+        "issues": []
+      },
+      {
+        "match_id": "26-27-prem-brentford-vs-liverpool",
+        "fixture_id": 62,
+        "season": "2026/27",
+        "round": 7,
+        "kickoff_time": "2026-10-17T14:00:00+00:00",
+        "home_team": "Brentford",
+        "away_team": "Liverpool",
+        "p": [
+          0.421577891188681,
+          0.257391383571149,
+          0.32103072524017
+        ],
+        "primary": [
+          0.5378676963614777,
+          0.22082273695787782,
+          0.2413095666806444
+        ],
+        "close_odds": [
+          2.4545454545454546,
+          3.75,
+          2.875
+        ],
+        "open_odds": [
+          2.4545454545454546,
+          3.75,
+          2.875
+        ],
+        "close_market": [
+          0.39867633154743143,
+          0.26095178064922786,
+          0.3403718878033407
+        ],
+        "open_market": [
+          0.39867633154743143,
+          0.26095178064922786,
+          0.3403718878033407
+        ],
+        "y": 2,
+        "result": [
+          1,
+          2
+        ],
+        "issues": []
+      },
+      {
+        "match_id": "26-27-prem-brighton-hove-albion-vs-crystal-palace",
+        "fixture_id": 63,
+        "season": "2026/27",
+        "round": 7,
+        "kickoff_time": "2026-10-18T13:00:00+00:00",
+        "home_team": "Brighton & Hove Albion",
+        "away_team": "Crystal Palace",
+        "p": [
+          0.517642105400015,
+          0.248176572902281,
+          0.234181321697704
+        ],
+        "primary": [
+          0.598495026794603,
+          0.2172649278452993,
+          0.18424004536009775
+        ],
+        "close_odds": [
+          1.5454545454545454,
+          4.75,
+          6
+        ],
+        "open_odds": [
+          1.5454545454545454,
+          4.75,
+          6
+        ],
+        "close_market": [
+          0.6317380352644837,
+          0.20554156171284635,
+          0.16272040302267002
+        ],
+        "open_market": [
+          0.6317380352644837,
+          0.20554156171284635,
+          0.16272040302267002
+        ],
+        "y": 0,
+        "result": [
+          5,
+          0
+        ],
+        "issues": []
+      },
+      {
+        "match_id": "26-27-prem-everton-vs-chelsea",
+        "fixture_id": 64,
+        "season": "2026/27",
+        "round": 7,
+        "kickoff_time": "2026-10-17T11:30:00+00:00",
+        "home_team": "Everton",
+        "away_team": "Chelsea",
+        "p": [
+          0.412555220339388,
+          0.257455040419958,
+          0.329989739240654
+        ],
+        "primary": [
+          0.5262271651176093,
+          0.23485124585654538,
+          0.2389215890258454
+        ],
+        "close_odds": [
+          3.2,
+          3.8,
+          2.25
+        ],
+        "open_odds": [
+          3.2,
+          3.8,
+          2.25
+        ],
+        "close_market": [
+          0.3063418129702616,
+          0.2579720530275887,
+          0.4356861340021498
+        ],
+        "open_market": [
+          0.3063418129702616,
+          0.2579720530275887,
+          0.4356861340021498
+        ],
+        "y": 2,
+        "result": [
+          0,
+          2
+        ],
+        "issues": []
+      },
+      {
+        "match_id": "26-27-prem-leeds-united-vs-manchester-united",
+        "fixture_id": 66,
+        "season": "2026/27",
+        "round": 7,
+        "kickoff_time": "2026-10-18T13:00:00+00:00",
+        "home_team": "Leeds United",
+        "away_team": "Manchester United",
+        "p": [
+          0.338465145467791,
+          0.28350012570747,
+          0.378034728824739
+        ],
+        "primary": [
+          0.4431700157346326,
+          0.2969210430922848,
+          0.25990894117308255
+        ],
+        "close_odds": [
+          2.4,
+          3.7,
+          3
+        ],
+        "open_odds": [
+          2.4,
+          3.7,
+          3
+        ],
+        "close_market": [
+          0.40838852097130246,
+          0.2649006622516556,
+          0.32671081677704195
+        ],
+        "open_market": [
+          0.40838852097130246,
+          0.2649006622516556,
+          0.32671081677704195
+        ],
+        "y": 1,
+        "result": [
+          1,
+          1
+        ],
+        "issues": []
+      },
+      {
+        "match_id": "26-27-prem-newcastle-united-vs-aston-villa",
+        "fixture_id": 68,
+        "season": "2026/27",
+        "round": 7,
+        "kickoff_time": "2026-10-17T16:30:00+00:00",
+        "home_team": "Newcastle United",
+        "away_team": "Aston Villa",
+        "p": [
+          0.403513340635762,
+          0.256598353238202,
+          0.339888306126036
+        ],
+        "primary": [
+          0.4688573104057664,
+          0.23250963543803232,
+          0.29863305415620134
+        ],
+        "close_odds": [
+          2.4,
+          3.8,
+          2.947368421052632
+        ],
+        "open_odds": [
+          2.4,
+          3.8,
+          2.947368421052632
+        ],
+        "close_market": [
+          0.4088533661235783,
+          0.2582231786043652,
+          0.3329234552720566
+        ],
+        "open_market": [
+          0.4088533661235783,
+          0.2582231786043652,
+          0.3329234552720566
+        ],
+        "y": 2,
+        "result": [
+          0,
+          1
+        ],
+        "issues": []
+      },
+      {
+        "match_id": "26-27-prem-nottingham-forest-vs-arsenal",
+        "fixture_id": 69,
+        "season": "2026/27",
+        "round": 7,
+        "kickoff_time": "2026-10-18T15:30:00+00:00",
+        "home_team": "Nottingham Forest",
+        "away_team": "Arsenal",
+        "p": [
+          0.195711228777731,
+          0.303120186140758,
+          0.501168585081511
+        ],
+        "primary": [
+          0.2332369808468666,
+          0.34344252912490714,
+          0.4233204900282262
+        ],
+        "close_odds": [
+          6,
+          4,
+          1.6666666666666665
+        ],
+        "open_odds": [
+          6,
+          4,
+          1.6666666666666665
+        ],
+        "close_market": [
+          0.16393442622950816,
+          0.24590163934426226,
+          0.5901639344262295
+        ],
+        "open_market": [
+          0.16393442622950816,
+          0.24590163934426226,
+          0.5901639344262295
+        ],
+        "y": 2,
+        "result": [
+          0,
+          1
+        ],
+        "issues": []
+      }
+    ]
+  },
+  "latest_two_loss_probability_under_model": 0.5336835779852348
+}

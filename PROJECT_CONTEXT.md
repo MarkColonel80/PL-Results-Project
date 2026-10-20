@@ -17,6 +17,17 @@ Connected systems:
 - Supabase project: `PL Results Project`, ref `priibitbnmfetyblzltk`
 - Vercel project: `pl-results-project`, production `https://pl-data.colly.me.uk` (existing alias `https://pl-results-project.vercel.app`)
 
+## Value reliability investigation — 2026-10-20
+
+Full findings and next-round process: `VALUE_INVESTIGATION_2026-10-20.md`; numerical results, protocol and exact replay script in `research/value-investigation-2026-10-20/`. This supersedes any interpretation of earlier cached Venue8 experiments as clean validation or of a green price gap as an established betting advantage.
+
+- Across four frozen published rounds, 28/40 fixtures have eligible probabilities. Same-time market Brier 0.6193 beats research 0.6419 and current view 0.6654. Mechanical research gaps of at least five percentage points yield 1/13 winners and −10.60 hypothetical units; all 38 positive gaps yield +0.68 units. These are diagnostic exposures, not a placed/recommended-bet ledger. The latest original watchlist losses remain recorded.
+- Historical research parent `betting_v3_venue8_15_residual_inputs` leaks other same-kickoff outcomes through its league baseline row ordering in 1,119/1,673 windows. Live weekend SQL already excludes equal kickoffs. Research source SQL has been corrected and the actual CTE passes four synthetic regression checks, but the existing materialized view and dependent caches have NOT been rebuilt. Do not reuse their scores as clean validation; plan the dependency rebuild separately.
+- A strict read-only replay reproduces archived cached probabilities first, then excludes equal kickoffs. All 1,673 forecasts match odds/canonical results uniquely. Development 2019/20–2024/25 (1,433 games): strict model Brier0.5755 vs closing market0.5642. All-positive gross ROI +0.4% versus model-implied +28.1%, with week-bootstrap interval spanning zero. Previously inspected 2025/26 stress (240): ROI−9.2%, model Brier0.6402 vs market0.6253. This GW15+ sample does not validate current early-season deployment.
+- Larger minimum gaps, a longshot exclusion, prior-season-fitted probability recalibration and fixed market blends do not establish a stable upgrade. No weights, eligibility, probabilities, research caches or live website were changed. Do not hard-code bookmaker agreement or tune a draw/keeper/injury penalty from these losses.
+- Next-round recommendation: paper picks while the edge is unproven; no forced best bet. Retain mathematical arrows, make sensitivity/stale-history concerns explicit, and finish the existing pre-match process with confirmed teams, an available bookmaker price and a timestamped watch/paper/pass decision. Score all forecasts and explicit selections separately. These are recommendations in the report, not an implemented new automated gate or an automation.
+- Original saved records re-read unchanged field for field (40), original fingerprint `db068f55978649993e07781ea1c79976`. All database work was SELECT only. Full reproducibility bundle remains on this Mac at `outputs/PL-Data-Hub-value-investigation-2026-10-20.zip`; repository manifest records input hashes.
+
 ## Stats and value review checkpoint — 2026-10-20
 
 This supersedes the older current-season counts below. Refresh details: `DATA_REFRESH_2026-10-20.md`; results review: `WEEKEND_REVIEW_2026-10-17.md`.
