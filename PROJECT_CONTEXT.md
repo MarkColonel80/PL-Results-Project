@@ -1,6 +1,6 @@
 # PL Results Project — Persistent Project Context
 
-_Last updated: 2026-10-20_
+_Last updated: 2026-10-21_
 
 This file is the durable handoff/source of truth for continuing the project across ChatGPT conversations. At the start of a new project chat, read this file first, then verify live state in GitHub/Supabase/Vercel before making changes.
 
@@ -16,6 +16,18 @@ Connected systems:
 - GitHub: `MarkColonel80/PL-Results-Project`, branch `main`
 - Supabase project: `PL Results Project`, ref `priibitbnmfetyblzltk`
 - Vercel project: `pl-results-project`, production `https://pl-data.colly.me.uk` (existing alias `https://pl-results-project.vercel.app`)
+
+## Weekly Tuesday review and fixtures refresh — 2026-10-21
+
+Mark requested that the post-weekend review and next fixtures refresh run every Tuesday to include Monday-night games, with any model or betting-rule changes coming to him first.
+
+- Updated the **existing** [PL post-weekend review and fixtures refresh](https://chatgpt.com/scheduled?automationId=6ad7a14d306c8190b719bd87b6f73e7d&automationSource=cloud), cloud task `6ad7a14d306c8190b719bd87b6f73e7d`, to **every Tuesday at 09:00 Europe/London time**, starting **27 October 2026 at 09:00 GMT**. It stays at 09:00 UK local time when BST/GMT changes. Recurrence has no end date.
+- This replaces the one-off Monday 26 October run described below. No duplicate task was created. Execution remains cloud-based and does not require this Mac; existing task settings and the separate Friday/Saturday/Sunday GW8 cloud checks were preserved.
+- Each run reads the latest remote context and last successful checkpoint, reviews newly completed PL games including Monday-night matches, settles valid paper decisions without changing history, and reports forecast/market assessment separately from paper-bet returns.
+- **Any proposed model, betting/selection-rule, staking or eligibility change must be presented to Mark with evidence for approval before it is applied.** Routine authorised data, stats, odds/news and fixture updates continue under the current approved rules; new next-round ideas remain provisional.
+- Then refresh available approved sources and dependent caches, prepare the next official round and future-only snapshots, validate coverage/historical protection/append-only records, publish permitted updates and verify readback/deployment. Keep unfinished fixtures pending and visible and report delayed or missing sources honestly.
+- Weekly instructions now use the current completed round instead of the original fixed October weekend. Runs are idempotent and use the last successful checkpoint; during breaks or weeks without new results or material changes, give a short no-change report instead of duplicating imports, reviews or paper events.
+- Leave this standing Tuesday schedule active after each run. Task results appear in ChatGPT Scheduled, with existing push-notification settings retained. Scheduling changed no football results, probabilities, paper decisions or model rules.
 
 ## Post-weekend review and next fixtures refresh scheduled — 2026-10-20
 
