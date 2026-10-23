@@ -4,6 +4,13 @@ _Last updated: 2026-10-23_
 
 This file is the durable handoff/source of truth for continuing the project across ChatGPT conversations. At the start of a new project chat, read this file first, then verify live state in GitHub/Supabase/Vercel before making changes.
 
+## GW8 Friday afternoon public-price recheck — 2026-10-23T14:55:44Z
+
+- Append-only [afternoon review/initial publication receipt](WEEKEND_GW8_FRIDAY_AFTERNOON_2026-10-23.md) and [new audit payload](data/weekend-2026-10-23-friday-afternoon-review.json) preserve the earlier Friday records.
+- Latest public comparison: Palace home3.00 (43.46% vs33.33%, +10.12pp), Brighton away3.40 (38.22% vs29.41%, +8.81pp), Spurs away4.60 (24.79% vs21.74%, +3.05pp). Weakest diagnostic cushions +2.51pp/+3.37pp/+1.47pp. Still no verified named-bookmaker executable quote or official XIs.
+- Three further provisional watches extend26→29events, zero stakes. All ten future coupon prices updated; no forecast or news-history rewrite. Earlier medical checks retain their dates.
+- Initial main commit1ec2bc3 deployed READY and exact Supabase/anonymous readback passed;50snapshots/2,660model rows/40earlier fixtures preserved. Final web rendering remained limited by fetch/auth failures; no security settings changed. Saturday/Sunday cloud task IDs and schedules remain intact.
+
 ## GW8 Friday current-odds verification — 2026-10-23 11:58 BST
 
 - New [market/prediction review](WEEKEND_GW8_FRIDAY_MARKET_REVIEW_2026-10-23.md) and [audit payload](data/weekend-2026-10-23-friday-market-review.json) extend the earlier Friday checkpoint without changing it.

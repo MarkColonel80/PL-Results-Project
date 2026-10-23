@@ -641,6 +641,99 @@
           "source_url": "https://www.oddschecker.com/football/leagues-cups/english/premier-league"
         }
       }
+    },
+    {
+      "id": "gw8-75-friday-afternoon-20261023",
+      "fixture_id": 75,
+      "kickoff_time": "2026-10-24T16:30:00Z",
+      "recorded_at": "2026-10-23T14:55:44Z",
+      "status": "watch",
+      "reason": "Afternoon public coupon 4.6000: frozen research 24.8% vs 21.7% break-even (+3.0pp); weakest diagnostic cushion +1.5pp. Still comparison-only; no verified available named-bookmaker quote, official XIs pending. Retain watch, zero units. Earlier events remain unchanged.",
+      "checks": {
+        "teams": {
+          "checked_at": "2026-10-23T14:55:44Z",
+          "confirmed": false,
+          "summary": "Both official Saturday XIs pending. Friday prices are public comparison observations, not a verified available named-bookmaker quote. Zero paper stake.",
+          "source_url": "https://fantasy.premierleague.com/api/fixtures/"
+        },
+        "news": {
+          "checked_at": "2026-10-23T10:58:02Z",
+          "summary": "Porro training resumed; Bentancur suspension now confirmed by Chelsea's dated official preview. Martínez surgery remains reported; starting keeper pending.",
+          "source_url": "https://www.chelseafc.com/en/news/article/chelsea-vs-tottenham-key-statistics-and-facts-26-27"
+        },
+        "schedule": {
+          "checked_at": "2026-10-23T10:58:02Z",
+          "summary": "Chelsea last played on Saturday 17 October; Spurs on Monday 19 October. No intervening European match is listed for either. Chelsea have roughly two extra recovery days. Saturday kickoff 17:30 BST.",
+          "source_url": "https://www.chelseafc.com/en/news/article/chelsea-vs-tottenham-key-statistics-and-facts-26-27"
+        },
+        "sensitivity": {
+          "checked_at": "2026-10-23T14:55:44Z",
+          "summary": "Afternoon public coupon 4.6000: frozen research 24.8% vs 21.7% break-even (+3.0pp); weakest diagnostic cushion +1.5pp. Still comparison-only; no verified available named-bookmaker quote, official XIs pending.",
+          "source_url": "https://www.oddschecker.com/football/leagues-cups/english/premier-league"
+        }
+      }
+    },
+    {
+      "id": "gw8-76-friday-afternoon-20261023",
+      "fixture_id": 76,
+      "kickoff_time": "2026-10-25T14:00:00Z",
+      "recorded_at": "2026-10-23T14:55:44Z",
+      "status": "watch",
+      "reason": "Afternoon public coupon 3.0000: frozen research 43.5% vs 33.3% break-even (+10.1pp); weakest diagnostic cushion +2.5pp. Still comparison-only; no verified available named-bookmaker quote, official XIs pending. Retain watch, zero units. Earlier events remain unchanged.",
+      "checks": {
+        "teams": {
+          "checked_at": "2026-10-23T14:55:44Z",
+          "confirmed": false,
+          "summary": "Both official Sunday XIs pending. Verify Palace goalkeeper/striker and Newcastle returners, then a fresh available named-bookmaker price. Zero paper stake.",
+          "source_url": "https://fantasy.premierleague.com/api/fixtures/"
+        },
+        "news": {
+          "checked_at": "2026-10-23T10:58:02Z",
+          "summary": "Palace's Mateta return and Strand Larsen injury rechecked; Newcastle returners remain unconfirmed. See source-linked current fixture notes.",
+          "source_url": "https://www.cpfc.co.uk/news/match-reports/match-report-highlights-besiktas-crystal-palace-october-2026/"
+        },
+        "schedule": {
+          "checked_at": "2026-10-23T10:58:02Z",
+          "summary": "Palace played away in Istanbul on Thursday; Newcastle had a clear midweek. About 67 hours between Palace's European kickoff and Sunday 14:00 GMT. Recovery remains a qualitative concern. UK clocks go back Sunday.",
+          "source_url": "https://www.cpfc.co.uk/news/match-reports/match-report-highlights-besiktas-crystal-palace-october-2026/"
+        },
+        "sensitivity": {
+          "checked_at": "2026-10-23T14:55:44Z",
+          "summary": "Afternoon public coupon 3.0000: frozen research 43.5% vs 33.3% break-even (+10.1pp); weakest diagnostic cushion +2.5pp. Still comparison-only; no verified available named-bookmaker quote, official XIs pending.",
+          "source_url": "https://www.oddschecker.com/football/leagues-cups/english/premier-league"
+        }
+      }
+    },
+    {
+      "id": "gw8-78-friday-afternoon-20261023",
+      "fixture_id": 78,
+      "kickoff_time": "2026-10-25T14:00:00Z",
+      "recorded_at": "2026-10-23T14:55:44Z",
+      "status": "watch",
+      "reason": "Afternoon public coupon 3.4000: frozen research 38.2% vs 29.4% break-even (+8.8pp); weakest diagnostic cushion +3.4pp. Still comparison-only; no verified available named-bookmaker quote, official XIs pending. Retain watch, zero units. Earlier events remain unchanged.",
+      "checks": {
+        "teams": {
+          "checked_at": "2026-10-23T14:55:44Z",
+          "confirmed": false,
+          "summary": "Both official Sunday XIs pending. Recheck Brighton returners and Liverpool attacking/central options. Public coupon only; zero paper stake.",
+          "source_url": "https://fantasy.premierleague.com/api/fixtures/"
+        },
+        "news": {
+          "checked_at": "2026-10-23T10:58:02Z",
+          "summary": "Thursday Brighton workload rechecked; Liverpool official bulletin is still dated 19 October. Sunday returners and both XIs remain unconfirmed.",
+          "source_url": "https://www.liverpoolfc.com/news/liverpools-injury-list-suspensions-and-availability"
+        },
+        "schedule": {
+          "checked_at": "2026-10-23T10:58:02Z",
+          "summary": "Brighton travelled to Czechia Thursday; Liverpool played at home Tuesday, with roughly two extra recovery days. Several Brighton regulars were rested or used from the bench. Sunday 14:00 GMT; no numerical travel or rotation adjustment.",
+          "source_url": "https://www.brightonandhovealbion.com/fixtures-first-team-men"
+        },
+        "sensitivity": {
+          "checked_at": "2026-10-23T14:55:44Z",
+          "summary": "Afternoon public coupon 3.4000: frozen research 38.2% vs 29.4% break-even (+8.8pp); weakest diagnostic cushion +3.4pp. Still comparison-only; no verified available named-bookmaker quote, official XIs pending.",
+          "source_url": "https://www.oddschecker.com/football/leagues-cups/english/premier-league"
+        }
+      }
     }
   ],
   "settlements": []
