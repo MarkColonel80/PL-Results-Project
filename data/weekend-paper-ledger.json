@@ -455,6 +455,99 @@
           "source_url": "https://pl-data.colly.me.uk/betting/weekend#review-80"
         }
       }
+    },
+    {
+      "id": "gw8-75-friday-20261023",
+      "fixture_id": 75,
+      "kickoff_time": "2026-10-24T16:30:00Z",
+      "recorded_at": "2026-10-23T08:04:55.733Z",
+      "status": "watch",
+      "reason": "Friday post-Europe/availability review: retain secondary Spurs-away WATCH only, no stake. Chelsea keeper Martínez is sidelined after jaw surgery, while Penders is still an anticipated—not confirmed—starter. Porro trained Thursday, but Spurs' suspensions/doubts and shorter rest remain material. Tuesday 20 October 4.50 coupon/research 24.8% vs 22.2% break-even is stale; the xG-only Venue18 margin was ~1pp. Await both official Saturday XIs and a fresh named-bookmaker available quote.",
+      "checks": {
+        "teams": {
+          "checked_at": "2026-10-23T08:04:55.733Z",
+          "confirmed": false,
+          "summary": "Neither Chelsea nor Tottenham has a confirmed Saturday 24 October Premier League starting XI. Chelsea goalkeeper Penders is possible but not confirmed; Porro and Spurs doubts must be checked on Saturday.",
+          "source_url": "https://fantasy.premierleague.com/api/fixtures/"
+        },
+        "news": {
+          "checked_at": "2026-10-23T08:04:55.733Z",
+          "summary": "Chelsea: Emiliano Martínez underwent successful surgery after a fractured jaw and concussion against Everton on 17 October, and said he expected to return in weeks, not days. Mike Penders replaced him against Everton and is a likely alternative, NOT a confirmed Saturday starter. Existing 20 October FPL flags for James, Gusto, Gittens and Emegha remain dated, not fresh clinical assessments. Tottenham: Pedro Porro returned to full training on Thursday 22 October and could return, but is not confirmed in Saturday's XI. The last official Spurs squad update listed Sávio and Bergvall out. Bentancur was flagged suspended in 20 October FPL data; Tosin, Marmoush, Robertson and Udogie were flagged as doubts and need fresh confirmation. Maddison started and Kulusevski returned for a brief substitute appearance against Coventry on Monday; neither fact guarantees a derby start.",
+          "source_url": "https://www.tottenhamhotspur.com/news/1179806/gallery-preparing-for-trip-to-the-bridge"
+        },
+        "schedule": {
+          "checked_at": "2026-10-23T08:04:55.733Z",
+          "summary": "Neither side has an intervening Thursday European match listed. Chelsea last played at Everton on Saturday 17 October; Spurs played Coventry on Monday 19 October. Chelsea have roughly two more recovery days before Saturday 24 October, 17:30 BST (16:30 UTC).",
+          "source_url": "https://fantasy.premierleague.com/api/fixtures/"
+        },
+        "sensitivity": {
+          "checked_at": "2026-10-23T08:04:55.733Z",
+          "summary": "20 October coupon (not executable): Spurs away 4.50; frozen research 24.8% vs 22.2% break-even (+2.6pp). Current-view 35.8%, xG-only Venue8 34.4%, xG-only Venue18 23.2% (only +1.0pp margin). Chelsea–Spurs draw 4.33 is mutually exclusive alternative, not a second independent paper bet. Full 18-match venue histories contain prior-season context. No probability recalculation.",
+          "source_url": "https://pl-data.colly.me.uk/betting/weekend#review-75"
+        }
+      }
+    },
+    {
+      "id": "gw8-76-friday-20261023",
+      "fixture_id": 76,
+      "kickoff_time": "2026-10-25T14:00:00Z",
+      "recorded_at": "2026-10-23T08:04:55.733Z",
+      "status": "watch",
+      "reason": "Friday post-Europe: retain provisional Palace-home WATCH, no stake. Palace 2–2 Beşiktaş; Mateta started/scored and played 61 minutes, but Henderson did not travel, and substitute Strand Larsen was forced off injured. Pino 72 minutes, Wharton/Kamada/Mitchell 90, Istanbul return creates short rest versus Newcastle. Old 2.90 coupon/research 43.5% vs break-even 34.5%, but xG-only Venue8 35.8% and stale prior-season venue matches make this fragile. Confirm Sunday starting keeper/striker and Newcastle XI plus fresh bookmaker quote.",
+      "checks": {
+        "teams": {
+          "checked_at": "2026-10-23T08:04:55.733Z",
+          "confirmed": false,
+          "summary": "Palace/Newcastle Sunday starting teams are not yet released. Henderson and Mateta must be verified; Mateta's Thursday start/goal do not confirm Sunday selection. Larsen is an injury concern; Newcastle Elanga/Ramsey status requires Sunday team confirmation.",
+          "source_url": "https://fantasy.premierleague.com/api/fixtures/"
+        },
+        "news": {
+          "checked_at": "2026-10-23T08:04:55.733Z",
+          "summary": "Palace drew 2–2 away at Beşiktaş on Thursday 22 October (Pino 51', Mateta 55'). Mateta made his first start since opening day, scored and was substituted after 61 minutes; Pino played 72 minutes and McNeil 61. Wharton, Kamada, Mitchell, Richards and Benítez played the full match. Benítez started in goal; Dean Henderson was not in the European squad despite returning to training, so Sunday availability remains unconfirmed. Jørgen Strand Larsen entered at 61' and was forced off injured at 85' after an awkward landing; extent unknown. Newcastle had no midweek European game and last played on Saturday 17 October. Latest checked independent injury list on 22 October described Elanga and Jacob Ramsey as uncertain, with Livramento and Jaouen unavailable. This is not a confirmed Sunday squad: check a current club update and official team sheet.",
+          "source_url": "https://www.cpfc.co.uk/news/match-reports/match-report-highlights-besiktas-crystal-palace-october-2026/"
+        },
+        "schedule": {
+          "checked_at": "2026-10-23T08:04:55.733Z",
+          "summary": "Palace travelled to Istanbul for Thursday 22 October's 20:00 BST European kickoff and host Newcastle at Selhurst Park on Sunday 25 October at 14:00 GMT. Travel and a turnaround of about 67 hours versus Newcastle's full week without Europe favour the visitors for rest only; do not invent a numerical injury/travel adjustment. The UK clocks return to GMT on Sunday.",
+          "source_url": "https://www.cpfc.co.uk/news/match-reports/match-report-highlights-besiktas-crystal-palace-october-2026/"
+        },
+        "sensitivity": {
+          "checked_at": "2026-10-23T08:04:55.733Z",
+          "summary": "20 October coupon only: Palace home 2.90, research 43.5% against 34.5% break-even (+9.0pp); current-view 38.7%; xG-only Venue8 35.8% (thin +1.3pp cushion); Venue18 40.3%. Five of eight Palace venue matches in the saved eight-match sample are from 2025/26. Do not update saved forecast or model weights based on European minutes.",
+          "source_url": "https://pl-data.colly.me.uk/betting/weekend#review-76"
+        }
+      }
+    },
+    {
+      "id": "gw8-78-friday-20261023",
+      "fixture_id": 78,
+      "kickoff_time": "2026-10-25T14:00:00Z",
+      "recorded_at": "2026-10-23T08:04:55.733Z",
+      "status": "watch",
+      "reason": "Friday post-Europe: retain provisional Brighton-away WATCH, no stake. Brighton 0–0 at Jablonec; Verbruggen/Rutter/Osman/Yalcouyé played ~90, Groß/Boscagli/Hinshelwood/O'Riley ~68–70. Minteh, Mitoma and Wieffer absent from European squad but Sunday availability unconfirmed. Liverpool Frimpong likely out, Szoboszlai needs patience, Gravenberch eligible again. Away travel and two fewer recovery days reduce confidence in old 3.25 coupon/research 38.2% vs 30.8%; Venue18 xG-only just 32.8%. Check both Sunday XIs and genuine available named-bookmaker quote.",
+      "checks": {
+        "teams": {
+          "checked_at": "2026-10-23T08:04:55.733Z",
+          "confirmed": false,
+          "summary": "Liverpool and Brighton confirmed Sunday starters have not been announced. Check Brighton wide forwards/midfield (Minteh, Mitoma, Wieffer, Rutter, Groß, O'Riley) and Liverpool unavailable players and Gravenberch before any hypothetical stake.",
+          "source_url": "https://fantasy.premierleague.com/api/fixtures/"
+        },
+        "news": {
+          "checked_at": "2026-10-23T08:04:55.733Z",
+          "summary": "Brighton drew 0–0 at Jablonec in Czechia Thursday 22 October. Verbruggen, Rutter, Osman and Yalcouyé completed about 90 minutes. Groß, Boscagli, O'Riley and Hinshelwood were replaced around 68–70', Hadjam at 86'; Costinha/Svoboda also started. Minteh, Mitoma and Wieffer were not in the European matchday squad; this alone does not establish their Sunday fitness, and prior 18 October club comments about possible returns remain unconfirmed. Verify Brighton's attacking and midfield starters Sunday. Liverpool: club injury update says Frimpong suffered a new muscle injury and may miss matches through the November international break; Szoboszlai's hamstring issue recurred and needs more patience. Liverpool's official injury list also records Bradley/Leoni issues and notes Ryan Gravenberch has served his one-match domestic suspension, making him eligible to return. Other 20 October FPL flags, including Ekitiké and Jaros, are dated and need a fresh club update. Sunday availability remains subject to official XI.",
+          "source_url": "https://www.liverpoolfc.com/news/liverpools-injury-list-suspensions-and-availability"
+        },
+        "schedule": {
+          "checked_at": "2026-10-23T08:04:55.733Z",
+          "summary": "Brighton travelled to Jablonec for Thursday's 17:45 BST kickoff and visit Liverpool at Anfield on Sunday 25 October 14:00 GMT (about 69 hours from European kickoff). Liverpool played Villarreal at home Tuesday 20 October, approximately two extra recovery days without overseas midweek travel. Brighton also visit City in the cup on Wednesday 28 October; do not assume rotation or a numerical adjustment.",
+          "source_url": "https://www.brightonandhovealbion.com/fixtures-first-team-men"
+        },
+        "sensitivity": {
+          "checked_at": "2026-10-23T08:04:55.733Z",
+          "summary": "20 October coupon only: Brighton away 3.25, research 38.2% vs 30.8% break-even (+7.4pp); current-view 43.9%, xG-only Venue8 43.2%, xG-only Venue18 32.8% (only +2.0pp cushion). Longer-history estimate is sensitive to pre-2026/27 venue results. European travel/minutes and Liverpool injury reports do not change frozen model outputs.",
+          "source_url": "https://pl-data.colly.me.uk/betting/weekend#review-78"
+        }
+      }
     }
   ],
   "settlements": []
