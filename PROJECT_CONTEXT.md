@@ -4,6 +4,15 @@ _Last updated: 2026-10-23_
 
 This file is the durable handoff/source of truth for continuing the project across ChatGPT conversations. At the start of a new project chat, read this file first, then verify live state in GitHub/Supabase/Vercel before making changes.
 
+## GW8 Friday current-odds verification — 2026-10-23 11:58 BST
+
+- New [market/prediction review](WEEKEND_GW8_FRIDAY_MARKET_REVIEW_2026-10-23.md) and [audit payload](data/weekend-2026-10-23-friday-market-review.json) extend the earlier Friday checkpoint without changing it.
+- Public Oddschecker coupon refreshed for all ten future fixtures. Requested watches: Palace home 3.00 (research43.5% vs33.3% break-even); Brighton away3.25 (38.2% vs30.8%); Spurs away63/13=4.846153846 (24.8% vs20.6%). Weakest diagnostic cushions +2.51pp/+2.01pp/+2.57pp respectively. Prices remain comparison-only: no available named-bookmaker quote verified.
+- Both official XIs remain pending; three new provisional watch events extend ledger23→26, zero selections/stakes. Original23 events, fixtures, settlements and dated payloads preserved. Other seven prior pass decisions remain; fresh prices do not imply fresh team-news checks. Sunderland home now has a positive mathematical gap but no new selection.
+- Live target snapshots match frozen 20 October GitHub fields and sensitivity outputs. Preserve all50 snapshots, 2,660 frozen model rows, model weights/formulas and40 historic fixtures. Only future GW8 odds/source/time and appended source-linked notes for75/76/78 may change.
+- Bentancur suspension now verified in Chelsea's official23October preview. Porro training is not an XI; Liverpool bulletin is still19October; Newcastle returners remain unconfirmed. No numerical news/travel adjustment.
+- Saturday16:30BST and Sunday13:00GMT cloud checks stay intact; no duplicate, local heartbeat or automation mutation. Live scheduler configuration not independently inspected; preserve existing task IDs. Publication receipt follows after commit/database/deployment verification.
+
 ## GW8 Friday post-Europe checkpoint — 2026-10-23
 
 - Executed Friday's **cloud-only** review after Thursday 22 October matches; evidence and detailed minutes in [WEEKEND_GW8_FRIDAY_POST_EUROPE_2026-10-23.md](WEEKEND_GW8_FRIDAY_POST_EUROPE_2026-10-23.md). Beşiktaş–Palace **2–2**: Mateta scored and played 61 minutes; Pino 72, Wharton/Kamada/Mitchell full match; Benítez played in Henderson's absence; Strand Larsen replaced Mateta but left injured in the 85th minute. Jablonec–Brighton **0–0**: Rutter, Osman, Verbruggen, Yalcouyé approx 90, Groß/Boscagli/Hinshelwood/O'Riley approx 68–70; Minteh/Mitoma/Wieffer absent from Europe squad, Sunday availability still unconfirmed.
