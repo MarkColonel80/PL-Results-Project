@@ -1,8 +1,16 @@
 # PL Results Project — Persistent Project Context
 
-_Last updated: 2026-10-21_
+_Last updated: 2026-10-23_
 
 This file is the durable handoff/source of truth for continuing the project across ChatGPT conversations. At the start of a new project chat, read this file first, then verify live state in GitHub/Supabase/Vercel before making changes.
+
+## GW8 Friday post-Europe checkpoint — 2026-10-23
+
+- Executed Friday's **cloud-only** review after Thursday 22 October matches; evidence and detailed minutes in [WEEKEND_GW8_FRIDAY_POST_EUROPE_2026-10-23.md](WEEKEND_GW8_FRIDAY_POST_EUROPE_2026-10-23.md). Beşiktaş–Palace **2–2**: Mateta scored and played 61 minutes; Pino 72, Wharton/Kamada/Mitchell full match; Benítez played in Henderson's absence; Strand Larsen replaced Mateta but left injured in the 85th minute. Jablonec–Brighton **0–0**: Rutter, Osman, Verbruggen, Yalcouyé approx 90, Groß/Boscagli/Hinshelwood/O'Riley approx 68–70; Minteh/Mitoma/Wieffer absent from Europe squad, Sunday availability still unconfirmed.
+- Liverpool Frimpong muscle injury may last to international break, Szoboszlai recurring injury, Gravenberch domestic suspension served; Newcastle Elanga/Ramsey doubtful in independent 22 Oct preview. Chelsea Martínez has broken jaw/surgery, Penders a potential but unconfirmed replacement; Spurs Porro resumed Thursday training, with several other squad doubts and Bentancur suspension requiring Saturday confirmation. Travel to Istanbul/Czechia and two fewer recovery days versus Sunday opponents remain qualitative concerns; Chelsea has two extra rest days versus Spurs.
+- Append-only GitHub ledger received **three new Friday provisional watch events** for fixtures 75, 76, 78; previous 20 events and fixtures/settlements unchanged. Future-only Supabase fixture `notes` for these IDs updated with 23 October source-linked evidence; old 20 October FPL flags explicitly dated. No final selection, no paper stakes, no new quote, no recalculation of probabilities or snapshot, no change to model v3, schema, security/RLS or historic fixtures.
+- The **20 October coupon** remains comparison-only: Palace home 2.90 (research43.5% vs34.5% break-even; xG-only Venue8 35.8%), Brighton away3.25 (38.2% vs30.8%; Venue18 32.8%), Spurs away4.50 (24.8% vs22.2%; Venue18 23.2%). The three are STILL WATCHES, not picks. Saturday and Sunday tasks must read the new checkpoint/ledger before recording any one-unit paper selection or pass. Require BOTH official XIs, genuinely available named bookmaker quote/time/URL, fresh team news, Europe/rest and full diagnostic review. UK clocks switch before Sunday's 14:00 GMT fixtures.
+- Friday checked at `2026-10-23T08:04:55.733Z`; full web citations are linked in report and structured future-only weekend news. The separate Saturday and Sunday one-off cloud automations remain responsible for final decisions; do not create duplicate tasks.
 
 ## Workflow
 
