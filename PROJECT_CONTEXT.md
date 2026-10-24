@@ -1,8 +1,19 @@
 # PL Results Project — Persistent Project Context
 
-_Last updated: 2026-10-23_
+_Last updated: 2026-10-24_
 
 This file is the durable handoff/source of truth for continuing the project across ChatGPT conversations. At the start of a new project chat, read this file first, then verify live state in GitHub/Supabase/Vercel before making changes.
+
+## Future-only predicted exact scores — 2026-10-24
+
+- Mark requested a clearly labelled predicted score on `/betting/weekend`. The summary and each fixture card now derive the highest-probability exact score from the **existing frozen** `candidate_home_lambda` and `candidate_away_lambda` under the research candidate's independent Poisson distribution. This is a display derivation, not a model, weight, betting-rule or snapshot change.
+- The exact-score probability is the untruncated product of the two Poisson probabilities. For non-integer lambda the mode is floor(lambda); positive integer lambda has two equal modes and the lower is shown with a joint-mode label. Use original numeric precision, never the displayed rounded xG. Example: 1.87–0.66 expected goals gives 1–0, whereas rounding gives 2–1. A modal draw can coexist with a home/away top 1X2 outcome.
+- Both teams still need at least four relevant venue matches. LIMITED_HISTORY, missing/invalid frozen inputs, and absent/invalid/post-kickoff candidate timestamps produce **no score**. Already kicked-off fixtures are excluded; the open page removes fixtures at kick-off and rechecks when focused/resumed. No retrospective prediction is written or persisted.
+- At the read-only 12:51 UTC check, Ipswich–Forest (71) and Villa–City (72) had started and were excluded. Six of the eight remaining fixtures were eligible: Arsenal–Everton 1–0; Chelsea–Spurs, Palace–Newcastle, Liverpool–Brighton, United–Bournemouth and Sunderland–Leeds each 1–1. Coventry–Fulham and Hull–Brentford remain LIMITED_HISTORY. These are modal score displays, not paper selections.
+- Implementation: `lib/weekend-score.ts`, weekend page, `scripts/test_weekend_score.mjs`, `scripts/test_weekend_score_browser.mjs`. Tests run in an ephemeral **Vercel cloud sandbox** from GitHub main; no Mac checkout, local build, local server or local credentials are required. Existing five weekend/value/paper tests, new independent Poisson-grid/boundary/immutability regressions, ledger validation (29 events), TypeScript/production build and Chromium browser checks passed. Browser coverage includes both displays, no score for limited history, kickoff removal without reload, resumed tabs, mobile and no database writes.
+- All database calls for this change are SELECT-only. Preflight integrity: 50 fixtures `21fe5d8f0805254c603d1eddf40f78e7`; 50 snapshots `21874616601d7d8f2b8b39787ae68587`; 2,660 frozen v3 rows `de99e99934922b5c054e0ae380e49e3d`. Public table/view security metadata and policies are fingerprinted for post-release comparison. Paper ledger, original data files, forecasts, odds/news, model SQL, auth middleware and database permissions remain untouched.
+- Publication uses a guarded GitHub main ref update and the connected Vercel production project `pl-results-project` / `prj_8OeSf0K7GBywgASSo5ojRUpYDg84`, team `team_AVL2QNde5NnMKvlgXcjw0hhf`, custom domain `https://pl-data.colly.me.uk`. Deployment/live verification receipt will follow after release.
+- The live custom domain correctly requires application Basic authentication. The Vercel share-link fetch returned 401; do not weaken access controls. `scripts/verify_weekend_score_live.mjs` is designed to run inside the trusted production cloud build with the existing credentials kept in memory, checking authenticated HTML/deployed assets, anonymous 401, live read-only data and frozen candidate equality. Never print credentials or commit environment files.
 
 ## GW8 Friday afternoon public-price recheck — 2026-10-23T14:55:44Z
 
