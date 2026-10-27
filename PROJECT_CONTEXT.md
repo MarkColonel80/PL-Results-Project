@@ -4,6 +4,16 @@ _Last updated: 2026-10-27_
 
 This file is the durable handoff/source of truth for continuing the project across ChatGPT conversations. At the start of a new project chat, read this file first, then verify live state in GitHub/Supabase/Vercel before making changes.
 
+## Dependency and Understat follow-up — 2026-10-27
+
+- Read [SECURITY_AND_IDENTITY_2026-10-27.md](SECURITY_AND_IDENTITY_2026-10-27.md), `data/dependency-understat-2026-10-27-checkpoint.json` and the linked evidence before continuing. This follow-up supersedes the initial Tuesday dependency and Understat gap counts below.
+- Dependency advisories resolved: Next 15.5.28, scoped PostCSS 8.5.32 / Sharp 0.35.5 overrides, source-map-js 1.2.2. Clean lockfile installation and audit pass with **zero reported vulnerabilities**; existing app/model/betting code unchanged.
+- Added **121** independently verified Understat mappings and enriched **769** existing appearances (761 current-season, eight historical). All previous mappings are unchanged. The established matching thresholds remain; positive-minute history, exact team/goals and unique targets resolve 118; existing Opta/Fotmob ID bridges plus eight native positional lineups resolve three ambiguities.
+- Current unresolved totals: **374 appearances / 103 IDs**, including **48 GW8 appearances**. Fourteen existing mapped-but-missing core appearances remain (Matt Grimes eight, Chuba Akpom six); do not force legacy identity merges or fabricate appearances.
+- Current Understat totals: 2,461 staged, 2,087 mapped, 2,073 enriched. All 761 new current-season links have matching official FPL rows and goal totals. Core minutes/goals/assists are unchanged; provider minute differences are recorded.
+- Refreshed team-feature and both form caches match their live queries. All 60 frozen weekend snapshots/fixtures, 2,660 frozen v3 predictions, core player-match fields and existing source mappings retain their hashes. Database access/security hashes are unchanged.
+- Six unit suites, ledger validation, TypeScript, production build, clean install/audit, native Sharp, frozen and live-data Chromium checks, and the offline identity replay passed. Production publication/receipt is tracked in the checkpoint. No bets, model/betting-rule edits or Tuesday automation changes.
+
 ## Tuesday GW8 closeout and GW9 refresh — 2026-10-27
 
 - Read [DATA_REFRESH_2026-10-27.md](DATA_REFRESH_2026-10-27.md), [WEEKEND_REVIEW_2026-10-27.md](WEEKEND_REVIEW_2026-10-27.md), [WEEKEND_2026-10-31.md](WEEKEND_2026-10-31.md), and `data/full-refresh-2026-10-27-checkpoint.json` before continuing.
@@ -14,7 +24,7 @@ This file is the durable handoff/source of truth for continuing the project acro
 - Cached inputs refreshed before future-only snapshots. Existing 50 fixtures/snapshots, all 2,660 frozen v3 rows and older current-season data hashes are preserved. RLS/grants/policies unchanged.
 - Six unit suites, append-only ledger validation, TypeScript, final production build (exit 0), original Chromium regression and live-database GW9 browser check all passed. The live page shows ten future cards, thirty scorelines and the correctly dated 35-of-50 forecast scorecard without mobile overflow. Only display fixes were needed: metadata-driven scorecard date/rounds and shrinking fixture cards.
 - [Implementation bb7d71e](https://github.com/MarkColonel80/PL-Results-Project/commit/bb7d71e786ee6bca6a9b90f6f70b72e9de347a50) is verified on READY production deployment `dpl_8uoY4tpRe61aYNzokfGTkmBTBNYx`: authenticated 200, anonymous 401, new GW9 ledger and 80 completed/10 future matches. Security/protection settings unchanged; recent runtime error/fatal query returned no matches. See `data/tuesday-2026-10-27-verification.json`.
-- Existing dependency audit remains outstanding: Next.js critical plus three high advisories (PostCSS, Sharp, source-map-js); dependency versions were not changed. Do not mistake completed data refresh for resolved dependency security findings.
+- At initial Tuesday closeout, dependency findings were still outstanding. They are now resolved by the authorized follow-up above; see its audit and production verification receipt.
 - Entire project work stayed in connected cloud services/public sources. Existing Tuesday automation `6ad7a14d306c8190b719bd87b6f73e7d` was not duplicated or edited. Do not create another Tuesday recurring job.
 
 ## Favoured outcome and three likeliest scorelines — 2026-10-24
