@@ -12,7 +12,7 @@ This file is the durable handoff/source of truth for continuing the project acro
 - Current unresolved totals: **374 appearances / 103 IDs**, including **48 GW8 appearances**. Fourteen existing mapped-but-missing core appearances remain (Matt Grimes eight, Chuba Akpom six); do not force legacy identity merges or fabricate appearances.
 - Current Understat totals: 2,461 staged, 2,087 mapped, 2,073 enriched. All 761 new current-season links have matching official FPL rows and goal totals. Core minutes/goals/assists are unchanged; provider minute differences are recorded.
 - Refreshed team-feature and both form caches match their live queries. All 60 frozen weekend snapshots/fixtures, 2,660 frozen v3 predictions, core player-match fields and existing source mappings retain their hashes. Database access/security hashes are unchanged.
-- Six unit suites, ledger validation, TypeScript, production build, clean install/audit, native Sharp, frozen and live-data Chromium checks, and the offline identity replay passed. Production publication/receipt is tracked in the checkpoint. No bets, model/betting-rule edits or Tuesday automation changes.
+- Six unit suites, ledger validation, TypeScript, production build, clean install/audit, native Sharp, frozen and live-data Chromium checks, and the offline identity replay passed. Implementation `594d8fc` is verified on READY production deployment `dpl_BrqY2PTGGseR3AA1BbTZ8VSuAm57`: production audit zero, authenticated 200 / anonymous 401, 80 completed / 10 future fixtures. See `data/dependency-understat-2026-10-27-verification.json`. No bets, model/betting-rule edits or Tuesday automation changes.
 
 ## Tuesday GW8 closeout and GW9 refresh — 2026-10-27
 

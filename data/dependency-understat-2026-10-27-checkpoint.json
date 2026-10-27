@@ -1,7 +1,7 @@
 {
   "date": "2026-10-27",
   "baseCommit": "60b64d880a1f69073cd23e5f1d376a367dbbf0c7",
-  "state": "DATABASE_APPLIED_CLOUD_CHECKS_PASSED_PUBLICATION_PENDING",
+  "state": "COMPLETE_VERIFIED_WITH_DOCUMENTED_SOURCE_GAPS",
   "dependencies": {
     "vulnerabilities": 0,
     "versions": {
@@ -45,5 +45,11 @@
   "frozenForecastsChanged": false,
   "automationChanged": false,
   "report": "SECURITY_AND_IDENTITY_2026-10-27.md",
-  "verificationReceipt": "data/dependency-understat-2026-10-27-verification.json"
+  "verificationReceipt": "data/dependency-understat-2026-10-27-verification.json",
+  "implementationCommit": "594d8fce20ef5f211d6c4ad7e79daa44e3da1eb2",
+  "productionDeployment": "dpl_BrqY2PTGGseR3AA1BbTZ8VSuAm57",
+  "productionUrl": "https://pl-data.colly.me.uk",
+  "authenticatedProduction": 200,
+  "anonymousProduction": 401,
+  "productionAuditVulnerabilities": 0
 }

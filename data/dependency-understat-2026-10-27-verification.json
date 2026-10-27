@@ -1,0 +1,144 @@
+{
+  "date": "2026-10-27",
+  "implementationCommit": "594d8fce20ef5f211d6c4ad7e79daa44e3da1eb2",
+  "productionDeployment": "dpl_BrqY2PTGGseR3AA1BbTZ8VSuAm57",
+  "url": "https://pl-data.colly.me.uk",
+  "state": "READY",
+  "aliases": [
+    "pl-data.colly.me.uk",
+    "pl-results-project.vercel.app",
+    "pl-results-project-colly3.vercel.app",
+    "pl-results-project-git-main-colly3.vercel.app"
+  ],
+  "productionAuditVulnerabilities": 0,
+  "authenticatedChecks": {
+    "verifiedAt": "2026-10-27T15:37:09.391Z",
+    "authenticatedProduction": 200,
+    "anonymousProduction": 401,
+    "publishedGW9Ledger": true,
+    "completedMatches": 80,
+    "futureFixtures": 10,
+    "eligibleForecasts": 10,
+    "staleFixtures": 0,
+    "modelRulesChanged": false
+  },
+  "cloudBrowser": {
+    "verifiedAt": "2026-10-27T15:29:55.928Z",
+    "liveDatabaseBrowser": "PASS",
+    "futureCards": 10,
+    "scorelines": 30,
+    "completedMatches": 80,
+    "previousCards": 0,
+    "scorecardDate": "2026-10-27",
+    "eligibleArchived": 35,
+    "publishedArchived": 50,
+    "mobileOverflow": false,
+    "browserErrors": 0,
+    "databaseWrites": 0
+  },
+  "remoteIntegrity": {
+    "tree": "80196e623dd75cd793856d5597f90b8cb35c8a1c",
+    "verifiedBlobs": [
+      {
+        "path": "package.json",
+        "sha": "c458db01b64e8998edc5a156d10e45357e1e5a9f"
+      },
+      {
+        "path": "package-lock.json",
+        "sha": "2946db8bf24d782d7cdcb6875d97c49383a3b065"
+      },
+      {
+        "path": "scripts/review_understat_mappings_20261027.py",
+        "sha": "16b455472283a5d899cc79283a129b367e5e6f39"
+      },
+      {
+        "path": "data/understat-reconciliation-inputs-2026-10-27.json",
+        "sha": "b939598b48e49c5b9c2bfe9a71a104cfc6e48db3"
+      },
+      {
+        "path": "data/understat-reconciliation-2026-10-27.json",
+        "sha": "bc2a9123eb58bb1d10ecd03feffcd5dd367fde56"
+      },
+      {
+        "path": "data/understat-reconciliation-2026-10-27.sql",
+        "sha": "b49f0715eeef680bbd9ebab54dae1733179196a7"
+      },
+      {
+        "path": "data/dependency-remediation-2026-10-27.json",
+        "sha": "e614d2a70829b5a19aa71844aa0b143dce2db7f8"
+      },
+      {
+        "path": "SECURITY_AND_IDENTITY_2026-10-27.md",
+        "sha": "d42cce6f6e0e047c77b44c1ca7ce7f260982244f"
+      },
+      {
+        "path": "data/dependency-understat-2026-10-27-checkpoint.json",
+        "sha": "12753d5bcdab77080837beabc9d9b5a059f42935"
+      },
+      {
+        "path": "PROJECT_CONTEXT.md",
+        "sha": "66f51c99b392b7f3eb3497379015de8578cf1258"
+      }
+    ],
+    "unexpectedFiles": 0
+  },
+  "checks": {
+    "cleanInstall": true,
+    "sixUnitSuites": true,
+    "appendOnlyLedger": true,
+    "typescript": true,
+    "productionBuild": true,
+    "sharpNativePng": true,
+    "frozenBrowserRegression": true,
+    "liveDatabaseBrowser": true,
+    "identityEvidenceReplay": true,
+    "productionAudit": true,
+    "authenticatedProduction": true
+  },
+  "database": {
+    "newMappings": 121,
+    "enrichedAppearances": 769,
+    "currentSeasonNewEnrichment": 761,
+    "after": {
+      "gw8_unmapped": 48,
+      "current_mapped": 2087,
+      "identity_leaks": 0,
+      "current_enriched": 2073,
+      "current_unmapped": 374,
+      "verified_mappings": 1937,
+      "advanced_mismatches": 0,
+      "current_unmapped_players": 103,
+      "remaining_missing_mapped": 14
+    },
+    "protectedHashEquality": true,
+    "securityHashEquality": true,
+    "caches": [
+      {
+        "cache": "betting_team_features_v2_cache",
+        "differences": 0
+      },
+      {
+        "cache": "team_form_window8_cache",
+        "differences": 0
+      },
+      {
+        "cache": "team_form_window_cache",
+        "differences": 0
+      }
+    ]
+  },
+  "projectProtection": {
+    "nodeVersion": "24.x",
+    "ssoProtection": {
+      "enabled": true,
+      "deploymentType": "all_except_custom_domains"
+    },
+    "passwordProtectionConfigured": true
+  },
+  "runtimeErrors": "No error/fatal production logs returned in the recent ten-minute query.",
+  "modelBettingRulesChanged": false,
+  "frozenForecastsChanged": false,
+  "existingMappingsOverwritten": 0,
+  "automationChanged": false,
+  "finalReceiptCommit": "Documentation-only follow-up to this implementation; same application and dependency blobs."
+}
