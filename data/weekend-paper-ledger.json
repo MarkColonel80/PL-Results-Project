@@ -63,6 +63,66 @@
       "kickoff_time": "2026-10-25T16:30:00Z",
       "home_team": "Sunderland",
       "away_team": "Leeds United"
+    },
+    {
+      "fixture_id": 81,
+      "kickoff_time": "2026-10-31T12:30:00Z",
+      "home_team": "Chelsea",
+      "away_team": "Manchester United"
+    },
+    {
+      "fixture_id": 82,
+      "kickoff_time": "2026-10-31T15:00:00Z",
+      "home_team": "AFC Bournemouth",
+      "away_team": "Leeds United"
+    },
+    {
+      "fixture_id": 83,
+      "kickoff_time": "2026-10-31T15:00:00Z",
+      "home_team": "Brentford",
+      "away_team": "Nottingham Forest"
+    },
+    {
+      "fixture_id": 84,
+      "kickoff_time": "2026-10-31T15:00:00Z",
+      "home_team": "Coventry City",
+      "away_team": "Sunderland"
+    },
+    {
+      "fixture_id": 85,
+      "kickoff_time": "2026-10-31T15:00:00Z",
+      "home_team": "Hull City",
+      "away_team": "Ipswich Town"
+    },
+    {
+      "fixture_id": 86,
+      "kickoff_time": "2026-10-31T15:00:00Z",
+      "home_team": "Manchester City",
+      "away_team": "Brighton & Hove Albion"
+    },
+    {
+      "fixture_id": 87,
+      "kickoff_time": "2026-10-31T17:30:00Z",
+      "home_team": "Tottenham Hotspur",
+      "away_team": "Crystal Palace"
+    },
+    {
+      "fixture_id": 88,
+      "kickoff_time": "2026-10-31T20:00:00Z",
+      "home_team": "Aston Villa",
+      "away_team": "Fulham"
+    },
+    {
+      "fixture_id": 89,
+      "kickoff_time": "2026-11-01T16:30:00Z",
+      "home_team": "Liverpool",
+      "away_team": "Arsenal"
+    },
+    {
+      "fixture_id": 90,
+      "kickoff_time": "2026-11-02T20:00:00Z",
+      "home_team": "Newcastle United",
+      "away_team": "Everton"
     }
   ],
   "events": [
@@ -732,6 +792,316 @@
           "checked_at": "2026-10-23T14:55:44Z",
           "summary": "Afternoon public coupon 3.4000: frozen research 38.2% vs 29.4% break-even (+8.8pp); weakest diagnostic cushion +3.4pp. Still comparison-only; no verified available named-bookmaker quote, official XIs pending.",
           "source_url": "https://www.oddschecker.com/football/leagues-cups/english/premier-league"
+        }
+      }
+    },
+    {
+      "id": "gw9-81-tuesday-20261027",
+      "fixture_id": 81,
+      "kickoff_time": "2026-10-31T12:30:00Z",
+      "recorded_at": "2026-10-27T10:30:40.670630+00:00",
+      "status": "watch",
+      "reason": "Provisional Manchester United away watch at 4.10: research 38.03% versus 24.39% break-even; all displayed diagnostics retain a positive gap. Chelsea play Liverpool in the cup while United have no fourth-round tie. Chelsea goalkeeper/Joao Pedro news and Palmer's cup suspension need fresh verification. United's 0-3 loss is not a reason to adjust frozen rules. Public coupon only; named-bookmaker executable quote and confirmed teams remain unverified.",
+      "checks": {
+        "teams": {
+          "checked_at": "2026-10-27T10:30:40.670630+00:00",
+          "confirmed": false,
+          "summary": "Both official GW9 XIs are pending. No paper selection or stake.",
+          "source_url": "https://fantasy.premierleague.com/api/fixtures/"
+        },
+        "news": {
+          "checked_at": "2026-10-27T10:28:28.450203+00:00",
+          "summary": "Official FPL flags checked 27 October: Martinez, Sánchez, Jörgensen, James, Chalobah, B.Badiashile, M.Sarr, Gittens, D.Essugo, João Pedro, Marc Guiu, Emegha, Chavarria. Flags can lag club news and do not confirm an XI. Palmer's two-yellow red card is reported to be served in the Liverpool cup tie; do not infer that he is suspended for United. Recheck official availability before kickoff. Official FPL flags checked 27 October: Bayindir, Dorgu, Shaw, Fredricson, Rashford, Mainoo, Ugarte, Collyer, Šeško, Obi. Flags can lag club news and do not confirm an XI.",
+          "source_url": "https://fantasy.premierleague.com/api/bootstrap-static/"
+        },
+        "schedule": {
+          "checked_at": "2026-10-27T10:30:40.670630+00:00",
+          "summary": "Chelsea: Carabao Cup away at Liverpool on Wed 28 Oct 20:00 GMT; Manchester United: not in the reviewed Carabao Cup fourth-round schedule. Review minutes, injuries, travel and rotation after these matches. No numerical rest/news adjustment.",
+          "source_url": "https://www.efl.com/competitions/carabao-cup/"
+        },
+        "sensitivity": {
+          "checked_at": "2026-10-27T10:30:40.670630+00:00",
+          "summary": "Provisional Manchester United away watch at 4.10: research 38.03% versus 24.39% break-even; all displayed diagnostics retain a positive gap. Chelsea play Liverpool in the cup while United have no fourth-round tie. Chelsea goalkeeper/Joao Pedro news and Palmer's cup suspension need fresh verification. United's 0-3 loss is not a reason to adjust frozen rules.",
+          "source_url": "https://pl-data.colly.me.uk/betting/weekend#review-81"
+        }
+      }
+    },
+    {
+      "id": "gw9-82-tuesday-20261027",
+      "fixture_id": 82,
+      "kickoff_time": "2026-10-31T15:00:00Z",
+      "recorded_at": "2026-10-27T10:30:40.670630+00:00",
+      "status": "watch",
+      "reason": "Provisional Bournemouth home watch at 2.15: research 53.80% versus 46.51% break-even; smallest diagnostic cushion about 4.28pp. Bournemouth host Villa in the cup on Wednesday; Leeds have no fourth-round tie. Recheck rotation, workload and official XIs. Public coupon only; named-bookmaker executable quote and confirmed teams remain unverified.",
+      "checks": {
+        "teams": {
+          "checked_at": "2026-10-27T10:30:40.670630+00:00",
+          "confirmed": false,
+          "summary": "Both official GW9 XIs are pending. No paper selection or stake.",
+          "source_url": "https://fantasy.premierleague.com/api/fixtures/"
+        },
+        "news": {
+          "checked_at": "2026-10-27T10:28:28.450203+00:00",
+          "summary": "Official FPL flags checked 27 October: Dennis, Milosavljević, J.Araujo, Scott, Tóth.A, Enes Ünal. Flags can lag club news and do not confirm an XI. Official FPL flags checked 27 October: Perri, Rodon, Bornauw, Gnonto, Harrison, Piroe, Mateo Joseph, Elvedi. Flags can lag club news and do not confirm an XI.",
+          "source_url": "https://fantasy.premierleague.com/api/bootstrap-static/"
+        },
+        "schedule": {
+          "checked_at": "2026-10-27T10:30:40.670630+00:00",
+          "summary": "AFC Bournemouth: Carabao Cup home to Aston Villa on Wed 28 Oct 19:45 GMT; Leeds United: not in the reviewed Carabao Cup fourth-round schedule. Review minutes, injuries, travel and rotation after these matches. No numerical rest/news adjustment.",
+          "source_url": "https://www.efl.com/competitions/carabao-cup/"
+        },
+        "sensitivity": {
+          "checked_at": "2026-10-27T10:30:40.670630+00:00",
+          "summary": "Provisional Bournemouth home watch at 2.15: research 53.80% versus 46.51% break-even; smallest diagnostic cushion about 4.28pp. Bournemouth host Villa in the cup on Wednesday; Leeds have no fourth-round tie. Recheck rotation, workload and official XIs.",
+          "source_url": "https://pl-data.colly.me.uk/betting/weekend#review-82"
+        }
+      }
+    },
+    {
+      "id": "gw9-83-tuesday-20261027",
+      "fixture_id": 83,
+      "kickoff_time": "2026-10-31T15:00:00Z",
+      "recorded_at": "2026-10-27T10:30:40.670630+00:00",
+      "status": "pass",
+      "reason": "Provisional pass: Forest away at 3.75 has a 2.65pp research gap but loses it in the full Venue18 xG-only diagnostic (-3.31pp). Brentford's Wednesday cup trip to Sunderland is an additional review item. Public coupon only; named-bookmaker executable quote and confirmed teams remain unverified.",
+      "checks": {
+        "teams": {
+          "checked_at": "2026-10-27T10:30:40.670630+00:00",
+          "confirmed": false,
+          "summary": "Both official GW9 XIs are pending. No paper selection or stake.",
+          "source_url": "https://fantasy.premierleague.com/api/fixtures/"
+        },
+        "news": {
+          "checked_at": "2026-10-27T10:28:28.450203+00:00",
+          "summary": "Official FPL flags checked 27 October: Milambo, Yarmoliuk, Dasilva, Furo. Flags can lag club news and do not confirm an XI. Official FPL flags checked 27 October: N.Williams, Morato, Savona, Abbott, Bindon, Hutchinson, Bakwa, Dominguez, Igor Jesus. Flags can lag club news and do not confirm an XI.",
+          "source_url": "https://fantasy.premierleague.com/api/bootstrap-static/"
+        },
+        "schedule": {
+          "checked_at": "2026-10-27T10:30:40.670630+00:00",
+          "summary": "Brentford: Carabao Cup away at Sunderland on Wed 28 Oct 19:45 GMT; Nottingham Forest: not in the reviewed Carabao Cup fourth-round schedule. Review minutes, injuries, travel and rotation after these matches. No numerical rest/news adjustment.",
+          "source_url": "https://www.efl.com/competitions/carabao-cup/"
+        },
+        "sensitivity": {
+          "checked_at": "2026-10-27T10:30:40.670630+00:00",
+          "summary": "Provisional pass: Forest away at 3.75 has a 2.65pp research gap but loses it in the full Venue18 xG-only diagnostic (-3.31pp). Brentford's Wednesday cup trip to Sunderland is an additional review item.",
+          "source_url": "https://pl-data.colly.me.uk/betting/weekend#review-83"
+        }
+      }
+    },
+    {
+      "id": "gw9-84-tuesday-20261027",
+      "fixture_id": 84,
+      "kickoff_time": "2026-10-31T15:00:00Z",
+      "recorded_at": "2026-10-27T10:30:40.670630+00:00",
+      "status": "pass",
+      "reason": "Provisional pass: Coventry home at 3.10 has only a 2.67pp research gap, current view disagrees (-3.82pp), and Coventry have only four relevant home matches. Venue18 is unavailable, not a passed test. Public coupon only; named-bookmaker executable quote and confirmed teams remain unverified.",
+      "checks": {
+        "teams": {
+          "checked_at": "2026-10-27T10:30:40.670630+00:00",
+          "confirmed": false,
+          "summary": "Both official GW9 XIs are pending. No paper selection or stake.",
+          "source_url": "https://fantasy.premierleague.com/api/fixtures/"
+        },
+        "news": {
+          "checked_at": "2026-10-27T10:28:28.450203+00:00",
+          "summary": "Official FPL flags checked 27 October: Dovin, Thomas, Kitching, Woolfenden, Brau, Amenda, Eccles, Borges Rodrigues, Andrews, Wright, Markelo, Bassette. Flags can lag club news and do not confirm an XI. Official FPL flags checked 27 October: Patterson, Ballard, Seelt, Hjelde, Masuaku, Meunier, Adingra, Mundle, Isidor. Flags can lag club news and do not confirm an XI.",
+          "source_url": "https://fantasy.premierleague.com/api/bootstrap-static/"
+        },
+        "schedule": {
+          "checked_at": "2026-10-27T10:30:40.670630+00:00",
+          "summary": "Coventry City: not in the reviewed Carabao Cup fourth-round schedule; Sunderland: Carabao Cup home to Brentford on Wed 28 Oct 19:45 GMT. Review minutes, injuries, travel and rotation after these matches. No numerical rest/news adjustment.",
+          "source_url": "https://www.efl.com/competitions/carabao-cup/"
+        },
+        "sensitivity": {
+          "checked_at": "2026-10-27T10:30:40.670630+00:00",
+          "summary": "Provisional pass: Coventry home at 3.10 has only a 2.67pp research gap, current view disagrees (-3.82pp), and Coventry have only four relevant home matches. Venue18 is unavailable, not a passed test.",
+          "source_url": "https://pl-data.colly.me.uk/betting/weekend#review-84"
+        }
+      }
+    },
+    {
+      "id": "gw9-85-tuesday-20261027",
+      "fixture_id": 85,
+      "kickoff_time": "2026-10-31T15:00:00Z",
+      "recorded_at": "2026-10-27T10:30:40.670630+00:00",
+      "status": "watch",
+      "reason": "Higher-uncertainty provisional Hull home watch at 2.625: research 50.70% versus 38.10% break-even; Venue8 xG-only cushion only 3.39pp. Both promoted clubs have exactly four relevant venue matches, meeting the unchanged minimum but with no full Venue18 diagnostic. Neither has a fourth-round cup tie. No final selection. Public coupon only; named-bookmaker executable quote and confirmed teams remain unverified.",
+      "checks": {
+        "teams": {
+          "checked_at": "2026-10-27T10:30:40.670630+00:00",
+          "confirmed": false,
+          "summary": "Both official GW9 XIs are pending. No paper selection or stake.",
+          "source_url": "https://fantasy.premierleague.com/api/fixtures/"
+        },
+        "news": {
+          "checked_at": "2026-10-27T10:28:28.450203+00:00",
+          "summary": "Official FPL flags checked 27 October: Butland, Cartwright, Lo-Tutala, Hughes, Drameh, Jacob, Millar, Matazo, Kamara, Akintola, Gyabi, Destan, Burstow, Targett, Mendy, Gourna-Douath, Ansah. Flags can lag club news and do not confirm an XI. Official FPL flags checked 27 October: Lukić, Johnson, Burns, Ogbene, Hirst, Szmodics, Al-Hamadi, Van Oevelen, Humphreys. Flags can lag club news and do not confirm an XI.",
+          "source_url": "https://fantasy.premierleague.com/api/bootstrap-static/"
+        },
+        "schedule": {
+          "checked_at": "2026-10-27T10:30:40.670630+00:00",
+          "summary": "Hull City: not in the reviewed Carabao Cup fourth-round schedule; Ipswich Town: not in the reviewed Carabao Cup fourth-round schedule. Review minutes, injuries, travel and rotation after these matches. No numerical rest/news adjustment.",
+          "source_url": "https://www.efl.com/competitions/carabao-cup/"
+        },
+        "sensitivity": {
+          "checked_at": "2026-10-27T10:30:40.670630+00:00",
+          "summary": "Higher-uncertainty provisional Hull home watch at 2.625: research 50.70% versus 38.10% break-even; Venue8 xG-only cushion only 3.39pp. Both promoted clubs have exactly four relevant venue matches, meeting the unchanged minimum but with no full Venue18 diagnostic. Neither has a fourth-round cup tie. No final selection.",
+          "source_url": "https://pl-data.colly.me.uk/betting/weekend#review-85"
+        }
+      }
+    },
+    {
+      "id": "gw9-86-tuesday-20261027",
+      "fixture_id": 86,
+      "kickoff_time": "2026-10-31T15:00:00Z",
+      "recorded_at": "2026-10-27T10:30:40.670630+00:00",
+      "status": "watch",
+      "reason": "Provisional Brighton away watch at 4.60: research 26.17% versus 21.74% break-even, positive in all displayed diagnostics. These teams meet at City in the cup on Wednesday before the league rematch; minutes, injuries and rotation must be checked after that match. No numerical travel/rest adjustment. Public coupon only; named-bookmaker executable quote and confirmed teams remain unverified.",
+      "checks": {
+        "teams": {
+          "checked_at": "2026-10-27T10:30:40.670630+00:00",
+          "confirmed": false,
+          "summary": "Both official GW9 XIs are pending. No paper selection or stake.",
+          "source_url": "https://fantasy.premierleague.com/api/fixtures/"
+        },
+        "news": {
+          "checked_at": "2026-10-27T10:28:28.450203+00:00",
+          "summary": "Official FPL flags checked 27 October: Matheus N., Alleyne, Semenyo, Rodrigo, Reijnders, Echeverri, Phillips, Mukasa, Monga. Flags can lag club news and do not confirm an XI. Official FPL flags checked 27 October: F.Kadıoğlu, Igor, Mitoma, Minteh, Buonanotte, Wieffer, Howell, Watson, Yohanna, Tzimas, Ferguson, Struijk, Cozier-Duberry, Andrés, Azeez. Flags can lag club news and do not confirm an XI.",
+          "source_url": "https://fantasy.premierleague.com/api/bootstrap-static/"
+        },
+        "schedule": {
+          "checked_at": "2026-10-27T10:30:40.670630+00:00",
+          "summary": "Manchester City: Carabao Cup home to Brighton on Wed 28 Oct 19:30 GMT; Brighton & Hove Albion: Carabao Cup away at Manchester City on Wed 28 Oct 19:30 GMT. Review minutes, injuries, travel and rotation after these matches. No numerical rest/news adjustment.",
+          "source_url": "https://www.efl.com/competitions/carabao-cup/"
+        },
+        "sensitivity": {
+          "checked_at": "2026-10-27T10:30:40.670630+00:00",
+          "summary": "Provisional Brighton away watch at 4.60: research 26.17% versus 21.74% break-even, positive in all displayed diagnostics. These teams meet at City in the cup on Wednesday before the league rematch; minutes, injuries and rotation must be checked after that match. No numerical travel/rest adjustment.",
+          "source_url": "https://pl-data.colly.me.uk/betting/weekend#review-86"
+        }
+      }
+    },
+    {
+      "id": "gw9-87-tuesday-20261027",
+      "fixture_id": 87,
+      "kickoff_time": "2026-10-31T17:30:00Z",
+      "recorded_at": "2026-10-27T10:30:40.670630+00:00",
+      "status": "watch",
+      "reason": "Provisional Palace away watch at 6.00: research 32.67% versus 16.67% break-even, positive in all displayed diagnostics. The draw at 4.75 is an alternative outcome, not an additional independent pick. Palace play at Fulham on Wednesday; Spurs have no fourth-round tie. The recent Palace losses and prior-season history caution remain. Public coupon only; named-bookmaker executable quote and confirmed teams remain unverified.",
+      "checks": {
+        "teams": {
+          "checked_at": "2026-10-27T10:30:40.670630+00:00",
+          "confirmed": false,
+          "summary": "Both official GW9 XIs are pending. No paper selection or stake.",
+          "source_url": "https://fantasy.premierleague.com/api/fixtures/"
+        },
+        "news": {
+          "checked_at": "2026-10-27T10:28:28.450203+00:00",
+          "summary": "Official FPL flags checked 27 October: Sávio, Vicario, Romero, Spence, Udogie, Phillips, Souza, Xavi, Maddison, Bentancur, Odobert, P.M.Sarr, Bergvall, Moore, Richarlison, Scarlett, Mudryk. Flags can lag club news and do not confirm an XI. Official FPL flags checked 27 October: Henderson, Sosa, Chadi Riad, Devenny, Esse, M.França, J.Rak-Sakyi, Cardines, Strand Larsen, Uche, Tomiyasu, Timber. Flags can lag club news and do not confirm an XI.",
+          "source_url": "https://fantasy.premierleague.com/api/bootstrap-static/"
+        },
+        "schedule": {
+          "checked_at": "2026-10-27T10:30:40.670630+00:00",
+          "summary": "Tottenham Hotspur: not in the reviewed Carabao Cup fourth-round schedule; Crystal Palace: Carabao Cup away at Fulham on Wed 28 Oct 19:45 GMT. Review minutes, injuries, travel and rotation after these matches. No numerical rest/news adjustment.",
+          "source_url": "https://www.efl.com/competitions/carabao-cup/"
+        },
+        "sensitivity": {
+          "checked_at": "2026-10-27T10:30:40.670630+00:00",
+          "summary": "Provisional Palace away watch at 6.00: research 32.67% versus 16.67% break-even, positive in all displayed diagnostics. The draw at 4.75 is an alternative outcome, not an additional independent pick. Palace play at Fulham on Wednesday; Spurs have no fourth-round tie. The recent Palace losses and prior-season history caution remain.",
+          "source_url": "https://pl-data.colly.me.uk/betting/weekend#review-87"
+        }
+      }
+    },
+    {
+      "id": "gw9-88-tuesday-20261027",
+      "fixture_id": 88,
+      "kickoff_time": "2026-10-31T20:00:00Z",
+      "recorded_at": "2026-10-27T10:30:40.670630+00:00",
+      "status": "pass",
+      "reason": "Provisional pass: Fulham away at 3.70 has a 4.18pp research gap but the current view is negative (-4.19pp). Both clubs have Wednesday cup matches; reassess afterwards. Public coupon only; named-bookmaker executable quote and confirmed teams remain unverified.",
+      "checks": {
+        "teams": {
+          "checked_at": "2026-10-27T10:30:40.670630+00:00",
+          "confirmed": false,
+          "summary": "Both official GW9 XIs are pending. No paper selection or stake.",
+          "source_url": "https://fantasy.premierleague.com/api/fixtures/"
+        },
+        "news": {
+          "checked_at": "2026-10-27T10:28:28.450203+00:00",
+          "summary": "Official FPL flags checked 27 October: Digne, A.García, Nedeljkovic, Bailey, Onana, Iling Jr, Watkins, Ruggeri, Lynch, Wan-Bissaka. Flags can lag club news and do not confirm an XI. Official FPL flags checked 27 October: McNally, Smith Rowe, Sessegnon, De Fougerolles. Flags can lag club news and do not confirm an XI.",
+          "source_url": "https://fantasy.premierleague.com/api/bootstrap-static/"
+        },
+        "schedule": {
+          "checked_at": "2026-10-27T10:30:40.670630+00:00",
+          "summary": "Aston Villa: Carabao Cup away at Bournemouth on Wed 28 Oct 19:45 GMT; Fulham: Carabao Cup home to Crystal Palace on Wed 28 Oct 19:45 GMT. Review minutes, injuries, travel and rotation after these matches. No numerical rest/news adjustment.",
+          "source_url": "https://www.efl.com/competitions/carabao-cup/"
+        },
+        "sensitivity": {
+          "checked_at": "2026-10-27T10:30:40.670630+00:00",
+          "summary": "Provisional pass: Fulham away at 3.70 has a 4.18pp research gap but the current view is negative (-4.19pp). Both clubs have Wednesday cup matches; reassess afterwards.",
+          "source_url": "https://pl-data.colly.me.uk/betting/weekend#review-88"
+        }
+      }
+    },
+    {
+      "id": "gw9-89-tuesday-20261027",
+      "fixture_id": 89,
+      "kickoff_time": "2026-11-01T16:30:00Z",
+      "recorded_at": "2026-10-27T10:30:40.670630+00:00",
+      "status": "pass",
+      "reason": "Provisional pass: Arsenal away at 2.30 has a 4.74pp research gap but the current view is negative (-1.72pp). Arsenal play Tuesday and Liverpool Wednesday in the cup. Fresh Saka/Wirtz/other availability needs confirmation; no injury-based model adjustment. Public coupon only; named-bookmaker executable quote and confirmed teams remain unverified.",
+      "checks": {
+        "teams": {
+          "checked_at": "2026-10-27T10:30:40.670630+00:00",
+          "confirmed": false,
+          "summary": "Both official GW9 XIs are pending. No paper selection or stake.",
+          "source_url": "https://fantasy.premierleague.com/api/fixtures/"
+        },
+        "news": {
+          "checked_at": "2026-10-27T10:28:28.450203+00:00",
+          "summary": "Official FPL flags checked 27 October: Pecsi, Jaros, Frimpong, Bradley, Leoni, Ramsay, Wirtz, Szoboszlai, C.Jones, Bajcetic, Munoz, Ekitiké, Elliott. Flags can lag club news and do not confirm an XI. Official FPL flags checked 27 October: Saliba, Calafiori, Saka, Martinelli, Nwaneri, Fábio Vieira, Nelson, G.Jesus, Tzolis. Flags can lag club news and do not confirm an XI.",
+          "source_url": "https://fantasy.premierleague.com/api/bootstrap-static/"
+        },
+        "schedule": {
+          "checked_at": "2026-10-27T10:30:40.670630+00:00",
+          "summary": "Liverpool: Carabao Cup home to Chelsea on Wed 28 Oct 20:00 GMT; Arsenal: Carabao Cup away at Fleetwood on Tue 27 Oct 20:00 GMT. Review minutes, injuries, travel and rotation after these matches. No numerical rest/news adjustment.",
+          "source_url": "https://www.efl.com/competitions/carabao-cup/"
+        },
+        "sensitivity": {
+          "checked_at": "2026-10-27T10:30:40.670630+00:00",
+          "summary": "Provisional pass: Arsenal away at 2.30 has a 4.74pp research gap but the current view is negative (-1.72pp). Arsenal play Tuesday and Liverpool Wednesday in the cup. Fresh Saka/Wirtz/other availability needs confirmation; no injury-based model adjustment.",
+          "source_url": "https://pl-data.colly.me.uk/betting/weekend#review-89"
+        }
+      }
+    },
+    {
+      "id": "gw9-90-tuesday-20261027",
+      "fixture_id": 90,
+      "kickoff_time": "2026-11-02T20:00:00Z",
+      "recorded_at": "2026-10-27T10:30:40.670630+00:00",
+      "status": "pass",
+      "reason": "Provisional pass: Everton away at 3.00 has only a 1.73pp research gap and fails full Venue18 xG-only (-1.48pp). The sides meet at Everton in the cup on Thursday before Monday's league match; recheck minutes and team news. Public coupon only; named-bookmaker executable quote and confirmed teams remain unverified.",
+      "checks": {
+        "teams": {
+          "checked_at": "2026-10-27T10:30:40.670630+00:00",
+          "confirmed": false,
+          "summary": "Both official GW9 XIs are pending. No paper selection or stake.",
+          "source_url": "https://fantasy.premierleague.com/api/fixtures/"
+        },
+        "news": {
+          "checked_at": "2026-10-27T10:28:28.450203+00:00",
+          "summary": "Official FPL flags checked 27 October: Jaouen, Livramento, A.Murphy, Woltemade, Neave, Shahar, Fernandez-Pardo. Flags can lag club news and do not confirm an XI. Official FPL flags checked 27 October: Mykolenko, Patterson, Aznou, Grealish, Beto. Flags can lag club news and do not confirm an XI.",
+          "source_url": "https://fantasy.premierleague.com/api/bootstrap-static/"
+        },
+        "schedule": {
+          "checked_at": "2026-10-27T10:30:40.670630+00:00",
+          "summary": "Newcastle United: Carabao Cup away at Everton on Thu 29 Oct 19:45 GMT; Everton: Carabao Cup home to Newcastle on Thu 29 Oct 19:45 GMT. Review minutes, injuries, travel and rotation after these matches. No numerical rest/news adjustment.",
+          "source_url": "https://www.efl.com/competitions/carabao-cup/"
+        },
+        "sensitivity": {
+          "checked_at": "2026-10-27T10:30:40.670630+00:00",
+          "summary": "Provisional pass: Everton away at 3.00 has only a 1.73pp research gap and fails full Venue18 xG-only (-1.48pp). The sides meet at Everton in the cup on Thursday before Monday's league match; recheck minutes and team news.",
+          "source_url": "https://pl-data.colly.me.uk/betting/weekend#review-90"
         }
       }
     }

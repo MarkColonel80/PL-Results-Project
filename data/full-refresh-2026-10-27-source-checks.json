@@ -1,0 +1,542 @@
+{
+  "source_checks": {
+    "captured_at": "2026-10-27T10:22:55.740787+00:00",
+    "rich_commit": "8c890d37c2fabfe5548f18c2bb347c3cfc96e091",
+    "matches": [
+      {
+        "match_id": "26-27-prem-manchester-united-vs-afc-bournemouth",
+        "official_fpl_id": 79,
+        "native_fotmob_id": "5795493",
+        "rich_rows": 40,
+        "lineups": 40,
+        "starters": 22,
+        "goals": 3
+      },
+      {
+        "match_id": "26-27-prem-ipswich-town-vs-nottingham-forest",
+        "official_fpl_id": 77,
+        "native_fotmob_id": "5795491",
+        "rich_rows": 40,
+        "lineups": 40,
+        "starters": 22,
+        "goals": 2
+      },
+      {
+        "match_id": "26-27-prem-liverpool-vs-brighton-hove-albion",
+        "official_fpl_id": 78,
+        "native_fotmob_id": "5795492",
+        "rich_rows": 40,
+        "lineups": 40,
+        "starters": 22,
+        "goals": 2
+      },
+      {
+        "match_id": "26-27-prem-chelsea-vs-tottenham-hotspur",
+        "official_fpl_id": 73,
+        "native_fotmob_id": "5795487",
+        "rich_rows": 40,
+        "lineups": 40,
+        "starters": 22,
+        "goals": 2
+      },
+      {
+        "match_id": "26-27-prem-crystal-palace-vs-newcastle-united",
+        "official_fpl_id": 75,
+        "native_fotmob_id": "5795489",
+        "rich_rows": 40,
+        "lineups": 40,
+        "starters": 22,
+        "goals": 2
+      },
+      {
+        "match_id": "26-27-prem-coventry-city-vs-fulham",
+        "official_fpl_id": 74,
+        "native_fotmob_id": "5795488",
+        "rich_rows": 40,
+        "lineups": 40,
+        "starters": 22,
+        "goals": 1
+      },
+      {
+        "match_id": "26-27-prem-hull-city-vs-brentford",
+        "official_fpl_id": 76,
+        "native_fotmob_id": "5795490",
+        "rich_rows": 40,
+        "lineups": 40,
+        "starters": 22,
+        "goals": 2
+      },
+      {
+        "match_id": "26-27-prem-arsenal-vs-everton",
+        "official_fpl_id": 71,
+        "native_fotmob_id": "5795485",
+        "rich_rows": 40,
+        "lineups": 40,
+        "starters": 22,
+        "goals": 2
+      },
+      {
+        "match_id": "26-27-prem-sunderland-vs-leeds-united",
+        "official_fpl_id": 80,
+        "native_fotmob_id": "5795494",
+        "rich_rows": 40,
+        "lineups": 40,
+        "starters": 22,
+        "goals": 0
+      },
+      {
+        "match_id": "26-27-prem-aston-villa-vs-manchester-city",
+        "official_fpl_id": 72,
+        "native_fotmob_id": "5795486",
+        "rich_rows": 40,
+        "lineups": 40,
+        "starters": 22,
+        "goals": 3
+      }
+    ],
+    "unresolved": [],
+    "fpl_state": {
+      "id": 8,
+      "name": "Gameweek 8",
+      "deadline_time": "2026-10-23T17:30:00Z",
+      "release_time": null,
+      "average_entry_score": 45,
+      "finished": true,
+      "data_checked": true,
+      "highest_scoring_entry": 5112705,
+      "deadline_time_epoch": 1792776600,
+      "deadline_time_game_offset": 0,
+      "highest_score": 120,
+      "is_previous": false,
+      "is_current": true,
+      "is_next": false,
+      "cup_leagues_created": true,
+      "h2h_ko_matches_created": true,
+      "can_enter": false,
+      "can_manage": false,
+      "released": true,
+      "ranked_count": 11111669,
+      "overrides": {
+        "rules": {},
+        "scoring": {},
+        "element_types": [],
+        "pick_multiplier": null
+      },
+      "chip_plays": [
+        {
+          "chip_name": "bboost",
+          "num_played": 157767
+        },
+        {
+          "chip_name": "freehit",
+          "num_played": 84907
+        },
+        {
+          "chip_name": "wildcard",
+          "num_played": 216025
+        },
+        {
+          "chip_name": "3xc",
+          "num_played": 78068
+        }
+      ],
+      "most_selected": 411,
+      "most_transferred_in": 68,
+      "top_element": 4,
+      "top_element_info": {
+        "id": 4,
+        "points": 17
+      },
+      "transfers_made": 10389270,
+      "most_captained": 411,
+      "most_vice_captained": 165
+    }
+  },
+  "import": {
+    "counts": {
+      "matches": 10,
+      "canonical_matches": 10,
+      "match_source_ids": 40,
+      "player_source_ids": 3,
+      "player_seasons": 1,
+      "player_match_stats": 400,
+      "lineups": 400,
+      "goals": 19,
+      "fpl_player_match_stats": 669,
+      "historical_market_odds": 10,
+      "source_player_match_stats": 303
+    },
+    "understat_mapped": 158,
+    "understat_enriched": 156,
+    "mapped_no_appearance": [
+      {
+        "match_id": "26-27-prem-ipswich-town-vs-nottingham-forest",
+        "player_code": "plp:14565015a2d048ac918586f757d0d336",
+        "source_player_id": "1790"
+      },
+      {
+        "match_id": "26-27-prem-coventry-city-vs-fulham",
+        "player_code": "plp:53ddc13d0f194a73b80a4167a9024f35",
+        "source_player_id": "1045"
+      }
+    ]
+  },
+  "new_player_crosswalks": [
+    {
+      "mapping_method": "native_opta_id_equals_official_fpl_opta_code",
+      "player_code": "560262",
+      "source": "fotmob",
+      "source_note": "Verified 2026-10-27T10:22:55.740787+00:00 from https://www.fotmob.com/matches/afc-bournemouth-vs-manchester-united/2yrx85#5795493 and official FPL bootstrap.",
+      "source_player_id": "1460534",
+      "verified": true
+    },
+    {
+      "mapping_method": "native_opta_id_equals_official_fpl_opta_code",
+      "player_code": "519913",
+      "source": "fotmob",
+      "source_note": "Verified 2026-10-27T10:22:55.740787+00:00 from https://www.fotmob.com/matches/afc-bournemouth-vs-manchester-united/2yrx85#5795493 and official FPL bootstrap.",
+      "source_player_id": "1676985",
+      "verified": true
+    },
+    {
+      "mapping_method": "native_opta_id_equals_official_fpl_opta_code",
+      "player_code": "499857",
+      "source": "fotmob",
+      "source_note": "Verified 2026-10-27T10:22:55.740787+00:00 from https://www.fotmob.com/matches/chelsea-vs-tottenham-hotspur/2eggkj#5795487 and official FPL bootstrap.",
+      "source_player_id": "1117871",
+      "verified": true
+    }
+  ],
+  "new_player_seasons": [
+    {
+      "player_code": "499857",
+      "player_id": "669",
+      "position": "Goalkeeper",
+      "season": "2026/27",
+      "team_code": "8",
+      "team_name": "Chelsea"
+    }
+  ],
+  "match_source_ids": [
+    {
+      "canonical_match_id": "26-27-prem-manchester-united-vs-afc-bournemouth",
+      "mapping_method": "exact_teams_kickoff_final_score_verified_20261027",
+      "season": "2026/27",
+      "source": "rich_core",
+      "source_match_id": "26-27-prem-manchester-united-vs-afc-bournemouth",
+      "verified": true
+    },
+    {
+      "canonical_match_id": "26-27-prem-manchester-united-vs-afc-bournemouth",
+      "mapping_method": "exact_teams_kickoff_final_score_verified_20261027",
+      "season": "2026/27",
+      "source": "fotmob",
+      "source_match_id": "5795493",
+      "verified": true
+    },
+    {
+      "canonical_match_id": "26-27-prem-manchester-united-vs-afc-bournemouth",
+      "mapping_method": "exact_teams_kickoff_final_score_verified_20261027",
+      "season": "2026/27",
+      "source": "fpl_fixture",
+      "source_match_id": "2026/27:79",
+      "verified": true
+    },
+    {
+      "canonical_match_id": "26-27-prem-ipswich-town-vs-nottingham-forest",
+      "mapping_method": "exact_teams_kickoff_final_score_verified_20261027",
+      "season": "2026/27",
+      "source": "rich_core",
+      "source_match_id": "26-27-prem-ipswich-town-vs-nottingham-forest",
+      "verified": true
+    },
+    {
+      "canonical_match_id": "26-27-prem-ipswich-town-vs-nottingham-forest",
+      "mapping_method": "exact_teams_kickoff_final_score_verified_20261027",
+      "season": "2026/27",
+      "source": "fotmob",
+      "source_match_id": "5795491",
+      "verified": true
+    },
+    {
+      "canonical_match_id": "26-27-prem-ipswich-town-vs-nottingham-forest",
+      "mapping_method": "exact_teams_kickoff_final_score_verified_20261027",
+      "season": "2026/27",
+      "source": "fpl_fixture",
+      "source_match_id": "2026/27:77",
+      "verified": true
+    },
+    {
+      "canonical_match_id": "26-27-prem-liverpool-vs-brighton-hove-albion",
+      "mapping_method": "exact_teams_kickoff_final_score_verified_20261027",
+      "season": "2026/27",
+      "source": "rich_core",
+      "source_match_id": "26-27-prem-liverpool-vs-brighton-hove-albion",
+      "verified": true
+    },
+    {
+      "canonical_match_id": "26-27-prem-liverpool-vs-brighton-hove-albion",
+      "mapping_method": "exact_teams_kickoff_final_score_verified_20261027",
+      "season": "2026/27",
+      "source": "fotmob",
+      "source_match_id": "5795492",
+      "verified": true
+    },
+    {
+      "canonical_match_id": "26-27-prem-liverpool-vs-brighton-hove-albion",
+      "mapping_method": "exact_teams_kickoff_final_score_verified_20261027",
+      "season": "2026/27",
+      "source": "fpl_fixture",
+      "source_match_id": "2026/27:78",
+      "verified": true
+    },
+    {
+      "canonical_match_id": "26-27-prem-chelsea-vs-tottenham-hotspur",
+      "mapping_method": "exact_teams_kickoff_final_score_verified_20261027",
+      "season": "2026/27",
+      "source": "rich_core",
+      "source_match_id": "26-27-prem-chelsea-vs-tottenham-hotspur",
+      "verified": true
+    },
+    {
+      "canonical_match_id": "26-27-prem-chelsea-vs-tottenham-hotspur",
+      "mapping_method": "exact_teams_kickoff_final_score_verified_20261027",
+      "season": "2026/27",
+      "source": "fotmob",
+      "source_match_id": "5795487",
+      "verified": true
+    },
+    {
+      "canonical_match_id": "26-27-prem-chelsea-vs-tottenham-hotspur",
+      "mapping_method": "exact_teams_kickoff_final_score_verified_20261027",
+      "season": "2026/27",
+      "source": "fpl_fixture",
+      "source_match_id": "2026/27:73",
+      "verified": true
+    },
+    {
+      "canonical_match_id": "26-27-prem-crystal-palace-vs-newcastle-united",
+      "mapping_method": "exact_teams_kickoff_final_score_verified_20261027",
+      "season": "2026/27",
+      "source": "rich_core",
+      "source_match_id": "26-27-prem-crystal-palace-vs-newcastle-united",
+      "verified": true
+    },
+    {
+      "canonical_match_id": "26-27-prem-crystal-palace-vs-newcastle-united",
+      "mapping_method": "exact_teams_kickoff_final_score_verified_20261027",
+      "season": "2026/27",
+      "source": "fotmob",
+      "source_match_id": "5795489",
+      "verified": true
+    },
+    {
+      "canonical_match_id": "26-27-prem-crystal-palace-vs-newcastle-united",
+      "mapping_method": "exact_teams_kickoff_final_score_verified_20261027",
+      "season": "2026/27",
+      "source": "fpl_fixture",
+      "source_match_id": "2026/27:75",
+      "verified": true
+    },
+    {
+      "canonical_match_id": "26-27-prem-coventry-city-vs-fulham",
+      "mapping_method": "exact_teams_kickoff_final_score_verified_20261027",
+      "season": "2026/27",
+      "source": "rich_core",
+      "source_match_id": "26-27-prem-coventry-city-vs-fulham",
+      "verified": true
+    },
+    {
+      "canonical_match_id": "26-27-prem-coventry-city-vs-fulham",
+      "mapping_method": "exact_teams_kickoff_final_score_verified_20261027",
+      "season": "2026/27",
+      "source": "fotmob",
+      "source_match_id": "5795488",
+      "verified": true
+    },
+    {
+      "canonical_match_id": "26-27-prem-coventry-city-vs-fulham",
+      "mapping_method": "exact_teams_kickoff_final_score_verified_20261027",
+      "season": "2026/27",
+      "source": "fpl_fixture",
+      "source_match_id": "2026/27:74",
+      "verified": true
+    },
+    {
+      "canonical_match_id": "26-27-prem-hull-city-vs-brentford",
+      "mapping_method": "exact_teams_kickoff_final_score_verified_20261027",
+      "season": "2026/27",
+      "source": "rich_core",
+      "source_match_id": "26-27-prem-hull-city-vs-brentford",
+      "verified": true
+    },
+    {
+      "canonical_match_id": "26-27-prem-hull-city-vs-brentford",
+      "mapping_method": "exact_teams_kickoff_final_score_verified_20261027",
+      "season": "2026/27",
+      "source": "fotmob",
+      "source_match_id": "5795490",
+      "verified": true
+    },
+    {
+      "canonical_match_id": "26-27-prem-hull-city-vs-brentford",
+      "mapping_method": "exact_teams_kickoff_final_score_verified_20261027",
+      "season": "2026/27",
+      "source": "fpl_fixture",
+      "source_match_id": "2026/27:76",
+      "verified": true
+    },
+    {
+      "canonical_match_id": "26-27-prem-arsenal-vs-everton",
+      "mapping_method": "exact_teams_kickoff_final_score_verified_20261027",
+      "season": "2026/27",
+      "source": "rich_core",
+      "source_match_id": "26-27-prem-arsenal-vs-everton",
+      "verified": true
+    },
+    {
+      "canonical_match_id": "26-27-prem-arsenal-vs-everton",
+      "mapping_method": "exact_teams_kickoff_final_score_verified_20261027",
+      "season": "2026/27",
+      "source": "fotmob",
+      "source_match_id": "5795485",
+      "verified": true
+    },
+    {
+      "canonical_match_id": "26-27-prem-arsenal-vs-everton",
+      "mapping_method": "exact_teams_kickoff_final_score_verified_20261027",
+      "season": "2026/27",
+      "source": "fpl_fixture",
+      "source_match_id": "2026/27:71",
+      "verified": true
+    },
+    {
+      "canonical_match_id": "26-27-prem-sunderland-vs-leeds-united",
+      "mapping_method": "exact_teams_kickoff_final_score_verified_20261027",
+      "season": "2026/27",
+      "source": "rich_core",
+      "source_match_id": "26-27-prem-sunderland-vs-leeds-united",
+      "verified": true
+    },
+    {
+      "canonical_match_id": "26-27-prem-sunderland-vs-leeds-united",
+      "mapping_method": "exact_teams_kickoff_final_score_verified_20261027",
+      "season": "2026/27",
+      "source": "fotmob",
+      "source_match_id": "5795494",
+      "verified": true
+    },
+    {
+      "canonical_match_id": "26-27-prem-sunderland-vs-leeds-united",
+      "mapping_method": "exact_teams_kickoff_final_score_verified_20261027",
+      "season": "2026/27",
+      "source": "fpl_fixture",
+      "source_match_id": "2026/27:80",
+      "verified": true
+    },
+    {
+      "canonical_match_id": "26-27-prem-aston-villa-vs-manchester-city",
+      "mapping_method": "exact_teams_kickoff_final_score_verified_20261027",
+      "season": "2026/27",
+      "source": "rich_core",
+      "source_match_id": "26-27-prem-aston-villa-vs-manchester-city",
+      "verified": true
+    },
+    {
+      "canonical_match_id": "26-27-prem-aston-villa-vs-manchester-city",
+      "mapping_method": "exact_teams_kickoff_final_score_verified_20261027",
+      "season": "2026/27",
+      "source": "fotmob",
+      "source_match_id": "5795486",
+      "verified": true
+    },
+    {
+      "canonical_match_id": "26-27-prem-aston-villa-vs-manchester-city",
+      "mapping_method": "exact_teams_kickoff_final_score_verified_20261027",
+      "season": "2026/27",
+      "source": "fpl_fixture",
+      "source_match_id": "2026/27:72",
+      "verified": true
+    },
+    {
+      "canonical_match_id": "26-27-prem-ipswich-town-vs-nottingham-forest",
+      "mapping_method": "exact_date_teams_score",
+      "season": "2026/27",
+      "source": "understat",
+      "source_match_id": "31250",
+      "verified": true
+    },
+    {
+      "canonical_match_id": "26-27-prem-aston-villa-vs-manchester-city",
+      "mapping_method": "exact_date_teams_score",
+      "season": "2026/27",
+      "source": "understat",
+      "source_match_id": "31251",
+      "verified": true
+    },
+    {
+      "canonical_match_id": "26-27-prem-coventry-city-vs-fulham",
+      "mapping_method": "exact_date_teams_score",
+      "season": "2026/27",
+      "source": "understat",
+      "source_match_id": "31253",
+      "verified": true
+    },
+    {
+      "canonical_match_id": "26-27-prem-arsenal-vs-everton",
+      "mapping_method": "exact_date_teams_score",
+      "season": "2026/27",
+      "source": "understat",
+      "source_match_id": "31254",
+      "verified": true
+    },
+    {
+      "canonical_match_id": "26-27-prem-chelsea-vs-tottenham-hotspur",
+      "mapping_method": "exact_date_teams_score",
+      "season": "2026/27",
+      "source": "understat",
+      "source_match_id": "31255",
+      "verified": true
+    },
+    {
+      "canonical_match_id": "26-27-prem-liverpool-vs-brighton-hove-albion",
+      "mapping_method": "exact_date_teams_score",
+      "season": "2026/27",
+      "source": "understat",
+      "source_match_id": "31252",
+      "verified": true
+    },
+    {
+      "canonical_match_id": "26-27-prem-manchester-united-vs-afc-bournemouth",
+      "mapping_method": "exact_date_teams_score",
+      "season": "2026/27",
+      "source": "understat",
+      "source_match_id": "31256",
+      "verified": true
+    },
+    {
+      "canonical_match_id": "26-27-prem-crystal-palace-vs-newcastle-united",
+      "mapping_method": "exact_date_teams_score",
+      "season": "2026/27",
+      "source": "understat",
+      "source_match_id": "31257",
+      "verified": true
+    },
+    {
+      "canonical_match_id": "26-27-prem-hull-city-vs-brentford",
+      "mapping_method": "exact_date_teams_score",
+      "season": "2026/27",
+      "source": "understat",
+      "source_match_id": "31258",
+      "verified": true
+    },
+    {
+      "canonical_match_id": "26-27-prem-sunderland-vs-leeds-united",
+      "mapping_method": "exact_date_teams_score",
+      "season": "2026/27",
+      "source": "understat",
+      "source_match_id": "31259",
+      "verified": true
+    }
+  ]
+}

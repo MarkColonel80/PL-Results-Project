@@ -1,0 +1,2490 @@
+{
+  "as_of": "2026-10-27T10:28:26.827658+00:00",
+  "definitions": "Mean unscaled three-outcome Brier and natural-log loss; lower is better. All eligible saved forecasts, separately from paper selections.",
+  "gw8": {
+    "research": {
+      "n": 7,
+      "brier": 0.6888271829968603,
+      "log_loss": 1.1210473145639415,
+      "accuracy": 0.14285714285714285
+    },
+    "current": {
+      "n": 7,
+      "brier": 0.6718046591120773,
+      "log_loss": 1.099895326810108,
+      "accuracy": 0.14285714285714285
+    },
+    "market": {
+      "n": 7,
+      "brier": 0.6644269379478698,
+      "log_loss": 1.0954987391794435,
+      "accuracy": 0.42857142857142855
+    }
+  },
+  "all": {
+    "research": {
+      "n": 35,
+      "brier": 0.6512659798671837,
+      "log_loss": 1.0725275987659375,
+      "accuracy": 0.2857142857142857
+    },
+    "current": {
+      "n": 35,
+      "brier": 0.6666812422953294,
+      "log_loss": 1.0925003093546364,
+      "accuracy": 0.34285714285714286
+    },
+    "market": {
+      "n": 35,
+      "brier": 0.6283053862169372,
+      "log_loss": 1.0414109658620092,
+      "accuracy": 0.45714285714285713
+    }
+  },
+  "fixtures": [
+    {
+      "fixture_id": 1,
+      "gameweek": 3,
+      "home_team": "Ipswich Town",
+      "away_team": "Liverpool",
+      "score": [
+        0,
+        2
+      ],
+      "forecast_at": "2026-09-04 17:16:24.287182+00",
+      "market_at": "2026-09-04 17:15:17.989936+00",
+      "eligible": false
+    },
+    {
+      "fixture_id": 2,
+      "gameweek": 3,
+      "home_team": "Newcastle United",
+      "away_team": "AFC Bournemouth",
+      "score": [
+        2,
+        2
+      ],
+      "forecast_at": "2026-09-04 17:16:24.287182+00",
+      "market_at": "2026-09-04 17:15:17.989936+00",
+      "eligible": true,
+      "forecasts": {
+        "research": {
+          "probabilities": [
+            0.38550070125734,
+            0.246553359025086,
+            0.367945939717574
+          ],
+          "brier": 0.8516768460209304,
+          "log_loss": 1.4001768422917045,
+          "correct": false
+        },
+        "current": {
+          "probabilities": [
+            0.3746595473809896,
+            0.2259909810765717,
+            0.39934947154243877
+          ],
+          "brier": 0.8989397382397613,
+          "log_loss": 1.4872601872469795,
+          "correct": false
+        },
+        "market": {
+          "probabilities": [
+            0.45492957746478874,
+            0.2573943661971831,
+            0.2876760563380282
+          ],
+          "brier": 0.841181561198175,
+          "log_loss": 1.3571458714054732,
+          "correct": false
+        }
+      },
+      "top_three": [
+        {
+          "home": 1,
+          "away": 1,
+          "probability": 0.11481211359853327
+        },
+        {
+          "home": 2,
+          "away": 1,
+          "probability": 0.08504995513811066
+        },
+        {
+          "home": 1,
+          "away": 2,
+          "probability": 0.08278479456710036
+        }
+      ],
+      "exact_probability": 0.06132491462241959,
+      "top_three_hit": false
+    },
+    {
+      "fixture_id": 3,
+      "gameweek": 3,
+      "home_team": "Nottingham Forest",
+      "away_team": "Tottenham Hotspur",
+      "score": [
+        0,
+        0
+      ],
+      "forecast_at": "2026-09-04 17:16:24.287182+00",
+      "market_at": "2026-09-04 17:15:17.989936+00",
+      "eligible": true,
+      "forecasts": {
+        "research": {
+          "probabilities": [
+            0.433121691319754,
+            0.317117833103017,
+            0.249760475577229
+          ],
+          "brier": 0.7163027485181668,
+          "log_loss": 1.1484818609143859,
+          "correct": false
+        },
+        "current": {
+          "probabilities": [
+            0.4419403971993512,
+            0.33469587992743755,
+            0.22336372287321124
+          ],
+          "brier": 0.6878322395580276,
+          "log_loss": 1.0945329805883435,
+          "correct": false
+        },
+        "market": {
+          "probabilities": [
+            0.39252336448598135,
+            0.2803738317757009,
+            0.32710280373831774
+          ],
+          "brier": 0.7789326578740501,
+          "log_loss": 1.271631452799751,
+          "correct": false
+        }
+      },
+      "top_three": [
+        {
+          "home": 1,
+          "away": 0,
+          "probability": 0.17265714379796693
+        },
+        {
+          "home": 0,
+          "away": 0,
+          "probability": 0.157937606423315
+        },
+        {
+          "home": 1,
+          "away": 1,
+          "probability": 0.1298997740217708
+        }
+      ],
+      "exact_probability": 0.157937606423315,
+      "top_three_hit": true
+    },
+    {
+      "fixture_id": 4,
+      "gameweek": 3,
+      "home_team": "Brentford",
+      "away_team": "Sunderland",
+      "score": [
+        1,
+        1
+      ],
+      "forecast_at": "2026-09-04 17:16:24.287182+00",
+      "market_at": "2026-09-04 17:15:17.989936+00",
+      "eligible": true,
+      "forecasts": {
+        "research": {
+          "probabilities": [
+            0.532445174644409,
+            0.255102889336145,
+            0.212451936019446
+          ],
+          "brier": 0.8835053945958854,
+          "log_loss": 1.3660883276102145,
+          "correct": false
+        },
+        "current": {
+          "probabilities": [
+            0.5516462875704753,
+            0.22909599227734626,
+            0.21925772015217843
+          ],
+          "brier": 0.946680563559468,
+          "log_loss": 1.4736141830089742,
+          "correct": false
+        },
+        "market": {
+          "probabilities": [
+            0.5859872126252627,
+            0.24416138742612714,
+            0.16985139994861018
+          ],
+          "brier": 0.9435225196824246,
+          "log_loss": 1.409925848455732,
+          "correct": false
+        }
+      },
+      "top_three": [
+        {
+          "home": 1,
+          "away": 0,
+          "probability": 0.1362598673292965
+        },
+        {
+          "home": 1,
+          "away": 1,
+          "probability": 0.11978895535322713
+        },
+        {
+          "home": 2,
+          "away": 0,
+          "probability": 0.10604611134062576
+        }
+      ],
+      "exact_probability": 0.11978895535322713,
+      "top_three_hit": true
+    },
+    {
+      "fixture_id": 5,
+      "gameweek": 3,
+      "home_team": "Brighton & Hove Albion",
+      "away_team": "Leeds United",
+      "score": [
+        1,
+        1
+      ],
+      "forecast_at": "2026-09-04 17:16:24.287182+00",
+      "market_at": "2026-09-04 17:15:17.989936+00",
+      "eligible": true,
+      "forecasts": {
+        "research": {
+          "probabilities": [
+            0.462994284853387,
+            0.283216330999215,
+            0.253789384147398
+          ],
+          "brier": 0.7925515874590415,
+          "log_loss": 1.2615442528675096,
+          "correct": false
+        },
+        "current": {
+          "probabilities": [
+            0.529756338227748,
+            0.2621058061897626,
+            0.20813785558248935
+          ],
+          "brier": 0.8684509860778097,
+          "log_loss": 1.339007016323694,
+          "correct": false
+        },
+        "market": {
+          "probabilities": [
+            0.47730749617542073,
+            0.27180010198878124,
+            0.2508924018357981
+          ],
+          "brier": 0.8210445346677343,
+          "log_loss": 1.3026884020305016,
+          "correct": false
+        }
+      },
+      "top_three": [
+        {
+          "home": 1,
+          "away": 0,
+          "probability": 0.1454061977290279
+        },
+        {
+          "home": 1,
+          "away": 1,
+          "probability": 0.12924163928938961
+        },
+        {
+          "home": 0,
+          "away": 0,
+          "probability": 0.11120596701463988
+        }
+      ],
+      "exact_probability": 0.12924163928938961,
+      "top_three_hit": true
+    },
+    {
+      "fixture_id": 6,
+      "gameweek": 3,
+      "home_team": "Fulham",
+      "away_team": "Crystal Palace",
+      "score": [
+        2,
+        3
+      ],
+      "forecast_at": "2026-09-04 17:16:24.287182+00",
+      "market_at": "2026-09-04 17:15:17.989936+00",
+      "eligible": true,
+      "forecasts": {
+        "research": {
+          "probabilities": [
+            0.452221538718136,
+            0.274025688364856,
+            0.273752772917008
+          ],
+          "brier": 0.8070294328101668,
+          "log_loss": 1.29552986852553,
+          "correct": false
+        },
+        "current": {
+          "probabilities": [
+            0.4893892360748285,
+            0.24762530695609736,
+            0.2629854569690741
+          ],
+          "brier": 0.84401055367009,
+          "log_loss": 1.335656545028827,
+          "correct": false
+        },
+        "market": {
+          "probabilities": [
+            0.4195423174718489,
+            0.28169269887395565,
+            0.29876498365419546
+          ],
+          "brier": 0.7470970808980435,
+          "log_loss": 1.2080980225030802,
+          "correct": false
+        }
+      },
+      "top_three": [
+        {
+          "home": 1,
+          "away": 0,
+          "probability": 0.12942209202723687
+        },
+        {
+          "home": 1,
+          "away": 1,
+          "probability": 0.12843244906618703
+        },
+        {
+          "home": 0,
+          "away": 0,
+          "probability": 0.0952142499279369
+        }
+      ],
+      "exact_probability": 0.0143262551040337,
+      "top_three_hit": false
+    },
+    {
+      "fixture_id": 7,
+      "gameweek": 3,
+      "home_team": "Manchester City",
+      "away_team": "Coventry City",
+      "score": [
+        1,
+        0
+      ],
+      "forecast_at": "2026-09-04 17:16:24.287182+00",
+      "market_at": "2026-09-04 17:15:17.989936+00",
+      "eligible": false
+    },
+    {
+      "fixture_id": 8,
+      "gameweek": 3,
+      "home_team": "Hull City",
+      "away_team": "Aston Villa",
+      "score": [
+        0,
+        0
+      ],
+      "forecast_at": "2026-09-04 17:16:24.287182+00",
+      "market_at": "2026-09-04 17:15:17.989936+00",
+      "eligible": false
+    },
+    {
+      "fixture_id": 9,
+      "gameweek": 3,
+      "home_team": "Everton",
+      "away_team": "Manchester United",
+      "score": [
+        2,
+        2
+      ],
+      "forecast_at": "2026-09-04 17:16:24.287182+00",
+      "market_at": "2026-09-04 17:15:17.989936+00",
+      "eligible": true,
+      "forecasts": {
+        "research": {
+          "probabilities": [
+            0.306266058594062,
+            0.281377392450842,
+            0.412356548955095
+          ],
+          "brier": 0.7802552741936482,
+          "log_loss": 1.2680584770784895,
+          "correct": false
+        },
+        "current": {
+          "probabilities": [
+            0.3654556510999186,
+            0.2867514549847493,
+            0.347792893915332
+          ],
+          "brier": 0.7632412169452389,
+          "log_loss": 1.2491394489323502,
+          "correct": false
+        },
+        "market": {
+          "probabilities": [
+            0.2856886335069133,
+            0.26252469024959596,
+            0.4517866762434908
+          ],
+          "brier": 0.8295990286376427,
+          "log_loss": 1.3374101432799448,
+          "correct": false
+        }
+      },
+      "top_three": [
+        {
+          "home": 1,
+          "away": 1,
+          "probability": 0.1313851857529657
+        },
+        {
+          "home": 0,
+          "away": 1,
+          "probability": 0.12587998262909916
+        },
+        {
+          "home": 1,
+          "away": 0,
+          "probability": 0.1043526082844391
+        }
+      ],
+      "exact_probability": 0.04316375550662306,
+      "top_three_hit": false
+    },
+    {
+      "fixture_id": 10,
+      "gameweek": 3,
+      "home_team": "Arsenal",
+      "away_team": "Chelsea",
+      "score": [
+        2,
+        1
+      ],
+      "forecast_at": "2026-09-04 17:16:24.287182+00",
+      "market_at": "2026-09-04 17:15:17.989936+00",
+      "eligible": true,
+      "forecasts": {
+        "research": {
+          "probabilities": [
+            0.586818892151083,
+            0.242356846155218,
+            0.170824261693699
+          ],
+          "brier": 0.2586363971447598,
+          "log_loss": 0.533039038018404,
+          "correct": true
+        },
+        "current": {
+          "probabilities": [
+            0.6079660233254689,
+            0.23429745978014216,
+            0.15773651689438895
+          ],
+          "brier": 0.23346674728864797,
+          "log_loss": 0.4976362812658392,
+          "correct": true
+        },
+        "market": {
+          "probabilities": [
+            0.5709473349159825,
+            0.24091192424503652,
+            0.18814074083898089
+          ],
+          "brier": 0.2775216830225849,
+          "log_loss": 0.5604583066516927,
+          "correct": true
+        }
+      },
+      "top_three": [
+        {
+          "home": 1,
+          "away": 0,
+          "probability": 0.14704531579828817
+        },
+        {
+          "home": 2,
+          "away": 0,
+          "probability": 0.12180927911233748
+        },
+        {
+          "home": 1,
+          "away": 1,
+          "probability": 0.1125071652194205
+        }
+      ],
+      "exact_probability": 0.09319859402491623,
+      "top_three_hit": false
+    },
+    {
+      "fixture_id": 31,
+      "gameweek": 4,
+      "home_team": "Aston Villa",
+      "away_team": "Nottingham Forest",
+      "score": [
+        1,
+        2
+      ],
+      "forecast_at": "2026-09-08 14:41:55.611499+00",
+      "market_at": "2026-09-08 14:41:33.243061+00",
+      "eligible": true,
+      "forecasts": {
+        "research": {
+          "probabilities": [
+            0.400557240250075,
+            0.262574727731487,
+            0.336868032018438
+          ],
+          "brier": 0.6691355973191201,
+          "log_loss": 1.088064021708119,
+          "correct": false
+        },
+        "current": {
+          "probabilities": [
+            0.3501013960682091,
+            0.22413324349460256,
+            0.4257653604371884
+          ],
+          "brier": 0.502552119642152,
+          "log_loss": 0.8538668815530117,
+          "correct": true
+        },
+        "market": {
+          "probabilities": [
+            0.4356846473029045,
+            0.2738589211618257,
+            0.2904564315352697
+          ],
+          "brier": 0.7682718961450388,
+          "log_loss": 1.236301691441296,
+          "correct": false
+        }
+      },
+      "top_three": [
+        {
+          "home": 1,
+          "away": 1,
+          "probability": 0.12487888261097445
+        },
+        {
+          "home": 1,
+          "away": 0,
+          "probability": 0.10094855650886657
+        },
+        {
+          "home": 0,
+          "away": 1,
+          "probability": 0.09093192883368457
+        }
+      ],
+      "exact_probability": 0.07724100205829001,
+      "top_three_hit": false
+    },
+    {
+      "fixture_id": 32,
+      "gameweek": 4,
+      "home_team": "AFC Bournemouth",
+      "away_team": "Brentford",
+      "score": [
+        2,
+        2
+      ],
+      "forecast_at": "2026-09-08 14:41:55.611499+00",
+      "market_at": "2026-09-08 14:41:33.243061+00",
+      "eligible": true,
+      "forecasts": {
+        "research": {
+          "probabilities": [
+            0.454116021041101,
+            0.245878874949792,
+            0.300005104009107
+          ],
+          "brier": 0.8649230942447083,
+          "log_loss": 1.4029162425606292,
+          "correct": false
+        },
+        "current": {
+          "probabilities": [
+            0.5186352017369165,
+            0.2481436159823831,
+            0.23322118228070046
+          ],
+          "brier": 0.8886626145331459,
+          "log_loss": 1.3937476037257872,
+          "correct": false
+        },
+        "market": {
+          "probabilities": [
+            0.38571428571428573,
+            0.2571428571428572,
+            0.35714285714285715
+          ],
+          "brier": 0.8281632653061225,
+          "log_loss": 1.3581234841531942,
+          "correct": false
+        }
+      },
+      "top_three": [
+        {
+          "home": 1,
+          "away": 1,
+          "probability": 0.11558630973796015
+        },
+        {
+          "home": 2,
+          "away": 1,
+          "probability": 0.09244380232488356
+        },
+        {
+          "home": 1,
+          "away": 0,
+          "probability": 0.09208594084705259
+        }
+      ],
+      "exact_probability": 0.05801774880394652,
+      "top_three_hit": false
+    },
+    {
+      "fixture_id": 33,
+      "gameweek": 4,
+      "home_team": "Chelsea",
+      "away_team": "Hull City",
+      "score": [
+        2,
+        2
+      ],
+      "forecast_at": "2026-09-08 14:41:55.611499+00",
+      "market_at": "2026-09-08 14:41:33.243061+00",
+      "eligible": false
+    },
+    {
+      "fixture_id": 34,
+      "gameweek": 4,
+      "home_team": "Crystal Palace",
+      "away_team": "Ipswich Town",
+      "score": [
+        2,
+        3
+      ],
+      "forecast_at": "2026-09-08 14:41:55.611499+00",
+      "market_at": "2026-09-08 14:41:33.243061+00",
+      "eligible": false
+    },
+    {
+      "fixture_id": 35,
+      "gameweek": 4,
+      "home_team": "Liverpool",
+      "away_team": "Fulham",
+      "score": [
+        0,
+        0
+      ],
+      "forecast_at": "2026-09-08 14:41:55.611499+00",
+      "market_at": "2026-09-08 14:41:33.243061+00",
+      "eligible": true,
+      "forecasts": {
+        "research": {
+          "probabilities": [
+            0.517159859940399,
+            0.248328319712342,
+            0.234511820347259
+          ],
+          "brier": 0.8874604295626294,
+          "log_loss": 1.3930035385523067,
+          "correct": false
+        },
+        "current": {
+          "probabilities": [
+            0.4990672590420224,
+            0.26018710588352384,
+            0.24074563507445373
+          ],
+          "brier": 0.8543497081561156,
+          "log_loss": 1.3463542687683299,
+          "correct": false
+        },
+        "market": {
+          "probabilities": [
+            0.6617647058823529,
+            0.19117647058823528,
+            0.14705882352941177
+          ],
+          "brier": 1.1137543252595157,
+          "log_loss": 1.65455834771457,
+          "correct": false
+        }
+      },
+      "top_three": [
+        {
+          "home": 1,
+          "away": 1,
+          "probability": 0.11807935989459849
+        },
+        {
+          "home": 1,
+          "away": 0,
+          "probability": 0.11784039857095717
+        },
+        {
+          "home": 2,
+          "away": 1,
+          "probability": 0.09546234503831619
+        }
+      ],
+      "exact_probability": 0.07287961985114677,
+      "top_three_hit": false
+    },
+    {
+      "fixture_id": 36,
+      "gameweek": 4,
+      "home_team": "Sunderland",
+      "away_team": "Arsenal",
+      "score": [
+        0,
+        2
+      ],
+      "forecast_at": "2026-09-08 14:41:55.611499+00",
+      "market_at": "2026-09-08 14:41:33.243061+00",
+      "eligible": true,
+      "forecasts": {
+        "research": {
+          "probabilities": [
+            0.179225490331741,
+            0.277401308613749,
+            0.543373201054509
+          ],
+          "brier": 0.31758129592047923,
+          "log_loss": 0.6099589003673955,
+          "correct": true
+        },
+        "current": {
+          "probabilities": [
+            0.18278803489845485,
+            0.2918290718113737,
+            0.5253828932901715
+          ],
+          "brier": 0.34383707083793535,
+          "log_loss": 0.6436279616628,
+          "correct": true
+        },
+        "market": {
+          "probabilities": [
+            0.13636363636363638,
+            0.2272727272727273,
+            0.6363636363636365
+          ],
+          "brier": 0.20247933884297514,
+          "log_loss": 0.4519851237430571,
+          "correct": true
+        }
+      },
+      "top_three": [
+        {
+          "home": 0,
+          "away": 1,
+          "probability": 0.17812562145695798
+        },
+        {
+          "home": 0,
+          "away": 0,
+          "probability": 0.12850801668380632
+        },
+        {
+          "home": 0,
+          "away": 2,
+          "probability": 0.12345041904076684
+        }
+      ],
+      "exact_probability": 0.12345041904076684,
+      "top_three_hit": true
+    },
+    {
+      "fixture_id": 37,
+      "gameweek": 4,
+      "home_team": "Tottenham Hotspur",
+      "away_team": "Everton",
+      "score": [
+        0,
+        0
+      ],
+      "forecast_at": "2026-09-08 14:41:55.611499+00",
+      "market_at": "2026-09-08 14:41:33.243061+00",
+      "eligible": true,
+      "forecasts": {
+        "research": {
+          "probabilities": [
+            0.334069596996275,
+            0.273299093701443,
+            0.392631309302282
+          ],
+          "brier": 0.793856047896822,
+          "log_loss": 1.2971885021844474,
+          "correct": false
+        },
+        "current": {
+          "probabilities": [
+            0.28242573615829913,
+            0.2412521669956394,
+            0.4763220968460614
+          ],
+          "brier": 0.882345310477199,
+          "log_loss": 1.4219125564380384,
+          "correct": false
+        },
+        "market": {
+          "probabilities": [
+            0.4689593568557392,
+            0.27467619472979005,
+            0.25636444841447076
+          ],
+          "brier": 0.8117402312850619,
+          "log_loss": 1.2921623487922371,
+          "correct": false
+        }
+      },
+      "top_three": [
+        {
+          "home": 1,
+          "away": 1,
+          "probability": 0.1294052283846716
+        },
+        {
+          "home": 0,
+          "away": 1,
+          "probability": 0.11163121220871972
+        },
+        {
+          "home": 1,
+          "away": 0,
+          "probability": 0.10102798798256693
+        }
+      ],
+      "exact_probability": 0.08715163140068155,
+      "top_three_hit": false
+    },
+    {
+      "fixture_id": 38,
+      "gameweek": 4,
+      "home_team": "Coventry City",
+      "away_team": "Brighton & Hove Albion",
+      "score": [
+        0,
+        5
+      ],
+      "forecast_at": "2026-09-08 14:41:55.611499+00",
+      "market_at": "2026-09-08 14:41:33.243061+00",
+      "eligible": false
+    },
+    {
+      "fixture_id": 39,
+      "gameweek": 4,
+      "home_team": "Manchester United",
+      "away_team": "Manchester City",
+      "score": [
+        0,
+        1
+      ],
+      "forecast_at": "2026-09-08 14:41:55.611499+00",
+      "market_at": "2026-09-08 14:41:33.243061+00",
+      "eligible": true,
+      "forecasts": {
+        "research": {
+          "probabilities": [
+            0.375577858285912,
+            0.24955656328358,
+            0.374865578430508
+          ],
+          "brier": 0.5941302509435675,
+          "log_loss": 0.981187774791625,
+          "correct": false
+        },
+        "current": {
+          "probabilities": [
+            0.3484887408528445,
+            0.22039922239273066,
+            0.4311120367544248
+          ],
+          "brier": 0.4936537344582203,
+          "log_loss": 0.8413872765925632,
+          "correct": true
+        },
+        "market": {
+          "probabilities": [
+            0.3108621001265136,
+            0.24091812759804807,
+            0.44821977227543824
+          ],
+          "brier": 0.45913820920818527,
+          "log_loss": 0.802471603739082,
+          "correct": true
+        }
+      },
+      "top_three": [
+        {
+          "home": 1,
+          "away": 1,
+          "probability": 0.11698070342871818
+        },
+        {
+          "home": 2,
+          "away": 1,
+          "probability": 0.08379391880976293
+        },
+        {
+          "home": 1,
+          "away": 2,
+          "probability": 0.08370114053816585
+        }
+      ],
+      "exact_probability": 0.0816555972620493,
+      "top_three_hit": false
+    },
+    {
+      "fixture_id": 40,
+      "gameweek": 4,
+      "home_team": "Leeds United",
+      "away_team": "Newcastle United",
+      "score": [
+        4,
+        1
+      ],
+      "forecast_at": "2026-09-08 14:41:55.611499+00",
+      "market_at": "2026-09-08 14:41:33.243061+00",
+      "eligible": true,
+      "forecasts": {
+        "research": {
+          "probabilities": [
+            0.437535894591017,
+            0.270837092105911,
+            0.291627013303072
+          ],
+          "brier": 0.47476491522198333,
+          "log_loss": 0.8265965317704893,
+          "correct": true
+        },
+        "current": {
+          "probabilities": [
+            0.4345668849237656,
+            0.2971801565737662,
+            0.26825295850246816
+          ],
+          "brier": 0.47999030283134925,
+          "log_loss": 0.8334054107408659,
+          "correct": true
+        },
+        "market": {
+          "probabilities": [
+            0.39976825028968715,
+            0.26651216685979146,
+            0.33371958285052145
+          ],
+          "brier": 0.5426756484225311,
+          "log_loss": 0.9168702740520681,
+          "correct": true
+        }
+      },
+      "top_three": [
+        {
+          "home": 1,
+          "away": 1,
+          "probability": 0.12798625933837646
+        },
+        {
+          "home": 1,
+          "away": 0,
+          "probability": 0.12051145929888467
+        },
+        {
+          "home": 0,
+          "away": 1,
+          "probability": 0.09372709510529302
+        }
+      ],
+      "exact_probability": 0.013578339757818463,
+      "top_three_hit": false
+    },
+    {
+      "fixture_id": 51,
+      "gameweek": 6,
+      "home_team": "Arsenal",
+      "away_team": "Leeds United",
+      "score": [
+        2,
+        1
+      ],
+      "forecast_at": "2026-10-09 14:37:29.44962+00",
+      "market_at": "2026-10-09 13:56:57+00",
+      "eligible": true,
+      "forecasts": {
+        "research": {
+          "probabilities": [
+            0.565635411115944,
+            0.261794394363359,
+            0.172570194520697
+          ],
+          "brier": 0.28698937303340416,
+          "log_loss": 0.569805558304513,
+          "correct": true
+        },
+        "current": {
+          "probabilities": [
+            0.581199987752732,
+            0.2587157615591966,
+            0.16008425068807147
+          ],
+          "brier": 0.26795426285582824,
+          "log_loss": 0.5426603683583908,
+          "correct": true
+        },
+        "market": {
+          "probabilities": [
+            0.7039524517087666,
+            0.18995542347696878,
+            0.10609212481426449
+          ],
+          "brier": 0.13498275270517016,
+          "log_loss": 0.3510444652914468,
+          "correct": true
+        }
+      },
+      "top_three": [
+        {
+          "home": 1,
+          "away": 0,
+          "probability": 0.16734444983574195
+        },
+        {
+          "home": 2,
+          "away": 0,
+          "probability": 0.1252908254535772
+        },
+        {
+          "home": 1,
+          "away": 1,
+          "probability": 0.11614226018396438
+        }
+      ],
+      "exact_probability": 0.08695573508877175,
+      "top_three_hit": false
+    },
+    {
+      "fixture_id": 52,
+      "gameweek": 6,
+      "home_team": "Aston Villa",
+      "away_team": "Brentford",
+      "score": [
+        2,
+        2
+      ],
+      "forecast_at": "2026-10-09 14:37:29.44962+00",
+      "market_at": "2026-10-09 13:56:57+00",
+      "eligible": true,
+      "forecasts": {
+        "research": {
+          "probabilities": [
+            0.325894506245418,
+            0.256000261098515,
+            0.418105232656067
+          ],
+          "brier": 0.8345548262608066,
+          "log_loss": 1.3625768145870205,
+          "correct": false
+        },
+        "current": {
+          "probabilities": [
+            0.3909193826513672,
+            0.2529566589553146,
+            0.3561239583933181
+          ],
+          "brier": 0.837715990873458,
+          "log_loss": 1.3745371134066073,
+          "correct": false
+        },
+        "market": {
+          "probabilities": [
+            0.35568101623147497,
+            0.27170077628793227,
+            0.37261820748059277
+          ],
+          "brier": 0.7957730731131054,
+          "log_loss": 1.3030539054028962,
+          "correct": false
+        }
+      },
+      "top_three": [
+        {
+          "home": 1,
+          "away": 1,
+          "probability": 0.12142134065689739
+        },
+        {
+          "home": 0,
+          "away": 1,
+          "probability": 0.09669397697557036
+        },
+        {
+          "home": 1,
+          "away": 2,
+          "probability": 0.08842749239769603
+        }
+      ],
+      "exact_probability": 0.0555204419845537,
+      "top_three_hit": false
+    },
+    {
+      "fixture_id": 53,
+      "gameweek": 6,
+      "home_team": "Chelsea",
+      "away_team": "AFC Bournemouth",
+      "score": [
+        5,
+        1
+      ],
+      "forecast_at": "2026-10-09 14:37:29.44962+00",
+      "market_at": "2026-10-09 13:56:57+00",
+      "eligible": true,
+      "forecasts": {
+        "research": {
+          "probabilities": [
+            0.36067548064905,
+            0.246200238552223,
+            0.393124280798727
+          ],
+          "brier": 0.6238970986600112,
+          "log_loss": 1.0197766705136344,
+          "correct": false
+        },
+        "current": {
+          "probabilities": [
+            0.3209459088300294,
+            0.2554521286694697,
+            0.4236019625005009
+          ],
+          "brier": 0.7058088714107139,
+          "log_loss": 1.1364826783689084,
+          "correct": false
+        },
+        "market": {
+          "probabilities": [
+            0.5681789137380192,
+            0.22581469648562302,
+            0.20600638977635785
+          ],
+          "brier": 0.27990036031805976,
+          "log_loss": 0.565318920884212,
+          "correct": true
+        }
+      },
+      "top_three": [
+        {
+          "home": 1,
+          "away": 1,
+          "probability": 0.11459187961393336
+        },
+        {
+          "home": 1,
+          "away": 2,
+          "probability": 0.08598171717363108
+        },
+        {
+          "home": 2,
+          "away": 1,
+          "probability": 0.08179914689195866
+        }
+      ],
+      "exact_probability": 0.003967092295746491,
+      "top_three_hit": false
+    },
+    {
+      "fixture_id": 54,
+      "gameweek": 6,
+      "home_team": "Coventry City",
+      "away_team": "Newcastle United",
+      "score": [
+        4,
+        1
+      ],
+      "forecast_at": "2026-10-09 14:37:29.44962+00",
+      "market_at": "2026-10-09 13:56:57+00",
+      "eligible": false
+    },
+    {
+      "fixture_id": 55,
+      "gameweek": 6,
+      "home_team": "Crystal Palace",
+      "away_team": "Nottingham Forest",
+      "score": [
+        3,
+        1
+      ],
+      "forecast_at": "2026-10-09 14:37:29.44962+00",
+      "market_at": "2026-10-09 13:56:57+00",
+      "eligible": true,
+      "forecasts": {
+        "research": {
+          "probabilities": [
+            0.323251578798907,
+            0.26297220344574,
+            0.413776217755353
+          ],
+          "brier": 0.698353563763205,
+          "log_loss": 1.1293243772000807,
+          "correct": false
+        },
+        "current": {
+          "probabilities": [
+            0.25892224480793735,
+            0.22974124254575387,
+            0.5113365126463089
+          ],
+          "brier": 0.8634423069322624,
+          "log_loss": 1.3512274754523392,
+          "correct": false
+        },
+        "market": {
+          "probabilities": [
+            0.3589743589743589,
+            0.282051282051282,
+            0.3589743589743589
+          ],
+          "brier": 0.6193293885601578,
+          "log_loss": 1.024504316514388,
+          "correct": true
+        }
+      },
+      "top_three": [
+        {
+          "home": 1,
+          "away": 1,
+          "probability": 0.12508044518886033
+        },
+        {
+          "home": 0,
+          "away": 1,
+          "probability": 0.10432690913319499
+        },
+        {
+          "home": 1,
+          "away": 0,
+          "probability": 0.08984756984342701
+        }
+      ],
+      "exact_probability": 0.02996569279774565,
+      "top_three_hit": false
+    },
+    {
+      "fixture_id": 56,
+      "gameweek": 6,
+      "home_team": "Hull City",
+      "away_team": "Everton",
+      "score": [
+        2,
+        2
+      ],
+      "forecast_at": "2026-10-09 14:37:29.44962+00",
+      "market_at": "2026-10-09 13:56:57+00",
+      "eligible": false
+    },
+    {
+      "fixture_id": 57,
+      "gameweek": 6,
+      "home_team": "Ipswich Town",
+      "away_team": "Fulham",
+      "score": [
+        2,
+        1
+      ],
+      "forecast_at": "2026-10-09 14:37:29.44962+00",
+      "market_at": "2026-10-09 13:56:57+00",
+      "eligible": false
+    },
+    {
+      "fixture_id": 58,
+      "gameweek": 6,
+      "home_team": "Liverpool",
+      "away_team": "Manchester City",
+      "score": [
+        0,
+        3
+      ],
+      "forecast_at": "2026-10-09 14:37:29.44962+00",
+      "market_at": "2026-10-09 13:56:57+00",
+      "eligible": true,
+      "forecasts": {
+        "research": {
+          "probabilities": [
+            0.304622128170275,
+            0.250334681761154,
+            0.445043190068571
+          ],
+          "brier": 0.4634391547527139,
+          "log_loss": 0.8095839451916906,
+          "correct": true
+        },
+        "current": {
+          "probabilities": [
+            0.2521885801175649,
+            0.24874817300567562,
+            0.4990632468767595
+          ],
+          "brier": 0.3764123641450294,
+          "log_loss": 0.6950224440143571,
+          "correct": true
+        },
+        "market": {
+          "probabilities": [
+            0.33653136531365313,
+            0.2568265682656826,
+            0.4066420664206642
+          ],
+          "brier": 0.5312868833485382,
+          "log_loss": 0.8998219241608868,
+          "correct": true
+        }
+      },
+      "top_three": [
+        {
+          "home": 1,
+          "away": 1,
+          "probability": 0.11833668249568909
+        },
+        {
+          "home": 0,
+          "away": 1,
+          "probability": 0.09576910312041384
+        },
+        {
+          "home": 1,
+          "away": 2,
+          "probability": 0.09144750799636292
+        }
+      ],
+      "exact_probability": 0.03812757040826212,
+      "top_three_hit": false
+    },
+    {
+      "fixture_id": 59,
+      "gameweek": 6,
+      "home_team": "Manchester United",
+      "away_team": "Tottenham Hotspur",
+      "score": [
+        1,
+        1
+      ],
+      "forecast_at": "2026-10-09 14:37:29.44962+00",
+      "market_at": "2026-10-09 13:56:57+00",
+      "eligible": true,
+      "forecasts": {
+        "research": {
+          "probabilities": [
+            0.582371828626832,
+            0.228938503783043,
+            0.188689667590126
+          ],
+          "brier": 0.9692965683817647,
+          "log_loss": 1.4743018539239996,
+          "correct": false
+        },
+        "current": {
+          "probabilities": [
+            0.5623729527080932,
+            0.2297351017018266,
+            0.20789194559008023
+          ],
+          "brier": 0.9527904125291435,
+          "log_loss": 1.470828365542813,
+          "correct": false
+        },
+        "market": {
+          "probabilities": [
+            0.5616625649439431,
+            0.22682526661197697,
+            0.21151216844407986
+          ],
+          "brier": 0.9580014026089663,
+          "log_loss": 1.4835753085188823,
+          "correct": false
+        }
+      },
+      "top_three": [
+        {
+          "home": 1,
+          "away": 0,
+          "probability": 0.11857211331272546
+        },
+        {
+          "home": 1,
+          "away": 1,
+          "probability": 0.10888997694150412
+        },
+        {
+          "home": 2,
+          "away": 0,
+          "probability": 0.10693827359571108
+        }
+      ],
+      "exact_probability": 0.10888997694150412,
+      "top_three_hit": true
+    },
+    {
+      "fixture_id": 60,
+      "gameweek": 6,
+      "home_team": "Sunderland",
+      "away_team": "Brighton & Hove Albion",
+      "score": [
+        0,
+        2
+      ],
+      "forecast_at": "2026-10-09 14:37:29.44962+00",
+      "market_at": "2026-10-09 13:56:57+00",
+      "eligible": true,
+      "forecasts": {
+        "research": {
+          "probabilities": [
+            0.266247814172701,
+            0.259255461391286,
+            0.474496724436013
+          ],
+          "brier": 0.41425498544142936,
+          "log_loss": 0.7455005641466813,
+          "correct": true
+        },
+        "current": {
+          "probabilities": [
+            0.2617017476536602,
+            0.25902029697814766,
+            0.47927795536819207
+          ],
+          "brier": 0.4067307667371584,
+          "log_loss": 0.7354745672642401,
+          "correct": true
+        },
+        "market": {
+          "probabilities": [
+            0.3103448275862069,
+            0.27586206896551724,
+            0.4137931034482759
+          ],
+          "brier": 0.516052318668252,
+          "log_loss": 0.8823891801984736,
+          "correct": true
+        }
+      },
+      "top_three": [
+        {
+          "home": 1,
+          "away": 1,
+          "probability": 0.12316314594027845
+        },
+        {
+          "home": 0,
+          "away": 1,
+          "probability": 0.11717099875940616
+        },
+        {
+          "home": 1,
+          "away": 2,
+          "probability": 0.09208432942112194
+        }
+      ],
+      "exact_probability": 0.0876042323049696,
+      "top_three_hit": false
+    },
+    {
+      "fixture_id": 61,
+      "gameweek": 7,
+      "home_team": "AFC Bournemouth",
+      "away_team": "Sunderland",
+      "score": [
+        2,
+        0
+      ],
+      "forecast_at": "2026-10-17 14:12:32.509881+00",
+      "market_at": "2026-10-17 14:14:39+00",
+      "eligible": true,
+      "forecasts": {
+        "research": {
+          "probabilities": [
+            0.460909410335188,
+            0.258440198724035,
+            0.280650390940776
+          ],
+          "brier": 0.4361746421168837,
+          "log_loss": 0.7745537621605942,
+          "correct": true
+        },
+        "current": {
+          "probabilities": [
+            0.46219153900231846,
+            0.23605586261825245,
+            0.3017525983794291
+          ],
+          "brier": 0.43601494162587906,
+          "log_loss": 0.7717758872325656,
+          "correct": true
+        },
+        "market": {
+          "probabilities": [
+            0.45478723404255317,
+            0.2726063829787234,
+            0.2726063829787234
+          ],
+          "brier": 0.44588544024445453,
+          "log_loss": 0.7879255868872347,
+          "correct": true
+        }
+      },
+      "top_three": [
+        {
+          "home": 1,
+          "away": 1,
+          "probability": 0.12291499414615331
+        },
+        {
+          "home": 1,
+          "away": 0,
+          "probability": 0.11139920545021888
+        },
+        {
+          "home": 2,
+          "away": 1,
+          "probability": 0.09157861066641414
+        }
+      ],
+      "exact_probability": 0.08299869788337573,
+      "top_three_hit": false
+    },
+    {
+      "fixture_id": 62,
+      "gameweek": 7,
+      "home_team": "Brentford",
+      "away_team": "Liverpool",
+      "score": [
+        1,
+        2
+      ],
+      "forecast_at": "2026-10-16 20:57:18.819754+00",
+      "market_at": "2026-10-16 20:56:30+00",
+      "eligible": true,
+      "forecasts": {
+        "research": {
+          "probabilities": [
+            0.421577891188681,
+            0.257391383571149,
+            0.32103072524017
+          ],
+          "brier": 0.7049775187436551,
+          "log_loss": 1.136218443173629,
+          "correct": false
+        },
+        "current": {
+          "probabilities": [
+            0.5378676963614777,
+            0.22082273695787785,
+            0.24130956668064438
+          ],
+          "brier": 0.9136755135570824,
+          "log_loss": 1.4216746607191284,
+          "correct": false
+        },
+        "market": {
+          "probabilities": [
+            0.39867633154743143,
+            0.26095178064922786,
+            0.3403718878033407
+          ],
+          "brier": 0.6621478955602488,
+          "log_loss": 1.07771647146493,
+          "correct": false
+        }
+      },
+      "top_three": [
+        {
+          "home": 1,
+          "away": 1,
+          "probability": 0.12223720222317432
+        },
+        {
+          "home": 1,
+          "away": 0,
+          "probability": 0.09921720871120898
+        },
+        {
+          "home": 2,
+          "away": 1,
+          "probability": 0.0886202432542738
+        }
+      ],
+      "exact_probability": 0.07529910285442831,
+      "top_three_hit": false
+    },
+    {
+      "fixture_id": 63,
+      "gameweek": 7,
+      "home_team": "Brighton & Hove Albion",
+      "away_team": "Crystal Palace",
+      "score": [
+        5,
+        0
+      ],
+      "forecast_at": "2026-10-17 14:12:32.509881+00",
+      "market_at": "2026-10-17 14:14:39+00",
+      "eligible": true,
+      "forecasts": {
+        "research": {
+          "probabilities": [
+            0.517642105400015,
+            0.248176572902281,
+            0.234181321697704
+          ],
+          "brier": 0.34910164125253496,
+          "log_loss": 0.658471191731447,
+          "correct": true
+        },
+        "current": {
+          "probabilities": [
+            0.5984950267946028,
+            0.21726492784529933,
+            0.18424004536009791
+          ],
+          "brier": 0.24235468669458082,
+          "log_loss": 0.5133370634679182,
+          "correct": true
+        },
+        "market": {
+          "probabilities": [
+            0.6317380352644837,
+            0.20554156171284635,
+            0.16272040302267002
+          ],
+          "brier": 0.20434213782207866,
+          "log_loss": 0.4592804719284247,
+          "correct": true
+        }
+      },
+      "top_three": [
+        {
+          "home": 1,
+          "away": 1,
+          "probability": 0.11800859313934278
+        },
+        {
+          "home": 1,
+          "away": 0,
+          "probability": 0.11781432994540071
+        },
+        {
+          "home": 2,
+          "away": 1,
+          "probability": 0.09549787813354062
+        }
+      ],
+      "exact_probability": 0.006736855173234245,
+      "top_three_hit": false
+    },
+    {
+      "fixture_id": 64,
+      "gameweek": 7,
+      "home_team": "Everton",
+      "away_team": "Chelsea",
+      "score": [
+        0,
+        2
+      ],
+      "forecast_at": "2026-10-16 20:57:18.819754+00",
+      "market_at": "2026-10-16 20:56:30+00",
+      "eligible": true,
+      "forecasts": {
+        "research": {
+          "probabilities": [
+            0.412555220339388,
+            0.257455040419958,
+            0.329989739240654
+          ],
+          "brier": 0.68539865718973,
+          "log_loss": 1.1086937182151544,
+          "correct": false
+        },
+        "current": {
+          "probabilities": [
+            0.5262271651176091,
+            0.23485124585654543,
+            0.23892158902584543
+          ],
+          "brier": 0.9113104846390313,
+          "log_loss": 1.4316198602702115,
+          "correct": false
+        },
+        "market": {
+          "probabilities": [
+            0.3063418129702616,
+            0.2579720530275887,
+            0.4356861340021498
+          ],
+          "brier": 0.47884502587461536,
+          "log_loss": 0.8308331710102098,
+          "correct": true
+        }
+      },
+      "top_three": [
+        {
+          "home": 1,
+          "away": 1,
+          "probability": 0.122212523867702
+        },
+        {
+          "home": 1,
+          "away": 0,
+          "probability": 0.09729534894915695
+        },
+        {
+          "home": 2,
+          "away": 1,
+          "probability": 0.08770172010554371
+        }
+      ],
+      "exact_probability": 0.05347945297821363,
+      "top_three_hit": false
+    },
+    {
+      "fixture_id": 65,
+      "gameweek": 7,
+      "home_team": "Fulham",
+      "away_team": "Hull City",
+      "score": [
+        1,
+        0
+      ],
+      "forecast_at": "2026-10-16 20:57:18.819754+00",
+      "market_at": "2026-10-16 20:56:30+00",
+      "eligible": false
+    },
+    {
+      "fixture_id": 66,
+      "gameweek": 7,
+      "home_team": "Leeds United",
+      "away_team": "Manchester United",
+      "score": [
+        1,
+        1
+      ],
+      "forecast_at": "2026-10-17 14:12:32.509881+00",
+      "market_at": "2026-10-17 14:14:39+00",
+      "eligible": true,
+      "forecasts": {
+        "research": {
+          "probabilities": [
+            0.338465145467791,
+            0.28350012570747,
+            0.378034728824739
+          ],
+          "brier": 0.770840980755338,
+          "log_loss": 1.260542712401836,
+          "correct": false
+        },
+        "current": {
+          "probabilities": [
+            0.4431700157346328,
+            0.2969210430922848,
+            0.2599089411730825
+          ],
+          "brier": 0.7582723401943884,
+          "log_loss": 1.2142890236974528,
+          "correct": false
+        },
+        "market": {
+          "probabilities": [
+            0.40838852097130246,
+            0.2649006622516556,
+            0.32671081677704195
+          ],
+          "brier": 0.8138921782183042,
+          "log_loss": 1.3284003827009883,
+          "correct": false
+        }
+      },
+      "top_three": [
+        {
+          "home": 1,
+          "away": 1,
+          "probability": 0.13245493455516913
+        },
+        {
+          "home": 0,
+          "away": 1,
+          "probability": 0.11940790454252537
+        },
+        {
+          "home": 1,
+          "away": 0,
+          "probability": 0.11136606198842669
+        }
+      ],
+      "exact_probability": 0.13245493455516913,
+      "top_three_hit": true
+    },
+    {
+      "fixture_id": 67,
+      "gameweek": 7,
+      "home_team": "Manchester City",
+      "away_team": "Ipswich Town",
+      "score": [
+        3,
+        2
+      ],
+      "forecast_at": "2026-10-16 20:57:18.819754+00",
+      "market_at": "2026-10-16 20:56:30+00",
+      "eligible": false
+    },
+    {
+      "fixture_id": 68,
+      "gameweek": 7,
+      "home_team": "Newcastle United",
+      "away_team": "Aston Villa",
+      "score": [
+        0,
+        1
+      ],
+      "forecast_at": "2026-10-17 14:12:32.509881+00",
+      "market_at": "2026-10-17 14:14:39+00",
+      "eligible": true,
+      "forecasts": {
+        "research": {
+          "probabilities": [
+            0.403513340635762,
+            0.256598353238202,
+            0.339888306126036
+          ],
+          "brier": 0.6644131793447435,
+          "log_loss": 1.0791382267376304,
+          "correct": false
+        },
+        "current": {
+          "probabilities": [
+            0.4688573104057662,
+            0.23250963543803227,
+            0.29863305415620145
+          ],
+          "brier": 0.7658035008147135,
+          "log_loss": 1.208539702896348,
+          "correct": false
+        },
+        "market": {
+          "probabilities": [
+            0.4088533661235783,
+            0.2582231786043652,
+            0.3329234552720566
+          ],
+          "brier": 0.6788314014852945,
+          "log_loss": 1.0998426794723608,
+          "correct": false
+        }
+      },
+      "top_three": [
+        {
+          "home": 1,
+          "away": 1,
+          "probability": 0.12166250512011267
+        },
+        {
+          "home": 1,
+          "away": 0,
+          "probability": 0.09441438927566845
+        },
+        {
+          "home": 2,
+          "away": 1,
+          "probability": 0.0868132760781734
+        }
+      ],
+      "exact_probability": 0.0852505850532169,
+      "top_three_hit": false
+    },
+    {
+      "fixture_id": 69,
+      "gameweek": 7,
+      "home_team": "Nottingham Forest",
+      "away_team": "Arsenal",
+      "score": [
+        0,
+        1
+      ],
+      "forecast_at": "2026-10-17 14:12:32.509881+00",
+      "market_at": "2026-10-17 14:14:39+00",
+      "eligible": true,
+      "forecasts": {
+        "research": {
+          "probabilities": [
+            0.195711228777731,
+            0.303120186140758,
+            0.501168585081511
+          ],
+          "brier": 0.3790175128252789,
+          "log_loss": 0.6908127373310626,
+          "correct": true
+        },
+        "current": {
+          "probabilities": [
+            0.23323698084686667,
+            0.3434425291249072,
+            0.4233204900282262
+          ],
+          "brier": 0.5049115172675596,
+          "log_loss": 0.859625727173833,
+          "correct": true
+        },
+        "market": {
+          "probabilities": [
+            0.16393442622950816,
+            0.24590163934426226,
+            0.5901639344262295
+          ],
+          "brier": 0.2553077129803816,
+          "log_loss": 0.5273549257172012,
+          "correct": true
+        }
+      },
+      "top_three": [
+        {
+          "home": 0,
+          "away": 1,
+          "probability": 0.18933521448446025
+        },
+        {
+          "home": 0,
+          "away": 0,
+          "probability": 0.15527502300285176
+        },
+        {
+          "home": 1,
+          "away": 1,
+          "probability": 0.12178105946752642
+        }
+      ],
+      "exact_probability": 0.18933521448446025,
+      "top_three_hit": true
+    },
+    {
+      "fixture_id": 70,
+      "gameweek": 7,
+      "home_team": "Tottenham Hotspur",
+      "away_team": "Coventry City",
+      "score": [
+        3,
+        1
+      ],
+      "forecast_at": "2026-10-17 14:12:32.509881+00",
+      "market_at": "2026-10-17 14:14:39+00",
+      "eligible": false
+    },
+    {
+      "fixture_id": 71,
+      "gameweek": 8,
+      "home_team": "Ipswich Town",
+      "away_team": "Nottingham Forest",
+      "score": [
+        1,
+        1
+      ],
+      "forecast_at": "2026-10-20 15:42:23.658222+00",
+      "market_at": "2026-10-23 14:55:44+00",
+      "eligible": false
+    },
+    {
+      "fixture_id": 72,
+      "gameweek": 8,
+      "home_team": "Aston Villa",
+      "away_team": "Manchester City",
+      "score": [
+        2,
+        1
+      ],
+      "forecast_at": "2026-10-20 15:42:23.658222+00",
+      "market_at": "2026-10-23 14:55:44+00",
+      "eligible": true,
+      "forecasts": {
+        "research": {
+          "probabilities": [
+            0.231830681012624,
+            0.227758427158393,
+            0.540410891828983
+          ],
+          "brier": 0.9340019357825908,
+          "log_loss": 1.4617479969878917,
+          "correct": false
+        },
+        "current": {
+          "probabilities": [
+            0.16847145034626443,
+            0.19226360661789546,
+            0.63926494303584
+          ],
+          "brier": 1.1370646907135815,
+          "log_loss": 1.780988977692106,
+          "correct": false
+        },
+        "market": {
+          "probabilities": [
+            0.19565217391304346,
+            0.21739130434782605,
+            0.5869565217391305
+          ],
+          "brier": 1.0387523629489603,
+          "log_loss": 1.6314168191528757,
+          "correct": false
+        }
+      },
+      "top_three": [
+        {
+          "home": 1,
+          "away": 1,
+          "probability": 0.10649959326275807
+        },
+        {
+          "home": 1,
+          "away": 2,
+          "probability": 0.09815909632998585
+        },
+        {
+          "home": 0,
+          "away": 1,
+          "probability": 0.09420618905638509
+        }
+      ],
+      "exact_probability": 0.060198610509253785,
+      "top_three_hit": false
+    },
+    {
+      "fixture_id": 73,
+      "gameweek": 8,
+      "home_team": "Arsenal",
+      "away_team": "Everton",
+      "score": [
+        2,
+        0
+      ],
+      "forecast_at": "2026-10-20 15:42:23.658222+00",
+      "market_at": "2026-10-23 14:55:44+00",
+      "eligible": true,
+      "forecasts": {
+        "research": {
+          "probabilities": [
+            0.661247525198199,
+            0.213461615122033,
+            0.125290859679768
+          ],
+          "brier": 0.17601689983414712,
+          "log_loss": 0.4136270384280508,
+          "correct": true
+        },
+        "current": {
+          "probabilities": [
+            0.6842443271335403,
+            0.20174464854335555,
+            0.11401102432310407
+          ],
+          "brier": 0.15340106183043617,
+          "log_loss": 0.37944022172992825,
+          "correct": true
+        },
+        "market": {
+          "probabilities": [
+            0.67365180256232,
+            0.20935544741285134,
+            0.1169927500248287
+          ],
+          "brier": 0.16402015289063016,
+          "log_loss": 0.3950419149695353,
+          "correct": true
+        }
+      },
+      "top_three": [
+        {
+          "home": 1,
+          "away": 0,
+          "probability": 0.14872130649907964
+        },
+        {
+          "home": 2,
+          "away": 0,
+          "probability": 0.13875534675384246
+        },
+        {
+          "home": 1,
+          "away": 1,
+          "probability": 0.09867486761917077
+        }
+      ],
+      "exact_probability": 0.13875534675384246,
+      "top_three_hit": true
+    },
+    {
+      "fixture_id": 74,
+      "gameweek": 8,
+      "home_team": "Coventry City",
+      "away_team": "Fulham",
+      "score": [
+        0,
+        1
+      ],
+      "forecast_at": "2026-10-20 15:42:23.658222+00",
+      "market_at": "2026-10-23 14:55:44+00",
+      "eligible": false
+    },
+    {
+      "fixture_id": 75,
+      "gameweek": 8,
+      "home_team": "Chelsea",
+      "away_team": "Tottenham Hotspur",
+      "score": [
+        0,
+        2
+      ],
+      "forecast_at": "2026-10-20 15:42:23.658222+00",
+      "market_at": "2026-10-23 14:55:44+00",
+      "eligible": true,
+      "forecasts": {
+        "research": {
+          "probabilities": [
+            0.506072768336978,
+            0.246041092496612,
+            0.24788613916641
+          ],
+          "brier": 0.8823211257071878,
+          "log_loss": 1.3947857545077726,
+          "correct": false
+        },
+        "current": {
+          "probabilities": [
+            0.36284420416776686,
+            0.2793912627909214,
+            0.3577645330413116
+          ],
+          "brier": 0.6221817892416903,
+          "log_loss": 1.0278802379148892,
+          "correct": false
+        },
+        "market": {
+          "probabilities": [
+            0.5604498594189317,
+            0.22633552014995312,
+            0.21321462043111533
+          ],
+          "brier": 0.984363046107604,
+          "log_loss": 1.545456012910748,
+          "correct": false
+        }
+      },
+      "top_three": [
+        {
+          "home": 1,
+          "away": 1,
+          "probability": 0.11694531712672859
+        },
+        {
+          "home": 1,
+          "away": 0,
+          "probability": 0.10949265416774336
+        },
+        {
+          "home": 2,
+          "away": 1,
+          "probability": 0.09567429964508876
+        }
+      ],
+      "exact_probability": 0.03816877670467882,
+      "top_three_hit": false
+    },
+    {
+      "fixture_id": 76,
+      "gameweek": 8,
+      "home_team": "Crystal Palace",
+      "away_team": "Newcastle United",
+      "score": [
+        0,
+        2
+      ],
+      "forecast_at": "2026-10-20 15:42:23.658222+00",
+      "market_at": "2026-10-23 14:55:44+00",
+      "eligible": true,
+      "forecasts": {
+        "research": {
+          "probabilities": [
+            0.434554233278474,
+            0.246660828521944,
+            0.318784938199582
+          ],
+          "brier": 0.7137329064111216,
+          "log_loss": 1.143238578478338,
+          "correct": false
+        },
+        "current": {
+          "probabilities": [
+            0.3867158616721691,
+            0.26723170764204124,
+            0.34605243068578956
+          ],
+          "brier": 0.6486093666500938,
+          "log_loss": 1.061164981630537,
+          "correct": false
+        },
+        "market": {
+          "probabilities": [
+            0.3264604810996563,
+            0.26116838487972505,
+            0.41237113402061853
+          ],
+          "brier": 0.5200930551127171,
+          "log_loss": 0.8858315243894466,
+          "correct": true
+        }
+      },
+      "top_three": [
+        {
+          "home": 1,
+          "away": 1,
+          "probability": 0.11562411676342525
+        },
+        {
+          "home": 2,
+          "away": 1,
+          "probability": 0.09059790345606436
+        },
+        {
+          "home": 1,
+          "away": 0,
+          "probability": 0.08838822324816319
+        }
+      ],
+      "exact_probability": 0.04825838032366769,
+      "top_three_hit": false
+    },
+    {
+      "fixture_id": 77,
+      "gameweek": 8,
+      "home_team": "Hull City",
+      "away_team": "Brentford",
+      "score": [
+        1,
+        1
+      ],
+      "forecast_at": "2026-10-20 15:42:23.658222+00",
+      "market_at": "2026-10-23 14:55:44+00",
+      "eligible": false
+    },
+    {
+      "fixture_id": 78,
+      "gameweek": 8,
+      "home_team": "Liverpool",
+      "away_team": "Brighton & Hove Albion",
+      "score": [
+        2,
+        0
+      ],
+      "forecast_at": "2026-10-20 15:42:23.658222+00",
+      "market_at": "2026-10-23 14:55:44+00",
+      "eligible": true,
+      "forecasts": {
+        "research": {
+          "probabilities": [
+            0.36010360408812,
+            0.257721294076565,
+            0.382175101835315
+          ],
+          "brier": 0.6219454713843461,
+          "log_loss": 1.021363499801664,
+          "correct": false
+        },
+        "current": {
+          "probabilities": [
+            0.3052420339614916,
+            0.2557160684680528,
+            0.4390418975704557
+          ],
+          "brier": 0.7408371268689895,
+          "log_loss": 1.1866502631001,
+          "correct": false
+        },
+        "market": {
+          "probabilities": [
+            0.4604166666666667,
+            0.24791666666666667,
+            0.2916666666666667
+          ],
+          "brier": 0.4376822916666666,
+          "log_loss": 0.7756234023841837,
+          "correct": true
+        }
+      },
+      "top_three": [
+        {
+          "home": 1,
+          "away": 1,
+          "probability": 0.12222920116297381
+        },
+        {
+          "home": 0,
+          "away": 1,
+          "probability": 0.09194351286799828
+        },
+        {
+          "home": 1,
+          "away": 0,
+          "probability": 0.08874282848874691
+        }
+      ],
+      "exact_probability": 0.0589871144617627,
+      "top_three_hit": false
+    },
+    {
+      "fixture_id": 79,
+      "gameweek": 8,
+      "home_team": "Manchester United",
+      "away_team": "AFC Bournemouth",
+      "score": [
+        0,
+        3
+      ],
+      "forecast_at": "2026-10-20 15:42:23.658222+00",
+      "market_at": "2026-10-23 14:55:44+00",
+      "eligible": true,
+      "forecasts": {
+        "research": {
+          "probabilities": [
+            0.446289271060504,
+            0.241372857296436,
+            0.31233787164306
+          ],
+          "brier": 0.7303141724795582,
+          "log_loss": 1.1636697551767488,
+          "correct": false
+        },
+        "current": {
+          "probabilities": [
+            0.43837853586501924,
+            0.23043445503803348,
+            0.3311870090969473
+          ],
+          "brier": 0.6925865955765202,
+          "log_loss": 1.1050720809814045,
+          "correct": false
+        },
+        "market": {
+          "probabilities": [
+            0.44674965421853385,
+            0.2612571077301368,
+            0.2919932380513294
+          ],
+          "brier": 0.7691141048489374,
+          "log_loss": 1.231024634340452,
+          "correct": false
+        }
+      },
+      "top_three": [
+        {
+          "home": 1,
+          "away": 1,
+          "probability": 0.11197765185959835
+        },
+        {
+          "home": 2,
+          "away": 1,
+          "probability": 0.09163768224570434
+        },
+        {
+          "home": 1,
+          "away": 0,
+          "probability": 0.08403841389676205
+        }
+      ],
+      "exact_probability": 0.02024484184407903,
+      "top_three_hit": false
+    },
+    {
+      "fixture_id": 80,
+      "gameweek": 8,
+      "home_team": "Sunderland",
+      "away_team": "Leeds United",
+      "score": [
+        0,
+        0
+      ],
+      "forecast_at": "2026-10-20 15:42:23.658222+00",
+      "market_at": "2026-10-23 14:55:44+00",
+      "eligible": true,
+      "forecasts": {
+        "research": {
+          "probabilities": [
+            0.34045992171619,
+            0.286820533231558,
+            0.372719545052251
+          ],
+          "brier": 0.7634577693790704,
+          "log_loss": 1.2488985785671236,
+          "correct": false
+        },
+        "current": {
+          "probabilities": [
+            0.3094389496360727,
+            0.3140916286604833,
+            0.37646942170344405
+          ],
+          "brier": 0.7079519829032298,
+          "log_loss": 1.158070524621791,
+          "correct": false
+        },
+        "market": {
+          "probabilities": [
+            0.3193152214365464,
+            0.29996278377372537,
+            0.38072199478972835
+          ],
+          "brier": 0.7369635520595726,
+          "log_loss": 1.204096866108863,
+          "correct": false
+        }
+      },
+      "top_three": [
+        {
+          "home": 1,
+          "away": 1,
+          "probability": 0.13320428827156908
+        },
+        {
+          "home": 0,
+          "away": 1,
+          "probability": 0.12160972427392369
+        },
+        {
+          "home": 1,
+          "away": 0,
+          "probability": 0.11481984762163362
+        }
+      ],
+      "exact_probability": 0.10482552920498643,
+      "top_three_hit": false
+    }
+  ],
+  "paper": {
+    "valid_selections": 0,
+    "stake_units": 0,
+    "profit_units": 0,
+    "roi": null,
+    "reason": "All 29 recorded GW8 events are watch/pass. No matchday final selection is present; do not invent a retrospective selection or pass."
+  },
+  "top_three_hits": 1,
+  "models_changed": false
+}

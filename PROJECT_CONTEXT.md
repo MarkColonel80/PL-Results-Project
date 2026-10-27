@@ -1,8 +1,19 @@
 # PL Results Project — Persistent Project Context
 
-_Last updated: 2026-10-24_
+_Last updated: 2026-10-27_
 
 This file is the durable handoff/source of truth for continuing the project across ChatGPT conversations. At the start of a new project chat, read this file first, then verify live state in GitHub/Supabase/Vercel before making changes.
+
+## Tuesday GW8 closeout and GW9 refresh — 2026-10-27
+
+- Read [DATA_REFRESH_2026-10-27.md](DATA_REFRESH_2026-10-27.md), [WEEKEND_REVIEW_2026-10-27.md](WEEKEND_REVIEW_2026-10-27.md), [WEEKEND_2026-10-31.md](WEEKEND_2026-10-31.md), and `data/full-refresh-2026-10-27-checkpoint.json` before continuing.
+- Current season now has 80 results (8 per club), 3,200 rich player rows, 3,200 lineup rows, 222 goal events, 5,220 checked FPL rows, 2,461 Understat source rows and 80 historical odds records. GW8 added 10 / 400 / 400 / 19 / 669 / 303 / 10 respectively. Understat enriched 156 new appearances; 145 unresolved source identities and two mapped-but-unmatched appearances remain unforced. Transfermarkt feed has no current-season PL games.
+- GW8 ledger contains zero valid selections: stake/profit 0 units, ROI undefined. No Saturday/Sunday final decisions were found; do not invent retrospective pass/selection events. All 29 original events remain unchanged.
+- All 50 archived forecasts were reviewed; 35 are eligible, including 7 from GW8. GW8 Brier: research .688827, current .671805, market .664427; top-outcome accuracy 1/7, 1/7, 3/7. Cumulative Brier .651266 / .666681 / .628305. Market remains stronger; no model/betting changes authorized or made.
+- Ten official GW9 fixtures, internal IDs 81–90, run 31 October–2 November; public coupon odds observed 27 October 10:27 GMT, official FPL flags, cup schedule and provisional 5 watch / 5 pass reviews are saved. All ten meet the unchanged four-match minimum. Full Venue18 evidence is unavailable for promoted clubs and must not be treated as confirmation. No bets or paper selections; both official XIs and executable named-bookmaker quotes are pending.
+- Cached inputs refreshed before future-only snapshots. Existing 50 fixtures/snapshots, all 2,660 frozen v3 rows and older current-season data hashes are preserved. RLS/grants/policies unchanged.
+- Six unit suites, append-only ledger validation, TypeScript, production build and existing Chromium regression checks passed in Vercel cloud execution. Final live-browser/deployment receipt is pending in this initial publication; use the checkpoint's latest status.
+- Entire project work stayed in connected cloud services/public sources. Existing Tuesday automation `6ad7a14d306c8190b719bd87b6f73e7d` was not duplicated or edited. Do not create another Tuesday recurring job.
 
 ## Favoured outcome and three likeliest scorelines — 2026-10-24
 

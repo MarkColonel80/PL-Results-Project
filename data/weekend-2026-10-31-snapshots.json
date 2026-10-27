@@ -1,0 +1,1383 @@
+{
+  "checked_at": "2026-10-27T10:29:55.636Z",
+  "source": "Official FPL fixtures; complete verified GW1–8 inputs; existing future-only snapshot SQL unchanged.",
+  "coverage": {
+    "total": 10,
+    "eligible": 10,
+    "research": 10
+  },
+  "fixtures": [
+    {
+      "fixture_id": 81,
+      "season": "2026/27",
+      "kickoff_time": "2026-10-31T12:30:00Z",
+      "home_team": "Chelsea",
+      "away_team": "Manchester United",
+      "market_home_odds": 1.8461538461538463,
+      "market_draw_odds": 4,
+      "market_away_odds": 4.1,
+      "market_source": "Oddschecker UK Premier League public coupon; comparison only",
+      "market_snapshot_at": "2026-10-27T10:27:23Z",
+      "notes": "Official FPL 2026/27 GW9 fixture 84. Manual fixture ID 81 is an internal ID, not a provider ID. Tuesday 27 October early review; no bets.\nWEEKEND_NEWS_JSON:{\"checkedAt\":\"2026-10-27T10:28:28.450203+00:00\",\"home\":\"Official FPL flags checked 27 October: Martinez, Sánchez, Jörgensen, James, Chalobah, B.Badiashile, M.Sarr, Gittens, D.Essugo, João Pedro, Marc Guiu, Emegha, Chavarria. Flags can lag club news and do not confirm an XI. Palmer's two-yellow red card is reported to be served in the Liverpool cup tie; do not infer that he is suspended for United. Recheck official availability before kickoff.\",\"away\":\"Official FPL flags checked 27 October: Bayindir, Dorgu, Shaw, Fredricson, Rashford, Mainoo, Ugarte, Collyer, Šeško, Obi. Flags can lag club news and do not confirm an XI.\",\"schedule\":\"Chelsea: Carabao Cup away at Liverpool on Wed 28 Oct 20:00 GMT; Manchester United: not in the reviewed Carabao Cup fourth-round schedule. Review minutes, injuries, travel and rotation after these matches. No numerical rest/news adjustment.\",\"teams\":\"Provisional Tuesday review. Both official GW9 starting XIs and an available named-bookmaker quote remain pending; no paper selection or stake.\",\"availability\":[\"Chelsea — Martinez: Head injury - Unknown return date; Sánchez: Has joined Como on loan for the rest of the season; Jörgensen: Has joined RC Strasbourg on loan for the rest of the season; James: Knee injury - Unknown return date; Chalobah: Has joined Como permanently; B.Badiashile: Has joined Napoli on loan for the rest of the season; M.Sarr: Has joined Real Sociedad on loan for the rest of the season; Gittens: Ankle injury - Unknown return date; D.Essugo: Has joined RC Strasbourg on loan for the rest of the season; João Pedro: Unspecified injury - 75% chance of playing; Marc Guiu: Has joined RB Leipzig permanently; Emegha: Hamstring injury - Unknown return date; Chavarria: Unspecified injury - Expected back 31 Oct\",\"Manchester United — Bayindir: Has joined Celta Vigo on loan for the rest of the season; Dorgu: Hamstring injury - Expected back 25 Oct; Shaw: Unspecified injury - Unknown return date; Fredricson: Has joined Lausanne-Sport permanently; Rashford: Hip injury - 75% chance of playing; Mainoo: Unspecified injury - Expected back 8 Nov; Ugarte: Knee injury - Unknown return date; Collyer: Has joined West Brom permanently; Šeško: Shin injury - Unknown return date; Obi: Has joined Willem II on loan for the rest of the season\"],\"sources\":[{\"label\":\"Official FPL availability, fetched 27 October\",\"url\":\"https://fantasy.premierleague.com/api/bootstrap-static/\"},{\"label\":\"Official FPL fixtures, fetched 27 October\",\"url\":\"https://fantasy.premierleague.com/api/fixtures/\"},{\"label\":\"EFL confirmed fourth-round schedule, checked 27 October\",\"url\":\"https://www.efl.com/competitions/carabao-cup/\"},{\"label\":\"Oddschecker coupon observed 27 Oct 10:27 GMT\",\"url\":\"https://www.oddschecker.com/football/english/premier-league\"},{\"label\":\"Palmer suspension report, 26 October\",\"url\":\"https://www.rotowire.com/soccer/headlines/cole-palmer-news-suspended-for-cup-clash-541853\"}]}",
+      "snapshot": {
+        "fixture_id": 81,
+        "home_n8": 8,
+        "away_n8": 8,
+        "home_vppg8": 1.25,
+        "away_vppg8": 1.375,
+        "home_vgf8": 1.75,
+        "home_vga8": 2,
+        "home_vxgf8": 1.5289046940393747,
+        "home_vxga8": 1.4064517218153925,
+        "away_vgf8": 1.25,
+        "away_vga8": 1,
+        "away_vxgf8": 1.2682057427754625,
+        "away_vxga8": 1.3801125314613805,
+        "league_home_goals": 1.5414634146341464,
+        "league_away_goals": 1.2463414634146341,
+        "league_home_xg": 1.5886916096390094,
+        "league_away_xg": 1.306578023684512,
+        "calculated_at": "2026-10-27 10:28:49.305614+00",
+        "goal_xg_residual_cap": 1,
+        "home_vgf8_capped": 1.3757379559241236,
+        "home_vga8_capped": 1.9063837162777781,
+        "away_vgf8_capped": 1.17381562825758,
+        "away_vga8_capped": 0.9912850859342143,
+        "home_n30": 30,
+        "away_n30": 30,
+        "home_ppg30": 1.2333333333333334,
+        "away_ppg30": 1.7333333333333334,
+        "home_vn18": 18,
+        "away_vn18": 18,
+        "home_vppg18": 1.4444444444444444,
+        "away_vppg18": 1.5,
+        "home_vxgf18": 1.908552086239722,
+        "home_vxga18": 1.3439785430290632,
+        "away_vxgf18": 1.42920255234465,
+        "away_vxga18": 1.212272236205058,
+        "candidate_model_version": "v3_24_venue8_50_noppg",
+        "candidate_home_n24": 24,
+        "candidate_away_n24": 24,
+        "candidate_home_n10": 10,
+        "candidate_away_n10": 10,
+        "candidate_home_ppg10": 1.6,
+        "candidate_away_ppg10": 1.3,
+        "candidate_home_lambda": 1.7241197449372083,
+        "candidate_away_lambda": 1.6914310164014894,
+        "candidate_home_prob": 0.393865982771585,
+        "candidate_draw_prob": 0.225826454922186,
+        "candidate_away_prob": 0.380307562306228,
+        "candidate_calculated_at": "2026-10-27 10:28:52.160257+00"
+      },
+      "current": {
+        "h": 0.3000147633466143,
+        "d": 0.262758820175493,
+        "a": 0.43722641647789273
+      },
+      "diagnostics": {
+        "venue8": {
+          "h": 0.3793179660062976,
+          "d": 0.26228275795502914,
+          "a": 0.3583992760386732
+        },
+        "venue18": {
+          "h": 0.38931263002694466,
+          "d": 0.2522584310404659,
+          "a": 0.3584289389325893
+        }
+      },
+      "gaps": [
+        {
+          "outcome": "h",
+          "odds": 1.8461538461538463,
+          "research_pp": -14.78006838950816,
+          "current_pp": -24.16519033200523,
+          "venue8_pp": -16.234870066036905,
+          "venue18_pp": -15.235403663972196
+        },
+        {
+          "outcome": "d",
+          "odds": 4,
+          "research_pp": -2.4173545077813996,
+          "current_pp": 1.2758820175493013,
+          "venue8_pp": 1.2282757955029144,
+          "venue18_pp": 0.22584310404659136
+        },
+        {
+          "outcome": "a",
+          "odds": 4.1,
+          "research_pp": 13.640512328183771,
+          "current_pp": 19.332397745350246,
+          "venue8_pp": 11.449683701428295,
+          "venue18_pp": 11.452649990819905
+        }
+      ],
+      "favourite": {
+        "outcomes": [
+          "home"
+        ],
+        "probability": 0.393865982771585
+      },
+      "scores": [
+        {
+          "home": 1,
+          "away": 1,
+          "probability": 0.09582236099031022,
+          "tied": false
+        },
+        {
+          "home": 2,
+          "away": 1,
+          "probability": 0.08260461229494738,
+          "tied": false
+        },
+        {
+          "home": 1,
+          "away": 2,
+          "probability": 0.08103845672191543,
+          "tied": false
+        }
+      ],
+      "provisional_review": {
+        "status": "watch",
+        "reason": "Provisional Manchester United away watch at 4.10: research 38.03% versus 24.39% break-even; all displayed diagnostics retain a positive gap. Chelsea play Liverpool in the cup while United have no fourth-round tie. Chelsea goalkeeper/Joao Pedro news and Palmer's cup suspension need fresh verification. United's 0-3 loss is not a reason to adjust frozen rules.",
+        "recorded_at": "2026-10-27T10:30:40.670630+00:00",
+        "paper_stake": 0
+      }
+    },
+    {
+      "fixture_id": 82,
+      "season": "2026/27",
+      "kickoff_time": "2026-10-31T15:00:00Z",
+      "home_team": "AFC Bournemouth",
+      "away_team": "Leeds United",
+      "market_home_odds": 2.15,
+      "market_draw_odds": 3.6,
+      "market_away_odds": 3.4,
+      "market_source": "Oddschecker UK Premier League public coupon; comparison only",
+      "market_snapshot_at": "2026-10-27T10:27:23Z",
+      "notes": "Official FPL 2026/27 GW9 fixture 82. Manual fixture ID 82 is an internal ID, not a provider ID. Tuesday 27 October early review; no bets.\nWEEKEND_NEWS_JSON:{\"checkedAt\":\"2026-10-27T10:28:28.450203+00:00\",\"home\":\"Official FPL flags checked 27 October: Dennis, Milosavljević, J.Araujo, Scott, Tóth.A, Enes Ünal. Flags can lag club news and do not confirm an XI.\",\"away\":\"Official FPL flags checked 27 October: Perri, Rodon, Bornauw, Gnonto, Harrison, Piroe, Mateo Joseph, Elvedi. Flags can lag club news and do not confirm an XI.\",\"schedule\":\"AFC Bournemouth: Carabao Cup home to Aston Villa on Wed 28 Oct 19:45 GMT; Leeds United: not in the reviewed Carabao Cup fourth-round schedule. Review minutes, injuries, travel and rotation after these matches. No numerical rest/news adjustment.\",\"teams\":\"Provisional Tuesday review. Both official GW9 starting XIs and an available named-bookmaker quote remain pending; no paper selection or stake.\",\"availability\":[\"AFC Bournemouth — Dennis: Has joined MK Dons permanently; Milosavljević: Thigh injury - Expected back 31 Oct; J.Araujo: Thigh injury - Unknown return date; Scott: Thigh injury - Expected back 8 Nov; Tóth.A: Hamstring injury - Unknown return date; Enes Ünal: Has joined Getafe permanently\",\"Leeds United — Perri: Has joined Torino on loan for the rest of the season; Rodon: Hamstring injury - Expected back 21 Nov; Bornauw: Has joined Hamburg SV on loan for the rest of the season; Gnonto: Has joined ACF Fiorentina on loan for the rest of the season; Harrison: Has joined New England Revolution permanently; Piroe: Has joined West Ham United on loan for the rest of the season; Mateo Joseph: Knee injury - Unknown return date; Elvedi: Illness - 75% chance of playing\"],\"sources\":[{\"label\":\"Official FPL availability, fetched 27 October\",\"url\":\"https://fantasy.premierleague.com/api/bootstrap-static/\"},{\"label\":\"Official FPL fixtures, fetched 27 October\",\"url\":\"https://fantasy.premierleague.com/api/fixtures/\"},{\"label\":\"EFL confirmed fourth-round schedule, checked 27 October\",\"url\":\"https://www.efl.com/competitions/carabao-cup/\"},{\"label\":\"Oddschecker coupon observed 27 Oct 10:27 GMT\",\"url\":\"https://www.oddschecker.com/football/english/premier-league\"}]}",
+      "snapshot": {
+        "fixture_id": 82,
+        "home_n8": 8,
+        "away_n8": 8,
+        "home_vppg8": 1.375,
+        "away_vppg8": 1.25,
+        "home_vgf8": 1.625,
+        "home_vga8": 1.125,
+        "home_vxgf8": 2.1287219134550543,
+        "home_vxga8": 1.1651729844510554,
+        "away_vgf8": 1,
+        "away_vga8": 1.25,
+        "away_vxgf8": 1.4473362012254074,
+        "away_vxga8": 1.59652843601238,
+        "league_home_goals": 1.5414634146341464,
+        "league_away_goals": 1.2463414634146341,
+        "league_home_xg": 1.5886916096390094,
+        "league_away_xg": 1.306578023684512,
+        "calculated_at": "2026-10-27 10:28:49.305614+00",
+        "goal_xg_residual_cap": 1,
+        "home_vgf8_capped": 1.625,
+        "home_vga8_capped": 1.0713719925936311,
+        "away_vgf8_capped": 0.97625,
+        "away_vga8_capped": 1.25,
+        "home_n30": 30,
+        "away_n30": 30,
+        "home_ppg30": 1.5,
+        "away_ppg30": 1.4,
+        "home_vn18": 18,
+        "away_vn18": 18,
+        "home_vppg18": 1.277777777777778,
+        "away_vppg18": 0.9444444444444444,
+        "home_vxgf18": 1.972765294868913,
+        "home_vxga18": 1.007299104200469,
+        "away_vxgf18": 1.3960383116557367,
+        "away_vxga18": 1.6817904160055022,
+        "candidate_model_version": "v3_24_venue8_50_noppg",
+        "candidate_home_n24": 24,
+        "candidate_away_n24": 24,
+        "candidate_home_n10": 10,
+        "candidate_away_n10": 10,
+        "candidate_home_ppg10": 1.1,
+        "candidate_away_ppg10": 1.4,
+        "candidate_home_lambda": 1.8722570543521975,
+        "candidate_away_lambda": 1.1693235788112648,
+        "candidate_home_prob": 0.53796251526566,
+        "candidate_draw_prob": 0.225548068353037,
+        "candidate_away_prob": 0.236489416381303,
+        "candidate_calculated_at": "2026-10-27 10:28:52.160257+00"
+      },
+      "current": {
+        "h": 0.5079478909156551,
+        "d": 0.2484749649654014,
+        "a": 0.24357714411894352
+      },
+      "diagnostics": {
+        "venue8": {
+          "h": 0.541642813566484,
+          "d": 0.21934290315395566,
+          "a": 0.23901428327956017
+        },
+        "venue18": {
+          "h": 0.572021375708589,
+          "d": 0.22059550722499155,
+          "a": 0.20738311706641954
+        }
+      },
+      "gaps": [
+        {
+          "outcome": "h",
+          "odds": 2.15,
+          "research_pp": 7.2846236195892535,
+          "current_pp": 4.283161184588763,
+          "venue8_pp": 7.652653449671659,
+          "venue18_pp": 10.690509663882159
+        },
+        {
+          "outcome": "d",
+          "odds": 3.6,
+          "research_pp": -5.2229709424740784,
+          "current_pp": -2.93028128123764,
+          "venue8_pp": -5.843487462382213,
+          "venue18_pp": -5.718227055278624
+        },
+        {
+          "outcome": "a",
+          "odds": 3.4,
+          "research_pp": -5.762823067752054,
+          "current_pp": -5.054050293988002,
+          "venue8_pp": -5.510336377926336,
+          "venue18_pp": -8.6734529992404
+        }
+      ],
+      "favourite": {
+        "outcomes": [
+          "home"
+        ],
+        "probability": 0.53796251526566
+      },
+      "scores": [
+        {
+          "home": 1,
+          "away": 1,
+          "probability": 0.10455829614027255,
+          "tied": false
+        },
+        {
+          "home": 2,
+          "away": 1,
+          "probability": 0.09788000376983572,
+          "tied": false
+        },
+        {
+          "home": 1,
+          "away": 0,
+          "probability": 0.08941776086185364,
+          "tied": false
+        }
+      ],
+      "provisional_review": {
+        "status": "watch",
+        "reason": "Provisional Bournemouth home watch at 2.15: research 53.80% versus 46.51% break-even; smallest diagnostic cushion about 4.28pp. Bournemouth host Villa in the cup on Wednesday; Leeds have no fourth-round tie. Recheck rotation, workload and official XIs.",
+        "recorded_at": "2026-10-27T10:30:40.670630+00:00",
+        "paper_stake": 0
+      }
+    },
+    {
+      "fixture_id": 83,
+      "season": "2026/27",
+      "kickoff_time": "2026-10-31T15:00:00Z",
+      "home_team": "Brentford",
+      "away_team": "Nottingham Forest",
+      "market_home_odds": 2.05,
+      "market_draw_odds": 3.75,
+      "market_away_odds": 3.75,
+      "market_source": "Oddschecker UK Premier League public coupon; comparison only",
+      "market_snapshot_at": "2026-10-27T10:27:23Z",
+      "notes": "Official FPL 2026/27 GW9 fixture 83. Manual fixture ID 83 is an internal ID, not a provider ID. Tuesday 27 October early review; no bets.\nWEEKEND_NEWS_JSON:{\"checkedAt\":\"2026-10-27T10:28:28.450203+00:00\",\"home\":\"Official FPL flags checked 27 October: Milambo, Yarmoliuk, Dasilva, Furo. Flags can lag club news and do not confirm an XI.\",\"away\":\"Official FPL flags checked 27 October: N.Williams, Morato, Savona, Abbott, Bindon, Hutchinson, Bakwa, Dominguez, Igor Jesus. Flags can lag club news and do not confirm an XI.\",\"schedule\":\"Brentford: Carabao Cup away at Sunderland on Wed 28 Oct 19:45 GMT; Nottingham Forest: not in the reviewed Carabao Cup fourth-round schedule. Review minutes, injuries, travel and rotation after these matches. No numerical rest/news adjustment.\",\"teams\":\"Provisional Tuesday review. Both official GW9 starting XIs and an available named-bookmaker quote remain pending; no paper selection or stake.\",\"availability\":[\"Brentford — Milambo: Knee injury - Unknown return date; Yarmoliuk: Suspended until 8 Nov; Dasilva: Hamstring injury - Unknown return date; Furo: Unspecified injury - Unknown return date\",\"Nottingham Forest — N.Williams: Arm injury - 75% chance of playing; Morato: Has joined West Ham on loan for the rest of the season; Savona: Knee injury - Unknown return date; Abbott: Has joined Southampton on loan for the rest of the season; Bindon: Has joined Charlton Athletic on loan for the rest of the season; Hutchinson: Has joined AC Milan on loan for the rest of the season; Bakwa: Has joined Lille on loan for the rest of the season; Dominguez: Muscular injury - 75% chance of playing; Igor Jesus: Calf injury - Unknown return date\"],\"sources\":[{\"label\":\"Official FPL availability, fetched 27 October\",\"url\":\"https://fantasy.premierleague.com/api/bootstrap-static/\"},{\"label\":\"Official FPL fixtures, fetched 27 October\",\"url\":\"https://fantasy.premierleague.com/api/fixtures/\"},{\"label\":\"EFL confirmed fourth-round schedule, checked 27 October\",\"url\":\"https://www.efl.com/competitions/carabao-cup/\"},{\"label\":\"Oddschecker coupon observed 27 Oct 10:27 GMT\",\"url\":\"https://www.oddschecker.com/football/english/premier-league\"}]}",
+      "snapshot": {
+        "fixture_id": 83,
+        "home_n8": 8,
+        "away_n8": 8,
+        "home_vppg8": 1.625,
+        "away_vppg8": 1.75,
+        "home_vgf8": 1.875,
+        "home_vga8": 0.875,
+        "home_vxgf8": 2.1970454149251806,
+        "home_vxga8": 1.2017972325310111,
+        "away_vgf8": 2.375,
+        "away_vga8": 1.375,
+        "away_vxgf8": 2.0846497246436773,
+        "away_vxga8": 1.8010164857205004,
+        "league_home_goals": 1.5414634146341464,
+        "league_away_goals": 1.2463414634146341,
+        "league_home_xg": 1.5886916096390094,
+        "league_away_xg": 1.306578023684512,
+        "calculated_at": "2026-10-27 10:28:49.305614+00",
+        "goal_xg_residual_cap": 1,
+        "home_vgf8_capped": 1.875,
+        "home_vga8_capped": 0.875,
+        "away_vgf8_capped": 1.93125,
+        "away_vga8_capped": 1.375,
+        "home_n30": 30,
+        "away_n30": 30,
+        "home_ppg30": 1.4666666666666668,
+        "away_ppg30": 1.0666666666666667,
+        "home_vn18": 18,
+        "away_vn18": 18,
+        "home_vppg18": 1.6111111111111112,
+        "away_vppg18": 1.5,
+        "home_vxgf18": 2.1642424066334134,
+        "home_vxga18": 1.1964376589026715,
+        "away_vxgf18": 1.4607220998416344,
+        "away_vxga18": 1.6648962158757779,
+        "candidate_model_version": "v3_24_venue8_50_noppg",
+        "candidate_home_n24": 24,
+        "candidate_away_n24": 24,
+        "candidate_home_n10": 10,
+        "candidate_away_n10": 10,
+        "candidate_home_ppg10": 1.3,
+        "candidate_away_ppg10": 0.7,
+        "candidate_home_lambda": 1.8970902558146516,
+        "candidate_away_lambda": 1.4386170748336986,
+        "candidate_home_prob": 0.483922476845761,
+        "candidate_draw_prob": 0.222920830736417,
+        "candidate_away_prob": 0.293156692417822,
+        "candidate_calculated_at": "2026-10-27 10:28:52.160257+00"
+      },
+      "current": {
+        "h": 0.47479915421649566,
+        "d": 0.22376353020365972,
+        "a": 0.3014373155798447
+      },
+      "diagnostics": {
+        "venue8": {
+          "h": 0.4974853932515226,
+          "d": 0.20386145720662321,
+          "a": 0.2986531495418542
+        },
+        "venue18": {
+          "h": 0.5538145755352735,
+          "d": 0.21257533737460918,
+          "a": 0.23361008709011744
+        }
+      },
+      "gaps": [
+        {
+          "outcome": "h",
+          "odds": 2.05,
+          "research_pp": -0.38824012030195254,
+          "current_pp": -1.3005723832284877,
+          "venue8_pp": 0.9680515202742046,
+          "venue18_pp": 6.600969748649294
+        },
+        {
+          "outcome": "d",
+          "odds": 3.75,
+          "research_pp": -4.374583593024966,
+          "current_pp": -4.290313646300695,
+          "venue8_pp": -6.280520946004345,
+          "venue18_pp": -5.409132929205748
+        },
+        {
+          "outcome": "a",
+          "odds": 3.75,
+          "research_pp": 2.6490025751155333,
+          "current_pp": 3.477064891317805,
+          "venue8_pp": 3.1986482875187514,
+          "venue18_pp": -3.3056579576549225
+        }
+      ],
+      "favourite": {
+        "outcomes": [
+          "home"
+        ],
+        "probability": 0.483922476845761
+      },
+      "scores": [
+        {
+          "home": 1,
+          "away": 1,
+          "probability": 0.09713011814588214,
+          "tied": false
+        },
+        {
+          "home": 2,
+          "away": 1,
+          "probability": 0.09213230034033944,
+          "tied": false
+        },
+        {
+          "home": 1,
+          "away": 2,
+          "probability": 0.06986652322264025,
+          "tied": false
+        }
+      ],
+      "provisional_review": {
+        "status": "pass",
+        "reason": "Provisional pass: Forest away at 3.75 has a 2.65pp research gap but loses it in the full Venue18 xG-only diagnostic (-3.31pp). Brentford's Wednesday cup trip to Sunderland is an additional review item.",
+        "recorded_at": "2026-10-27T10:30:40.670630+00:00",
+        "paper_stake": 0
+      }
+    },
+    {
+      "fixture_id": 84,
+      "season": "2026/27",
+      "kickoff_time": "2026-10-31T15:00:00Z",
+      "home_team": "Coventry City",
+      "away_team": "Sunderland",
+      "market_home_odds": 3.1,
+      "market_draw_odds": 3.5,
+      "market_away_odds": 2.375,
+      "market_source": "Oddschecker UK Premier League public coupon; comparison only",
+      "market_snapshot_at": "2026-10-27T10:27:23Z",
+      "notes": "Official FPL 2026/27 GW9 fixture 85. Manual fixture ID 84 is an internal ID, not a provider ID. Tuesday 27 October early review; no bets.\nWEEKEND_NEWS_JSON:{\"checkedAt\":\"2026-10-27T10:28:28.450203+00:00\",\"home\":\"Official FPL flags checked 27 October: Dovin, Thomas, Kitching, Woolfenden, Brau, Amenda, Eccles, Borges Rodrigues, Andrews, Wright, Markelo, Bassette. Flags can lag club news and do not confirm an XI.\",\"away\":\"Official FPL flags checked 27 October: Patterson, Ballard, Seelt, Hjelde, Masuaku, Meunier, Adingra, Mundle, Isidor. Flags can lag club news and do not confirm an XI.\",\"schedule\":\"Coventry City: not in the reviewed Carabao Cup fourth-round schedule; Sunderland: Carabao Cup home to Brentford on Wed 28 Oct 19:45 GMT. Review minutes, injuries, travel and rotation after these matches. No numerical rest/news adjustment.\",\"teams\":\"Provisional Tuesday review. Both official GW9 starting XIs and an available named-bookmaker quote remain pending; no paper selection or stake.\",\"availability\":[\"Coventry City — Dovin: not included in squad.; Thomas: Unspecified injury - 75% chance of playing; Kitching: Has joined Sheffield United on loan for the rest of the season; Woolfenden: Knee injury - Unknown return date; Brau: Has joined Academico de Viseu on loan for the rest of the season; Amenda: Calf injury - Unknown return date; Eccles: Ankle injury - Unknown return date; Borges Rodrigues: Has joined Burton Albion on loan for the rest of the season; Andrews: Has joined Oxford United on loan for the rest of the season; Wright: Thigh injury - Unknown return date; Markelo: Has joined Shabab Al-Ahli Dubai permanently; Bassette: Has joined KVC Westerlo on loan for the rest of the season\",\"Sunderland — Patterson: Has joined Wrexham permanently; Ballard: Hamstring injury - Unknown return date; Seelt: Has joined Swansea City on loan for the rest of the season; Hjelde: Has joined KV Mechelen on loan for the rest of the season; Masuaku: Has joined Konyaspor permanently; Meunier: Groin injury - 75% chance of playing; Adingra: Has joined Ajax on loan for the rest of the season; Mundle: Knee injury - Unknown return date; Isidor: Knock - 50% chance of playing\"],\"sources\":[{\"label\":\"Official FPL availability, fetched 27 October\",\"url\":\"https://fantasy.premierleague.com/api/bootstrap-static/\"},{\"label\":\"Official FPL fixtures, fetched 27 October\",\"url\":\"https://fantasy.premierleague.com/api/fixtures/\"},{\"label\":\"EFL confirmed fourth-round schedule, checked 27 October\",\"url\":\"https://www.efl.com/competitions/carabao-cup/\"},{\"label\":\"Oddschecker coupon observed 27 Oct 10:27 GMT\",\"url\":\"https://www.oddschecker.com/football/english/premier-league\"}]}",
+      "snapshot": {
+        "fixture_id": 84,
+        "home_n8": 4,
+        "away_n8": 8,
+        "home_vppg8": 0.75,
+        "away_vppg8": 1,
+        "home_vgf8": 1,
+        "home_vga8": 2,
+        "home_vxgf8": 1.189189892653376,
+        "home_vxga8": 1.4581217749975621,
+        "away_vgf8": 1.75,
+        "away_vga8": 2.125,
+        "away_vxgf8": 1.4666732780262828,
+        "away_vxga8": 2.1483674681566653,
+        "league_home_goals": 1.5414634146341464,
+        "league_away_goals": 1.2463414634146341,
+        "league_home_xg": 1.5886916096390094,
+        "league_away_xg": 1.306578023684512,
+        "calculated_at": "2026-10-27 10:28:49.305614+00",
+        "goal_xg_residual_cap": 1,
+        "home_vgf8_capped": 0.6213428081944585,
+        "home_vga8_capped": 1.6780023633874952,
+        "away_vgf8_capped": 1.56,
+        "away_vga8_capped": 1.959372469609976,
+        "home_n30": 8,
+        "away_n30": 30,
+        "home_ppg30": 0.75,
+        "away_ppg30": 1.1,
+        "home_vn18": 4,
+        "away_vn18": 18,
+        "home_vppg18": 0.75,
+        "away_vppg18": 0.8333333333333334,
+        "home_vxgf18": 1.189189892653376,
+        "home_vxga18": 1.4581217749975621,
+        "away_vxgf18": 1.0990770124561258,
+        "away_vxga18": 1.9164966525140736,
+        "candidate_model_version": "v3_24_venue8_50_noppg",
+        "candidate_home_n24": 8,
+        "candidate_away_n24": 24,
+        "candidate_home_n10": 8,
+        "candidate_away_n10": 10,
+        "candidate_home_ppg10": 0.75,
+        "candidate_away_ppg10": 1.1,
+        "candidate_home_lambda": 1.2868316096284387,
+        "candidate_away_lambda": 1.376417411003064,
+        "candidate_home_prob": 0.349269587481147,
+        "candidate_draw_prob": 0.259937369404374,
+        "candidate_away_prob": 0.390793043114479,
+        "candidate_calculated_at": "2026-10-27 10:28:52.160257+00"
+      },
+      "current": {
+        "h": 0.28436855753141294,
+        "d": 0.24527556494429967,
+        "a": 0.4703558775242875
+      },
+      "diagnostics": {
+        "venue8": {
+          "h": 0.3936416558992143,
+          "d": 0.2406505908161015,
+          "a": 0.36570775328468424
+        },
+        "venue18": null
+      },
+      "gaps": [
+        {
+          "outcome": "h",
+          "odds": 3.1,
+          "research_pp": 2.6688942319856688,
+          "current_pp": -3.821208762987738,
+          "venue8_pp": 7.106101073792398,
+          "venue18_pp": null
+        },
+        {
+          "outcome": "d",
+          "odds": 3.5,
+          "research_pp": -2.5776916309911693,
+          "current_pp": -4.043872076998603,
+          "venue8_pp": -4.506369489818421,
+          "venue18_pp": null
+        },
+        {
+          "outcome": "a",
+          "odds": 2.375,
+          "research_pp": -3.0259588464468354,
+          "current_pp": 4.930324594534014,
+          "venue8_pp": -5.53448782942631,
+          "venue18_pp": null
+        }
+      ],
+      "favourite": {
+        "outcomes": [
+          "away"
+        ],
+        "probability": 0.390793043114479
+      },
+      "scores": [
+        {
+          "home": 1,
+          "away": 1,
+          "probability": 0.12349163036949803,
+          "tied": false
+        },
+        {
+          "home": 0,
+          "away": 1,
+          "probability": 0.09596564884286232,
+          "tied": false
+        },
+        {
+          "home": 1,
+          "away": 0,
+          "probability": 0.08971960786190834,
+          "tied": false
+        }
+      ],
+      "provisional_review": {
+        "status": "pass",
+        "reason": "Provisional pass: Coventry home at 3.10 has only a 2.67pp research gap, current view disagrees (-3.82pp), and Coventry have only four relevant home matches. Venue18 is unavailable, not a passed test.",
+        "recorded_at": "2026-10-27T10:30:40.670630+00:00",
+        "paper_stake": 0
+      }
+    },
+    {
+      "fixture_id": 85,
+      "season": "2026/27",
+      "kickoff_time": "2026-10-31T15:00:00Z",
+      "home_team": "Hull City",
+      "away_team": "Ipswich Town",
+      "market_home_odds": 2.625,
+      "market_draw_odds": 3.6,
+      "market_away_odds": 2.7,
+      "market_source": "Oddschecker UK Premier League public coupon; comparison only",
+      "market_snapshot_at": "2026-10-27T10:27:23Z",
+      "notes": "Official FPL 2026/27 GW9 fixture 86. Manual fixture ID 85 is an internal ID, not a provider ID. Tuesday 27 October early review; no bets.\nWEEKEND_NEWS_JSON:{\"checkedAt\":\"2026-10-27T10:28:28.450203+00:00\",\"home\":\"Official FPL flags checked 27 October: Butland, Cartwright, Lo-Tutala, Hughes, Drameh, Jacob, Millar, Matazo, Kamara, Akintola, Gyabi, Destan, Burstow, Targett, Mendy, Gourna-Douath, Ansah. Flags can lag club news and do not confirm an XI.\",\"away\":\"Official FPL flags checked 27 October: Lukić, Johnson, Burns, Ogbene, Hirst, Szmodics, Al-Hamadi, Van Oevelen, Humphreys. Flags can lag club news and do not confirm an XI.\",\"schedule\":\"Hull City: not in the reviewed Carabao Cup fourth-round schedule; Ipswich Town: not in the reviewed Carabao Cup fourth-round schedule. Review minutes, injuries, travel and rotation after these matches. No numerical rest/news adjustment.\",\"teams\":\"Provisional Tuesday review. Both official GW9 starting XIs and an available named-bookmaker quote remain pending; no paper selection or stake.\",\"availability\":[\"Hull City — Butland: Arm injury - Unknown return date; Cartwright: Has joined Grimsby Town on loan for the rest of the season; Lo-Tutala: Has joined Colchester United on loan for the rest of the season; Hughes: Groin injury - Unknown return date; Drameh: Has joined Genoa permanently; Jacob: Has joined Newport County on loan until January; Millar: Has joined Birmingham on loan for the rest of the season; Matazo: Knee injury - Unknown return date; Kamara: Has joined Portsmouth permanently; Akintola: Has joined Omonoia FC permanently; Gyabi: Thigh injury - Unknown return date; Destan: Has joined Konyaspor permanently; Burstow: Has joined Sheffield Wednesday on loan for the rest of the season; Targett: Ankle injury - Unknown return date; Mendy: Groin injury - Expected back 31 Oct; Gourna-Douath: Calf injury - 75% chance of playing; Ansah: Back injury - Unknown return date\",\"Ipswich Town — Lukić: Groin injury - Unknown return date; Johnson: Has joined Stoke City on loan for the rest of the season; Burns: Has joined Leicester City permanently; Ogbene: Has joined Lincoln City on loan until January; Hirst: Has joined Stoke City permanently; Szmodics: Has joined Derby County on loan for the rest of the season; Al-Hamadi: Has joined Sheffield Wednesday on loan for the rest of the season; Van Oevelen: Has joined Valencia on loan for the rest of the season; Humphreys: Has joined Huddersfield Town on loan for the rest of the season\"],\"sources\":[{\"label\":\"Official FPL availability, fetched 27 October\",\"url\":\"https://fantasy.premierleague.com/api/bootstrap-static/\"},{\"label\":\"Official FPL fixtures, fetched 27 October\",\"url\":\"https://fantasy.premierleague.com/api/fixtures/\"},{\"label\":\"EFL confirmed fourth-round schedule, checked 27 October\",\"url\":\"https://www.efl.com/competitions/carabao-cup/\"},{\"label\":\"Oddschecker coupon observed 27 Oct 10:27 GMT\",\"url\":\"https://www.oddschecker.com/football/english/premier-league\"}]}",
+      "snapshot": {
+        "fixture_id": 85,
+        "home_n8": 4,
+        "away_n8": 4,
+        "home_vppg8": 1.5,
+        "away_vppg8": 0.75,
+        "home_vgf8": 1.25,
+        "home_vga8": 0.75,
+        "home_vxgf8": 1.3120193494483827,
+        "home_vxga8": 1.7204440777376293,
+        "away_vgf8": 1.75,
+        "away_vga8": 2.75,
+        "away_vxgf8": 1.8173809327278285,
+        "away_vxga8": 2.847282756268978,
+        "league_home_goals": 1.5414634146341464,
+        "league_away_goals": 1.2463414634146341,
+        "league_home_xg": 1.5886916096390094,
+        "league_away_xg": 1.306578023684512,
+        "calculated_at": "2026-10-27 10:28:49.305614+00",
+        "goal_xg_residual_cap": 1,
+        "home_vgf8_capped": 1.25,
+        "home_vga8_capped": 0.75,
+        "away_vgf8_capped": 1.679810912264511,
+        "away_vga8_capped": 2.622371460739523,
+        "home_n30": 8,
+        "away_n30": 8,
+        "home_ppg30": 1.25,
+        "away_ppg30": 1.25,
+        "home_vn18": 4,
+        "away_vn18": 4,
+        "home_vppg18": 1.5,
+        "away_vppg18": 0.75,
+        "home_vxgf18": 1.3120193494483827,
+        "home_vxga18": 1.7204440777376293,
+        "away_vxgf18": 1.8173809327278285,
+        "away_vxga18": 2.847282756268978,
+        "candidate_model_version": "v3_24_venue8_50_noppg",
+        "candidate_home_n24": 8,
+        "candidate_away_n24": 8,
+        "candidate_home_n10": 8,
+        "candidate_away_n10": 8,
+        "candidate_home_ppg10": 1.25,
+        "candidate_away_ppg10": 1.25,
+        "candidate_home_lambda": 2.0488262817558476,
+        "candidate_away_lambda": 1.4859369035474004,
+        "candidate_home_prob": 0.506997610872789,
+        "candidate_draw_prob": 0.213329184449046,
+        "candidate_away_prob": 0.279673204678165,
+        "candidate_calculated_at": "2026-10-27 10:28:52.160257+00"
+      },
+      "current": {
+        "h": 0.4933521079378544,
+        "d": 0.21598717226788403,
+        "a": 0.2906607197942615
+      },
+      "diagnostics": {
+        "venue8": {
+          "h": 0.41480913473997894,
+          "d": 0.20333578352514417,
+          "a": 0.38185508173487687
+        },
+        "venue18": null
+      },
+      "gaps": [
+        {
+          "outcome": "h",
+          "odds": 2.625,
+          "research_pp": 12.604522992040812,
+          "current_pp": 11.239972698547346,
+          "venue8_pp": 3.3856753787598004,
+          "venue18_pp": null
+        },
+        {
+          "outcome": "d",
+          "odds": 3.6,
+          "research_pp": -6.444859332873179,
+          "current_pp": -6.179060550989377,
+          "venue8_pp": -7.444199425263362,
+          "venue18_pp": null
+        },
+        {
+          "outcome": "a",
+          "odds": 2.7,
+          "research_pp": -9.069716569220537,
+          "current_pp": -7.970965057610885,
+          "venue8_pp": 1.1484711364506517,
+          "venue18_pp": null
+        }
+      ],
+      "favourite": {
+        "outcomes": [
+          "home"
+        ],
+        "probability": 0.506997610872789
+      },
+      "scores": [
+        {
+          "home": 2,
+          "away": 1,
+          "probability": 0.09096042895630109,
+          "tied": false
+        },
+        {
+          "home": 1,
+          "away": 1,
+          "probability": 0.08879271977939278,
+          "tied": false
+        },
+        {
+          "home": 2,
+          "away": 2,
+          "probability": 0.06758072907433467,
+          "tied": false
+        }
+      ],
+      "provisional_review": {
+        "status": "watch",
+        "reason": "Higher-uncertainty provisional Hull home watch at 2.625: research 50.70% versus 38.10% break-even; Venue8 xG-only cushion only 3.39pp. Both promoted clubs have exactly four relevant venue matches, meeting the unchanged minimum but with no full Venue18 diagnostic. Neither has a fourth-round cup tie. No final selection.",
+        "recorded_at": "2026-10-27T10:30:40.670630+00:00",
+        "paper_stake": 0
+      }
+    },
+    {
+      "fixture_id": 86,
+      "season": "2026/27",
+      "kickoff_time": "2026-10-31T15:00:00Z",
+      "home_team": "Manchester City",
+      "away_team": "Brighton & Hove Albion",
+      "market_home_odds": 1.7,
+      "market_draw_odds": 4.4,
+      "market_away_odds": 4.6,
+      "market_source": "Oddschecker UK Premier League public coupon; comparison only",
+      "market_snapshot_at": "2026-10-27T10:27:23Z",
+      "notes": "Official FPL 2026/27 GW9 fixture 88. Manual fixture ID 86 is an internal ID, not a provider ID. Tuesday 27 October early review; no bets.\nWEEKEND_NEWS_JSON:{\"checkedAt\":\"2026-10-27T10:28:28.450203+00:00\",\"home\":\"Official FPL flags checked 27 October: Matheus N., Alleyne, Semenyo, Rodrigo, Reijnders, Echeverri, Phillips, Mukasa, Monga. Flags can lag club news and do not confirm an XI.\",\"away\":\"Official FPL flags checked 27 October: F.Kadıoğlu, Igor, Mitoma, Minteh, Buonanotte, Wieffer, Howell, Watson, Yohanna, Tzimas, Ferguson, Struijk, Cozier-Duberry, Andrés, Azeez. Flags can lag club news and do not confirm an XI.\",\"schedule\":\"Manchester City: Carabao Cup home to Brighton on Wed 28 Oct 19:30 GMT; Brighton & Hove Albion: Carabao Cup away at Manchester City on Wed 28 Oct 19:30 GMT. Review minutes, injuries, travel and rotation after these matches. No numerical rest/news adjustment.\",\"teams\":\"Provisional Tuesday review. Both official GW9 starting XIs and an available named-bookmaker quote remain pending; no paper selection or stake.\",\"availability\":[\"Manchester City — Matheus N.: Unspecified injury - 75% chance of playing; Alleyne: Has joined Burnley on loan for the rest of the season; Semenyo: Knee injury - Unknown return date; Rodrigo: Has joined Barcelona permanently; Reijnders: Has joined Al Qadsiah permanently; Echeverri: Has joined Benfica on loan for the rest of the season; Phillips: Has joined Sheffield United on loan for the rest of the season; Mukasa: has joined West Ham on loan for the rest of the seaon.; Monga: Has joined Swansea City on loan for the rest of the season\",\"Brighton & Hove Albion — F.Kadıoğlu: Hip injury - 75% chance of playing; Igor: Has joined Burnley permanently; Mitoma: Hamstring injury - Expected back 31 Oct; Minteh: Leg injury - 50% chance of playing; Buonanotte: Has joined Elche on loan for the rest of the season; Wieffer: Knee injury - 25% chance of playing; Howell: Has joined Leicester City on loan for the rest of the season; Watson: Has joined Leicester City on loan for the rest of the season; Yohanna: Unspecified injury - Expected back 31 Oct; Tzimas: Knee injury - Unknown return date; Ferguson: Ankle injury - Unknown return date; Struijk: Hamstring injury - 75% chance of playing; Cozier-Duberry: Has joined Middlesbrough on loan for the rest of the season; Andrés: Thigh injury - 75% chance of playing; Azeez: Hamstring injury - Expected back 31 Oct\"],\"sources\":[{\"label\":\"Official FPL availability, fetched 27 October\",\"url\":\"https://fantasy.premierleague.com/api/bootstrap-static/\"},{\"label\":\"Official FPL fixtures, fetched 27 October\",\"url\":\"https://fantasy.premierleague.com/api/fixtures/\"},{\"label\":\"EFL confirmed fourth-round schedule, checked 27 October\",\"url\":\"https://www.efl.com/competitions/carabao-cup/\"},{\"label\":\"Oddschecker coupon observed 27 Oct 10:27 GMT\",\"url\":\"https://www.oddschecker.com/football/english/premier-league\"}]}",
+      "snapshot": {
+        "fixture_id": 86,
+        "home_n8": 8,
+        "away_n8": 8,
+        "home_vppg8": 2.625,
+        "away_vppg8": 1.25,
+        "home_vgf8": 2.5,
+        "home_vga8": 1.125,
+        "home_vxgf8": 2.3211400693096222,
+        "home_vxga8": 1.4981803101092577,
+        "away_vgf8": 1.875,
+        "away_vga8": 1.5,
+        "away_vxgf8": 1.761942431602627,
+        "away_vxga8": 1.6201518535761164,
+        "league_home_goals": 1.5414634146341464,
+        "league_away_goals": 1.2463414634146341,
+        "league_home_xg": 1.5886916096390094,
+        "league_away_xg": 1.306578023684512,
+        "calculated_at": "2026-10-27 10:28:49.305614+00",
+        "goal_xg_residual_cap": 1,
+        "home_vgf8_capped": 2.310959969609976,
+        "home_vga8_capped": 1.125,
+        "away_vgf8_capped": 1.6221682306658476,
+        "away_vga8_capped": 1.5,
+        "home_n30": 30,
+        "away_n30": 30,
+        "home_ppg30": 2.1666666666666665,
+        "away_ppg30": 1.5333333333333332,
+        "home_vn18": 18,
+        "away_vn18": 18,
+        "home_vppg18": 2.5,
+        "away_vppg18": 1.222222222222222,
+        "home_vxgf18": 2.0649511419153876,
+        "home_vxga18": 1.2508579156041146,
+        "away_vxgf18": 1.569274414045612,
+        "away_vxga18": 1.5978452682560518,
+        "candidate_model_version": "v3_24_venue8_50_noppg",
+        "candidate_home_n24": 24,
+        "candidate_away_n24": 24,
+        "candidate_home_n10": 10,
+        "candidate_away_n10": 10,
+        "candidate_home_ppg10": 2.2,
+        "candidate_away_ppg10": 1.6,
+        "candidate_home_lambda": 2.1352562729551168,
+        "candidate_away_lambda": 1.4618695769552412,
+        "candidate_home_prob": 0.530288952948809,
+        "candidate_draw_prob": 0.207973387530119,
+        "candidate_away_prob": 0.261737659521072,
+        "candidate_calculated_at": "2026-10-27 10:28:52.160257+00"
+      },
+      "current": {
+        "h": 0.49719905964455197,
+        "d": 0.21288756926116595,
+        "a": 0.28991337109428217
+      },
+      "diagnostics": {
+        "venue8": {
+          "h": 0.465146560767766,
+          "d": 0.2074643277262838,
+          "a": 0.32738911150595024
+        },
+        "venue18": {
+          "h": 0.4963456360689025,
+          "d": 0.2225334396067036,
+          "a": 0.28112092432439395
+        }
+      },
+      "gaps": [
+        {
+          "outcome": "h",
+          "odds": 1.7,
+          "research_pp": -5.794634116883812,
+          "current_pp": -9.103623447309511,
+          "venue8_pp": -12.308873334988107,
+          "venue18_pp": -9.18896580487446
+        },
+        {
+          "outcome": "d",
+          "odds": 4.4,
+          "research_pp": -1.929933974260825,
+          "current_pp": -1.4385158011561316,
+          "venue8_pp": -1.9808399546443478,
+          "venue18_pp": -0.47392876660236616
+        },
+        {
+          "outcome": "a",
+          "odds": 4.6,
+          "research_pp": 4.434635517324587,
+          "current_pp": 7.252206674645606,
+          "venue8_pp": 10.999780715812413,
+          "venue18_pp": 6.372961997656784
+        }
+      ],
+      "favourite": {
+        "outcomes": [
+          "home"
+        ],
+        "probability": 0.530288952948809
+      },
+      "scores": [
+        {
+          "home": 2,
+          "away": 1,
+          "probability": 0.09132017559443888,
+          "tied": false
+        },
+        {
+          "home": 1,
+          "away": 1,
+          "probability": 0.08553556474797762,
+          "tied": false
+        },
+        {
+          "home": 2,
+          "away": 2,
+          "probability": 0.06674909323186036,
+          "tied": false
+        }
+      ],
+      "provisional_review": {
+        "status": "watch",
+        "reason": "Provisional Brighton away watch at 4.60: research 26.17% versus 21.74% break-even, positive in all displayed diagnostics. These teams meet at City in the cup on Wednesday before the league rematch; minutes, injuries and rotation must be checked after that match. No numerical travel/rest adjustment.",
+        "recorded_at": "2026-10-27T10:30:40.670630+00:00",
+        "paper_stake": 0
+      }
+    },
+    {
+      "fixture_id": 87,
+      "season": "2026/27",
+      "kickoff_time": "2026-10-31T17:30:00Z",
+      "home_team": "Tottenham Hotspur",
+      "away_team": "Crystal Palace",
+      "market_home_odds": 1.5454545454545454,
+      "market_draw_odds": 4.75,
+      "market_away_odds": 6,
+      "market_source": "Oddschecker UK Premier League public coupon; comparison only",
+      "market_snapshot_at": "2026-10-27T10:27:23Z",
+      "notes": "Official FPL 2026/27 GW9 fixture 90. Manual fixture ID 87 is an internal ID, not a provider ID. Tuesday 27 October early review; no bets.\nWEEKEND_NEWS_JSON:{\"checkedAt\":\"2026-10-27T10:28:28.450203+00:00\",\"home\":\"Official FPL flags checked 27 October: Sávio, Vicario, Romero, Spence, Udogie, Phillips, Souza, Xavi, Maddison, Bentancur, Odobert, P.M.Sarr, Bergvall, Moore, Richarlison, Scarlett, Mudryk. Flags can lag club news and do not confirm an XI.\",\"away\":\"Official FPL flags checked 27 October: Henderson, Sosa, Chadi Riad, Devenny, Esse, M.França, J.Rak-Sakyi, Cardines, Strand Larsen, Uche, Tomiyasu, Timber. Flags can lag club news and do not confirm an XI.\",\"schedule\":\"Tottenham Hotspur: not in the reviewed Carabao Cup fourth-round schedule; Crystal Palace: Carabao Cup away at Fulham on Wed 28 Oct 19:45 GMT. Review minutes, injuries, travel and rotation after these matches. No numerical rest/news adjustment.\",\"teams\":\"Provisional Tuesday review. Both official GW9 starting XIs and an available named-bookmaker quote remain pending; no paper selection or stake.\",\"availability\":[\"Tottenham Hotspur — Sávio: Muscular injury - Expected back 7 Nov; Vicario: Has joined Juventus on loan for the rest of the season; Romero: Has joined Atletico Madrid permanently; Spence: Has joined Internazionale permanently; Udogie: Knee injury - Unknown return date; Phillips: Has joined Middlesbrough permanently; Souza: Has joined FC Porto on loan for the rest of the season; Xavi: Knee injury - Unknown return date; Maddison: Unspecified injury - 75% chance of playing; Bentancur: Suspended until 7 Nov; Odobert: Knee injury - Unknown return date; P.M.Sarr: Has joined Juventus on loan for the rest of the season; Bergvall: Knee injury - Expected back 31 Oct; Moore: Has joined FC Köln on loan for the rest of the season; Richarlison: not included in squad.; Scarlett: Has joined Leyton Orient permanently; Mudryk: Ankle injury - Unknown return date\",\"Crystal Palace — Henderson: Foot injury - 50% chance of playing; Sosa: Has joined FC Cologne on loan for the rest of the season; Chadi Riad: Knee injury - Unknown return date; Devenny: Has joined Stoke City permanently; Esse: Has joined Millwall on loan for the rest of the season; M.França: Has joined Alverca on loan for the rest of the season; J.Rak-Sakyi: has joined  Kasimpasa on loan for the rest of the seaon.; Cardines: Has joined Bristol City on loan for the rest of the season; Strand Larsen: Unspecified injury - 75% chance of playing; Uche: has returned to Getafe CF; Tomiyasu: Calf injury - Expected back 8 Nov; Timber: Hamstring injury - 75% chance of playing\"],\"sources\":[{\"label\":\"Official FPL availability, fetched 27 October\",\"url\":\"https://fantasy.premierleague.com/api/bootstrap-static/\"},{\"label\":\"Official FPL fixtures, fetched 27 October\",\"url\":\"https://fantasy.premierleague.com/api/fixtures/\"},{\"label\":\"EFL confirmed fourth-round schedule, checked 27 October\",\"url\":\"https://www.efl.com/competitions/carabao-cup/\"},{\"label\":\"Oddschecker coupon observed 27 Oct 10:27 GMT\",\"url\":\"https://www.oddschecker.com/football/english/premier-league\"}]}",
+      "snapshot": {
+        "fixture_id": 87,
+        "home_n8": 8,
+        "away_n8": 8,
+        "home_vppg8": 1.125,
+        "away_vppg8": 0.625,
+        "home_vgf8": 1.125,
+        "home_vga8": 1.5,
+        "home_vxgf8": 1.1701873675940557,
+        "home_vxga8": 1.0604650033626706,
+        "away_vgf8": 0.75,
+        "away_vga8": 2.5,
+        "away_vxgf8": 1.5625367881461978,
+        "away_vxga8": 1.7768733401626349,
+        "league_home_goals": 1.5414634146341464,
+        "league_away_goals": 1.2463414634146341,
+        "league_home_xg": 1.5886916096390094,
+        "league_away_xg": 1.306578023684512,
+        "calculated_at": "2026-10-27 10:28:49.305614+00",
+        "goal_xg_residual_cap": 1,
+        "home_vgf8_capped": 0.9950677151791751,
+        "home_vga8_capped": 1.3097522306535394,
+        "away_vgf8_capped": 0.75,
+        "away_vga8_capped": 2.123340802509338,
+        "home_n30": 30,
+        "away_n30": 30,
+        "home_ppg30": 0.9333333333333333,
+        "away_ppg30": 0.8666666666666667,
+        "home_vn18": 18,
+        "away_vn18": 18,
+        "home_vppg18": 0.8333333333333334,
+        "away_vppg18": 1.1666666666666667,
+        "home_vxgf18": 1.2076554967084692,
+        "home_vxga18": 1.2290844459389647,
+        "away_vxgf18": 1.3394496836205323,
+        "away_vxga18": 1.6139603734056156,
+        "candidate_model_version": "v3_24_venue8_50_noppg",
+        "candidate_home_n24": 24,
+        "candidate_away_n24": 24,
+        "candidate_home_n10": 10,
+        "candidate_away_n10": 10,
+        "candidate_home_ppg10": 1.2,
+        "candidate_away_ppg10": 0.8,
+        "candidate_home_lambda": 1.5577531094257273,
+        "candidate_away_lambda": 1.3331699038019882,
+        "candidate_home_prob": 0.426875527188161,
+        "candidate_draw_prob": 0.246470390604215,
+        "candidate_away_prob": 0.326654082207624,
+        "candidate_calculated_at": "2026-10-27 10:28:52.160257+00"
+      },
+      "current": {
+        "h": 0.4334266729712183,
+        "d": 0.2741895759738689,
+        "a": 0.29238375105491277
+      },
+      "diagnostics": {
+        "venue8": {
+          "h": 0.3907520620353605,
+          "d": 0.26729816481658436,
+          "a": 0.3419497731480552
+        },
+        "venue18": {
+          "h": 0.37414238569610414,
+          "d": 0.2722721915211954,
+          "a": 0.3535854227827005
+        }
+      },
+      "gaps": [
+        {
+          "outcome": "h",
+          "odds": 1.5454545454545454,
+          "research_pp": -22.018329634125077,
+          "current_pp": -21.363215055819353,
+          "venue8_pp": -25.63067614940513,
+          "venue18_pp": -27.291643783330766
+        },
+        {
+          "outcome": "d",
+          "odds": 4.75,
+          "research_pp": 3.594407481474132,
+          "current_pp": 6.366326018439522,
+          "venue8_pp": 5.677184902711069,
+          "venue18_pp": 6.174587573172174
+        },
+        {
+          "outcome": "a",
+          "odds": 6,
+          "research_pp": 15.998741554095734,
+          "current_pp": 12.571708438824611,
+          "venue8_pp": 17.528310648138852,
+          "venue18_pp": 18.691875611603383
+        }
+      ],
+      "favourite": {
+        "outcomes": [
+          "home"
+        ],
+        "probability": 0.426875527188161
+      },
+      "scores": [
+        {
+          "home": 1,
+          "away": 1,
+          "probability": 0.11531139218096176,
+          "tied": false
+        },
+        {
+          "home": 2,
+          "away": 1,
+          "probability": 0.08981333986105133,
+          "tied": false
+        },
+        {
+          "home": 1,
+          "away": 0,
+          "probability": 0.08649414590901884,
+          "tied": false
+        }
+      ],
+      "provisional_review": {
+        "status": "watch",
+        "reason": "Provisional Palace away watch at 6.00: research 32.67% versus 16.67% break-even, positive in all displayed diagnostics. The draw at 4.75 is an alternative outcome, not an additional independent pick. Palace play at Fulham on Wednesday; Spurs have no fourth-round tie. The recent Palace losses and prior-season history caution remain.",
+        "recorded_at": "2026-10-27T10:30:40.670630+00:00",
+        "paper_stake": 0
+      }
+    },
+    {
+      "fixture_id": 88,
+      "season": "2026/27",
+      "kickoff_time": "2026-10-31T20:00:00Z",
+      "home_team": "Aston Villa",
+      "away_team": "Fulham",
+      "market_home_odds": 2,
+      "market_draw_odds": 3.8,
+      "market_away_odds": 3.7,
+      "market_source": "Oddschecker UK Premier League public coupon; comparison only",
+      "market_snapshot_at": "2026-10-27T10:27:23Z",
+      "notes": "Official FPL 2026/27 GW9 fixture 81. Manual fixture ID 88 is an internal ID, not a provider ID. Tuesday 27 October early review; no bets.\nWEEKEND_NEWS_JSON:{\"checkedAt\":\"2026-10-27T10:28:28.450203+00:00\",\"home\":\"Official FPL flags checked 27 October: Digne, A.García, Nedeljkovic, Bailey, Onana, Iling Jr, Watkins, Ruggeri, Lynch, Wan-Bissaka. Flags can lag club news and do not confirm an XI.\",\"away\":\"Official FPL flags checked 27 October: McNally, Smith Rowe, Sessegnon, De Fougerolles. Flags can lag club news and do not confirm an XI.\",\"schedule\":\"Aston Villa: Carabao Cup away at Bournemouth on Wed 28 Oct 19:45 GMT; Fulham: Carabao Cup home to Crystal Palace on Wed 28 Oct 19:45 GMT. Review minutes, injuries, travel and rotation after these matches. No numerical rest/news adjustment.\",\"teams\":\"Provisional Tuesday review. Both official GW9 starting XIs and an available named-bookmaker quote remain pending; no paper selection or stake.\",\"availability\":[\"Aston Villa — Digne: Has joined Paris Saint-Germain permanently; A.García: Has joined Getafe on loan for the rest of the season; Nedeljkovic: Has joined Rangers on loan for the rest of the season; Bailey: Has joined Olympiakos permanently; Onana: Knee injury - Unknown return date; Iling Jr: Has joined Bolton Wanderers on loan for the rest of the season; Watkins: Has joined Al Hilal permanently; Ruggeri: Hamstring injury - Expected back 2 Jan; Lynch: Has joined Oxford United on loan until January; Wan-Bissaka: Hamstring injury - Expected back 21 Nov\",\"Fulham — McNally: Has joined York City on loan for the rest of the season; Smith Rowe: Knock - 75% chance of playing; Sessegnon: Suspended until 7 Nov; De Fougerolles: has joined  Real Salt Lake on loan for the rest of the seaon.\"],\"sources\":[{\"label\":\"Official FPL availability, fetched 27 October\",\"url\":\"https://fantasy.premierleague.com/api/bootstrap-static/\"},{\"label\":\"Official FPL fixtures, fetched 27 October\",\"url\":\"https://fantasy.premierleague.com/api/fixtures/\"},{\"label\":\"EFL confirmed fourth-round schedule, checked 27 October\",\"url\":\"https://www.efl.com/competitions/carabao-cup/\"},{\"label\":\"Oddschecker coupon observed 27 Oct 10:27 GMT\",\"url\":\"https://www.oddschecker.com/football/english/premier-league\"}]}",
+      "snapshot": {
+        "fixture_id": 88,
+        "home_n8": 8,
+        "away_n8": 8,
+        "home_vppg8": 1.625,
+        "away_vppg8": 0.75,
+        "home_vgf8": 2,
+        "home_vga8": 1.625,
+        "home_vxgf8": 1.363431360911578,
+        "home_vxga8": 1.5366132480937988,
+        "away_vgf8": 0.375,
+        "away_vga8": 1.125,
+        "away_vxgf8": 0.9609647720959038,
+        "away_vxga8": 1.6276613682942465,
+        "league_home_goals": 1.5414634146341464,
+        "league_away_goals": 1.2463414634146341,
+        "league_home_xg": 1.5886916096390094,
+        "league_away_xg": 1.306578023684512,
+        "calculated_at": "2026-10-27 10:28:49.305614+00",
+        "goal_xg_residual_cap": 1,
+        "home_vgf8_capped": 1.833373129427433,
+        "home_vga8_capped": 1.586825,
+        "away_vgf8_capped": 0.375,
+        "away_vga8_capped": 1.125,
+        "home_n30": 30,
+        "away_n30": 30,
+        "home_ppg30": 1.4333333333333333,
+        "away_ppg30": 1.3333333333333333,
+        "home_vn18": 18,
+        "away_vn18": 18,
+        "home_vppg18": 1.777777777777778,
+        "away_vppg18": 1.1111111111111112,
+        "home_vxgf18": 1.4151639381829235,
+        "home_vxga18": 1.3774669991527995,
+        "away_vxgf18": 1.155984343153735,
+        "away_vxga18": 1.561988385908554,
+        "candidate_model_version": "v3_24_venue8_50_noppg",
+        "candidate_home_n24": 24,
+        "candidate_away_n24": 24,
+        "candidate_home_n10": 10,
+        "candidate_away_n10": 10,
+        "candidate_home_ppg10": 1.7,
+        "candidate_away_ppg10": 1.2,
+        "candidate_home_lambda": 1.5468640255725596,
+        "candidate_away_lambda": 1.2665260320425713,
+        "candidate_home_prob": 0.43857528178789,
+        "candidate_draw_prob": 0.249322080165061,
+        "candidate_away_prob": 0.312102638047048,
+        "candidate_calculated_at": "2026-10-27 10:28:52.160257+00"
+      },
+      "current": {
+        "h": 0.4957102089391308,
+        "d": 0.27592342215355314,
+        "a": 0.22836636890731607
+      },
+      "diagnostics": {
+        "venue8": {
+          "h": 0.43331464564096356,
+          "d": 0.2667754650230011,
+          "a": 0.2999098893360353
+        },
+        "venue18": {
+          "h": 0.4166563780201394,
+          "d": 0.26429145691506833,
+          "a": 0.31905216506479217
+        }
+      },
+      "gaps": [
+        {
+          "outcome": "h",
+          "odds": 2,
+          "research_pp": -6.142471821210998,
+          "current_pp": -0.4289791060869186,
+          "venue8_pp": -6.668535435903644,
+          "venue18_pp": -8.334362197986062
+        },
+        {
+          "outcome": "d",
+          "odds": 3.8,
+          "research_pp": -1.3835814571781095,
+          "current_pp": 1.2765527416711053,
+          "venue8_pp": 0.3617570286159,
+          "venue18_pp": 0.1133562178226244
+        },
+        {
+          "outcome": "a",
+          "odds": 3.7,
+          "research_pp": 4.183236777677779,
+          "current_pp": -4.190390136295416,
+          "venue8_pp": 2.9639619065765066,
+          "venue18_pp": 4.878189479452194
+        }
+      ],
+      "favourite": {
+        "outcomes": [
+          "home"
+        ],
+        "probability": 0.43857528178789
+      },
+      "scores": [
+        {
+          "home": 1,
+          "away": 1,
+          "probability": 0.11755104186399114,
+          "tied": false
+        },
+        {
+          "home": 1,
+          "away": 0,
+          "probability": 0.09281375896744296,
+          "tied": false
+        },
+        {
+          "home": 2,
+          "away": 1,
+          "probability": 0.09091773891399091,
+          "tied": false
+        }
+      ],
+      "provisional_review": {
+        "status": "pass",
+        "reason": "Provisional pass: Fulham away at 3.70 has a 4.18pp research gap but the current view is negative (-4.19pp). Both clubs have Wednesday cup matches; reassess afterwards.",
+        "recorded_at": "2026-10-27T10:30:40.670630+00:00",
+        "paper_stake": 0
+      }
+    },
+    {
+      "fixture_id": 89,
+      "season": "2026/27",
+      "kickoff_time": "2026-11-01T16:30:00Z",
+      "home_team": "Liverpool",
+      "away_team": "Arsenal",
+      "market_home_odds": 3.05,
+      "market_draw_odds": 3.6,
+      "market_away_odds": 2.3,
+      "market_source": "Oddschecker UK Premier League public coupon; comparison only",
+      "market_snapshot_at": "2026-10-27T10:27:23Z",
+      "notes": "Official FPL 2026/27 GW9 fixture 87. Manual fixture ID 89 is an internal ID, not a provider ID. Tuesday 27 October early review; no bets.\nWEEKEND_NEWS_JSON:{\"checkedAt\":\"2026-10-27T10:28:28.450203+00:00\",\"home\":\"Official FPL flags checked 27 October: Pecsi, Jaros, Frimpong, Bradley, Leoni, Ramsay, Wirtz, Szoboszlai, C.Jones, Bajcetic, Munoz, Ekitiké, Elliott. Flags can lag club news and do not confirm an XI.\",\"away\":\"Official FPL flags checked 27 October: Saliba, Calafiori, Saka, Martinelli, Nwaneri, Fábio Vieira, Nelson, G.Jesus, Tzolis. Flags can lag club news and do not confirm an XI.\",\"schedule\":\"Liverpool: Carabao Cup home to Chelsea on Wed 28 Oct 20:00 GMT; Arsenal: Carabao Cup away at Fleetwood on Tue 27 Oct 20:00 GMT. Review minutes, injuries, travel and rotation after these matches. No numerical rest/news adjustment.\",\"teams\":\"Provisional Tuesday review. Both official GW9 starting XIs and an available named-bookmaker quote remain pending; no paper selection or stake.\",\"availability\":[\"Liverpool — Pecsi: Has joined TSV Hartberg on loan for the rest of the season; Jaros: Knee injury - Unknown return date; Frimpong: Hamstring injury - Unknown return date; Bradley: Knee injury - Unknown return date; Leoni: Knee injury - Unknown return date; Ramsay: Has joined St Mirren on loan for the rest of the season; Wirtz: Ankle injury - 75% chance of playing; Szoboszlai: Hamstring injury - Unknown return date; C.Jones: Has joined Internazionale permanently; Bajcetic: Has joined Celta Vigo permanently; Munoz: Knee injury - 25% chance of playing; Ekitiké: Achilles injury - Unknown return date; Elliott: Has joined Valencia on loan for the rest of the season\",\"Arsenal — Saliba: Back injury - Unknown return date; Calafiori: Hip injury - 75% chance of playing; Saka: Thigh injury - Unknown return date; Martinelli: Has joined Al Hilal permanently; Nwaneri: Has joined Borussia Dortmund on loan for the rest of the season; Fábio Vieira: Has joined Hamburger SV permanently; Nelson: has departed the club as a free agent.; G.Jesus: Has joined FC Barcelona permanently; Tzolis: Hamstring injury - Expected back 1 Nov\"],\"sources\":[{\"label\":\"Official FPL availability, fetched 27 October\",\"url\":\"https://fantasy.premierleague.com/api/bootstrap-static/\"},{\"label\":\"Official FPL fixtures, fetched 27 October\",\"url\":\"https://fantasy.premierleague.com/api/fixtures/\"},{\"label\":\"EFL confirmed fourth-round schedule, checked 27 October\",\"url\":\"https://www.efl.com/competitions/carabao-cup/\"},{\"label\":\"Oddschecker coupon observed 27 Oct 10:27 GMT\",\"url\":\"https://www.oddschecker.com/football/english/premier-league\"}]}",
+      "snapshot": {
+        "fixture_id": 89,
+        "home_n8": 8,
+        "away_n8": 8,
+        "home_vppg8": 1.625,
+        "away_vppg8": 2.25,
+        "home_vgf8": 1.375,
+        "home_vga8": 1,
+        "home_vxgf8": 1.4175491103436797,
+        "home_vxga8": 1.390009592562914,
+        "away_vgf8": 1.125,
+        "away_vga8": 0.75,
+        "away_vxgf8": 1.4822379665136338,
+        "away_vxga8": 1.1035916496634484,
+        "league_home_goals": 1.533498759305211,
+        "league_away_goals": 1.2431761786600497,
+        "league_home_xg": 1.5835075929329872,
+        "league_away_xg": 1.3030446394805206,
+        "calculated_at": "2026-10-27 10:28:49.305614+00",
+        "goal_xg_residual_cap": 1,
+        "home_vgf8_capped": 1.26625,
+        "home_vga8_capped": 0.9018762407824397,
+        "away_vgf8_capped": 1.125,
+        "away_vga8_capped": 0.6870308768004179,
+        "home_n30": 30,
+        "away_n30": 30,
+        "home_ppg30": 1.6333333333333333,
+        "away_ppg30": 2.3333333333333335,
+        "home_vn18": 18,
+        "away_vn18": 18,
+        "home_vppg18": 1.6111111111111112,
+        "away_vppg18": 1.9444444444444444,
+        "home_vxgf18": 1.6922051601527466,
+        "home_vxga18": 1.304804263361295,
+        "away_vxgf18": 1.5848835406727262,
+        "away_vxga18": 0.9514851776281993,
+        "candidate_model_version": "v3_24_venue8_50_noppg",
+        "candidate_home_n24": 24,
+        "candidate_away_n24": 24,
+        "candidate_home_n10": 10,
+        "candidate_away_n10": 10,
+        "candidate_home_ppg10": 1.6,
+        "candidate_away_ppg10": 2.7,
+        "candidate_home_lambda": 1.0605151549168945,
+        "candidate_away_lambda": 1.533894191446679,
+        "candidate_home_prob": 0.262294051157711,
+        "candidate_draw_prob": 0.255501845857072,
+        "candidate_away_prob": 0.482204102985217,
+        "candidate_calculated_at": "2026-10-27 10:28:52.160257+00"
+      },
+      "current": {
+        "h": 0.275405383506434,
+        "d": 0.3070259068441159,
+        "a": 0.4175687096494501
+      },
+      "diagnostics": {
+        "venue8": {
+          "h": 0.27374842666428034,
+          "d": 0.2633393485383482,
+          "a": 0.4629122247973715
+        },
+        "venue18": {
+          "h": 0.2794502420306895,
+          "d": 0.2622553870237172,
+          "a": 0.45829437094559333
+        }
+      },
+      "gaps": [
+        {
+          "outcome": "h",
+          "odds": 3.05,
+          "research_pp": -6.5574801301305445,
+          "current_pp": -5.246346895258242,
+          "venue8_pp": -5.412042579473608,
+          "venue18_pp": -4.84186104283269
+        },
+        {
+          "outcome": "d",
+          "odds": 3.6,
+          "research_pp": -2.2275931920705814,
+          "current_pp": 2.9248129066338113,
+          "venue8_pp": -1.4438429239429618,
+          "venue18_pp": -1.5522390754060589
+        },
+        {
+          "outcome": "a",
+          "odds": 2.3,
+          "research_pp": 4.742149428956477,
+          "current_pp": -1.721389904620213,
+          "venue8_pp": 2.812961610171927,
+          "venue18_pp": 2.3511762249941115
+        }
+      ],
+      "favourite": {
+        "outcomes": [
+          "away"
+        ],
+        "probability": 0.482204102985217
+      },
+      "scores": [
+        {
+          "home": 1,
+          "away": 1,
+          "probability": 0.12149953588138471,
+          "tied": false
+        },
+        {
+          "home": 0,
+          "away": 1,
+          "probability": 0.11456652487998234,
+          "tied": false
+        },
+        {
+          "home": 1,
+          "away": 2,
+          "probability": 0.09318371617596168,
+          "tied": false
+        }
+      ],
+      "provisional_review": {
+        "status": "pass",
+        "reason": "Provisional pass: Arsenal away at 2.30 has a 4.74pp research gap but the current view is negative (-1.72pp). Arsenal play Tuesday and Liverpool Wednesday in the cup. Fresh Saka/Wirtz/other availability needs confirmation; no injury-based model adjustment.",
+        "recorded_at": "2026-10-27T10:30:40.670630+00:00",
+        "paper_stake": 0
+      }
+    },
+    {
+      "fixture_id": 90,
+      "season": "2026/27",
+      "kickoff_time": "2026-11-02T20:00:00Z",
+      "home_team": "Newcastle United",
+      "away_team": "Everton",
+      "market_home_odds": 2.25,
+      "market_draw_odds": 3.7,
+      "market_away_odds": 3,
+      "market_source": "Oddschecker UK Premier League public coupon; comparison only",
+      "market_snapshot_at": "2026-10-27T10:27:23Z",
+      "notes": "Official FPL 2026/27 GW9 fixture 89. Manual fixture ID 90 is an internal ID, not a provider ID. Tuesday 27 October early review; no bets.\nWEEKEND_NEWS_JSON:{\"checkedAt\":\"2026-10-27T10:28:28.450203+00:00\",\"home\":\"Official FPL flags checked 27 October: Jaouen, Livramento, A.Murphy, Woltemade, Neave, Shahar, Fernandez-Pardo. Flags can lag club news and do not confirm an XI.\",\"away\":\"Official FPL flags checked 27 October: Mykolenko, Patterson, Aznou, Grealish, Beto. Flags can lag club news and do not confirm an XI.\",\"schedule\":\"Newcastle United: Carabao Cup away at Everton on Thu 29 Oct 19:45 GMT; Everton: Carabao Cup home to Newcastle on Thu 29 Oct 19:45 GMT. Review minutes, injuries, travel and rotation after these matches. No numerical rest/news adjustment.\",\"teams\":\"Provisional Tuesday review. Both official GW9 starting XIs and an available named-bookmaker quote remain pending; no paper selection or stake.\",\"availability\":[\"Newcastle United — Jaouen: Hamstring injury - Unknown return date; Livramento: Knee injury - Expected back 7 Nov; A.Murphy: Has joined FC Kaiserslautern on loan for the rest of the season; Woltemade: Has joined Juventus on loan for the rest of the season; Neave: Has joined Wolves on loan for the rest of the season; Shahar: has joined Arouca on loan for the rest of the seaon.; Fernandez-Pardo: Illness - 75% chance of playing\",\"Everton — Mykolenko: Unspecified injury - 75% chance of playing; Patterson: Has joined Torino permanently; Aznou: Has joined Malaga on loan for the rest of the season; Grealish: Illness - 75% chance of playing; Beto: Has joined Fiorentina permanently\"],\"sources\":[{\"label\":\"Official FPL availability, fetched 27 October\",\"url\":\"https://fantasy.premierleague.com/api/bootstrap-static/\"},{\"label\":\"Official FPL fixtures, fetched 27 October\",\"url\":\"https://fantasy.premierleague.com/api/fixtures/\"},{\"label\":\"EFL confirmed fourth-round schedule, checked 27 October\",\"url\":\"https://www.efl.com/competitions/carabao-cup/\"},{\"label\":\"Oddschecker coupon observed 27 Oct 10:27 GMT\",\"url\":\"https://www.oddschecker.com/football/english/premier-league\"}]}",
+      "snapshot": {
+        "fixture_id": 90,
+        "home_n8": 8,
+        "away_n8": 8,
+        "home_vppg8": 1.375,
+        "away_vppg8": 0.625,
+        "home_vgf8": 1.75,
+        "home_vga8": 1.5,
+        "home_vxgf8": 1.5412296800017358,
+        "home_vxga8": 1.9372663832508028,
+        "away_vgf8": 1,
+        "away_vga8": 1.5,
+        "away_vxgf8": 1.4108582097359001,
+        "away_vxga8": 1.8200749819673598,
+        "league_home_goals": 1.5311720698254363,
+        "league_away_goals": 1.2418952618453865,
+        "league_home_xg": 1.5871161096059696,
+        "league_away_xg": 1.3021371314480046,
+        "calculated_at": "2026-10-27 10:28:49.305614+00",
+        "goal_xg_residual_cap": 1,
+        "home_vgf8_capped": 1.6730059077225625,
+        "home_vga8_capped": 1.5,
+        "away_vgf8_capped": 1,
+        "away_vga8_capped": 1.5,
+        "home_n30": 30,
+        "away_n30": 30,
+        "home_ppg30": 1.2666666666666666,
+        "away_ppg30": 1.1666666666666667,
+        "home_vn18": 18,
+        "away_vn18": 18,
+        "home_vppg18": 1.5555555555555556,
+        "away_vppg18": 1.3888888888888888,
+        "home_vxgf18": 1.8794354133341047,
+        "home_vxga18": 1.7121183925559122,
+        "away_vxgf18": 1.2698258709937333,
+        "away_vxga18": 1.6944222142077154,
+        "candidate_model_version": "v3_24_venue8_50_noppg",
+        "candidate_home_n24": 24,
+        "candidate_away_n24": 24,
+        "candidate_home_n10": 10,
+        "candidate_away_n10": 10,
+        "candidate_home_ppg10": 1.4,
+        "candidate_away_ppg10": 1,
+        "candidate_home_lambda": 1.8354894447582246,
+        "candidate_away_lambda": 1.6495505713242522,
+        "candidate_home_prob": 0.426960560657637,
+        "candidate_draw_prob": 0.222405661385258,
+        "candidate_away_prob": 0.350633777957105,
+        "candidate_calculated_at": "2026-10-27 10:28:52.160257+00"
+      },
+      "current": {
+        "h": 0.4118638459648551,
+        "d": 0.23957546329004833,
+        "a": 0.3485606907450966
+      },
+      "diagnostics": {
+        "venue8": {
+          "h": 0.35776158328774116,
+          "d": 0.22264320961911177,
+          "a": 0.41959520709314707
+        },
+        "venue18": {
+          "h": 0.4566286927507619,
+          "d": 0.22478916831991363,
+          "a": 0.3185821389293245
+        }
+      },
+      "gaps": [
+        {
+          "outcome": "h",
+          "odds": 2.25,
+          "research_pp": -1.748388378680743,
+          "current_pp": -3.2580598479589327,
+          "venue8_pp": -8.668286115670327,
+          "venue18_pp": 1.218424830631748
+        },
+        {
+          "outcome": "d",
+          "odds": 3.7,
+          "research_pp": -4.786460888501224,
+          "current_pp": -3.0694806980221894,
+          "venue8_pp": -4.762706065115846,
+          "venue18_pp": -4.54811019503566
+        },
+        {
+          "outcome": "a",
+          "odds": 3,
+          "research_pp": 1.7300444623771671,
+          "current_pp": 1.5227357411763287,
+          "venue8_pp": 8.626187375981376,
+          "venue18_pp": -1.4751194404008794
+        }
+      ],
+      "favourite": {
+        "outcomes": [
+          "home"
+        ],
+        "probability": 0.426960560657637
+      },
+      "scores": [
+        {
+          "home": 1,
+          "away": 1,
+          "probability": 0.09280767174339719,
+          "tied": false
+        },
+        {
+          "home": 2,
+          "away": 1,
+          "probability": 0.08517375093879583,
+          "tied": false
+        },
+        {
+          "home": 1,
+          "away": 2,
+          "probability": 0.07654547397379723,
+          "tied": false
+        }
+      ],
+      "provisional_review": {
+        "status": "pass",
+        "reason": "Provisional pass: Everton away at 3.00 has only a 1.73pp research gap and fails full Venue18 xG-only (-1.48pp). The sides meet at Everton in the cup on Thursday before Monday's league match; recheck minutes and team news.",
+        "recorded_at": "2026-10-27T10:30:40.670630+00:00",
+        "paper_stake": 0
+      }
+    }
+  ]
+}

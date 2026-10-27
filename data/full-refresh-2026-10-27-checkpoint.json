@@ -1,0 +1,253 @@
+{
+  "as_of": "2026-10-27",
+  "status": "data-and-reviews-complete; publication verification pending",
+  "project": {
+    "repository": "MarkColonel80/PL-Results-Project",
+    "supabase": "priibitbnmfetyblzltk",
+    "vercel": "prj_8OeSf0K7GBywgASSo5ojRUpYDg84",
+    "production": "https://pl-data.colly.me.uk"
+  },
+  "starting_commit": "44e9fca90279699d5988c94858f634ab798a88dc",
+  "coverage": {
+    "fpl": 5220,
+    "pms": 3200,
+    "odds": 80,
+    "goals": 222,
+    "lineups": 3200,
+    "matches": 80,
+    "understat": 2461,
+    "fpl_point_mismatches": 0
+  },
+  "club_coverage": [
+    {
+      "team_name": "AFC Bournemouth",
+      "matches": 8
+    },
+    {
+      "team_name": "Arsenal",
+      "matches": 8
+    },
+    {
+      "team_name": "Aston Villa",
+      "matches": 8
+    },
+    {
+      "team_name": "Brentford",
+      "matches": 8
+    },
+    {
+      "team_name": "Brighton & Hove Albion",
+      "matches": 8
+    },
+    {
+      "team_name": "Chelsea",
+      "matches": 8
+    },
+    {
+      "team_name": "Coventry City",
+      "matches": 8
+    },
+    {
+      "team_name": "Crystal Palace",
+      "matches": 8
+    },
+    {
+      "team_name": "Everton",
+      "matches": 8
+    },
+    {
+      "team_name": "Fulham",
+      "matches": 8
+    },
+    {
+      "team_name": "Hull City",
+      "matches": 8
+    },
+    {
+      "team_name": "Ipswich Town",
+      "matches": 8
+    },
+    {
+      "team_name": "Leeds United",
+      "matches": 8
+    },
+    {
+      "team_name": "Liverpool",
+      "matches": 8
+    },
+    {
+      "team_name": "Manchester City",
+      "matches": 8
+    },
+    {
+      "team_name": "Manchester United",
+      "matches": 8
+    },
+    {
+      "team_name": "Newcastle United",
+      "matches": 8
+    },
+    {
+      "team_name": "Nottingham Forest",
+      "matches": 8
+    },
+    {
+      "team_name": "Sunderland",
+      "matches": 8
+    },
+    {
+      "team_name": "Tottenham Hotspur",
+      "matches": 8
+    }
+  ],
+  "import": {
+    "counts": {
+      "matches": 10,
+      "canonical_matches": 10,
+      "match_source_ids": 40,
+      "player_source_ids": 3,
+      "player_seasons": 1,
+      "player_match_stats": 400,
+      "lineups": 400,
+      "goals": 19,
+      "fpl_player_match_stats": 669,
+      "historical_market_odds": 10,
+      "source_player_match_stats": 303
+    },
+    "understat_mapped": 158,
+    "understat_enriched": 156,
+    "mapped_no_appearance": [
+      {
+        "match_id": "26-27-prem-ipswich-town-vs-nottingham-forest",
+        "player_code": "plp:14565015a2d048ac918586f757d0d336",
+        "source_player_id": "1790"
+      },
+      {
+        "match_id": "26-27-prem-coventry-city-vs-fulham",
+        "player_code": "plp:53ddc13d0f194a73b80a4167a9024f35",
+        "source_player_id": "1045"
+      }
+    ]
+  },
+  "protected_before": {
+    "v3": "acd0cde6518809f56ffed2233b3f7e28",
+    "fpl": "194da616ee13cc5b08e60d168251de6b",
+    "pms": "83747f13a4aa884a624d956d6fd6775b",
+    "matches": "6b428f549d50e1018f3af8a73c8adbd5",
+    "fixtures": "0268f7194515fbad35a792331cb50be6",
+    "snapshots": "03bbe15b1def7abe64e4779b70e8e93e"
+  },
+  "protected_after": {
+    "v3": "acd0cde6518809f56ffed2233b3f7e28",
+    "fpl": "194da616ee13cc5b08e60d168251de6b",
+    "pms": "83747f13a4aa884a624d956d6fd6775b",
+    "matches": "6b428f549d50e1018f3af8a73c8adbd5",
+    "fixtures": "0268f7194515fbad35a792331cb50be6",
+    "snapshots": "03bbe15b1def7abe64e4779b70e8e93e"
+  },
+  "other_protected_before": {
+    "goals": "0f025b4eabe06796d2aedd33629d2f72",
+    "lineups": "d3b1f66c2ebeb1def821a52182e39141",
+    "canonical_matches": "16b82a206c9635a11917aa09a6c0500f",
+    "historical_market_odds": "1b636ec0ab8af385add3022a857094f1",
+    "source_player_match_stats": "785b12e2f5d2cedc4ec69018f8053fb2"
+  },
+  "other_protected_after": [
+    {
+      "name": "goals",
+      "hash": "0f025b4eabe06796d2aedd33629d2f72"
+    },
+    {
+      "name": "lineups",
+      "hash": "d3b1f66c2ebeb1def821a52182e39141"
+    },
+    {
+      "name": "canonical_matches",
+      "hash": "16b82a206c9635a11917aa09a6c0500f"
+    },
+    {
+      "name": "historical_market_odds",
+      "hash": "1b636ec0ab8af385add3022a857094f1"
+    },
+    {
+      "name": "source_player_match_stats",
+      "hash": "785b12e2f5d2cedc4ec69018f8053fb2"
+    }
+  ],
+  "security": {
+    "objects": 220,
+    "rls_and_grants_unchanged": true,
+    "policies_before": [
+      {
+        "hash": "1342c083b85f1d81894fcb55132b3422",
+        "count": 26
+      }
+    ],
+    "policies_after": [
+      {
+        "hash": "1342c083b85f1d81894fcb55132b3422",
+        "count": 26
+      }
+    ]
+  },
+  "checks": {
+    "team_feature_cache_difference": 0,
+    "understat_advanced_field_mismatches": 0,
+    "fpl_component_point_mismatches": 0,
+    "rich_rows_per_match": 40,
+    "starters_per_match": 22,
+    "original_ledger_prefix_preserved": true
+  },
+  "forecasts": {
+    "archived_published": 50,
+    "archived_eligible": 35,
+    "gw8_eligible": 7,
+    "new_future_fixtures": 10,
+    "new_eligible_forecasts": 10,
+    "new_manual_fixture_ids": [
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90
+    ]
+  },
+  "paper": {
+    "valid_gw8_selections": 0,
+    "stakes": 0,
+    "profit": 0,
+    "roi": null,
+    "ledger_events": 39,
+    "provisional_watch": 5,
+    "provisional_pass": 5
+  },
+  "validation": {
+    "unit_suites": "6 passed",
+    "paper_ledger": "39 events; original 29 preserved",
+    "typescript": "passed",
+    "cloud_production_build": "completed",
+    "browser_regression": "passed: kickoff/focus, mobile, scoreline consistency, read-only",
+    "live_gw9_browser": "10 cards and 30 scorelines checked; final text assertion needs corrected wording and rerun",
+    "production_smoke": "pending"
+  },
+  "blockers": [
+    "No GW8 Saturday/Sunday final decisions exist in the ledger; no retrospective selections or passes invented.",
+    "145 GW8 Understat rows remain without verified player mappings; 2 mapped rows have no matching core appearance. No guessed identity joins.",
+    "Approved Transfermarkt feed fetched successfully but contains no 2026/27 PL games; latest PL date 2026-05-24.",
+    "Confirmed GW9 XIs, post-cup availability and executable named-bookmaker odds remain pending.",
+    "Existing dependency audit reported 3 high and 1 critical advisory; dependency versions were not changed."
+  ],
+  "automation": {
+    "existing_tuesday_id": "6ad7a14d306c8190b719bd87b6f73e7d",
+    "created": 0,
+    "modified": 0,
+    "scheduler_execution_state_verified": false
+  },
+  "model_rules_changed": false,
+  "cloud_only": true
+}

@@ -1,32 +1,33 @@
 {
-  "as_of": "2026-10-20",
+  "as_of": "2026-10-27",
   "season": "2026/27",
   "rounds": [
     3,
     4,
     6,
-    7
+    7,
+    8
   ],
-  "eligible": 28,
-  "published": 40,
+  "eligible": 35,
+  "published": 50,
   "definitions": "Mean unscaled three-outcome Brier and natural-log loss; lower is better. All eligible saved forecasts, separately from paper selections.",
   "research": {
-    "n": 28,
-    "brier": 0.6418756790847645,
-    "log_loss": 1.0603976698164366,
-    "accuracy": 0.32142857142857145
+    "n": 35,
+    "brier": 0.6512659798671837,
+    "log_loss": 1.0725275987659375,
+    "accuracy": 0.2857142857142857
   },
   "current": {
-    "n": 28,
-    "brier": 0.6654003880911424,
-    "log_loss": 1.0906515549907685,
-    "accuracy": 0.39285714285714285
+    "n": 35,
+    "brier": 0.6666812422953294,
+    "log_loss": 1.0925003093546364,
+    "accuracy": 0.34285714285714286
   },
   "market": {
-    "n": 28,
-    "brier": 0.619274998284204,
-    "log_loss": 1.0278890225326505,
-    "accuracy": 0.4642857142857143
+    "n": 35,
+    "brier": 0.6283053862169372,
+    "log_loss": 1.0414109658620092,
+    "accuracy": 0.45714285714285713
   },
-  "source": "https://github.com/MarkColonel80/PL-Results-Project/blob/main/VALUE_INVESTIGATION_2026-10-20.md"
+  "source": "https://github.com/MarkColonel80/PL-Results-Project/blob/main/WEEKEND_REVIEW_2026-10-27.md"
 }
