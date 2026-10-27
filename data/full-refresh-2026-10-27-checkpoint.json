@@ -1,6 +1,6 @@
 {
   "as_of": "2026-10-27",
-  "status": "data-and-reviews-complete; publication verification pending",
+  "status": "complete with recorded source, process and dependency limits",
   "project": {
     "repository": "MarkColonel80/PL-Results-Project",
     "supabase": "priibitbnmfetyblzltk",
@@ -196,7 +196,10 @@
     "fpl_component_point_mismatches": 0,
     "rich_rows_per_match": 40,
     "starters_per_match": 22,
-    "original_ledger_prefix_preserved": true
+    "original_ledger_prefix_preserved": true,
+    "new_core_invalid_permanent_ids": 0,
+    "future_late_snapshots": 0,
+    "future_bad_probability_sums": 0
   },
   "forecasts": {
     "archived_published": 50,
@@ -230,10 +233,11 @@
     "unit_suites": "6 passed",
     "paper_ledger": "39 events; original 29 preserved",
     "typescript": "passed",
-    "cloud_production_build": "completed",
+    "cloud_production_build": "passed, exit 0; production deployments READY",
     "browser_regression": "passed: kickoff/focus, mobile, scoreline consistency, read-only",
-    "live_gw9_browser": "10 cards and 30 scorelines checked; final text assertion needs corrected wording and rerun",
-    "production_smoke": "pending"
+    "live_gw9_browser": "passed: 10 live cards, 30 scorelines, 80 matches, correct 27 October / 35 of 50 scorecard, no mobile overflow/errors/database writes",
+    "production_smoke": "passed: authenticated 200, anonymous 401, 10 future fixtures, 10 eligible forecasts, published GW9 ledger",
+    "runtime_logs": "No error/fatal logs returned for the verified implementation deployment in the recent 30-minute query."
   },
   "blockers": [
     "No GW8 Saturday/Sunday final decisions exist in the ledger; no retrospective selections or passes invented.",
@@ -249,5 +253,34 @@
     "scheduler_execution_state_verified": false
   },
   "model_rules_changed": false,
-  "cloud_only": true
+  "cloud_only": true,
+  "completed_at": "2026-10-27T15:12:53.946Z",
+  "publication": {
+    "data_commit": "9eac0b8fb5fbfaae646df64dbdc5c0a3df8f77d7",
+    "implementation_commit": "bb7d71e786ee6bca6a9b90f6f70b72e9de347a50",
+    "verified_deployment": "dpl_8uoY4tpRe61aYNzokfGTkmBTBNYx",
+    "verified_state": "READY",
+    "production_domain": "https://pl-data.colly.me.uk",
+    "auth_settings_unchanged": true,
+    "remote_tree_changed_paths": [
+      "DATA_REFRESH_2026-10-27.md",
+      "PROJECT_CONTEXT.md",
+      "WEEKEND_2026-10-31.md",
+      "WEEKEND_REVIEW_2026-10-27.md",
+      "app/betting/weekend/paper-review.tsx",
+      "app/globals.css",
+      "data/full-refresh-2026-10-27-checkpoint.json",
+      "data/full-refresh-2026-10-27-source-checks.json",
+      "data/weekend-2026-10-23-settlement.json",
+      "data/weekend-2026-10-31-fixtures.json",
+      "data/weekend-2026-10-31-snapshots.json",
+      "data/weekend-forecast-scorecard.json",
+      "data/weekend-paper-ledger.json",
+      "scripts/verify_tuesday_refresh_browser.mjs",
+      "scripts/verify_tuesday_refresh_live.mjs"
+    ],
+    "deleted_paths": [],
+    "model_code_and_dependency_files_unchanged": true
+  },
+  "verification_receipt": "data/tuesday-2026-10-27-verification.json"
 }
