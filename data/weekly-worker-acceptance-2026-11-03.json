@@ -1,0 +1,12 @@
+{
+  "existingPublishedRefresh": true,
+  "matchCount": 90,
+  "futureFixtures": 10,
+  "site": {
+    "authenticated": 200,
+    "anonymous": 401,
+    "commit": "6ae21aae2028f830e5a86800f38a8fd0d9600368",
+    "checkedAt": "2026-11-03T13:32:24.129Z"
+  },
+  "run": "41645179443"
+}\n
