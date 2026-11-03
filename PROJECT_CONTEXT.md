@@ -12,7 +12,8 @@ This file is the durable handoff/source of truth for continuing the project acro
 - Next fixtures 6–8 November, IDs 91–100. All meet min-four; Coventry/Hull away and Ipswich home have only four relevant venue matches. No model, staking, selection or eligibility changes.
 - Historical fixture/snapshot, frozen-v3, current-season data and security fingerprints unchanged; see dated checkpoint. Understat GW9 timed out, prior unresolved identity coverage retained. FPL flags cover all clubs; later pressers/XIs/executable quotes remain pending.
 - Existing Tuesday automation remains the single schedule. Read [TUESDAY_CLOUD_RUNBOOK.md](TUESDAY_CLOUD_RUNBOOK.md) and [TUESDAY_AUTOMATION_2026-11-03.md](TUESDAY_AUTOMATION_2026-11-03.md). SQL schema/identity mistakes and expiring temporary workspaces are evidenced; scheduler terminal cause and dispatch delay remain unproven. Durable-worker alternative requires approved unattended access; no new schedule or credential is installed.
-- Publication status is in the dated checkpoint. Do not mark a run complete until exact GitHub/Vercel/domain and authenticated/anonymous access readback succeeds.
+- Today's review/refresh is published: commit 4161f36e533c2bc88ac1e096b3b427d865bde58f, verified production deployment dpl_Adg8mMBAq5DtizMWkYPhsq4DuZHt; custom domain, authenticated 200 / anonymous 401, 90 matches and ten upcoming forecasts confirmed at 13:00 GMT.
+- Mark explicitly approved the scoped durable cloud worker after reviewing the proposal. Implementation is now authorized; keep the existing Tuesday automation as the sole scheduler. Preserve all current model/betting rules and historical data.
 
 ## Dependency and Understat follow-up — 2026-10-27
 

@@ -31,3 +31,11 @@ Understat league and match requests timed out repeatedly during this recovery; n
 All 20 clubs have fresh official FPL injury/suspension flags; the Liverpool club update adds Gravenberch's European absence. Later weekend press conferences and confirmed XIs are pending, as are executable bookmaker quotes. Cross-provider closing prices exist but matched-bookmaker CLV is unavailable. These limitations do not authorize changing model weights, eligibility or staking.
 
 See [round review](WEEKEND_REVIEW_2026-11-03.md), [next fixtures](WEEKEND_2026-11-06.md) and [automation evidence](TUESDAY_AUTOMATION_2026-11-03.md).
+
+## Production verification — 13:00 GMT
+
+Main commit 4161f36e533c2bc88ac1e096b3b427d865bde58f built successfully on Vercel and was assigned to pl-data.colly.me.uk. Trusted production verification at 13:00:06.771 GMT confirmed authenticated HTTP 200, anonymous HTTP 401 with the existing Basic realm, published GW10 ledger markers, 90 matches, ten eligible future fixtures and no stale fixtures. Verified deployment: dpl_Adg8mMBAq5DtizMWkYPhsq4DuZHt (same commit). No secrets were retrieved or logged.
+
+The temporary validation workspace expired after testing; a later optional filesystem snapshot returned sandbox_stopped. Tests and published files/checkpoints were already preserved; raw temporary downloads were not retained. The subsequent worker-development workspace uses automatic cloud snapshot persistence.
+
+Mark subsequently approved implementing the scoped durable cloud worker. That implementation is a separate follow-up stage; the current recurring task remains enabled and hardened.
