@@ -12,7 +12,7 @@ $$;
 revoke all on function pl_weekly_private.protected_state(timestamptz) from public,anon,authenticated;
 create function public.pl_weekly_worker(p_capability text,p_run text,p_op text,p_key text,p_data jsonb default '{}'::jsonb) returns jsonb
 language plpgsql security definer set search_path='' set statement_timeout='240s' as $$
-declare rr pl_weekly_private.runs%rowtype; r jsonb; old jsonb; t text; cols text; vals text; predicates text; k text; keys text[]; n int:=0; answer jsonb; allowed text[]; before_at timestamptz;
+declare rr pl_weekly_private.runs%rowtype; r jsonb; old jsonb; t text; cols text; vals text; predicates text; k text; keys text[]; n int:=0; answer jsonb; allowed text[]; before_at timestamptz; normalized jsonb;
 begin
  if not exists(select 1 from pl_weekly_private.capability where secret_hash=encode(extensions.digest(p_capability,'sha256'),'hex')) then raise exception 'Worker capability rejected'; end if;
  if p_run !~ '^[0-9]+$' then raise exception 'Invalid run'; end if;
@@ -60,8 +60,9 @@ begin
    select string_agg(format('to_jsonb(x)->>%L=$1->>%L',x,x),' and ') into predicates from unnest(keys)x;
    execute format('select to_jsonb(x) from public.%I x where %s',t,predicates) into old using r;
    if old is not null then
+    execute format('select to_jsonb(jsonb_populate_record(null::public.%I,$1))',t) into normalized using r;
     -- Existing source facts/identities are append-only. A correction needs explicit review.
-    if exists(select 1 from jsonb_each(r)e where e.key not in('source','data_quality','mapping_method','source_url','raw_row') and e.value is distinct from old->e.key) then raise exception 'Existing % record differs; review required',t; end if;
+    if exists(select 1 from jsonb_each(r)e where e.key not in('source','data_quality','mapping_method','source_url','raw_row') and normalized->e.key is distinct from old->e.key) then raise exception 'Existing % record differs; review required',t; end if;
    else
     select string_agg(format('%I',x),','),string_agg(format('x.%I',x),',') into cols,vals from jsonb_object_keys(r)x;
     execute format('insert into public.%I(%s) select %s from jsonb_populate_record(null::public.%I,$1)x',t,cols,vals,t) using r;

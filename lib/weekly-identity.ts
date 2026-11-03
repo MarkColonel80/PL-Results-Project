@@ -1,4 +1,4 @@
-import {createPublicKey,verify} from "node:crypto";
+import {createPublicKey,verify,type JsonWebKey} from "node:crypto";
 const ISS="https://token.actions.githubusercontent.com";
 export const AUD="pl-results-project-weekly";
 export function validateClaims(c:Record<string,unknown>,now=Math.floor(Date.now()/1000)){
