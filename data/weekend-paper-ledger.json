@@ -123,6 +123,66 @@
       "kickoff_time": "2026-11-02T20:00:00Z",
       "home_team": "Newcastle United",
       "away_team": "Everton"
+    },
+    {
+      "fixture_id": 91,
+      "kickoff_time": "2026-11-06T20:00:00+00:00",
+      "home_team": "Everton",
+      "away_team": "Coventry City"
+    },
+    {
+      "fixture_id": 92,
+      "kickoff_time": "2026-11-07T12:30:00+00:00",
+      "home_team": "Leeds United",
+      "away_team": "Tottenham Hotspur"
+    },
+    {
+      "fixture_id": 93,
+      "kickoff_time": "2026-11-07T15:00:00+00:00",
+      "home_team": "Arsenal",
+      "away_team": "Hull City"
+    },
+    {
+      "fixture_id": 94,
+      "kickoff_time": "2026-11-07T15:00:00+00:00",
+      "home_team": "Fulham",
+      "away_team": "Newcastle United"
+    },
+    {
+      "fixture_id": 95,
+      "kickoff_time": "2026-11-07T17:30:00+00:00",
+      "home_team": "Nottingham Forest",
+      "away_team": "Manchester City"
+    },
+    {
+      "fixture_id": 96,
+      "kickoff_time": "2026-11-08T14:00:00+00:00",
+      "home_team": "Brighton & Hove Albion",
+      "away_team": "Brentford"
+    },
+    {
+      "fixture_id": 97,
+      "kickoff_time": "2026-11-08T14:00:00+00:00",
+      "home_team": "Crystal Palace",
+      "away_team": "Liverpool"
+    },
+    {
+      "fixture_id": 98,
+      "kickoff_time": "2026-11-08T14:00:00+00:00",
+      "home_team": "Ipswich Town",
+      "away_team": "AFC Bournemouth"
+    },
+    {
+      "fixture_id": 99,
+      "kickoff_time": "2026-11-08T14:00:00+00:00",
+      "home_team": "Sunderland",
+      "away_team": "Chelsea"
+    },
+    {
+      "fixture_id": 100,
+      "kickoff_time": "2026-11-08T16:30:00+00:00",
+      "home_team": "Manchester United",
+      "away_team": "Aston Villa"
     }
   ],
   "events": [
@@ -1102,6 +1162,316 @@
           "checked_at": "2026-10-27T10:30:40.670630+00:00",
           "summary": "Provisional pass: Everton away at 3.00 has only a 1.73pp research gap and fails full Venue18 xG-only (-1.48pp). The sides meet at Everton in the cup on Thursday before Monday's league match; recheck minutes and team news.",
           "source_url": "https://pl-data.colly.me.uk/betting/weekend#review-90"
+        }
+      }
+    },
+    {
+      "id": "gw10-91-tuesday-20261103",
+      "fixture_id": 91,
+      "kickoff_time": "2026-11-06T20:00:00+00:00",
+      "recorded_at": "2026-11-03T12:10:06Z",
+      "status": "pass",
+      "reason": "Pass: no positive research price gap at the comparison prices. Coventry have only four current-spell away matches; a full Venue18 diagnostic is unavailable. Public coupon comparison only; confirmed XIs and an available named-bookmaker quote remain pending.",
+      "checks": {
+        "teams": {
+          "checked_at": "2026-11-03T12:10:06Z",
+          "summary": "Both official GW10 XIs are pending; no paper selection or stake.",
+          "source_url": "https://fantasy.premierleague.com/api/fixtures/",
+          "confirmed": false
+        },
+        "news": {
+          "checked_at": "2026-11-03T12:10:06Z",
+          "summary": "No injury/suspension flags in the fetched official FPL feed; this does not confirm a fully fit squad. Official FPL injury/suspension flags: Thomas, Woolfenden, Amenda, Eccles, Wright. Return estimates are not confirmations.",
+          "source_url": "https://fantasy.premierleague.com/api/bootstrap-static/"
+        },
+        "schedule": {
+          "checked_at": "2026-11-03T12:10:06Z",
+          "summary": "Everton: no fixture identified in the reviewed UEFA midweek schedules. Coventry City: no fixture identified in the reviewed UEFA midweek schedules. Review actual minutes, injuries and rotation after Europe. No numerical news or rest adjustment.",
+          "source_url": "https://www.uefa.com/uefaeuropaleague/fixtures-results/"
+        },
+        "sensitivity": {
+          "checked_at": "2026-11-03T12:10:06Z",
+          "summary": "Pass: no positive research price gap at the comparison prices. Coventry have only four current-spell away matches; a full Venue18 diagnostic is unavailable.",
+          "source_url": "https://pl-data.colly.me.uk/betting/weekend#review-91"
+        }
+      }
+    },
+    {
+      "id": "gw10-92-tuesday-20261103",
+      "fixture_id": 92,
+      "kickoff_time": "2026-11-07T12:30:00+00:00",
+      "recorded_at": "2026-11-03T12:10:06Z",
+      "status": "pass",
+      "reason": "Pass: the Leeds home research gap is +6.63pp, but becomes -2.44pp in Venue8 xG-only. No robust paper assessment at this stage. Public coupon comparison only; confirmed XIs and an available named-bookmaker quote remain pending.",
+      "checks": {
+        "teams": {
+          "checked_at": "2026-11-03T12:10:06Z",
+          "summary": "Both official GW10 XIs are pending; no paper selection or stake.",
+          "source_url": "https://fantasy.premierleague.com/api/fixtures/",
+          "confirmed": false
+        },
+        "news": {
+          "checked_at": "2026-11-03T12:10:06Z",
+          "summary": "Official FPL injury/suspension flags: Rodon, Okafor, Mateo Joseph. Return estimates are not confirmations. Official FPL injury/suspension flags: Tosin, Sávio, Xavi, Odobert, Bergvall, Mudryk. Return estimates are not confirmations.",
+          "source_url": "https://fantasy.premierleague.com/api/bootstrap-static/"
+        },
+        "schedule": {
+          "checked_at": "2026-11-03T12:10:06Z",
+          "summary": "Leeds United: no fixture identified in the reviewed UEFA midweek schedules. Tottenham Hotspur: no fixture identified in the reviewed UEFA midweek schedules. Review actual minutes, injuries and rotation after Europe. No numerical news or rest adjustment.",
+          "source_url": "https://www.uefa.com/uefaeuropaleague/fixtures-results/"
+        },
+        "sensitivity": {
+          "checked_at": "2026-11-03T12:10:06Z",
+          "summary": "Pass: the Leeds home research gap is +6.63pp, but becomes -2.44pp in Venue8 xG-only. No robust paper assessment at this stage.",
+          "source_url": "https://pl-data.colly.me.uk/betting/weekend#review-92"
+        }
+      }
+    },
+    {
+      "id": "gw10-93-tuesday-20261103",
+      "fixture_id": 93,
+      "kickoff_time": "2026-11-07T15:00:00+00:00",
+      "recorded_at": "2026-11-03T12:10:06Z",
+      "status": "watch",
+      "reason": "Watch draw/Hull only: draw 8.00 has a +7.86pp research gap and Hull 19.00 +6.71pp; both remain positive in current and Venue8 xG-only views. Hull have only four away matches and no full Venue18 diagnostic. High uncertainty; no selection or stake. Public coupon comparison only; confirmed XIs and an available named-bookmaker quote remain pending.",
+      "checks": {
+        "teams": {
+          "checked_at": "2026-11-03T12:10:06Z",
+          "summary": "Both official GW10 XIs are pending; no paper selection or stake.",
+          "source_url": "https://fantasy.premierleague.com/api/fixtures/",
+          "confirmed": false
+        },
+        "news": {
+          "checked_at": "2026-11-03T12:10:06Z",
+          "summary": "Official FPL injury/suspension flags: Saliba, Saka, Dowman. Return estimates are not confirmations. Official FPL injury/suspension flags: Butland, Hughes, Crooks, Matazo, Gyabi, Targett, Gourna-Douath, Ansah. Return estimates are not confirmations.",
+          "source_url": "https://fantasy.premierleague.com/api/bootstrap-static/"
+        },
+        "schedule": {
+          "checked_at": "2026-11-03T12:10:06Z",
+          "summary": "Arsenal: away to Slavia Praha, Wed 4 Nov 20:00 GMT; travel to Prague before Saturday. Hull City: no fixture identified in the reviewed UEFA midweek schedules. Review actual minutes, injuries and rotation after Europe. No numerical news or rest adjustment.",
+          "source_url": "https://www.uefa.com/uefaeuropaleague/fixtures-results/"
+        },
+        "sensitivity": {
+          "checked_at": "2026-11-03T12:10:06Z",
+          "summary": "Watch draw/Hull only: draw 8.00 has a +7.86pp research gap and Hull 19.00 +6.71pp; both remain positive in current and Venue8 xG-only views. Hull have only four away matches and no full Venue18 diagnostic. High uncertainty; no selection or stake.",
+          "source_url": "https://pl-data.colly.me.uk/betting/weekend#review-93"
+        }
+      }
+    },
+    {
+      "id": "gw10-94-tuesday-20261103",
+      "fixture_id": 94,
+      "kickoff_time": "2026-11-07T15:00:00+00:00",
+      "recorded_at": "2026-11-03T12:10:06Z",
+      "status": "pass",
+      "reason": "Pass: Fulham home has a +5.35pp research gap, but becomes -3.17pp in full Venue18 xG-only. Newcastle played Monday; recheck recovery and availability. Public coupon comparison only; confirmed XIs and an available named-bookmaker quote remain pending.",
+      "checks": {
+        "teams": {
+          "checked_at": "2026-11-03T12:10:06Z",
+          "summary": "Both official GW10 XIs are pending; no paper selection or stake.",
+          "source_url": "https://fantasy.premierleague.com/api/fixtures/",
+          "confirmed": false
+        },
+        "news": {
+          "checked_at": "2026-11-03T12:10:06Z",
+          "summary": "No injury/suspension flags in the fetched official FPL feed; this does not confirm a fully fit squad. Official FPL injury/suspension flags: Jaouen, Livramento, J.Ramsey, L.Miley, Fernandez-Pardo. Return estimates are not confirmations.",
+          "source_url": "https://fantasy.premierleague.com/api/bootstrap-static/"
+        },
+        "schedule": {
+          "checked_at": "2026-11-03T12:10:06Z",
+          "summary": "Fulham: no fixture identified in the reviewed UEFA midweek schedules. Newcastle United: no fixture identified in the reviewed UEFA midweek schedules. Review actual minutes, injuries and rotation after Europe. No numerical news or rest adjustment.",
+          "source_url": "https://www.uefa.com/uefaeuropaleague/fixtures-results/"
+        },
+        "sensitivity": {
+          "checked_at": "2026-11-03T12:10:06Z",
+          "summary": "Pass: Fulham home has a +5.35pp research gap, but becomes -3.17pp in full Venue18 xG-only. Newcastle played Monday; recheck recovery and availability.",
+          "source_url": "https://pl-data.colly.me.uk/betting/weekend#review-94"
+        }
+      }
+    },
+    {
+      "id": "gw10-95-tuesday-20261103",
+      "fixture_id": 95,
+      "kickoff_time": "2026-11-07T17:30:00+00:00",
+      "recorded_at": "2026-11-03T12:10:06Z",
+      "status": "pass",
+      "reason": "Pass: Forest home has a +2.30pp research gap but -1.85pp in the current forecast. City travel to Leipzig on Wednesday; await the match and team news. Public coupon comparison only; confirmed XIs and an available named-bookmaker quote remain pending.",
+      "checks": {
+        "teams": {
+          "checked_at": "2026-11-03T12:10:06Z",
+          "summary": "Both official GW10 XIs are pending; no paper selection or stake.",
+          "source_url": "https://fantasy.premierleague.com/api/fixtures/",
+          "confirmed": false
+        },
+        "news": {
+          "checked_at": "2026-11-03T12:10:06Z",
+          "summary": "Official FPL injury/suspension flags: Savona, Dominguez, Igor Jesus. Return estimates are not confirmations. Official FPL injury/suspension flags: Semenyo. Return estimates are not confirmations.",
+          "source_url": "https://fantasy.premierleague.com/api/bootstrap-static/"
+        },
+        "schedule": {
+          "checked_at": "2026-11-03T12:10:06Z",
+          "summary": "Nottingham Forest: no fixture identified in the reviewed UEFA midweek schedules. Manchester City: away to Leipzig, Wed 4 Nov 20:00 GMT; travel to Germany before Saturday. Review actual minutes, injuries and rotation after Europe. No numerical news or rest adjustment.",
+          "source_url": "https://www.uefa.com/uefaeuropaleague/fixtures-results/"
+        },
+        "sensitivity": {
+          "checked_at": "2026-11-03T12:10:06Z",
+          "summary": "Pass: Forest home has a +2.30pp research gap but -1.85pp in the current forecast. City travel to Leipzig on Wednesday; await the match and team news.",
+          "source_url": "https://pl-data.colly.me.uk/betting/weekend#review-95"
+        }
+      }
+    },
+    {
+      "id": "gw10-96-tuesday-20261103",
+      "fixture_id": 96,
+      "kickoff_time": "2026-11-08T14:00:00+00:00",
+      "recorded_at": "2026-11-03T12:10:06Z",
+      "status": "watch",
+      "reason": "Watch Brighton home at 1.95: +9.30pp research gap, positive in the current, Venue8 and full Venue18 views. Brighton travel to Getafe on Thursday before Sunday; minutes, travel and injuries remain unresolved. Public coupon comparison only; confirmed XIs and an available named-bookmaker quote remain pending.",
+      "checks": {
+        "teams": {
+          "checked_at": "2026-11-03T12:10:06Z",
+          "summary": "Both official GW10 XIs are pending; no paper selection or stake.",
+          "source_url": "https://fantasy.premierleague.com/api/fixtures/",
+          "confirmed": false
+        },
+        "news": {
+          "checked_at": "2026-11-03T12:10:06Z",
+          "summary": "Official FPL injury/suspension flags: F.Kadıoğlu, Mitoma, Yohanna, Tzimas, Ferguson, Struijk, Azeez. Return estimates are not confirmations. Official FPL injury/suspension flags: Henry, Milambo, Carvalho, Dasilva, Furo. Return estimates are not confirmations.",
+          "source_url": "https://fantasy.premierleague.com/api/bootstrap-static/"
+        },
+        "schedule": {
+          "checked_at": "2026-11-03T12:10:06Z",
+          "summary": "Brighton & Hove Albion: away to Getafe, Thu 5 Nov 20:00 GMT; travel to Spain before Sunday 14:00. Brentford: no fixture identified in the reviewed UEFA midweek schedules. Review actual minutes, injuries and rotation after Europe. No numerical news or rest adjustment.",
+          "source_url": "https://www.uefa.com/uefaeuropaleague/fixtures-results/"
+        },
+        "sensitivity": {
+          "checked_at": "2026-11-03T12:10:06Z",
+          "summary": "Watch Brighton home at 1.95: +9.30pp research gap, positive in the current, Venue8 and full Venue18 views. Brighton travel to Getafe on Thursday before Sunday; minutes, travel and injuries remain unresolved.",
+          "source_url": "https://pl-data.colly.me.uk/betting/weekend#review-96"
+        }
+      }
+    },
+    {
+      "id": "gw10-97-tuesday-20261103",
+      "fixture_id": 97,
+      "kickoff_time": "2026-11-08T14:00:00+00:00",
+      "recorded_at": "2026-11-03T12:10:06Z",
+      "status": "watch",
+      "reason": "Watch Palace home at 5.25: +11.41pp research gap, positive in all displayed diagnostics. Palace play Thursday and Liverpool travel to Istanbul on Wednesday. Gravenberch is out of that European trip; Sunday availability is not confirmed. Public coupon comparison only; confirmed XIs and an available named-bookmaker quote remain pending.",
+      "checks": {
+        "teams": {
+          "checked_at": "2026-11-03T12:10:06Z",
+          "summary": "Both official GW10 XIs are pending; no paper selection or stake.",
+          "source_url": "https://fantasy.premierleague.com/api/fixtures/",
+          "confirmed": false
+        },
+        "news": {
+          "checked_at": "2026-11-03T12:10:06Z",
+          "summary": "Official FPL injury/suspension flags: Chadi Riad, Sarr, Strand Larsen, Mateta, Tomiyasu, Timber. Return estimates are not confirmations. Official FPL injury/suspension flags: Jaros, Frimpong, Bradley, Leoni, Ekitiké. Return estimates are not confirmations. Liverpool confirmed on 3 November that a heel injury rules Gravenberch out of Fenerbahce; Palace availability remains unconfirmed. This club update is newer than the FPL flags.",
+          "source_url": "https://fantasy.premierleague.com/api/bootstrap-static/"
+        },
+        "schedule": {
+          "checked_at": "2026-11-03T12:10:06Z",
+          "summary": "Crystal Palace: home to Hoffenheim, Thu 5 Nov 17:45 GMT, before Sunday 14:00. Liverpool: away to Fenerbahce, Wed 4 Nov 17:45 GMT; travel to Istanbul before Sunday. Review actual minutes, injuries and rotation after Europe. No numerical news or rest adjustment.",
+          "source_url": "https://www.uefa.com/uefaeuropaleague/fixtures-results/"
+        },
+        "sensitivity": {
+          "checked_at": "2026-11-03T12:10:06Z",
+          "summary": "Watch Palace home at 5.25: +11.41pp research gap, positive in all displayed diagnostics. Palace play Thursday and Liverpool travel to Istanbul on Wednesday. Gravenberch is out of that European trip; Sunday availability is not confirmed.",
+          "source_url": "https://pl-data.colly.me.uk/betting/weekend#review-97"
+        }
+      }
+    },
+    {
+      "id": "gw10-98-tuesday-20261103",
+      "fixture_id": 98,
+      "kickoff_time": "2026-11-08T14:00:00+00:00",
+      "recorded_at": "2026-11-03T12:10:06Z",
+      "status": "pass",
+      "reason": "Pass: Bournemouth away has a +2.81pp research gap but -4.21pp in the current view and -2.93pp in Venue8 xG-only. Ipswich have four home matches; Bournemouth travel to Prague on Thursday. Public coupon comparison only; confirmed XIs and an available named-bookmaker quote remain pending.",
+      "checks": {
+        "teams": {
+          "checked_at": "2026-11-03T12:10:06Z",
+          "summary": "Both official GW10 XIs are pending; no paper selection or stake.",
+          "source_url": "https://fantasy.premierleague.com/api/fixtures/",
+          "confirmed": false
+        },
+        "news": {
+          "checked_at": "2026-11-03T12:10:06Z",
+          "summary": "Official FPL injury/suspension flags: Lukić. Return estimates are not confirmations. Official FPL injury/suspension flags: Milosavljević, J.Araujo, Scott, Tóth.A. Return estimates are not confirmations.",
+          "source_url": "https://fantasy.premierleague.com/api/bootstrap-static/"
+        },
+        "schedule": {
+          "checked_at": "2026-11-03T12:10:06Z",
+          "summary": "Ipswich Town: no fixture identified in the reviewed UEFA midweek schedules. AFC Bournemouth: away to Sparta Praha, Thu 5 Nov 17:45 GMT; travel to Prague before Sunday 14:00. Review actual minutes, injuries and rotation after Europe. No numerical news or rest adjustment.",
+          "source_url": "https://www.uefa.com/uefaeuropaleague/fixtures-results/"
+        },
+        "sensitivity": {
+          "checked_at": "2026-11-03T12:10:06Z",
+          "summary": "Pass: Bournemouth away has a +2.81pp research gap but -4.21pp in the current view and -2.93pp in Venue8 xG-only. Ipswich have four home matches; Bournemouth travel to Prague on Thursday.",
+          "source_url": "https://pl-data.colly.me.uk/betting/weekend#review-98"
+        }
+      }
+    },
+    {
+      "id": "gw10-99-tuesday-20261103",
+      "fixture_id": 99,
+      "kickoff_time": "2026-11-08T14:00:00+00:00",
+      "recorded_at": "2026-11-03T12:10:06Z",
+      "status": "watch",
+      "reason": "Watch Sunderland home at 3.70: +10.29pp research gap, positive in all displayed diagnostics. Thursday's home Europa League match precedes Chelsea on Sunday; fresh availability and recovery checks are required. Public coupon comparison only; confirmed XIs and an available named-bookmaker quote remain pending.",
+      "checks": {
+        "teams": {
+          "checked_at": "2026-11-03T12:10:06Z",
+          "summary": "Both official GW10 XIs are pending; no paper selection or stake.",
+          "source_url": "https://fantasy.premierleague.com/api/fixtures/",
+          "confirmed": false
+        },
+        "news": {
+          "checked_at": "2026-11-03T12:10:06Z",
+          "summary": "Official FPL injury/suspension flags: Ballard, Mukiele, Alderete, Diarra, Mundle. Return estimates are not confirmations. Official FPL injury/suspension flags: Martinez, Henderson, James, Hato, Gittens, João Pedro, Lacroix, Anselmino. Return estimates are not confirmations.",
+          "source_url": "https://fantasy.premierleague.com/api/bootstrap-static/"
+        },
+        "schedule": {
+          "checked_at": "2026-11-03T12:10:06Z",
+          "summary": "Sunderland: home to GNK Dinamo, Thu 5 Nov 20:00 GMT, before Sunday 14:00. Chelsea: no fixture identified in the reviewed UEFA midweek schedules. Review actual minutes, injuries and rotation after Europe. No numerical news or rest adjustment.",
+          "source_url": "https://www.uefa.com/uefaeuropaleague/fixtures-results/"
+        },
+        "sensitivity": {
+          "checked_at": "2026-11-03T12:10:06Z",
+          "summary": "Watch Sunderland home at 3.70: +10.29pp research gap, positive in all displayed diagnostics. Thursday's home Europa League match precedes Chelsea on Sunday; fresh availability and recovery checks are required.",
+          "source_url": "https://pl-data.colly.me.uk/betting/weekend#review-99"
+        }
+      }
+    },
+    {
+      "id": "gw10-100-tuesday-20261103",
+      "fixture_id": 100,
+      "kickoff_time": "2026-11-08T16:30:00+00:00",
+      "recorded_at": "2026-11-03T12:10:06Z",
+      "status": "watch",
+      "reason": "Watch Manchester United home at 2.25: +6.75pp research gap, but only +0.98pp in the current forecast. Both teams play Tuesday; Villa travel to Barcelona. A small current-model margin can disappear with a price change. Public coupon comparison only; confirmed XIs and an available named-bookmaker quote remain pending.",
+      "checks": {
+        "teams": {
+          "checked_at": "2026-11-03T12:10:06Z",
+          "summary": "Both official GW10 XIs are pending; no paper selection or stake.",
+          "source_url": "https://fantasy.premierleague.com/api/fixtures/",
+          "confirmed": false
+        },
+        "news": {
+          "checked_at": "2026-11-03T12:10:06Z",
+          "summary": "Official FPL injury/suspension flags: Dorgu, Martinez, Shaw, Rashford, Amad, Ugarte, Šeško. Return estimates are not confirmations. Official FPL injury/suspension flags: Cash, Onana, Ruggeri, Wan-Bissaka. Return estimates are not confirmations.",
+          "source_url": "https://fantasy.premierleague.com/api/bootstrap-static/"
+        },
+        "schedule": {
+          "checked_at": "2026-11-03T12:10:06Z",
+          "summary": "Manchester United: home to Roma, Tue 3 Nov 20:00 GMT. Aston Villa: away to Barcelona, Tue 3 Nov 20:00 GMT; travel to Spain before Sunday. Review actual minutes, injuries and rotation after Europe. No numerical news or rest adjustment.",
+          "source_url": "https://www.uefa.com/uefaeuropaleague/fixtures-results/"
+        },
+        "sensitivity": {
+          "checked_at": "2026-11-03T12:10:06Z",
+          "summary": "Watch Manchester United home at 2.25: +6.75pp research gap, but only +0.98pp in the current forecast. Both teams play Tuesday; Villa travel to Barcelona. A small current-model margin can disappear with a price change.",
+          "source_url": "https://pl-data.colly.me.uk/betting/weekend#review-100"
         }
       }
     }

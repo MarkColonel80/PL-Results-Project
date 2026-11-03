@@ -1,0 +1,125 @@
+{
+  "as_of": "2026-11-03T12:10:06Z",
+  "stage": "validated_awaiting_publication",
+  "base_commit": "dc452082e72e5f1f5c78ece5686b5056bf27df63",
+  "cloud_only": true,
+  "reviewed_round": 9,
+  "next_round": 10,
+  "completed_matches": 90,
+  "existing_imports_reconciled": true,
+  "source_audit": {
+    "native_player_rows": 400,
+    "fpl_rows": 670,
+    "closing_odds_rows": 10,
+    "discrepancies": 0
+  },
+  "protected_history": [
+    {
+      "name": "fixtures",
+      "n": 60,
+      "hash": "104e77d53e93277f637b1ffed6aa3092"
+    },
+    {
+      "name": "snapshots",
+      "n": 60,
+      "hash": "40228cdeee2e58456b1a2668387e338d"
+    }
+  ],
+  "season_layers": [
+    {
+      "name": "matches",
+      "n": 90,
+      "hash": "b12e7f53a93138f668fabd5b5406de7e"
+    },
+    {
+      "name": "canonical_matches",
+      "n": 90,
+      "hash": "b0302f95eb37cc5da226466f9303a31f"
+    },
+    {
+      "name": "player_match_stats",
+      "n": 3600,
+      "hash": "9487c40e683213b8fe8b9d7a63e15983"
+    },
+    {
+      "name": "fpl_player_match_stats",
+      "n": 5890,
+      "hash": "4fa68227ae98940a2e8c072c8f968014"
+    },
+    {
+      "name": "lineups",
+      "n": 3600,
+      "hash": "fa8fb9e29fc63ba345846f1dc43e1036"
+    },
+    {
+      "name": "goals",
+      "n": 243,
+      "hash": "18c743508a320750140eae550d148893"
+    },
+    {
+      "name": "historical_market_odds",
+      "n": 90,
+      "hash": "67fb3abbee363d79a656e6ffeaa66cd8"
+    },
+    {
+      "name": "source_player_match_stats",
+      "n": 2461,
+      "hash": "059b8fa1e84f1738236d9be01c003fc4"
+    },
+    {
+      "name": "player_seasons",
+      "n": 670,
+      "hash": "986a8ce785a2b70e24ad407ff2f053ff"
+    }
+  ],
+  "security": [
+    {
+      "hash": "d0357bbab1f575f1f36385e73ccd1cf0"
+    }
+  ],
+  "frozen_v3": {
+    "n": 12714,
+    "hash": "4cc75bfac5bd678bb765966945033af1"
+  },
+  "future_snapshot_ids": [
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99,
+    100
+  ],
+  "paper_events_before": 39,
+  "paper_events_after": 49,
+  "paper_stakes": 0,
+  "model_rules_changed": false,
+  "automation": {
+    "id": "6ad7a14d306c8190b719bd87b6f73e7d",
+    "schedule": "Tuesday 09:00 Europe/London",
+    "duplicate_schedule_created": false,
+    "terminal_cause": "unknown; supported schema and workspace lifetime failures documented",
+    "instructions_updated_at": "2026-11-03T12:14:00Z",
+    "next_run": "2026-11-10T09:00:00Z",
+    "reliability": "hardened; terminal failure unproven; next unattended run not yet validated"
+  },
+  "coverage_gaps": [
+    "GW9 Understat unavailable due provider timeouts",
+    "374 unresolved Understat appearances/103 IDs and 14 missing core appearances from prior checkpoint retained",
+    "Transfermarkt no current-season GB1 coverage",
+    "Weekend official XIs/pressers and executable quotes pending",
+    "No comparable bookmaker-level CLV"
+  ],
+  "tests": {
+    "existing_suites": "passed",
+    "append_only": "passed",
+    "production_build": "passed",
+    "dated_data": "passed"
+  },
+  "production": {
+    "status": "pending"
+  }
+}

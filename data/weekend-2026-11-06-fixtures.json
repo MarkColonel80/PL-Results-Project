@@ -1,0 +1,197 @@
+{
+  "checked_at": "2026-11-03T12:10:06Z",
+  "price_observed_at": "2026-11-03T12:08:45Z",
+  "price_verification": "Public comparison coupon; executable named-bookmaker quotes pending",
+  "fixtures": [
+    {
+      "notes": "Official 2026/27 FPL GW10 fixture 94, checked 2026-11-03 against https://fantasy.premierleague.com/api/fixtures/. Manual fixture ID 91 is an internal ID, not a provider ID. Upcoming paper-mode fixture; no bet. Confirmed XIs, available named-bookmaker quote, and dated news are pending.\nWEEKEND_NEWS_JSON:{\"checkedAt\":\"2026-11-03T12:10:06Z\",\"home\":\"No injury/suspension flags in the fetched official FPL feed; this does not confirm a fully fit squad.\",\"away\":\"Official FPL injury/suspension flags: Thomas, Woolfenden, Amenda, Eccles, Wright. Return estimates are not confirmations.\",\"schedule\":\"Everton: no fixture identified in the reviewed UEFA midweek schedules. Coventry City: no fixture identified in the reviewed UEFA midweek schedules. Review actual minutes, injuries and rotation after Europe. No numerical news or rest adjustment.\",\"teams\":\"Tuesday provisional review. Official starting XIs and an available named-bookmaker quote remain pending. Latest weekend club press conferences are not yet covered. No paper stake.\",\"availability\":[\"Everton — No injury/suspension flags in this feed.\",\"Coventry City — Thomas: Calf injury - 50% chance of playing; Woolfenden: Knee injury - Unknown return date; Amenda: Calf injury - Unknown return date; Eccles: Ankle injury - Unknown return date; Wright: Thigh injury - Unknown return date\"],\"sources\":[{\"label\":\"Official FPL availability, fetched 3 November\",\"url\":\"https://fantasy.premierleague.com/api/bootstrap-static/\"},{\"label\":\"Official PL November fixture amendments\",\"url\":\"https://www.premierleague.com/en/news/4725574\"},{\"label\":\"UEFA Champions League schedule\",\"url\":\"https://www.uefa.com/uefachampionsleague/news/02a8-2174c9e9019d-f909a77bd77a-1000--2026-27-uefa-champions-league-all-the-league-phase-fixtures-a/\"},{\"label\":\"UEFA Europa League schedule\",\"url\":\"https://www.uefa.com/uefaeuropaleague/news/02a8-2174cafa5bb6-82bbc20c9b92-1000--2026-27-europa-league-all-the-league-phase-fixtures/\"},{\"label\":\"Brighton official Conference League schedule\",\"url\":\"https://www.brightonandhovealbion.com/media-article/our-time-is-now-conference-league-fixtures-confirmed\"}]}",
+      "season": "2026/27",
+      "away_team": "Coventry City",
+      "home_team": "Everton",
+      "fixture_id": 91,
+      "kickoff_time": "2026-11-06T20:00:00+00:00",
+      "market_source": "Oddschecker UK Premier League public coupon; comparison only",
+      "market_away_odds": 4.6,
+      "market_draw_odds": 4,
+      "market_home_odds": 1.7272727272727273,
+      "market_snapshot_at": "2026-11-03T12:08:45Z",
+      "provisional_review": {
+        "status": "pass",
+        "reason": "Pass: no positive research price gap at the comparison prices. Coventry have only four current-spell away matches; a full Venue18 diagnostic is unavailable. Public coupon comparison only; confirmed XIs and an available named-bookmaker quote remain pending.",
+        "recorded_at": "2026-11-03T12:10:06Z",
+        "paper_stake": 0
+      }
+    },
+    {
+      "notes": "Official 2026/27 FPL GW10 fixture 97, checked 2026-11-03 against https://fantasy.premierleague.com/api/fixtures/. Manual fixture ID 92 is an internal ID, not a provider ID. Upcoming paper-mode fixture; no bet. Confirmed XIs, available named-bookmaker quote, and dated news are pending.\nWEEKEND_NEWS_JSON:{\"checkedAt\":\"2026-11-03T12:10:06Z\",\"home\":\"Official FPL injury/suspension flags: Rodon, Okafor, Mateo Joseph. Return estimates are not confirmations.\",\"away\":\"Official FPL injury/suspension flags: Tosin, Sávio, Xavi, Odobert, Bergvall, Mudryk. Return estimates are not confirmations.\",\"schedule\":\"Leeds United: no fixture identified in the reviewed UEFA midweek schedules. Tottenham Hotspur: no fixture identified in the reviewed UEFA midweek schedules. Review actual minutes, injuries and rotation after Europe. No numerical news or rest adjustment.\",\"teams\":\"Tuesday provisional review. Official starting XIs and an available named-bookmaker quote remain pending. Latest weekend club press conferences are not yet covered. No paper stake.\",\"availability\":[\"Leeds United — Rodon: Hamstring injury - Expected back 21 Nov; Okafor: Thigh injury - 75% chance of playing; Mateo Joseph: Knee injury - Unknown return date\",\"Tottenham Hotspur — Tosin: Calf injury - Unknown return date; Sávio: Muscular injury - Expected back 21 Nov; Xavi: Knee injury - Unknown return date; Odobert: Knee injury - Unknown return date; Bergvall: Knee injury - Expected back 31 Oct; Mudryk: Ankle injury - Unknown return date\"],\"sources\":[{\"label\":\"Official FPL availability, fetched 3 November\",\"url\":\"https://fantasy.premierleague.com/api/bootstrap-static/\"},{\"label\":\"Official PL November fixture amendments\",\"url\":\"https://www.premierleague.com/en/news/4725574\"},{\"label\":\"UEFA Champions League schedule\",\"url\":\"https://www.uefa.com/uefachampionsleague/news/02a8-2174c9e9019d-f909a77bd77a-1000--2026-27-uefa-champions-league-all-the-league-phase-fixtures-a/\"},{\"label\":\"UEFA Europa League schedule\",\"url\":\"https://www.uefa.com/uefaeuropaleague/news/02a8-2174cafa5bb6-82bbc20c9b92-1000--2026-27-europa-league-all-the-league-phase-fixtures/\"},{\"label\":\"Brighton official Conference League schedule\",\"url\":\"https://www.brightonandhovealbion.com/media-article/our-time-is-now-conference-league-fixtures-confirmed\"}]}",
+      "season": "2026/27",
+      "away_team": "Tottenham Hotspur",
+      "home_team": "Leeds United",
+      "fixture_id": 92,
+      "kickoff_time": "2026-11-07T12:30:00+00:00",
+      "market_source": "Oddschecker UK Premier League public coupon; comparison only",
+      "market_away_odds": 2.7,
+      "market_draw_odds": 3.5,
+      "market_home_odds": 2.625,
+      "market_snapshot_at": "2026-11-03T12:08:45Z",
+      "provisional_review": {
+        "status": "pass",
+        "reason": "Pass: the Leeds home research gap is +6.63pp, but becomes -2.44pp in Venue8 xG-only. No robust paper assessment at this stage. Public coupon comparison only; confirmed XIs and an available named-bookmaker quote remain pending.",
+        "recorded_at": "2026-11-03T12:10:06Z",
+        "paper_stake": 0
+      }
+    },
+    {
+      "notes": "Official 2026/27 FPL GW10 fixture 91, checked 2026-11-03 against https://fantasy.premierleague.com/api/fixtures/. Manual fixture ID 93 is an internal ID, not a provider ID. Upcoming paper-mode fixture; no bet. Confirmed XIs, available named-bookmaker quote, and dated news are pending.\nWEEKEND_NEWS_JSON:{\"checkedAt\":\"2026-11-03T12:10:06Z\",\"home\":\"Official FPL injury/suspension flags: Saliba, Saka, Dowman. Return estimates are not confirmations.\",\"away\":\"Official FPL injury/suspension flags: Butland, Hughes, Crooks, Matazo, Gyabi, Targett, Gourna-Douath, Ansah. Return estimates are not confirmations.\",\"schedule\":\"Arsenal: away to Slavia Praha, Wed 4 Nov 20:00 GMT; travel to Prague before Saturday. Hull City: no fixture identified in the reviewed UEFA midweek schedules. Review actual minutes, injuries and rotation after Europe. No numerical news or rest adjustment.\",\"teams\":\"Tuesday provisional review. Official starting XIs and an available named-bookmaker quote remain pending. Latest weekend club press conferences are not yet covered. No paper stake.\",\"availability\":[\"Arsenal — Saliba: Back injury - Unknown return date; Saka: Thigh injury - Unknown return date; Dowman: Suspended until 29 Nov\",\"Hull City — Butland: Arm injury - 50% chance of playing; Hughes: Groin injury - Unknown return date; Crooks: Suspended until 22 Nov; Matazo: Knee injury - Unknown return date; Gyabi: Thigh injury - Unknown return date; Targett: Ankle injury - Unknown return date; Gourna-Douath: Calf injury - 75% chance of playing; Ansah: Back injury - Unknown return date\"],\"sources\":[{\"label\":\"Official FPL availability, fetched 3 November\",\"url\":\"https://fantasy.premierleague.com/api/bootstrap-static/\"},{\"label\":\"Official PL November fixture amendments\",\"url\":\"https://www.premierleague.com/en/news/4725574\"},{\"label\":\"UEFA Champions League schedule\",\"url\":\"https://www.uefa.com/uefachampionsleague/news/02a8-2174c9e9019d-f909a77bd77a-1000--2026-27-uefa-champions-league-all-the-league-phase-fixtures-a/\"},{\"label\":\"UEFA Europa League schedule\",\"url\":\"https://www.uefa.com/uefaeuropaleague/news/02a8-2174cafa5bb6-82bbc20c9b92-1000--2026-27-europa-league-all-the-league-phase-fixtures/\"},{\"label\":\"Brighton official Conference League schedule\",\"url\":\"https://www.brightonandhovealbion.com/media-article/our-time-is-now-conference-league-fixtures-confirmed\"}]}",
+      "season": "2026/27",
+      "away_team": "Hull City",
+      "home_team": "Arsenal",
+      "fixture_id": 93,
+      "kickoff_time": "2026-11-07T15:00:00+00:00",
+      "market_source": "Oddschecker UK Premier League public coupon; comparison only",
+      "market_away_odds": 19,
+      "market_draw_odds": 8,
+      "market_home_odds": 1.1666666666666667,
+      "market_snapshot_at": "2026-11-03T12:08:45Z",
+      "provisional_review": {
+        "status": "watch",
+        "reason": "Watch draw/Hull only: draw 8.00 has a +7.86pp research gap and Hull 19.00 +6.71pp; both remain positive in current and Venue8 xG-only views. Hull have only four away matches and no full Venue18 diagnostic. High uncertainty; no selection or stake. Public coupon comparison only; confirmed XIs and an available named-bookmaker quote remain pending.",
+        "recorded_at": "2026-11-03T12:10:06Z",
+        "paper_stake": 0
+      }
+    },
+    {
+      "notes": "Official 2026/27 FPL GW10 fixture 95, checked 2026-11-03 against https://fantasy.premierleague.com/api/fixtures/. Manual fixture ID 94 is an internal ID, not a provider ID. Upcoming paper-mode fixture; no bet. Confirmed XIs, available named-bookmaker quote, and dated news are pending.\nWEEKEND_NEWS_JSON:{\"checkedAt\":\"2026-11-03T12:10:06Z\",\"home\":\"No injury/suspension flags in the fetched official FPL feed; this does not confirm a fully fit squad.\",\"away\":\"Official FPL injury/suspension flags: Jaouen, Livramento, J.Ramsey, L.Miley, Fernandez-Pardo. Return estimates are not confirmations.\",\"schedule\":\"Fulham: no fixture identified in the reviewed UEFA midweek schedules. Newcastle United: no fixture identified in the reviewed UEFA midweek schedules. Review actual minutes, injuries and rotation after Europe. No numerical news or rest adjustment.\",\"teams\":\"Tuesday provisional review. Official starting XIs and an available named-bookmaker quote remain pending. Latest weekend club press conferences are not yet covered. No paper stake.\",\"availability\":[\"Fulham — No injury/suspension flags in this feed.\",\"Newcastle United — Jaouen: Hamstring injury - Unknown return date; Livramento: Knee injury - Unknown return date; J.Ramsey: Suspended until 21 Nov; L.Miley: Muscular injury - 75% chance of playing; Fernandez-Pardo: Illness - 75% chance of playing\"],\"sources\":[{\"label\":\"Official FPL availability, fetched 3 November\",\"url\":\"https://fantasy.premierleague.com/api/bootstrap-static/\"},{\"label\":\"Official PL November fixture amendments\",\"url\":\"https://www.premierleague.com/en/news/4725574\"},{\"label\":\"UEFA Champions League schedule\",\"url\":\"https://www.uefa.com/uefachampionsleague/news/02a8-2174c9e9019d-f909a77bd77a-1000--2026-27-uefa-champions-league-all-the-league-phase-fixtures-a/\"},{\"label\":\"UEFA Europa League schedule\",\"url\":\"https://www.uefa.com/uefaeuropaleague/news/02a8-2174cafa5bb6-82bbc20c9b92-1000--2026-27-europa-league-all-the-league-phase-fixtures/\"},{\"label\":\"Brighton official Conference League schedule\",\"url\":\"https://www.brightonandhovealbion.com/media-article/our-time-is-now-conference-league-fixtures-confirmed\"}]}",
+      "season": "2026/27",
+      "away_team": "Newcastle United",
+      "home_team": "Fulham",
+      "fixture_id": 94,
+      "kickoff_time": "2026-11-07T15:00:00+00:00",
+      "market_source": "Oddschecker UK Premier League public coupon; comparison only",
+      "market_away_odds": 3.5,
+      "market_draw_odds": 3.75,
+      "market_home_odds": 2.1,
+      "market_snapshot_at": "2026-11-03T12:08:45Z",
+      "provisional_review": {
+        "status": "pass",
+        "reason": "Pass: Fulham home has a +5.35pp research gap, but becomes -3.17pp in full Venue18 xG-only. Newcastle played Monday; recheck recovery and availability. Public coupon comparison only; confirmed XIs and an available named-bookmaker quote remain pending.",
+        "recorded_at": "2026-11-03T12:10:06Z",
+        "paper_stake": 0
+      }
+    },
+    {
+      "notes": "Official 2026/27 FPL GW10 fixture 99, checked 2026-11-03 against https://fantasy.premierleague.com/api/fixtures/. Manual fixture ID 95 is an internal ID, not a provider ID. Upcoming paper-mode fixture; no bet. Confirmed XIs, available named-bookmaker quote, and dated news are pending.\nWEEKEND_NEWS_JSON:{\"checkedAt\":\"2026-11-03T12:10:06Z\",\"home\":\"Official FPL injury/suspension flags: Savona, Dominguez, Igor Jesus. Return estimates are not confirmations.\",\"away\":\"Official FPL injury/suspension flags: Semenyo. Return estimates are not confirmations.\",\"schedule\":\"Nottingham Forest: no fixture identified in the reviewed UEFA midweek schedules. Manchester City: away to Leipzig, Wed 4 Nov 20:00 GMT; travel to Germany before Saturday. Review actual minutes, injuries and rotation after Europe. No numerical news or rest adjustment.\",\"teams\":\"Tuesday provisional review. Official starting XIs and an available named-bookmaker quote remain pending. Latest weekend club press conferences are not yet covered. No paper stake.\",\"availability\":[\"Nottingham Forest — Savona: Knee injury - Unknown return date; Dominguez: Muscular injury - 75% chance of playing; Igor Jesus: Calf injury - Unknown return date\",\"Manchester City — Semenyo: Knee injury - Unknown return date\"],\"sources\":[{\"label\":\"Official FPL availability, fetched 3 November\",\"url\":\"https://fantasy.premierleague.com/api/bootstrap-static/\"},{\"label\":\"Official PL November fixture amendments\",\"url\":\"https://www.premierleague.com/en/news/4725574\"},{\"label\":\"UEFA Champions League schedule\",\"url\":\"https://www.uefa.com/uefachampionsleague/news/02a8-2174c9e9019d-f909a77bd77a-1000--2026-27-uefa-champions-league-all-the-league-phase-fixtures-a/\"},{\"label\":\"UEFA Europa League schedule\",\"url\":\"https://www.uefa.com/uefaeuropaleague/news/02a8-2174cafa5bb6-82bbc20c9b92-1000--2026-27-europa-league-all-the-league-phase-fixtures/\"},{\"label\":\"Brighton official Conference League schedule\",\"url\":\"https://www.brightonandhovealbion.com/media-article/our-time-is-now-conference-league-fixtures-confirmed\"}]}",
+      "season": "2026/27",
+      "away_team": "Manchester City",
+      "home_team": "Nottingham Forest",
+      "fixture_id": 95,
+      "kickoff_time": "2026-11-07T17:30:00+00:00",
+      "market_source": "Oddschecker UK Premier League public coupon; comparison only",
+      "market_away_odds": 1.75,
+      "market_draw_odds": 4,
+      "market_home_odds": 4.7,
+      "market_snapshot_at": "2026-11-03T12:08:45Z",
+      "provisional_review": {
+        "status": "pass",
+        "reason": "Pass: Forest home has a +2.30pp research gap but -1.85pp in the current forecast. City travel to Leipzig on Wednesday; await the match and team news. Public coupon comparison only; confirmed XIs and an available named-bookmaker quote remain pending.",
+        "recorded_at": "2026-11-03T12:10:06Z",
+        "paper_stake": 0
+      }
+    },
+    {
+      "notes": "Official 2026/27 FPL GW10 fixture 92, checked 2026-11-03 against https://fantasy.premierleague.com/api/fixtures/. Manual fixture ID 96 is an internal ID, not a provider ID. Upcoming paper-mode fixture; no bet. Confirmed XIs, available named-bookmaker quote, and dated news are pending.\nWEEKEND_NEWS_JSON:{\"checkedAt\":\"2026-11-03T12:10:06Z\",\"home\":\"Official FPL injury/suspension flags: F.Kadıoğlu, Mitoma, Yohanna, Tzimas, Ferguson, Struijk, Azeez. Return estimates are not confirmations.\",\"away\":\"Official FPL injury/suspension flags: Henry, Milambo, Carvalho, Dasilva, Furo. Return estimates are not confirmations.\",\"schedule\":\"Brighton & Hove Albion: away to Getafe, Thu 5 Nov 20:00 GMT; travel to Spain before Sunday 14:00. Brentford: no fixture identified in the reviewed UEFA midweek schedules. Review actual minutes, injuries and rotation after Europe. No numerical news or rest adjustment.\",\"teams\":\"Tuesday provisional review. Official starting XIs and an available named-bookmaker quote remain pending. Latest weekend club press conferences are not yet covered. No paper stake.\",\"availability\":[\"Brighton & Hove Albion — F.Kadıoğlu: Hip injury - 75% chance of playing; Mitoma: Hamstring injury - Expected back 22 Nov; Yohanna: Unspecified injury - Expected back 22 Nov; Tzimas: Knee injury - Unknown return date; Ferguson: Ankle injury - Unknown return date; Struijk: Hamstring injury - Expected back 8 Nov; Azeez: Hamstring injury - Expected back 8 Nov\",\"Brentford — Henry: Hip injury - Unknown return date; Milambo: Knee injury - Unknown return date; Carvalho: Knock - Expected back 23 Nov; Dasilva: Hamstring injury - Unknown return date; Furo: Unspecified injury - Unknown return date\"],\"sources\":[{\"label\":\"Official FPL availability, fetched 3 November\",\"url\":\"https://fantasy.premierleague.com/api/bootstrap-static/\"},{\"label\":\"Official PL November fixture amendments\",\"url\":\"https://www.premierleague.com/en/news/4725574\"},{\"label\":\"UEFA Champions League schedule\",\"url\":\"https://www.uefa.com/uefachampionsleague/news/02a8-2174c9e9019d-f909a77bd77a-1000--2026-27-uefa-champions-league-all-the-league-phase-fixtures-a/\"},{\"label\":\"UEFA Europa League schedule\",\"url\":\"https://www.uefa.com/uefaeuropaleague/news/02a8-2174cafa5bb6-82bbc20c9b92-1000--2026-27-europa-league-all-the-league-phase-fixtures/\"},{\"label\":\"Brighton official Conference League schedule\",\"url\":\"https://www.brightonandhovealbion.com/media-article/our-time-is-now-conference-league-fixtures-confirmed\"}]}",
+      "season": "2026/27",
+      "away_team": "Brentford",
+      "home_team": "Brighton & Hove Albion",
+      "fixture_id": 96,
+      "kickoff_time": "2026-11-08T14:00:00+00:00",
+      "market_source": "Oddschecker UK Premier League public coupon; comparison only",
+      "market_away_odds": 3.7,
+      "market_draw_odds": 4,
+      "market_home_odds": 1.95,
+      "market_snapshot_at": "2026-11-03T12:08:45Z",
+      "provisional_review": {
+        "status": "watch",
+        "reason": "Watch Brighton home at 1.95: +9.30pp research gap, positive in the current, Venue8 and full Venue18 views. Brighton travel to Getafe on Thursday before Sunday; minutes, travel and injuries remain unresolved. Public coupon comparison only; confirmed XIs and an available named-bookmaker quote remain pending.",
+        "recorded_at": "2026-11-03T12:10:06Z",
+        "paper_stake": 0
+      }
+    },
+    {
+      "notes": "Official 2026/27 FPL GW10 fixture 93, checked 2026-11-03 against https://fantasy.premierleague.com/api/fixtures/. Manual fixture ID 97 is an internal ID, not a provider ID. Upcoming paper-mode fixture; no bet. Confirmed XIs, available named-bookmaker quote, and dated news are pending.\nWEEKEND_NEWS_JSON:{\"checkedAt\":\"2026-11-03T12:10:06Z\",\"home\":\"Official FPL injury/suspension flags: Chadi Riad, Sarr, Strand Larsen, Mateta, Tomiyasu, Timber. Return estimates are not confirmations.\",\"away\":\"Official FPL injury/suspension flags: Jaros, Frimpong, Bradley, Leoni, Ekitiké. Return estimates are not confirmations. Liverpool confirmed on 3 November that a heel injury rules Gravenberch out of Fenerbahce; Palace availability remains unconfirmed. This club update is newer than the FPL flags.\",\"schedule\":\"Crystal Palace: home to Hoffenheim, Thu 5 Nov 17:45 GMT, before Sunday 14:00. Liverpool: away to Fenerbahce, Wed 4 Nov 17:45 GMT; travel to Istanbul before Sunday. Review actual minutes, injuries and rotation after Europe. No numerical news or rest adjustment.\",\"teams\":\"Tuesday provisional review. Official starting XIs and an available named-bookmaker quote remain pending. Latest weekend club press conferences are not yet covered. No paper stake.\",\"availability\":[\"Crystal Palace — Chadi Riad: Knee injury - Unknown return date; Sarr: Groin injury - Expected back 8 Nov; Strand Larsen: Ankle injury - 75% chance of playing; Mateta: Suspended until 2 Dec; Tomiyasu: Calf injury - Expected back 8 Nov; Timber: Hamstring injury - 75% chance of playing\",\"Liverpool — Jaros: Knee injury - Unknown return date; Frimpong: Hamstring injury - Unknown return date; Bradley: Knee injury - Unknown return date; Leoni: Knee injury - Unknown return date; Ekitiké: Achilles injury - Unknown return date\"],\"sources\":[{\"label\":\"Official FPL availability, fetched 3 November\",\"url\":\"https://fantasy.premierleague.com/api/bootstrap-static/\"},{\"label\":\"Official PL November fixture amendments\",\"url\":\"https://www.premierleague.com/en/news/4725574\"},{\"label\":\"UEFA Champions League schedule\",\"url\":\"https://www.uefa.com/uefachampionsleague/news/02a8-2174c9e9019d-f909a77bd77a-1000--2026-27-uefa-champions-league-all-the-league-phase-fixtures-a/\"},{\"label\":\"UEFA Europa League schedule\",\"url\":\"https://www.uefa.com/uefaeuropaleague/news/02a8-2174cafa5bb6-82bbc20c9b92-1000--2026-27-europa-league-all-the-league-phase-fixtures/\"},{\"label\":\"Brighton official Conference League schedule\",\"url\":\"https://www.brightonandhovealbion.com/media-article/our-time-is-now-conference-league-fixtures-confirmed\"},{\"label\":\"Liverpool: Gravenberch injury update, 3 November\",\"url\":\"https://www.liverpoolfc.com/news/ryan-gravenberch-injury-update\"}]}",
+      "season": "2026/27",
+      "away_team": "Liverpool",
+      "home_team": "Crystal Palace",
+      "fixture_id": 97,
+      "kickoff_time": "2026-11-08T14:00:00+00:00",
+      "market_source": "Oddschecker UK Premier League public coupon; comparison only",
+      "market_away_odds": 1.6666666666666665,
+      "market_draw_odds": 4.25,
+      "market_home_odds": 5.25,
+      "market_snapshot_at": "2026-11-03T12:08:45Z",
+      "provisional_review": {
+        "status": "watch",
+        "reason": "Watch Palace home at 5.25: +11.41pp research gap, positive in all displayed diagnostics. Palace play Thursday and Liverpool travel to Istanbul on Wednesday. Gravenberch is out of that European trip; Sunday availability is not confirmed. Public coupon comparison only; confirmed XIs and an available named-bookmaker quote remain pending.",
+        "recorded_at": "2026-11-03T12:10:06Z",
+        "paper_stake": 0
+      }
+    },
+    {
+      "notes": "Official 2026/27 FPL GW10 fixture 96, checked 2026-11-03 against https://fantasy.premierleague.com/api/fixtures/. Manual fixture ID 98 is an internal ID, not a provider ID. Upcoming paper-mode fixture; no bet. Confirmed XIs, available named-bookmaker quote, and dated news are pending.\nWEEKEND_NEWS_JSON:{\"checkedAt\":\"2026-11-03T12:10:06Z\",\"home\":\"Official FPL injury/suspension flags: Lukić. Return estimates are not confirmations.\",\"away\":\"Official FPL injury/suspension flags: Milosavljević, J.Araujo, Scott, Tóth.A. Return estimates are not confirmations.\",\"schedule\":\"Ipswich Town: no fixture identified in the reviewed UEFA midweek schedules. AFC Bournemouth: away to Sparta Praha, Thu 5 Nov 17:45 GMT; travel to Prague before Sunday 14:00. Review actual minutes, injuries and rotation after Europe. No numerical news or rest adjustment.\",\"teams\":\"Tuesday provisional review. Official starting XIs and an available named-bookmaker quote remain pending. Latest weekend club press conferences are not yet covered. No paper stake.\",\"availability\":[\"Ipswich Town — Lukić: Groin injury - 75% chance of playing\",\"AFC Bournemouth — Milosavljević: Thigh injury - Expected back 31 Oct; J.Araujo: Thigh injury - Unknown return date; Scott: Thigh injury - Expected back 21 Nov; Tóth.A: Hamstring injury - Unknown return date\"],\"sources\":[{\"label\":\"Official FPL availability, fetched 3 November\",\"url\":\"https://fantasy.premierleague.com/api/bootstrap-static/\"},{\"label\":\"Official PL November fixture amendments\",\"url\":\"https://www.premierleague.com/en/news/4725574\"},{\"label\":\"UEFA Champions League schedule\",\"url\":\"https://www.uefa.com/uefachampionsleague/news/02a8-2174c9e9019d-f909a77bd77a-1000--2026-27-uefa-champions-league-all-the-league-phase-fixtures-a/\"},{\"label\":\"UEFA Europa League schedule\",\"url\":\"https://www.uefa.com/uefaeuropaleague/news/02a8-2174cafa5bb6-82bbc20c9b92-1000--2026-27-europa-league-all-the-league-phase-fixtures/\"},{\"label\":\"Brighton official Conference League schedule\",\"url\":\"https://www.brightonandhovealbion.com/media-article/our-time-is-now-conference-league-fixtures-confirmed\"}]}",
+      "season": "2026/27",
+      "away_team": "AFC Bournemouth",
+      "home_team": "Ipswich Town",
+      "fixture_id": 98,
+      "kickoff_time": "2026-11-08T14:00:00+00:00",
+      "market_source": "Oddschecker UK Premier League public coupon; comparison only",
+      "market_away_odds": 1.95,
+      "market_draw_odds": 3.8,
+      "market_home_odds": 3.9,
+      "market_snapshot_at": "2026-11-03T12:08:45Z",
+      "provisional_review": {
+        "status": "pass",
+        "reason": "Pass: Bournemouth away has a +2.81pp research gap but -4.21pp in the current view and -2.93pp in Venue8 xG-only. Ipswich have four home matches; Bournemouth travel to Prague on Thursday. Public coupon comparison only; confirmed XIs and an available named-bookmaker quote remain pending.",
+        "recorded_at": "2026-11-03T12:10:06Z",
+        "paper_stake": 0
+      }
+    },
+    {
+      "notes": "Official 2026/27 FPL GW10 fixture 100, checked 2026-11-03 against https://fantasy.premierleague.com/api/fixtures/. Manual fixture ID 99 is an internal ID, not a provider ID. Upcoming paper-mode fixture; no bet. Confirmed XIs, available named-bookmaker quote, and dated news are pending.\nWEEKEND_NEWS_JSON:{\"checkedAt\":\"2026-11-03T12:10:06Z\",\"home\":\"Official FPL injury/suspension flags: Ballard, Mukiele, Alderete, Diarra, Mundle. Return estimates are not confirmations.\",\"away\":\"Official FPL injury/suspension flags: Martinez, Henderson, James, Hato, Gittens, João Pedro, Lacroix, Anselmino. Return estimates are not confirmations.\",\"schedule\":\"Sunderland: home to GNK Dinamo, Thu 5 Nov 20:00 GMT, before Sunday 14:00. Chelsea: no fixture identified in the reviewed UEFA midweek schedules. Review actual minutes, injuries and rotation after Europe. No numerical news or rest adjustment.\",\"teams\":\"Tuesday provisional review. Official starting XIs and an available named-bookmaker quote remain pending. Latest weekend club press conferences are not yet covered. No paper stake.\",\"availability\":[\"Sunderland — Ballard: Hamstring injury - Unknown return date; Mukiele: Concussion - 75% chance of playing; Alderete: Suspended until 21 Nov; Diarra: Muscular injury - 75% chance of playing; Mundle: Knee injury - Unknown return date\",\"Chelsea — Martinez: Head injury - Unknown return date; Henderson: Illness - 75% chance of playing; James: Knee injury - Unknown return date; Hato: Unspecified injury - Unknown return date; Gittens: Ankle injury - Unknown return date; João Pedro: Thigh injury - Unknown return date; Lacroix: Hamstring injury - Unknown return date; Anselmino: Unspecified injury - Unknown return date\"],\"sources\":[{\"label\":\"Official FPL availability, fetched 3 November\",\"url\":\"https://fantasy.premierleague.com/api/bootstrap-static/\"},{\"label\":\"Official PL November fixture amendments\",\"url\":\"https://www.premierleague.com/en/news/4725574\"},{\"label\":\"UEFA Champions League schedule\",\"url\":\"https://www.uefa.com/uefachampionsleague/news/02a8-2174c9e9019d-f909a77bd77a-1000--2026-27-uefa-champions-league-all-the-league-phase-fixtures-a/\"},{\"label\":\"UEFA Europa League schedule\",\"url\":\"https://www.uefa.com/uefaeuropaleague/news/02a8-2174cafa5bb6-82bbc20c9b92-1000--2026-27-europa-league-all-the-league-phase-fixtures/\"},{\"label\":\"Brighton official Conference League schedule\",\"url\":\"https://www.brightonandhovealbion.com/media-article/our-time-is-now-conference-league-fixtures-confirmed\"}]}",
+      "season": "2026/27",
+      "away_team": "Chelsea",
+      "home_team": "Sunderland",
+      "fixture_id": 99,
+      "kickoff_time": "2026-11-08T14:00:00+00:00",
+      "market_source": "Oddschecker UK Premier League public coupon; comparison only",
+      "market_away_odds": 2.06,
+      "market_draw_odds": 3.6,
+      "market_home_odds": 3.7,
+      "market_snapshot_at": "2026-11-03T12:08:45Z",
+      "provisional_review": {
+        "status": "watch",
+        "reason": "Watch Sunderland home at 3.70: +10.29pp research gap, positive in all displayed diagnostics. Thursday's home Europa League match precedes Chelsea on Sunday; fresh availability and recovery checks are required. Public coupon comparison only; confirmed XIs and an available named-bookmaker quote remain pending.",
+        "recorded_at": "2026-11-03T12:10:06Z",
+        "paper_stake": 0
+      }
+    },
+    {
+      "notes": "Official 2026/27 FPL GW10 fixture 98, checked 2026-11-03 against https://fantasy.premierleague.com/api/fixtures/. Manual fixture ID 100 is an internal ID, not a provider ID. Upcoming paper-mode fixture; no bet. Confirmed XIs, available named-bookmaker quote, and dated news are pending.\nWEEKEND_NEWS_JSON:{\"checkedAt\":\"2026-11-03T12:10:06Z\",\"home\":\"Official FPL injury/suspension flags: Dorgu, Martinez, Shaw, Rashford, Amad, Ugarte, Šeško. Return estimates are not confirmations.\",\"away\":\"Official FPL injury/suspension flags: Cash, Onana, Ruggeri, Wan-Bissaka. Return estimates are not confirmations.\",\"schedule\":\"Manchester United: home to Roma, Tue 3 Nov 20:00 GMT. Aston Villa: away to Barcelona, Tue 3 Nov 20:00 GMT; travel to Spain before Sunday. Review actual minutes, injuries and rotation after Europe. No numerical news or rest adjustment.\",\"teams\":\"Tuesday provisional review. Official starting XIs and an available named-bookmaker quote remain pending. Latest weekend club press conferences are not yet covered. No paper stake.\",\"availability\":[\"Manchester United — Dorgu: Hamstring injury - Unknown return date; Martinez: Suspended until 22 Nov; Shaw: Unspecified injury - Unknown return date; Rashford: Hip injury - 75% chance of playing; Amad: Calf injury - 75% chance of playing; Ugarte: Knee injury - Unknown return date; Šeško: Shin injury - Unknown return date\",\"Aston Villa — Cash: Suspended until 21 Nov; Onana: Knee injury - Unknown return date; Ruggeri: Hamstring injury - Expected back 2 Jan; Wan-Bissaka: Hamstring injury - Expected back 21 Nov\"],\"sources\":[{\"label\":\"Official FPL availability, fetched 3 November\",\"url\":\"https://fantasy.premierleague.com/api/bootstrap-static/\"},{\"label\":\"Official PL November fixture amendments\",\"url\":\"https://www.premierleague.com/en/news/4725574\"},{\"label\":\"UEFA Champions League schedule\",\"url\":\"https://www.uefa.com/uefachampionsleague/news/02a8-2174c9e9019d-f909a77bd77a-1000--2026-27-uefa-champions-league-all-the-league-phase-fixtures-a/\"},{\"label\":\"UEFA Europa League schedule\",\"url\":\"https://www.uefa.com/uefaeuropaleague/news/02a8-2174cafa5bb6-82bbc20c9b92-1000--2026-27-europa-league-all-the-league-phase-fixtures/\"},{\"label\":\"Brighton official Conference League schedule\",\"url\":\"https://www.brightonandhovealbion.com/media-article/our-time-is-now-conference-league-fixtures-confirmed\"}]}",
+      "season": "2026/27",
+      "away_team": "Aston Villa",
+      "home_team": "Manchester United",
+      "fixture_id": 100,
+      "kickoff_time": "2026-11-08T16:30:00+00:00",
+      "market_source": "Oddschecker UK Premier League public coupon; comparison only",
+      "market_away_odds": 3,
+      "market_draw_odds": 3.75,
+      "market_home_odds": 2.25,
+      "market_snapshot_at": "2026-11-03T12:08:45Z",
+      "provisional_review": {
+        "status": "watch",
+        "reason": "Watch Manchester United home at 2.25: +6.75pp research gap, but only +0.98pp in the current forecast. Both teams play Tuesday; Villa travel to Barcelona. A small current-model margin can disappear with a price change. Public coupon comparison only; confirmed XIs and an available named-bookmaker quote remain pending.",
+        "recorded_at": "2026-11-03T12:10:06Z",
+        "paper_stake": 0
+      }
+    }
+  ]
+}

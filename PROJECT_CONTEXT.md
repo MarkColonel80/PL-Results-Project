@@ -1,8 +1,18 @@
 # PL Results Project — Persistent Project Context
 
-_Last updated: 2026-10-27_
+_Last updated: 2026-11-03_
 
 This file is the durable handoff/source of truth for continuing the project across ChatGPT conversations. At the start of a new project chat, read this file first, then verify live state in GitHub/Supabase/Vercel before making changes.
+
+## Tuesday recovery — 2026-11-03
+
+- Read [DATA_REFRESH_2026-11-03.md](DATA_REFRESH_2026-11-03.md), [WEEKEND_REVIEW_2026-11-03.md](WEEKEND_REVIEW_2026-11-03.md), [WEEKEND_2026-11-06.md](WEEKEND_2026-11-06.md) and data/full-refresh-2026-11-03-checkpoint.json before further work.
+- GW9 is complete including Monday Newcastle 0–1 Everton: 90 season matches. Existing partial imports reconciled, not duplicated; 400 native player rows and 670 FPL rows match source feeds. Approved caches and ten future-only GW10 snapshots refreshed; odds 3 Nov 12:08:45 GMT and news 12:10:06 GMT.
+- Frozen scorecard: 45 eligible/60 published; research Brier 0.643372, current 0.663587, saved market 0.622047. Zero recorded paper stakes, zero profit, ROI undefined. Five GW9 watches yielded two winning outcomes, not paper returns. Ledger now 49 events after ten new GW10 provisional decisions; original 39 unchanged.
+- Next fixtures 6–8 November, IDs 91–100. All meet min-four; Coventry/Hull away and Ipswich home have only four relevant venue matches. No model, staking, selection or eligibility changes.
+- Historical fixture/snapshot, frozen-v3, current-season data and security fingerprints unchanged; see dated checkpoint. Understat GW9 timed out, prior unresolved identity coverage retained. FPL flags cover all clubs; later pressers/XIs/executable quotes remain pending.
+- Existing Tuesday automation remains the single schedule. Read [TUESDAY_CLOUD_RUNBOOK.md](TUESDAY_CLOUD_RUNBOOK.md) and [TUESDAY_AUTOMATION_2026-11-03.md](TUESDAY_AUTOMATION_2026-11-03.md). SQL schema/identity mistakes and expiring temporary workspaces are evidenced; scheduler terminal cause and dispatch delay remain unproven. Durable-worker alternative requires approved unattended access; no new schedule or credential is installed.
+- Publication status is in the dated checkpoint. Do not mark a run complete until exact GitHub/Vercel/domain and authenticated/anonymous access readback succeeds.
 
 ## Dependency and Understat follow-up — 2026-10-27
 
