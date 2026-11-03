@@ -1,0 +1,42 @@
+name: PL Tuesday cloud worker
+on:
+  push:
+    branches: [main]
+    paths: [data/weekly-dispatch.json]
+  workflow_dispatch:
+permissions: {}
+concurrency:
+  group: pl-tuesday-cloud-worker
+  cancel-in-progress: false
+jobs:
+  weekly:
+    if: github.repository == 'MarkColonel80/PL-Results-Project' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 100
+    permissions:
+      contents: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 1
+      - uses: actions/setup-node@v7.1.0
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - name: Resume approved weekly stages
+        env:
+          GH_TOKEN: ${{ github.token }}
+          NEXT_PUBLIC_SUPABASE_URL: https://priibitbnmfetyblzltk.supabase.co
+          NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InByaWliaXRibm1mZXR5Ymx6bHRrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODc2NTAwNjIsImV4cCI6MjEwMzIyNjA2Mn0.QtFh-RgK6qCCQauA0JKhCo6KMSxXzQA3O3uRUJPFY-4
+        run: node scripts/weekly/run.mjs
+      - name: Preserve run evidence
+        if: always()
+        uses: actions/upload-artifact@v7.0.2
+        with:
+          name: weekly-evidence-${{ github.run_id }}-${{ github.run_attempt }}
+          path: work/weekly/
+          retention-days: 90
+          if-no-files-found: error
