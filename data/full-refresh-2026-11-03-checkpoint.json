@@ -11,7 +11,9 @@
     "native_player_rows": 400,
     "fpl_rows": 670,
     "closing_odds_rows": 10,
-    "discrepancies": 0
+    "discrepancies": 0,
+    "later_native_card_corrections": 3,
+    "correction_evidence": "data/source-corrections-2026-11-03.json"
   },
   "protected_history": [
     {
@@ -39,7 +41,7 @@
     {
       "name": "player_match_stats",
       "n": 3600,
-      "hash": "9487c40e683213b8fe8b9d7a63e15983"
+      "hash": "9dede6602d8231ac7d22ffa1a86b6d9c"
     },
     {
       "name": "fpl_player_match_stats",
@@ -133,7 +135,7 @@
   "worker": {
     "approved": true,
     "approval": "User explicitly approved scoped cloud worker in this chat after reviewing proposal",
-    "status": "live_dispatch_verified",
+    "status": "active_live_dispatch_and_noop_verified",
     "scheduler_unchanged": true,
     "workflow": ".github/workflows/pl-weekly-cloud.yml",
     "run_id": 41645179443,
@@ -144,6 +146,7 @@
     "scheduler_prompt_updated_at": "2026-11-03T13:35:00Z",
     "next_run": "2026-11-10T09:00:00Z",
     "new_round_scheduled_execution": "not_yet_observed",
-    "duplicate_dispatch": "test_pending"
+    "duplicate_dispatch": "passed",
+    "repeat_run_id": 41646005513
   }
 }

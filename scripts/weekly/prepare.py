@@ -66,7 +66,7 @@ def native_rows(d,f,teams,players):
   if x.get('type')!='Goal' or x.get('isPenaltyShootoutEvent'):continue
   p=mapid[str(x.get('playerId',x['player']['id']))]
   assist=x.get('assistPlayerId');ap=mapid.get(str(assist)) if assist else None
-  out['goals'].append({'season':SEASON,'gameweek':f['event'],'match_id':mid,'home_team':h,'away_team':a,'minute':x['time'],'added_time':x.get('overloadTime'),'team_side':'home' if x['isHome'] else 'away','player_id':str(p['id']),'player_code':str(p['code']),'player_name':p['web_name'],'assist_player_id':str(ap['id']) if ap else None,'assist_player_code':str(ap['code']) if ap else None,'assist_player_name':ap['web_name'] if ap else None,'goal_type':x.get('goalDescription'),'home_score':x['newScore'][0],'away_score':x['newScore'][1],'incident_index':x['eventId']})
+  out['goals'].append({'season':SEASON,'gameweek':f['event'],'match_id':mid,'home_team':h,'away_team':a,'minute':x['time'],'added_time':x.get('overloadTime'),'team_side':'home' if x['isHome'] else 'away','player_id':str(p['id']),'player_code':str(p['code']),'player_name':p['web_name'],'assist_player_id':str(ap['id']) if ap else None,'assist_player_code':str(ap['code']) if ap else None,'assist_player_name':ap['web_name'] if ap else None,'goal_type':('Own Goal' if x.get('ownGoal') else x.get('goalDescription')),'home_score':x['newScore'][0],'away_score':x['newScore'][1],'incident_index':x['eventId']})
  return out
 def main():
  state=json.loads((OUT/'before.json').read_text())

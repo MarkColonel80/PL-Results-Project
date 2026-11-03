@@ -18,15 +18,11 @@ The checked-in cloud runbook adds schema/identity preflight, bounded provider re
 
 The existing automation instructions were updated in place at 12:14 GMT to read this runbook and use these controls. Saved UI readback confirms the operational prefix and next run 10 November 09:00 GMT. Schedule/timezone and its original substantive safeguards remain unchanged. Final activation/readback status is recorded in PROJECT_CONTEXT and the publication checkpoint. This is hardening of supported failure modes, not a proven repair of the hosted scheduler's unknown terminal error.
 
-## Viable durable-worker option — approval and credentials required; NOT activated
+## Approved durable worker
 
-Keep this automation as the only Tuesday clock. Its small job would dispatch a cloud worker with an idempotency key based on the reviewed round, receive a durable run URL, and report status. It would no longer hold the entire import/review/build session open.
+The user approved this architecture and its scoped unattended access in this chat. The existing Tuesday task is the sole clock; it writes data/weekly-dispatch.json. A dispatch-only GitHub Actions workflow executes bounded source imports/reviews/tests and guarded publication, with a private database lease, stage receipts and historical forecast guards. Repeated completed-date dispatches are readback-only. No cron or second automation is configured.
 
-The worker would use a single concurrency lock, persisted stage records, bounded retries and resumable source batches. Stages: discover/validate sources; review frozen forecasts and valid paper stakes; reconcile imports/caches; create future-only snapshots and provisional news/price records; validate append-only/data contracts; build/guarded GitHub update; deploy and verify. Each stage records input/output hashes and completion before the next starts. Repeated dispatch returns or resumes the same run. No additional cron is enabled.
-
-A dispatch-only GitHub Actions workflow or durable Vercel worker is suitable, but the interactive connected-tool grants used here are not established unattended worker credentials. Before implementation/activation, approve the destination and least-privilege access: GitHub contents write restricted to this repository with expected-SHA checks; database writes restricted to approved import/upcoming/caches operations (not frozen history/security); deployment rights restricted to this Vercel project; existing Basic-auth probes run only in the trusted Vercel environment. Do not copy personal broad tokens or publish a service-role key. Changes to database roles/grants or new persistent credentials need separate approval because they expand unattended access.
-
-Acceptance: forced provider timeout leaves an honest coverage gap; interrupted import resumes without duplicate records; repeated dispatch is a no-op after completion; concurrent run is rejected/resumed; history/security fingerprints stay fixed; failed validation prevents publication; exact commit/domain and 200/401 probes pass; then one observed unattended Tuesday run completes. Until those pass, label recurring reliability unproven. No extra local/cloud schedule, workflow or credential was installed by this recovery.
+GitHub uses its repository-scoped GITHUB_TOKEN plus short-lived OIDC. The Vercel broker verifies repository ID, main, workflow, event and token expiry. A production-only sensitive capability permits only restricted database operations; its hash is private. Existing Basic-auth probes run in Vercel. No broad personal token or service-role key was introduced.
 
 ## Approved implementation progress
 
@@ -42,7 +38,7 @@ Database transactional tests passed for rejected credentials, exclusive lease, r
 
 The live dispatch acceptance succeeded in Actions run 41645179443. GitHub OIDC authenticated the worker; Supabase retained its lease/receipts; GITHUB_TOKEN published receipt commit 553c20f45f8a98af5afe2a36ade69e20afa9f844; Vercel dpl_5ZLXCCevFMLtZ1mBnG4Q9zUk53Gm reached READY. The exact commit passed authenticated 200 / anonymous 401 checks at 13:33:31 GMT. No source, forecast or paper rows were replayed.
 
-At 13:35 GMT the SAME hosted task was updated in place to dispatch the worker. Saved UI confirms next run 10 November 2026 at 09:00 GMT, weekly Tuesday, United Kingdom Time, never-ending. Original substantive instructions remain in the prompt. No duplicate schedule or manual weekly Work prerequisite was added. Repeat-dispatch no-op acceptance is being checked.
+At 13:35 GMT the SAME hosted task was updated in place to dispatch the worker. Saved UI confirms next run 10 November 2026 at 09:00 GMT, weekly Tuesday, United Kingdom Time, never-ending. Original substantive instructions remain in the prompt. No duplicate schedule or manual weekly Work prerequisite was added. Repeat dispatch [41646005513](https://github.com/MarkColonel80/PL-Results-Project/actions/runs/41646005513) passed; its log confirms readback only with no data or ledger changes.
 
 The original hosted terminal error and dispatch delay remain unproven. Full unattended execution against a newly completed round awaits 10 November. Unknown player identities, reschedules, source corrections and older missing data stop for explicit reconciliation. Optional price/club/Europe coverage gaps remain visible. No model, selection, staking or eligibility rule changed.
 

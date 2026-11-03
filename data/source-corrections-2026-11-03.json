@@ -1,0 +1,89 @@
+{
+  "verified_at": "2026-11-03T13:40:00Z",
+  "scope": "Verified native source corrections only; FPL card/point semantics remain separate",
+  "changes": [
+    {
+      "player": "Martinez",
+      "player_id": "419",
+      "player_code": "221820",
+      "match_id": "26-27-prem-chelsea-vs-manchester-united",
+      "source_url": "https://www.fotmob.com/api/data/matchDetails?matchId=5795498",
+      "events": [
+        {
+          "id": 14667714,
+          "minute": 59,
+          "added": null,
+          "card": "Yellow"
+        },
+        {
+          "id": 14667802,
+          "minute": 63,
+          "added": null,
+          "card": "YellowRed"
+        }
+      ],
+      "old_yellow_cards": 0,
+      "verified_native_yellow_cards": 2,
+      "red_cards": 1,
+      "fpl_yellow_cards_unchanged": 0
+    },
+    {
+      "player": "Alderete",
+      "player_id": "535",
+      "player_code": "201895",
+      "match_id": "26-27-prem-coventry-city-vs-sunderland",
+      "source_url": "https://www.fotmob.com/api/data/matchDetails?matchId=5795499",
+      "events": [
+        {
+          "id": 14673154,
+          "minute": 90,
+          "added": 4,
+          "card": "Yellow"
+        },
+        {
+          "id": 14673337,
+          "minute": 90,
+          "added": 9,
+          "card": "YellowRed"
+        }
+      ],
+      "old_yellow_cards": 0,
+      "verified_native_yellow_cards": 2,
+      "red_cards": 1,
+      "fpl_yellow_cards_unchanged": 0
+    },
+    {
+      "player": "J.Ramsey",
+      "player_id": "456",
+      "player_code": "232653",
+      "match_id": "26-27-prem-newcastle-united-vs-everton",
+      "source_url": "https://www.fotmob.com/api/data/matchDetails?matchId=5795503",
+      "events": [
+        {
+          "id": 14691169,
+          "minute": 90,
+          "added": 6,
+          "card": "Yellow"
+        },
+        {
+          "id": 14691172,
+          "minute": 90,
+          "added": 8,
+          "card": "YellowRed"
+        }
+      ],
+      "old_yellow_cards": 0,
+      "verified_native_yellow_cards": 2,
+      "red_cards": 1,
+      "fpl_yellow_cards_unchanged": 0
+    }
+  ],
+  "fields_changed": [
+    "player_match_stats.yellow_cards"
+  ],
+  "source_rows_updated": 3,
+  "identities_provenance_and_created_at_unchanged": true,
+  "forecasts_ledger_and_models_unchanged": true,
+  "previous_player_stats_hash": "9487c40e683213b8fe8b9d7a63e15983",
+  "corrected_player_stats_hash": "9dede6602d8231ac7d22ffa1a86b6d9c"
+}

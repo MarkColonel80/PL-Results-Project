@@ -4,7 +4,7 @@ Cloud-only recovery against GitHub main dc452082e72e5f1f5c78ece5686b5056bf27df63
 
 ## Reconciliation and completed writes
 
-The earlier partial run had already imported GW9. This recovery checked all ten final results against native Fotmob and official FPL finished status, 400 native player rows (including Opta-code identity bridges and available statistics), 670 FPL rows against the official event-9 feed and ten closing odds triples against Football-Data. Zero discrepancies in these comparisons. Goals total 21, matching summed results; 220 starters across 400 lineup rows. Existing season data remained byte-for-byte unchanged in protected row fingerprints.
+The earlier partial run had already imported GW9. This recovery checked all ten final results against native Fotmob and official FPL finished status, 400 native player rows (including Opta-code identity bridges and available statistics), 670 FPL rows against the official event-9 feed and ten closing odds triples against Football-Data. The initial verification recorded zero discrepancies; the later native event-timeline audit below supersedes that statement for three yellow-card fields. Goals total 21, matching summed results; 220 starters across 400 lineup rows. The initial recovery left season data unchanged; the three later verified native-card corrections are recorded below.
 
 Season totals: 90 matches, 3,600 player-stat rows, 5,890 FPL rows, 3,600 lineups, 243 goal events, 90 historical odds rows, 2,461 Understat staged rows and 670 player-season identities. The GW9 FPL source tag from the earlier import still says unchecked; the dated external audit now verifies it against the current official feed without rewriting provenance. FPL remains subject to subsequent official corrections.
 
@@ -38,4 +38,9 @@ Main commit 4161f36e533c2bc88ac1e096b3b427d865bde58f built successfully on Verce
 
 The temporary validation workspace expired after testing; a later optional filesystem snapshot returned sandbox_stopped. Tests and published files/checkpoints were already preserved; raw temporary downloads were not retained. The subsequent worker-development workspace uses automatic cloud snapshot persistence.
 
-Mark subsequently approved implementing the scoped durable cloud worker. That implementation is a separate follow-up stage; the current recurring task remains enabled and hardened.
+The approved cloud worker is now active. Live dispatch 41645179443 passed through GitHub, Supabase and Vercel; repeat dispatch 41646005513 passed without duplicate data or decisions. The existing scheduled task now dispatches it and remains enabled Tuesday 09:00 Europe/London, next 10 November. See TUESDAY_AUTOMATION_2026-11-03.md.
+
+
+## Native card corrections — 13:40 GMT
+
+Verified FotMob event IDs show two cautions leading to dismissal for Martínez, Alderete and Jacob Ramsey. Corrected native player_match_stats.yellow_cards from 0 to 2 in exactly three rows. FPL retains its official 0-yellow/1-red scoring representation. No goals, xG, identity, provenance, forecasts, initial ledger events or prior paper settlements changed. Full before/after field and event evidence is in data/source-corrections-2026-11-03.json. All 400 native rows, 400 lineups and 21 goals now match the source adapter; existing Own Goal capitalization is preserved. Corrected native row hash: 9dede6602d8231ac7d22ffa1a86b6d9c. All other season-layer hashes and the 60 frozen forecasts/12,714 frozen inputs remain unchanged.
