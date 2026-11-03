@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 
 export function middleware(request: NextRequest) {
+  // This exact endpoint performs separate GitHub OIDC verification on every request.
+  if (request.nextUrl.pathname === "/api/weekly-worker") return NextResponse.next();
   const username = process.env.BASIC_AUTH_USERNAME;
   const password = process.env.BASIC_AUTH_PASSWORD;
 

@@ -601,3 +601,14 @@ Browser-role smoke tests passed after the migration for the player/history/team/
 When Mark asks to continue this project, read this file, then inspect current GitHub/Supabase/Vercel state before acting. Do not ask Mark to repeat project history that can be recovered from connected systems. Preserve both the identity-safety rules and the 2026-09-02 least-privilege Supabase security rules.
 
 
+
+
+## Approved Tuesday cloud worker — implementation, 3 November 2026
+
+The user approved scoped unattended execution. The implementation is in `.github/workflows/pl-weekly-cloud.yml`, `scripts/weekly/`, `lib/weekly-identity.ts` and `app/api/weekly-worker/route.ts`. There is no new recurring schedule. The existing automation ID remains the sole Tuesday 09:00 Europe/London clock. Dispatch/run instructions are in TUESDAY_CLOUD_RUNBOOK.md.
+
+A new private Supabase schema stores capability hash, run lease, immutable-history guard and stage receipts. The sole public RPC validates the production-only sensitive capability and allows only approved current-season append operations, future fixtures and unchanged cache/snapshot SQL. The broker requires fixed-repository/main/workflow GitHub OIDC. Original public security/grant fingerprint excluding the new function remains d0357bbab1f575f1f36385e73ccd1cf0.
+
+Fixture ID sequence aligned from 33 to 100 after checking existing max 100; no IDs changed. Replacement preview passed after fixing a Node crypto type mismatch. Existing six test suites, worker identity/current-model regression, provider timeout tests, full-round source preparation, 45-forecast scorecard regression and transactional lease/idempotency/scope tests passed. No forecast, paper event, previous settlement or source row was changed during worker testing.
+
+Activation is pending the live dispatch acceptance run and scheduler prompt readback. The original scheduled failure's terminal cause remains unproven. Preserve the existing schedule/timezone; do not create another automation.
