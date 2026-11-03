@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import {paperDecision,paperScorecard,ledgerPrefixUnchanged,xgOnlyDiagnostic} from "../../lib/weekend-paper.ts";
+import {parseWeekendNews} from "../../lib/weekend-review.ts";
 import {likelyScorelines,favouredOutcome} from "../../lib/weekend-score.ts";
 export function current(s){
  if(!s||s.home_n8<4||s.away_n8<4)return null;
@@ -33,6 +34,13 @@ export function futureArchive(fixtures,prepared,ledger,key){
  const after=structuredClone(ledger),at=new Date().toISOString();
  const rows=fixtures.filter(f=>prepared.upcoming.some(u=>u.home_team===f.home_team&&u.away_team===f.away_team&&Date.parse(u.kickoff_time)===Date.parse(f.kickoff_time))).map(f=>{
   assert.ok(Date.parse(f.kickoff_time)>Date.now());assert.ok(f.snapshot,"Missing refreshed snapshot");
+  const s=f.snapshot;assert.equal(s.candidate_model_version,"v3_24_venue8_50_noppg");
+  assert.ok(Date.parse(s.calculated_at)<=Date.parse(at)&&Date.parse(s.calculated_at)<Date.parse(f.kickoff_time));
+  if(s.home_n8>=4&&s.away_n8>=4){const probs=[s.candidate_home_prob,s.candidate_draw_prob,s.candidate_away_prob].map(Number);assert.ok(probs.every(x=>Number.isFinite(x)&&x>=0&&x<=1));assert.ok(Math.abs(probs.reduce((a,b)=>a+b,0)-1)<1e-8);assert.ok(Date.parse(s.candidate_calculated_at)<Date.parse(f.kickoff_time));}
+  else assert.ok(s.candidate_home_prob==null&&s.candidate_draw_prob==null&&s.candidate_away_prob==null,"Minimum history gate violated");
+  const prices=[f.market_home_odds,f.market_draw_odds,f.market_away_odds];assert.ok(prices.every(x=>x==null||Number(x)>1));
+  if(prices.some(x=>x!=null))assert.ok(Date.parse(f.market_snapshot_at)<Date.parse(f.kickoff_time)&&Date.parse(f.market_snapshot_at)<=Date.parse(at));
+  assert.ok(parseWeekendNews(f.notes),"Missing or invalid dated news");
   if(!after.fixtures.some(x=>x.fixture_id===f.fixture_id))after.fixtures.push({fixture_id:f.fixture_id,kickoff_time:f.kickoff_time,home_team:f.home_team,away_team:f.away_team});
   if(!after.events.some(x=>x.fixture_id===f.fixture_id))after.events.push({id:"gw"+prepared.next_gameweek+"-"+f.fixture_id+"-tuesday-"+key.replaceAll("-",""),fixture_id:f.fixture_id,kickoff_time:f.kickoff_time,recorded_at:at,status:"watch",reason:"Provisional source review only. Confirmed starting teams, available bookmaker quote, club news and sensitivity review remain pending. No selection or paper stake."});
   return {...f,current:current(f.snapshot),diagnostics:{venue8:xgOnlyDiagnostic(f.snapshot,8),venue18:xgOnlyDiagnostic(f.snapshot,18)},scores:likelyScorelines(f.kickoff_time,f.snapshot,Date.parse(at)),favourite:favouredOutcome(f.kickoff_time,f.snapshot,Date.parse(at))};

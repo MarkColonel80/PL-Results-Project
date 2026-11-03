@@ -611,4 +611,8 @@ A new private Supabase schema stores capability hash, run lease, immutable-histo
 
 Fixture ID sequence aligned from 33 to 100 after checking existing max 100; no IDs changed. Replacement preview passed after fixing a Node crypto type mismatch. Existing six test suites, worker identity/current-model regression, provider timeout tests, full-round source preparation, 45-forecast scorecard regression and transactional lease/idempotency/scope tests passed. No forecast, paper event, previous settlement or source row was changed during worker testing.
 
-Activation is pending the live dispatch acceptance run and scheduler prompt readback. The original scheduled failure's terminal cause remains unproven. Preserve the existing schedule/timezone; do not create another automation.
+The live dispatch acceptance succeeded in Actions run 41645179443. GitHub OIDC authenticated the worker; Supabase retained its lease/receipts; GITHUB_TOKEN published receipt commit 553c20f45f8a98af5afe2a36ade69e20afa9f844; Vercel dpl_5ZLXCCevFMLtZ1mBnG4Q9zUk53Gm reached READY. The exact commit passed authenticated 200 / anonymous 401 checks at 13:33:31 GMT. No source, forecast or paper rows were replayed.
+
+At 13:35 GMT the SAME hosted task was updated in place to dispatch the worker. Saved UI confirms next run 10 November 2026 at 09:00 GMT, weekly Tuesday, United Kingdom Time, never-ending. Original substantive instructions remain in the prompt. No duplicate schedule or manual weekly Work prerequisite was added. Repeat-dispatch no-op acceptance is being checked.
+
+The original hosted terminal error and dispatch delay remain unproven. Full unattended execution against a newly completed round awaits 10 November. Unknown player identities, reschedules, source corrections and older missing data stop for explicit reconciliation. Optional price/club/Europe coverage gaps remain visible. No model, selection, staking or eligibility rule changed.

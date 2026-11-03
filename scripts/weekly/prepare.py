@@ -37,6 +37,7 @@ component_points=scope['component_points']
 def native_rows(d,f,teams,players):
  g=d['general'];c=d['content'];line=c['lineup'];ps=c['playerStats'];events=c['matchFacts']['events']['events']
  h,a=teams[f['team_h']],teams[f['team_a']];mid=match_id(h,a)
+ assert all(x.get('card') in ['Yellow','Red','YellowRed'] for x in events if x.get('type')=='Card'),'Unknown card source contract'
  assert g['finished'] and g['leagueId']==47 and canon(g['homeTeam']['name'])==h and canon(g['awayTeam']['name'])==a
  assert date(g['matchTimeUTCDate'])==date(f['kickoff_time'])
  assert [x['score'] for x in d['header']['teams']]==[f['team_h_score'],f['team_a_score']]
@@ -76,7 +77,11 @@ def main():
  rounds=sorted(set(f['event'] for f in fx if f['event']))
  complete=[gw for gw in rounds if all(f['finished'] and f.get('finished_provisional',True) for f in fx if f['event']==gw)]
  assert complete,'No full completed round'
- gw=max(complete);finished=[f for f in fx if f['event']==gw]
+ gw=max(complete)
+ old={m['match_id']:m for m in state['matches']}
+ finished=[f for f in fx if f['finished'] and (f['event']==gw or match_id(teams[f['team_h']],teams[f['team_a']]) not in old)]
+ if any(date(f['kickoff_time'])<now()-dt.timedelta(days=21) and match_id(teams[f['team_h']],teams[f['team_a']]) not in old for f in finished):raise ValueError('Missing older results need audited recovery outside the 21-day import scope')
+ reviewrounds=set(f['event'] for f in finished)
  assert max(date(f['kickoff_time']) for f in finished)<now(),'Round includes future fixture'
  # Include Monday by checking the whole official event, never Saturday/Sunday alone.
  nextgw=next((r for r in rounds if r>gw and any(not f['finished'] for f in fx if f['event']==r)),None)
@@ -95,13 +100,13 @@ def main():
  def parse(pair):
   f,m=pair;d=fetch('https://www.fotmob.com/api/data/matchDetails?matchId='+str(m['id']))
   stats=native_rows(d,f,teams,players);h,a=teams[f['team_h']],teams[f['team_a']];mid=match_id(h,a)
-  match={'match_id':mid,'season':SEASON,'gameweek':gw,'kickoff_time':f['kickoff_time'],'home_team':h,'away_team':a,'home_score':f['team_h_score'],'away_score':f['team_a_score'],'home_formation':d['content']['lineup']['homeTeam'].get('formation'),'away_formation':d['content']['lineup']['awayTeam'].get('formation'),'match_url':'https://www.fotmob.com'+m['pageUrl']}
+  match={'match_id':mid,'season':SEASON,'gameweek':f['event'],'kickoff_time':f['kickoff_time'],'home_team':h,'away_team':a,'home_score':f['team_h_score'],'away_score':f['team_a_score'],'home_formation':d['content']['lineup']['homeTeam'].get('formation'),'away_formation':d['content']['lineup']['awayTeam'].get('formation'),'match_url':'https://www.fotmob.com'+m['pageUrl']}
   return f,m,match,stats
  for f,m,match,stats in pool(parse,native,4):
   if match['match_id'] not in old:
    rows['matches'].append(match)
-   rows['canonical_matches'].append({'canonical_match_id':match['match_id'],'season':SEASON,'match_date':f['kickoff_time'][:10],'home_team':match['home_team'],'away_team':match['away_team'],'home_score':match['home_score'],'away_score':match['away_score']})
-   for source,sid in [('fotmob',m['id']),('fpl_fixture',SEASON+':'+str(f['id']))]:rows['match_source_ids'].append({'source':source,'source_match_id':str(sid),'canonical_match_id':match['match_id'],'season':SEASON,'mapping_method':'exact_teams_date_verified','verified':True})
+  rows['canonical_matches'].append({'canonical_match_id':match['match_id'],'season':SEASON,'match_date':f['kickoff_time'][:10],'home_team':match['home_team'],'away_team':match['away_team'],'home_score':match['home_score'],'away_score':match['away_score']})
+  for source,sid in [('fotmob',m['id']),('fpl_fixture',SEASON+':'+str(f['id']))]:rows['match_source_ids'].append({'source':source,'source_match_id':str(sid),'canonical_match_id':match['match_id'],'season':SEASON,'mapping_method':'exact_teams_date_verified','verified':True})
   for t,rr in stats.items():rows[t].extend(rr)
  known={x['player_id']:x for x in state['identities']}
  for row in rows['player_match_stats']:
@@ -109,7 +114,7 @@ def main():
   assert p and p['player_code']==row['player_code'],'New permanent FPL identity needs explicit reconciliation'
  # Official per-fixture history supports double gameweeks without assigning aggregated stats twice.
  def history(e):
-  d=fetch(API+'/element-summary/'+str(e['id'])+'/');return e,[r for r in d['history'] if r['round']==gw]
+  d=fetch(API+'/element-summary/'+str(e['id'])+'/');return e,[r for r in d['history'] if r['round'] in reviewrounds]
  fixturebyid={f['id']:f for f in finished};posnames={1:'GK',2:'DEF',3:'MID',4:'FWD'}
  intfields='minutes total_points goals_scored assists clean_sheets goals_conceded own_goals penalties_saved penalties_missed yellow_cards red_cards saves bonus bps defensive_contribution clearances_blocks_interceptions recoveries tackles value selected transfers_in transfers_out'.split()
  floatfields='expected_goals expected_assists expected_goal_involvements expected_goals_conceded'.split()
@@ -118,7 +123,7 @@ def main():
    f=fixturebyid.get(s['fixture'])
    if not f:continue
    home=bool(s['was_home']);pos=posnames[e['element_type']]
-   row={'season':SEASON,'gameweek':gw,'fixture_id':f['id'],'player_code':str(e['code']),'player_id':str(e['id']),'player_name':e['web_name'],'team_name':teams[f['team_h'] if home else f['team_a']],'position':pos,'kickoff_time':f['kickoff_time'],'opponent_team':teams[f['team_a'] if home else f['team_h']],'was_home':home,'source':'official_fpl_api'}
+   row={'season':SEASON,'gameweek':f['event'],'fixture_id':f['id'],'player_code':str(e['code']),'player_id':str(e['id']),'player_name':e['web_name'],'team_name':teams[f['team_h'] if home else f['team_a']],'position':pos,'kickoff_time':f['kickoff_time'],'opponent_team':teams[f['team_a'] if home else f['team_h']],'was_home':home,'source':'official_fpl_api'}
    for k in intfields:row[k]=int(s[k]) if s.get(k) is not None else None
    for k in floatfields:row[k]=float(s[k]) if s.get(k) is not None else None
    row.update(component_points(s,pos,'2026-27'));assert row['points_difference']==0
@@ -162,7 +167,7 @@ def main():
   if any(row['market_'+k+'_odds'] is None for k in ['home','draw','away']):gaps.append(h+' v '+a+': current comparison prices unavailable')
   upcomingrows.append(row)
  gaps.extend(['Official club press conferences and confirmed XIs pending; FPL flags can lag announcements.','Understat/Transfermarkt historical mapping backlogs not changed by weekly worker; unresolved identities remain excluded.','European public schedules require official club/UEFA confirmation before any paper selection.'])
- result={'checked_at':stamp(),'reviewed_gameweek':gw,'next_gameweek':nextgw,'completed':[{'official_fixture_id':f['id'],'gameweek':gw,'match_id':match_id(teams[f['team_h']],teams[f['team_a']]),'home_team':teams[f['team_h']],'away_team':teams[f['team_a']],'kickoff_time':f['kickoff_time'],'home_score':f['team_h_score'],'away_score':f['team_a_score'],'finished':True} for f in finished],'imports':rows,'upcoming':upcomingrows,'evidence':evidence,'coverage_gaps':gaps}
+ result={'checked_at':stamp(),'reviewed_gameweek':gw,'next_gameweek':nextgw,'completed':[{'official_fixture_id':f['id'],'gameweek':f['event'],'match_id':match_id(teams[f['team_h']],teams[f['team_a']]),'home_team':teams[f['team_h']],'away_team':teams[f['team_a']],'kickoff_time':f['kickoff_time'],'home_score':f['team_h_score'],'away_score':f['team_a_score'],'finished':True} for f in finished],'imports':rows,'upcoming':upcomingrows,'evidence':evidence,'coverage_gaps':gaps}
  (OUT/'prepared.json').write_text(json.dumps(result,ensure_ascii=False,indent=2))
  print(json.dumps({'completedRound':gw,'nextRound':nextgw,'imports':{t:len(r) for t,r in rows.items()},'gaps':len(gaps)}))
 if __name__=='__main__':main()

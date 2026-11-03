@@ -39,6 +39,17 @@ try{
  }
  execFileSync("python3",["scripts/weekly/prepare.py"],{stdio:"inherit",timeout:3600000});
  const prepared=read(dir+"/prepared.json");
+ const priorCheckpoints=fs.readdirSync("data").filter(n=>/^full-refresh-\\d{4}-\\d{2}-\\d{2}-checkpoint\\.json$/.test(n)).map(n=>read("data/"+n));
+ const lastRound=Math.max(0,...priorCheckpoints.filter(x=>["production_verified","validated_for_publication"].includes(x.stage)).map(x=>x.reviewed_round||0));
+ const newResults=prepared.completed.filter(m=>!before.matches.some(x=>x.match_id===m.match_id));
+ if(!newResults.length&&lastRound>=prepared.reviewed_gameweek&&prepared.upcoming.every(f=>before.fixtures.some(x=>x.home_team===f.home_team&&x.away_team===f.away_team&&Date.parse(x.kickoff_time)===Date.parse(f.kickoff_time)))){
+  // A break does not justify re-importing an old round or publishing duplicate decisions.
+  // Refresh provisional information; retain clearly timestamped existing prices if today's provider is missing.
+  const informational=prepared.upcoming.map(f=>{const old=before.fixtures.find(x=>x.home_team===f.home_team&&x.away_team===f.away_team);return f.market_snapshot_at?f:{...f,...Object.fromEntries(["market_home_odds","market_draw_odds","market_away_odds","market_source","market_snapshot_at"].map(k=>[k,old[k]]))};});
+  await broker("upcoming",key,{rows:informational});const site=await broker("verify_site",key);
+  await receipt("no_new_round",{reviewedRound:prepared.reviewed_gameweek,informationalRefresh:true,existingPricesRetainOriginalTimestamps:true,noModelOrLedgerChanges:true,coverage_gaps:prepared.coverage_gaps,site});
+  await broker("finish",key,{success:true});write(dir+"/complete.json",{noNewResults:true,site,coverage_gaps:prepared.coverage_gaps});console.log("No newly completed round or fixture identity changes; provisional news refreshed without duplicate imports or decisions.");process.exit(0);
+ }
  const frozenReview=review(before,prepared.completed,originalLedger,prepared.checked_at);
  await receipt("review_frozen",{gameweek:prepared.reviewed_gameweek,results:prepared.completed,scorecard:frozenReview.round,paper:frozenReview.paper});
  for(const [table,rows] of Object.entries(prepared.imports)){

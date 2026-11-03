@@ -133,7 +133,17 @@
   "worker": {
     "approved": true,
     "approval": "User explicitly approved scoped cloud worker in this chat after reviewing proposal",
-    "status": "implementation_in_progress",
-    "scheduler_unchanged": true
+    "status": "live_dispatch_verified",
+    "scheduler_unchanged": true,
+    "workflow": ".github/workflows/pl-weekly-cloud.yml",
+    "run_id": 41645179443,
+    "receipt_commit": "553c20f45f8a98af5afe2a36ade69e20afa9f844",
+    "deployment": "dpl_5ZLXCCevFMLtZ1mBnG4Q9zUk53Gm",
+    "authenticated_status": 200,
+    "anonymous_status": 401,
+    "scheduler_prompt_updated_at": "2026-11-03T13:35:00Z",
+    "next_run": "2026-11-10T09:00:00Z",
+    "new_round_scheduled_execution": "not_yet_observed",
+    "duplicate_dispatch": "test_pending"
   }
 }

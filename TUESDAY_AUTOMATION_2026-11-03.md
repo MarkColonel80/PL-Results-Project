@@ -37,3 +37,15 @@ Confirmed and repaired a separate future-import defect: the manual-fixture ident
 The initial worker preview failed TypeScript compilation because DOM and Node crypto JSON-web-key types differed. The explicit Node crypto type fixes it; cloud build and replacement preview passed. This was a new staging-build defect, not a diagnosis of the earlier scheduled failure.
 
 Database transactional tests passed for rejected credentials, exclusive lease, repeated existing imports, rejection of historical changes/unapproved table operations, receipts and completed-run no-op. The test transaction was rolled back. Source adapter exercised all ten GW9 results, 400 native player rows, 400 lineups, 21 goals, 670 official fixture-level FPL rows and ten historical odds rows without production mutation; scorecard regression matches all 45 eligible historical forecasts and zero paper stakes. End-to-end live dispatch status will be recorded after the test run.
+
+## Live acceptance and activation
+
+The live dispatch acceptance succeeded in Actions run 41645179443. GitHub OIDC authenticated the worker; Supabase retained its lease/receipts; GITHUB_TOKEN published receipt commit 553c20f45f8a98af5afe2a36ade69e20afa9f844; Vercel dpl_5ZLXCCevFMLtZ1mBnG4Q9zUk53Gm reached READY. The exact commit passed authenticated 200 / anonymous 401 checks at 13:33:31 GMT. No source, forecast or paper rows were replayed.
+
+At 13:35 GMT the SAME hosted task was updated in place to dispatch the worker. Saved UI confirms next run 10 November 2026 at 09:00 GMT, weekly Tuesday, United Kingdom Time, never-ending. Original substantive instructions remain in the prompt. No duplicate schedule or manual weekly Work prerequisite was added. Repeat-dispatch no-op acceptance is being checked.
+
+The original hosted terminal error and dispatch delay remain unproven. Full unattended execution against a newly completed round awaits 10 November. Unknown player identities, reschedules, source corrections and older missing data stop for explicit reconciliation. Optional price/club/Europe coverage gaps remain visible. No model, selection, staking or eligibility rule changed.
+
+Acceptance run: https://github.com/MarkColonel80/PL-Results-Project/actions/runs/41645179443
+
+Supabase flags the new public SECURITY DEFINER RPC as callable by anon. This is intentional: every operation first checks the approved production-only 256-bit capability, whose hash is private. The capability is never passed to GitHub Actions or clients; GitHub uses short-lived OIDC through the broker. Previous grants, policies and function settings retain their original fingerprint.
