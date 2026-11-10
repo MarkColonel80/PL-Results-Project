@@ -1,0 +1,459 @@
+{
+  "date": "2026-11-10",
+  "stage": "production_verified",
+  "automation_id": "6ad7a14d306c8190b719bd87b6f73e7d",
+  "run_url": "https://github.com/MarkColonel80/PL-Results-Project/actions/runs/42787760318",
+  "original_failure_artifact": {
+    "id": 13749324427,
+    "sha256": "cde47aa8aff75aed877c536ea7779c98b863317b5dddf8e1fb5c6e8aedb55329"
+  },
+  "dispatch_sha": "3944e4f81f6a923a4aaf55f701062aab0c387c86",
+  "dispatch_blob_sha": "0d2dd45f480335849cb5228b66e3d3c0fe69930f",
+  "identity_evidence": {
+    "checked_at": "2026-11-10T16:53:20.090851+00:00",
+    "bootstrap_url": "https://fantasy.premierleague.com/api/bootstrap-static/",
+    "bootstrap_sha256": "c51f3e5612125d34da0ef4d6aa158bd9e2da4ced8b31b711e3892396fc777171",
+    "players": [
+      {
+        "fpl_id": 671,
+        "player_code": "536108",
+        "opta_code": "p536108",
+        "fotmob_id": "1524184",
+        "fotmob_opta_id": "536108",
+        "fotmob_match_id": "5795511",
+        "fotmob_sha256": "9eef9c7b8db5db3cd27124fafb6eb3b98a1c39315502a1018a5765fbbb0091ea",
+        "display_name": "Luca Gunter"
+      },
+      {
+        "fpl_id": 672,
+        "player_code": "671103",
+        "opta_code": "p671103",
+        "fotmob_id": "1714552",
+        "fotmob_opta_id": "671103",
+        "fotmob_match_id": "5795512",
+        "fotmob_sha256": "e5f401125277fefc4ca87d0458f0283b2b9db7fe3a4b13f440ffca8aa265a06f",
+        "display_name": "Modou Kéba Cissé"
+      }
+    ],
+    "existing_mappings": "No canonical, season, source or provider mapping existed for either verified permanent identity. Names were not used to match identities.",
+    "writes": {
+      "players": 2,
+      "player_seasons": 2,
+      "player_source_ids": 2
+    },
+    "fail_closed": "scripts/weekly/prepare.py and database worker identity checks unchanged"
+  },
+  "baseline_fingerprints": {
+    "v3": {
+      "hash": "80347d56a7f4461d70d84840e77dc6dc",
+      "count": 2660
+    },
+    "fpl": {
+      "hash": "22e6dda22075e8709a23df84f6c4f838",
+      "count": 5890
+    },
+    "pms": {
+      "hash": "ce50dc7ae6eff291d57f3cfa0977432a",
+      "count": 3600
+    },
+    "goals": {
+      "hash": "81dd6e6cb062818fba66544c98182cdd",
+      "count": 243
+    },
+    "lineups": {
+      "hash": "c9733ec743cf3410fa8d8896d1b0af2a",
+      "count": 3600
+    },
+    "matches": {
+      "hash": "32aca6999003c19c5984d1becf497381",
+      "count": 90
+    },
+    "players": {
+      "hash": "3570cf831a7ea34343c378fe485165bf",
+      "count": 3421
+    },
+    "seasons": {
+      "hash": "d154bb60780b55bc5c3abf6b563c9164",
+      "count": 10149
+    },
+    "policies": {
+      "hash": "1342c083b85f1d81894fcb55132b3422",
+      "count": 26
+    },
+    "security": {
+      "hash": "85a9a98b76333e664733216a4f632ccb",
+      "count": 220
+    },
+    "source_ids": {
+      "hash": "22be169f86520deeaa07388243d170c5",
+      "count": 4854
+    }
+  },
+  "identity_readback": [
+    {
+      "season": "2026/27",
+      "player_code": "536108",
+      "player_id": "671",
+      "team_code": "6",
+      "team_name": "Tottenham Hotspur",
+      "position": "Goalkeeper",
+      "opta_code": "p536108",
+      "identity_origin_source": "fpl_official",
+      "identity_created_method": "official_permanent_code_20261110",
+      "source": "fotmob",
+      "source_player_id": "1524184",
+      "verified": true
+    },
+    {
+      "season": "2026/27",
+      "player_code": "671103",
+      "player_id": "672",
+      "team_code": "7",
+      "team_name": "Aston Villa",
+      "position": "Defender",
+      "opta_code": "p671103",
+      "identity_origin_source": "fpl_official",
+      "identity_created_method": "official_permanent_code_20261110",
+      "source": "fotmob",
+      "source_player_id": "1714552",
+      "verified": true
+    }
+  ],
+  "optional_sources": {
+    "understat": {
+      "url": "https://understat.com/league/EPL/2026",
+      "checked_at": "2026-11-10T17:01:17.494697+00:00",
+      "sha256": "5b30fb40930f2528f80af2978f919b833751e5ae74a6cfbd3289502df5fe1ea3",
+      "status": "maintenance page: We will come back soon; no datesData or player statistics. No import."
+    },
+    "transfermarkt": {
+      "url": "https://pub-e682421888d945d684bcae8890b0ec20.r2.dev/data/games.csv.gz",
+      "checked_at": "2026-11-10T17:02:01.188915+00:00",
+      "pl_rows": 5320,
+      "latest_date": "2026-05-24",
+      "season_2026_rows": 0
+    }
+  },
+  "rules_changed": false,
+  "schedule_changed": false,
+  "real_bets": false,
+  "completed_receipt": {
+    "run_key": "2026-11-10",
+    "status": "complete",
+    "owner_run": "42787760318",
+    "created_at": "2026-11-10 09:05:42.995375+00",
+    "updated_at": "2026-11-10 17:09:59.880409+00",
+    "receipts": {
+      "caches": {
+        "model": "v3_24_venue8_50_noppg",
+        "minVenue": 4,
+        "futureOnly": true
+      },
+      "failure": {
+        "at": "2026-11-10T09:05:46.612Z",
+        "run": "42787760318",
+        "error": "Command failed: python3 scripts/weekly/prepare.py"
+      },
+      "upcoming": {
+        "fixtures": 10
+      },
+      "published": {
+        "commit": "085297ed98425a6d1236eea4cf0f03713a517091"
+      },
+      "validated": {
+        "build": true,
+        "tests": true,
+        "archive": "data/weekend-2026-11-21-2026-11-10-snapshots.json",
+        "ledgerPrefixUnchanged": true
+      },
+      "import_goals_0": {
+        "ok": true,
+        "rows": 30,
+        "sha256": "55529c13fbb4469e9d93e34ea6b11252835d8791061b1e34d952975b5fafff97",
+        "inserted": 30
+      },
+      "import_lineups_0": {
+        "ok": true,
+        "rows": 100,
+        "sha256": "55a80798b481c18696e806de24abb3eca9e1daf51838ffe38e65427c31a3a660",
+        "inserted": 100
+      },
+      "import_matches_0": {
+        "ok": true,
+        "rows": 10,
+        "sha256": "3f36a6b036ac3dfd4aa76ad1a391972160a249eb0dc8a3f08b4ab434212754dc",
+        "inserted": 10
+      },
+      "import_lineups_100": {
+        "ok": true,
+        "rows": 100,
+        "sha256": "8adeb07c7d208d259820065fdead60b8c808836977a0684b3ee737e87be91393",
+        "inserted": 100
+      },
+      "import_lineups_200": {
+        "ok": true,
+        "rows": 100,
+        "sha256": "c3578c150caa3870553d25e1c15f49617e25562cc4cf35632f442b93b6028ae1",
+        "inserted": 100
+      },
+      "import_lineups_300": {
+        "ok": true,
+        "rows": 100,
+        "sha256": "1dc0fd5117bb36688ed0f5ab274c48d8199208deb11e04c0901906560b106809",
+        "inserted": 100
+      },
+      "production_verified": {
+        "site": {
+          "commit": "085297ed98425a6d1236eea4cf0f03713a517091",
+          "anonymous": 401,
+          "checkedAt": "2026-11-10T17:09:58.720Z",
+          "authenticated": 200
+        },
+        "commit": "085297ed98425a6d1236eea4cf0f03713a517091"
+      },
+      "import_match_source_ids_0": {
+        "ok": true,
+        "rows": 20,
+        "sha256": "57093558180570bb6cdfef069ed207cc0cd721251613b694cf2280cf9aa08257",
+        "inserted": 0
+      },
+      "import_canonical_matches_0": {
+        "ok": true,
+        "rows": 10,
+        "sha256": "69685773855fff9856a551a3a4c35a8344708990d2b19cb0384a87845c31b41b",
+        "inserted": 0
+      },
+      "import_player_match_stats_0": {
+        "ok": true,
+        "rows": 100,
+        "sha256": "b5d63a2c6ea806fa9b6d5a83535cab49561fbe2139ddc4563bf13f8fe5812fc3",
+        "inserted": 100
+      },
+      "import_player_match_stats_100": {
+        "ok": true,
+        "rows": 100,
+        "sha256": "5aba8253c712401d4f5f20bd9d9de47342b327e6f3257da7a314dcaa7005a821",
+        "inserted": 100
+      },
+      "import_player_match_stats_200": {
+        "ok": true,
+        "rows": 100,
+        "sha256": "9a2c3e56cbdbaa977cad5f47a69818529627a780060c08de1ad54037eab985a2",
+        "inserted": 100
+      },
+      "import_player_match_stats_300": {
+        "ok": true,
+        "rows": 100,
+        "sha256": "791b607d6bedcb846ff65bfaa9773ba1465cb1ae22c0f0cfba1e3042e3641fef",
+        "inserted": 100
+      },
+      "import_fpl_player_match_stats_0": {
+        "ok": true,
+        "rows": 100,
+        "sha256": "fbce6c62b6d0e5fd4b0b03c9574f43f7a8b5fd43afb1101ee5a00d2873a5b1cc",
+        "inserted": 100
+      },
+      "import_historical_market_odds_0": {
+        "ok": true,
+        "rows": 10,
+        "sha256": "5c468d0ec39195fc00d33746a66c6afc9c2559e9da7769b2128df9b3be0363f9",
+        "inserted": 10
+      },
+      "import_fpl_player_match_stats_100": {
+        "ok": true,
+        "rows": 100,
+        "sha256": "6bd9c7a0f71337b762c5d7084e92fb746a85bae63b9026d23ec51fe8a4594f9d",
+        "inserted": 100
+      },
+      "import_fpl_player_match_stats_200": {
+        "ok": true,
+        "rows": 100,
+        "sha256": "099f2c87eced59e5463af11b17a2dcca159ff352698433405fce7f516c8b382e",
+        "inserted": 100
+      },
+      "import_fpl_player_match_stats_300": {
+        "ok": true,
+        "rows": 100,
+        "sha256": "e292d0eefec173faaf0cfb9119a935be77e72c6fad991106a031b0b157d5c317",
+        "inserted": 100
+      },
+      "import_fpl_player_match_stats_400": {
+        "ok": true,
+        "rows": 100,
+        "sha256": "4fc7f4eb85b9e9b2106dd5e8c3668c552689c8929b4c1ddbebd538c6e2197e54",
+        "inserted": 100
+      },
+      "import_fpl_player_match_stats_500": {
+        "ok": true,
+        "rows": 100,
+        "sha256": "9ca28c905665725366a0073c437e5f4bc1f13e7bc53b37e50f30853f0be198e1",
+        "inserted": 100
+      },
+      "import_fpl_player_match_stats_600": {
+        "ok": true,
+        "rows": 72,
+        "sha256": "41ccdf50eb9572321fbf703f3b9b7086fc3c1349c00ff1b470ea2cd8a36e22ee",
+        "inserted": 72
+      }
+    },
+    "protected_hash": "4dad075d5189421f61bde2544575d6fa",
+    "protected_unchanged": true
+  },
+  "totals": {
+    "counts": {
+      "fpl": 6562,
+      "odds": 100,
+      "goals": 273,
+      "lineups": 4000,
+      "matches": 100,
+      "understat": 2461,
+      "rich_players": 4000
+    },
+    "future": {
+      "last": "2026-11-23T20:00:00+00:00",
+      "count": 10,
+      "first": "2026-11-21T12:30:00+00:00",
+      "fresh": 10,
+      "prices": 0,
+      "eligible": 10,
+      "minimum_away_n8": 5,
+      "minimum_home_n8": 5
+    },
+    "protected_history": true
+  },
+  "coverage_validation": {
+    "features": {
+      "rows": 200,
+      "teams": 20,
+      "matches": 100,
+      "missing_xg": 0
+    },
+    "gw10_fpl": {
+      "rows": 672,
+      "fixtures": 10,
+      "identities": 672,
+      "point_mismatches": 0
+    },
+    "gw10_rich": {
+      "rows": 400,
+      "matches": 10,
+      "max_starters": 22,
+      "min_starters": 22,
+      "max_per_match": 40,
+      "min_per_match": 40
+    },
+    "gw10_matches": 10,
+    "new_identity_orphans": 0,
+    "gw10_goal_reconciliation": {
+      "score_total": 30,
+      "source_events": 30
+    }
+  },
+  "final_fingerprints": {
+    "v3": {
+      "hash": "80347d56a7f4461d70d84840e77dc6dc",
+      "count": 2660
+    },
+    "fpl": {
+      "hash": "22e6dda22075e8709a23df84f6c4f838",
+      "count": 5890
+    },
+    "pms": {
+      "hash": "ce50dc7ae6eff291d57f3cfa0977432a",
+      "count": 3600
+    },
+    "goals": {
+      "hash": "81dd6e6cb062818fba66544c98182cdd",
+      "count": 243
+    },
+    "lineups": {
+      "hash": "c9733ec743cf3410fa8d8896d1b0af2a",
+      "count": 3600
+    },
+    "matches": {
+      "hash": "32aca6999003c19c5984d1becf497381",
+      "count": 90
+    },
+    "players": {
+      "hash": "3570cf831a7ea34343c378fe485165bf",
+      "count": 3421
+    },
+    "seasons": {
+      "hash": "d154bb60780b55bc5c3abf6b563c9164",
+      "count": 10149
+    },
+    "policies": {
+      "hash": "1342c083b85f1d81894fcb55132b3422",
+      "count": 26
+    },
+    "security": {
+      "hash": "85a9a98b76333e664733216a4f632ccb",
+      "count": 220
+    },
+    "source_ids": {
+      "hash": "22be169f86520deeaa07388243d170c5",
+      "count": 4854
+    }
+  },
+  "sources": {
+    "source_summary": [
+      {
+        "url": "https://fantasy.premierleague.com/api/fixtures/",
+        "bytes": 346292,
+        "sha256": "ce30fce58d110a21c446420455f37f8b67c1c82c03ee2d8366cb990e0d78d0b5",
+        "fetched_at": "2026-11-10T17:07:48.411847+00:00"
+      },
+      {
+        "url": "https://fantasy.premierleague.com/api/bootstrap-static/",
+        "bytes": 1797279,
+        "sha256": "5e9c1975377e22af99b688febc8a69183b0c644b43e34ecd03e2a2418665b4f5",
+        "fetched_at": "2026-11-10T17:07:48.430089+00:00"
+      },
+      {
+        "url": "https://www.football-data.co.uk/fixtures.csv",
+        "bytes": 45324,
+        "sha256": "fed7c78c0f7531724783432b217d7f3343c5a20da109903cc169c4453b385199",
+        "fetched_at": "2026-11-10T17:08:05.709114+00:00"
+      }
+    ],
+    "worker_definition_hash": "8a2acf3070be96d547985d6c3539af42"
+  },
+  "successful_attempt": 3,
+  "successful_artifact": {
+    "id": 13786685092,
+    "sha256": "b3b3b65d4198d5b7c8e2210b495cafbccc13cb574e96b3d7c0e6ac366a97e5fe"
+  },
+  "production": {
+    "commit": "085297ed98425a6d1236eea4cf0f03713a517091",
+    "deployment_id": "dpl_6cA7YXpupPxAZuaZvikCcTKE7r8Q",
+    "url": "https://pl-data.colly.me.uk/betting/weekend",
+    "authenticated": 200,
+    "anonymous": 401,
+    "checked_at": "2026-11-10T17:09:58.720Z"
+  },
+  "operational_repair": {
+    "cause": "Attempt 2 upstream reset during full-history JSON lookup; player transaction rolled back; 10 results/canonical matches and 20 match mappings had committed.",
+    "change": "Add redundant predicates on existing text identity columns to use existing indexes. All original JSON comparisons and guards remain.",
+    "definition_hash_before": "7ea631c973c7c576b17ada4d13072a04",
+    "definition_hash_after": "8a2acf3070be96d547985d6c3539af42",
+    "patch": "   -- Redundant text-key predicates use existing indexes; retain every JSON identity comparison.\n   select string_agg(format('x.%I=$1->>%L',c.column_name,c.column_name),' and ') into cols\n   from information_schema.columns c where c.table_schema='public' and c.table_name=t and c.column_name=any(keys) and c.data_type='text';\n   if cols is not null then predicates:=cols||' and ('||predicates||')'; end if;\n",
+    "tests": [
+      "Representative lookup uses Index Scan, measured 0.160 ms",
+      "Eight allowlisted table lookup results equal original predicates",
+      "Invalid capability rejected",
+      "Function owner, grants, security-definer and settings unchanged"
+    ],
+    "attempt2_artifact": 13783669544
+  },
+  "validation": {
+    "source_tests": true,
+    "unit_suites": 7,
+    "typescript_and_production_build": true,
+    "ledger_prefix_49_events_unchanged": true,
+    "ledger_events_after": 59,
+    "dated_archive_10_fixtures": true,
+    "official_fixture_match": true,
+    "missing_prices_explicitly_null": true,
+    "new_paper_stakes": 0
+  }
+}

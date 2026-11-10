@@ -58,6 +58,10 @@ begin
    if t in('player_match_stats','fpl_player_match_stats','lineups') and not exists(select 1 from public.player_seasons s where s.season='2026/27' and s.player_id=r->>'player_id' and s.player_code=r->>'player_code') then raise exception 'Permanent player identity not verified'; end if;
    if t='fpl_player_match_stats' and not exists(select 1 from public.matches m where m.season='2026/27' and m.kickoff_time=(r->>'kickoff_time')::timestamptz and m.kickoff_time between now()-interval '21 days' and now() and ((m.home_team=r->>'team_name' and m.away_team=r->>'opponent_team') or(m.away_team=r->>'team_name' and m.home_team=r->>'opponent_team'))) then raise exception 'FPL fixture not matched'; end if;
    select string_agg(format('to_jsonb(x)->>%L=$1->>%L',x,x),' and ') into predicates from unnest(keys)x;
+   -- Redundant text-key predicates use existing indexes; retain every JSON identity comparison.
+   select string_agg(format('x.%I=$1->>%L',c.column_name,c.column_name),' and ') into cols
+   from information_schema.columns c where c.table_schema='public' and c.table_name=t and c.column_name=any(keys) and c.data_type='text';
+   if cols is not null then predicates:=cols||' and ('||predicates||')'; end if;
    execute format('select to_jsonb(x) from public.%I x where %s',t,predicates) into old using r;
    if old is not null then
     execute format('select to_jsonb(jsonb_populate_record(null::public.%I,$1))',t) into normalized using r;

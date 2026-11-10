@@ -1,8 +1,19 @@
 # PL Results Project — Persistent Project Context
 
-_Last updated: 2026-11-03_
+_Last updated: 2026-11-10_
 
 This file is the durable handoff/source of truth for continuing the project across ChatGPT conversations. At the start of a new project chat, read this file first, then verify live state in GitHub/Supabase/Vercel before making changes.
+
+## Tuesday cloud recovery — 2026-11-10 (complete)
+
+- Read [TUESDAY_RECOVERY_2026-11-10.md](TUESDAY_RECOVERY_2026-11-10.md), [verification receipt](data/tuesday-2026-11-10-verification.json), dated review/refresh and checkpoint before continuing.
+- Same Actions run 42787760318 succeeded on attempt 3. Verified new FPL IDs 671/672 through official permanent codes 536108/671103 and matching FotMob Opta IDs; only two player/season/source links added. No names used to infer identity.
+- Recovery also fixed an evidenced import timeout by adding redundant indexed text-key predicates to the existing database lookup. Original identity/conflict/history/capability guards, scope and grants remain unchanged; source is reconciled in scripts/pl_weekly_worker.sql.
+- GW10 complete: 100 matches, 4,000 rich player rows and lineups, 273 goals, 6,562 FPL rows, 100 historical-odds records; approved caches contain 200 team rows with complete xG. Understat maintenance and absent 2026/27 Transfermarkt data remain gaps.
+- GW11: ten official fixtures 21–23 November, ten fresh future-only snapshots, minimum venue sample five. Current comparison prices unavailable; retain nulls. FPL news is dated/provisional. Ledger 49→59 events, ten new watches, zero paper selections/stakes. All original history and frozen v3/security fingerprints preserved.
+- GW10 Brier research/current/market: .531117/.533422/.548058. Cumulative 55 eligible of 70 published: .622962/.639920/.608595; market still better overall. No model/betting-rule change recommended or applied from one round.
+- Worker commit 085297ed98425a6d1236eea4cf0f03713a517091 reached READY as dpl_6cA7YXpupPxAZuaZvikCcTKE7r8Q; authenticated 200 / anonymous 401 verified at 17:09:58 GMT. Durable date receipt is complete. This evidence/source reconciliation is a follow-up publication, not another worker run.
+- Existing sole Tuesday automation and workflow unchanged. Completed date keys are readback-only; do not repeat imports or provisional decisions.
 
 ## Tuesday recovery — 2026-11-03
 

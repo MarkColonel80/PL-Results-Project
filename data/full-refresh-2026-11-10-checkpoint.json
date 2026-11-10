@@ -1,10 +1,33 @@
 {
   "date": "2026-11-10",
-  "stage": "validated_for_publication",
+  "stage": "production_verified",
   "reviewed_round": 10,
   "next_round": 11,
   "archive": "data/weekend-2026-11-21-2026-11-10-snapshots.json",
   "run_id": "42787760318",
   "history": "protected by database worker guard",
-  "model_rules_changed": false
+  "model_rules_changed": false,
+  "published_commit": "085297ed98425a6d1236eea4cf0f03713a517091",
+  "deployment_id": "dpl_6cA7YXpupPxAZuaZvikCcTKE7r8Q",
+  "verified_at": "2026-11-10T17:09:58.720Z",
+  "authenticated": 200,
+  "anonymous": 401,
+  "attempt": 3,
+  "receipt": "data/tuesday-2026-11-10-verification.json",
+  "report": "TUESDAY_RECOVERY_2026-11-10.md",
+  "counts": {
+    "fpl": 6562,
+    "odds": 100,
+    "goals": 273,
+    "lineups": 4000,
+    "matches": 100,
+    "understat": 2461,
+    "rich_players": 4000
+  },
+  "remaining_gaps": [
+    "Understat maintenance",
+    "No current-season Transfermarkt data",
+    "GW11 comparison prices unavailable",
+    "Confirmed XIs, executable prices and latest official club/workload checks pending"
+  ]
 }
