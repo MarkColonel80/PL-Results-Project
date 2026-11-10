@@ -63,3 +63,7 @@ All 70 played fixture/snapshot records match the durable history guard. All 2,66
 Worker publication used a non-forced guarded child commit: 085297ed98425a6d1236eea4cf0f03713a517091. Vercel production deployment dpl_6cA7YXpupPxAZuaZvikCcTKE7r8Q reached READY and was assigned to pl-data.colly.me.uk. The exact commit passed authenticated HTTP 200 and anonymous Basic-auth HTTP 401 at 17:09:58.720 GMT. The durable 2026-11-10 receipt is complete.
 
 This follow-up commit records the evidence and reconciles the query repair into source control. No further data import or forecast recalculation is part of that documentation publication. The sole Tuesday 09:00 Europe/London automation, frozen v3, model/selection/staking/eligibility rules and existing access protection remain unchanged. No real bet or third-party message was sent. All execution used cloud services.
+
+## Final evidence retention and readback
+
+The durable report, source hashes, mapping SQL, Supabase receipts and all three Actions artifacts are retained in connected cloud services. The temporary diagnostic workspace expired before its optional filesystem snapshot could be saved; its raw scratch cache is not claimed as retained. A read-only trusted-build check, scripts/verify_tuesday_recovery_live.mjs, verifies authenticated/anonymous production access, deployed GW11 ledger markers, live fixture identities and missing-price handling with credentials held only in the production build environment.
