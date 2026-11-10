@@ -621,3 +621,8 @@ The original hosted terminal error and dispatch delay remain unproven. Full unat
 ### Later native-card source reconciliation, 13:40 GMT
 
 An expanded native event-timeline check identified three two-yellow dismissals (Lisandro Martínez, Omar Alderete, Jacob Ramsey) stored as 0 yellows/1 red, matching FPL's points representation. The native event records establish two cautions and one dismissal in each case. Corrected only those three native yellow_cards fields to 2, preserving FPL fields/points, IDs, source/provenance, creation times, goals/xG and all frozen forecasts/events. Audit: data/source-corrections-2026-11-03.json. Native source regression now matches all 400 player rows, 400 lineups and 21 goals after preserving the existing canonical Own Goal label. Native player-stat hash is 9dede6602d8231ac7d22ffa1a86b6d9c; every other season-layer hash and protected historical forecast hash remains unchanged. Earlier broad zero-discrepancy statements are superseded for these three fields. Forecast and paper scorecards are unchanged.
+
+
+## Tuesday cloud refresh 2026-11-10
+
+See WEEKEND_REVIEW_2026-11-10.md, DATA_REFRESH_2026-11-10.md and data/full-refresh-2026-11-10-checkpoint.json. Full round reviewed before append-only source imports; future-only snapshots refreshed. Production verification is retained in the worker receipt and Actions log.

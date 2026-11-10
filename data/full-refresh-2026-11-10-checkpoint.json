@@ -1,0 +1,10 @@
+{
+  "date": "2026-11-10",
+  "stage": "validated_for_publication",
+  "reviewed_round": 10,
+  "next_round": 11,
+  "archive": "data/weekend-2026-11-21-2026-11-10-snapshots.json",
+  "run_id": "42787760318",
+  "history": "protected by database worker guard",
+  "model_rules_changed": false
+}

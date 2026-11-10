@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-11-03",
+  "as_of": "2026-11-10",
   "season": "2026/27",
   "rounds": [
     3,
@@ -7,28 +7,29 @@
     6,
     7,
     8,
-    9
+    9,
+    10
   ],
-  "eligible": 45,
-  "published": 60,
-  "definitions": "Mean unscaled three-outcome Brier and natural-log loss; lower is better. All eligible saved forecasts, separately from paper selections.",
+  "eligible": 55,
+  "published": 70,
+  "definitions": "Mean unscaled three-outcome Brier and natural-log loss; lower is better. Frozen pre-match forecasts only.",
   "research": {
-    "n": 45,
-    "brier": 0.6433722978640688,
-    "log_loss": 1.0615760756750448,
-    "accuracy": 0.3333333333333333
+    "n": 55,
+    "brier": 0.6229622410841251,
+    "log_loss": 1.0345276990501249,
+    "accuracy": 0.38181818181818183
   },
   "current": {
-    "n": 45,
-    "brier": 0.6635866322499684,
-    "log_loss": 1.087617364549046,
-    "accuracy": 0.35555555555555557
+    "n": 55,
+    "brier": 0.6399203769127783,
+    "log_loss": 1.0570005031911442,
+    "accuracy": 0.41818181818181815
   },
   "market": {
-    "n": 45,
-    "brier": 0.6220470657198437,
-    "log_loss": 1.03359172884059,
-    "accuracy": 0.4666666666666667
+    "n": 55,
+    "brier": 0.6085945544123696,
+    "log_loss": 1.0157678581413778,
+    "accuracy": 0.4909090909090909
   },
-  "source": "https://github.com/MarkColonel80/PL-Results-Project/blob/main/WEEKEND_REVIEW_2026-11-03.md"
+  "source": "https://github.com/MarkColonel80/PL-Results-Project/blob/main/WEEKEND_REVIEW_2026-11-10.md"
 }

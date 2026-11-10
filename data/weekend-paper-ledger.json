@@ -183,6 +183,66 @@
       "kickoff_time": "2026-11-08T16:30:00+00:00",
       "home_team": "Manchester United",
       "away_team": "Aston Villa"
+    },
+    {
+      "fixture_id": 102,
+      "kickoff_time": "2026-11-21T15:00:00+00:00",
+      "home_team": "Aston Villa",
+      "away_team": "Sunderland"
+    },
+    {
+      "fixture_id": 103,
+      "kickoff_time": "2026-11-21T15:00:00+00:00",
+      "home_team": "AFC Bournemouth",
+      "away_team": "Nottingham Forest"
+    },
+    {
+      "fixture_id": 104,
+      "kickoff_time": "2026-11-21T15:00:00+00:00",
+      "home_team": "Chelsea",
+      "away_team": "Leeds United"
+    },
+    {
+      "fixture_id": 105,
+      "kickoff_time": "2026-11-21T15:00:00+00:00",
+      "home_team": "Coventry City",
+      "away_team": "Crystal Palace"
+    },
+    {
+      "fixture_id": 106,
+      "kickoff_time": "2026-11-21T15:00:00+00:00",
+      "home_team": "Tottenham Hotspur",
+      "away_team": "Ipswich Town"
+    },
+    {
+      "fixture_id": 101,
+      "kickoff_time": "2026-11-21T12:30:00+00:00",
+      "home_team": "Manchester City",
+      "away_team": "Fulham"
+    },
+    {
+      "fixture_id": 107,
+      "kickoff_time": "2026-11-21T17:30:00+00:00",
+      "home_team": "Newcastle United",
+      "away_team": "Arsenal"
+    },
+    {
+      "fixture_id": 108,
+      "kickoff_time": "2026-11-22T14:00:00+00:00",
+      "home_team": "Hull City",
+      "away_team": "Brighton & Hove Albion"
+    },
+    {
+      "fixture_id": 109,
+      "kickoff_time": "2026-11-22T16:30:00+00:00",
+      "home_team": "Liverpool",
+      "away_team": "Manchester United"
+    },
+    {
+      "fixture_id": 110,
+      "kickoff_time": "2026-11-23T20:00:00+00:00",
+      "home_team": "Brentford",
+      "away_team": "Everton"
     }
   ],
   "events": [
@@ -1474,6 +1534,86 @@
           "source_url": "https://pl-data.colly.me.uk/betting/weekend#review-100"
         }
       }
+    },
+    {
+      "id": "gw11-102-tuesday-20261110",
+      "fixture_id": 102,
+      "kickoff_time": "2026-11-21T15:00:00+00:00",
+      "recorded_at": "2026-11-10T17:08:48.525Z",
+      "status": "watch",
+      "reason": "Provisional source review only. Confirmed starting teams, available bookmaker quote, club news and sensitivity review remain pending. No selection or paper stake."
+    },
+    {
+      "id": "gw11-103-tuesday-20261110",
+      "fixture_id": 103,
+      "kickoff_time": "2026-11-21T15:00:00+00:00",
+      "recorded_at": "2026-11-10T17:08:48.525Z",
+      "status": "watch",
+      "reason": "Provisional source review only. Confirmed starting teams, available bookmaker quote, club news and sensitivity review remain pending. No selection or paper stake."
+    },
+    {
+      "id": "gw11-104-tuesday-20261110",
+      "fixture_id": 104,
+      "kickoff_time": "2026-11-21T15:00:00+00:00",
+      "recorded_at": "2026-11-10T17:08:48.525Z",
+      "status": "watch",
+      "reason": "Provisional source review only. Confirmed starting teams, available bookmaker quote, club news and sensitivity review remain pending. No selection or paper stake."
+    },
+    {
+      "id": "gw11-105-tuesday-20261110",
+      "fixture_id": 105,
+      "kickoff_time": "2026-11-21T15:00:00+00:00",
+      "recorded_at": "2026-11-10T17:08:48.525Z",
+      "status": "watch",
+      "reason": "Provisional source review only. Confirmed starting teams, available bookmaker quote, club news and sensitivity review remain pending. No selection or paper stake."
+    },
+    {
+      "id": "gw11-106-tuesday-20261110",
+      "fixture_id": 106,
+      "kickoff_time": "2026-11-21T15:00:00+00:00",
+      "recorded_at": "2026-11-10T17:08:48.525Z",
+      "status": "watch",
+      "reason": "Provisional source review only. Confirmed starting teams, available bookmaker quote, club news and sensitivity review remain pending. No selection or paper stake."
+    },
+    {
+      "id": "gw11-101-tuesday-20261110",
+      "fixture_id": 101,
+      "kickoff_time": "2026-11-21T12:30:00+00:00",
+      "recorded_at": "2026-11-10T17:08:48.525Z",
+      "status": "watch",
+      "reason": "Provisional source review only. Confirmed starting teams, available bookmaker quote, club news and sensitivity review remain pending. No selection or paper stake."
+    },
+    {
+      "id": "gw11-107-tuesday-20261110",
+      "fixture_id": 107,
+      "kickoff_time": "2026-11-21T17:30:00+00:00",
+      "recorded_at": "2026-11-10T17:08:48.525Z",
+      "status": "watch",
+      "reason": "Provisional source review only. Confirmed starting teams, available bookmaker quote, club news and sensitivity review remain pending. No selection or paper stake."
+    },
+    {
+      "id": "gw11-108-tuesday-20261110",
+      "fixture_id": 108,
+      "kickoff_time": "2026-11-22T14:00:00+00:00",
+      "recorded_at": "2026-11-10T17:08:48.525Z",
+      "status": "watch",
+      "reason": "Provisional source review only. Confirmed starting teams, available bookmaker quote, club news and sensitivity review remain pending. No selection or paper stake."
+    },
+    {
+      "id": "gw11-109-tuesday-20261110",
+      "fixture_id": 109,
+      "kickoff_time": "2026-11-22T16:30:00+00:00",
+      "recorded_at": "2026-11-10T17:08:48.525Z",
+      "status": "watch",
+      "reason": "Provisional source review only. Confirmed starting teams, available bookmaker quote, club news and sensitivity review remain pending. No selection or paper stake."
+    },
+    {
+      "id": "gw11-110-tuesday-20261110",
+      "fixture_id": 110,
+      "kickoff_time": "2026-11-23T20:00:00+00:00",
+      "recorded_at": "2026-11-10T17:08:48.525Z",
+      "status": "watch",
+      "reason": "Provisional source review only. Confirmed starting teams, available bookmaker quote, club news and sensitivity review remain pending. No selection or paper stake."
     }
   ],
   "settlements": []
