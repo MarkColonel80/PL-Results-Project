@@ -1,0 +1,190 @@
+{
+  "observed_at": "2026-11-21T11:04:02Z",
+  "fixture_round": 11,
+  "mode": "comparison-only; no executable bookmaker quotes",
+  "sources": {
+    "prices": "https://www.oddstorm.com/odds/league/325-england-premier-league",
+    "team_previews": "https://www.premierleague.com/en/news/4764715",
+    "injuries": "https://www.premierleague.com/en/latest-player-injuries/",
+    "official_kickoffs": "https://www.premierleague.com/en/news/4725574"
+  },
+  "source_caveat": "OddStorm best advertised odds are aggregated across different bookmakers and are not a single-bookmaker quote or verified executable offer. The extraneous Sunday Brentford–Everton row was not used; Monday 23 Nov 20:00 was matched to the official schedule.",
+  "fixtures": [
+    {
+      "fixture_id": 101,
+      "kickoff_uk": "2026-11-21 12:30",
+      "home_team": "Manchester City",
+      "away_team": "Fulham",
+      "odds": {
+        "home": 1.42,
+        "draw": 5.8,
+        "away": 8.8
+      },
+      "home_news": "Khusanov/Nunes doubts; Guehi likely available; Semenyo out",
+      "away_news": "Smith Rowe out; Cairney fit; attacking starter undecided"
+    },
+    {
+      "fixture_id": 102,
+      "kickoff_uk": "2026-11-21 15:00",
+      "home_team": "Aston Villa",
+      "away_team": "Sunderland",
+      "odds": {
+        "home": 1.82,
+        "draw": 4.07,
+        "away": 5
+      },
+      "home_news": "Cash out; Wan-Bissaka available, Manzambi fit",
+      "away_news": "Brobbey and Xhaka out; Ballard, Mundle, Diarra out"
+    },
+    {
+      "fixture_id": 103,
+      "kickoff_uk": "2026-11-21 15:00",
+      "home_team": "AFC Bournemouth",
+      "away_team": "Nottingham Forest",
+      "odds": {
+        "home": 2,
+        "draw": 3.73,
+        "away": 4.3
+      },
+      "home_news": "Kroupi ready; Alex Scott gradual return",
+      "away_news": "Hudson-Odoi/Dominguez out; Schlager/Williams doubts"
+    },
+    {
+      "fixture_id": 104,
+      "kickoff_uk": "2026-11-21 15:00",
+      "home_team": "Chelsea",
+      "away_team": "Leeds United",
+      "odds": {
+        "home": 2.1,
+        "draw": 3.75,
+        "away": 3.97
+      },
+      "home_news": "Joao Pedro/Lacroix/Hato out; Caicedo, Acheampong, Martinez fit",
+      "away_news": "Manager reports no new injuries; Stach, Okafor, Rodon available"
+    },
+    {
+      "fixture_id": 105,
+      "kickoff_uk": "2026-11-21 15:00",
+      "home_team": "Coventry City",
+      "away_team": "Crystal Palace",
+      "odds": {
+        "home": 2.6,
+        "draw": 3.72,
+        "away": 2.96
+      },
+      "home_news": "Bobby Thomas training but doubtful; Yirenkyi uncertain",
+      "away_news": "Mateta suspended; Sarr/Tomiyasu out; Larsen status unclear; new manager"
+    },
+    {
+      "fixture_id": 106,
+      "kickoff_uk": "2026-11-21 15:00",
+      "home_team": "Tottenham Hotspur",
+      "away_team": "Ipswich Town",
+      "odds": {
+        "home": 1.55,
+        "draw": 4.88,
+        "away": 6.6
+      },
+      "home_news": "Savio/Maddison/Bergvall/Udogie available; Tel/Tosin out",
+      "away_news": "Manager reports all 27 fit; XI choices open"
+    },
+    {
+      "fixture_id": 107,
+      "kickoff_uk": "2026-11-21 17:30",
+      "home_team": "Newcastle United",
+      "away_team": "Arsenal",
+      "odds": {
+        "home": 6.4,
+        "draw": 4.41,
+        "away": 1.62
+      },
+      "home_news": "Joelinton out; Ramsey returns from ban; Livramento in squad",
+      "away_news": "Saliba fit; Zubimendi out; Saka out for longer"
+    },
+    {
+      "fixture_id": 108,
+      "kickoff_uk": "2026-11-22 14:00",
+      "home_team": "Hull City",
+      "away_team": "Brighton & Hove Albion",
+      "odds": {
+        "home": 7,
+        "draw": 4.6,
+        "away": 1.56
+      },
+      "home_news": "Mendy/Belloumi fit; Crooks ban served",
+      "away_news": "Andres likely fit; Kadioglu back; Minteh fine; Azeez available"
+    },
+    {
+      "fixture_id": 109,
+      "kickoff_uk": "2026-11-22 16:30",
+      "home_team": "Liverpool",
+      "away_team": "Manchester United",
+      "odds": {
+        "home": 1.76,
+        "draw": 4.5,
+        "away": 4.75
+      },
+      "home_news": "Van Dijk/Gravenberch/Frimpong/Szoboszlai expected available",
+      "away_news": "Maguire/Dorgu available; Heaven doubtful; Martinez returns; Rashford unavailable"
+    },
+    {
+      "fixture_id": 110,
+      "kickoff_uk": "2026-11-23 20:00",
+      "home_team": "Brentford",
+      "away_team": "Everton",
+      "odds": {
+        "home": 2.24,
+        "draw": 3.82,
+        "away": 3.55
+      },
+      "home_news": "Thiago three-match ban; Hickey/Collins out",
+      "away_news": "Grealish available; midfield and wing selection uncertain"
+    }
+  ],
+  "news_checked_at": "2026-11-21T11:04:02Z",
+  "official_news_published": "2026-11-20",
+  "official_injury_register_updated_at": "2026-11-21T10:10:00Z",
+  "lineup_status": "not officially confirmed at observation time",
+  "paper_ledger": {
+    "events": 59,
+    "settlements": 0,
+    "changed": false,
+    "new_selection": false
+  },
+  "previous_17_nov_forecasts_preserved": true,
+  "database_preflight": {
+    "matches": 100,
+    "rich_player_rows": 4000,
+    "fpl_rows": 6562
+  },
+  "fingerprints": {
+    "before": {
+      "older_fixtures_md5": "38aab9fd924c6cb615b3bc992f4ad253",
+      "all_snapshots_md5": "3bcd71ab79adbb978d86ffcd254ab046",
+      "gw11_fixtures_md5": "896fc68bc2649402642cbbde14a16bbb",
+      "frozen_v3_md5": "f3097c1d21be5443c3c6790ece2c29dd",
+      "public_policies_md5": "988e388d687556eb705513d4864307bc"
+    },
+    "after": {
+      "older_fixtures_md5": "38aab9fd924c6cb615b3bc992f4ad253",
+      "all_snapshots_md5": "3bcd71ab79adbb978d86ffcd254ab046",
+      "gw11_fixtures_md5": "23d5ec3af54294627c15f897ea9a1c88",
+      "frozen_v3_md5": "f3097c1d21be5443c3c6790ece2c29dd",
+      "public_policies_md5": "988e388d687556eb705513d4864307bc"
+    }
+  },
+  "verified_readback": {
+    "fixtures": 10,
+    "pre_kickoff_comparison_triples": 10,
+    "news_records": 10,
+    "source_linked": 10,
+    "unchanged_older_fixtures": true,
+    "unchanged_snapshots": true,
+    "unchanged_frozen_v3": true,
+    "unchanged_public_policies": true
+  },
+  "model_changes": false,
+  "app_code_changes": false,
+  "automation_changes": false,
+  "production_verification": "Check deployment and domain after GitHub commit; DB readback is already verified."
+}

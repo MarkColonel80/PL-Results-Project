@@ -1,8 +1,15 @@
 # PL Results Project — Persistent Project Context
 
-_Last updated: 2026-11-10_
+_Last updated: 2026-11-21_
 
 This file is the durable handoff/source of truth for continuing the project across ChatGPT conversations. At the start of a new project chat, read this file first, then verify live state in GitHub/Supabase/Vercel before making changes.
+
+## GW11 match-day price and news update — 2026-11-21
+
+- [Dated price/news report](WEEKEND_GW11_MATCHDAY_2026-11-21.md) and [audit JSON](data/weekend-2026-11-21-matchday-odds-news.json). Live Supabase fixture IDs 101–110 now have ten timestamped public cross-bookmaker 1X2 comparisons observed 11:04:02 GMT, plus fresh source-linked 20–21 November official PL team/availability summaries appended after the original Tuesday FPL notes. Official XIs and available named-bookmaker quotes remain unconfirmed; no paper selections/stakes.
+- All 10 saved future-only GW11 forecasts still show 17 November 09:01:21 GMT calculations. No model, selection, staking or eligibility changes, no historical forecast recalculation. 59 original paper events and no settlements unchanged.
+- Database checks preserve pre-update MD5 fingerprints for all earlier fixture rows (`38aab9fd924c6cb615b3bc992f4ad253`), all snapshots (`3bcd71ab79adbb978d86ffcd254ab046`), frozen v3 (`f3097c1d21be5443c3c6790ece2c29dd`) and 26 security policies (`988e388d687556eb705513d4864307bc`). GW11 fixture MD5 changed only for authorised comparison/news fields `896fc68bc2649402642cbbde14a16bbb` → `23d5ec3af54294627c15f897ea9a1c88`. Current stats still 100 matches, 4,000 rich player rows, 6,562 FPL rows.
+- Official match schedule includes Monday 23 November Brentford–Everton 20:00; an inconsistent Sunday duplicate on the odds source was excluded. Comparison source is not proof of an executable single-bookmaker quote. Existing sole Tuesday automation unchanged.
 
 ## Tuesday cloud recovery — 2026-11-10 (complete)
 
