@@ -649,3 +649,8 @@ See WEEKEND_REVIEW_2026-11-10.md, DATA_REFRESH_2026-11-10.md and data/full-refre
 ## Tuesday cloud refresh 2026-11-17
 
 See WEEKEND_REVIEW_2026-11-17.md, DATA_REFRESH_2026-11-17.md and data/full-refresh-2026-11-17-checkpoint.json. Full round reviewed before append-only source imports; future-only snapshots refreshed. Production verification is retained in the worker receipt and Actions log.
+
+
+## Tuesday cloud refresh 2026-11-24
+
+See WEEKEND_REVIEW_2026-11-24.md, DATA_REFRESH_2026-11-24.md and data/full-refresh-2026-11-24-checkpoint.json. Full round reviewed before append-only source imports; future-only snapshots refreshed. Production verification is retained in the worker receipt and Actions log.

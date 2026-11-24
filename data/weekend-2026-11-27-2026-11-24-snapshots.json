@@ -1,0 +1,1070 @@
+{
+  "checked_at": "2026-11-24T14:07:20.159Z",
+  "season": "2026/27",
+  "gameweek": 12,
+  "fixtures": [
+    {
+      "notes": "Official FPL fixture 119; verified permanent fixture identity.\nWEEKEND_NEWS_JSON:{\"away\": \"Sánchez: Has joined Como on loan for the rest of the season; Jörgensen: Has joined RC Strasbourg on loan for the rest of the season; James: Knee injury - Unknown return date; Chalobah: Has joined Como permanently; B.Badiashile: Has joined Napoli on loan for the rest of the season; Hato: Back injury - Unknown return date; M.Sarr: Has joined Real Sociedad on loan for the rest of the season; Gittens: Ankle injury - Unknown return date; Caicedo: Back injury - 75% chance of playing; D.Essugo: Has joined RC Strasbourg on loan for the rest of the season; João Pedro: Thigh injury - Unknown return date; Marc Guiu: Has joined RB Leipzig permanently; Lacroix: Hamstring injury - Unknown return date\", \"home\": \"Morato: Has joined West Ham on loan for the rest of the season; Savona: Knee injury - Unknown return date; Abbott: Has joined Southampton on loan for the rest of the season; Bindon: Has joined Charlton Athletic on loan for the rest of the season; Hudson-Odoi: Unspecified injury - Unknown return date; Hutchinson: Has joined AC Milan on loan for the rest of the season; Bakwa: Has joined Lille on loan for the rest of the season; Dominguez: Muscular injury - Expected back 30 Dec\", \"teams\": \"Tuesday provisional review. Confirmed XIs, executable named-bookmaker quote and latest club press conferences remain pending.\", \"sources\": [{\"url\": \"https://fantasy.premierleague.com/api/bootstrap-static/\", \"label\": \"Official FPL availability\"}, {\"url\": \"https://fantasy.premierleague.com/api/fixtures/\", \"label\": \"Official FPL fixtures\"}], \"schedule\": \"No midweek fixture identified in fetched public schedules; absence is not confirmed clearance.. Recheck minutes, injuries and rotation after Europe. No probability adjustment.\", \"checkedAt\": \"2026-11-24T14:06:31.730837+00:00\", \"availability\": [\"Nottingham Forest — Morato: Has joined West Ham on loan for the rest of the season; Savona: Knee injury - Unknown return date; Abbott: Has joined Southampton on loan for the rest of the season; Bindon: Has joined Charlton Athletic on loan for the rest of the season; Hudson-Odoi: Unspecified injury - Unknown return date; Hutchinson: Has joined AC Milan on loan for the rest of the season; Bakwa: Has joined Lille on loan for the rest of the season; Dominguez: Muscular injury - Expected back 30 Dec\", \"Chelsea — Sánchez: Has joined Como on loan for the rest of the season; Jörgensen: Has joined RC Strasbourg on loan for the rest of the season; James: Knee injury - Unknown return date; Chalobah: Has joined Como permanently; B.Badiashile: Has joined Napoli on loan for the rest of the season; Hato: Back injury - Unknown return date; M.Sarr: Has joined Real Sociedad on loan for the rest of the season; Gittens: Ankle injury - Unknown return date; Caicedo: Back injury - 75% chance of playing; D.Essugo: Has joined RC Strasbourg on loan for the rest of the season; João Pedro: Thigh injury - Unknown return date; Marc Guiu: Has joined RB Leipzig permanently; Lacroix: Hamstring injury - Unknown return date\"]}",
+      "season": "2026/27",
+      "snapshot": {
+        "away_n8": 8,
+        "home_n8": 8,
+        "away_n30": 30,
+        "home_n30": 30,
+        "away_vga8": 1.75,
+        "away_vgf8": 1,
+        "away_vn18": 18,
+        "home_vga8": 0.875,
+        "home_vgf8": 1.125,
+        "home_vn18": 18,
+        "away_ppg30": 1.2666666666666666,
+        "away_vppg8": 0.875,
+        "away_vxga8": 1.8081890651432797,
+        "away_vxgf8": 0.998811610705778,
+        "fixture_id": 111,
+        "home_ppg30": 1.1666666666666667,
+        "home_vppg8": 1.125,
+        "home_vxga8": 1.02170644717142,
+        "home_vxgf8": 1.1024897492183372,
+        "away_vppg18": 1.0555555555555556,
+        "away_vxga18": 1.6267229178414577,
+        "away_vxgf18": 1.4906051603136792,
+        "home_vppg18": 0.9444444444444444,
+        "home_vxga18": 1.1948750876317422,
+        "home_vxgf18": 1.162767666319261,
+        "calculated_at": "2026-11-24T14:06:56.920797+00:00",
+        "league_away_xg": 1.3228857608418059,
+        "league_home_xg": 1.6172381582891324,
+        "away_vga8_capped": 1.75,
+        "away_vgf8_capped": 1,
+        "home_vga8_capped": 0.875,
+        "home_vgf8_capped": 0.78125,
+        "league_away_goals": 1.226829268292683,
+        "league_home_goals": 1.551219512195122,
+        "candidate_away_n10": 10,
+        "candidate_away_n24": 24,
+        "candidate_home_n10": 10,
+        "candidate_home_n24": 24,
+        "candidate_away_prob": 0.229288349747721,
+        "candidate_draw_prob": 0.27818721295745,
+        "candidate_home_prob": 0.492524437294828,
+        "candidate_away_ppg10": 1.3,
+        "candidate_home_ppg10": 0.9,
+        "goal_xg_residual_cap": 1,
+        "candidate_away_lambda": 0.8339307855288867,
+        "candidate_home_lambda": 1.3634710531218595,
+        "candidate_calculated_at": "2026-11-24T14:06:56.920797+00:00",
+        "candidate_model_version": "v3_24_venue8_50_noppg"
+      },
+      "away_team": "Chelsea",
+      "home_team": "Nottingham Forest",
+      "fixture_id": 111,
+      "kickoff_time": "2026-11-27T20:00:00+00:00",
+      "market_source": null,
+      "market_away_odds": null,
+      "market_draw_odds": null,
+      "market_home_odds": null,
+      "market_snapshot_at": null,
+      "current": {
+        "h": 0.4312690060622822,
+        "d": 0.31816594020454403,
+        "a": 0.2505650537331739
+      },
+      "diagnostics": {
+        "venue8": {
+          "h": 0.46909036452436037,
+          "d": 0.29379791862200444,
+          "a": 0.23711171685363527
+        },
+        "venue18": {
+          "h": 0.35174047618049864,
+          "d": 0.27376566223600374,
+          "a": 0.37449386158349757
+        }
+      },
+      "scores": [
+        {
+          "home": 1,
+          "away": 0,
+          "probability": 0.15146993154117794,
+          "tied": false
+        },
+        {
+          "home": 1,
+          "away": 1,
+          "probability": 0.12631543899414122,
+          "tied": false
+        },
+        {
+          "home": 0,
+          "away": 0,
+          "probability": 0.11109141715503687,
+          "tied": false
+        }
+      ],
+      "favourite": {
+        "outcomes": [
+          "home"
+        ],
+        "probability": 0.492524437294828
+      }
+    },
+    {
+      "notes": "Official FPL fixture 117; verified permanent fixture identity.\nWEEKEND_NEWS_JSON:{\"away\": \"Dovin: not included in squad.; Kitching: Has joined Sheffield United on loan for the rest of the season; Woolfenden: Knee injury - Unknown return date; Brau: Has joined Academico de Viseu on loan for the rest of the season; Amenda: Calf injury - Unknown return date; Mason-Clark: Knee injury - 75% chance of playing; Eccles: Ankle injury - Unknown return date; Borges Rodrigues: Has joined Burton Albion on loan for the rest of the season; Andrews: Has joined Oxford United on loan for the rest of the season; Wright: Lack of match fitness - Unknown return date; Markelo: Has joined Shabab Al-Ahli Dubai permanently; Bassette: Has joined KVC Westerlo on loan for the rest of the season; Awoniyi: Ankle injury - 75% chance of playing; Yirenkyi: Unspecified injury - 75% chance of playing\", \"home\": \"Perri: Has joined Torino on loan for the rest of the season; Bornauw: Has joined Hamburg SV on loan for the rest of the season; Gnonto: Has joined ACF Fiorentina on loan for the rest of the season; Harrison: Has joined New England Revolution permanently; Piroe: Has joined West Ham United on loan for the rest of the season; Mateo Joseph: Knee injury - Unknown return date\", \"teams\": \"Tuesday provisional review. Confirmed XIs, executable named-bookmaker quote and latest club press conferences remain pending.\", \"sources\": [{\"url\": \"https://fantasy.premierleague.com/api/bootstrap-static/\", \"label\": \"Official FPL availability\"}, {\"url\": \"https://fantasy.premierleague.com/api/fixtures/\", \"label\": \"Official FPL fixtures\"}], \"schedule\": \"No midweek fixture identified in fetched public schedules; absence is not confirmed clearance.. Recheck minutes, injuries and rotation after Europe. No probability adjustment.\", \"checkedAt\": \"2026-11-24T14:06:31.730949+00:00\", \"availability\": [\"Leeds United — Perri: Has joined Torino on loan for the rest of the season; Bornauw: Has joined Hamburg SV on loan for the rest of the season; Gnonto: Has joined ACF Fiorentina on loan for the rest of the season; Harrison: Has joined New England Revolution permanently; Piroe: Has joined West Ham United on loan for the rest of the season; Mateo Joseph: Knee injury - Unknown return date\", \"Coventry City — Dovin: not included in squad.; Kitching: Has joined Sheffield United on loan for the rest of the season; Woolfenden: Knee injury - Unknown return date; Brau: Has joined Academico de Viseu on loan for the rest of the season; Amenda: Calf injury - Unknown return date; Mason-Clark: Knee injury - 75% chance of playing; Eccles: Ankle injury - Unknown return date; Borges Rodrigues: Has joined Burton Albion on loan for the rest of the season; Andrews: Has joined Oxford United on loan for the rest of the season; Wright: Lack of match fitness - Unknown return date; Markelo: Has joined Shabab Al-Ahli Dubai permanently; Bassette: Has joined KVC Westerlo on loan for the rest of the season; Awoniyi: Ankle injury - 75% chance of playing; Yirenkyi: Unspecified injury - 75% chance of playing\"]}",
+      "season": "2026/27",
+      "snapshot": {
+        "away_n8": 5,
+        "home_n8": 8,
+        "away_n30": 11,
+        "home_n30": 30,
+        "away_vga8": 2,
+        "away_vgf8": 0.6,
+        "away_vn18": 5,
+        "home_vga8": 0.5,
+        "home_vgf8": 1.75,
+        "home_vn18": 18,
+        "away_ppg30": 1.0909090909090908,
+        "away_vppg8": 0.6,
+        "away_vxga8": 1.5612581511884929,
+        "away_vxgf8": 0.9973474866300821,
+        "fixture_id": 112,
+        "home_ppg30": 1.4333333333333333,
+        "home_vppg8": 2.25,
+        "home_vxga8": 1.2198534980414435,
+        "home_vxgf8": 1.6027692477125675,
+        "away_vppg18": 0.6,
+        "away_vxga18": 1.5612581511884929,
+        "away_vxgf18": 0.9973474866300821,
+        "home_vppg18": 1.8333333333333333,
+        "home_vxga18": 1.2813682213517528,
+        "home_vxgf18": 1.5578974434278077,
+        "calculated_at": "2026-11-24T14:06:56.920797+00:00",
+        "league_away_xg": 1.3245309583010767,
+        "league_home_xg": 1.617451454519668,
+        "away_vga8_capped": 1.657460455223918,
+        "away_vgf8_capped": 0.6,
+        "home_vga8_capped": 0.5,
+        "home_vgf8_capped": 1.6162755495589227,
+        "league_away_goals": 1.2273838630806846,
+        "league_home_goals": 1.5501222493887532,
+        "candidate_away_n10": 10,
+        "candidate_away_n24": 11,
+        "candidate_home_n10": 10,
+        "candidate_home_n24": 24,
+        "candidate_away_prob": 0.159621701176009,
+        "candidate_draw_prob": 0.260084266912039,
+        "candidate_home_prob": 0.580294031911951,
+        "candidate_away_ppg10": 1.2,
+        "candidate_home_ppg10": 1.4,
+        "goal_xg_residual_cap": 1,
+        "candidate_away_lambda": 0.6483331770283338,
+        "candidate_home_lambda": 1.5057872978022344,
+        "candidate_calculated_at": "2026-11-24T14:06:56.920797+00:00",
+        "candidate_model_version": "v3_24_venue8_50_noppg"
+      },
+      "away_team": "Coventry City",
+      "home_team": "Leeds United",
+      "fixture_id": 112,
+      "kickoff_time": "2026-11-28T15:00:00+00:00",
+      "market_source": null,
+      "market_away_odds": null,
+      "market_draw_odds": null,
+      "market_home_odds": null,
+      "market_snapshot_at": null,
+      "current": {
+        "h": 0.6076235108882229,
+        "d": 0.2540136051760419,
+        "a": 0.1383628839357353
+      },
+      "diagnostics": {
+        "venue8": {
+          "h": 0.5075498493055967,
+          "d": 0.26155086123698207,
+          "a": 0.2308992894574212
+        },
+        "venue18": null
+      },
+      "scores": [
+        {
+          "home": 1,
+          "away": 0,
+          "probability": 0.17467911933867505,
+          "tied": false
+        },
+        {
+          "home": 2,
+          "away": 0,
+          "probability": 0.13151479954572876,
+          "tied": false
+        },
+        {
+          "home": 0,
+          "away": 0,
+          "probability": 0.11600517522868418,
+          "tied": false
+        }
+      ],
+      "favourite": {
+        "outcomes": [
+          "home"
+        ],
+        "probability": 0.580294031911951
+      }
+    },
+    {
+      "notes": "Official FPL fixture 118; verified permanent fixture identity.\nWEEKEND_NEWS_JSON:{\"away\": \"Collins: Knee injury - Expected back 2 Dec; Henry: Hip injury - Unknown return date; Hickey: Hamstring injury - Expected back 2 Dec; Milambo: Knee injury - Unknown return date; Dasilva: Hamstring injury - Unknown return date; Thiago: Suspended until 5 Dec; Furo: Unspecified injury - Unknown return date\", \"home\": \"Baleba: Hamstring injury - Unknown return date; Darlow: Unspecified injury - 75% chance of playing; Bayindir: Has joined Celta Vigo on loan for the rest of the season; Yoro: Suspended until 2 Dec; Shaw: Unspecified injury - 75% chance of playing; Fredricson: Has joined Lausanne-Sport permanently; Rashford: Hip injury - Unknown return date; Ugarte: Knee injury - Unknown return date; Collyer: Has joined West Brom permanently; Šeško: Shin injury - Unknown return date; Obi: Has joined Willem II on loan for the rest of the season\", \"teams\": \"Tuesday provisional review. Confirmed XIs, executable named-bookmaker quote and latest club press conferences remain pending.\", \"sources\": [{\"url\": \"https://fantasy.premierleague.com/api/bootstrap-static/\", \"label\": \"Official FPL availability\"}, {\"url\": \"https://fantasy.premierleague.com/api/fixtures/\", \"label\": \"Official FPL fixtures\"}, {\"url\": \"https://www.fotmob.com/matches/sporting-cp-vs-manchester-united/3bf4ni#6106279\", \"label\": \"Public European fixture schedule\"}], \"schedule\": \"Sporting CP v Manchester United 2026-11-25T20:00:00Z. Recheck minutes, injuries and rotation after Europe. No probability adjustment.\", \"checkedAt\": \"2026-11-24T14:06:31.731075+00:00\", \"availability\": [\"Manchester United — Baleba: Hamstring injury - Unknown return date; Darlow: Unspecified injury - 75% chance of playing; Bayindir: Has joined Celta Vigo on loan for the rest of the season; Yoro: Suspended until 2 Dec; Shaw: Unspecified injury - 75% chance of playing; Fredricson: Has joined Lausanne-Sport permanently; Rashford: Hip injury - Unknown return date; Ugarte: Knee injury - Unknown return date; Collyer: Has joined West Brom permanently; Šeško: Shin injury - Unknown return date; Obi: Has joined Willem II on loan for the rest of the season\", \"Brentford — Collins: Knee injury - Expected back 2 Dec; Henry: Hip injury - Unknown return date; Hickey: Hamstring injury - Expected back 2 Dec; Milambo: Knee injury - Unknown return date; Dasilva: Hamstring injury - Unknown return date; Thiago: Suspended until 5 Dec; Furo: Unspecified injury - Unknown return date\"]}",
+      "season": "2026/27",
+      "snapshot": {
+        "away_n8": 8,
+        "home_n8": 8,
+        "away_n30": 30,
+        "home_n30": 30,
+        "away_vga8": 1.75,
+        "away_vgf8": 1,
+        "away_vn18": 18,
+        "home_vga8": 2,
+        "home_vgf8": 2.25,
+        "home_vn18": 18,
+        "away_ppg30": 1.4333333333333333,
+        "away_vppg8": 0.625,
+        "away_vxga8": 2.132012567492202,
+        "away_vxgf8": 1.146991572221741,
+        "fixture_id": 113,
+        "home_ppg30": 1.6333333333333333,
+        "home_vppg8": 1.75,
+        "home_vxga8": 1.8500783070735634,
+        "home_vxgf8": 2.4459909104136752,
+        "away_vppg18": 1.222222222222222,
+        "away_vxga18": 1.824227807774312,
+        "away_vxgf18": 1.1453295876541072,
+        "home_vppg18": 1.9444444444444444,
+        "home_vxga18": 1.4898181364771392,
+        "home_vxgf18": 2.067107071294967,
+        "calculated_at": "2026-11-24T14:06:56.920797+00:00",
+        "league_away_xg": 1.3245309583010767,
+        "league_home_xg": 1.617451454519668,
+        "away_vga8_capped": 1.75,
+        "away_vgf8_capped": 0.9742797405924648,
+        "home_vga8_capped": 1.975,
+        "home_vgf8_capped": 2.25,
+        "league_away_goals": 1.2273838630806846,
+        "league_home_goals": 1.5501222493887532,
+        "candidate_away_n10": 10,
+        "candidate_away_n24": 24,
+        "candidate_home_n10": 10,
+        "candidate_home_n24": 24,
+        "candidate_away_prob": 0.278024575324114,
+        "candidate_draw_prob": 0.23867098867297,
+        "candidate_home_prob": 0.483304436002916,
+        "candidate_away_ppg10": 1.4,
+        "candidate_home_ppg10": 0.8,
+        "goal_xg_residual_cap": 1,
+        "candidate_away_lambda": 1.2357109795741894,
+        "candidate_home_lambda": 1.7020775974648645,
+        "candidate_calculated_at": "2026-11-24T14:06:56.920797+00:00",
+        "candidate_model_version": "v3_24_venue8_50_noppg"
+      },
+      "away_team": "Brentford",
+      "home_team": "Manchester United",
+      "fixture_id": 113,
+      "kickoff_time": "2026-11-28T15:00:00+00:00",
+      "market_source": null,
+      "market_away_odds": null,
+      "market_draw_odds": null,
+      "market_home_odds": null,
+      "market_snapshot_at": null,
+      "current": {
+        "h": 0.6034643741319846,
+        "d": 0.1885060167962672,
+        "a": 0.2080296090717482
+      },
+      "diagnostics": {
+        "venue8": {
+          "h": 0.6421391230695918,
+          "d": 0.17193361359355322,
+          "a": 0.18592726333685497
+        },
+        "venue18": {
+          "h": 0.5752011058656253,
+          "d": 0.2095423035299368,
+          "a": 0.21525659060443791
+        }
+      },
+      "scores": [
+        {
+          "home": 1,
+          "away": 1,
+          "probability": 0.111437380066283,
+          "tied": false
+        },
+        {
+          "home": 2,
+          "away": 1,
+          "probability": 0.09483753406549898,
+          "tied": false
+        },
+        {
+          "home": 1,
+          "away": 0,
+          "probability": 0.09018078005965678,
+          "tied": false
+        }
+      ],
+      "favourite": {
+        "outcomes": [
+          "home"
+        ],
+        "probability": 0.483304436002916
+      }
+    },
+    {
+      "notes": "Official FPL fixture 116; verified permanent fixture identity.\nWEEKEND_NEWS_JSON:{\"away\": \"Digne: Has joined Paris Saint-Germain permanently; Cash: Concussion - 75% chance of playing; A.García: Has joined Getafe on loan for the rest of the season; Nedeljkovic: Has joined Rangers on loan for the rest of the season; Bailey: Has joined Olympiakos permanently; Onana: Knee injury - Unknown return date; Iling Jr: Has joined Bolton Wanderers on loan for the rest of the season; Watkins: Has joined Al Hilal permanently; Ruggeri: Hamstring injury - Expected back 2 Jan; Lynch: Has joined Oxford United on loan until January\", \"home\": \"Davis: Calf injury - 75% chance of playing; Johnson: Has joined Stoke City on loan for the rest of the season; Burns: Has joined Leicester City permanently; Ogbene: Has joined Lincoln City on loan until January; Hirst: Has joined Stoke City permanently; Szmodics: Has joined Derby County on loan for the rest of the season; Al-Hamadi: Has joined Sheffield Wednesday on loan for the rest of the season; Van Oevelen: Has joined Valencia on loan for the rest of the season; Humphreys: Has joined Huddersfield Town on loan for the rest of the season\", \"teams\": \"Tuesday provisional review. Confirmed XIs, executable named-bookmaker quote and latest club press conferences remain pending.\", \"sources\": [{\"url\": \"https://fantasy.premierleague.com/api/bootstrap-static/\", \"label\": \"Official FPL availability\"}, {\"url\": \"https://fantasy.premierleague.com/api/fixtures/\", \"label\": \"Official FPL fixtures\"}, {\"url\": \"https://www.fotmob.com/matches/galatasaray-vs-aston-villa/2y822y#6106339\", \"label\": \"Public European fixture schedule\"}], \"schedule\": \"Galatasaray v Aston Villa 2026-11-24T17:45:00.000Z. Recheck minutes, injuries and rotation after Europe. No probability adjustment.\", \"checkedAt\": \"2026-11-24T14:06:31.731176+00:00\", \"availability\": [\"Ipswich Town — Davis: Calf injury - 75% chance of playing; Johnson: Has joined Stoke City on loan for the rest of the season; Burns: Has joined Leicester City permanently; Ogbene: Has joined Lincoln City on loan until January; Hirst: Has joined Stoke City permanently; Szmodics: Has joined Derby County on loan for the rest of the season; Al-Hamadi: Has joined Sheffield Wednesday on loan for the rest of the season; Van Oevelen: Has joined Valencia on loan for the rest of the season; Humphreys: Has joined Huddersfield Town on loan for the rest of the season\", \"Aston Villa — Digne: Has joined Paris Saint-Germain permanently; Cash: Concussion - 75% chance of playing; A.García: Has joined Getafe on loan for the rest of the season; Nedeljkovic: Has joined Rangers on loan for the rest of the season; Bailey: Has joined Olympiakos permanently; Onana: Knee injury - Unknown return date; Iling Jr: Has joined Bolton Wanderers on loan for the rest of the season; Watkins: Has joined Al Hilal permanently; Ruggeri: Hamstring injury - Expected back 2 Jan; Lynch: Has joined Oxford United on loan until January\"]}",
+      "season": "2026/27",
+      "snapshot": {
+        "away_n8": 8,
+        "home_n8": 5,
+        "away_n30": 30,
+        "home_n30": 11,
+        "away_vga8": 1.75,
+        "away_vgf8": 1.5,
+        "away_vn18": 18,
+        "home_vga8": 1.4,
+        "home_vgf8": 1.2,
+        "home_vn18": 5,
+        "away_ppg30": 1.3333333333333333,
+        "away_vppg8": 1.5,
+        "away_vxga8": 1.8825495764566584,
+        "away_vxgf8": 1.4885607582796365,
+        "fixture_id": 114,
+        "home_ppg30": 1,
+        "home_vppg8": 1.4,
+        "home_vxga8": 1.7196060735881329,
+        "home_vxgf8": 1.20802865665406,
+        "away_vppg18": 1.5,
+        "away_vxga18": 1.7961331450918483,
+        "away_vxgf18": 1.4413658925687274,
+        "home_vppg18": 1.4,
+        "home_vxga18": 1.7196060735881329,
+        "home_vxgf18": 1.20802865665406,
+        "calculated_at": "2026-11-24T14:06:56.920797+00:00",
+        "league_away_xg": 1.3245309583010767,
+        "league_home_xg": 1.617451454519668,
+        "away_vga8_capped": 1.75,
+        "away_vgf8_capped": 1.4085288186743856,
+        "home_vga8_capped": 1.3488277569413185,
+        "home_vgf8_capped": 1.2,
+        "league_away_goals": 1.2273838630806846,
+        "league_home_goals": 1.5501222493887532,
+        "candidate_away_n10": 10,
+        "candidate_away_n24": 24,
+        "candidate_home_n10": 10,
+        "candidate_home_n24": 11,
+        "candidate_away_prob": 0.34506476253194,
+        "candidate_draw_prob": 0.252725410173335,
+        "candidate_home_prob": 0.402209827294725,
+        "candidate_away_ppg10": 1.4,
+        "candidate_home_ppg10": 0.8,
+        "goal_xg_residual_cap": 1,
+        "candidate_away_lambda": 1.332364027219122,
+        "candidate_home_lambda": 1.4582559371599486,
+        "candidate_calculated_at": "2026-11-24T14:06:56.920797+00:00",
+        "candidate_model_version": "v3_24_venue8_50_noppg"
+      },
+      "away_team": "Aston Villa",
+      "home_team": "Ipswich Town",
+      "fixture_id": 114,
+      "kickoff_time": "2026-11-28T17:30:00+00:00",
+      "market_source": null,
+      "market_away_odds": null,
+      "market_draw_odds": null,
+      "market_home_odds": null,
+      "market_snapshot_at": null,
+      "current": {
+        "h": 0.3430347665422971,
+        "d": 0.25077801646134157,
+        "a": 0.4061872169963614
+      },
+      "diagnostics": {
+        "venue8": {
+          "h": 0.32094662467667295,
+          "d": 0.2384914047426668,
+          "a": 0.4405619705806602
+        },
+        "venue18": null
+      },
+      "scores": [
+        {
+          "home": 1,
+          "away": 1,
+          "probability": 0.1192630193994313,
+          "tied": false
+        },
+        {
+          "home": 1,
+          "away": 0,
+          "probability": 0.08951233819210369,
+          "tied": false
+        },
+        {
+          "home": 2,
+          "away": 1,
+          "probability": 0.0869580030614214,
+          "tied": false
+        }
+      ],
+      "favourite": {
+        "outcomes": [
+          "home"
+        ],
+        "probability": 0.402209827294725
+      }
+    },
+    {
+      "notes": "Official FPL fixture 114; verified permanent fixture identity.\nWEEKEND_NEWS_JSON:{\"away\": \"Pecsi: Has joined TSV Hartberg on loan for the rest of the season; Jaros: Knee injury - Unknown return date; Bradley: Knee injury - Expected back 12 Dec; Leoni: Knee injury - Expected back 12 Dec; Ramsay: Has joined St Mirren on loan for the rest of the season; Gakpo: Calf injury - 75% chance of playing; Gravenberch: Foot injury - 75% chance of playing; C.Jones: Has joined Internazionale permanently; Bajcetic: Has joined Celta Vigo permanently; Ekitiké: Achilles injury - Unknown return date; Elliott: Has joined Valencia on loan for the rest of the season\", \"home\": \"Tarkowski: Suspended until 13 Dec; Patterson: Has joined Torino permanently; Aznou: Has joined Malaga on loan for the rest of the season; Beto: Has joined Fiorentina permanently\", \"teams\": \"Tuesday provisional review. Confirmed XIs, executable named-bookmaker quote and latest club press conferences remain pending.\", \"sources\": [{\"url\": \"https://fantasy.premierleague.com/api/bootstrap-static/\", \"label\": \"Official FPL availability\"}, {\"url\": \"https://fantasy.premierleague.com/api/fixtures/\", \"label\": \"Official FPL fixtures\"}, {\"url\": \"https://www.fotmob.com/matches/club-brugge-vs-liverpool/2dyl8a#6106294\", \"label\": \"Public European fixture schedule\"}], \"schedule\": \"Club Brugge v Liverpool 2026-11-25T20:00:00Z. Recheck minutes, injuries and rotation after Europe. No probability adjustment.\", \"checkedAt\": \"2026-11-24T14:06:31.731265+00:00\", \"availability\": [\"Everton — Tarkowski: Suspended until 13 Dec; Patterson: Has joined Torino permanently; Aznou: Has joined Malaga on loan for the rest of the season; Beto: Has joined Fiorentina permanently\", \"Liverpool — Pecsi: Has joined TSV Hartberg on loan for the rest of the season; Jaros: Knee injury - Unknown return date; Bradley: Knee injury - Expected back 12 Dec; Leoni: Knee injury - Expected back 12 Dec; Ramsay: Has joined St Mirren on loan for the rest of the season; Gakpo: Calf injury - 75% chance of playing; Gravenberch: Foot injury - 75% chance of playing; C.Jones: Has joined Internazionale permanently; Bajcetic: Has joined Celta Vigo permanently; Ekitiké: Achilles injury - Unknown return date; Elliott: Has joined Valencia on loan for the rest of the season\"]}",
+      "season": "2026/27",
+      "snapshot": {
+        "away_n8": 8,
+        "home_n8": 8,
+        "away_n30": 30,
+        "home_n30": 30,
+        "away_vga8": 1.5,
+        "away_vgf8": 2,
+        "away_vn18": 18,
+        "home_vga8": 1.625,
+        "home_vgf8": 1.625,
+        "home_vn18": 18,
+        "away_ppg30": 1.6,
+        "away_vppg8": 2,
+        "away_vxga8": 1.5256433786075563,
+        "away_vxgf8": 1.665466374475509,
+        "fixture_id": 115,
+        "home_ppg30": 1.2333333333333334,
+        "home_vppg8": 1.375,
+        "home_vxga8": 1.41617809349671,
+        "home_vxgf8": 1.453247082182206,
+        "away_vppg18": 1.722222222222222,
+        "away_vxga18": 1.282747057158914,
+        "away_vxgf18": 1.5279628331002262,
+        "home_vppg18": 1.222222222222222,
+        "home_vxga18": 1.3654624859985378,
+        "home_vxgf18": 1.2419987031920916,
+        "calculated_at": "2026-11-24T14:06:56.920797+00:00",
+        "league_away_xg": 1.322131264062075,
+        "league_home_xg": 1.6158954195025783,
+        "away_vga8_capped": 1.407275,
+        "away_vgf8_capped": 1.9530173480883242,
+        "home_vga8_capped": 1.38006562825758,
+        "home_vgf8_capped": 1.555,
+        "league_away_goals": 1.222222222222222,
+        "league_home_goals": 1.5407407407407407,
+        "candidate_away_n10": 10,
+        "candidate_away_n24": 24,
+        "candidate_home_n10": 10,
+        "candidate_home_n24": 24,
+        "candidate_away_prob": 0.373697984769966,
+        "candidate_draw_prob": 0.265739468394943,
+        "candidate_home_prob": 0.360562546835091,
+        "candidate_away_ppg10": 2,
+        "candidate_home_ppg10": 1.3,
+        "goal_xg_residual_cap": 1,
+        "candidate_away_lambda": 1.298443777699258,
+        "candidate_home_lambda": 1.270555855513655,
+        "candidate_calculated_at": "2026-11-24T14:06:56.920797+00:00",
+        "candidate_model_version": "v3_24_venue8_50_noppg"
+      },
+      "away_team": "Liverpool",
+      "home_team": "Everton",
+      "fixture_id": 115,
+      "kickoff_time": "2026-11-29T12:00:00+00:00",
+      "market_source": null,
+      "market_away_odds": null,
+      "market_draw_odds": null,
+      "market_home_odds": null,
+      "market_snapshot_at": null,
+      "current": {
+        "h": 0.31461659639924344,
+        "d": 0.24064831470398038,
+        "a": 0.4447350888967761
+      },
+      "diagnostics": {
+        "venue8": {
+          "h": 0.3320693659938411,
+          "d": 0.24613845450454197,
+          "a": 0.42179217950161696
+        },
+        "venue18": {
+          "h": 0.27755183653213716,
+          "d": 0.26777707691551506,
+          "a": 0.4546710865523477
+        }
+      },
+      "scores": [
+        {
+          "home": 1,
+          "away": 1,
+          "probability": 0.12639053344698556,
+          "tied": false
+        },
+        {
+          "home": 0,
+          "away": 1,
+          "probability": 0.09947656602305684,
+          "tied": false
+        },
+        {
+          "home": 1,
+          "away": 0,
+          "probability": 0.09734001241928229,
+          "tied": false
+        }
+      ],
+      "favourite": {
+        "outcomes": [
+          "away"
+        ],
+        "probability": 0.373697984769966
+      }
+    },
+    {
+      "notes": "Official FPL fixture 112; verified permanent fixture identity.\nWEEKEND_NEWS_JSON:{\"away\": \"Jaouen: Hamstring injury - Unknown return date; Hall: Unspecified injury - 75% chance of playing; A.Murphy: Has joined FC Kaiserslautern on loan for the rest of the season; Joelinton: Unspecified injury - Unknown return date; Woltemade: Has joined Juventus on loan for the rest of the season; Neave: Has joined Wolves on loan for the rest of the season; Shahar: has joined Arouca on loan for the rest of the seaon.\", \"home\": \"Igor: Has joined Burnley permanently; Costinha: Suspended until 2 Dec; Mitoma: Hamstring injury - Expected back 2 Dec; Buonanotte: Has joined Elche on loan for the rest of the season; Howell: Has joined Leicester City on loan for the rest of the season; Watson: Has joined Leicester City on loan for the rest of the season; Yohanna: Unspecified injury - Unknown return date; Tzimas: Knee injury - Unknown return date; Ferguson: Ankle injury - Unknown return date; Yalcouyé: Unspecified injury - Unknown return date; Hadjam: Unspecified injury - 75% chance of playing; Cozier-Duberry: Has joined Middlesbrough on loan for the rest of the season\", \"teams\": \"Tuesday provisional review. Confirmed XIs, executable named-bookmaker quote and latest club press conferences remain pending.\", \"sources\": [{\"url\": \"https://fantasy.premierleague.com/api/bootstrap-static/\", \"label\": \"Official FPL availability\"}, {\"url\": \"https://fantasy.premierleague.com/api/fixtures/\", \"label\": \"Official FPL fixtures\"}, {\"url\": \"https://www.fotmob.com/matches/brighton-hove-albion-vs-universitatea-craiova/1j9e4fn1#6112421\", \"label\": \"Public European fixture schedule\"}], \"schedule\": \"Brighton & Hove Albion v Universitatea Craiova 2026-11-26T17:45:00Z. Recheck minutes, injuries and rotation after Europe. No probability adjustment.\", \"checkedAt\": \"2026-11-24T14:06:31.731352+00:00\", \"availability\": [\"Brighton & Hove Albion — Igor: Has joined Burnley permanently; Costinha: Suspended until 2 Dec; Mitoma: Hamstring injury - Expected back 2 Dec; Buonanotte: Has joined Elche on loan for the rest of the season; Howell: Has joined Leicester City on loan for the rest of the season; Watson: Has joined Leicester City on loan for the rest of the season; Yohanna: Unspecified injury - Unknown return date; Tzimas: Knee injury - Unknown return date; Ferguson: Ankle injury - Unknown return date; Yalcouyé: Unspecified injury - Unknown return date; Hadjam: Unspecified injury - 75% chance of playing; Cozier-Duberry: Has joined Middlesbrough on loan for the rest of the season\", \"Newcastle United — Jaouen: Hamstring injury - Unknown return date; Hall: Unspecified injury - 75% chance of playing; A.Murphy: Has joined FC Kaiserslautern on loan for the rest of the season; Joelinton: Unspecified injury - Unknown return date; Woltemade: Has joined Juventus on loan for the rest of the season; Neave: Has joined Wolves on loan for the rest of the season; Shahar: has joined Arouca on loan for the rest of the seaon.\"]}",
+      "season": "2026/27",
+      "snapshot": {
+        "away_n8": 8,
+        "home_n8": 8,
+        "away_n30": 30,
+        "home_n30": 30,
+        "away_vga8": 1.625,
+        "away_vgf8": 1,
+        "away_vn18": 18,
+        "home_vga8": 0.5,
+        "home_vgf8": 2.625,
+        "home_vn18": 18,
+        "away_ppg30": 1.2,
+        "away_vppg8": 1,
+        "away_vxga8": 1.4385716177055612,
+        "away_vxgf8": 1.1090134159343317,
+        "fixture_id": 116,
+        "home_ppg30": 1.6666666666666667,
+        "home_vppg8": 2.375,
+        "home_vxga8": 1.0360022669872269,
+        "home_vxgf8": 2.176319254975766,
+        "away_vppg18": 1.1666666666666667,
+        "away_vxga18": 1.375137385646916,
+        "away_vxgf18": 1.1984504070819253,
+        "home_vppg18": 1.777777777777778,
+        "home_vxga18": 1.092184340883212,
+        "home_vxgf18": 1.7563752244336737,
+        "calculated_at": "2026-11-24T14:06:56.920797+00:00",
+        "league_away_xg": 1.322131264062075,
+        "league_home_xg": 1.6158954195025783,
+        "away_vga8_capped": 1.370575637370348,
+        "away_vgf8_capped": 0.9974734119791537,
+        "home_vga8_capped": 0.4575,
+        "home_vgf8_capped": 2.3961209790110587,
+        "league_away_goals": 1.222222222222222,
+        "league_home_goals": 1.5407407407407407,
+        "candidate_away_n10": 10,
+        "candidate_away_n24": 24,
+        "candidate_home_n10": 10,
+        "candidate_home_n24": 24,
+        "candidate_away_prob": 0.134346616749287,
+        "candidate_draw_prob": 0.213385268772473,
+        "candidate_home_prob": 0.65226811447824,
+        "candidate_away_ppg10": 1.2,
+        "candidate_home_ppg10": 1.9,
+        "goal_xg_residual_cap": 1,
+        "candidate_away_lambda": 0.7153509272171992,
+        "candidate_home_lambda": 1.8870654951583083,
+        "candidate_calculated_at": "2026-11-24T14:06:56.920797+00:00",
+        "candidate_model_version": "v3_24_venue8_50_noppg"
+      },
+      "away_team": "Newcastle United",
+      "home_team": "Brighton & Hove Albion",
+      "fixture_id": 116,
+      "kickoff_time": "2026-11-29T14:05:00+00:00",
+      "market_source": null,
+      "market_away_odds": null,
+      "market_draw_odds": null,
+      "market_home_odds": null,
+      "market_snapshot_at": null,
+      "current": {
+        "h": 0.6556796286540628,
+        "d": 0.21848095979138032,
+        "a": 0.12583941155455688
+      },
+      "diagnostics": {
+        "venue8": {
+          "h": 0.5883781540478018,
+          "d": 0.23039749335505366,
+          "a": 0.18122435259714445
+        },
+        "venue18": {
+          "h": 0.4815054319015784,
+          "d": 0.26574074602877584,
+          "a": 0.2527538220696457
+        }
+      },
+      "scores": [
+        {
+          "home": 1,
+          "away": 0,
+          "probability": 0.1398208319206849,
+          "tied": false
+        },
+        {
+          "home": 2,
+          "away": 0,
+          "probability": 0.1319255337109269,
+          "tied": false
+        },
+        {
+          "home": 1,
+          "away": 1,
+          "probability": 0.1000209617587421,
+          "tied": false
+        }
+      ],
+      "favourite": {
+        "outcomes": [
+          "home"
+        ],
+        "probability": 0.65226811447824
+      }
+    },
+    {
+      "notes": "Official FPL fixture 113; verified permanent fixture identity.\nWEEKEND_NEWS_JSON:{\"away\": \"Iroegbunam: Hamstring injury - Unknown return date; Cartwright: Has joined Grimsby Town on loan for the rest of the season; Lo-Tutala: Has joined Colchester United on loan for the rest of the season; Hughes: Groin injury - Unknown return date; Drameh: Has joined Genoa permanently; Jacob: Has joined Newport County on loan until January; Millar: Has joined Birmingham on loan for the rest of the season; Matazo: Knee injury - Unknown return date; Kamara: Has joined Portsmouth permanently; Akintola: Has joined Omonoia FC permanently; Gyabi: Thigh injury - 75% chance of playing; Destan: Has joined Konyaspor permanently; Burstow: Has joined Sheffield Wednesday on loan for the rest of the season; Gelhardt: Thigh injury - Unknown return date; Targett: Ankle injury - Unknown return date; Morita: Groin injury - Unknown return date; Ansah: Back injury - Unknown return date\", \"home\": \"Sosa: Has joined FC Cologne on loan for the rest of the season; Chadi Riad: Knee injury - Unknown return date; Mingueza: Thigh injury - 75% chance of playing; Sarr: Groin injury - Expected back 29 Nov; Yeremy: Suspended until 2 Dec; Devenny: Has joined Stoke City permanently; Esse: Has joined Millwall on loan for the rest of the season; M.França: Has joined Alverca on loan for the rest of the season; J.Rak-Sakyi: has joined  Kasimpasa on loan for the rest of the seaon.; Cardines: Has joined Bristol City on loan for the rest of the season; Mateta: Suspended until 2 Dec; Uche: has returned to Getafe CF; Tomiyasu: Calf injury - Expected back 29 Nov\", \"teams\": \"Tuesday provisional review. Confirmed XIs, executable named-bookmaker quote and latest club press conferences remain pending.\", \"sources\": [{\"url\": \"https://fantasy.premierleague.com/api/bootstrap-static/\", \"label\": \"Official FPL availability\"}, {\"url\": \"https://fantasy.premierleague.com/api/fixtures/\", \"label\": \"Official FPL fixtures\"}, {\"url\": \"https://www.fotmob.com/matches/real-sociedad-vs-crystal-palace/2sn59p#6112322\", \"label\": \"Public European fixture schedule\"}], \"schedule\": \"Crystal Palace v Real Sociedad 2026-11-26T20:00:00Z. Recheck minutes, injuries and rotation after Europe. No probability adjustment.\", \"checkedAt\": \"2026-11-24T14:06:31.731445+00:00\", \"availability\": [\"Crystal Palace — Sosa: Has joined FC Cologne on loan for the rest of the season; Chadi Riad: Knee injury - Unknown return date; Mingueza: Thigh injury - 75% chance of playing; Sarr: Groin injury - Expected back 29 Nov; Yeremy: Suspended until 2 Dec; Devenny: Has joined Stoke City permanently; Esse: Has joined Millwall on loan for the rest of the season; M.França: Has joined Alverca on loan for the rest of the season; J.Rak-Sakyi: has joined  Kasimpasa on loan for the rest of the seaon.; Cardines: Has joined Bristol City on loan for the rest of the season; Mateta: Suspended until 2 Dec; Uche: has returned to Getafe CF; Tomiyasu: Calf injury - Expected back 29 Nov\", \"Hull City — Iroegbunam: Hamstring injury - Unknown return date; Cartwright: Has joined Grimsby Town on loan for the rest of the season; Lo-Tutala: Has joined Colchester United on loan for the rest of the season; Hughes: Groin injury - Unknown return date; Drameh: Has joined Genoa permanently; Jacob: Has joined Newport County on loan until January; Millar: Has joined Birmingham on loan for the rest of the season; Matazo: Knee injury - Unknown return date; Kamara: Has joined Portsmouth permanently; Akintola: Has joined Omonoia FC permanently; Gyabi: Thigh injury - 75% chance of playing; Destan: Has joined Konyaspor permanently; Burstow: Has joined Sheffield Wednesday on loan for the rest of the season; Gelhardt: Thigh injury - Unknown return date; Targett: Ankle injury - Unknown return date; Morita: Groin injury - Unknown return date; Ansah: Back injury - Unknown return date\"]}",
+      "season": "2026/27",
+      "snapshot": {
+        "away_n8": 5,
+        "home_n8": 8,
+        "away_n30": 11,
+        "home_n30": 30,
+        "away_vga8": 1.2,
+        "away_vgf8": 0.8,
+        "away_vn18": 5,
+        "home_vga8": 2.125,
+        "home_vgf8": 1.25,
+        "home_vn18": 18,
+        "away_ppg30": 1.2727272727272727,
+        "away_vppg8": 0.8,
+        "away_vxga8": 1.467777313940227,
+        "away_vxgf8": 0.8626713119670749,
+        "fixture_id": 117,
+        "home_ppg30": 0.8333333333333334,
+        "home_vppg8": 0.625,
+        "home_vxga8": 2.029529317696765,
+        "home_vxgf8": 1.6959973145386205,
+        "away_vppg18": 0.8,
+        "away_vxga18": 1.467777313940227,
+        "away_vxgf18": 0.8626713119670749,
+        "home_vppg18": 0.7777777777777778,
+        "home_vxga18": 1.6534963634207844,
+        "home_vxgf18": 1.7299543620171647,
+        "calculated_at": "2026-11-24T14:06:56.920797+00:00",
+        "league_away_xg": 1.322131264062075,
+        "league_home_xg": 1.6158954195025783,
+        "away_vga8_capped": 1.2,
+        "away_vgf8_capped": 0.8,
+        "home_vga8_capped": 2.035749306092039,
+        "home_vgf8_capped": 1.2350658837426454,
+        "league_away_goals": 1.222222222222222,
+        "league_home_goals": 1.5407407407407407,
+        "candidate_away_n10": 10,
+        "candidate_away_n24": 11,
+        "candidate_home_n10": 10,
+        "candidate_home_n24": 24,
+        "candidate_away_prob": 0.305260646476381,
+        "candidate_draw_prob": 0.271013139170974,
+        "candidate_home_prob": 0.423726214352645,
+        "candidate_away_ppg10": 1.1,
+        "candidate_home_ppg10": 0.7,
+        "goal_xg_residual_cap": 1,
+        "candidate_away_lambda": 1.099180953052712,
+        "candidate_home_lambda": 1.3460203585149564,
+        "candidate_calculated_at": "2026-11-24T14:06:56.920797+00:00",
+        "candidate_model_version": "v3_24_venue8_50_noppg"
+      },
+      "away_team": "Hull City",
+      "home_team": "Crystal Palace",
+      "fixture_id": 117,
+      "kickoff_time": "2026-11-29T14:05:00+00:00",
+      "market_source": null,
+      "market_away_odds": null,
+      "market_draw_odds": null,
+      "market_home_odds": null,
+      "market_snapshot_at": null,
+      "current": {
+        "h": 0.3700262607591472,
+        "d": 0.2757787275716034,
+        "a": 0.3541950116692494
+      },
+      "diagnostics": {
+        "venue8": {
+          "h": 0.4318370247327505,
+          "d": 0.25530784121493266,
+          "a": 0.3128551340523167
+        },
+        "venue18": null
+      },
+      "scores": [
+        {
+          "home": 1,
+          "away": 1,
+          "probability": 0.12828721764909823,
+          "tied": false
+        },
+        {
+          "home": 1,
+          "away": 0,
+          "probability": 0.11671164542363219,
+          "tied": false
+        },
+        {
+          "home": 0,
+          "away": 1,
+          "probability": 0.09530852697550246,
+          "tied": false
+        }
+      ],
+      "favourite": {
+        "outcomes": [
+          "home"
+        ],
+        "probability": 0.423726214352645
+      }
+    },
+    {
+      "notes": "Official FPL fixture 115; verified permanent fixture identity.\nWEEKEND_NEWS_JSON:{\"away\": \"Dennis: Has joined MK Dons permanently; Milosavljević: Thigh injury - Unknown return date; J.Araujo: Thigh injury - Unknown return date; Tóth.A: Hamstring injury - Unknown return date; Enes Ünal: Has joined Getafe permanently; Sanchez: Ankle injury - Unknown return date\", \"home\": \"Lecomte: Achilles injury - Unknown return date; McNally: Has joined York City on loan for the rest of the season; Smith Rowe: Hip injury - Expected back 29 Nov; De Fougerolles: has joined  Real Salt Lake on loan for the rest of the seaon.\", \"teams\": \"Tuesday provisional review. Confirmed XIs, executable named-bookmaker quote and latest club press conferences remain pending.\", \"sources\": [{\"url\": \"https://fantasy.premierleague.com/api/bootstrap-static/\", \"label\": \"Official FPL availability\"}, {\"url\": \"https://fantasy.premierleague.com/api/fixtures/\", \"label\": \"Official FPL fixtures\"}, {\"url\": \"https://www.fotmob.com/matches/afc-bournemouth-vs-celta-vigo/2uv6vg#6112348\", \"label\": \"Public European fixture schedule\"}], \"schedule\": \"Celta Vigo v AFC Bournemouth 2026-11-26T17:45:00Z. Recheck minutes, injuries and rotation after Europe. No probability adjustment.\", \"checkedAt\": \"2026-11-24T14:06:31.731527+00:00\", \"availability\": [\"Fulham — Lecomte: Achilles injury - Unknown return date; McNally: Has joined York City on loan for the rest of the season; Smith Rowe: Hip injury - Expected back 29 Nov; De Fougerolles: has joined  Real Salt Lake on loan for the rest of the seaon.\", \"AFC Bournemouth — Dennis: Has joined MK Dons permanently; Milosavljević: Thigh injury - Unknown return date; J.Araujo: Thigh injury - Unknown return date; Tóth.A: Hamstring injury - Unknown return date; Enes Ünal: Has joined Getafe permanently; Sanchez: Ankle injury - Unknown return date\"]}",
+      "season": "2026/27",
+      "snapshot": {
+        "away_n8": 8,
+        "home_n8": 8,
+        "away_n30": 30,
+        "home_n30": 30,
+        "away_vga8": 1.5,
+        "away_vgf8": 1.625,
+        "away_vn18": 18,
+        "home_vga8": 1.125,
+        "home_vgf8": 1.25,
+        "home_vn18": 18,
+        "away_ppg30": 1.7333333333333334,
+        "away_vppg8": 1.75,
+        "away_vxga8": 1.4117919129410759,
+        "away_vxgf8": 1.70370586739555,
+        "fixture_id": 118,
+        "home_ppg30": 1.2,
+        "home_vppg8": 1.375,
+        "home_vxga8": 1.265276581947878,
+        "home_vxgf8": 1.682976806499064,
+        "away_vppg18": 1.5555555555555556,
+        "away_vxga18": 1.8908852946404782,
+        "away_vxgf18": 1.7478914966202443,
+        "home_vppg18": 1.5,
+        "home_vxga18": 1.4022562586435012,
+        "home_vxgf18": 1.5574341362218063,
+        "calculated_at": "2026-11-24T14:06:56.920797+00:00",
+        "league_away_xg": 1.322131264062075,
+        "league_home_xg": 1.6158954195025783,
+        "away_vga8_capped": 1.134487343095243,
+        "away_vgf8_capped": 1.625,
+        "home_vga8_capped": 1.1224623468425126,
+        "home_vgf8_capped": 1.25,
+        "league_away_goals": 1.222222222222222,
+        "league_home_goals": 1.5407407407407407,
+        "candidate_away_n10": 10,
+        "candidate_away_n24": 24,
+        "candidate_home_n10": 10,
+        "candidate_home_n24": 24,
+        "candidate_away_prob": 0.359234815369948,
+        "candidate_draw_prob": 0.285068294666371,
+        "candidate_home_prob": 0.355696889963681,
+        "candidate_away_ppg10": 1.8,
+        "candidate_home_ppg10": 1.1,
+        "goal_xg_residual_cap": 1,
+        "candidate_away_lambda": 1.1442460761039985,
+        "candidate_home_lambda": 1.1371092456220004,
+        "candidate_calculated_at": "2026-11-24T14:06:56.920797+00:00",
+        "candidate_model_version": "v3_24_venue8_50_noppg"
+      },
+      "away_team": "AFC Bournemouth",
+      "home_team": "Fulham",
+      "fixture_id": 118,
+      "kickoff_time": "2026-11-29T14:05:00+00:00",
+      "market_source": null,
+      "market_away_odds": null,
+      "market_draw_odds": null,
+      "market_home_odds": null,
+      "market_snapshot_at": null,
+      "current": {
+        "h": 0.3249560297625792,
+        "d": 0.26676588948488794,
+        "a": 0.4082780807525329
+      },
+      "diagnostics": {
+        "venue8": {
+          "h": 0.3717539582306055,
+          "d": 0.24903569403292666,
+          "a": 0.3792103477364679
+        },
+        "venue18": {
+          "h": 0.4048919314028117,
+          "d": 0.23008903612510898,
+          "a": 0.36501903247207934
+        }
+      },
+      "scores": [
+        {
+          "home": 1,
+          "away": 1,
+          "probability": 0.132905084232876,
+          "tied": false
+        },
+        {
+          "home": 0,
+          "away": 1,
+          "probability": 0.11687978507304875,
+          "tied": false
+        },
+        {
+          "home": 1,
+          "away": 0,
+          "probability": 0.11615078872317365,
+          "tied": false
+        }
+      ],
+      "favourite": {
+        "outcomes": [
+          "away"
+        ],
+        "probability": 0.359234815369948
+      }
+    },
+    {
+      "notes": "Official FPL fixture 120; verified permanent fixture identity.\nWEEKEND_NEWS_JSON:{\"away\": \"Tosin: Calf injury - Expected back 29 Nov; Sávio: Hamstring injury - 75% chance of playing; Vicario: Has joined Juventus on loan for the rest of the season; Romero: Has joined Atletico Madrid permanently; Spence: Has joined Internazionale permanently; Phillips: Has joined Middlesbrough permanently; Souza: Has joined FC Porto on loan for the rest of the season; Xavi: Knee injury - Unknown return date; Tel: Ankle injury - Expected back 6 Dec; Odobert: Knee injury - Unknown return date; P.M.Sarr: Has joined Juventus on loan for the rest of the season; Moore: Has joined FC Köln on loan for the rest of the season; Richarlison: not included in squad.; Scarlett: Has joined Leyton Orient permanently; Mudryk: Ankle injury - Unknown return date\", \"home\": \"Danso: Ineligible to face parent club - Expected back 2 Dec; Patterson: Has joined Wrexham permanently; Ballard: Hamstring injury - Unknown return date; Seelt: Has joined Swansea City on loan for the rest of the season; Hjelde: Has joined KV Mechelen on loan for the rest of the season; Masuaku: Has joined Konyaspor permanently; Diarra: Muscular injury - Unknown return date; Xhaka: Calf injury - Unknown return date; Adingra: Has joined Ajax on loan for the rest of the season; Mundle: Knee injury - Unknown return date; Brobbey: Muscular injury - Unknown return date\", \"teams\": \"Tuesday provisional review. Confirmed XIs, executable named-bookmaker quote and latest club press conferences remain pending.\", \"sources\": [{\"url\": \"https://fantasy.premierleague.com/api/bootstrap-static/\", \"label\": \"Official FPL availability\"}, {\"url\": \"https://fantasy.premierleague.com/api/fixtures/\", \"label\": \"Official FPL fixtures\"}, {\"url\": \"https://www.fotmob.com/matches/jagiellonia-biaystok-vs-sunderland/wdvzv#6112332\", \"label\": \"Public European fixture schedule\"}], \"schedule\": \"Sunderland v Jagiellonia Białystok 2026-11-26T20:00:00Z. Recheck minutes, injuries and rotation after Europe. No probability adjustment.\", \"checkedAt\": \"2026-11-24T14:06:31.731620+00:00\", \"availability\": [\"Sunderland — Danso: Ineligible to face parent club - Expected back 2 Dec; Patterson: Has joined Wrexham permanently; Ballard: Hamstring injury - Unknown return date; Seelt: Has joined Swansea City on loan for the rest of the season; Hjelde: Has joined KV Mechelen on loan for the rest of the season; Masuaku: Has joined Konyaspor permanently; Diarra: Muscular injury - Unknown return date; Xhaka: Calf injury - Unknown return date; Adingra: Has joined Ajax on loan for the rest of the season; Mundle: Knee injury - Unknown return date; Brobbey: Muscular injury - Unknown return date\", \"Tottenham Hotspur — Tosin: Calf injury - Expected back 29 Nov; Sávio: Hamstring injury - 75% chance of playing; Vicario: Has joined Juventus on loan for the rest of the season; Romero: Has joined Atletico Madrid permanently; Spence: Has joined Internazionale permanently; Phillips: Has joined Middlesbrough permanently; Souza: Has joined FC Porto on loan for the rest of the season; Xavi: Knee injury - Unknown return date; Tel: Ankle injury - Expected back 6 Dec; Odobert: Knee injury - Unknown return date; P.M.Sarr: Has joined Juventus on loan for the rest of the season; Moore: Has joined FC Köln on loan for the rest of the season; Richarlison: not included in squad.; Scarlett: Has joined Leyton Orient permanently; Mudryk: Ankle injury - Unknown return date\"]}",
+      "season": "2026/27",
+      "snapshot": {
+        "away_n8": 8,
+        "home_n8": 8,
+        "away_n30": 30,
+        "home_n30": 30,
+        "away_vga8": 1,
+        "away_vgf8": 0.875,
+        "away_vn18": 18,
+        "home_vga8": 1.25,
+        "home_vgf8": 0.5,
+        "home_vn18": 18,
+        "away_ppg30": 1,
+        "away_vppg8": 1.375,
+        "away_vxga8": 1.1964434513593092,
+        "away_vxgf8": 1.1318503033544869,
+        "fixture_id": 119,
+        "home_ppg30": 1.1333333333333333,
+        "home_vppg8": 1.375,
+        "home_vxga8": 1.0983484836816788,
+        "home_vxgf8": 1.4687878117332236,
+        "away_vppg18": 1,
+        "away_vxga18": 1.4489359783819151,
+        "away_vxgf18": 1.0317334681575496,
+        "home_vppg18": 1.5555555555555556,
+        "home_vxga18": 1.2760104371918572,
+        "home_vxgf18": 1.2586223607703215,
+        "calculated_at": "2026-11-24T14:06:56.920797+00:00",
+        "league_away_xg": 1.322131264062075,
+        "league_home_xg": 1.6158954195025783,
+        "away_vga8_capped": 0.95375,
+        "away_vgf8_capped": 0.8682457780919969,
+        "home_vga8_capped": 0.88875,
+        "home_vgf8_capped": 0.5,
+        "league_away_goals": 1.222222222222222,
+        "league_home_goals": 1.5407407407407407,
+        "candidate_away_n10": 10,
+        "candidate_away_n24": 24,
+        "candidate_home_n10": 10,
+        "candidate_home_n24": 24,
+        "candidate_away_prob": 0.294424878370111,
+        "candidate_draw_prob": 0.330008885025688,
+        "candidate_home_prob": 0.3755662366042,
+        "candidate_away_ppg10": 1.5,
+        "candidate_home_ppg10": 0.9,
+        "goal_xg_residual_cap": 1,
+        "candidate_away_lambda": 0.8150293684532699,
+        "candidate_home_lambda": 0.9629193847873649,
+        "candidate_calculated_at": "2026-11-24T14:06:56.920797+00:00",
+        "candidate_model_version": "v3_24_venue8_50_noppg"
+      },
+      "away_team": "Tottenham Hotspur",
+      "home_team": "Sunderland",
+      "fixture_id": 119,
+      "kickoff_time": "2026-11-29T14:05:00+00:00",
+      "market_source": null,
+      "market_away_odds": null,
+      "market_draw_odds": null,
+      "market_home_odds": null,
+      "market_snapshot_at": null,
+      "current": {
+        "h": 0.30955543059867235,
+        "d": 0.36357352698053436,
+        "a": 0.3268710424207933
+      },
+      "diagnostics": {
+        "venue8": {
+          "h": 0.3987385411986881,
+          "d": 0.30176199708145446,
+          "a": 0.29949946171985736
+        },
+        "venue18": {
+          "h": 0.39868451817425693,
+          "d": 0.29533494265935817,
+          "a": 0.3059805391663849
+        }
+      },
+      "scores": [
+        {
+          "home": 0,
+          "away": 0,
+          "probability": 0.16898442074644482,
+          "tied": false
+        },
+        {
+          "home": 1,
+          "away": 0,
+          "probability": 0.16271837446381587,
+          "tied": false
+        },
+        {
+          "home": 0,
+          "away": 1,
+          "probability": 0.13772726571941654,
+          "tied": false
+        }
+      ],
+      "favourite": {
+        "outcomes": [
+          "home"
+        ],
+        "probability": 0.3755662366042
+      }
+    },
+    {
+      "notes": "Official FPL fixture 111; verified permanent fixture identity.\nWEEKEND_NEWS_JSON:{\"away\": \"Alleyne: Has joined Burnley on loan for the rest of the season; Semenyo: Knee injury - Unknown return date; Rodrigo: Has joined Barcelona permanently; Reijnders: Has joined Al Qadsiah permanently; Echeverri: Has joined Benfica on loan for the rest of the season; Phillips: Has joined Sheffield United on loan for the rest of the season; Mukasa: has joined West Ham on loan for the rest of the seaon.; Monga: Has joined Swansea City on loan for the rest of the season\", \"home\": \"Raya: Shoulder injury - 50% chance of playing; Saka: Thigh injury - Expected back 20 Dec; Martinelli: Has joined Al Hilal permanently; Zubimendi: Hamstring injury - Unknown return date; Nwaneri: Has joined Borussia Dortmund on loan for the rest of the season; Fábio Vieira: Has joined Hamburger SV permanently; Nelson: has departed the club as a free agent.; G.Jesus: Has joined FC Barcelona permanently\", \"teams\": \"Tuesday provisional review. Confirmed XIs, executable named-bookmaker quote and latest club press conferences remain pending.\", \"sources\": [{\"url\": \"https://fantasy.premierleague.com/api/bootstrap-static/\", \"label\": \"Official FPL availability\"}, {\"url\": \"https://fantasy.premierleague.com/api/fixtures/\", \"label\": \"Official FPL fixtures\"}, {\"url\": \"https://www.fotmob.com/matches/borussia-dortmund-vs-arsenal/36j8tu#6106259\", \"label\": \"Public European fixture schedule\"}, {\"url\": \"https://www.fotmob.com/matches/manchester-city-vs-napoli/2s1i6l#6106256\", \"label\": \"Public European fixture schedule\"}], \"schedule\": \"Arsenal v Borussia Dortmund 2026-11-24T20:00:00.000Z; Manchester City v Napoli 2026-11-24T20:00:00.000Z. Recheck minutes, injuries and rotation after Europe. No probability adjustment.\", \"checkedAt\": \"2026-11-24T14:06:31.731706+00:00\", \"availability\": [\"Arsenal — Raya: Shoulder injury - 50% chance of playing; Saka: Thigh injury - Expected back 20 Dec; Martinelli: Has joined Al Hilal permanently; Zubimendi: Hamstring injury - Unknown return date; Nwaneri: Has joined Borussia Dortmund on loan for the rest of the season; Fábio Vieira: Has joined Hamburger SV permanently; Nelson: has departed the club as a free agent.; G.Jesus: Has joined FC Barcelona permanently\", \"Manchester City — Alleyne: Has joined Burnley on loan for the rest of the season; Semenyo: Knee injury - Unknown return date; Rodrigo: Has joined Barcelona permanently; Reijnders: Has joined Al Qadsiah permanently; Echeverri: Has joined Benfica on loan for the rest of the season; Phillips: Has joined Sheffield United on loan for the rest of the season; Mukasa: has joined West Ham on loan for the rest of the seaon.; Monga: Has joined Swansea City on loan for the rest of the season\"]}",
+      "season": "2026/27",
+      "snapshot": {
+        "away_n8": 8,
+        "home_n8": 8,
+        "away_n30": 30,
+        "home_n30": 30,
+        "away_vga8": 1.25,
+        "away_vgf8": 1.875,
+        "away_vn18": 18,
+        "home_vga8": 0.25,
+        "home_vgf8": 1.875,
+        "home_vn18": 18,
+        "away_ppg30": 1.9666666666666668,
+        "away_vppg8": 1.75,
+        "away_vxga8": 1.2174334791269152,
+        "away_vxgf8": 1.9696925644623116,
+        "fixture_id": 120,
+        "home_ppg30": 2.2666666666666666,
+        "home_vppg8": 3,
+        "home_vxga8": 0.6061378646373748,
+        "home_vxgf8": 1.9606868924692273,
+        "away_vppg18": 1.9444444444444444,
+        "away_vxga18": 1.2152259907230736,
+        "away_vxgf18": 1.9159744730943606,
+        "home_vppg18": 2.555555555555556,
+        "home_vxga18": 0.7906723842832777,
+        "home_vxgf18": 1.8985830633196565,
+        "calculated_at": "2026-11-24T14:06:56.920797+00:00",
+        "league_away_xg": 1.322131264062075,
+        "league_home_xg": 1.6158954195025783,
+        "away_vga8_capped": 1.077685629427433,
+        "away_vgf8_capped": 1.7126735094888135,
+        "home_vga8_capped": 0.25,
+        "home_vgf8_capped": 1.85677943774499,
+        "league_away_goals": 1.222222222222222,
+        "league_home_goals": 1.5407407407407407,
+        "candidate_away_n10": 10,
+        "candidate_away_n24": 24,
+        "candidate_home_n10": 10,
+        "candidate_home_n24": 24,
+        "candidate_away_prob": 0.220373293544423,
+        "candidate_draw_prob": 0.28686333599865,
+        "candidate_home_prob": 0.492763370456927,
+        "candidate_away_ppg10": 1.9,
+        "candidate_home_ppg10": 2.5,
+        "goal_xg_residual_cap": 1,
+        "candidate_away_lambda": 0.771417581429003,
+        "candidate_home_lambda": 1.307152958936487,
+        "candidate_calculated_at": "2026-11-24T14:06:56.920797+00:00",
+        "candidate_model_version": "v3_24_venue8_50_noppg"
+      },
+      "away_team": "Manchester City",
+      "home_team": "Arsenal",
+      "fixture_id": 120,
+      "kickoff_time": "2026-11-29T16:30:00+00:00",
+      "market_source": null,
+      "market_away_odds": null,
+      "market_draw_odds": null,
+      "market_home_odds": null,
+      "market_snapshot_at": null,
+      "current": {
+        "h": 0.535386662561469,
+        "d": 0.28456548630182077,
+        "a": 0.18004785113671018
+      },
+      "diagnostics": {
+        "venue8": {
+          "h": 0.4948587501959202,
+          "d": 0.268595389484786,
+          "a": 0.23654586031929378
+        },
+        "venue18": {
+          "h": 0.4391418818074786,
+          "d": 0.26710912589235764,
+          "a": 0.29374899230016377
+        }
+      },
+      "scores": [
+        {
+          "home": 1,
+          "away": 0,
+          "probability": 0.16353649835714631,
+          "tied": false
+        },
+        {
+          "home": 1,
+          "away": 1,
+          "probability": 0.12615493003803793,
+          "tied": false
+        },
+        {
+          "home": 0,
+          "away": 0,
+          "probability": 0.12510892259326808,
+          "tied": false
+        }
+      ],
+      "favourite": {
+        "outcomes": [
+          "home"
+        ],
+        "probability": 0.492763370456927
+      }
+    }
+  ],
+  "coverage_gaps": [
+    "Nottingham Forest v Chelsea: current comparison prices unavailable",
+    "Leeds United v Coventry City: current comparison prices unavailable",
+    "Manchester United v Brentford: current comparison prices unavailable",
+    "Ipswich Town v Aston Villa: current comparison prices unavailable",
+    "Everton v Liverpool: current comparison prices unavailable",
+    "Brighton & Hove Albion v Newcastle United: current comparison prices unavailable",
+    "Crystal Palace v Hull City: current comparison prices unavailable",
+    "Fulham v AFC Bournemouth: current comparison prices unavailable",
+    "Sunderland v Tottenham Hotspur: current comparison prices unavailable",
+    "Arsenal v Manchester City: current comparison prices unavailable",
+    "Official club press conferences and confirmed XIs pending; FPL flags can lag announcements.",
+    "Understat/Transfermarkt historical mapping backlogs not changed by weekly worker; unresolved identities remain excluded.",
+    "European public schedules require official club/UEFA confirmation before any paper selection."
+  ]
+}
