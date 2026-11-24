@@ -84,9 +84,18 @@ def main():
  reviewrounds=set(f['event'] for f in finished)
  assert max(date(f['kickoff_time']) for f in finished)<now(),'Round includes future fixture'
  # Include Monday by checking the whole official event, never Saturday/Sunday alone.
+ # Log only provider fixture statuses and counts. No names, forecasts or publication changes.
+ near={}
+ for r in rounds:
+  if r>=max(1,gw-1) and r<=gw+3:
+   fs=[f for f in fx if f['event']==r]
+   near[str(r)]={'count':len(fs),'finished':sum(bool(f.get('finished')) for f in fs),'provisional':sum(bool(f.get('finished_provisional')) for f in fs),'started':sum(bool(f.get('started')) for f in fs),'future':sum(bool(f.get('kickoff_time') and date(f['kickoff_time'])>now()) for f in fs),'kickoffs':[f.get('kickoff_time') for f in fs]}
+ diagnostic={'observedAt':stamp(),'completeRound':gw,'completedRounds':complete[-6:],'allRoundCount':len(rounds),'near':near}
+ (OUT/'official-round-diagnostic.json').write_text(json.dumps(diagnostic,indent=2))
+ print('Official FPL GW status diagnostic: '+json.dumps(diagnostic),flush=True)
  nextgw=next((r for r in rounds if r>gw and any(not f['finished'] for f in fx if f['event']==r)),None)
  upcoming=[f for f in fx if f['event']==nextgw and f['kickoff_time'] and date(f['kickoff_time'])>now()]
- assert upcoming,'No future official round'
+ assert upcoming,'No future official round; check saved official-round-diagnostic.json'
  for f in fx:
   if f.get('started') and not f['finished'] and date(f['kickoff_time'])<now():gaps.append('Unfinished/postponed official fixture '+str(f['id'])+' remains pending')
  index={(canon(m['home']['name']),canon(m['away']['name'])):m for m in league['fixtures']['allMatches']}
