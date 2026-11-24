@@ -118,9 +118,19 @@ def main():
   for source,sid in [('fotmob',m['id']),('fpl_fixture',SEASON+':'+str(f['id']))]:rows['match_source_ids'].append({'source':source,'source_match_id':str(sid),'canonical_match_id':match['match_id'],'season':SEASON,'mapping_method':'exact_teams_date_verified','verified':True})
   for t,rr in stats.items():rows[t].extend(rr)
  known={x['player_id']:x for x in state['identities']}
+ identity_candidates=[]
  for row in rows['player_match_stats']:
   p=known.get(row['player_id'])
-  assert p and p['player_code']==row['player_code'],'New permanent FPL identity needs explicit reconciliation'
+  if not p or p['player_code']!=row['player_code']:
+   e=players.get(int(row['player_id']))
+   assert e and str(e['code'])==row['player_code'] and str(e.get('opta_code','')).removeprefix('p')==row['player_code'],'Official FPL permanent-code/Opta mismatch'
+   item={'fpl_id':row['player_id'],'permanent_code':row['player_code'],'official_opta_code':e.get('opta_code'),'fotmob_player_id':row['source_player_id'],'fotmob_match_id':row['source_match_id'],'team':row['team_name'],'first_name':e.get('first_name'),'second_name':e.get('second_name'),'web_name':e.get('web_name'),'birth_date':e.get('birth_date'),'element_type':e['element_type'],'fpl_team_id':e['team'],'existing_player_for_fpl_id':p,'existing_fpl_id_for_code':[x for x in known.values() if x['player_code']==row['player_code']]}
+   if item not in identity_candidates:identity_candidates.append(item)
+ if identity_candidates:
+  report={'observedAt':stamp(),'identities':identity_candidates,'provenance':[x for x in evidence if '/bootstrap-static/' in x['url'] or '/matchDetails?' in x['url']]}
+  (OUT/'identity-candidates.json').write_text(json.dumps(report,ensure_ascii=False,indent=2))
+  print('Unverified permanent identity candidates (official code/Opta matched to FotMob native provider): '+json.dumps(report,ensure_ascii=False),flush=True)
+  raise ValueError('New permanent FPL identity needs explicit reconciliation; see identity-candidates.json')
  # Official per-fixture history supports double gameweeks without assigning aggregated stats twice.
  def history(e):
   d=fetch(API+'/element-summary/'+str(e['id'])+'/');return e,[r for r in d['history'] if r['round'] in reviewrounds]
