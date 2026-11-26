@@ -1,8 +1,15 @@
 # PL Results Project — Persistent Project Context
 
-_Last updated: 2026-11-21_
+_Last updated: 2026-11-26_
 
 This file is the durable handoff/source of truth for continuing the project across ChatGPT conversations. At the start of a new project chat, read this file first, then verify live state in GitHub/Supabase/Vercel before making changes.
+
+## GW12 late-Thursday odds and provisional-value review — 2026-11-26
+
+- All ten GW12 fixtures 27–29 Nov have fresh UK best-advertised 1X2 comparison odds observed 2026-11-26T23:54:58Z in Supabase, source Oddschecker. BetVictor public single-bookmaker prices independently cross-checked, typically shorter; do not treat aggregate prices as confirmed executable quotes. [Research report](WEEKEND_GW12_PREMATCH_2026-11-26.md), [source/price/sensitivity JSON](data/weekend-2026-11-26-price-value-review.json).
+- Frozen 24 Nov GW12 forecasts and 69-event paper watchlist retained without new stakes. Leading raw model price discrepancies are Everton home, Ipswich home, Sunderland home, Forest home; all remain **watches only** pending verified named-bookmaker prices, official XIs and final news/sensitivity review. Forest home gap disappears in xG-only Venue18.
+- Updated source-linked late 26 Nov team information on five relevant fixtures (111,114,115,117,119) by appending validated latest news records; prior FPL notes preserved and labelled 24 Nov. Other five retain dated Tuesday news. No historical results, saved forecasts, model, paper eligibility, or security changes.
+- Preserved DB fingerprints for previous fixtures 47aae8f7d6d835df6427c9c590d7bcb9, 120 snapshots 02f355d01a6ed0c7eb2f23ed4e8b7867, frozen v3 f3097c1d21be5443c3c6790ece2c29dd and policies 988e388d687556eb705513d4864307bc. GW12 fixture data changed only for authorised quotes/news. Existing Tuesday 09:00 Europe/London automation unchanged.
 
 ## GW11 match-day price and news update — 2026-11-21
 

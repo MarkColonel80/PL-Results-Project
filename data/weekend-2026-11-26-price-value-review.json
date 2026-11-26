@@ -1,0 +1,695 @@
+{
+  "dated_at": "2026-11-26T23:54:58Z",
+  "weekend": "2026-11-27_to_2026-11-29",
+  "matchweek": 12,
+  "sources": [
+    {
+      "label": "Oddschecker UK 1X2 best advertised",
+      "url": "https://www.oddschecker.com/football/english/premier-league"
+    },
+    {
+      "label": "BetVictor published match betting cross-check",
+      "url": "https://www.betvictor.com/en-gb/sports/240/meetings/6323610/all"
+    },
+    {
+      "label": "Everton official suspensions",
+      "url": "https://www.evertonfc.com/players/injuries--suspensions"
+    },
+    {
+      "label": "Liverpool club injury update",
+      "url": "https://www.liverpoolfc.com/news/liverpools-injury-list-suspensions-and-availability"
+    },
+    {
+      "label": "Aston Villa club injury update",
+      "url": "https://www.avfc.co.uk/news/2026/november/23/prematch-team-news-for-galatasaray-encounter/"
+    },
+    {
+      "label": "Ipswich injuries (secondary)",
+      "url": "https://www.premierinjuries.com/teams/ipswich-town"
+    },
+    {
+      "label": "Sunderland club injury bulletin",
+      "url": "https://www.safc.com/news/2026/november/25/le-bris-provides-team-news-ahead-of-jagiellonia/"
+    },
+    {
+      "label": "Chelsea team news",
+      "url": "https://www.chelseafc.com/en/news/article/xabi-alonso-confirms-chelsea-team-news-for-nottingham-forest"
+    },
+    {
+      "label": "Palace latest injury round-up",
+      "url": "https://ca.sports.yahoo.com/news/frank-team-news-sarrs-commitment-190738489.html"
+    }
+  ],
+  "price_policy": "Oddschecker best-advertised UK cross-bookmaker 1X2 prices are comparison figures; not a verified available single named-bookmaker quote. BetVictor numbers are from a public bookmaker page and independently cross-check the gap, but executability for the user is unverified.",
+  "forecast_policy": "Frozen 24 Nov research probabilities are immutable; current view and xG8/xG18 diagnostics computed as in existing page / lib, for sensitivity only. No change to model formula or rule.",
+  "fixtures": [
+    {
+      "fixture_id": 111,
+      "home": "Nottingham Forest",
+      "away": "Chelsea",
+      "kickoff_gmt": "2026-11-27 20:00:00+00",
+      "price": {
+        "home": 2.6,
+        "draw": 3.5,
+        "away": 2.9
+      },
+      "betvictor_public": {
+        "home": 2.25,
+        "draw": 3.5,
+        "away": 2.45
+      },
+      "research": {
+        "home": 0.492524,
+        "draw": 0.278187,
+        "away": 0.229288
+      },
+      "current_view": {
+        "home": 0.431269,
+        "draw": 0.318166,
+        "away": 0.250565
+      },
+      "xg8": {
+        "home": 0.46909,
+        "draw": 0.293798,
+        "away": 0.237112
+      },
+      "xg18": {
+        "home": 0.35174,
+        "draw": 0.273766,
+        "away": 0.374494
+      },
+      "venue_samples": [
+        8,
+        8,
+        18,
+        18
+      ],
+      "forecast_created_at": "2026-11-24 14:06:56.920797+00"
+    },
+    {
+      "fixture_id": 112,
+      "home": "Leeds United",
+      "away": "Coventry City",
+      "kickoff_gmt": "2026-11-28 15:00:00+00",
+      "price": {
+        "home": 1.51,
+        "draw": 4.75,
+        "away": 6.6
+      },
+      "betvictor_public": {
+        "home": 1.4,
+        "draw": 4.4,
+        "away": 5.5
+      },
+      "research": {
+        "home": 0.580294,
+        "draw": 0.260084,
+        "away": 0.159622
+      },
+      "current_view": {
+        "home": 0.607624,
+        "draw": 0.254014,
+        "away": 0.138363
+      },
+      "xg8": {
+        "home": 0.50755,
+        "draw": 0.261551,
+        "away": 0.230899
+      },
+      "xg18": null,
+      "venue_samples": [
+        8,
+        5,
+        18,
+        5
+      ],
+      "forecast_created_at": "2026-11-24 14:06:56.920797+00"
+    },
+    {
+      "fixture_id": 113,
+      "home": "Manchester United",
+      "away": "Brentford",
+      "kickoff_gmt": "2026-11-28 15:00:00+00",
+      "price": {
+        "home": 2.15,
+        "draw": 3.8,
+        "away": 3.4
+      },
+      "betvictor_public": {
+        "home": 1.925,
+        "draw": 3.75,
+        "away": 2.8
+      },
+      "research": {
+        "home": 0.483304,
+        "draw": 0.238671,
+        "away": 0.278025
+      },
+      "current_view": {
+        "home": 0.603464,
+        "draw": 0.188506,
+        "away": 0.20803
+      },
+      "xg8": {
+        "home": 0.642139,
+        "draw": 0.171934,
+        "away": 0.185927
+      },
+      "xg18": {
+        "home": 0.575201,
+        "draw": 0.209542,
+        "away": 0.215257
+      },
+      "venue_samples": [
+        8,
+        8,
+        18,
+        18
+      ],
+      "forecast_created_at": "2026-11-24 14:06:56.920797+00"
+    },
+    {
+      "fixture_id": 114,
+      "home": "Ipswich Town",
+      "away": "Aston Villa",
+      "kickoff_gmt": "2026-11-28 17:30:00+00",
+      "price": {
+        "home": 3.8,
+        "draw": 3.9,
+        "away": 2
+      },
+      "betvictor_public": {
+        "home": 3.1,
+        "draw": 3.8,
+        "away": 1.8
+      },
+      "research": {
+        "home": 0.40221,
+        "draw": 0.252725,
+        "away": 0.345065
+      },
+      "current_view": {
+        "home": 0.343035,
+        "draw": 0.250778,
+        "away": 0.406187
+      },
+      "xg8": {
+        "home": 0.320947,
+        "draw": 0.238491,
+        "away": 0.440562
+      },
+      "xg18": null,
+      "venue_samples": [
+        5,
+        8,
+        5,
+        18
+      ],
+      "forecast_created_at": "2026-11-24 14:06:56.920797+00"
+    },
+    {
+      "fixture_id": 115,
+      "home": "Everton",
+      "away": "Liverpool",
+      "kickoff_gmt": "2026-11-29 12:00:00+00",
+      "price": {
+        "home": 4.75,
+        "draw": 3.9,
+        "away": 1.8
+      },
+      "betvictor_public": {
+        "home": 3.6,
+        "draw": 3.75,
+        "away": 1.7
+      },
+      "research": {
+        "home": 0.360563,
+        "draw": 0.265739,
+        "away": 0.373698
+      },
+      "current_view": {
+        "home": 0.314617,
+        "draw": 0.240648,
+        "away": 0.444735
+      },
+      "xg8": {
+        "home": 0.332069,
+        "draw": 0.246138,
+        "away": 0.421792
+      },
+      "xg18": {
+        "home": 0.277552,
+        "draw": 0.267777,
+        "away": 0.454671
+      },
+      "venue_samples": [
+        8,
+        8,
+        18,
+        18
+      ],
+      "forecast_created_at": "2026-11-24 14:06:56.920797+00"
+    },
+    {
+      "fixture_id": 116,
+      "home": "Brighton & Hove Albion",
+      "away": "Newcastle United",
+      "kickoff_gmt": "2026-11-29 14:05:00+00",
+      "price": {
+        "home": 1.6,
+        "draw": 4.5,
+        "away": 5.75
+      },
+      "betvictor_public": {
+        "home": 1.4705882352941178,
+        "draw": 4.333333333333334,
+        "away": 4.6
+      },
+      "research": {
+        "home": 0.652268,
+        "draw": 0.213385,
+        "away": 0.134347
+      },
+      "current_view": {
+        "home": 0.65568,
+        "draw": 0.218481,
+        "away": 0.125839
+      },
+      "xg8": {
+        "home": 0.588378,
+        "draw": 0.230397,
+        "away": 0.181224
+      },
+      "xg18": {
+        "home": 0.481505,
+        "draw": 0.265741,
+        "away": 0.252754
+      },
+      "venue_samples": [
+        8,
+        8,
+        18,
+        18
+      ],
+      "forecast_created_at": "2026-11-24 14:06:56.920797+00"
+    },
+    {
+      "fixture_id": 117,
+      "home": "Crystal Palace",
+      "away": "Hull City",
+      "kickoff_gmt": "2026-11-29 14:05:00+00",
+      "price": {
+        "home": 1.95,
+        "draw": 3.9,
+        "away": 4.3
+      },
+      "betvictor_public": {
+        "home": 1.75,
+        "draw": 3.7,
+        "away": 3.5
+      },
+      "research": {
+        "home": 0.423726,
+        "draw": 0.271013,
+        "away": 0.305261
+      },
+      "current_view": {
+        "home": 0.370026,
+        "draw": 0.275779,
+        "away": 0.354195
+      },
+      "xg8": {
+        "home": 0.431837,
+        "draw": 0.255308,
+        "away": 0.312855
+      },
+      "xg18": null,
+      "venue_samples": [
+        8,
+        5,
+        18,
+        5
+      ],
+      "forecast_created_at": "2026-11-24 14:06:56.920797+00"
+    },
+    {
+      "fixture_id": 118,
+      "home": "Fulham",
+      "away": "AFC Bournemouth",
+      "kickoff_gmt": "2026-11-29 14:05:00+00",
+      "price": {
+        "home": 2.75,
+        "draw": 3.55,
+        "away": 2.64
+      },
+      "betvictor_public": {
+        "home": 2.45,
+        "draw": 3.5,
+        "away": 2.3
+      },
+      "research": {
+        "home": 0.355697,
+        "draw": 0.285068,
+        "away": 0.359235
+      },
+      "current_view": {
+        "home": 0.324956,
+        "draw": 0.266766,
+        "away": 0.408278
+      },
+      "xg8": {
+        "home": 0.371754,
+        "draw": 0.249036,
+        "away": 0.37921
+      },
+      "xg18": {
+        "home": 0.404892,
+        "draw": 0.230089,
+        "away": 0.365019
+      },
+      "venue_samples": [
+        8,
+        8,
+        18,
+        18
+      ],
+      "forecast_created_at": "2026-11-24 14:06:56.920797+00"
+    },
+    {
+      "fixture_id": 119,
+      "home": "Sunderland",
+      "away": "Tottenham Hotspur",
+      "kickoff_gmt": "2026-11-29 14:05:00+00",
+      "price": {
+        "home": 3.9,
+        "draw": 3.5,
+        "away": 2.1
+      },
+      "betvictor_public": {
+        "home": 3.2,
+        "draw": 3.4,
+        "away": 1.95
+      },
+      "research": {
+        "home": 0.375566,
+        "draw": 0.330009,
+        "away": 0.294425
+      },
+      "current_view": {
+        "home": 0.309555,
+        "draw": 0.363574,
+        "away": 0.326871
+      },
+      "xg8": {
+        "home": 0.398739,
+        "draw": 0.301762,
+        "away": 0.299499
+      },
+      "xg18": {
+        "home": 0.398685,
+        "draw": 0.295335,
+        "away": 0.305981
+      },
+      "venue_samples": [
+        8,
+        8,
+        18,
+        18
+      ],
+      "forecast_created_at": "2026-11-24 14:06:56.920797+00"
+    },
+    {
+      "fixture_id": 120,
+      "home": "Arsenal",
+      "away": "Manchester City",
+      "kickoff_gmt": "2026-11-29 16:30:00+00",
+      "price": {
+        "home": 2,
+        "draw": 3.8,
+        "away": 3.85
+      },
+      "betvictor_public": {
+        "home": 1.8333333333333335,
+        "draw": 3.6,
+        "away": 3.2
+      },
+      "research": {
+        "home": 0.492763,
+        "draw": 0.286863,
+        "away": 0.220373
+      },
+      "current_view": {
+        "home": 0.535387,
+        "draw": 0.284565,
+        "away": 0.180048
+      },
+      "xg8": {
+        "home": 0.494859,
+        "draw": 0.268595,
+        "away": 0.236546
+      },
+      "xg18": {
+        "home": 0.439142,
+        "draw": 0.267109,
+        "away": 0.293749
+      },
+      "venue_samples": [
+        8,
+        8,
+        18,
+        18
+      ],
+      "forecast_created_at": "2026-11-24 14:06:56.920797+00"
+    }
+  ],
+  "positive_gaps": [
+    {
+      "fixture_id": 115,
+      "fixture": "Everton v Liverpool",
+      "outcome": "home",
+      "price": 4.75,
+      "bookmaker_example": 3.6,
+      "research_prob": 0.360563,
+      "break_even_prob": 0.210526,
+      "gap_pp": 15,
+      "min_model_prob": 0.277552,
+      "most_conservative_fair_price": 3.603,
+      "can_use_full_18": true,
+      "sensitivity_all_positive": true
+    },
+    {
+      "fixture_id": 114,
+      "fixture": "Ipswich Town v Aston Villa",
+      "outcome": "home",
+      "price": 3.8,
+      "bookmaker_example": 3.1,
+      "research_prob": 0.40221,
+      "break_even_prob": 0.263158,
+      "gap_pp": 13.91,
+      "min_model_prob": 0.320947,
+      "most_conservative_fair_price": 3.116,
+      "can_use_full_18": false,
+      "sensitivity_all_positive": true
+    },
+    {
+      "fixture_id": 119,
+      "fixture": "Sunderland v Tottenham Hotspur",
+      "outcome": "home",
+      "price": 3.9,
+      "bookmaker_example": 3.2,
+      "research_prob": 0.375566,
+      "break_even_prob": 0.25641,
+      "gap_pp": 11.92,
+      "min_model_prob": 0.309555,
+      "most_conservative_fair_price": 3.23,
+      "can_use_full_18": true,
+      "sensitivity_all_positive": true
+    },
+    {
+      "fixture_id": 111,
+      "fixture": "Nottingham Forest v Chelsea",
+      "outcome": "home",
+      "price": 2.6,
+      "bookmaker_example": 2.25,
+      "research_prob": 0.492524,
+      "break_even_prob": 0.384615,
+      "gap_pp": 10.79,
+      "min_model_prob": 0.35174,
+      "most_conservative_fair_price": 2.843,
+      "can_use_full_18": true,
+      "sensitivity_all_positive": false
+    },
+    {
+      "fixture_id": 117,
+      "fixture": "Crystal Palace v Hull City",
+      "outcome": "away",
+      "price": 4.3,
+      "bookmaker_example": 3.5,
+      "research_prob": 0.305261,
+      "break_even_prob": 0.232558,
+      "gap_pp": 7.27,
+      "min_model_prob": 0.305261,
+      "most_conservative_fair_price": 3.276,
+      "can_use_full_18": false,
+      "sensitivity_all_positive": true
+    },
+    {
+      "fixture_id": 112,
+      "fixture": "Leeds United v Coventry City",
+      "outcome": "draw",
+      "price": 4.75,
+      "bookmaker_example": 4.4,
+      "research_prob": 0.260084,
+      "break_even_prob": 0.210526,
+      "gap_pp": 4.96,
+      "min_model_prob": 0.254014,
+      "most_conservative_fair_price": 3.937,
+      "can_use_full_18": false,
+      "sensitivity_all_positive": true
+    },
+    {
+      "fixture_id": 119,
+      "fixture": "Sunderland v Tottenham Hotspur",
+      "outcome": "draw",
+      "price": 3.5,
+      "bookmaker_example": 3.4,
+      "research_prob": 0.330009,
+      "break_even_prob": 0.285714,
+      "gap_pp": 4.43,
+      "min_model_prob": 0.295335,
+      "most_conservative_fair_price": 3.386,
+      "can_use_full_18": true,
+      "sensitivity_all_positive": true
+    },
+    {
+      "fixture_id": 116,
+      "fixture": "Brighton & Hove Albion v Newcastle United",
+      "outcome": "home",
+      "price": 1.6,
+      "bookmaker_example": 1.4705882352941178,
+      "research_prob": 0.652268,
+      "break_even_prob": 0.625,
+      "gap_pp": 2.73,
+      "min_model_prob": 0.481505,
+      "most_conservative_fair_price": 2.077,
+      "can_use_full_18": true,
+      "sensitivity_all_positive": false
+    },
+    {
+      "fixture_id": 120,
+      "fixture": "Arsenal v Manchester City",
+      "outcome": "draw",
+      "price": 3.8,
+      "bookmaker_example": 3.6,
+      "research_prob": 0.286863,
+      "break_even_prob": 0.263158,
+      "gap_pp": 2.37,
+      "min_model_prob": 0.267109,
+      "most_conservative_fair_price": 3.744,
+      "can_use_full_18": true,
+      "sensitivity_all_positive": true
+    },
+    {
+      "fixture_id": 113,
+      "fixture": "Manchester United v Brentford",
+      "outcome": "home",
+      "price": 2.15,
+      "bookmaker_example": 1.925,
+      "research_prob": 0.483304,
+      "break_even_prob": 0.465116,
+      "gap_pp": 1.82,
+      "min_model_prob": 0.483304,
+      "most_conservative_fair_price": 2.069,
+      "can_use_full_18": true,
+      "sensitivity_all_positive": true
+    },
+    {
+      "fixture_id": 117,
+      "fixture": "Crystal Palace v Hull City",
+      "outcome": "draw",
+      "price": 3.9,
+      "bookmaker_example": 3.7,
+      "research_prob": 0.271013,
+      "break_even_prob": 0.25641,
+      "gap_pp": 1.46,
+      "min_model_prob": 0.255308,
+      "most_conservative_fair_price": 3.917,
+      "can_use_full_18": false,
+      "sensitivity_all_positive": false
+    },
+    {
+      "fixture_id": 115,
+      "fixture": "Everton v Liverpool",
+      "outcome": "draw",
+      "price": 3.9,
+      "bookmaker_example": 3.75,
+      "research_prob": 0.265739,
+      "break_even_prob": 0.25641,
+      "gap_pp": 0.93,
+      "min_model_prob": 0.240648,
+      "most_conservative_fair_price": 4.155,
+      "can_use_full_18": true,
+      "sensitivity_all_positive": false
+    },
+    {
+      "fixture_id": 112,
+      "fixture": "Leeds United v Coventry City",
+      "outcome": "away",
+      "price": 6.6,
+      "bookmaker_example": 5.5,
+      "research_prob": 0.159622,
+      "break_even_prob": 0.151515,
+      "gap_pp": 0.81,
+      "min_model_prob": 0.138363,
+      "most_conservative_fair_price": 7.227,
+      "can_use_full_18": false,
+      "sensitivity_all_positive": false
+    },
+    {
+      "fixture_id": 118,
+      "fixture": "Fulham v AFC Bournemouth",
+      "outcome": "draw",
+      "price": 3.55,
+      "bookmaker_example": 3.5,
+      "research_prob": 0.285068,
+      "break_even_prob": 0.28169,
+      "gap_pp": 0.34,
+      "min_model_prob": 0.230089,
+      "most_conservative_fair_price": 4.346,
+      "can_use_full_18": true,
+      "sensitivity_all_positive": false
+    }
+  ],
+  "reviewed_team_news_fixtures": [
+    111,
+    114,
+    115,
+    117,
+    119
+  ],
+  "paper_ledger": {
+    "sha": "520a966bc7495221ae2c23f4d7bcc69dc86bc6d7",
+    "events": 69,
+    "settlements": 0,
+    "valid_selections": 0,
+    "modified": false
+  },
+  "scorecard": {
+    "eligible": 65,
+    "published": 80,
+    "research_brier": 0.6257935747815704,
+    "market_brier": 0.6231469556064301,
+    "as_of": "2026-11-24"
+  },
+  "fingerprints": {
+    "older_fixtures": "47aae8f7d6d835df6427c9c590d7bcb9",
+    "all_manual_snapshots": "02f355d01a6ed0c7eb2f23ed4e8b7867",
+    "frozen_v3": "f3097c1d21be5443c3c6790ece2c29dd",
+    "rls_policies": "988e388d687556eb705513d4864307bc",
+    "gw12_before": "6f0774c2bd71afcc8b27b8d0a07122ce",
+    "gw12_after": "dca9a2f13b4845e7e74d9e4fd88b5fd4"
+  },
+  "security_changed": false,
+  "model_changed": false,
+  "automations_changed": false
+}
